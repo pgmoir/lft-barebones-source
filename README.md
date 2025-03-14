@@ -6,16 +6,11 @@ This repo includes the source CMS files for the lft-barebones site. They are pro
 
 ### Step 1 - Assuming that Go is installed on local, and repo cloned
 
-```go
-go install
-```
-
 NB You may need to run this, to download the additional package
 
 ```go
 go get golang.org/x/net/html
 ```
-
 
 ### Step 2 - Extracting views to json files in feeds folder
 
