@@ -1,0 +1,145 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Set up a direct debit";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/fleet-autopay-apply-select-payment-29107";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                 <li><a href="/modes/driving/auto-pay">Auto Pay</a></li>
+                
+            
+            
+            
+                <li><span class="last-breadcrumb">Set up a direct debit</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Set up a direct debit</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+      <div class="article-teaser">
+        <p>You'll be billed monthly for all your Congestion Charge and ULEZ charges.</p>
+        
+      </div>
+    
+    
+      <h2></h2>
+      
+           
+      
+
+        @{
+            dynamic content = new ContentModel();
+            
+            content.BackButtonText = "Back";
+            content.ContinueButtonText = "Continue";
+            
+            content.PreferredPaymentHeading = "We'll let you know when we're going to take payment.";
+            
+            content.DirectDebitOnlineManualText = "<p>If you are not the bank/building society account holder, or more than one person is required to authorise debits from this account, you will not be able to authorise a Direct Debit mandate.</p>";
+            content.DirectDebitOnlineCorrespondenceText = "<p>All correspondence about this Direct Debit mandate will be sent using the preferred contact details on your London Road User Charging account.</p><p><strong>Your Fleet Auto Pay may be suspended if we are unable to collect a payment.</strong> Check regularly to make sure that you have enough funds available.</p>";
+
+            content.ConfirmPaymentMethodText = "I confirm that I am the bank/building society account holder, and/or I have the sole responsibility for authorising debits from this account";
+            content.ConfirmPaymentMethodRequireTrue = "Confirm authority to continue";
+
+            
+            Html.RenderAction(
+                RucDictionary.AutoPayApply.ApplyFleetPaymentActionName,
+                "AutoPayApplyFleet",
+                new
+                {
+                    area = "Ruc",
+                    backUrl = "/modes/driving/fleet-autopay-apply-supporting-documentation-29117",
+                    directDebitUrl = "/modes/driving/fleet-autopay-apply-direct-debit-29063",
+                    continueUrl = "/modes/driving/fleet-autopay-apply-success-29112",
+                    content = content
+                }
+            );
+        }
+        @this.ScriptBlock(
+            @<script>
+                queue.push(
+                    function () {
+                         tfl.forms.attachUnload("You have not completed your form. If you leave your data will be lost.");
+                    }
+                );
+            </script>
+        )
+      
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "You'll be billed monthly for all your Congestion Charge and ULEZ charges.";}
+        
+            
+        
+
+
+ 

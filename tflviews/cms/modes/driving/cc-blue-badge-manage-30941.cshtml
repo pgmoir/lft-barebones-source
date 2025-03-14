@@ -1,0 +1,254 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Manage Blue Badge discount";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-blue-badge-manage-30941";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Manage Blue Badge discount</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Manage Blue Badge discount</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+
+	    
+		<!-- 2. blue-badge -->
+		@{
+            dynamic content = new ContentModel();
+    
+            content.SingleActiveCountText = "Discount status: Active on 1 vehicle";
+            content.ExpiryStatusText = "Discount status: Expired";
+            content.ActiveCountTextFormat = "Discount status: Active";
+            content.ExpiryStatusText = "Expired";
+            content.ActiveVehiclesText = "{0} of {2} allowed vehicles used.";      
+            content.RenewDiscountLinkTitle = "Renew discount";
+            content.RenewDiscountLinkTextForOneVehicle = "Renew discount for 1 vehicle";
+            content.RenewDiscountLinkTextForMoreThanOneVehicle = "Renew discount for {0} vehicles";
+            content.RenewDiscountUrl = "/modes/driving/cc-blue-badge-renew-renew-34009";
+            content.VehicleOnDiscountHeaderText = "Discount vehicle(s)";
+            content.ExpiryDateLabel = "Discount expiry date: ";
+            content.RenewedExpiryDateLabel = "New expiry date: ";
+            content.SectionHeading = "SECTIONHEADING (BLUE BADGE)";
+
+            Html.RenderAction("DiscountActiveVehicleCount", "DiscountManage", new {
+                    area = "Ruc",
+                    discountStyle = ZoneChargeDiscountStyle.BlueBadge,
+                    addVehicleUrl = "/modes/driving/cc-blue-badge-manage-manage-add-vehicle-32836",
+                    replaceVehicleUrl = "/modes/driving/cc-blue-badge-manage-manage-replace-vehicle-32837",                       
+                    content = content
+                }
+            );
+        }
+        
+        @{
+            dynamic vehicleListContent = new ContentModel();
+            
+            /* Charge labels and messages */
+            vehicleListContent.NonChargeableLabel = "No charge due";
+            vehicleListContent.NonChargeableMessage = "Based on the vehicle details entered and information held by the DVLA and TfL today, you don't have to pay the ULEZ charge for this vehicle. This may change - always check to see if you need to pay to drive within the zone.";
+            vehicleListContent.PayableHighLabel = "Should be paid";
+            vehicleListContent.PayableHighMessage = "This vehicle does not meet the ULEZ emissions standards. You need to pay the ULEZ charge if you drive within the zone. The zone operates at all times - charging days run from midnight to midnight.";
+            vehicleListContent.PayableLowLabel = "Should be paid";
+            vehicleListContent.PayableLowMessage = "This vehicle does not meet the ULEZ emissions standards. You need to pay the ULEZ charge if you drive within the zone. The zone operates at all times - charging days run from midnight to midnight.";
+            vehicleListContent.ExemptLabel = "Exempt";
+            vehicleListContent.ExemptMessage = "Based on the vehicle details entered and information held by the DVLA and TfL today, this vehicle is exempt from this charge. This may change - always check to see if you need to pay to drive within the zone.";
+            vehicleListContent.CompliantLabel = "Meets the standard";
+            vehicleListContent.CompliantMessage = "This vehicle meets the ULEZ emissions standards. You don't have to pay the charge.";
+            vehicleListContent.PayableLabel = "Should be paid";
+            vehicleListContent.PayableMessage = "You need to pay the Congestion Charge for this vehicle if you drive within the zone Monday to Friday 07:00-18:00 excluding bank holidays and the period between Christmas Day and New Year's Day.";
+            vehicleListContent.ChargeabilityUnknownLabel = "Unknown";
+            vehicleListContent.ChargeabilityUnknownMessage = "We don't hold any charge details for this vehicle.";
+            vehicleListContent.UnknownVehicleWarningMessage = "We don't have any details for this vehicle at the moment. If you want to add it to a discount application or to Auto Pay you need to add it as a new vehicle.";
+
+            /* CommonList CMS properties */
+            vehicleListContent.ServiceError = "There was a problem - we can't retrieve your vehicles";
+
+            /* Composite Vehicle List Summary*/
+            vehicleListContent.TotalRecordsLabelTemplate = "{0} vehicle(s)";
+            vehicleListContent.PluralTotalRecordsLabelTemplate = "{0} vehicles";
+
+            /* Composite Vehicle List Panel */
+            vehicleListContent.CcLabel = "CC";
+            vehicleListContent.UlezLabel = "ULEZ";
+            vehicleListContent.DateAddedText = "Date added: ";
+            vehicleListContent.ExpiryDateText = "Expiry date: ";
+            vehicleListContent.MoreDetailsLabelText = "Charge details";
+            vehicleListContent.LessDetailsLabelText = "Charge details";
+            vehicleListContent.FullDiscountLabel = "100% discount";
+            vehicleListContent.FullDiscountMessage = "This vehicle is currently registered for a 100% discount from this charge. Check when the discount expires in the 'Manage discounts' section of your account.";
+
+            /* Remove Vehicle Modal */
+            vehicleListContent.RemoveVehicleModalHeadingText = "Are you sure?";
+            vehicleListContent.RemoveVehicleModalMessageText = "This vehicle will be removed from your Blue Badge discount only. If you have Auto Pay, go to Manage my Auto Pay to remove it.";
+            vehicleListContent.RemoveVehicleModalConfirmButtonText = "Remove";
+            vehicleListContent.RemoveVehicleModalCancelButtonText = "Keep";
+
+            /* Unable to Remove Vehicle Modal */
+            vehicleListContent.UnableToRemoveVehicleModalHeadingText = "You can't remove this vehicle";
+            vehicleListContent.UnableToRemoveVehicleModalMessageText = "To remove this vehicle from the discount, you first need to remove its scheduled replacement.";
+            vehicleListContent.UnableToRemoveVehicleModalConfirmButtonText = "Close";
+            
+            /* Custom messages */
+            vehicleListContent.CustomResultsMessageFormat = "<p>You can have up to 2 vehicles active on this discount at a time. Vehicles are covered by the 100% discount straight away, but it may take up to 24 hours for&nbsp;the new discounted status to appear here.</p>";
+
+            /* Add vehicle button */
+            vehicleListContent.AddVehicleButtonText = "Add vehicle to discount";
+            vehicleListContent.AccountVehiclesLink = "/modes/driving/cc-blue-badge-manage-account-vehicles";
+            vehicleListContent.AddVehicleButtonLabel = "Add vehicle";
+            vehicleListContent.NewVehicleLink = "/modes/driving/cc-blue-badge-manage-vrm-lookup?addnew=true";
+
+            /* Replacement vehicle button */
+            vehicleListContent.ReplaceVehicleButtonText = "Replace vehicle";
+
+            vehicleListContent.AddVehicleUrl = "/modes/driving/cc-blue-badge-manage-manage-add-vehicle-32836";
+            vehicleListContent.ReplaceVehicleUrl = "/modes/driving/cc-blue-badge-manage-manage-replace-vehicle-32837";   
+            
+            Html.RenderAction("Index", "CompositeVehicles", new
+            {
+                content = vehicleListContent,
+                compositeVehicleServiceStyle = CompositeVehicleServiceStyle.Discount,
+                zoneChargeDiscountStyle = ZoneChargeDiscountStyle.BlueBadge
+            });
+        }
+     
+        @FormHelpers.DottedSeparator()
+     
+        @{
+            Html.RenderAction("Index", "BlueBadgeReplacement", new
+            { 
+                area = "Ruc", 
+                discountStyle = ZoneChargeDiscountStyle.BlueBadge, 
+                listContent = vehicleListContent
+            });
+        }
+
+        @ModulesHelpers.BoxedLink(
+            href: "/modes/driving/cc-autopay-manage-view-vehicle-history-30894?Search.ServiceType=BlueBadge", 
+            id: "vehicle-history", 
+            text: "Blue Badge discount vehicle history", 
+            soloButton: true
+        )
+      
+        @FormHelpers.DottedSeparator()
+        @ModulesHelpers.BackLink()
+
+
+        @this.ScriptBlock(
+            @<script>
+                 queue.push("@Html.ScriptPath("specific/list-filters-text.min.js")", null);
+                 queue.push("@Html.ScriptPath("modules/M020-on-this-page.min.js")", null);
+                 queue.push("@Html.ScriptPath("specific/results-paginator.min.js")", null);
+                 queue.push("@Html.ScriptPath("specific/pages/blue-badge.min.js")", null);
+            </script>
+        )
+		
+	  
+
+  
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+      <div>
+                    
+        <div class="related-links">
+
+    <h3>Help with Auto Pay</h3>
+
+<div class="vertical-button-container">
+
+<a href="https://tfl.gov.uk/corporate/terms-and-conditions/pay-to-drive-in-london#guides" class="plain-button">Blue Badge discount user guide</a>
+    </div>
+</div>
+ 
+      </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

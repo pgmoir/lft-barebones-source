@@ -1,0 +1,143 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Make a payment";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-autopay-payment-make-payment-31018";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Make a payment</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Make a payment</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+      <div class="article-teaser">
+        <p>The amount shown below is the total balance outstanding on your Auto Pay service.</p>
+        
+      </div>
+    
+    
+      
+      
+           
+      
+
+ 
+
+
+		
+		<!-- 8. CC-make-payment -->
+		@using TfL.Ruc.Services.ViewModels.Ruc.Autopay
+        @{
+            dynamic content = new ContentModel();
+
+            content.BackButtonText = "Back";
+            content.ContinueButtonText = "Continue";
+            content.BasketTitle = "Payment summary";
+            content.BalanceText = "Balance";
+            content.TotalText = "Total to pay: ";
+            content.PaymentSummaryText = "<p>If your Auto Pay service is 'pending suspension' or 'suspended', we will automatically reactivate it after a successful payment. If it is 'closed', you will need to apply for Auto Pay again.</p>";
+
+            Html.RenderAction(
+                RucDictionary.AutoPayManage.MakePaymentActionName,
+                "AutoPayManage",
+                new
+                {
+                    area = "Ruc",
+                    autoPayManageUrl = "/modes/driving/cc-autopay-manage-manage-29152",
+                    enterPaymentUrl = "/modes/driving/cc-autopay-manage-manage-autopay-cc-29141",
+                    paymentUrl = "/modes/driving/cc-autopay-payment-payment-31015",
+                    content = content
+                }
+            );
+        }		
+		
+	  
+
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "The amount shown below is the total balance outstanding on your Auto Pay service.";}
+        
+            
+        
+
+
+ 

@@ -1,0 +1,183 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Basket";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/basket";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+                 <li><a href="/modes/driving/pay-a-pcn">Pay a PCN</a></li>
+                
+            
+                 <li><a href="/modes/driving/pay-pcn-details">PCN details</a></li>
+                
+            
+                
+                <li><span class="last-breadcrumb">Basket</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Basket</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+        <div>
+            @{
+                dynamic content = new ContentModel();
+                
+                content.MainHeading = "Basket: ";
+                content.BasketHeading = "Basket";
+                content.BasketCountText = "Basket";
+                content.ConfirmAndPayText = "Confirm and pay";
+                content.SendReceiptLabelText = "Send receipt";
+                content.DateTimeLabelText = "Date and time: ";
+                content.AddAnotherPCNLabelText = "Add another PCN";
+                content.ClearBasketButtonText = "Clear basket";
+                content.TotalText = "Total";
+                content.SendReceiptText = "Email receipt";
+                content.PayButtonText = "Pay";
+                content.EmptyBasketText = "Basket is empty";
+                content.EmptyBasketNoteText = "PCNs you've added to the basket will appear here. You can pay for up to 40 PCNs at a time.";
+                content.SearchForPCNLabelText = "Search for a PCN";
+                content.BasketItemsRemoveText = "If you don't pay for this PCN on time, the amount outstanding may increase.";
+                content.DiscardRemoveButtonText = "Keep";
+                content.ConfirmRemoveButtonText = "Remove";
+                content.ReturnUrl = "/modes/driving/payment-result";
+                content.EmailAddressTooltip = "Enter an email address";
+                content.EmailAddressRequired = false;
+                content.EmailAddressLabel = "Email address";
+                content.BasketItemsRemoveAllText = "If you don't pay PCNs on time, the amount outstanding may increase.";
+                content.EmailAddressErrorMessage = "Enter a valid email address";
+                
+                Html.RenderAction("BasketDetails", "Pcn", new
+                {
+                    content = content 
+                });
+            }
+            
+           
+        </div>
+      
+  
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+      </div>
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "PCN basket page";}
+        
+            
+        
+
+
+ 

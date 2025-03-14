@@ -1,0 +1,143 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Add a vehicle";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/account-add-qml-vehicle-37477";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Add a vehicle</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Add a vehicle</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+      <div class="article-teaser">
+        <p>Enter the details of the vehicle you want to add to your Quick Management list.</p>
+        
+      </div>
+    
+    
+      <h2></h2>
+      
+           
+      
+
+
+		
+		<!-- 4. account-add-qml-vehicle -->
+		@{
+            dynamic content = new ContentModel();
+            content.VehicleTypeHelperTitle = "What is my Quick Management list?";
+            content.VehicleTypeHelperText = "<p>You can store up to 10 vehicles on your Quick Management list. Saving your vehicle details will make it quicker to pay the charges next time you sign in to your account.</p><p>Vehicles on this list are not added automatically  to any other discounts or services you may have. If you need to add or remove vehicles from a discount or service, go to&nbsp;<a href='/modes/driving/account-account-landing-29377'>My account</a>.</p>";
+            content.BackButtonText = "Back";
+            content.ContinueButtonText = "Continue";
+            content.VehicleNotFoundErrorText = "'Find vehicle' to continue";
+            content.ConfirmEnteredVehicleButtonText = "Confirm";
+            content.CcExemptTitle = "Congestion Charge - exempt";
+            content.CcExemptText = "<p>Based on the vehicle details entered and information held by the DVLA and TfL today, this vehicle is exempt from the Congestion Charge.</p><p><strong>This may change - always check to see if you need to pay to drive within the zone.</strong></p>";
+            content.ThisisNotMyVehicleTitle = "What if my vehicle details are incorrect?";
+            content.ThisisNotMyVehicleText = "<p>If the number plate is correct but the description shown is wrong, you can still continue.</p><p>You'll need to let the DVLA know if your details are wrong or need to be updated.</p>";
+            content.VehicleAlreadyAddedErrorText = "This vehicle is already on your Quick Management list";
+            content.ActiveDiscountText = "Active on: ";
+            content.ConfirmVehicleErrorText = "'Find vehicle' to continue";
+
+            Html.RenderAction("AddVehicle", "QmlManage", new
+                {
+                    area = "Ruc",
+                    backUrl = "/modes/driving/account-quick-management-list-37474",
+                    continueUrl = "/modes/driving/account-quick-management-list-37474",
+                    content = content,
+                    lookupType = TfL.Ruc.Domain.Entities.Ruc.VehicleLookupType.AddQml
+                }
+            );
+        }
+        
+        @this.ScriptBlock(
+          @<script>
+               queue.push("@Html.ScriptPath("modules/M020-on-this-page.min.js")", null);
+          </script>
+        )
+		
+	  
+
+  
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "Enter the details of the vehicle you want to add to your Quick Management list.";}
+        
+            
+        
+
+
+ 

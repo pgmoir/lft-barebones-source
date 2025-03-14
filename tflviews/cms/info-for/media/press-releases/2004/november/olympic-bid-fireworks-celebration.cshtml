@@ -1,0 +1,86 @@
+﻿
+
+
+@{ViewBag.Title = "Olympic bid fireworks celebration";}
+        
+        
+
+<div class="r">
+    <div class="headline-container plain">
+        <h1>Olympic bid fireworks celebration</h1>
+        <div class="content-page-press-release">
+        08 November 2004
+        </div>
+    </div>
+</div>
+<div class="main-and-aside r">
+    <div class="main" role="main">
+
+    <div class="article-teaser">
+        The five Olympic boroughs - Tower Hamlets, Hackney, Newham, Greenwhich and Waltham - are coming together to make their pledges in support of London's 2012 Olympic bid.
+        
+    </div>
+
+
+
+ <div class="on-this-page">
+<p>It will be a firework and performance spectacular to light up a November night. Last year, ten thousand people enjoyed the sights and sounds. This year even more are expected.</p>
+<p>It starts with a lantern and carnival parade from Mile End Green Bridge to Victoria Park. It will finish with a firework display like never before.</p>
+<p>Use our <a href="http://journeyplanner.tfl.gov.uk/" lid="Journey Planner">Journey Planner</a> to work out a bus route there and back. Nearest Tube station is Mile End.<br></p>
+
+     
+
+        
+        
+        
+        @this.ScriptBlock(
+        @<script>
+        //queue.push("@Html.ScriptPath("modules/M020-on-this-page.min.js")", null);
+        </script>
+        )
+        
+        
+        
+        </div>
+    </div>
+    <div class="aside" role="complementary">
+
+       
+        <div data-set="sidenav-container" class="large">
+
+            
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+        </div>
+
+
+
+            
+        <div data-set="sidenav-container" class="small-medium"></div>
+    </div>
+</div>
+
+<!-- Crumbs: PGtype:  -->
+
+ 
+ 
+        
+        
+            @{ViewBag.Description = "It will be a firework and performance spectacular to light up a November night. Last year, ten thousand people enjoyed the sights and sounds. This year even more are expected.It starts with a lantern and carnival parade from Mile End Green Bridge to";}
+        
+        
+
+
+ 

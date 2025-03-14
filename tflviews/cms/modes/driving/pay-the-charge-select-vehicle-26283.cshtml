@@ -1,0 +1,272 @@
+﻿
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@section adverts {
+    <div class="top-banner-advert" aria-hidden="true">
+        <div class="large" data-advert="/76889402/driving/payment" data-advert-sizes="970, 90|970, 250"></div>
+        <div class="medium" data-advert="/76889402/driving/payment" data-advert-sizes="728, 90"></div>
+        <div class="small" data-advert="/76889402/driving/payment" data-advert-sizes="300, 50|320, 50"></div>
+    </div>
+}
+
+
+ 
+  
+
+
+
+@{ViewBag.Title = "Vehicle details";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/pay-the-charge-select-vehicle-26283";}
+@{ViewBag.Language = "en";}
+        
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                 <li><a href="/modes/driving/pay-to-drive-in-london">Pay to drive in London</a></li>
+                
+            
+                
+                <li><span class="last-breadcrumb">Vehicle details</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Vehicle details</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/account-account-landing-29377"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+        @using TfL.Ruc.Services.ViewModels.Ruc.ZoneCharge.PayZoneCharge
+        @{
+            dynamic content = new ContentModel();
+            
+            content.ContinueButtonText = "Confirm vehicle";
+            content.BackButtonText = "Back";
+            content.ConfirmVehicleErrorText = "Select 'Find vehicle' to continue";
+            //content.CompliantVehicleErrorText = "You cannot pay for this vehicle as it is compliant.";
+            content.FindVehicleButtonText = "Find vehicle";
+            content.ConfirmEnteredVehicleButtonText = "Confirm";
+            content.VrmHelpMessageText = "<p>Be careful not to mix up the letters '<strong>I</strong>' and '<strong>O</strong>' with the numbers '<strong>1</strong>' and '<strong>0</strong>'.</p><p>Choose the country of registration carefully. If you pick the wrong one you risk getting a penalty.</p>";
+            // JSON content.VrmTitle = "Vehicle Registration Mark";
+            // JSON content.VrmPlaceHolder = "eg AB01ABC";
+            // JSON content.CountryofRegistrationTitle = "Country of registration";
+            content.CcDiscountedTitle = "A 100% Congestion Charge discount applies to this vehicle";
+            //content.CcDiscountedText = "<p>Based on the vehicle registration (VRM) details that you have entered and the classification information held by Transport for London (TfL) on this day, your vehicle is deemed 100% discounted and you are not required to pay the congestion charge.</p><p>If you believe that this information is incorrect and you still want to pay the Congestion Charge, then you can continue.</p><p><strong>Please be aware that classification may change without notification, so you should always check to see if payment is required for journeys into the zone.</strong></p>";
+            content.CcExemptTitle = "This vehicle is exempt from the Congestion Charge";
+            content.CcExemptText = "<p>This is based on the vehicle details entered and information held by the DVLA and TfL today.</p><p><strong>This may change&nbsp;- always check to see if you need to pay to drive within the zone.</strong></p>";
+            content.ExemptFromAllChargesHeading = "This vehicle is exempt";
+            content.ExemptFromAllChargesMessage = "<p>Based on the vehicle details entered and information held by the DVLA and TfL today, this vehicle is exempt from the Congestion Charge, ULEZ charges and LEZ charges.</p><p><strong>This may change - always check to see if you need to pay to drive within the zones.</strong></p>";
+            // content.ThisisNotMyVehicleTitle = "What if my vehicle details are incorrect?";
+            // content.ThisisNotMyVehicleText = "<p>If the number plate (Vehicle Registration Mark) is correct but the description shown is wrong, you can still pay charges for this vehicle.</p><p>Vehicle information is provided to us by the DVLA, so you'll need to let the DVLA know if your details are wrong or need to be updated.</p>";
+            // content.VehicleNotFoundTitle = "<p><strong>We do not hold details for this vehicle</strong></p>";
+            content.ConfirmEnteredVrmDetailsText = "Yes, this is the correct vehicle";
+            content.VehicleNotFoundText = "<p><strong>UK-registered:</strong> If your vehicle’s make and model details have not been returned, make sure you entered the number plate&nbsp;(Vehicle Registration Mark) correctly before continuing.</p><p><strong>Registered outside the United Kingdom:</strong> We are unable to display the make, model and colour information. Confirm this is the correct vehicle to continue.</p>";
+            content.QmlLimitReachedTitle = "You already have 10 vehicles saved on your Quick Management list";
+            content.QmlLimitReachedText = "<p>To add another vehicle, you will first need to remove one. You can amend your Quick Management list details when you have finished paying for this vehicle.</p>";
+            content.ConfirmSaveVehicleToQmlText = "Save this vehicle to your account to speed up making payments";
+            content.QmlUseDifferentVehicleText = "Select a different vehicle";
+            content.ActiveDiscountText = "Active discount: ";
+            content.VehicleAlreadyAddedErrorText = "No need to check the box as this vehicle is already on your account";
+            content.CheckQmlVehicleButtonText = "Select vehicle";
+            content.CountryOptionUk = "United Kingdom";
+            content.CountryOptionOther = "Non-UK";
+            content.VrmAcceptedRequireTrue = "Confirm this is the correct vehicle to continue";
+            content.VehicleRegistrationMarkRequired = "Enter a number plate (VRM) to continue";
+            // content.TChargeTooltipHeader = "T-Charge - We have changed the way your charge has been calculated, are you affected?";
+            // content.TChargeTooltipText = "<p>Cars, vans, minibuses, buses, coaches and HGVs, motorised caravans and horseboxes, breakdown and recovery vehicles, private ambulances, motor hearses, dual purpose vehicles and other specialist vehicle types that do not meet the minimum Euro emission standards are subject to the T-Charge.</p><p>Motorised tricycles and quadricycles that are subject to the Congestion Charge are also affected. Motorcycles are not subject to the T-Charge.</p><p>9+ seater vehicles that are currently registered for a discount or are exempt from paying the charge will need to meet the required emissions standards or pay the T-Charge. The minimum emissions standards are Euro 4/IV for both petrol and diesel vehicles and Euro 3 for motorised tricycles and quadricycles.</p><p>The T-Charge is a daily, not a one off charge. If your vehicle does not meet the emissions standards the additional T-Charge value will be automatically added when you pay the Congestion Charge.</p><p><a href='https://tfl.gov.uk/modes/driving/emissions-surcharge?intcmp=45125' target='_blank'>Find more information about the T-Charge</a></p>";
+            content.CcAndToxicityChargeableText = "";
+            content.CcExemptAndToxicityChargeableText = "";
+            content.ToxicityChargeHeaderText = "T-Charge to pay";
+            content.GeneralMessageHeading="<h2>What if my vehicle details are incorrect? </h2>";
+            content.GeneralMessageBody= "<p>If the number plate (Vehicle Registration Mark) is correct but the description is wrong, you can still pay charges for this vehicle.</p><p>We get vehicle information from the DVLA - let the DVLA know if your details are wrong or need to be updated.</p><p><strong>Any discounts that apply will only show if you are signed in.</strong></p>";
+            content.VrmLookUpPageUrl = "/modes/driving/pay-the-charge-select-vehicle-26283";
+            content.PayChargePageUrl = "/modes/driving/paying-the-congestion-charge-select-congestion-charge-26420";
+            
+            Html.RenderAction("SelectVehicle", "PayZoneCharge", new
+            {
+                backUrl = "/modes/driving/pay-to-drive-in-london",
+                backUrlAnon = "/modes/driving/pay-to-drive-in-london",
+                continueUrl = "/modes/driving/pay-to-drive-in-london/select-charges",
+                content = content,
+                zoneType = TfL.Ruc.Domain.Entities.Ruc.ZoneChargeZone.CongestionCharge,
+                lookupType = TfL.Ruc.Domain.Entities.Ruc.VehicleLookupType.PayCc,
+                lezContinueUrl = "/modes/driving/pay-to-drive-in-london/zone-check",
+                noChargesUrl = "/modes/driving/pay-to-drive-in-london/pay-to-drive-in-london-no-charges"
+            });
+        }
+        
+        @this.ScriptBlock(@<script>
+            queue.push(function () {
+                var vrm = "@Request.QueryString["vrm"]",
+                    country = "@Request.QueryString["country"]",
+                    $vrmSearchBox = $("#VehicleRegistrationMark"),
+                    $countryDropdown = $("#CountryofRegistration"),
+                    url = String(window.location.href),
+                    vrmInQueryString = $.trim(vrm).length > 0,
+                    countryInQueryString = $.trim(country).length > 0;
+                
+                if (vrmInQueryString) {
+                    $vrmSearchBox.val(vrm);
+                    url = url.replace("?vrm=" + vrm, "");
+                }
+                
+                if (countryInQueryString) {
+                    $countryDropdown.val(country).trigger("change");
+                    url = url.replace("&country=" + country, "");            
+                }
+                
+                if (vrmInQueryString || countryInQueryString) {
+                    history.pushState({}, document.title, url);
+                }
+            })
+        </script>)        
+      
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="advert-tile unsponsored-style google-ads" aria-hidden="true">
+  <div class="advert-link">
+    <div class="advert-content">
+        <div class="medium-large" data-advert="/76889402/driving/payment" data-advert-sizes="300, 250"></div>
+        <div class="small" data-advert="/76889402/driving/payment" data-advert-sizes="300, 250"></div>
+    </div>
+  </div>
+</div>
+@{
+    ViewBag.AmazonSlot = "'amznslots'";
+    ViewBag.AmazonAds = "'3199'"; // to add another value, this needs to be ViewBag.AmazonAds = "'3199','xx'";
+}
+      
+
+ </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+     @section scripts {
+<div class="bottom-advert ">
+    <div class="close-ad-button visually-hidden"><span class="close-icon-circle"></span></div>
+    <div data-advert="/76889402/driving/" data-advert-sizes="320, 50"></div>
+</div>
+}
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "The Congestion Charge applies to central London only and does not include the Dartford Crossing Dart Charge.";}
+        
+            
+        
+
+
+ 

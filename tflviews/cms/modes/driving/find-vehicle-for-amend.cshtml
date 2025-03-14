@@ -1,0 +1,195 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Find vehicle";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/find-vehicle-for-amend";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                 <li><a href="/modes/driving/amend-or-refund-a-driving-charge">Amend or refund a driving charge</a></li>
+                
+            
+                
+                <li><span class="last-breadcrumb">Find vehicle</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Find vehicle</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/account-account-landing-29377"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+        @using TfL.Ruc.Services.ViewModels.Ruc.ZoneCharge.PayZoneCharge
+        @{
+            dynamic content = new ContentModel();
+            
+            // Button text:
+            content.FindVehicleButtonText = "Find vehicle";
+            content.ContinueButtonText = "Confirm vehicle";
+            content.ConfirmEnteredVehicleButtonText = "Confirm";
+            content.BackButtonText = "Back";
+
+            // General:
+            content.SelectVehicleText = "<p>Be careful not to mix up the letters '<strong>I</strong>' and '<strong>O</strong>' with the numbers '<strong>1</strong>' and '<strong>0</strong>'.</p><p>Choose the country of registration carefully. If you pick the wrong one you risk getting a penalty.</p>";
+            content.ConfirmVehicleErrorText = "Select 'Find vehicle' to continue";
+            content.VrmAcceptedRequireTrue = "Confirm this is the correct vehicle to continue";
+            content.ActiveDiscountText = "Active on";
+            content.VehicleAlreadyAddedErrorText = "No need to check the box as this vehicle is already on your account";
+            content.CountryOptionUk = "United Kingdom";
+            content.CountryOptionOther = "Non-UK";
+            content.VehicleRegistrationMarkRequired = "Enter a number plate to continue";        
+            content.GeneralMessageHeading = "<h2>What if my vehicle details are incorrect?</h2>";
+            content.GeneralMessageBody = "<p>If the number plate (Vehicle Registration Mark) is correct but the description shown is wrong, you can still continue.</p><p>Vehicle information is provided to TfL by the DVLA so you'll need to let the DVLA know if your details are wrong or need to be updated.</p>";
+            content.InvalidComplianceErrorText = @"You can't amend this charge to this vehicle.  The new vehicle must have exactly the same charge rate as the current vehicle.";
+            content.VrmTitle = "Number plate (Vehicle Registration Mark)";
+            content.VrmHelpMessageText = "<p>Be careful not to mix up the letters '<strong>I</strong>' and '<strong>O</strong>' with the numbers '<strong>1</strong>' and '<strong>0</strong>'.</p><p>Choose the country of registration carefully. If you pick the wrong one you risk getting a penalty.</p>";
+            content.VrmPlaceHolder = "eg AB01ABC";
+            content.CountryofRegistrationTitle = "Country of registration";
+
+            // Vehicle not found messaging:
+            content.VehicleNotFoundTitle = "We do not hold details for this vehicle";
+            content.VehicleNotFoundText = "<p><strong>UK-registered:</strong> If your vehicle's make and model details have not been returned, make sure you entered the number plate correctly before continuing.</p><p><strong>Registered outside the United Kingdom:</strong> We are unable to display the make, model and colour information. Confirm this is the correct vehicle to continue.</p>";
+            content.ConfirmEnteredVrmDetailsText = "Yes, this is the correct vehicle";
+            content.AmendVehicleHasExistingChargesText = "A charge has already been paid for this vehicle on one or more of the days selected. Select another vehicle.";
+    
+            // Congestion zone messaging:
+            content.ExemptFromCcChargesHeading = "This vehicle is exempt from the Congestion Charge";
+            content.ExemptFromCcChargesMessage = "<p>Based on the vehicle details entered and information held by the DVLA and TfL today, this vehicle is exempt from the Congestion Charge.</p><p>If you believe this is incorrect, you can still continue to pay charges to drive in London.</p><p><strong>This may change - always check to see if you need to pay to drive within the zone.</strong></p>";
+
+            content.CcFullDiscountTitle = "Congestion Charge 100% discount";
+            content.CcFullDiscountText = "<p>This vehicle is currently registered for a Congestion Charge 100% discount.</p>";
+            content.AmendVehicleCcFullDiscountMismatchText = "<p>This vehicle does not have the 100% Congestion Charge discount of the original vehicle - it can't be used for an amend on this charge. Try a different vehicle if you can.</p>";
+
+            // Lez messaging:
+            content.LezCompliantTitle = "No LEZ charge to pay for this vehicle";
+            content.LezCompliantText = "<p>It either meets the LEZ emissions standards, has a 100% discount&nbsp;or there is no LEZ charge due.</p>";
+    
+            // Ulez messaging:
+            content.UlezCompliantTitle = "No ULEZ charge to pay for this vehicle";
+            content.UlezCompliantText = "<p>It either meets the ULEZ emissions standards or there is no ULEZ charge due.</p>";
+            content.UlezExemptTitle = "This vehicle is exempt from the ULEZ";
+            content.UlezExemptText = "<p>Based on the vehicle details entered and information held by the DVLA and TfL today, this vehicle is exempt from the ULEZ charge. If you believe this is incorrect you can still continue.</p><p><strong>This may change&nbsp;- always check to see if you need to pay to drive within the zone.</strong></p>";
+            content.UlezNotChargeableTitle = "No ULEZ charge to pay for this vehicle";
+            content.UlezNonChargeableText = "<p>It is currently classified as having no ULEZ charge due.</p>";
+            content.UlezFullDiscountTitle = "ULEZ 100% discount";
+            content.UlezFullDiscountText = "<p>This vehicle is currently registered for a ULEZ 100% discount.</p>";
+            content.AmendVehicleUlezFullDiscountMismatchText = "<p>This vehicle does not have the 100% ULEZ discount of the original vehicle. You can't use it for an amend on this charge. Try a different vehicle if you can.</p>";
+
+            content.ContinuePageUrl = "/modes/driving/amend-or-refund-a-charge";
+ 
+            Html.RenderAction(
+            "FindVehicle",
+            "DisplayZoneCharge",
+            new
+            {
+                content = content,
+                lookupType =  TfL.Ruc.Domain.Entities.Ruc.VehicleLookupType.AmendVehicle
+            });
+        }
+        
+          @this.ScriptBlock(@<script>
+            queue.push(function () {
+                var vrm = "@Request.QueryString["vrm"]",
+                    $vrmSearchBox = $("#VehicleRegistrationMark");
+        
+                if ($.trim(vrm).length > 0) {
+                    $vrmSearchBox.val(vrm);
+                    var url = String(window.location.href).replace("?vrm=" + vrm, "");
+                    history.pushState({}, document.title, url);
+                }
+            })
+            </script>)        
+      
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

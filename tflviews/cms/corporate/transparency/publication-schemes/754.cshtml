@@ -1,0 +1,88 @@
+﻿
+
+
+@{ViewBag.Title = "Transport Trading Limited";}
+        
+        
+
+<div class="r">
+    <div class="headline-container plain">
+        <h1>Transport Trading Limited</h1>
+    </div>
+</div>
+
+<div class="main-and-aside r">
+    <div class="main">
+
+<div class="on-this-page">
+
+
+     
+
+
+
+        <p>Transport Trading Limied (TTL) is the holding company for all the operating transport companies owned by TfL. It also carries out certain other trading activities. It receives the revenues from the sales of travelcards in connection with all forms of transport operated by TfL.</p>
+        <p>To find out what information TTL makes available, please select a category from below  <br />
+        </p>
+    
+
+
+<h2>Categories</h2>
+<ul>
+<li><a href="/corporate/transparency/publication-schemes/387">Who we are and what we do</a></li><li><a href="/corporate/transparency/publication-schemes/381">What we spend and how we spend it</a></li><li><a href="/corporate/transparency/publication-schemes/378">Our priorities and how we are doing</a></li><li><a href="/corporate/transparency/publication-schemes/406">How we make decisions</a></li><li><a href="/corporate/transparency/publication-schemes/399">Our policies and procedures</a></li><li><a href="/corporate/transparency/publication-schemes/374">Lists and registers</a></li><li><a href="/corporate/transparency/publication-schemes/394">The services we offer</a></li>                
+</ul>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+        
+        
+        
+        @this.ScriptBlock(
+        @<script>
+        queue.push("@Html.ScriptPath("modules/M020-on-this-page.js")", null);
+        </script>
+        )
+        
+        
+        
+        </div>
+    </div>
+    <div class="aside">
+        
+        <div data-set="sidenav-container" class="large">
+
+            
+<div id="right-hand-nav" class="expandable-list moving-source-order">
+        
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+        </div>
+
+<div class="share-widget-wrapper"></div>
+
+<div></div>
+
+        <div data-set="sidenav-container" class="small-medium"></div>
+    </div>
+</div>
+ 
+
+
+ 

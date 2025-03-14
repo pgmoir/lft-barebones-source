@@ -1,0 +1,5 @@
+﻿@model TfL.Web.ViewModels.FormBuilder.SubmissionResultViewModel
+<h1>@Html.Label(Model.PageTitleError ?? Model.PageTitleSuccess)</h1>
+<div class="global-error-middle-icon form-builder-submission">
+    @Html.Raw(Model.FailedSubmissionMessage)
+</div>

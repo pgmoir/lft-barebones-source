@@ -1,0 +1,222 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "bus route maps";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/maps_/bus-route-maps";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+
+@{
+    Response.Status = "301 Moved permanently";
+    Response.AddHeader("Location", "/maps_/bus-spider-maps");   
+}
+
+ 
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/maps_/maps">Maps</a></li>
+                
+            
+            
+                <li><span class="last-breadcrumb">bus route maps</span></li>
+            
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>bus route maps</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    <div class="on-this-page">
+      
+      
+           
+      
+      
+        
+          
+            @this.ScriptBlock(
+              @<script>
+                queue.push("@Html.ScriptPath("modules/M020-on-this-page.min.js")", null);
+              </script>
+            )
+          
+        
+      
+    </div>
+  </div>
+  <div class="aside" role="complementary">
+
+   
+    
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+ 
+ 
+                <a href="/maps_/maps" class="heading">
+                    <h2 id="sub-menu-heading">Maps<span class="visually-hidden"> navigation</span></h2>
+                </a>
+                <ul>
+                    
+                                <li class="selected"><div class="link-wrapper"><a href="/maps_/bus-route-maps">bus route maps</a></div>
+                            </li>
+ 
+                                <li><div class="link-wrapper"><a href="/maps_/index">Maps</a></div></li>
+                            
+ 
+                                <li><div class="link-wrapper"><a href="/maps_/bus-spider-maps">Bus spider maps</a></div></li>
+                            
+ 
+                </ul>
+            
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+      </div>
+    
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="advert-tile unsponsored-style google-ads" aria-hidden="true">
+  <div class="advert-link">
+    <div class="advert-content">
+        <div class="medium-large" data-advert="/76889402/maps" data-advert-sizes="300, 250"></div>
+        <div class="small" data-advert="/76889402/maps" data-advert-sizes="300, 250"></div>
+    </div>
+  </div>
+</div>
+@{
+    ViewBag.AmazonSlot = "'amznslots'";
+    ViewBag.AmazonAds = "'3199'"; // to add another value, this needs to be ViewBag.AmazonAds = "'3199','xx'";
+}
+      
+
+ </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+ 
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

@@ -1,0 +1,97 @@
+﻿
+
+
+@{ViewBag.Title = "Current services on London Underground during RMT strike action";}
+        
+        
+
+<div class="r">
+    <div class="headline-container plain">
+        <h1>Current services on London Underground during RMT strike action</h1>
+        <div class="content-page-press-release">
+        10 June 2009
+        </div>
+    </div>
+</div>
+<div class="main-and-aside r">
+    <div class="main" role="main">
+
+    <div class="article-teaser">
+        Services operating on more than half of lines.
+        
+    </div>
+
+
+
+ <div class="on-this-page">
+<p>Transport Commissioner, Peter Hendy, said: 'Services are currently running on more than half of London Underground lines, with good service on the Northern line and a decent service across the Jubilee line. </p>
+<p>'Clearly, support for the RMT leadership's actions is far from the level they were expecting.</p>
+<p>'Londoners and I will fully appreciate all the efforts being made by those Tube and transport staff who are working today to keep London moving.</p>
+<p>'The picture will change constantly throughout the day and those travelling should check before they travel via the TfL website <a href="http://www.tfl.gov.uk">tfl.gov.uk</a>&nbsp; to see how Tube services are running, or take advantage of the many alternative travel options being provided by the Mayor and TfL.'</p>
+<p>Services on London Underground are reduced this morning, due to industrial action called by the RMT leadership. However, the following services are operating:</p>
+<ul>
+<li>Northern line - good service</li>
+<li>Jubilee line - minor delays</li>
+<li>Victoria line - shuttle service between Victoria and Seven Sisters</li>
+<li>District line - shuttle service from Wimbledon to High Street Kensington</li>
+<li>Metropolitan line - shuttle service between Wembley Park and Baker Street</li>
+<li>Piccadilly line - shuttle service between Arnos Grove and Cockfosters</li>
+<li>Bakerloo line - a shuttle service will shortly start between Queen's Park and Paddington</li></ul>
+<p>We also hope to run a service on the Central and Hammersmith and City lines later today.<br></p>
+
+     
+
+        
+        
+        
+        @this.ScriptBlock(
+        @<script>
+        //queue.push("@Html.ScriptPath("modules/M020-on-this-page.min.js")", null);
+        </script>
+        )
+        
+        
+        
+        </div>
+    </div>
+    <div class="aside" role="complementary">
+
+       
+        <div data-set="sidenav-container" class="large">
+
+            
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+        </div>
+
+
+
+            
+        <div data-set="sidenav-container" class="small-medium"></div>
+    </div>
+</div>
+
+<!-- Crumbs: PGtype:  -->
+
+ 
+ 
+        
+        
+            @{ViewBag.Description = "Transport Commissioner, Peter Hendy, said: 'Services are currently running on more than half of London Underground lines, with good service on the Northern line and a decent service across the Jubilee line. 'Clearly, support for the RMT leadership's";}
+        
+        
+
+
+ 

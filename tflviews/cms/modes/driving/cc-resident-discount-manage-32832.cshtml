@@ -1,0 +1,230 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Manage residents' discount";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-resident-discount-manage-32832";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Manage residents' discount</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Manage residents' discount</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+
+	    
+		<!-- 8. resident-discount -->
+		@{
+            dynamic content = new ContentModel();
+    
+            content.SingleActiveCountText = "Discount status: Active on 1 vehicle";
+            content.ActiveCountTextFormat = "Discount status: Active";
+            content.RenewDiscountLinkText = "Renew discount";
+            content.RenewDiscountUrl = "/modes/driving/cc-resident-discount-renew-renew-34065";
+            content.ExpiryDateLabel = "Discount expiry date: ";
+            content.RenewedExpiryDateLabel = "New expiry date: ";
+            content.AddTemporaryVehicleText = "How do I add a temporary vehicle such as a courtesy or hire vehicle (for less than 30 days)?";
+            content.AddTemporaryVehicleToolTipText = "<p>Occasionally you may want to use a hire or courtesy car for a short period, for example when your own car is being repaired or serviced.</p><p>You can still qualify for the discount but you will need to pay the charge at the normal daily rate while using the vehicle. You can then apply for a refund of the difference between what you've paid and what you would have paid if you had had the discount at the time.</p><p><a href='/modes/driving/congestion-charge/contact-congestion-charge' target='_blank'>Contact us</a> by email or phone to let us know the number plate of the hire/courtesy vehicle, the date you intend to start using it and the date you expect to return it.</p><p>Remember to claim your refund within 30 days of returning the car. You will need to upload or send in a copy of the hire agreement, showing it was hired in your name. If you were using a courtesy car, you will need to send a letter on headed paper from a recognised insurance company or garage.</p>";
+  
+            Html.RenderAction("DiscountActiveVehicleCount", "DiscountManage", new
+                {
+                    area = "Ruc",
+                    discountStyle = ZoneChargeDiscountStyle.ResidentsDiscount,
+                    content = content,
+                    addVehicleUrl = "/modes/driving/cc-resident-discount-manage-add-start-34155"
+                }
+            );
+        }
+        
+        @{
+            dynamic vehicleListContent = new ContentModel();
+            /* Heading text */
+            vehicleListContent.HeadingText = "Discount vehicle(s)";
+
+            /* CommonList CMS properties */
+            vehicleListContent.ServiceError = "There was a problem - we can't retrieve your vehicles";
+
+            /* Composite Vehicle List Panel */
+            vehicleListContent.DateAddedText = "Date added: ";
+
+            /* Remove Vehicle Modal */
+            vehicleListContent.RemoveVehicleModalHeadingText = "Are you sure?";
+            vehicleListContent.RemoveVehicleModalMessageText = "This vehicle will be removed from your residents' discount only. If you have Auto Pay, go to Manage my Auto Pay to remove it.";
+            vehicleListContent.RemoveVehicleModalConfirmButtonText = "Remove";
+            vehicleListContent.RemoveVehicleModalCancelButtonText = "Keep";
+
+            /* Custom messages */
+            vehicleListContent.CustomResultsMessageFormat = "<p>You have added {0} of 1 vehicles.</p><p>If you are adding a new vehicle and you already have one on this discount, you will need to remove it first.</p>";
+            //vehicleListContent.CustomResultsMessageFormat = "<p>You have added <strong class='n-items-of'>{0}</strong> of <strong>{1}</strong> vehicles. <br/><br/>If you are adding a new vehicle and you already have one on this discount, you will need to remove it first.</p>";
+            vehicleListContent.ToxicityChargeTooltipTitle = "Ultra Low Emission Zone charge: Do you need to pay for vehicles with a residents' discount?";
+            vehicleListContent.ToxicityChargeTooltipText = "<p>For a limited time, residents registered for the residents' Congestion Charge discount will not have to pay ULEZ charges on their residents' discount vehicles.</p><p>Residents using a vehicle that doesn't meet the T-Charge emissions standards will continue to pay the T-Charge, at a discounted rate of 90%, during this grace period.</p><p>From 25 October 2021, residents must pay the full daily ULEZ charge to drive a vehicle within the zone if it does not meet the ULEZ standards. <a href='/modes/driving/check-your-vehicle-35896'>Check if your vehicle meets the standards.</a></p>";
+
+            /* Add or Apply for vehicle buttons */
+            vehicleListContent.AddVehicleButtonText = "Add vehicle to discount";
+            vehicleListContent.AddVehicleUrl = "/modes/driving/cc-resident-discount-manage-add-start-34155";
+            
+            vehicleListContent.FullDiscountLabel = "100% discount";
+            vehicleListContent.FullDiscountMessage = "This vehicle is currently registered for a 100% discount from this charge. Check when the discount expires in the 'Manage discounts' section of your account.";
+
+            Html.RenderAction("Index", "CompositeVehicles", new
+                {
+                    content = vehicleListContent,
+                    compositeVehicleServiceStyle = CompositeVehicleServiceStyle.Discount,
+                    zoneChargeDiscountStyle = ZoneChargeDiscountStyle.ResidentsDiscount
+                }
+            );
+        }
+
+        <div class="margin-bottom"> 
+            @ModulesHelpers.ProminantInlineHelp(
+                content.AddTemporaryVehicleText,
+                content.AddTemporaryVehicleToolTipText,
+                id: "cc-enquiry-inline-help"
+            )
+        </div>
+        
+        @ModulesHelpers.BoxedLink(
+            href: "/modes/driving/cc-autopay-manage-view-vehicle-history-30894", 
+            id: "vehicle-history", 
+            text: "Residents' discount vehicle history", 
+            soloButton: true
+        )
+
+        @FormHelpers.DottedSeparator()
+        @ModulesHelpers.BackLink()
+
+        @this.ScriptBlock(
+            @<script>
+               queue.push("@Html.ScriptPath("modules/M020-on-this-page.min.js")", null);
+               queue.push("@Html.ScriptPath("specific/results-paginator.min.js")", function () {
+                     $('#vehicle-list').paginator({
+                         showItemCount: true
+                     });
+                 });
+            </script>
+        )
+		
+	  
+
+  
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        <div class="vertical-button-container">
+    <ul>
+        
+        
+        
+        <li><a href="/modes/driving/account-vehicles"  class="plain-button">Pay to drive in London</a></li>
+        
+        
+        <li><a href="/modes/driving/congestion-charge/congestion-charge-zone"  class="plain-button">Congestion Charge/ULEZ zone</a></li>
+        
+        
+        <li><a href="/modes/driving/check-your-vehicle-35896"  class="plain-button">Check your vehicle</a></li>
+        
+        
+        <li><a href="/modes/driving/amend-or-refund-a-driving-charge"  class="plain-button">Amend/refund a charge</a></li>
+        
+        
+        <li><a href="/modes/driving/congestion-charge/contact-congestion-charge"  class="plain-button">Contact us</a></li>
+        
+        
+        <li><a href="/modes/driving/ultra-low-emission-zone/scrappage-scheme"  class="plain-button">Scrappage scheme</a></li>
+        
+    </ul>
+</div>
+
+      </div>
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

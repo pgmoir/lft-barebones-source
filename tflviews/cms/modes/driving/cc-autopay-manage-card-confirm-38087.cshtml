@@ -1,0 +1,110 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Auto Pay - Manage - Card confirm";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-autopay-manage-card-confirm-38087";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                 <li><a href="/modes/driving/auto-pay">Auto Pay</a></li>
+                
+            
+            
+                
+                <li><span class="last-breadcrumb">Auto Pay - Manage - Card confirm</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Auto Pay - Manage - Card confirm</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+ 
+
+
+		
+		<!-- 4. / congestion-charge / autopay / manage / card-confirm -->
+		@{
+            Html.RenderAction("CardConfirm", "AutoPayManage", new
+                {
+                    area = "Ruc",
+                    successUrl = "/modes/driving/cc-autopay-manage-manage-29152",
+                    cardFailureUrl = "/modes/driving/cc-autopay-manage-card-error-38086",
+                    cancelUrl = "/modes/driving/cc-autopay-manage-select-payment-option-37989"
+                }
+            );
+        }
+		
+	  
+
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

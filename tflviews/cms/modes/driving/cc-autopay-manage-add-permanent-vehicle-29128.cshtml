@@ -1,0 +1,168 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Add vehicles to Auto Pay";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-autopay-manage-add-permanent-vehicle-29128";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                 <li><a href="/modes/driving/auto-pay">Auto Pay</a></li>
+                
+            
+            
+            
+                <li><span class="last-breadcrumb">Add vehicles to Auto Pay</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Add vehicles to Auto Pay</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+      <div class="article-teaser">
+        <p>You can add up to 5 vehicles to Auto Pay.</p>
+        
+      </div>
+    
+    
+      <p>There is a &pound;10 annual registration charge for each vehicle. This will be added to your next monthly statement.</p>
+      
+           
+      
+
+        @{
+            dynamic content = new ContentModel();
+            content.AddVehicleButtonText = "Add another vehicle";
+            content.ConfirmVehicleButtonText = "Confirm vehicle";
+            content.BackButtonText = "Back";
+            content.ContinueButtonText = "Continue";
+            content.CannotAddMoreVehiclesWarningText = "<p>You can add up to 5 vehicles to Auto Pay. If you are a business customer and have more than 5 vehicles, you may want to set up a <a href='/modes/driving/fleet-autopay-apply-apply-29058'>Fleet Auto Pay service</a>.</p>";
+            content.CannotAddMoreVehiclesErrorText = "You can't add any more vehicles";
+            content.MustFindVehicleErrorText = "Find vehicle to continue";
+            content.MustHaveAtLeastOneVehicleErrorText = "Find vehicle to continue";
+            // JSON content.FindVehicleButtonText = "Find vehicle";
+            content.ConfirmEnteredVehicleButtonText = "Confirm vehicle";
+            // JSON content.VrmTitle = "Vehicle Registration Mark";
+            // JSON content.VrmHelpMessageText = "Be careful not to mix up the letters 'I' and 'O' with the numbers '1' and '0'.";
+            // JSON content.VrmPlaceHolder = "eg AB01ABC";
+            // JSON content.CountryofRegistrationTitle = "Country of registration";
+            //content.CcDiscountedTitle = "No charge payable for ";
+            //content.CcDiscountedText = "<p>Based on the vehicle registration (VRM) details that you have entered and the classification information held by Transport for London (TfL) on this day, your vehicle is deemed 100% discounted and you are not required to pay the congestion charge.</p><p>If you believe that this information is incorrect and you still want to pay the Congestion Charge, then you can continue.</p><p><strong>Please be aware that classification may change without notification, so you should always check to see if payment is required for journeys into the zone.</strong></p>";
+            //content.CcDiscountedText = "<pre style='font: 12px/1.4 consolas, menlo, &quot;liberation mono&quot;, courier, monospace; margin: 0px; padding: 0px; color: rgb(51, 51, 51); text-transform: none; text-indent: 0px; letter-spacing: normal; word-spacing: 0px; widows: 1; font-size-adjust: none; font-stretch: normal; background-color: rgb(255, 255, 255); -webkit-text-stroke-width: 0px;'><span class='nt' style='color: navy;'>&lt;p&gt;</span>Based on the vehicle registration (VRM) details that you have entered and the classification information held by Transport for London (TfL) on this day, your vehicle is deemed 100% discounted and you are not required to pay the congestion charge.<span class='nt' style='color: navy;'>&lt;/p&gt;&lt;p&gt;</span>If you believe that this information is incorrect and you still want to pay the Congestion Charge, then you can continue.<span class='nt' style='color: navy;'>&lt;/p&gt;&lt;p&gt;&lt;strong&gt;</span>Please be aware that classification may change without notification, so you should always check to see if payment is required for journeys into the zone.<span class='nt' style='color: navy;'>&lt;/strong&gt;&lt;/p&gt;</span></pre>";
+            content.CcExemptTitle = "No charge to pay for ";
+            content.CcExemptText = "<p>Based on the vehicle details entered and information held by the DVLA and TfL today, this vehicle is exempt from the Congestion Charge. If you believe this is incorrect and you still want to pay the Congestion Charge, add this vehicle or apply for a discount, then you can continue with this process.</p><p><strong>This may change at any time - always check to see if you need to pay to drive within the zone.</strong></p>";
+            content.ThisisNotMyVehicleTitle = "What if my vehicle details are incorrect?";
+            content.ThisisNotMyVehicleText = "<p>If the number plate is correct but the description shown is wrong, you can still pay for this vehicle.</p><p>Vehicle information is provided to TfL by the DVLA, so you'll need to let the DVLA know if your details are wrong or need to be updated.</p>";
+            // JSON content.VehicleNotFoundTitle = "<strong><p>We do not hold any details for this vehicle<p></strong>";
+            // JSON content.ConfirmEnteredVrmDetailsText = "I confirm that this is the correct vehicle";
+            // JSON content.VehicleNotFoundText = "<span><p><strong>UK-registered:</strong> If your vehicle’s make and model details have not been returned, please make sure you entered the Vehicle Registration Mark correctly before continuing.</p><p><strong>Registered outside the United Kingdom:</strong> We are unable to display the make, model and colour information. Confirm your details before continuing.</p></span>";
+            content.VehicleAlreadyAddedErrorText = "You have already added this vehicle";
+            content.VehicleOnAutoPayExceptionErrorText = "This vehicle can't be added to your Auto Pay service. Click 'Edit' to select a new vehicle, or on 'Back' to return to your service summary page.";
+            content.VehicleOnAutoPayErrorText = "<p>This vehicle can't be added to your Auto Pay. It has already been registered for Auto Pay by someone else on another account.</p><p>To add this vehicle you need to prove that you have authority to do so. Call us on 0343 222 2222 (<a href='/corporate/terms-and-conditions/tfl-call-charges' target='_blank'>TfL call charges</a>) for more information.</p><p>If this is not the vehicle you meant to add, click on 'Edit' to select another vehicle.</p>";
+            content.ActiveDiscountText = "Active on ";
+            content.SelectedVehiclesCountText = "Total number of vehicles (including vehicles below) added to Auto Pay:  ";
+            content.CanAddStartText = "<br/><br/><p>You can add</p> ";
+            content.CanAddEndText = " more vehicle(s).";
+            // JSON content.CountryOptionUk = "United Kingdom";
+            // JSON content.CountryOptionOther = "Other";
+            content.FriendlyNameLabel = "Tag";
+            content.CancelButtonText = "Cancel vehicle";
+            content.FriendlyNameStringLength = "The vehicle tag can't be more than 40 characters";
+            // JSON content.VrmAcceptedRequireTrue = "Confirm that this is the correct vehicle to continue";
+            // JSON content.VehicleRegistrationMarkRequired = "Enter a Vehicle Registration Mark to continue";
+            content.CcAndToxicityChargeableText = "<p>Your vehicle does not meet the required emissions standard, when paying the Congestion Charge the total amount payable will include an additional T- Charge value. More information on the T-Charge can be found at <a href='/driving/t-charge' target='_blank'>tfl.gov.uk/driving/t-charge</a></p>";
+            content.CcExemptAndToxicityChargeableText = "<p>Your vehicle does not meet the required emissions standard, although you are currently exempt from the Congestion Charge you will need a T-Charge value to drive your vehicle in the Congestion Charging zone. More information on the T-Charge can be found at <a href='/driving/t-charge' target='_blank'>tfl.gov.uk/driving/t-charge</a></p>";
+            content.ToxicityChargeHeaderText = "T-Charge to pay";
+            
+            Html.RenderAction(
+                RucDictionary.AutoPayManage.AddVehiclesActionName,
+                "AutoPayManage",
+                new
+                {
+                    area = "Ruc",
+                    backUrl = "/modes/driving/cc-autopay-manage-manage-autopay-cc-29141",
+                    successUrl = "/modes/driving/cc-autopay-manage-success-29161",
+                    failureUrl = "/modes/driving/cc-autopay-manage-failure-29132",
+                    content = content,
+                    feePerVehicle = 10m,
+                    style = ZoneChargeAutoPayStyle.CongestionCharge,
+                    lookupType = TfL.Ruc.Domain.Entities.Ruc.VehicleLookupType.AutoPay
+                }
+            );
+        }
+      
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "You can add up to 5 vehicles to Auto Pay.";}
+        
+            
+        
+
+
+ 

@@ -1,0 +1,110 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Account - Change card confirm";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/account-change-card-error-35145";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+                
+                <li><span class="last-breadcrumb">Account - Change card confirm</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Account - Change card confirm</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+
+		
+        <!-- account / change-card-confirm -->  
+        @{
+            Html.RenderAction(
+                "CardConfirm",
+                "Payment",
+                new
+                {
+                    area = "Ruc",
+                    paymentDetailsUrl = "/modes/driving/account-payment-details-35126",
+                    cardFailureUrl = "/modes/driving/account-change-card-error-35142",
+                    cancelUrl = "/modes/driving/account-payment-details-35126"
+                }
+            );
+        }
+	    
+	  
+
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

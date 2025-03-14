@@ -1,0 +1,132 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Ad hoc vehicle charge";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/fleet-autopay-adhoc-add-adhoc-vehicle-landing";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                 <li><a href="/modes/driving/auto-pay">Auto Pay</a></li>
+                
+            
+            
+            
+                <li><span class="last-breadcrumb">Ad hoc vehicle charge</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Ad hoc vehicle charge</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+      <div class="article-teaser">
+        <p>Pay a single day ULEZ and/or Congestion Charge for a vehicle that is not on Fleet Auto Pay.</p>
+        
+      </div>
+    
+    
+      
+      
+           
+      <div>
+
+<p>There is no annual registration charge for these vehicles. The Congestion Charge and/or ULEZ charge will be added to your next monthly statement.</p>
+</div>
+ 
+
+        @{
+            dynamic content = new ContentModel();
+
+            content.AllowanceHeadingText = "Your allowance";
+            content.AllowanceText = "You have {0} ad hoc charges available to use until {1}.";
+            content.ContinueButtonText = "Continue";
+            content.BackButtonText = "Back";
+
+            Html.RenderAction(
+            RucDictionary.AutoPayManage.AddAdhocVehicleLandingActionName,
+            "AutoPayManageAdhocVehicle",
+                new
+                {
+                    area = "Ruc",
+                    continueUrl = "/modes/driving/fleet-autopay-adhoc-add-adhoc-vehicle-34815",
+                    content = content
+                }
+                );
+        }
+	  
+
+
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "Pay a single day ULEZ and/or Congestion Charge for a vehicle that is not on Fleet Auto Pay.";}
+        
+            
+        
+
+
+ 

@@ -1,0 +1,88 @@
+﻿
+
+
+@{ViewBag.Title = "London Dial-A-Ride Limited";}
+        
+        
+
+<div class="r">
+    <div class="headline-container plain">
+        <h1>London Dial-A-Ride Limited</h1>
+    </div>
+</div>
+
+<div class="main-and-aside r">
+    <div class="main">
+
+<div class="on-this-page">
+
+
+     
+
+
+
+        <p>Dial-a-Ride Limited was incorporated in 1991 as a contingency measure, should it have become necessary for certain services to be operated directly; it has never traded. It is owned by London Bus Services Limited (LBSL). The Dial-a-Ride service is operated by London Buses Limited (LBL). </p>
+        <p>As the Dial-a-Ride service is operated by LBL, further information can be found in the <a href="/corporate/transparency/publication-schemes/london-buses-limited">LBL publication scheme</a></p>
+        <p> </p>
+    
+
+
+<h2>Categories</h2>
+<ul>
+<li><a href="/corporate/transparency/publication-schemes/604">Who we are and what we do</a></li><li><a href="/corporate/transparency/publication-schemes/594">What we spend and how we spend it</a></li><li><a href="/corporate/transparency/publication-schemes/591">Our priorities and how we are doing</a></li><li><a href="/corporate/transparency/publication-schemes/584">How we make decisions</a></li><li><a href="/corporate/transparency/publication-schemes/577">Our policies and procedures</a></li><li><a href="/corporate/transparency/publication-schemes/600">Lists and registers</a></li><li><a href="/corporate/transparency/publication-schemes/586">The services we offer</a></li>                
+</ul>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+        
+        
+        
+        @this.ScriptBlock(
+        @<script>
+        queue.push("@Html.ScriptPath("modules/M020-on-this-page.js")", null);
+        </script>
+        )
+        
+        
+        
+        </div>
+    </div>
+    <div class="aside">
+        
+        <div data-set="sidenav-container" class="large">
+
+            
+<div id="right-hand-nav" class="expandable-list moving-source-order">
+        
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+        </div>
+
+<div class="share-widget-wrapper"></div>
+
+<div></div>
+
+        <div data-set="sidenav-container" class="small-medium"></div>
+    </div>
+</div>
+ 
+
+
+ 

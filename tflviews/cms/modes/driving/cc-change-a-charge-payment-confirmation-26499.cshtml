@@ -1,0 +1,203 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Amend a Congestion Charge";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-change-a-charge-payment-confirmation-26499";}
+@{ViewBag.Language = "en";}
+        
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Amend a Congestion Charge</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Amend a Congestion Charge</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/account-account-landing-29377"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+    
+      <h2>Confirmation</h2>
+      
+           
+      
+
+ 
+
+
+		
+		<!-- 6. cc-payment-confirmation -->
+		@using TfL.Ruc.Services.ViewModels.Ruc.ZoneCharge.PayZoneCharge
+		@{
+            dynamic content = new ContentModel();
+                
+            content.ThankYouHeading = "Thank you for your payment";
+            content.ConfirmationEmailText = "Confirmation email sent to: {0}";
+            content.PreviousChargeDetailsLabel = "Current charge details";
+            content.AmendChargeDetailsLabel = "New charge details";
+            content.RegisterAutoPayTitle = "Set up Auto Pay";
+            content.RegisterAutoPayText = "Auto Pay is the quickest and simplest way to pay your Congestion Charge";
+            content.AutoPayTitle = "Find out more about Auto Pay";
+            content.CreateanAccountTitle = "Create a London Road User Charging account";
+            content.CreateanAccountText = "Speed up future payments by creating an account";
+            content.TotalAmount = "Charge amendment administration fee: ";
+            content.PaymentReferenceNumber = "Payment reference number: ";
+            content.ConfirmationSMSText = "A confirmation message has been sent to your mobile phone.";
+            content.DailyCongestionChargesBasketText = "Daily Congestion Charge (1 day)";
+            
+            content.WeeklyCongestionChargesBasketText = "Weekly Congestion Charge";
+            content.MonthlyCongestionChargesBasketText = "Monthly Congestion Charge ({0} days)";
+            content.AnnualCongestionChargesBasketText = "Annual Congestion Charge ({0} days)";
+            content.RangeCongestionChargesBasketText = "Custom Congestion Charge ({0} days)";
+
+            //content.LezStandardChargeBasketText = "Daily low emission zone charge (standard)";
+            //content.LezHigherChargeBasketText = "Daily low emission zone charge (higher)";
+            content.PaymentSummaryHeadingText = "Payment summary";
+            
+            content.RegisterAutoPayUrl = "/modes/driving/autopay-apply-select-service";
+            content.AutoPayUrl = "/modes/driving/auto-pay";
+            content.CreateAccountUrl = "/modes/driving/account-create-account-29278";
+
+            Html.RenderAction("PaymentConfirmation", "ChangeZoneCharge",
+                new
+                    {
+                        area = "Ruc",
+                        content = content,
+                        zoneType = ZoneChargeZone.CongestionCharge
+                    }
+            );
+        }
+		
+		
+	  
+
+  
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+        @ModulesHelpers.PrintButton()
+      
+ 
+      </div>
+    
+    <div></div>
+    
+      <div>
+                    
+        <div class="vertical-button-container">
+    <ul>
+        
+        
+        
+        <li><a href="/modes/driving/account-vehicles"  class="plain-button">Pay to drive in London</a></li>
+        
+        
+        <li><a href="/modes/driving/congestion-charge/congestion-charge-zone"  class="plain-button">Congestion Charge/ULEZ zone</a></li>
+        
+        
+        <li><a href="/modes/driving/check-your-vehicle-35896"  class="plain-button">Check your vehicle</a></li>
+        
+        
+        <li><a href="/modes/driving/amend-or-refund-a-driving-charge"  class="plain-button">Amend/refund a charge</a></li>
+        
+        
+        <li><a href="/modes/driving/congestion-charge/contact-congestion-charge"  class="plain-button">Contact us</a></li>
+        
+        
+        <li><a href="/modes/driving/ultra-low-emission-zone/scrappage-scheme"  class="plain-button">Scrappage scheme</a></li>
+        
+    </ul>
+</div>
+
+      </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

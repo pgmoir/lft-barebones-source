@@ -1,0 +1,38 @@
+﻿
+    
+  
+
+
+<!-- rhroot -->
+@{ViewBag.Title = "Search";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/search/index";}
+@{ViewBag.Language = "en";}
+        
+        
+        
+@{ViewBag.Title = "Search: " + ViewBag.SearchQuery;}
+<div class="r">
+    <div class="headline-container section-title search-title">
+        <h1 class="hero-headline">@ViewBag.Title</h1>
+    </div>
+</div>
+<div class="r">
+    <div class="main clearfix">
+        @{
+        Html.RenderAction("Search", "Search", null);
+        }
+    </div>
+</div>        
+    
+ 
+        
+        
+        
+            @{ViewBag.Description = "Search the TfL website";}
+        
+            
+        
+
+
+ 

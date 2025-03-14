@@ -1,0 +1,94 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Audit Commission 2010";}
+
+
+        <!-- empty placeholder -->
+ 
+        
+
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Audit Commission 2010</h1>
+  </div>
+</div>
+<div class="main-and-aside r">
+  <div class="main">
+    
+    <div class="on-this-page">
+      
+      
+           
+      
+      
+        
+          
+            @this.ScriptBlock(
+              @<script>
+                queue.push("@Html.ScriptPath("modules/M020-on-this-page.min.js")", null);
+              </script>
+            )
+          
+        
+      
+    </div>
+  </div>
+  <div class="aside">
+    
+    
+      <div class="share-widget-wrapper"></div>
+    
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+<div id="right-hand-nav" class="expandable-list moving-source-order">
+        
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+      </div>
+    
+    <div>
+
+
+
+
+<div class="advert-tile unsponsored-style google-ads">
+  <div class="advert-link">
+    <div class="advert-content">
+        <div class="medium-large" data-advert="/3595/TFL/Homepage" data-advert-sizes="300, 250"></div>
+        <div class="small" data-advert="/3595/TFL/Homepage" data-advert-sizes="300, 250|300, 600"></div>
+    </div>
+  </div>
+</div>
+@{
+    ViewBag.AmazonSlot = "'amznslots'";
+    ViewBag.AmazonAds = "'3199'"; // to add another value, this needs to be ViewBag.AmazonAds = "'3199','xx'";
+}
+      
+
+ </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+ 
+ 
+
+
+ 

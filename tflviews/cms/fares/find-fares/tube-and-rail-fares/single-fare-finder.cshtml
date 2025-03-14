@@ -1,0 +1,75 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Single fare finder";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/fares/find-fares/tube-and-rail-fares/single-fare-finder";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+
+            @{ViewBag.sffmessage = "</p><p>Fares between two stations may vary depending on the direction of travel, time of day and day of the week.</p><p>Single fare finder only shows the cost of a single rail journey. Our <a href='https://tfl.gov.uk/fares/find-fares/tube-and-rail-fares/caps-and-travelcard-prices'>caps and Travelcards tool</a> shows the prices of caps and Travelcards.";}
+            @{ViewBag.sffArticleTeaser = "<p>Find out the cost of a journey between any two stations on Tube, DLR, London Overground, TfL Rail and National Rail services where pay as you go (contactless or Oyster) is accepted.</p>";}
+            <div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/fares/index">Fares</a></li>
+                
+            
+                 <li><a href="/fares/find-fares">Find fares</a></li>
+                
+            
+                 <li><a href="/fares/find-fares/tube-and-rail-fares">Tube and rail fares</a></li>
+                
+            
+            
+                <li><span class="last-breadcrumb">Single fare finder</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+            <div class="r"> 
+                <div class="headline-container content-page clearfix heading-dropdowns-wrap">
+                    <h1>Single fare finder</h1>
+                </div>
+            </div>
+            <div class="r"> 
+                <div class="main"> 
+                    @{ Html.RenderAction("SingleFareFinder", "FaresData", new 
+                        { sff = @ViewBag.sffmessage, SffArticleTeaser = @ViewBag.sffArticleTeaser });} 
+                </div> 
+            </div>   
+        
+ 
+        
+        
+        
+            @{ViewBag.Description = "Find fares between any two stations in London";}
+        
+            
+        
+
+
+ 

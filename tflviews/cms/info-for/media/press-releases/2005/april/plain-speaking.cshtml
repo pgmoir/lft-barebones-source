@@ -1,0 +1,108 @@
+﻿
+
+
+@{ViewBag.Title = "Plain speaking";}
+        
+        
+
+<div class="r">
+    <div class="headline-container plain">
+        <h1>Plain speaking</h1>
+        <div class="content-page-press-release">
+        01 April 2005
+        </div>
+    </div>
+</div>
+<div class="main-and-aside r">
+    <div class="main" role="main">
+
+    <div class="article-teaser">
+        Tube platform announcements telling customers how the service is running will, from April 3, be consistent across the Underground network.
+        
+    </div>
+
+
+
+ <div class="on-this-page">
+<p><br>This consistency will provide customers with accurate and clear 
+information about the service if it's disrupted so they will be able to make 
+informed decision on how to continue their journey. </p>
+<p>This information will also be displayed on the service update boards in the 
+ticket halls.</p>
+<p><strong>Improving customer information</strong> </p>
+<div class="table-container"><table class="datatable" title="This is a table title" width="80%" summary="This is a table summary">
+<tbody>
+<tr>
+<th>Customer message</th>
+<th>What this means</th></tr>
+<tr>
+<td>Good Service</td>
+<td>No noticeable impact on your journey</td></tr>
+<tr>
+<td>Minor Delays</td>
+<td>Noticeably longer journey time however, stay with your planned 
+route</td></tr>
+<tr>
+<td>Severe Delays</td>
+<td>Significantly longer journey time - consider using another route</td></tr>
+<tr>
+<td>Suspended / Part Suspended</td>
+<td>Your planned route is unavailable - please use another route or mode of 
+transport - ask staff about your options </td></tr></tbody></table></div>
+
+     
+
+        
+        
+        
+        @this.ScriptBlock(
+        @<script>
+        //queue.push("@Html.ScriptPath("modules/M020-on-this-page.min.js")", null);
+        </script>
+        )
+        
+        
+        
+        </div>
+    </div>
+    <div class="aside" role="complementary">
+
+       
+        <div data-set="sidenav-container" class="large">
+
+            
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+        </div>
+
+
+
+            
+        <div data-set="sidenav-container" class="small-medium"></div>
+    </div>
+</div>
+
+<!-- Crumbs: PGtype:  -->
+
+ 
+ 
+        
+        
+            @{ViewBag.Description = "This consistency will provide customers with accurate and clear information about the service if it's disrupted so they will be able to make informed decision on how to continue their journey. This information will also be displayed on the service update";}
+        
+        
+
+
+ 

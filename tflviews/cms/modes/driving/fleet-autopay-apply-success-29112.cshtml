@@ -1,0 +1,182 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Application in progress";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/fleet-autopay-apply-success-29112";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                 <li><a href="/modes/driving/auto-pay">Auto Pay</a></li>
+                
+            
+            
+            
+                <li><span class="last-breadcrumb">Application in progress</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Application in progress</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+        @{
+            dynamic content = new ContentModel();
+            content.ConfirmationHeading = " ";
+            content.ReferenceNumberText = "Your reference number is ";
+            content.ConfirmationText = @"<h2>Your reference number is {0}</h2><p> Your application can take up to 10 working days to be processed. We'll email you when your service is ready to use - at that point you can add your vehicles to Fleet Auto Pay.</p>";
+            content.ConfirmationEmailAddressText = "Confirmation email sent to: {0}";
+            content.PayCcHeading = "Travelling in the next few days?";
+            content.PayCcText = "If you drive within central London while we review your application you need to pay the Congestion Charge and, if your vehicle does not meet the emissions standards, the ULEZ charge. ";
+            content.PayCcLinkText = "Pay to drive in London";
+            content.SmsAlertsHeading = "Mobile phone text message alerts";
+            content.SmsAlertsText = "When you sign up for free mobile phone alerts, we can let you know by text if there are any problems with your Fleet Auto Pay payments.";
+            content.SetupSmsLinkText = "Set up mobile phone text message alerts";
+            content.ShareAccountHeading = "Share access to your account";
+            content.ShareAccountText = @"<p>To help you manage the day-to-day administration of your Fleet Auto Pay service, you can allow up to 5<strong> </strong>people access to your London Road User Charging account.</p>";
+            content.ShareAccountLinkText = "Go to my account";
+            
+            content.SuccessTooltipText = "This is the new status of your Auto Pay service.";
+            
+            content.PayToDriveInLondonButtonText = "Pay to drive in London";
+            content.PayToDriveInLondonButtonUrl = "/modes/driving/pay-to-drive-in-london";
+            content.AccountButtonText = "Go to account settings";
+            content.AccountUrl = "/modes/driving/account-account-landing-29377";
+            content.AccountNumberMessage = "Your account number is {0}.";
+            content.AccountNumberDetailedMessage = "You will need this to log in and manage your service.";
+            
+            content.ExtraInformation = @"<h3>Add account users</h3><p>You can add up to 5 other users to help manage your Fleet Auto Pay service. Once your application is processed you can enter their details in your account settings.</p>";
+            
+            content.PersonalAccountSettingUrl = "/modes/driving/account-account-settings-29386";
+            content.BusinessAccountSettingUrl = "/modes/driving/account-account-settings-29386";
+
+            Html.RenderAction(
+                RucDictionary.AutoPayApply.SuccessFleetActionName,
+                "AutoPayApplyFleet",
+                new
+                {
+                    area = "Ruc",
+                    content = content,
+                    payCongestionChargeUrl = "/modes/driving/pay-the-charge-select-vehicle-26283",
+                    setupSmsUrl = "/modes/driving/account-account-settings-29386#mobile",
+                    shareAccountUrl = "/modes/driving/account-account-settings-29386#AccountUsers",
+                    reviewUrl = "/modes/driving/fleet-autopay-apply-review-29102",
+                    journeyStartUrl = "/modes/driving/fleet-autopay-apply-apply-29058"
+                }
+            );
+        }
+      
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+        @ModulesHelpers.PrintButton()
+      
+ 
+      </div>
+    
+    <div></div>
+    
+      <div>
+                    
+        <div class="vertical-button-container">
+    <ul>
+        
+        
+        
+        <li><a href="/modes/driving/congestion-charge/paying-the-congestion-charge"  class="plain-button">Congestion Charge payments</a></li>
+        
+        
+        <li><a href="/modes/driving/congestion-charge/congestion-charge-zone"  class="plain-button">Congestion Charge zone</a></li>
+        
+        
+        <li><a href="/modes/driving/auto-pay"  class="plain-button">Auto Pay</a></li>
+        
+        
+        <li><a href="/modes/driving/congestion-charge/discounts-and-exemptions"  class="plain-button">Discounts and exemptions</a></li>
+        
+        
+        <li><a href="/modes/driving/congestion-charge/contact-congestion-charge"  class="plain-button">Contact Congestion Charge</a></li>
+        
+    </ul>
+</div>
+
+      </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

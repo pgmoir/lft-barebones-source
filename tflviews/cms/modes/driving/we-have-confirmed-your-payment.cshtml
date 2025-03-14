@@ -1,0 +1,168 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Payment success";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/we-have-confirmed-your-payment";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+                 <li><a href="/modes/driving/pay-a-pcn">Pay a PCN</a></li>
+                
+            
+                 <li><a href="/modes/driving/pay-pcn-details">PCN details</a></li>
+                
+            
+                 <li><a href="/modes/driving/basket">Basket</a></li>
+                
+            
+                 <li><a href="/modes/driving/payment-result">Payment result</a></li>
+                
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Payment success</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+                @{
+                    dynamic content = new ContentModel();
+                    
+                    content.ThankYouHeading = "Thank you for your payment";
+                    content.TotalAmount = "Your total amount is: ";
+                    content.PaymentReferenceNumber = "Your payment reference number is: ";
+                    content.MakeNoteText = "Make a note of this number for your records.";
+                    content.PayPcnUrl = "/modes/driving/pay-a-pcn";
+                    content.TotalText = "Total paid";
+                    content.PrintButtonText = "Print this page";
+                    content.PcnSectionHeading = "PCNs paid";
+                    content.EmailMessageText = "We have sent an email to: {0}";
+                    content.AutoPaySectionHeading = "Want to avoid another penalty?";
+                    content.AutoPaySectionBody = "<p>Auto Pay records the number of charging days a vehicle travels within the Congestion Charge zone and, if it does not meet the emissions standards, the ULEZ. We then bill you every month - you don’t have to worry about forgetting to pay.</p>";
+                    content.AutoPayUrl = "/modes/driving/auto-pay";
+                    content.AutoPayButtonText = "Set up Auto Pay";
+                    
+                    Html.RenderAction("PaymentConfirmation", "PenaltyChargeNotice", new { area = "Ruc", content = content });
+                }
+                
+                <form action="/Ruc/pcn/RedirectToSearch" method="post">
+                    <input type="hidden" id="viewPcnPageUrl" name="viewPcnPageUrl" value="/modes/driving/pay-a-pcn" />
+                    <div class="button-set">
+                        <input id="primary-button" type="submit" class="secondary-button" value="Find another PCN">
+                        <a id="finish-btn" href="/modes/driving/index" class="primary-button">Finish</a>
+                    </div>
+                </form>
+      
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+        @ModulesHelpers.PrintButton()
+      
+ 
+      </div>
+    
+    <div></div>
+    
+      <div class="module-grid clearfix">
+                    
+        <div class="vertical-button-container">
+    <ul>
+        
+        
+        
+        <li><a href="/modes/driving/red-routes"  class="plain-button">Red routes</a></li>
+        
+        
+        <li><a href="/modes/driving/red-routes/penalty-charge-notices"  class="plain-button">Penalty Charge Notices</a></li>
+        
+        
+        <li><a href="/modes/driving/red-routes/penalty-charge-notices/enforcement-process"  class="plain-button">Enforcement process</a></li>
+        
+        
+        <li><a href="/modes/driving/red-routes/penalty-charge-notices/make-a-representation"  class="plain-button">Making a representation</a></li>
+        
+        
+        <li><a href="/modes/driving/red-routes/rules-of-red-routes"  class="plain-button">Rules of red routes</a></li>
+        
+        
+        <li><a href="/modes/driving/red-routes/penalty-charge-notices/local-authority-pcns"  class="plain-button">Local Authority PCNs</a></li>
+        
+    </ul>
+</div>
+
+      </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "Payment successful";}
+        
+            
+        
+
+
+ 

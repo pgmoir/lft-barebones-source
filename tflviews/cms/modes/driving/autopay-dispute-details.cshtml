@@ -1,0 +1,141 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Auto Pay charge query";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/autopay-dispute-details";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+                <li><span class="last-breadcrumb">Auto Pay charge query</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Auto Pay charge query</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      <h2>Details</h2>
+      
+           
+      
+
+ 
+
+
+		
+		<!-- 4. dispute-details -->
+		@{
+            dynamic content = new ContentModel();
+
+            content.DisputeDescription = "If you believe that this Auto Pay charge should not have been added to your Auto Pay service, give as many details as possible.";
+            content.DisputeReasonSelectLabel = "Reason for charge query";
+            content.OtherText = "<strong>Does this query relate to any other charges?</strong> Provide details, along with a summary of why you are querying the charges.";
+            content.DisputeDetailsLabel = "Details";
+
+            content.CharactersAvailableTextFormat = "Characters {0}/2800";
+
+            content.UploadTitle = "Supporting documents";
+            content.UploadText = "Attach any documents that may help support your dispute.";
+
+            content.UploadHelperTitle = "How do I upload the documents?";
+            content.UploadHelperText = "<p>You can scan paper documents into your computer, or take photographs of them with your camera, smartphone or tablet. You’ll need to save each file as a .jpg, .jpeg, .tif, .tiff or .pdf.</p><p>Once you have saved your document(s) on your computer/mobile device, click 'Browse' (this may display as 'Choose' or 'Choose File' depending on the web browser you are using) and select the file you want to upload. Remember to double check you have selected the correct file.</p><p>Repeat the process for every document you want to attach. If you make a mistake, you can add or remove files before submitting your application.</p>";
+
+            content.FileNotUploadedError = "There was a problem and your file was not uploaded";
+            
+            content.DisputeDetailsRequired = "Provide us with some details";
+            content.DisputeReasonRequired = "Select a reason";
+            content.DisputeReasonOptions = "This is not my vehicle~Not in the CC/ULEZ zone on charge date~Not in the CC zone during charging hours~Resident charged at incorrect rate~Vehicle meets ULEZ emissions standards~Charge already paid/vehicle was parked~Vehicle was being towed~I was forced into the zone~Other";
+
+            content.BackButtonText = "Back";
+            content.ContinueButtonText = "Continue";
+         
+            Html.RenderAction("Details", "AutopayDispute", new
+                {
+                    area = "Ruc",
+                    backUrl = "/modes/driving/cc-autopay-manage-evidential-record-36782",
+                    backUrlFleet = "/modes/driving/fleet-autopay-manage-evidential-record-36783",
+                    reviewUrl = "/modes/driving/autopay-dispute-review",
+                    journeyStartUrl = "/modes/driving/autopay-dispute-start",
+                    content = content
+                }
+            );
+        }
+		
+	  
+
+  
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

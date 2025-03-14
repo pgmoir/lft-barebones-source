@@ -1,0 +1,276 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Make a request";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/corporate/transparency/freedom-of-information/foi-make-request";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/corporate/transparency/index">Transparency</a></li>
+                
+            
+                 <li><a href="/corporate/transparency/freedom-of-information">Freedom of Information</a></li>
+                
+            
+            
+                <li><span class="last-breadcrumb">Make a request</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Make a request</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+                @using TfL.Web.ViewModels.FormBuilder
+                <div class="responsive-form responsive-table-wrapper with-icon">
+                @using (Html.BeginForm())
+                {
+                    
+
+                var successPartialRelativePath = "~/corporate/transparency/freedom-of-information/foi-make-request/submission-success";
+                var failurePartialRelativePath = "~/corporate/transparency/freedom-of-information/foi-make-request/submission-failure";
+                var dataProtectionPartialRelativePath = "~/corporate/transparency/freedom-of-information/foi-make-request/data-protection";
+                var introductionPartialRelativePath = "~/corporate/transparency/freedom-of-information/foi-make-request/introduction";                 
+                var pageTitle = @"";
+                var introText = @"<p>You can make a request here for recorded information held by Transport for London and its subsidiary companies (including Crossrail Ltd).</p><h2>Check the information you need isn't already available</h2><p><a href='/corporate/transparency/freedom-of-information'>Search all existing requests</a></p><p><a href='/corporate/publications-and-reports/index'>See Publications and Reports</a></p><h2>How does making a request work?</h2><p>We'll email you the response within 20 working days.</p><p>We'll publish the response online without disclosing any personal information.</p><hr /><h2>About your request</h2><p>Looking to find out what personal information we hold about you? Make a <a href='/corporate/privacy-and-cookies/access-your-data'>Subject Access request</a></p>";
+                var emailConfirmationSubject = @"Form submission for Freedom of Information";
+                var successText = @"<p>Thank you for taking the time to complete and submit one of our online forms. We will get back to you as soon as possible.</p>";
+                var failureText = @"<p>There was an error. Please try again.</p>";
+                var dataProtectionText = @"<p>The Greater London Authority, TfL and its subsidiaries will use the personal information you provide to enable TfL to reply to your request and any subsequent internal review, complaint or appeal about its handling in accordance with the Freedom of Information Act 2000 and our information access policy. On some occasions, we may need to share your information with associated organisations, including the Information Commissioner’s Office, the Information Rights Tribunal, and other legal representatives for these purposes. We will retain a record of your request for up to four years after it, or any review or appeal, is complete - for the purposes of managing any subsequent correspondence and establishing and defending legal rights.</p><p>We will publish anonymised versions of requests and responses on the <a href='/'>TfL website</a>. We will not publish your name and we will send the response to you before it is published on our website. Your personal information will be properly safeguarded and processed in accordance with the requirements of privacy and data protection legislation.</p><p>To find out more about how TfL handles personal data, see our <a href='/corporate/privacy-and-cookies/index'>Privacy and cookies</a> pages.</p>";
+                var locationHelperText = @"<p>Please let us know the pier location or journey made.</p>";
+                var bodyText = @"";
+            
+
+			    dynamic personalDetailsModel = new ContentModel();
+                personalDetailsModel.PhoneNumberToolTip = "It may be quicker to resolve your enquiry by calling you back.";
+                personalDetailsModel.EmailAddressToolTip = "";
+                personalDetailsModel.TitleRequireIfTrue = "Select your title.";
+                personalDetailsModel.FirstNameRequireIfTrue = "Enter your first name.";
+                personalDetailsModel.LastNameRequireIfTrue = "Enter your surname.";
+                personalDetailsModel.EmailAddressRequireIfTrue = "Enter your email address.";
+                personalDetailsModel.ConfirmEmailAddressRequireIfTrue = "Enter your email address.";
+                personalDetailsModel.PhoneNumberRequireIfTrue = "Enter your phone number.";
+                personalDetailsModel.PhoneNumberRegularExpression = "The phone number must be numeric.";
+            
+
+
+                dynamic addressDetailsContent = new ContentModel();
+                addressDetailsContent.AddressLine1RequireIfTrue = "Enter your address.";
+                addressDetailsContent.AddressLine2RequireIfTrue = "Enter your address.";
+                addressDetailsContent.CityRequireIfTrue = "Enter your city.";
+                addressDetailsContent.CountryRequireIfTrue = "Enter your country.";
+                addressDetailsContent.PostcodeRequireIfTrue = "Enter your postcode.";
+                addressDetailsContent.PostcodeRegularExpression = "Please enter a valid UK postcode";
+                            
+
+                dynamic foiMakeRequestContent = new ContentModel();
+                foiMakeRequestContent.SummaryRequestToolTip = "Max. 160 characters";
+                foiMakeRequestContent.SummaryRequestRequired = "The Summary field is required.";
+                foiMakeRequestContent.YourRequestToolTip = "<p><strong>Tips to ensure a speedy response</strong></p><ul>    <li>Keep it simple and focus on what you want to know</li>    <li>Ask for specific information or documentation</li>    <li>Specify if your request relates to a period of time, geographical area or mode of transport</li></ul>";
+                foiMakeRequestContent.YourRequestRequired = "The your request field is required.";
+            
+                Html.RenderAction("Index", "FormBuilder", new
+                {
+                    formSetup = new FormSetupViewModel
+                    {
+                        FormName = "Make a request",
+                        FormType = "MakeARequest",
+                        FormSections = new List<string>() { "FoiMakeRequest", "PersonalDetails", "AddressDetails" },
+                        EmailConfirmationToUser = true,
+                        EmailConfirmationSubject = @emailConfirmationSubject,
+                        FormRecipient = "",
+                        IntroductionMessages = new Dictionary<string, string>() { { "intro", @introText } },
+                        BodyText = @bodyText
+                    },
+					foiMakeRequestViewModel = new FoiMakeRequestViewModel { Content = foiMakeRequestContent },
+                    personalDetailsViewModel = new PersonalDetailsFormViewModel { Content = personalDetailsModel, Heading = "About you", SubHeading = "Your personal details will not be made public", TitleVisible = true, CssClass = "full-width-form-module inline-with-label", FirstNameRequired = true, SurnameRequired = true, EmailAddressRequired = true, ConfirmEmailAddressRequired = true },
+                    contactlessFormCommentsViewModel = new ContactlessFormCommentsViewModel(),
+                    submission = new FormSubmissionViewModel { DataProtectionPartialRelativePath = @dataProtectionPartialRelativePath, SuccessPartialRelativePath = @successPartialRelativePath, FailurePartialRelativePath = @failurePartialRelativePath, ButtonText = "Submit request", PageTitleSuccess = "Thank you!", PageTitleError = "", CssClass = " "  },
+					addressDetailsFormViewModel = new AddressDetailsFormViewModel { Content = addressDetailsContent, AddressLine1Visible = true, AddressLine2Visible = true, CityVisible = true, PostcodeVisible = true, CountryVisible = true, CssClass = "full-width-form-module inline-with-label"}
+
+                });
+                            
+                }
+                
+                
+                
+                </div>
+            
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+   
+    
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                <a href="/corporate/transparency/index" class="heading">
+                    <h2 id="sub-menu-heading">Transparency<span class="visually-hidden"> navigation</span></h2>
+                </a>
+                <ul>
+                    
+                                <li><div class="link-wrapper"><a href="/corporate/transparency/audit-of-accounts---notice-of-public-rights">Audit of accounts</a></div></li>
+                            
+ 
+                                <li class="selected parent"><div class="link-wrapper"><a href="/corporate/transparency/freedom-of-information">Freedom of Information</a></div>
+                                <ul>
+                                    
+                                <li><div class="link-wrapper"><a href="/corporate/transparency/freedom-of-information/search">Search</a></div></li>
+                            
+ 
+                                        <li class="selected"><div class="link-wrapper"><a href="/corporate/transparency/freedom-of-information/foi-make-request">Make a request</a></div>
+                                    </li>
+ 
+                                <li><div class="link-wrapper"><a href="/corporate/transparency/freedom-of-information/foi-exemptions-and-charges">FOI exemptions & charges</a></div></li>
+                            
+ 
+                                <li><div class="link-wrapper"><a href="/corporate/transparency/freedom-of-information/appealing-about-an-foi-response">Appealing about an FOI response</a></div></li>
+                            
+ 
+                                <li><div class="link-wrapper"><a href="/corporate/transparency/freedom-of-information/foi-performance">FOI performance</a></div></li>
+                            
+ 
+                                <li class="parent"><div class="link-wrapper"></div></li>
+                            
+ 
+                                </ul>
+                            </li>
+ 
+                </ul>
+            
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+      </div>
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+ 
+ 
+        
+        
+        
+            @{ViewBag.Description = "FOI";}
+        
+            
+        
+
+
+ 

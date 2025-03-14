@@ -1,0 +1,169 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Change address";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/account-edit-resident-discount-address-32973";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Change address</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Change address</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+      <div class="article-teaser">
+        <p>You have an active residents' discount at your current address.</p>
+        
+      </div>
+    
+    
+      <p>If you have moved within the Congestion Charge zone you may be able to transfer the discount to your new address. To keep your discount you need to send us documents about your new address and vehicle.</p>
+
+<p>You can upload these documents now, or <a href="/modes/driving/cc-contact-us-make-an-enquiry-wizard-37743">attach them on our enquiry form</a>.</p>
+      
+           
+      
+
+
+          
+
+<!-- 1. edit-resident-discount-address -->
+        @{
+            dynamic content = new ContentModel();
+
+            content.UpdateAddressButtonText = "Confirm";
+            content.BackButtonText = "Back";
+            content.AccountWideAddressText = "This will be an account-wide change to your address";
+            content.ContinueButtonText = "Continue";
+            content.FindAddressButtonText = "Find address";
+            content.FindAnotherAddressText = "Find another address.";
+            content.CheckAddressButtonText = "Check zone";
+            content.PostCodeRegularExpression = "Invalid postcode, please check and re-enter to continue";
+            content.PostcodeNotFoundMessageText = "Your postcode has not been found, please check and re-enter to continue";
+            content.SelectedAddressIdRequired = "Select address";
+            content.AddressLineTownText = "Town";
+            content.AddressLinePostcodeText = "Postcode";
+            content.AddressLineCountryText = "Country";
+
+            var insideUrl = "/modes/driving/inside-resident-discount";
+            var outsideUrl = "/modes/driving/outside-resident-discount";
+
+            Html.RenderAction(
+                RucDictionary.ZoneChecker.DefaultActionName,
+                "ZoneChecker",
+                new
+                {
+                    zoneCheckJourney = ZoneCheckJourney.AccountSettingsUpdateResidentDiscountAddress,
+                    zoneChargeType = ZoneChargeType.CongestionCharge,
+                    area = "Ruc",
+                    backUrl = "/modes/driving/account-account-settings-29386",
+                    findAnotherUrl = "/modes/driving/account-edit-resident-discount-address-32973",
+                    nextUrl = "/modes/driving/account-account-landing-29377",
+                    confirmUpdateResidentDiscountAddressInsideccUrl = "/modes/driving/account-confirm-resident-discount-address-outside-cc-32986",
+                    residentDiscountAddressInsideccEvidienceUrl = "/modes/driving/account-upload-resident-discount-address-evidence-32984",
+         
+                    content = content,
+                    insideCcInsideResUrl = insideUrl,
+                    insideCcOutsideResUrl = outsideUrl,
+                    outsideCcInsideResUrl = insideUrl,
+                    outsideCcOutsideResUrl = outsideUrl,
+                    navigationEnabled = true
+                }
+            );
+        }
+        
+        @{
+            this.ScriptBlock(
+            @<script>
+            queue.push(        
+                "@Html.ScriptPath("specific/pages/resident-address-zone-checker.min.js")",
+                    function () {
+                        residentZoneCheck.init({ condition: true, checkParam: 'addressFound' });
+                    }
+            );
+            </script>);
+        }
+
+        
+      
+
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "You have an active residents' discount at your current address.";}
+        
+            
+        
+
+
+ 

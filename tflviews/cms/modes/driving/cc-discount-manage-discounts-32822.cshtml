@@ -1,0 +1,196 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "My discounts";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-discount-manage-discounts-32822";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">My discounts</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>My discounts</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+        <!--  cc-discount-manage-discounts -->
+        @{
+            dynamic content = new ContentModel();
+
+            content.ResidentDiscountText = "Manage my residents' discount";
+            content.BlueBadgeDiscountText = "Manage my Blue Badge discount";
+            content.NinePlusSeaterDiscountText = "Manage my 9+ seater discount";
+            content.AccreditedBreakdownDiscountText = "Manage my accredited breakdown discount";
+            content.GreenerVehicleDiscountText = "Manage my greener vehicle discount";
+            content.MotorTricyclesDiscountText = "Manage my motor tricycle discount";
+            content.RoadsideRecoveryVehicleDiscountText = "Manage my recovery vehicle discount";
+            content.UltraLowEmissionsDiscountDiscountText = "Manage my cleaner vehicle discount";
+            content.HasNoDiscountsText = "<p><strong>You do not have any active discounts..</strong></p>";
+
+            Html.RenderAction("GetDiscounts", "DiscountManage", new
+                {
+                    area = "Ruc",
+                    accreditedBreakdownUrl = "/modes/driving/cc-accredited-breakdown-manage-34762",
+                    blueBadgeDiscountUrl = "/modes/driving/cc-blue-badge-manage-30941",
+                    motorTricyclesDiscountUrl = "/modes/driving/cc-motor-tricycle-manage-33927",
+                    residentDiscountUrl = "/modes/driving/cc-resident-discount-manage-32832",
+                    recoveryVehicleDiscountUrl = "/modes/driving/cc-recovery-vehicle-manage-34022",
+                    ultraLowEmissionsDiscountUrl = "/modes/driving/cc-cvd-manage-33830",
+                    ninePlusSeaterDiscountUrl = "/modes/driving/cc-nine-plus-seater-manage-33830",
+                    greenerVehicleDiscountUrl = "/modes/driving/cc-greener-vehicle-manage-34721",
+                    content = content
+                }
+            );
+        }
+
+        @FormHelpers.DottedSeparator()
+
+         @*@ModulesHelpers.ProminantInlineHelp(
+            "How do I submit a Congestion Charge enquiry??",
+            "Description",
+            id: "cc-enquiry-inline-help")*@
+
+        <ul class="vertical-button-container stacked-cta-list">
+            @ModulesHelpers.BoxedLinkListItem(
+                href: "/modes/driving/cc-select-discount-29641",
+                id: "discount-apply",
+                text: "Apply for a discount"
+            )
+
+            @ModulesHelpers.BoxedLinkListItem(
+                href: "/modes/driving/cc-autopay-manage-view-vehicle-history-30894",
+                id: "discount-vehicle-history",
+                text: "Discount vehicle history"
+            )
+            
+            @ModulesHelpers.BoxedLinkListItem(
+                href: "/modes/driving/account-active-vehicles-37471",
+                id: "discount-active-vehicles",
+                text: "View all vehicles with a discount"
+            )
+        </ul>
+
+        <h2>Cherished/personalised plates</h2>
+        <p>If you change your number plate (Vehicle Registration Mark), let us know as soon as possible - our camera network recognises vehicles from their number plate. You do not need to reapply for any discounts. &nbsp;</p>
+
+<p>Send us an online enquiry via the <a href="/modes/driving/congestion-charge/contact-congestion-charge">Contact Congestion Charge page</a>, uploading a copy of your new V5C vehicle registration certificate (logbook) and the confirmation certificate sent to you by the DVLA.</p>
+
+<p>We will transfer your discount to the new number plate. However, you will need to pay the Congestion Charge for it in the interim.</p>
+        
+        @FormHelpers.DottedSeparator()
+        
+        <h2>Manage my vehicles</h2>
+        <p>To make any changes to your vehicles, use the links below.</p>
+
+        <ul class="vertical-button-container stacked-cta-list">
+            @ModulesHelpers.BoxedLinkListItem(
+                href: "/modes/driving/account-quick-management-list-37474",
+                id: "quick-manage-link",
+                text: "Manage vehicles on Quick Management List"
+            )
+
+            @ModulesHelpers.BoxedLinkListItem(
+                href: "/modes/driving/cc-autopay-manage-manage-29152",
+                id: "manage-autopay-link",
+                text: "Manage or set up Auto Pay"
+            )
+        </ul>
+
+        @ModulesHelpers.BoxedLink(
+            href: "/modes/driving/cc-autopay-manage-view-vehicle-history-30894",
+            id: "vehicle-history-link",
+            text: "All vehicle history", 
+            soloButton: true
+        )
+
+        @ModulesHelpers.BackLink()
+        
+      
+
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

@@ -1,0 +1,189 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Vehicle change in progress";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-resident-discount-manage-success-34153";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Vehicle change in progress</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Vehicle change in progress</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+
+		
+		<!-- 7. success -->
+		@{
+            dynamic content = new ContentModel();
+            content.ConfirmationHeadingSuccess = "CONFIRMATIONHEADINGSUCCESS ";
+            content.ReferenceNumber = "ReferenceNumber";
+            content.PaymentReferenceText = "PAYMENTREFERENCETEXT";
+            content.ConfirmationText = "<p>If you have paid any discounted charges for your previous vehicle, any remaining days will be refunded automatically back to the card used to make the original payment. (If you paid by cheque the refund will be made by cheque.)</p><p>You need to pay the discounted charge for your new vehicle from today's date.</p>";
+            content.ConfirmationHeading = "Your vehicle has been added";
+            content.ConfirmationHeadingText = "Your new vehicle has been added to your residents' discount.";
+            content.ConfirmationDetails = "<p>Your vehicle has been added temporarily to your residents' discount for 40 days. We will review your documents and confirm if it can be added permanently.</p><p>You need to supply your document in the next 30 days if you have not done so already. If we don't receive suitable documents by then your newly added vehicle will be cancelled and no longer benefit from the discount.</p><p>When you have your documents, sign in to your account, go to Contact us and attach them as part of an enquiry.</p>";
+            content.ConfirmationNoteText = "Your charges have not been transferred";
+            content.AddtoAutoPayText = "The vehicle has not been added to your Auto Pay service.";
+            content.ConfirmationEmailAddressText = "An email has been sent to: {0}";
+            content.PayCcTitle = "Pay to drive in London";
+            content.PayCcText = "<p>You can now pay the Congestion Charge at the 90% discounted rate for your new vehicle.</p>";
+            content.PayCcLinkTitle = "Pay to drive in London";
+            content.ManageAutoPayTitle = "Manage my Auto Pay";
+            content.ManageAutoPayText = "<p>Manage your Auto Pay account.</p>";
+            content.RegisterAutoPayTitle = "Set up Auto Pay and save";
+            content.RegisterAutoPayText = "<p>Sign up for Auto Pay and save up to £1 a day. It's the easiest way to pay the Congestion Charge.</p><p>Simply give us your credit/debit card number or set up a direct debit and the charge will be paid automatically whenever you drive within the zone.</p>";
+            content.AutoPayOutsideBoxTitle = "Swap Auto Pay vehicles";
+            content.AutoPayOutsideBoxSummaryText = "<p>If your previous vehicle is on your Auto Pay service, don't forget to replace it with your new one. To change vehicles on Auto Pay, click 'Manage my Auto Pay'.</p>";
+            content.AutoPayFindOutMoreLink = "/modes/driving/auto-pay";
+            content.AutoPayFindOutMoreText = "<p>Read more about Auto Pay</p>";
+            content.CCOutsideBoxTitle = "Pay discounted charge";
+            content.CCOutsideBoxSummaryText = "<p>If this vehicle is not on your Auto Pay service, you need to pay the discounted Congestion Charge.</p>";
+            content.CCOutsideBoxRegisterTitle = "Sign up for Auto Pay";
+            content.CCOutsideBoxRegisterSummaryText = "<p>Sign up for Auto Pay and save up to £1 a day. It's the easiest way to pay the Congestion Charge.</p><p>Simply give us your credit/debit card number or set up a direct debit and the charge will be paid automatically whenever you drive within the zone.</p>";
+            
+            Html.RenderAction("ResidentSubmissionSuccess", "DiscountManage", new
+                {
+                    area = "Ruc",
+                    discountStyle = ZoneChargeDiscountStyle.ResidentsDiscount,
+                    content = content,
+                    payCcUrl = "/modes/driving/account-vehicles",
+                    autoPayApplyUrl = "/modes/driving/autopay-apply-select-service",
+                    manageAutoPayUrl = "/modes/driving/cc-autopay-manage-manage-29152",
+                    journeyStartUrl = "/modes/driving/cc-select-discount-29641",
+                    discountAction = DiscountAction.Manage
+                }
+            );
+        }
+		
+	  
+
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+        @ModulesHelpers.PrintButton()
+      
+ 
+      </div>
+    
+    <div></div>
+    
+      <div>
+                    
+        <div class="vertical-button-container">
+    <ul>
+        
+        
+        
+        <li><a href="/modes/driving/account-vehicles"  class="plain-button">Pay to drive in London</a></li>
+        
+        
+        <li><a href="/modes/driving/congestion-charge/congestion-charge-zone"  class="plain-button">Congestion Charge/ULEZ zone</a></li>
+        
+        
+        <li><a href="/modes/driving/check-your-vehicle-35896"  class="plain-button">Check your vehicle</a></li>
+        
+        
+        <li><a href="/modes/driving/amend-or-refund-a-driving-charge"  class="plain-button">Amend/refund a charge</a></li>
+        
+        
+        <li><a href="/modes/driving/congestion-charge/contact-congestion-charge"  class="plain-button">Contact us</a></li>
+        
+        
+        <li><a href="/modes/driving/ultra-low-emission-zone/scrappage-scheme"  class="plain-button">Scrappage scheme</a></li>
+        
+    </ul>
+</div>
+
+      </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

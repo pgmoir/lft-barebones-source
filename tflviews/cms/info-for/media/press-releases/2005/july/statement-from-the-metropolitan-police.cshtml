@@ -1,0 +1,87 @@
+﻿
+
+
+@{ViewBag.Title = "Statement from the Metropolitan Police";}
+        
+        
+
+<div class="r">
+    <div class="headline-container plain">
+        <h1>Statement from the Metropolitan Police</h1>
+        <div class="content-page-press-release">
+        15 July 2005
+        </div>
+    </div>
+</div>
+<div class="main-and-aside r">
+    <div class="main" role="main">
+
+    <div class="article-teaser">
+        We are aware of emails in circulation that advise the reader of the threat of another terrorist attack.
+        
+    </div>
+
+
+
+ <div class="on-this-page">
+<p>Following the attacks of July 7, extra policing patrols have been put in place across London, with officers from the MPS, City of London Police and British Transport Police providing visible reassurance, advice and support, and also to act as a deterrent. </p>
+<p>All police forces are reviewing their own counter-terrorist plans, undertaking community assessments and considering appropriate extra patrols in potentially vulnerable areas and transport hubs.</p>
+<p>However, we are not aware of any specific threat at this time.</p>
+<p>We would advise the public to remain alert and vigilant, and to inform police of anything they see or hear that is suspicious. The confidential Anti-Terrorist Hotline number is 0800 789 321<font face="Arial" color="#0000ff"><span class="622592416-15072005"> </span></font></p>
+
+     
+
+        
+        
+        
+        @this.ScriptBlock(
+        @<script>
+        //queue.push("@Html.ScriptPath("modules/M020-on-this-page.min.js")", null);
+        </script>
+        )
+        
+        
+        
+        </div>
+    </div>
+    <div class="aside" role="complementary">
+
+       
+        <div data-set="sidenav-container" class="large">
+
+            
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+        </div>
+
+
+
+            
+        <div data-set="sidenav-container" class="small-medium"></div>
+    </div>
+</div>
+
+<!-- Crumbs: PGtype:  -->
+
+ 
+ 
+        
+        
+            @{ViewBag.Description = "Following the attacks of July 7, extra policing patrols have been put in place across London, with officers from the MPS, City of London Police and British Transport Police providing visible reassurance, advice and support, and also to act as a deterrent.";}
+        
+        
+
+
+ 

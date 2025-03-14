@@ -1,0 +1,116 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "CC Discount - Recovery vehicle - Check Authentication and Redirect";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-recovery-vehicle-check-authentication-and-redirect";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+                
+                <li><span class="last-breadcrumb">CC Discount - Recovery vehicle - Check Authentication and Redirect</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>CC Discount - Recovery vehicle - Check Authentication and Redirect</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+        @{
+            dynamic content = new ContentModel();
+    
+            // Back Url parameters
+            bool hasSourceRoutingKey = Request.QueryString.AllKeys.Contains("sourceRoutingKey");
+            string sourceRoutingKey = string.Empty;
+            if (hasSourceRoutingKey)
+            {
+                content.SourceRoutingKey = sourceRoutingKey = Request.QueryString["sourceRoutingKey"];
+            }
+            
+            Html.RenderAction("AuthenticateAndRedirect", "RecoveryVehicle", new
+            {
+                area = "Ruc",  
+                vrmLookupUrl = "/modes/driving/cc-recovery-vehicle-vrm-lookup?sourceRoutingKey=" + sourceRoutingKey,
+                accountVehicleUrl = "/modes/driving/cc-recovery-vehicle-account-vehicles?sourceRoutingKey=" + sourceRoutingKey
+            });
+        }
+    
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

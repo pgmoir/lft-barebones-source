@@ -1,0 +1,170 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Bus spider maps";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/maps_/bus-spider-maps";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/maps_/maps">Maps</a></li>
+                
+            
+            
+                <li><span class="last-breadcrumb">Bus spider maps</span></li>
+            
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Bus spider maps</h1>
+  </div>
+</div>
+<div class="main-and-aside r spider-maps-wrapper">
+  <div class="main" role="main">
+    
+    <div class="on-this-page">
+      
+      
+           
+      
+
+<p class="article-teaser">Bus spider maps are in PDF format and are on average about 600k in size. Select a Borough from the list or search for route number or area, eg: "25" or "Plaistow Station".</p>
+
+        @{ Html.RenderAction("RouteMaps", "Maps"); }
+ 
+      
+        
+          
+            @this.ScriptBlock(
+              @<script>
+                queue.push("@Html.ScriptPath("modules/M020-on-this-page.min.js")", null);
+              </script>
+            )
+          
+        
+      
+    </div>
+  </div>
+  <div class="aside" role="complementary">
+    <div class="share-widget-wrapper"></div>
+    
+      <div data-set="sidenav-container">
+        
+        
+
+
+        <div class="related-links">
+        <h3>Select a borough</h3>
+        <div class="vertical-button-container">
+        <a href="?Query=Barking and Dagenham" class="plain-button external-link">Barking and Dagenham</a>
+        <a href="?Query=Barnet" class="plain-button external-link">Barnet</a>
+        <a href="?Query=Bexley" class="plain-button external-link">Bexley</a>
+        <a href="?Query=Brent" class="plain-button external-link">Brent</a>
+        <a href="?Query=Bromley" class="plain-button external-link">Bromley</a>
+        <a href="?Query=Camden" class="plain-button external-link">Camden</a>
+        <a href="?Query=City of London" class="plain-button external-link">City of London</a>
+        <a href="?Query=Croydon" class="plain-button external-link">Croydon</a>
+        <a href="?Query=Ealing" class="plain-button external-link">Ealing</a>
+        <a href="?Query=Enfield" class="plain-button external-link">Enfield</a>
+        <a href="?Query=Greenwich" class="plain-button external-link">Greenwich</a>
+        <a href="?Query=Hackney" class="plain-button external-link">Hackney</a>
+        <a href="?Query=Hammersmith and Fulham" class="plain-button external-link">Hammersmith and Fulham</a>
+        <a href="?Query=Haringey" class="plain-button external-link">Haringey</a>
+        <a href="?Query=Harrow" class="plain-button external-link">Harrow</a>
+        <a href="?Query=Havering" class="plain-button external-link">Havering</a>
+        <a href="?Query=Hillingdon" class="plain-button external-link">Hillingdon</a>
+        <a href="?Query=Hounslow" class="plain-button external-link">Hounslow</a>
+        <a href="?Query=Islington" class="plain-button external-link">Islington</a>
+        <a href="?Query=Kensington and Chelsea" class="plain-button external-link">Kensington and Chelsea</a>
+        <a href="?Query=Kingston" class="plain-button external-link">Kingston upon Thames</a>
+        <a href="?Query=Lambeth" class="plain-button external-link">Lambeth</a>
+        <a href="?Query=Lewisham" class="plain-button external-link">Lewisham</a>
+        <a href="?Query=Merton" class="plain-button external-link">Merton</a>
+        <a href="?Query=Newham" class="plain-button external-link">Newham</a>
+        <a href="?Query=Redbridge" class="plain-button external-link">Redbridge</a>
+        <a href="?Query=Richmond" class="plain-button external-link">Richmond</a>
+        <a href="?Query=Southwark" class="plain-button external-link">Southwark</a>
+        <a href="?Query=Sutton" class="plain-button external-link">Sutton</a>
+        <a href="?Query=Tower Hamlets" class="plain-button external-link">Tower Hamlets</a>
+        <a href="?Query=Waltham Forest" class="plain-button external-link">Waltham Forest</a>
+        <a href="?Query=Wandsworth" class="plain-button external-link">Wandsworth</a>
+        <a href="?Query=Westminster" class="plain-button external-link">Westminster</a>
+        </div>
+        </div>
+    
+
+
+ 
+      </div>
+    
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="advert-tile unsponsored-style google-ads" aria-hidden="true">
+  <div class="advert-link">
+    <div class="advert-content">
+        <div class="medium-large" data-advert="/76889402/maps" data-advert-sizes="300, 250"></div>
+        <div class="small" data-advert="/76889402/maps" data-advert-sizes="300, 250"></div>
+    </div>
+  </div>
+</div>
+@{
+    ViewBag.AmazonSlot = "'amznslots'";
+    ViewBag.AmazonAds = "'3199'"; // to add another value, this needs to be ViewBag.AmazonAds = "'3199','xx'";
+}
+      
+
+ </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+ 
+ 
+        
+        
+        
+            @{ViewBag.Description = "Select a Borough from the list or search for route number or area, eg: '25' or 'Plaistow Station'.";}
+        
+            
+        
+
+
+ 

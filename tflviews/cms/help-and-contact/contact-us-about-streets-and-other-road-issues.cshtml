@@ -1,0 +1,196 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Contact us about streets and road issues";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/help-and-contact/contact-us-about-streets-and-other-road-issues";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/help-and-contact/index">Help & contacts</a></li>
+                
+            
+            
+                <li><span class="last-breadcrumb">Contact us about streets and road issues</span></li>
+            
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Contact us about streets and road issues</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    <div class="on-this-page">
+      
+      
+           
+      
+                @using TfL.Web.ViewModels.FormBuilder
+                <div class="responsive-form responsive-table-wrapper with-icon">
+                @using (Html.BeginForm())
+                {
+                    
+
+			    dynamic personalDetailsModel = new ContentModel();
+                personalDetailsModel.PhoneNumberToolTip = "It may be quicker to resolve your enquiry by calling you back.";
+                personalDetailsModel.EmailAddressToolTip = "";
+                personalDetailsModel.TitleRequireIfTrue = "Select your title.";
+                personalDetailsModel.FirstNameRequireIfTrue = "Enter your first name.";
+                personalDetailsModel.LastNameRequireIfTrue = "Enter your surname.";
+                personalDetailsModel.EmailAddressRequireIfTrue = "Enter your email address.";
+                personalDetailsModel.ConfirmEmailAddressRequireIfTrue = "Enter your email address.";
+                personalDetailsModel.PhoneNumberRequireIfTrue = "Enter your phone number.";
+                personalDetailsModel.PhoneNumberRegularExpression = "The phone number must be numeric.";
+            
+
+
+                dynamic commentsTypeContent = new ContentModel();
+                commentsTypeContent.CommentTypeToolTip = "To help us process your feedback, let us know what kind of comment you're leaving.";
+                commentsTypeContent.CommentTypeRequired = "Select comments type.";
+            
+
+                dynamic formCommentsContent = new ContentModel();
+                formCommentsContent.CommentsToolTip = "Please provide us with as much detail as you can. This will help us handle your enquiry more quickly.";
+                formCommentsContent.CommentsPrivateTaxiHireToolTip = "Tell us about the service or incident you want to comment on. Where relevant, it would be helpful if you can include any of the following:<ul>    <li>Badge number of driver</li>    <li>Registration number of taxi or minicab</li>    <li>Plate number of private hire vehicle</li>    <li>Contact details of police or witnesses</li>    <li>Details of operator through which your minicab was booked</li></ul>";
+                formCommentsContent.CommentsRequired = "Enter your comments.";
+            
+
+                dynamic feedbackContent =  new ContentModel();
+                feedbackContent.BestTimeToCallToolTip = "Sometimes it's quicker for us to help by giving you a call.";
+                feedbackContent.BestTimeToContactRequireIfTrue = "Select best time to contact.";
+                feedbackContent.GiveFeedbackRequireIfTrue = "Select feedback preference.";
+            
+
+                dynamic streetLocationContent = new ContentModel();
+                streetLocationContent.DirectionOfTravelToolTip = "For example: towards Richmond or traffic lights at A13 junction";
+                streetLocationContent.EnquiryAboutRequired = "Select a reason for your enquiry.";
+                streetLocationContent.OtherRequireIfTrue = "Enter a reason for your enquiry.";
+                streetLocationContent.LocationRequired = "Enter your location.";
+                streetLocationContent.LocationDateRequired = "Enter a valid date (eg. 15/03/1984).";
+                streetLocationContent.LocationTimeRequired = "Select the time.";
+                        
+                Html.RenderAction("Index", "FormBuilder", new {
+                    formSetup = new FormSetupViewModel {
+                        FormType="StreetsIssues",
+                        FormSections = new List<string>(){ "CommentsTypeTwo", "PersonalDetails", "Feedback", "StreetLocation", "LeafletMap", "FormComments","FormAttachments" },
+                        IntroductionMessages = new Dictionary<string,string>{{"intro","<p>If you see a safety issue that's on this list, the quickest way to let us know is to <a href='https://streetcare.tfl.gov.uk/'>report a problem with our street care reporting tool.</a></p>"}}, 
+                        FormName = "Form builder - Contact us about streets and other road issues", 
+                        EmailConfirmationToUser = false, 
+                        EmailConfirmationSubject = "", 
+                        FormRecipient = "",
+                        BodyText = "<div class='on-this-page'><p>You can use the tool to report:<ul><li>Bus stops and shelters</li><li>Graffiti and flyposting</li><li>Hoardings and scaffolding</li><li>Litter</li><li>Mobile cranes</li><li>Roadworks</li><li>Road, cycleway and footway defects</li><li>Street lights and traffic lights</li><li>Trees</li></ul></p><p>If you'd prefer to contact us directly, or if you see an issue that's not on the list, you can:<ul><li>Call 0343 222 1234 (<a href='/corporate/terms-and-conditions/tfl-call-charges'>call charges may apply</a>)</li><li>Fill out this form. Select the 'Safety issues and incidents' option at the start</li></ul></p><p>For all non-safety critical matters, we aim to respond to you within 10 working days.</p></div>"
+                    },
+                    commentsTypeViewModel = new CommentsTypeViewModel { Content = commentsTypeContent },
+                    personalDetailsViewModel = new PersonalDetailsFormViewModel {Content = personalDetailsModel, Heading="Your contact details", TitleRequired = true, PhoneNumberRequired = true, PhoneNumberIsRequired = true, PhoneNumberVisible = true, FirstNameRequired = true, SurnameRequired = true, EmailAddressRequired = true, ConfirmEmailAddressRequired = true },
+                    feedbackViewModel = new FeedbackViewModel { Content = feedbackContent, GiveFeedbackRequired = false, GiveFeedbackVisible = false, BestTimeToContactRequired = true, BestTimeToContactVisible = true },
+                    streetLocationViewModel = new StreetLocationViewModel { Content = streetLocationContent, OtherRequired= true},
+                    leafletViewModel  =  new LeafletViewModel { MapPlaceholderId = "leaflet-map-wrapper" },
+                    formCommentsViewModel = new FormCommentsViewModel { Content = formCommentsContent },
+                    formAttachmentsViewModel = new FormAttachmentsViewModel { FormName = "StreetForm" , FileCountLimit = 3 },
+                    submission=  new FormSubmissionViewModel { DataProtection = "<p>Transport for London (TfL), its subsidiaries and service providers will use your personal information for the purposes of processing your feedback, providing you with a response, or the information or services you have requested, and the provision of travel related information. On some occasions, we may need to share your information with associated organisations or their agents for these purposes. Your personal information will be properly safeguarded and processed in accordance with the requirements of privacy and data protection legislation. To find out more about how TfL handles personal data, see our <a href='/corporate/privacy-and-cookies/index'>Privacy and cookies pages</a>.</p>", SuccessfulSubmissionMessage = "<p>Thank you for submitting this form. We aim to get back to you within 10 working days.</p>", FailedSubmissionMessage = "There was an error. Please try again." }
+                });
+                        
+                }
+                
+                
+                @{
+                    Html.RenderAction("SearchFilterForm", "FormBuilder");
+                }
+                
+                
+                </div>
+            
+      
+        
+          
+            @this.ScriptBlock(
+              @<script>
+                queue.push("@Html.ScriptPath("modules/M020-on-this-page.min.js")", null);
+              </script>
+            )
+          
+        
+      
+    </div>
+  </div>
+  <div class="aside" role="complementary">
+
+   
+    
+    
+    
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="advert-tile unsponsored-style google-ads" aria-hidden="true">
+  <div class="advert-link">
+    <div class="advert-content">
+        <div class="medium-large" data-advert="/76889402/help_contact" data-advert-sizes="300, 250"></div>
+        <div class="small" data-advert="/76889402/help_contact" data-advert-sizes="300, 250"></div>
+    </div>
+  </div>
+</div>
+@{
+    ViewBag.AmazonSlot = "'amznslots'";
+    ViewBag.AmazonAds = "'3199'"; // to add another value, this needs to be ViewBag.AmazonAds = "'3199','xx'";
+}
+      
+
+ </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+ 
+ 
+        
+        
+        
+            @{ViewBag.Description = "Contact us about streets and road issues";}
+        
+            
+        
+
+
+ 

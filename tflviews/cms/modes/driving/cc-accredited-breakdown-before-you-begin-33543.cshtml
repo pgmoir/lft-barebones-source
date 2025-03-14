@@ -1,0 +1,179 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Accredited breakdown discount";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-accredited-breakdown-before-you-begin-33543";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Accredited breakdown discount</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Accredited breakdown discount</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/account-account-landing-29377"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+    
+      <h2>Before you start</h2>
+<p>Before we can process your application for the accredited breakdown discount, you need to set up a London Road User Charging account.</p>
+<h3>Setting up a London Road User Charging account</h3>
+<p>To create an account, click on 'Continue' and complete all required fields. You can also set up optional services, such as mobile phone text alerts, to help you manage your discount. (Sign in now if you already have an account.)</p>
+<h4>Benefits of a London Road User Charging account</h4>
+<p>Having an account with us means you can:</p>
+<ul>
+    <li>    Manage and easily renew your discount online</li>
+    <li>View your vehicle details</li>
+    <li>Allow up to five people access to your London Road User Charging account</li>
+</ul>
+<h3>Applying for your accredited breakdown discount</h3>
+<p>Once your London Road User Charging account has been created and you sign in, you will be directed automatically to complete your discount application.</p>
+      
+           
+      
+
+
+        
+        <!-- 1. accredited-breakdown -->
+        @{
+            dynamic content = new ContentModel();
+            content.ContinueButtonText = "Start";
+            
+            Html.RenderAction("DiscountBeforeYouBegin", "DiscountApply", new
+                {
+                    area = "Ruc",
+                    createAccountUrl = "/modes/driving/cc-accredited-breakdown-enter-details-33544",
+                    discountStyle = ZoneChargeDiscountStyle.AccreditedBreakdown,
+                    journeyStartUrl = "/modes/driving/cc-accredited-breakdown-enter-details-33544",
+                    content = content
+                }
+            );
+        }
+        
+
+	  
+
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+      <div>
+                    
+        <div class="vertical-button-container">
+    <ul>
+        
+        
+        
+        <li><a href="/modes/driving/congestion-charge/paying-the-congestion-charge"  class="plain-button">Congestion Charge payments</a></li>
+        
+        
+        <li><a href="/modes/driving/congestion-charge/congestion-charge-zone"  class="plain-button">Congestion Charge zone</a></li>
+        
+        
+        <li><a href="/modes/driving/auto-pay"  class="plain-button">Auto Pay</a></li>
+        
+        
+        <li><a href="/modes/driving/congestion-charge/discounts-and-exemptions"  class="plain-button">Discounts and exemptions</a></li>
+        
+        
+        <li><a href="/modes/driving/congestion-charge/contact-congestion-charge"  class="plain-button">Contact Congestion Charge</a></li>
+        
+    </ul>
+</div>
+
+      </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "Before we can process your application for the accredited breakdown discount, you need to set up a London Road User Charging account.";}
+        
+            
+        
+
+
+ 

@@ -1,0 +1,136 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Confirm address";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/account-confirm-resident-discount-address-outside-cc-32986";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Confirm address</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Confirm address</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+
+          
+
+<!-- 4. confirm-resident-discount-address-outside-cc -->
+
+        @FormHelpers.GlobalWarning("<h2>Your new address is not in the Congestion Charge zone</h2><p>This means it's not eligible for the residents' discount.</p><p>When you confirm these changes your residents' discount will be cancelled. You will need to pay the full Congestion Charge and, If your vehicle doesn't meet the emissions standards, the ULEZ charge to drive within the zone. Any charges you may have made at the reduced rate will be refunded automatically to you.</p><p>If you are sure you want to update your address now and cancel your residents' discount, click 'Confirm'.</p>", middleIcon: false)
+        @{
+            dynamic content = new ContentModel();
+            content.YourNewAddressTitle = "New address";
+            content.BackButtonText = "Back";
+            content.ContinueButtonText = "Confirm";
+
+            Html.RenderAction(
+                "ConfirmUpdateDiscountResidentAddress",
+                "AccountSettings",
+                new
+                    {
+                        Area = "Ruc",
+                        content = content,
+                        backUrl = "/modes/driving/account-edit-resident-discount-address-32973",
+                        confirmationUrl = "/modes/driving/account-discount-address-change-confirmation-outside-cc-32988",
+                        insideDiscountZone = false
+                    });
+        }
+        
+
+        
+      
+
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+        @ModulesHelpers.PrintButton()
+      
+ 
+      </div>
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

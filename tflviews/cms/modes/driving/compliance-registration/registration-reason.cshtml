@@ -1,0 +1,150 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Reason for registration";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/compliance-registration/registration-reason";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+                 <li><a href="/modes/driving/compliance-registration/before-you-start">Register a vehicle for LEZ and ULEZ</a></li>
+                
+            
+                
+                <li><span class="last-breadcrumb">Reason for registration</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Reason for registration</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/compliance-registration/registration-reason"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+        @{
+            dynamic content = new ContentModel();
+            content.RegistrationReasonLezUlezIntro = "<p>Register your vehicle if you believe it meets the ULEZ and/or the LEZ emissions standards, should be exempt or qualifies for a 100% showman's discount.</p>";
+            content.RegistrationReasonUlezOnlyIntro = "<p>Register your vehicle if you believe it meets the ULEZ emissions standard and you shouldn't have to pay the charge.</p>";
+            content.WhatAreStandardsLabel = "What are the emissions standards?";
+            content.WhatAreStandardsLezUlezHelp = "<p>Vehicles must meet emission standards for nitrogen oxides (NOx) to comply with the ULEZ - diesel vehicles must also meet particulate matter (PM) standards:</p><ul>    <li>Euro 3 for motorcycles, mopeds, motorised tricycles and quadricycles (L category)</li>    <li>Euro 4 for petrol cars, vans, minibuses and other specialist vehicles</li>    <li>Euro 6 for diesel cars, vans and minibuses and other specialist vehicles</li>    <li>Euro VI for lorries, buses and coaches and other specialist heavy vehicles</li></ul><p>Vehicles must meet standards for particulate matter (PM) to comply with the LEZ:</p><ul>    <li>Lorries, buses and coaches need to meet Euro IV emissions standards for particulate matter (PM)</li>    <li>Larger vans, minbuses and other specialist vehicles need to meet Euro 3 emissions standards for particulate matter (PM)</li></ul><p>Cars and motorcycles are not subject to the LEZ.</p>";
+            content.WhatAreStandardsUlezOnlyHelp = "<p>Vehicles must meet emission standards for nitrogen oxides (NOx) to comply with the ULEZ - diesel vehicles must also meet particulate matter (PM) standards.</p><ul>    <li>Euro 3 for motorcycles, mopeds, motorised tricycles and quadricycles (L category)</li>    <li>Euro 4 for petrol cars, vans, minibuses and other specialist vehicles</li>    <li>Euro 6 for diesel cars, vans and minibuses and other specialist vehicles</li>    <li>Euro VI for lorries, buses and coaches and other specialist heavy vehicles</li></ul>";
+            content.WhyRegisteringLabel = "Select why you are registering this vehicle: <br>";
+            content.RegisteredNonUKLabel = "This vehicle is registered outside the UK";
+            content.RegisteredNonUKHelp = "If we don’t hold details for a vehicle registered outside the UK we won’t know what Euro standards it meets. Register with us if you believe your vehicle meets the required ULEZ and/or LEZ standard. Until then you need to pay to drive within the zone(s).";
+            content.MeetsStandardLabel = "I can prove my vehicle meets the ULEZ emissions standards or is a showman's vehicle";
+            content.MeetsStandardHelp = "<p>Vehicles with retrofit technologies or built to a higher standard than mandatory at the time ('early adopters') may meet the emissions standards. Register with us if you believe that’s the case. Until then you need to pay to drive within the ULEZ. Some modified or specially constructed vehicles qualify for a 100% discount from ULEZ charges if registered to someone in the business of a travelling showman.</p>";
+            content.FittedEquipmentLabel = "I have fitted equipment to my vehicle to reduce emissions, or I can prove it meets the standard";
+            content.FittedEquipmentHelp = "We may not know if your vehicle has been fitted with abatement equipment. Register with us if you believe your vehicle meets the emissions standards. Until then you  need to pay the ULEZ and/or LEZ charge to drive within the zone(s).";
+            content.ShowmansVehicleLabel = "My vehicle is a showman's vehicle or should be exempt from the scheme";
+            content.ShowmansVehicleHelp = "Some modified or specially constructed vehicles qualify for a 100% discount from LEZ/ULEZ daily charges if registered to someone in the business of a travelling showman. Some vehicles are exempt from the schemes (e.g. non-road going or historic vehicles).";
+            content.MadeBeforeLabel = "My vehicle was manufactured to a higher Euro standard than was legally required";
+            content.MadeBeforeHelp = "Some vehicles (known as 'early adopters') were manufactured to a higher standard than was mandatory at the time. Register with us if you believe your vehicle meets the emissions standards. Until then you need to pay to drive within the zone(s).";
+            
+            content.ContinueButtonText = "Continue";
+            content.BackButtonText = "Back";
+
+            Html.RenderAction("Reason", "ComplianceRegistration", new
+            {
+                area = "Ruc",
+                content = content,
+                backUrl = "/modes/driving/compliance-registration/vrm-lookup",
+                uploadUrl = "/modes/driving/compliance-registration/upload"
+            });
+            
+        }
+
+      
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "Registration reason";}
+        
+            
+        
+
+
+ 

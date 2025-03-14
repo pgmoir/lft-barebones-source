@@ -1,0 +1,89 @@
+﻿
+
+
+@{ViewBag.Title = "Live8 travel advice";}
+        
+        
+
+<div class="r">
+    <div class="headline-container plain">
+        <h1>Live8 travel advice</h1>
+        <div class="content-page-press-release">
+        27 June 2005
+        </div>
+    </div>
+</div>
+<div class="main-and-aside r">
+    <div class="main" role="main">
+
+    <div class="article-teaser">
+        A number of events, including the high-profile Live8 concert, mean this Saturday, July 2nd, will be a busy time for the Capital's transport network.
+        
+    </div>
+
+
+
+ <div class="on-this-page">
+<p>Transport for London (TfL) has the following advice for people coming into London - and reminds people without tickets to steer clear of the area.</p>
+<p>Live8 ticket holders are strongly advised to pre-plan their journeys both to and from the concert, and leave themselves plenty of time to get home. </p>
+<p>Tubes, buses and roads will be very busy.</p>
+<p>Travel information is now live at TfL's Live8 site, and leaflets will be available at Tube stations around Hyde Park from the end of this week.</p>
+<p>For up-to-the-minute travel information, passengers are advised to check <a href="http://www.tfl.gov.uk/journeyplanner">Journey Planner</a> or contact the London Travel Information line on 020 7222 1234.</p>
+<p>TfL recommends that those with tickets for the concert do not to drive into central London.</p>
+
+     
+
+        
+        
+        
+        @this.ScriptBlock(
+        @<script>
+        //queue.push("@Html.ScriptPath("modules/M020-on-this-page.min.js")", null);
+        </script>
+        )
+        
+        
+        
+        </div>
+    </div>
+    <div class="aside" role="complementary">
+
+       
+        <div data-set="sidenav-container" class="large">
+
+            
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+        </div>
+
+
+
+            
+        <div data-set="sidenav-container" class="small-medium"></div>
+    </div>
+</div>
+
+<!-- Crumbs: PGtype:  -->
+
+ 
+ 
+        
+        
+            @{ViewBag.Description = "Transport for London (TfL) has the following advice for people coming into London - and reminds people without tickets to steer clear of the area.Live8 ticket holders are strongly advised to pre-plan their journeys both to and from the concert, and leave";}
+        
+        
+
+
+ 

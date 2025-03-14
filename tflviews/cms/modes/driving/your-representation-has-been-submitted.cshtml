@@ -1,0 +1,178 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Confirmation";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/your-representation-has-been-submitted";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+                 <li><a href="/modes/driving/challenge-a-pcn">Challenge a PCN</a></li>
+                
+            
+            
+            
+                <li><span class="last-breadcrumb">Confirmation</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Confirmation</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+             @{
+                 dynamic content = new ContentModel();
+
+                     content.ThankYouTitle = "Thank you - your representation has been submitted";
+                     content.ThankYouText = "We'll review your representation and send a response to the registered keeper/liable party. The enforcement process will now be suspended. We aim to respond to you within 15 days - please contact us if you have not received a response after 21 days.";
+                     content.CheckStatusText = "<p><strong>Make note of this number for your records. </strong></p><p>Check the status of your challenge by going to <a href='/modes/driving/view-a-pcn'>View a PCN</a> with your PCN number and number plate (Vehicle Registration Mark).</p>";
+                     content.ReferenceNumberText = "Representation reference number: {0} ";
+                     content.RepresentationHeadingText = "Your representation has been made against the following PCN(s):";
+                     content.EmailMessageText = "We sent a receipt to {0}";
+                 
+                 Html.RenderAction("MakeRepresentationConfirmation", "PenaltyChargeNotice", new { area = "Ruc", content = content });
+             }
+            <div>
+            <input type="button" class="secondary-button responsive-single-button" value="Print this page" id="print-page-button" />
+        </div>
+        <div>
+            <br />
+            <h2>What happens next?</h2>
+
+<p>The amount of your PCN will not increase until we investigate and respond to you representation. We may contact you to ask for more information.</p>
+
+<p>When we make a decision we'll send a letter accepting, or a notice rejecting, your representation. This may be served to the email address entered.</p>
+
+<h4>To avoid getting penalties in the future, sign up for Auto Pay.</h4>
+            <a href="/modes/driving/auto-pay" class="secondary-button responsive-single-button">
+                Set up Auto Pay
+            </a>
+        </div>
+        <div>
+            <br />
+            <h2>If your representation is rejected</h2>
+
+<p>If we reject your representation, the notice will outline two options:</p>
+
+<ul>
+	<li>Pay the penalty charge by the deadline on the notice</li>
+	<li>Or use the form enclosed with the notice to appeal to an independent adjudicator at <a href="http://www.londontribunals.gov.uk/">London Tribunals</a></li>
+</ul>
+        </div>
+        <div class="button-set">
+            <a href="/modes/driving/index" class="primary-button">
+                Finish
+            </a>
+        </div> 
+        @this.ScriptBlock(@<script>
+    queue.push(function() {
+        $("#print-page-button").off("click").on("click",
+            function() {
+                window.print();
+            });
+    })
+</script>)
+      
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+    
+    
+    <div></div>
+    
+      <div class="module-grid clearfix">
+                    
+        <div class="vertical-button-container">
+    <ul>
+        
+        
+        
+        <li><a href="/modes/driving/red-routes"  class="plain-button">Red routes</a></li>
+        
+        
+        <li><a href="/modes/driving/red-routes/penalty-charge-notices"  class="plain-button">Penalty Charge Notices</a></li>
+        
+        
+        <li><a href="/modes/driving/red-routes/penalty-charge-notices/enforcement-process"  class="plain-button">Enforcement process</a></li>
+        
+        
+        <li><a href="/modes/driving/red-routes/penalty-charge-notices/make-a-representation"  class="plain-button">Making a representation</a></li>
+        
+        
+        <li><a href="/modes/driving/red-routes/rules-of-red-routes"  class="plain-button">Rules of red routes</a></li>
+        
+        
+        <li><a href="/modes/driving/red-routes/penalty-charge-notices/local-authority-pcns"  class="plain-button">Local Authority PCNs</a></li>
+        
+    </ul>
+</div>
+
+      </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "Make a representation - Confirmation";}
+        
+            
+        
+
+
+ 

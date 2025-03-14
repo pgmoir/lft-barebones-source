@@ -1,0 +1,170 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Pay an ad hoc charge";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/fleet-autopay-adhoc-success-34816";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                 <li><a href="/modes/driving/auto-pay">Auto Pay</a></li>
+                
+            
+            
+            
+                <li><span class="last-breadcrumb">Pay an ad hoc charge</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Pay an ad hoc charge</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      <h2>Confirmation</h2>
+      
+           
+      
+
+
+        @{
+
+            dynamic content = new ContentModel();
+            
+            content.ConfirmationHeading = "Ad hoc charge(s) added";
+            content.ConfirmationText = "<p>This vehicle has not been added to your Fleet Auto Pay service and can only be driven within the zone on the date shown.</p>";
+            content.AllowanceHeading = "Your allowance";
+            content.AllowanceText = "You have {0} charges until {1}";
+            content.AddAdditionalAdHocVehicleButtonText = "Add another ad hoc charge";
+            content.FleetTransactionHistoryButtonText = "Fleet transaction history";
+        
+            Html.RenderAction(
+                "AddVehicleSuccess",
+                "AutoPayManageAdhocVehicle",
+                new
+                {
+                    area = "Ruc",
+                    content = content,
+                    vrm = Request.QueryString["vrm"],
+                    date = Request.QueryString["activeDate"],
+                    addAdditionalAdHocVehicleUrl = "/modes/driving/fleet-autopay-adhoc-add-adhoc-vehicle-landing",
+                    fleetTransactionHistoryUrl = "/modes/driving/fleet-autopay-manage-view-statements-29042"
+                }
+            );
+        }
+        
+        <div class="button-set">
+            <a class="primary-button continue-button" href="/modes/driving/fleet-autopay-manage-vehicles-28948">Finish</a>
+        </div>
+      
+
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+        @ModulesHelpers.PrintButton()
+      
+ 
+      </div>
+    
+    <div></div>
+    
+      <div>
+                    
+        <div class="vertical-button-container">
+    <ul>
+        
+        
+        
+        <li><a href="/modes/driving/account-vehicles"  class="plain-button">Pay to drive in London</a></li>
+        
+        
+        <li><a href="/modes/driving/congestion-charge/congestion-charge-zone"  class="plain-button">Congestion Charge/ULEZ zone</a></li>
+        
+        
+        <li><a href="/modes/driving/check-your-vehicle-35896"  class="plain-button">Check your vehicle</a></li>
+        
+        
+        <li><a href="/modes/driving/amend-or-refund-a-driving-charge"  class="plain-button">Amend/refund a charge</a></li>
+        
+        
+        <li><a href="/modes/driving/congestion-charge/contact-congestion-charge"  class="plain-button">Contact us</a></li>
+        
+        
+        <li><a href="/modes/driving/ultra-low-emission-zone/scrappage-scheme"  class="plain-button">Scrappage scheme</a></li>
+        
+    </ul>
+</div>
+
+      </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

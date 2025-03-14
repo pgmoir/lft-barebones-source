@@ -1,0 +1,60 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Planned Works Calendar";}
+@{ViewBag.Keywords = "Tube passengers,Tube improvement,Tube,Plan a journey,TfL";}
+@{ViewBag.Url = "/status-updates/planned-works-calendar";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        <div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/status-updates/index">Status updates</a></li>
+                
+            
+            
+                <li><span class="last-breadcrumb">Planned Works Calendar</span></li>
+            
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+    <div class="headline-container plain">
+        <h1>Planned Works Calendar</h1>
+    </div>
+</div>
+<div class="main-and-aside r">
+
+	            @{ Html.RenderAction("PlannedWorksCalendar", "StatusUpdates"); }
+            
+</div>
+ 
+ 
+        
+        
+        
+            @{ViewBag.Description = "Information about closures on the London Underground network";}
+        
+            
+        
+
+
+ 

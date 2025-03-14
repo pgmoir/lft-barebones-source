@@ -1,0 +1,87 @@
+﻿
+
+
+@{ViewBag.Title = "Caught on camera";}
+        
+        
+
+<div class="r">
+    <div class="headline-container plain">
+        <h1>Caught on camera</h1>
+        <div class="content-page-press-release">
+        12 August 2005
+        </div>
+    </div>
+</div>
+<div class="main-and-aside r">
+    <div class="main" role="main">
+
+    <div class="article-teaser">
+        AN exhibition this weekend by award-winning photographer Adam Whitaker will attempt to challenge the way Londoners see - and travel - around the capital.
+        
+    </div>
+
+
+
+ <div class="on-this-page">
+<p>The exhibition is taking place at the Old Truman Brewery in Shoreditch and is being organised by Good Going, the travel awareness campaign that promotes sustainable transport across 33 London boroughs. </p>
+<p>It will present its audience with alternative ways of travelling in London.</p>
+<p>Doors will open from midday to 5pm today (Friday), from midday to 4pm on Saturday and from 1pm to 4pm on Sunday.</p>
+<p>Admission is free.</p>
+
+     
+
+        
+        
+        
+        @this.ScriptBlock(
+        @<script>
+        //queue.push("@Html.ScriptPath("modules/M020-on-this-page.min.js")", null);
+        </script>
+        )
+        
+        
+        
+        </div>
+    </div>
+    <div class="aside" role="complementary">
+
+       
+        <div data-set="sidenav-container" class="large">
+
+            
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+        </div>
+
+
+
+            
+        <div data-set="sidenav-container" class="small-medium"></div>
+    </div>
+</div>
+
+<!-- Crumbs: PGtype:  -->
+
+ 
+ 
+        
+        
+            @{ViewBag.Description = "The exhibition is taking place at the Old Truman Brewery in Shoreditch and is being organised by Good Going, the travel awareness campaign that promotes sustainable transport across 33 London boroughs. It will present its audience with alternative ways of";}
+        
+        
+
+
+ 

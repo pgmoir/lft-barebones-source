@@ -1,0 +1,178 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Address details";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-provisional-resident-check-zone-anon-33359";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Address details</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Address details</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/account-account-landing-29377"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+
+
+        <!-- provisional-check-zone-anonymous -->
+        @using TfL.Ruc.Services.ViewModels.Ruc.DiscountApply
+        @{
+            dynamic content = new ContentModel();
+
+            content.BackButtonText = "Back";
+            content.ContinueButtonText = "Continue";
+            content.APIError = "Something went wrong. Please try again later.";
+
+            //content.UpdateCurrentAddressTitle = "Not your current address?";
+            //content.UpdateCurrentAddressText = "<p>&nbsp;If this is not your current address, you need to edit these details before applying for the discount.</p>";
+            //content.UpdateCurrentAddressButtonText = "Update address";
+            //content.AddressLinePostcodeText = "Postcode";
+            
+            var insideUrl = "/modes/driving/inside-resident-discount-provisional";
+            var outsideUrl = "/modes/driving/outside-resident-discount-provisional";
+
+            Html.RenderAction(
+                RucDictionary.ZoneChecker.DefaultActionName,
+                "ZoneChecker",
+                new
+                {
+                    zoneCheckJourney = ZoneCheckJourney.ResidentDiscountApplyProvisionalAnon,
+                    zoneChargeType = ZoneChargeType.CongestionCharge,
+                    area = "Ruc",
+                    backUrl = "/modes/driving/cc-provisional-resident-before-you-begin-33357",
+                    findAnotherUrl = "/modes/driving/cc-provisional-resident-check-zone-anon-33359",
+                    nextUrl = "/modes/driving/account-start-create-account-29657",
+                    createAccountUrl = "/modes/driving/cc-provisional-resident-select-vehicle-33362",
+                    reviewUrl = "/modes/driving/cc-resident-discount-review-application-29589",
+                    selectVehicleUrl = "/modes/driving/cc-provisional-resident-select-vehicle-33362",
+                    insideCcInsideResUrl = insideUrl,
+                    insideCcOutsideResUrl = outsideUrl,
+                    outsideCcInsideResUrl = insideUrl,
+                    outsideCcOutsideResUrl = outsideUrl,
+                    content = content,
+                    provisional = true,
+                    combined = true,
+                    navigationEnabled = true
+                }
+            );
+        }
+        
+        @{
+        this.ScriptBlock(@<script>
+            queue.push(
+                "@Html.ScriptPath("specific/pages/resident-address-zone-checker.min.js")", function () {
+                    residentZoneCheck.init();
+                }
+            );
+        </script>);
+        }
+        
+      
+      
+
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "Find an address for the residents' discount";}
+        
+            
+        
+
+
+ 

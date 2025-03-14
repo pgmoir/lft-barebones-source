@@ -1,0 +1,151 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Choose vehicles";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/autopay-fleet-select-vehicles";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                 <li><a href="/modes/driving/auto-pay">Auto Pay</a></li>
+                
+            
+            
+            
+                <li><span class="last-breadcrumb">Choose vehicles</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Choose vehicles</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+      <div class="article-teaser">
+        <p>Select a vehicle from your account list or choose a new one.</p>
+        
+      </div>
+    
+    
+      
+      
+           
+      
+
+        @{
+            var chargesMessage = System.Net.WebUtility.HtmlDecode("&pound;{0} annual registration charge");
+             var detailsNotFound = string.Format("Incomplete information. To pay for this vehicle, <a href='{0}'>enter the details manually.</a>","/modes/driving/autopay-fleet-find-vehicle");
+            dynamic content = new ContentModel();
+            content.VehicleNotInMyListText = "Choose a new vehicle";
+            content.VehicleNotInMyListTextAction = "/modes/driving/autopay-fleet-find-vehicle";
+            content.SortLabel = "Sort";
+            content.SearchLabel = "Search";
+            content.DetailNotFoundMessage = detailsNotFound;
+            content.ExemptAllMessage = "<p>This vehicle is exempt.  Based on the vehicle details entered and information held by the DVLA and TfL this vehicle is exempt from London Road User Charging.</p><p><strong>This may change without notice.  You can continue to apply for the Auto Pay service.</strong></p>";
+            content.ApplyFilterLabel = "Apply filter";
+            content.ResetFilterLabel = "Reset";
+            content.TemplateName = "ApplyAutoPayList";
+            content.AutoPayExistsWarning = "<p>This vehicle is already on an Auto Pay service and can't be added again. If it is not on your service please call 0343 222 2222 (<a href='/corporate/terms-and-conditions/tfl-call-charges'>TfL call charges</a>). </p>";
+            content.SelectedVehicleLabel = "Selected vehicles: {0} / {1}";
+            content.SelectedVehicleFormatString = "Selected vehicles: {0} / {1}";
+            content.ChargePerSelectionMessage = chargesMessage;
+            content.ValuePerCharge = "10";
+            content.BasketLimitMessage = "You have reached the maximum number of vehicles that you can add in one go.";
+            content.ContinueButtonAction = "/modes/driving/autopay-fleet-review-vehicles";
+            content.ApplyAutoPaySummaryPage = "/modes/driving/autopay-fleet-review-vehicles";
+            content.NoSelectionErrorMessage = "Select a vehicle to continue";
+            content.VehicleIsOnExceptionalListMessage = "<p>You can't add this vehicle - please call us on 0343 222 2222 (<a href='/corporate/terms-and-conditions/tfl-call-charges'>TfL call charges</a>).</p>";
+
+            Html.RenderAction("FleetAccountVehicles", "VehicleList", new
+            {    
+                content = content
+            }); 
+        }
+        
+        @this.ScriptBlock(@<script>
+                (function () {
+                    if (performance.navigation.type == 2) {
+                        location.reload(true);
+                    }
+                })();
+             </script>)
+        <br/>
+        <div class="button-set">
+            <a class="primary-button" id="continue-button" href="/modes/driving/autopay-fleet-review-vehicles">Continue</a>            
+            <a id="back-button" href="#" class="tertiary-link go-back"><span class="button-text">Back</span></a>
+        </div>
+      
+      
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "Select a vehicle from your account list or choose a new one.";}
+        
+            
+        
+
+
+ 

@@ -1,0 +1,106 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "WebCAT planning tool";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/info-for/urban-planning-and-construction/planning-with-webcat/webcat";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        <div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/info-for/urban-planning-and-construction/index">Urban planning and construction</a></li>
+                
+            
+                 <li><a href="/info-for/urban-planning-and-construction/our-role-in-planning">Our role in planning</a></li>
+                
+            
+                 <li><a href="/info-for/urban-planning-and-construction/planning-applications/planning-with-webcat">Planning with WebCAT</a></li>
+                
+            
+            
+                <li><span class="last-breadcrumb">WebCAT planning tool</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>WebCAT</h1>
+  </div>
+</div>
+  <!--[if lt IE 8]>
+<div class="r">    
+@{
+        Html.RenderAction("Message", "Messages", new
+        {
+            Message = @Html.Raw("You are using an unsupported version of Internet Explorer, please see <a href=\"/corporate/website-accessibility/index\">Website accessibility</a>"),
+                                                       MessageType = "Error",
+                                                       ShowCloseButton = false});
+    }
+</div>
+    <![endif]-->
+   
+<div class="r">    
+@{
+        Html.RenderAction("Message", "Messages", new { Message = @Html.Raw("By continuing to access this website, you acknowledge that you have read and agreed to the <a href=\"/corporate/terms-and-conditions/webcat\">WebCAT terms of use</a>"),
+                                                       MessageType = "Information",
+                                                       ShowCloseButton = true,
+                                                       CookieEntry = "tncPolicyNoticeHidden"});
+    }
+</div>
+<div class="r"> 
+    @{
+        Html.RenderAction("Message", "Messages", new { Message = @Html.Raw("By continuing to access this website, you acknowledge that you have read and agreed to the <a href=\"http://www.google.com/intl/en-US_US/help/terms_maps.html\">Google Maps terms and conditions of use</a>"),
+                                                      MessageType = "Information",
+                                                      ShowCloseButton = true,
+                                                       CookieEntry = "tncGooglePolicyNoticeHidden"});
+    }
+</div>
+
+
+<div class="main-and-aside r">
+
+
+
+    
+
+ @{
+     Html.RenderAction("Index", "WebCAT");
+ }
+
+</div>
+ 
+ 
+        
+        
+        
+            @{ViewBag.Description = "WebCAT urban planning tool";}
+        
+            
+        
+
+
+ 

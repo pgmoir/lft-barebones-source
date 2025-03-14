@@ -1,0 +1,125 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Upload proof";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/compliance-registration/upload";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+                 <li><a href="/modes/driving/compliance-registration/before-you-start">Register a vehicle for LEZ and ULEZ</a></li>
+                
+            
+                
+                <li><span class="last-breadcrumb">Upload proof</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Upload proof</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+
+        @{
+            dynamic content = new ContentModel();
+            content.FileNotUploadedError = "Upload a file to continue";
+            content.UploadLezOnlyIntro = "<h2>Euro emissions standards for LEZ</h2><ul>	<li>Vans and minibuses: Euro 3</li>	<li>Buses, coaches and HGVs: Euro IV</li></ul><h2>Required documents</h2><h3>Abatement equipment or retrofit technologies have been fitted:</h3><ul>	<li>Copy of vehicle registration document (V5C or foreign equivalent)</li>	<li>Proof of equipment fitted showing the vehicle now meets the required Euro standards</li></ul><p><strong>You can upload a maximum of 19 documents for this application.</strong></p><h2 id='Complianceregistration-RUC2020-tidied-DirectVisionStandard(DVS)HGVSafetyPermit.2'>Direct Vision Standard (DVS) HGV Safety Permit</h2><p>All HGVs over 12 tonnes gross vehicle weight need to hold an HGV Safety Permit to prove it meets the Direct Vision Standard. If you drive an HGV in Greater London at any time without a valid permit, you may receive a penalty charge notice (PCN).</p><p>If you haven’t got a permit for your vehicle you can apply for one at the end of this registration process.</p>";
+            content.UploadUlezOnlyIntro = "<h2>Euro emissions standards for ULEZ</h2><ul>	<li>Cars, motorcycles, vans and minibuses: petrol - Euro 4, diesel - Euro 6</li>	<li>Buses, coaches and HGVs: diesel - Euro VI</li></ul><h2>Required documents</h2><h3>Vehicle manufactured to a higher Euro standard than was mandatory (early adopters):</h3><ul>	<li>Copy of vehicle registration document (V5C or foreign equivalent)</li>	<li>Vehicle Manufacturers Conformity Certificate</li>	<li>Letter signed by a named individual from the vehicle manufacturer's homologation department showing the:<br />	- Number plate (Vehicle Registration Mark)<br />	- Vehicle Identification Number (VIN)<br />	- Euro standard the vehicle was manufactured to - fuel type<br />	- nitrogen oxides (NOx) value and particulate matter (PM) value (if diesel)</li></ul><h3>Vehicle should be exempt or not subject to the ULEZ scheme:</h3><ul>	<li>Copy of vehicle registration document (V5C or foreign equivalent)</li>	<li>Four photographs of the vehicle (front, sides, rear and interior)</li></ul><h3>Registering for the 100% showman's discount:</h3><ul>	<li>Copy of vehicle registration document (V5C or foreign equivalent)</li>	<li>Detailed explanation of the equipment and how it is used for the show</li>	<li>Four or more colour photographs of the vehicle set up for use, from each of its four sides and clearly showing its registration number</li>	<li>Where the equipment is inside the vehicle, colour photographs of the vehicle interior with all doors open and the equipment in place, showing how it is permanently fitted</li></ul><h3>Retrofit technologies have been fitted:</h3><ul>	<li>Copy of vehicle registration document (V5C or foreign equivalent)</li>	<li>Proof of equipment fitted demonstrating the vehicle now meets the required standards or above</li></ul><h3>Vehicle is registered outside of the UK</h3><ul>	<li>Copy of vehicle registration document showing year of manufacture and the Euro standard it was manufactured to</li></ul><p><strong>You can upload a maximum of 19 documents for this application.</strong></p><h2 id='Complianceregistration-RUC2020-tidied-DirectVisionStandard(DVS)HGVSafetyPermit.4'>Direct Vision Standard (DVS) HGV Safety Permit</h2><p>All HGVs over 12 tonnes gross vehicle weight need to hold an HGV Safety Permit to prove it meets the Direct Vision Standard. If you drive an HGV in Greater London at any time without a valid permit, you may receive a penalty charge notice (PCN).</p><p>If you haven’t got a permit for your vehicle you can apply for one at the end of this registration process.</p>";
+            content.UploadLezUlezIntro = "<h2>Euro emissions standards for ULEZ/LEZ</h2><h3>ULEZ</h3><ul>	<li>Cars, motorcycles, vans and minibuses: petrol - Euro 4, diesel - Euro 6</li>	<li>Buses, coaches and HGVs: diesel - Euro VI</li></ul><h3>LEZ</h3><ul>	<li>Vans and minibuses - Euro 3</li>	<li>Buses, coaches and HGVs - Euro IV</li></ul><h2>Required documents</h2><h3>Abatement equipment or retrofit technologies have been fitted:</h3><ul>	<li>Copy of vehicle registration document (V5C or foreign equivalent)</li>	<li>Proof of equipment fitted showing the vehicle now meets the required standards or above</li></ul><h3>Vehicle manufactured to a higher Euro standard than was mandatory (early adopters):</h3><ul>	<li>Copy of vehicle registration document (V5C or foreign equivalent)</li>	<li>Vehicle Manufacturers Conformity Certificate</li>	<li>Letter signed by a named individual from the vehicle manufacturer's homologation department showing the:<br />	- Number plate (Vehicle Registration Mark)<br />	- Vehicle Identification Number (VIN)<br />	- Euro standard the vehicle was manufactured to</li></ul><p>If you are registering the vehicle for ULEZ it will also need to state fuel type, nitrogen oxides (NOx) value and particulate matter (PM) value (if diesel).</p><h3>Vehicle should be exempt from the ULEZ or exempt/not subject to the LEZ:</h3><ul>	<li>A copy of vehicle registration document (V5C or foreign equivalent)</li>	<li>Four photographs of the vehicle (front, sides, rear and interior)</li></ul><h3>Registering for the 100% showman's discount:</h3><ul>	<li>Copy of vehicle registration document (V5C or foreign equivalent)</li>	<li>Detailed explanation of the equipment and how it is used for the show</li>	<li>Four or more colour photographs of the vehicle set up for use, from each of its four sides and clearly showing its registration number</li>	<li>Where the equipment is inside the vehicle, colour photographs of the vehicle interior with all doors open and the equipment in place, showing how it is permanently fitted</li></ul><h3>Vehicle is registered outside of the UK</h3><ul>	<li>Copy of vehicle registration document showing year of manufacture and the Euro standard it was manufactured to</li></ul><p><strong>You can upload a maximum of 19 documents for this application.</strong></p><h2 id='Complianceregistration-RUC2020-tidied-DirectVisionStandard(DVS)HGVSafetyPermit.3'>Direct Vision Standard (DVS) HGV Safety Permit</h2><p>All HGVs over 12 tonnes gross vehicle weight need to hold an HGV Safety Permit to prove it meets the Direct Vision Standard. If you drive an HGV in Greater London at any time without a valid permit, you may receive a penalty charge notice (PCN).</p><p>If you haven’t got a permit for your vehicle you can apply for one at the end of this registration process.</p>";
+            
+            content.BackButtonText = "Back";
+            content.ContinueButtonText = "Continue";
+
+            Html.RenderAction("Upload", "ComplianceRegistration", new
+            {
+                area = "Ruc",
+                backUrl = "/modes/driving/compliance-registration/registration-reason",
+                reviewUrl = "/modes/driving/compliance-registration/review",
+                vrmLookupUrl = "/modes/driving/compliance-registration/vrm-lookup",
+                content = content
+            });
+            
+        }
+
+    
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "Upload proof of compliance";}
+        
+            
+        
+
+
+ 

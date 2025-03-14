@@ -1,0 +1,196 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Contact Car and Motorcycle scrappage scheme";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/ultra-low-emission-zone/car-and-motorcycle-scrappage-scheme/make-enquiry";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+
+  
+
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                 <li><a href="/modes/driving/ultra-low-emission-zone">Ultra Low Emission Zone</a></li>
+                
+            
+                 <li><a href="/modes/driving/ultra-low-emission-zone/car-and-motorcycle-scrappage-scheme">ULEZ Car and motorcycle scrappage scheme</a></li>
+                
+            
+            
+            
+                <li><span class="last-breadcrumb">Make an enquiry</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+
+  
+  <div class="r">
+    <div class="headline-container section-title section-landing-container ">
+      <div class="section-title-wrap">
+        <h1 class="hero-headline">Contact Car and Motorcycle scrappage scheme</h1>
+        
+      </div>
+    </div>
+  </div>
+
+
+  
+  
+    
+  
+
+
+    
+    <div class="r">
+        <div class="section-overview clearfix ">
+            <div class="small-medium" data-set="section-intro"></div>
+            <div class="main">
+                <div class="large" data-set="section-intro">
+                    
+                </div>
+                <h2>Keep track of your enquiries</h2>
+
+<p>Sign in or create a London road user charging account.</p>
+
+<p>You'll be able to:</p>
+
+<ul>
+	<li>See your correspondence history with us</li>
+	<li>View and download all emails we've sent you</li>
+</ul>
+            </div>
+            
+            <div class="aside">
+                
+                
+
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/ultra-low-emission-zone/car-and-motorcycle-scrappage-scheme/make-enquiry"
+                        }
+                    );
+                }
+            
+      
+
+ 
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+                
+            </div>
+            
+        </div>
+    </div>
+    
+   
+    <div class="r">
+        <div class="main clearfix" role="main">
+            
+        
+        
+         
+        
+        
+        
+                
+                <div class="clearfix">
+                    
+
+        @{
+            dynamic content = new ContentModel();
+
+            content.ContinueButtonText = "Make an enquiry";
+
+            Html.RenderAction("MakeEnquiry", "CarScrappageEnquiry", new
+            { 
+                area = "Ruc",
+                content = content,
+                providePersonalDetailsUrl = "/modes/driving/ultra-low-emission-zone/car-and-motorcycle-scrappage-scheme/provide-personal-details",
+                provideEnquiryDetailsUrl = "/modes/driving/ultra-low-emission-zone/car-and-motorcycle-scrappage-scheme/provide-enquiry-details"
+            });
+        }
+      
+ 
+                </div>
+                <hr>
+                
+                
+                <div class="module-grid clearfix">
+                    
+                    
+                    
+                    
+                </div>
+        
+        
+        
+          
+        
+    </div>
+    
+      
+      <div class="aside" role="complementary">
+    
+        <div data-set="sidenav-container" class="large">
+          
+        </div>
+        <div class="module-grid clearfix">
+          
+          
+        </div>
+        <div data-set="sidenav-container" class="small-medium"></div>
+      </div>
+  </div>
+ 
+        
+        
+        
+            @{ViewBag.Description = "<h2>Keep track of your enquiries</h2><p>Sign in or create a London road user charging account.</p><p>You’ll be able to:</p><ul>	<li>See your correspondence history with us</li>	<li>View and download all emails we’ve sent you</li></ul>";}
+        
+            
+        
+
+
+ 

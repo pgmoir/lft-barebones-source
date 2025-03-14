@@ -1,0 +1,193 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Application in progress";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-recovery-vehicle-success";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Application in progress</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Application in progress</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+        @using TfL.Ruc.Services.ViewModels.Ruc.DiscountApply
+        @{
+            dynamic content = new ContentModel();
+            content.ConfirmationHeadingSuccess = "We're now processing your recovery vehicle discount application";
+            content.ReferenceNumber = "Application reference number: ";
+            content.TaxClass47OnlyConfirmationText = "<p>Your vehicle is now covered by the 100% recovery vehicle discount and you don't have to pay the charge from today. We will email a renewal reminder 25 days before your discount expires.</p><p>The discount only applies to the Congestion Charge. If a vehicle doesn't meet the emission standards you still need to pay the Ultra Low Emission Zone (ULEZ) charge.</p>";
+            content.NonTaxClass47ConfirmationText = "<p>We aim to process your application within 10 working days and will email you with the outcome. In the meantime you need to pay the Congestion Charge if you drive within the zone.</p><p>The discount only applies to the Congestion Charge. If a vehicle doesn't meet the emission standards you still need to pay the Ultra Low Emission Zone (ULEZ) charge.</p>";
+            content.PaymentReferenceText = "Receipt number for application payment: ";
+            content.PayCcLinkTitle = "Pay the Congestion Charge";
+            content.EmailAddressSentToPrefixText = "We have sent an email to: {0}";
+            content.SMSConfirmationText = "A receipt has been sent to mobile number: {0}";
+
+            content.AccountLandingButtonText = "Go to account";
+            
+            content.PayCcTitle = "Travelling in the next few days?";
+            content.PayCcText = "<p>You need to pay the Congestion Charge until your discount has been approved. Find out if you also need to pay the ULEZ charge by selecting 'Pay to drive in London'.</p>";
+            content.PayCcButtonText = "Pay to drive in London";
+            
+            content.ToxicityChargeTitle = "T-Charge payment";
+            content.ToxicityChargeText = @"The 100% recovery vehicle discount applies to Congestion Charging. Your vehicle is also subject to the T-Charge. If your Congestion Charge discount application is accepted you will still need to pay the T-Charge to drive your vehicle in the Congestion";
+            
+            content.AutoPayApplyTitle = "Pay ULEZ charge automatically";
+            content.AutoPayApplyText = "<p>Set up Auto Pay to be billed automatically for the ULEZ. If your vehicle does not meet the emission standards you will need to <a href='/modes/driving/pay-to-drive-in-london'>pay the ULEZ charge</a> when you drive in central London.</p>";
+            content.AutoPayApplyButtonText = "Set up Auto Pay";
+            
+            content.AutoPayManageTitle = "Add vehicles to Auto Pay?";
+            content.AutoPayManageText = "<p>Set up Auto Pay to be billed automatically for the ULEZ. If your vehicle does not meet the emission standards you will need to <a href='/modes/driving/pay-to-drive-in-london'>pay the ULEZ charge</a> when you drive in central London.</p>";
+            content.AutoPayManageButtonText = "Manage Auto Pay";
+            
+            content.AccountCreatedPrefix = "Your account number is ";
+            content.AccountCreatedMessage = "Make a note of your account number. You will need it to sign into your account.";
+            content.AccountLandingPageUrl = "/modes/driving/account-account-landing-29377";
+
+            Html.RenderAction(
+                "SubmissionSuccess",
+                "RecoveryVehicle",
+                new
+                {
+                    area = "Ruc",
+                    content = content,
+                    discountStyle = ZoneChargeDiscountStyle.RecoveryVehicle,
+                    payCcUrl = "/modes/driving/pay-the-charge-select-vehicle-26283",
+                    journeyStartUrl = "/modes/driving/cc-select-discount-29641",
+                    autoPayApplyUrl = "/modes/driving/auto-pay",
+                    manageAutoPayUrl = "/modes/driving/cc-autopay-manage-manage-29152",
+                    manageAccountUrl = "/modes/driving/account-account-landing-29377"
+                }
+            );
+        }
+
+
+    
+    
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+        @ModulesHelpers.PrintButton()
+      
+ 
+      </div>
+    
+    <div></div>
+    
+      <div>
+                    
+        <div class="vertical-button-container">
+    <ul>
+        
+        
+        
+        <li><a href="/modes/driving/congestion-charge/paying-the-congestion-charge"  class="plain-button">Congestion Charge payments</a></li>
+        
+        
+        <li><a href="/modes/driving/congestion-charge/congestion-charge-zone"  class="plain-button">Congestion Charge zone</a></li>
+        
+        
+        <li><a href="/modes/driving/auto-pay"  class="plain-button">Auto Pay</a></li>
+        
+        
+        <li><a href="/modes/driving/congestion-charge/discounts-and-exemptions"  class="plain-button">Discounts and exemptions</a></li>
+        
+        
+        <li><a href="/modes/driving/congestion-charge/contact-congestion-charge"  class="plain-button">Contact Congestion Charge</a></li>
+        
+    </ul>
+</div>
+
+      </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

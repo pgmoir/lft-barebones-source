@@ -1,0 +1,325 @@
+﻿
+    
+  
+
+
+<!-- rhroot -->
+@{ViewBag.Title = "TfL Rail";}
+@{ViewBag.Keywords = "TfL Rail ,TfL";}
+@{ViewBag.Url = "/modes/tfl-rail/index";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+            
+                <li><span class="last-breadcrumb">TfL Rail</span></li>
+            
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+    <div class="headline-container landing-page section-landing-container">
+        <h1>TfL Rail</h1>
+        
+    </div>
+</div>
+<div class="main-and-aside r">
+    <div class="main" role="main">
+        <div class="small-medium" data-set="widget"></div>
+        <div class="primary-teaser landing-page-teaser">
+            <div class="news-teaser ">
+  
+  <a href="/travel-information/improvements-and-projects/preparing-for-the-elizabeth-line?intcmp=56250"  data-img="/cdn/static/cms/images/promos/tfl-rail-class-345.jpg" data-img-breakpoint="medium" data-img-alt="TfL Rail train at Paddington station">
+    <img src="/cdn/static/cms/images/promos/tfl-rail-class-345_rdax_600x300.jpg" alt="TfL Rail train at Paddington station" />
+    <div class="text-link sit-top">
+      <h2>TfL Rail improvements</h2>
+      <p>See how we're preparing for the Elizabeth line</p>
+    </div>
+  </a>
+</div>
+
+ 
+        </div>
+        
+        <div class="clearfix">
+            
+
+<div class="search-filter">
+    <h3>Find a TfL Rail station</h3>
+    <p>For live departures, status information, route maps and timetables</p>
+    @{
+         Html.RenderAction("SearchFilter", "Modules", new
+         {
+              actionUrl = Library.DisambiguationSettings.DisambiguationUrl,
+              buttonText = "Go",
+              dataSets = new string[][]
+              {
+                   new[]{ Library.DisambiguationDataSets.StopPoints, "/{{mode}}/stop/{{naptanId}}/{{stopName}}/" }
+              },
+              modes = Library.MeansOfTransport.TflRail,
+              placeHolderText = "TfL Rail station"
+         });
+    }
+</div>             
+ 
+        </div>
+        <div class="module-grid clearfix">
+            <div>
+
+<div class="news-teaser">
+
+    <a href="/fares/index?intcmp=54640" >
+        <img src="/cdn/static/cms/images/promos/fares-teaser_rdax_400x200.jpg" alt="Diffrent types of tickets including contactless" />
+        
+        <div class="text-link">
+             <h2>Fares</h2>
+            <p>Find out more about paying for travel across TfL Rail stations</p>
+        </div>
+    </a>
+</div>
+ 
+ <div class="news-teaser">
+
+    <a href="/modes/tfl-rail/tfl-rail-timetables?intcmp=27614" >
+        
+        
+        <div class="text-link">
+             <h2>Timetables</h2>
+            <p>Use a TfL Rail timetable to help you plan ahead</p>
+        </div>
+    </a>
+</div>
+ 
+ <div class="news-teaser">
+
+    <a href="/status-updates/planned-track-closures?intcmp=54286" >
+        
+        
+        <div class="text-link">
+             <h2>Service changes</h2>
+            <p>Check for planned line closures and service changes on all modes</p>
+        </div>
+    </a>
+</div>
+ 
+ <div class="vertical-button-container">
+
+
+
+<a href="/fares/refunds-and-replacements"  class="plain-button">Refunds and replacements</a>
+
+
+<a href="/transport-accessibility/index"  class="plain-button">Transport accessibility</a>
+
+
+<a href="/modes/cycling/cycles-on-public-transport"  class="plain-button">Cycles on public transport</a>
+
+
+<a href="https://www.networkrail.co.uk/running-the-railway/looking-after-the-railway/delays-explained/leaves/"  class="plain-button">Autumn leaves on the rail network</a>
+
+</div>
+
+</div>
+ <div>
+
+<div class="news-teaser">
+
+    <a href="/status-updates/stations-status?intcmp=44587" >
+        <img src="/cdn/static/cms/images/promos/network-status-sign_rdax_400x200.jpg" alt="customer looking at network status board" />
+        
+        <div class="text-link">
+             <h2>Live travel</h2>
+            <p>Get live travel information about TfL Rail services</p>
+        </div>
+    </a>
+</div>
+ 
+ <div class="news-teaser">
+
+    <a href="/travel-information/improvements-and-projects/elizabeth-line?intcmp=1240" >
+        
+        
+        <div class="text-link">
+             <h2>Elizabeth Line</h2>
+            <p>Find out more about the new Elizabeth Line</p>
+        </div>
+    </a>
+</div>
+ 
+ <div class="related-links">
+
+    <h3>About us</h3>
+
+<div class="vertical-button-container">
+
+<a href="/corporate/about-tfl/what-we-do" class="plain-button">Find out more about TfL Rail</a>
+    </div>
+</div>
+ <div class="follow-social email">
+  
+  <div class="social-image">
+    
+  </div>
+  <div class="social-text">
+    <h3>Email updates</h3>
+    <p>Hop aboard the TfL email service for updates, personalised offers and promotions</p>
+  </div>
+  <div class="social-button">
+    <a class="secondary-button" href="/travel-information/social-media-and-email-updates/email-updates">Register</a>
+  </div> 
+</div>
+ 
+</div>
+ 
+        </div>
+    </div>
+    <div class="aside" role="complementary">
+        <div class="large" data-set="widget">
+            <div class="moving-source-order">
+            
+
+                <div class="widget-wrapper">
+
+                        <div class="board-wrapper service-board-collapsed">
+                            @{ Html.RenderAction("StatusBoard", "StatusUpdates", new { modes = Library.MeansOfTransport.TubeDlrOvergroundTflRail, collapsed = true, isHomeOrModePageStatusBoard = true }); }
+                        </div>
+
+
+                </div>
+             
+ 
+            </div>
+        </div>
+        <div class="module-grid">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="advert-tile unsponsored-style google-ads" aria-hidden="true">
+  <div class="advert-link">
+    <div class="advert-content">
+        <div class="medium-large" data-advert="/76889402/non-targeted" data-advert-sizes="300, 250"></div>
+        <div class="small" data-advert="/76889402/non-targeted" data-advert-sizes="300, 250"></div>
+    </div>
+  </div>
+</div>
+@{
+    ViewBag.AmazonSlot = "'amznslots'";
+    ViewBag.AmazonAds = "'3199'"; // to add another value, this needs to be ViewBag.AmazonAds = "'3199','xx'";
+}
+      
+
+ 
+            <div>
+    
+    <div class="contact-info-box">
+        <div class="contact-info-header">
+            <h3>Contact us</h3>
+        </div>
+                                                         
+        <div class="content-group">
+            <p>We're open 24 hours a day, 7 days a week.</p>
+        </div>
+        
+        
+            
+        
+        
+            
+                
+        
+        
+        <div class="content-group">
+            <p>
+                <abbr title="Chat">Chat</abbr><br />
+                 
+        On <a href="https://m.me/transportforlondon">Facebook</a> or <a href="https://twitter.com/messages/compose?recipient_id=47319664">Twitter</a>
+        
+        
+            </p>
+        </div>
+        
+        
+        <div class="content-group">
+            <p>
+                <abbr title="Telephone number">Call</abbr>&nbsp;<a href="/corporate/terms-and-conditions/tfl-call-charges">Charges apply</a><br />
+                0343 222 1234
+            </p>
+        </div>
+        
+        
+        <div class="content-group">
+            <p>
+                <abbr title="Textphone">Textphone</abbr><br />
+                0800 112 3456
+            </p>
+        </div>
+        
+        
+        <div class="content-group">
+            <p>
+                <abbr title="Address">Write</abbr>
+            </p>
+            <p><a href="/help-and-contact/contact-us-about-tube-and-rail">Fill in a general enquiries form</a> <br />
+<a href="/help-and-contact/contact-us-about-tube-and-rail-staff">Give feedback about staff</a><br />
+Or send a letter to:</p>
+        </div>
+        
+        
+        <div class="content-group">
+            TfL Customer Services<br />4th Floor<br />14 Pier Walk<br />London SE10 0ES
+        </div>
+        
+    </div>
+</div>
+ <div class="related-links">
+
+    <h3>Related websites</h3>
+
+<div class="vertical-button-container">
+
+<a href="http://www.londontravelwatch.org.uk/home/" class="plain-button">London Travelwatch</a>
+<a href="http://www.transportfocus.org.uk/" class="plain-button">Transport Focus</a>
+<a href="http://www.nationalrail.co.uk/" class="plain-button">National Rail</a>
+    </div>
+</div>
+ 
+        </div>
+    </div>
+    <div class="small-medium" data-set="content">&nbsp;</div>
+</div>
+ 
+        
+        
+        
+            @{ViewBag.Description = "TfL Rail landing page";}
+        
+            
+        
+
+
+ 

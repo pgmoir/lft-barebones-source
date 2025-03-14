@@ -1,0 +1,88 @@
+﻿
+
+
+@{ViewBag.Title = "Journey Planner now free on BT Internet Kiosks";}
+        
+        
+
+<div class="r">
+    <div class="headline-container plain">
+        <h1>Journey Planner now free on BT Internet Kiosks</h1>
+        <div class="content-page-press-release">
+        19 May 2004
+        </div>
+    </div>
+</div>
+<div class="main-and-aside r">
+    <div class="main" role="main">
+
+    <div class="article-teaser">
+        TfL's Journey Planner, the on-line travel information service, is now available for free on BT Internet Kiosks.
+        
+    </div>
+
+
+
+ <div class="on-this-page">
+<p>Kiosks featuring Journey Planner can be found at 500 locations across London, on the street, London Underground and major rail stations.</p>
+<p>The Kiosks already &quot;know&quot; where they are located in London, so all the user has to do is enter the address, bus / Tube stop, postcode or place of interest they are visiting and Journey Planner will work out how to get there by bus, Tube, tram, rail or even walking. </p>
+<p>To find out how to travel to Tate Modern, for example, type 'Tate Modern' under place of interest, submit the inquiry and the Journey Planner will bring up a range of travel options, including the quickest route and how much it will cost to travel. </p>
+<p>Ends</p>
+<p>For more information please contact TfL Press Office on 020 7941 4141 or see <a href="http://www.tfl.gov.uk/journeyplanner" lid="http://www.tfl.gov.uk/journeyplanner">www.tfl.gov.uk/journeyplanner</a>. </p>
+
+     
+
+        
+        
+        
+        @this.ScriptBlock(
+        @<script>
+        //queue.push("@Html.ScriptPath("modules/M020-on-this-page.min.js")", null);
+        </script>
+        )
+        
+        
+        
+        </div>
+    </div>
+    <div class="aside" role="complementary">
+
+       
+        <div data-set="sidenav-container" class="large">
+
+            
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+        </div>
+
+
+
+            
+        <div data-set="sidenav-container" class="small-medium"></div>
+    </div>
+</div>
+
+<!-- Crumbs: PGtype:  -->
+
+ 
+ 
+        
+        
+            @{ViewBag.Description = "Kiosks featuring Journey Planner can be found at 500 locations across London, on the street, London Underground and major rail stations.The Kiosks already &quot;know&quot; where they are located in London, so all the user has to do is enter the address,";}
+        
+        
+
+
+ 

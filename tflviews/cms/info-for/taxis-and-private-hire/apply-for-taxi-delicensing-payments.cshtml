@@ -1,0 +1,277 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Apply for taxi delicensing payments";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/info-for/taxis-and-private-hire/apply-for-taxi-delicensing-payments";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/info-for/taxis-and-private-hire/index">Taxi & private hire </a></li>
+                
+            
+                 <li><a href="/info-for/taxis-and-private-hire/taxi-delicensing-scheme">Taxi delicensing</a></li>
+                
+            
+            
+                <li><span class="last-breadcrumb">Apply for taxi delicensing payments</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Apply for taxi delicensing payments</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+                @using TfL.Web.ViewModels.FormBuilder
+                <div class="responsive-form responsive-table-wrapper with-icon">
+                @using (Html.BeginForm())
+                {
+                    
+
+                var pageTitle = "";
+                var introText = "<h2>Application form</h2><p>Fill in the form below to apply for the scheme.</p><h3>Before you start</h3><p>You will first need to:</p><ul>    <li>    <a href='/info-for/taxis-and-private-hire/taxi-delicensing-scheme'>Check your eligibility</a>, if you haven't already done so</li>    <li>    <a href='/corporate/terms-and-conditions/taxi-delicensing'>Read our terms and conditions</a></li>    <li>Ensure that you are the registered keeper of the vehicle, as stated in the vehicle's V5 document (log book)</li></ul><p>You must not attempt to sell your taxi after receiving a payment if there is any outstanding finance or other charges on the taxi.  TfL is not responsible or liable for any action taken by an applicant in relation to the sale, lease or future use of a delicensed taxi.</p>";
+                var emailConfirmationSubject = "Form submission for Taxi Delicencing Payments";
+                var successText = "<p>Thank you applying for the taxi delicensing scheme. We will contact you in due course on the outcome of your application.</p>";
+                var failureText = "<p>There was an error. Please try again.</p>";
+                var dataProtectionText = "<p>Transport for London (TfL) its subsidiaries and service providers will use your personal information for the purposes of assessing your eligibility for the Taxi Delicensing Scheme, and to contact you regarding your application. We will also use this information to check that your existing email address is up to date in our taxi licensing database.  Your personal information will be properly safeguarded and processed in accordance with the requirements of data protection legislation.  For further information, visit <a href='http://www.tfl.gov.uk/privacy'>www.tfl.gov.uk/privacy</a></p>";
+                var locationHelperText = "<p>Please let us know the pier location or journey made.</p>";
+                var bodyText = "";
+            
+                var recipientEmailSubjectTemplate = "VRM - {0}";
+            				
+
+
+		
+				
+
+
+			    dynamic personalDetailsModel = new ContentModel();
+                personalDetailsModel.PhoneNumberToolTip = "It may be quicker to resolve your enquiry by calling you back.";
+                personalDetailsModel.EmailAddressToolTip = "";
+                personalDetailsModel.TitleRequireIfTrue = "Select your title.";
+                personalDetailsModel.FirstNameRequireIfTrue = "Enter your first name.";
+                personalDetailsModel.LastNameRequireIfTrue = "Enter your surname.";
+                personalDetailsModel.EmailAddressRequireIfTrue = "Enter your email address.";
+                personalDetailsModel.ConfirmEmailAddressRequireIfTrue = "Enter your email address.";
+                personalDetailsModel.PhoneNumberRequireIfTrue = "Enter your phone number.";
+                personalDetailsModel.PhoneNumberRegularExpression = "The phone number must be numeric.";
+            
+
+
+                dynamic addressDetailsContent = new ContentModel();
+                addressDetailsContent.AddressLine1RequireIfTrue = "Enter your address.";
+                addressDetailsContent.AddressLine2RequireIfTrue = "Enter your address.";
+                addressDetailsContent.CityRequireIfTrue = "Enter your city.";
+                addressDetailsContent.CountryRequireIfTrue = "Enter your country.";
+                addressDetailsContent.PostcodeRequireIfTrue = "Enter your postcode.";
+                addressDetailsContent.PostcodeRegularExpression = "Please enter a valid UK postcode";
+                            
+
+                dynamic ulezApplicationContent = new ContentModel();
+                ulezApplicationContent.AgreeToTermsSelectionRequireIfTrue = "You need to agree to our terms and conditions in order to apply for the scheme";
+                ulezApplicationContent.VehicleRegistrationMarkRequireIfTrue = "Vehicle registration mark must be included";
+                ulezApplicationContent.VehicleIdentificationNumberRequireIfTrue = "Vehicle identification number must be included";
+                            
+                Html.RenderAction("Index", "FormBuilder", new
+                {
+                    formSetup = new FormSetupViewModel
+                    {
+                        FormName = "ULEZ Taxi Delicencing Payments",
+                        FormType = "",
+                        FormSections = new List<string>() { "PersonalDetails", "AddressDetails" ,"UlezApplication" },
+                        EmailConfirmationToUser = true,
+                        EmailConfirmationSubject = @emailConfirmationSubject,
+                        FormRecipient = "TaxiDelicensing@tfl.gov.uk",
+                        IntroductionMessages = new Dictionary<string, string>() { { "intro", @introText } },
+						UseTabularMessageForRecipient = true,
+                        BodyText = @bodyText
+                    },
+                    personalDetailsViewModel = new PersonalDetailsFormViewModel { Content = personalDetailsModel, Heading = "", FirstNameRequired = true, SurnameRequired = true, EmailAddressRequired = true, ConfirmEmailAddressRequired = true },
+                    addressDetailsFormViewModel = new AddressDetailsFormViewModel { Content = addressDetailsContent, AddressLine1Visible = true, AddressOneRequired = true, AddressLine2Visible = true, CityVisible = true, CityRequired = true, PostcodeVisible = true, PostcodeRequired = true },
+					ulezApplicationFormViewModel = new UlezApplicationFormViewModel { Content = ulezApplicationContent, VehicleRegistrationMarkRequired = true, VehicleIdentificationNumberRequired = true, AgreeToTermsRequired = true, RecipientEmailSubjectTemplate = @recipientEmailSubjectTemplate},
+                    submission = new FormSubmissionViewModel { DataProtection = @dataProtectionText, SuccessfulSubmissionMessage = @successText, FailedSubmissionMessage = @failureText, PageTitleSuccess = @pageTitle, PageTitleError = @pageTitle }
+                });
+            
+                }
+                
+                
+                
+                </div>
+            
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+   
+    
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                <a href="/info-for/taxis-and-private-hire/index" class="heading">
+                    <h2 id="sub-menu-heading">Taxi & private hire <span class="visually-hidden"> navigation</span></h2>
+                </a>
+                <ul>
+                    
+                                <li class="parent"><div class="link-wrapper"><a href="/info-for/taxis-and-private-hire/licensing">Licensing</a></div></li>
+                            
+ 
+                                <li><div class="link-wrapper"><a href="/info-for/taxis-and-private-hire/compliance-and-enforcement">Compliance and enforcement</a></div></li>
+                            
+ 
+                                <li class="parent"><div class="link-wrapper"><a href="/info-for/taxis-and-private-hire/ranks-regulation-and-policy">Ranks, regulation and policy</a></div></li>
+                            
+ 
+                                <li class="parent"><div class="link-wrapper"><a href="/info-for/taxis-and-private-hire/driver-news-and-updates">News and updates</a></div></li>
+                            
+ 
+                                <li><div class="link-wrapper"><a href="/info-for/taxis-and-private-hire/contact-taxis-and-private-hire">Contact Taxi & Private Hire</a></div></li>
+                            
+ 
+                                <li><div class="link-wrapper"><a href="/info-for/taxis-and-private-hire/taxi-and-private-hire-comments">Taxi and private hire comments</a></div></li>
+                            
+ 
+                                <li class="selected parent"><div class="link-wrapper"><a href="/info-for/taxis-and-private-hire/taxi-delicensing-scheme">Taxi delicensing</a></div>
+                                <ul>
+                                    
+                                        <li class="selected"><div class="link-wrapper"><a href="/info-for/taxis-and-private-hire/apply-for-taxi-delicensing-payments">Apply for taxi delicensing payments</a></div>
+                                    </li>
+ 
+                                </ul>
+                            </li>
+ 
+                </ul>
+            
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+      </div>
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+ 
+ 
+        
+        
+        
+            @{ViewBag.Description = "If you would like to apply for the scheme, please fill in the form below.";}
+        
+            
+        
+
+
+ 

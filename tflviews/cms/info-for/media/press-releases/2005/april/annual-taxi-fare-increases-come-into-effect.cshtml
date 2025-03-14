@@ -1,0 +1,117 @@
+﻿
+
+
+@{ViewBag.Title = "Annual taxi fare increases come into effect";}
+        
+        
+
+<div class="r">
+    <div class="headline-container plain">
+        <h1>Annual taxi fare increases come into effect</h1>
+        <div class="content-page-press-release">
+        01 April 2005
+        </div>
+    </div>
+</div>
+<div class="main-and-aside r">
+    <div class="main" role="main">
+
+    <div class="article-teaser">
+        New taxi fares come into effect this Saturday, 2nd April. The annual increase of 3.3% takes into account operating costs and average national earnings and is effective across all three tariffs.
+        
+    </div>
+
+
+
+ <div class="on-this-page">
+<p>In addition, an environmental levy of 20p per journey is being introduced so that taxi drivers can invest in equipment that will allow them to comply with the Mayor's taxi emissions strategy.<br></p>
+<p><strong>Average Fares</strong></p>
+<div class="table-container"><table class="datatable" width="100%">
+<tbody>
+<tr>
+<th>&nbsp;</th>
+<th><strong>Current average</strong></th>
+<th><strong>New average</strong></th>
+<th><strong>Increase (&pound;)</strong></th>
+<th><strong>Increase (%)</strong></th></tr>
+<tr>
+<td>Tariff 1</td>
+<td>&pound;8.49</td>
+<td>&pound;8.97</td>
+<td>&pound;0.48</td>
+<td>5.7%</td></tr>
+<tr>
+<td>Tariff 2</td>
+<td>&pound;9.84</td>
+<td>&pound;10.37</td>
+<td>&pound;0.53</td>
+<td>5.3%</td></tr>
+<tr>
+<td>Tariff 3</td>
+<td>&pound;11.55</td>
+<td>&pound;12.12</td>
+<td>&pound;0.58</td>
+<td>5.0%</td></tr>
+<tr>
+<td>All Week </td>
+<td>&pound;9.38</td>
+<td>&pound;9.89</td>
+<td>&pound;0.51</td>
+<td>5.4%</td></tr></tbody></table></div>
+
+     
+
+        
+        
+        
+        @this.ScriptBlock(
+        @<script>
+        //queue.push("@Html.ScriptPath("modules/M020-on-this-page.min.js")", null);
+        </script>
+        )
+        
+        
+        
+        </div>
+    </div>
+    <div class="aside" role="complementary">
+
+       
+        <div data-set="sidenav-container" class="large">
+
+            
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+        </div>
+
+
+
+            
+        <div data-set="sidenav-container" class="small-medium"></div>
+    </div>
+</div>
+
+<!-- Crumbs: PGtype:  -->
+
+ 
+ 
+        
+        
+            @{ViewBag.Description = "In addition, an environmental levy of 20p per journey is being introduced so that taxi drivers can invest in equipment that will allow them to comply with the Mayor's taxi emissions strategy.Average Fares&nbsp;Current averageNew averageIncrease";}
+        
+        
+
+
+ 

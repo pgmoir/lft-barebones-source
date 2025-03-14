@@ -1,0 +1,131 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Account settings";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/account-close-account-35088";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Account settings</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Account settings</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      <h2>Close account</h2>
+<p>By closing your London Road User Charging account you will also close services such as discounts or Auto Pay.</p>
+<p>If you have a residents' discount and have paid future charges you will no longer be entitled to pay at the discounted rate and all discounted charges will be refunded.</p>
+<p>To see active services go to <a href="/modes/driving/account-personal-account-29357">My account</a>.</p>
+      
+           
+      
+
+
+        
+        <!-- account / close-account -->
+        @{
+            dynamic content = new ContentModel();
+            content.CloseAccountWarningText = "<p><strong>You are about to close your London Road User Charging account and all related services.</strong></p><p>Closing your account is permanent and can't be undone.</p>";
+            content.OutatandingBalanceText = "<p><strong>There is an outstanding balance of {0} on your Auto Pay.</strong> You can't close your London Road User Charging account until this balance has been paid.</p><p><a href='/modes/driving/cc-autopay-manage-manage-29152'>View/pay your Auto Pay balance</a>.</p>";
+            content.ConfirmCheckBoxLabel = "I confirm that I want to close my account";
+            content.ConfirmClosureRequireTrue = "Confirm account closure to continue";
+                        
+            content.BackButtonText = "Back";
+            content.ContinueButtonText = "Confirm";
+
+            Html.RenderAction(
+                "CloseAccount", 
+                "AccountSettings",
+                new
+                { 
+                    Area = "Ruc",
+                    content = content,
+                    backUrl = "/modes/driving/account-account-settings-29386",
+                    confirmationUrl = "/modes/driving/account-close-account-confirmation-35089"
+                }
+            );
+        }
+        
+        
+	  
+
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

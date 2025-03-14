@@ -1,0 +1,149 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "PCN details";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/view-pcn-details";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+                 <li><a href="/modes/driving/view-a-pcn">View a PCN</a></li>
+                
+            
+            
+                <li><span class="last-breadcrumb">PCN details</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>PCN details</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+        <div>
+            @{ 
+                dynamic content = new ContentModel();
+                
+                content.SchemeLabelText = "Scheme";
+                content.LocationLabelText = "Contravention location";
+                content.StatusLabelText = "Current status";
+                content.DateAndTimeLabelText = "Contravention date and time";
+                content.OutstandingAmountLabelText = "Outstanding amount";
+                content.PcnChargeHistoryHeading = "Status history";
+                content.BasketButtonText = "Add to basket";
+                content.ChallengeButtonText = "Challenge";
+                content.ViewPcnPageUrl = "/modes/driving/view-a-pcn";
+                content.SearchAnotherPcnButtonText = "Search for another PCN";
+                content.SearchPcnButtonClass = "primary-button";
+                content.ListHeading = "";
+                content.MakeRepresentationUrl = "/modes/driving/make-a-representation?type=view&journey=view&isChallenge=false";
+                content.NotHistoryFoundMessage = "PCN status history not available";
+                content.ShowAllHistoryButtonText = "Show all";
+                content.AddToBasketText = "Added to basket";
+                content.PaidAlreadyErrorMessage = "You can't pay or challenge this PCN";
+                content.ClosedAlreadyErrorMessage = "PCN already closed";
+                content.BasketDetailPageUrl = "/modes/driving/basket";
+                content.BasketText = "Basket: ";
+                content.EmptyBasketText = "Basket is empty";
+                content.PaidAlreadyErrorMessageForAssociatedPcn = "Already paid";
+                content.JourneyCmsUrl = "/modes/driving/view-a-pcn?pcnId={0}&vrm={1}&journey=Pay&skippedIssuedPage=true";
+                content.ActionLink = "Add all";
+                content.CantAddToBasketButtonText = "You can't pay this PCN";
+                content.GoToBasket = "Go to basket";
+                content.UpdateChallengeButtonText = "Update your representation";
+                content.UpdateRepresentationUrl = "/modes/driving/update-your-representation?type=view&journey=view&isChallenge=false";
+                
+                content.LeadPcnAddingMessage = "PCN {0} added to basket";
+                content.AssociatedPcnsSectionHeadingText = "Other PCNs for this vehicle";
+                content.AssociatedPcnsSectionBodyText = "See details of PCNs issued to this vehicle, for the same registered keeper or person liable, across Congestion Charge, Ultra Low Emission Zone, Low Emission Zone and red route schemes.";
+                content.InformalMakeRepresentationUrl = "/modes/driving/make-an-informal-representation?type=challenge&journey=challenge&isChallenge=true";
+                
+                Html.RenderAction("PcnInformation","PCN" , new
+                {
+                    content = content,
+                    refreshVrm = Request.QueryString.AllKeys.Any(x=> x == "refreshVrm")
+                });
+            }
+            
+            <!-- Back Button with Find a PCN Button markup-->
+            <form action="/Ruc/pcn/RedirectToSearch" method="post">
+                <input type="hidden" id="viewPcnPageUrl" name="viewPcnPageUrl" value="/modes/driving/view-a-pcn"/>
+                <div class="button-set">
+                    <input id="primary-button" type="submit" class="secondary-button" value="Find another PCN">
+                    <a id="back-button" href="/modes/driving/view-a-pcn" class="tertiary-link go-back"><span class="button-text">Back</span></a>
+                </div>
+            </form>
+        </div>
+      
+  
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "PCN Details";}
+        
+            
+        
+
+
+ 

@@ -1,0 +1,224 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Manage cleaner vehicle discount";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-cvd-manage-33830";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Manage cleaner vehicle discount</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Manage cleaner vehicle discount</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+      <div class="article-teaser">
+        <p>This discount was formerly known as the Ultra Low Emission Discount (ULED).</p>
+        
+      </div>
+    
+    
+      
+      
+           
+      
+
+
+	    
+		<!-- 10. uled -->
+		@{
+            dynamic content = new ContentModel();
+
+            content.SingleActiveCountText = "Discount status: Active on 1 vehicle";
+            content.ActiveCountTextFormat = "Discount status: Active on {0} vehicles";
+
+            Html.RenderAction("DiscountActiveVehicleCount", "DiscountManage", new
+                {
+                    area = "Ruc",
+                    discountStyle = ZoneChargeDiscountStyle.UltraLowEmission,
+                    content = content
+                }
+            );
+        }
+
+        @{  
+            dynamic vehicleListContent = new ContentModel();
+            
+            /* Charge labels and messages */
+            vehicleListContent.NonChargeableLabel = "No charge due";
+            vehicleListContent.NonChargeableMessage = "Based on the vehicle details entered and information held by the DVLA and TfL today, you don't have to pay the ULEZ charge for this vehicle. This may change - always check to see if you need to pay to drive within the zone.";
+            vehicleListContent.PayableHighLabel = "Should be paid";
+            vehicleListContent.PayableHighMessage = "This vehicle does not meet the ULEZ emissions standards. You need to pay the ULEZ charge if you drive within the zone. The zone operates at all times - charging days run from midnight to midnight.";
+            vehicleListContent.PayableLowLabel = "Should be paid";
+            vehicleListContent.PayableLowMessage = "This vehicle does not meet the ULEZ emissions standards. You need to pay the ULEZ charge if you drive within the zone. The zone operates at all times - charging days run from midnight to midnight.";
+            vehicleListContent.ExemptLabel = "Exempt";
+            vehicleListContent.ExemptMessage = "Based on the vehicle details entered and information held by the DVLA and TfL today, this vehicle is exempt from this charge. This may change - always check to see if you need to pay to drive within the zone.";
+            vehicleListContent.CompliantLabel = "Meets the standard";
+            vehicleListContent.CompliantMessage = "This vehicle meets the ULEZ emissions standards. You don't have to pay the charge.";
+            vehicleListContent.PayableLabel = "Should be paid";
+            vehicleListContent.PayableMessage = "You need to pay the Congestion Charge for this vehicle if you drive within the zone Monday to Friday 07:00-18:00 excluding bank holidays and the period between Christmas Day and New Year's Day.";
+            vehicleListContent.ChargeabilityUnknownLabel = "Unknown";
+            vehicleListContent.ChargeabilityUnknownMessage = "We don't hold any charge details for this vehicle.";
+            vehicleListContent.UnknownVehicleWarningMessage = "We don't have any details for this vehicle at the moment. If you want to add it to a discount application or to Auto Pay you need to add it as a new vehicle.";
+
+            /* CommonList CMS properties */
+            vehicleListContent.ServiceError = "There was a problem - we can't retrieve your vehicles";
+    
+            /* Search, Sort Filter Section */
+            vehicleListContent.SearchLabelText = "Search by number plate";
+            vehicleListContent.SearchPlaceholderText = "eg AB01ABC";
+            vehicleListContent.SortLabelText = "Sort by";
+            vehicleListContent.ApplyFilterButtonText = "Apply filter";
+            vehicleListContent.ResetFilterButtonText = "Reset filter";
+    
+            /* Composite Vehicle List Summary*/
+            vehicleListContent.TotalRecordsLabelTemplate = "{0} vehicle(s)";
+            vehicleListContent.PluralTotalRecordsLabelTemplate = "{0} vehicles";
+            vehicleListContent.DownloadButtonText = "Download this list";
+    
+            /* Composite Vehicle List Panel */
+            vehicleListContent.CcLabel = "CC";
+            vehicleListContent.UlezLabel = "ULEZ";
+            vehicleListContent.ExpiryDateText = "Expiry date: ";
+            vehicleListContent.MoreDetailsLabelText = "Charge details";
+            vehicleListContent.LessDetailsLabelText= "Charge details";
+    
+            /* Remove Vehicle Modal */
+            vehicleListContent.RemoveVehicleModalHeadingText = "Are you sure?";
+            vehicleListContent.RemoveVehicleModalMessageText = "This will remove the vehicle from this discount only, but not from Auto Pay.";
+            vehicleListContent.RemoveVehicleModalConfirmButtonText = "Remove";
+            vehicleListContent.RemoveVehicleModalCancelButtonText = "Keep";
+
+            vehicleListContent.RenewDiscountText = "Renew discount";
+            vehicleListContent.RenewUrl = "/modes/driving/cc-cvd-renew-renew-22942?";
+            
+            vehicleListContent.FullDiscountLabel = "100% discount";
+            vehicleListContent.FullDiscountMessage = "This vehicle is currently registered for a 100% discount from this charge. Check when the discount expires in the 'Manage discounts' section of your account.";
+
+            Html.RenderAction("Index", "CompositeVehicles", new
+                {
+                    content = vehicleListContent,
+                    compositeVehicleServiceStyle = CompositeVehicleServiceStyle.Discount,
+                    zoneChargeDiscountStyle = ZoneChargeDiscountStyle.UltraLowEmission
+                }
+            );
+        }
+
+        @ModulesHelpers.LinkWithIcon(
+            "Add vehicle to discount", 
+            "add-vehicle",
+            "/modes/driving/cc-cvd-before-you-begin?sourceRoutingKey=manage-uled",
+            responsive: true
+        )
+
+        @ModulesHelpers.BoxedLink(
+            href: "/modes/driving/cc-autopay-manage-view-vehicle-history-30894?Search.ServiceType=UltraLowEmission", 
+            id: "vehicle-history", 
+            text: "CVD discount vehicle history", 
+            soloButton: true
+        )
+
+        @FormHelpers.DottedSeparator()
+        @ModulesHelpers.BackLink()
+      
+        @this.ScriptBlock(
+          @<script>
+               queue.push(
+                    "@Html.ScriptPath("specific/list-filters-text.min.js")", null,
+                    "@Html.ScriptPath("modules/M020-on-this-page.min.js")", null,
+                    "@Html.ScriptPath("specific/results-paginator.min.js")", function() {
+                       $('#vehicle-list').paginator({
+                           showItemCount: true
+                       });
+                   });
+          </script>
+        )
+		
+	  
+
+  
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "This discount was formerly known as the Ultra Low Emission Discount (ULED).";}
+        
+            
+        
+
+
+ 

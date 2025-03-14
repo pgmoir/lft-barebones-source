@@ -1,0 +1,150 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Manage Auto Pay";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-autopay-manage-review-direct-debit-37991";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                 <li><a href="/modes/driving/auto-pay">Auto Pay</a></li>
+                
+            
+            
+            
+                <li><span class="last-breadcrumb">Manage Auto Pay</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Manage Auto Pay</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      <h2>Review details</h2>
+      
+           
+      
+
+ 
+
+
+		
+		<!-- 3. / congestion-charge / autopay / manage / review-direct-debit -->
+		@{
+            dynamic content = new ContentModel();
+
+            content.BackButtonText = "Back";
+            content.ContinueButtonText = "Submit";
+            content.PaymentSectionReviewHeading = "Select payment method";
+            content.DirectDebitDetailsHeading = "DIRECTDEBITDETAILSHEADING(SHARED)";
+            content.AccountNameLabel = "Name of Bank/building society account holder";
+            content.SortCodeLabel = "Sort Code";
+            content.AccountNumberLabel = "Bank/building society account number";
+            content.DirectDebitByPostText = "You have selected to set up a direct debit by post.";
+            content.EditPaymentDetailsButtonText = "Edit";
+            content.InstructionsHeading = "Instruction to your bank/building society";
+            content.DirectDebitLogoText = "DIRECTDEBITLOGTEXT(SHARED)";            
+            content.ServiceUserNumberHeading = "Service user number";
+            content.ServiceUserNumberText = "<p>SERVICEUSERNUMBERTEXT (SHARED)</p>";
+            content.InstuctionsText = "<p>Please pay Congestion Charging London direct debits from the account detailed in this instruction subject to the safeguards assured by the Direct Debit Guarantee. I understand that this instruction may remain with Congestion Charging London and, if so, details will be passed electronically to my bank/building society.</p>"; 
+            content.BankNameAndAddressLabel = "Name and address of your bank/building society";
+            content.DateLabel = "Date";
+            content.DirectDebitGuaranteeHeading = "The Direct Debit Guarantee";
+            content.DirectDebitGuaranteeText = "<h3><img alt='Direct Debit Guarantee logo' src='/ruc-cdn/static/cms/images/ddlogo.png' /></h3><p>This Guarantee is offered by all banks and building societies that accept instructions to pay direct debits.</p><p>If there are any changes to the amount, date or frequency of your direct debit, Transport for London will notify you no more than 10 working days in advance of your account being debited. Notifications will be sent either by email or post depending on your account preferences you have set with us.</p><p>If you request that Transport for London collects a payment, confirmation of the amount and date will be given to you at the time of the request.</p><p>If an error is made in the payment of your direct debit by Transport for London or your bank or building society, you are entitled to a full and immediate refund of the amount paid from your bank or building society. If you receive a refund you are not entitled to, you must pay it back when Transport for London asks you to.</p><p>You can cancel a direct debit at any time by simply contacting your bank or building society - written confirmation may be required. Please also notify Transport for London.</p><p>Questions or further information about your direct debit can be directed to Transport for London:</p><p><strong>Email:</strong> CCLondon@CCLondon.com<br /><strong>Phone:</strong> 0343 222 2222 (<a href='/corporate/terms-and-conditions/tfl-call-charges'>TfL call charges</a>)<br /><strong>Address:</strong><br />Congestion Charging<br />PO Box 344<br />Darlington DL1 9QE</p>"; 
+
+            Html.RenderAction("ReviewPaymentDetail", "AutoPayManage", new
+                {
+                    area = "Ruc",
+                    content = content,
+                    style = ZoneChargeAutoPayStyle.CongestionCharge,
+                    backUrl = "/modes/driving/cc-autopay-manage-direct-debit-37990",
+                    paymentOptionsUrl = "/modes/driving/cc-autopay-manage-select-payment-option-37989?review=true",
+                    paymentDetailsUrl = "/modes/driving/cc-autopay-payment-payment-details-31055"
+                }
+            );
+        }
+		
+	  
+
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+        @ModulesHelpers.PrintButton()
+      
+ 
+      </div>
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

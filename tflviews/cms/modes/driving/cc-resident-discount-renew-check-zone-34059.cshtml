@@ -1,0 +1,154 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Address details";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-resident-discount-renew-check-zone-34059";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Address details</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Address details</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+
+
+        <!-- resident-renew-check-zone -->
+        @using TfL.Ruc.Services.ViewModels.Ruc.DiscountApply
+        @{
+            dynamic content = new ContentModel();
+
+            content.ConfirmAddressText = "This is the address associated with your account:";
+            
+            content.UpdateCurrentAddressTitle = "Not your current address?";
+            content.UpdateCurrentAddressText = "<p>If this is not your current address, you need to update it. You can only renew your residents' discount if your new address is also eligible.</p>";
+            content.UpdateCurrentAddressButtonText = "Update address";
+            
+            content.BackButtonText = "Back";
+            content.ContinueButtonText = "Continue";
+            
+            content.ZoneCheckerInformationHeaderText = "";
+
+            var insideUrl = "/modes/driving/inside-resident-discount";
+            var outsideUrl = "/modes/driving/outside-resident-discount";
+            
+            Html.RenderAction(
+                RucDictionary.DiscountRenew.ResidentDiscountCheckZoneActionName,
+                "DiscountRenew",
+                new
+                {
+                    area = "Ruc",
+                    selectDiscountUrl = "/modes/driving/cc-select-discount-29641",
+                    findAnotherUrl = "/modes/driving/cc-resident-discount-renew-update-address-34076",
+                    updateAddressUrl = "/modes/driving/cc-resident-discount-renew-update-address-34076",
+                    selectVehicleUrl = "/modes/driving/cc-resident-discount-renew-check-vehicle-34057",
+                    reviewUrl = "/modes/driving/cc-resident-discount-renew-review-application-34068",
+                    backUrl = "/modes/driving/cc-resident-discount-renew-before-you-begin-34055",
+                    insideCcInsideResUrl = insideUrl,
+                    insideCcOutsideResUrl = outsideUrl,
+                    outsideCcInsideResUrl = insideUrl,
+                    outsideCcOutsideResUrl = outsideUrl,
+                    content = content,
+                    discountStyle = ZoneChargeDiscountStyle.ResidentsDiscount,
+                    discountAction = DiscountAction.Renew,
+                    journeyStartUrl = "/modes/driving/cc-discount-manage-discounts-32822",
+                    back = true
+                }
+            );
+        }
+        
+      
+      
+
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

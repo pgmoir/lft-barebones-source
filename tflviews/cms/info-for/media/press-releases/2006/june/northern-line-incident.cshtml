@@ -1,0 +1,89 @@
+﻿
+
+
+@{ViewBag.Title = "Northern line incident";}
+        
+        
+
+<div class="r">
+    <div class="headline-container plain">
+        <h1>Northern line incident</h1>
+        <div class="content-page-press-release">
+        02 June 2006
+        </div>
+    </div>
+</div>
+<div class="main-and-aside r">
+    <div class="main" role="main">
+
+    <div class="article-teaser">
+        Following an incident which occurred this morning on the Northern line, London Underground has issued the following statement:<BR>For real-time information visit: http://www.tfl.gov.uk/tube/travelinfo/realtime/
+        
+    </div>
+
+
+
+ <div class="on-this-page">
+<p>"An empty northern line train derailed at very low speed as it entered Archway sidings this morning.  No passengers were on board the train and no one was injured.</p>
+<p>"The incident happened at 10.51am.</p>
+<p>"The Northern Line is partly suspended from Camden Town to East Finchley.  A rail replacement bus service is operating through that area.</p>
+<p>"An investigation has been launched and the Rail Accident Investigation Branch (RAIB) is at the scene .</p>
+<p>"The suspension will be in place for the remainder of the day and is expected to be in place tomorrow. A further service update will be issued as more information becomes available."   </p>
+<p><br> </p>
+
+     
+
+        
+        
+        
+        @this.ScriptBlock(
+        @<script>
+        //queue.push("@Html.ScriptPath("modules/M020-on-this-page.min.js")", null);
+        </script>
+        )
+        
+        
+        
+        </div>
+    </div>
+    <div class="aside" role="complementary">
+
+       
+        <div data-set="sidenav-container" class="large">
+
+            
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+        </div>
+
+
+
+            
+        <div data-set="sidenav-container" class="small-medium"></div>
+    </div>
+</div>
+
+<!-- Crumbs: PGtype:  -->
+
+ 
+ 
+        
+        
+            @{ViewBag.Description = "'An empty northern line train derailed at very low speed as it entered Archway sidings this morning.No passengers were on board the train and no one was injured.'The incident happened at 10.51am.'The Northern Line is partly suspended from Camden Town to";}
+        
+        
+
+
+ 

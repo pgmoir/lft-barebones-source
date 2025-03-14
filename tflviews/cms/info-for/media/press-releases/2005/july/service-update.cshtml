@@ -1,0 +1,94 @@
+﻿
+
+
+@{ViewBag.Title = "Service update";}
+        
+        
+
+<div class="r">
+    <div class="headline-container plain">
+        <h1>Service update</h1>
+        <div class="content-page-press-release">
+        12 July 2005
+        </div>
+    </div>
+</div>
+<div class="main-and-aside r">
+    <div class="main" role="main">
+
+    <div class="article-teaser">
+        A normal service is operating on the following lines:Bakerloo, Central, East London, Jubilee, Northern, Victoria and Waterloo & City lines.
+        
+    </div>
+
+
+
+ <div class="on-this-page">
+<p>From the first train tomorrow (18 July) King's Cross St Pancras Underground station is open for the Metropolitan, Northern and Victoria lines and interchange with other Underground lines is available.</p>
+<p>The Circle line remains suspended. </p>
+<p>The Hammersmith &amp; City line is operating between Hammersmith and Paddington only. </p>
+<p>There is no service on the Metropolitan line between Moorgate and Aldgate.</p>
+<p>On the District line there is no service between High Street Kensington and Edgware Road. </p>
+<p>On the Piccadilly line there is no service between Hyde Park Corner and Arnos Grove and between Rayners Lane and Uxbridge. </p>
+<p>There are two special bus services in operation:</p>
+<ul>
+<li>One service calls at Arnos Grove and Finchley Central to provide a connection with the Northern line. 
+</li><li>From 13 July the second special bus service will now start from Arnos Grove rather than Bounds Green calling at Bounds Green, Wood Green, Turnpike Lane and Seven Sisters to connect with Victoria line services.</li></ul>
+<p>Additional bus services are operating on route 91 between Holloway Road and Euston via Caledonian Road and King's Cross St Pancras.</p>
+
+     
+
+        
+        
+        
+        @this.ScriptBlock(
+        @<script>
+        //queue.push("@Html.ScriptPath("modules/M020-on-this-page.min.js")", null);
+        </script>
+        )
+        
+        
+        
+        </div>
+    </div>
+    <div class="aside" role="complementary">
+
+       
+        <div data-set="sidenav-container" class="large">
+
+            
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+        </div>
+
+
+
+            
+        <div data-set="sidenav-container" class="small-medium"></div>
+    </div>
+</div>
+
+<!-- Crumbs: PGtype:  -->
+
+ 
+ 
+        
+        
+            @{ViewBag.Description = "From the first train tomorrow (18 July) King's Cross St Pancras Underground station is open for the Metropolitan, Northern and Victoria lines and interchange with other Underground lines is available.The Circle line remains suspended. The Hammersmith";}
+        
+        
+
+
+ 

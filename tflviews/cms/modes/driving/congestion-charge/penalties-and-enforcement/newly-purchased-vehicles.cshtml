@@ -1,0 +1,291 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Newly purchased vehicles";}
+@{ViewBag.Keywords = "Businesses,Drivers,Public,Driving,TfL";}
+@{ViewBag.Url = "/modes/driving/congestion-charge/penalties-and-enforcement/newly-purchased-vehicles";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                 <li><a href="/modes/driving/congestion-charge">Congestion Charge</a></li>
+                
+            
+                 <li><a href="/modes/driving/congestion-charge/penalties-and-enforcement">Penalties and enforcement</a></li>
+                
+            
+                
+                <li><span class="last-breadcrumb">Newly purchased vehicles</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Newly purchased vehicles</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/account-account-landing-29377"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+      <div class="article-teaser">
+        <p>You may receive a Penalty Charge Notice (PCN) for a contravention that occurred before you were the registered keeper of the vehicle, ie before you bought your car. </p>
+        
+      </div>
+    
+    <div class="on-this-page">
+      <h2>How this can happen</h2>
+
+<p>If we cannot match the image of a vehicle registration to our database, we contact the <a href="https://www.gov.uk/government/organisations/driver-and-vehicle-licensing-agency">DVLA</a> or <a href="http://www.nidirect.gov.uk/motoring"> DVA</a> and request details of the vehicle and the recorded registered keeper.</p>
+
+<p>If the DVLA/DVA details have not been updated following the sale of a vehicle, the wrong person may receive a PCN. Whether buying or selling a vehicle it is your joint responsibility to ensure the DVLA/DVA records for the vehicle are updated.</p>
+
+<h2>What to do if it happens</h2>
+
+<p>You can make a representation and transfer liability for the PCN to the appropriate person, normally the vehicle's previous owner. However, if they fail to pay a PCN for a vehicle you now possess, your vehicle may be immobilised or removed.</p>
+
+<h2>How to prevent it happening</h2>
+
+<p>If you are considering buying a vehicle, you can check whether it is subject to any outstanding PCNs by emailing the following information to <a href="mailto:outstandingccpenaltycharges&#64;tfl.gov.uk?Subject=Email%20from%20website">outstandingccpenaltycharges&#64;tfl.gov.uk</a>:</p>
+
+<ul>
+	<li>Your full name and address for identification purposes</li>
+	<li>An email address for the information to be sent to</li>
+	<li>The complete vehicle registration number (only one per enquiry is permitted)</li>
+	<li>Confirmation that you have obtained the explicit consent of the current registered keeper of the vehicle (or, if unregistered, the owner of the vehicle) for the information to be provided to you</li>
+</ul>
+
+<h3>Communications</h3>
+
+<ul>
+	<li>This email address is for the process outlined above only. If you have any other questions or want to update your account details, you can contact our call centre on 0343 222 2222 (<a href="/corporate/terms-and-conditions/tfl-call-charges">TfL call charges</a>). Alternatively you may prefer to write to us. Full TfL contact address details can be found on our <a href="/modes/driving/congestion-charge/contact-congestion-charge">Contact Congestion Charge</a> page</li>
+	<li><strong>We can only confirm if there are outstanding penalty charges. </strong> An enquiry cannot be made to ascertain whether the vehicle has been captured within the zone and if you therefore need to pay the charge</li>
+	<li>Further details of any outstanding penalty charges can only be provided to the person deemed liable for those penalties</li>
+	<li>By making an enquiry via this process you are not informing us that you are now the keeper of a vehicle. Therefore any account that you may have with us will not be updated and any relevant PCNs will not be reissued. To do this you must contact us using the details above</li>
+	<li>If you want to make a representation against any PCNs you have already received you should follow the instructions on the PCN</li>
+</ul>
+
+<h3>Data Protection Act 1998</h3>
+
+<ul>
+	<li>We will only process the personal information you provide for the purpose of the administration of the PCN Checker enquiry service. Your personal information will be properly safeguarded and processed in accordance with the requirements of the Data Protection Act 1998. It may be disclosed to or requested from the registered keeper of the vehicle in question. If, as a result of your enquiry, we have reason to believe that there has been an abuse of this service and/or an offence under the Data Protection Act 1998 may have been committed, your personal information may be disclosed to relevant third parties, including law enforcement agencies</li>
+	<li>It is an offence under section 55 of the Data Protection Act 1998 to knowingly or recklessly, obtain, disclose, sell or advertise for sale, or bring about the disclosure of personal data, without the consent of the Data Controller (TfL)</li>
+	<li>We specifically prohibit you from making any other commercial use of the information you receive or in any way selling, publishing or publicising it</li>
+	<li>We will provide your name, address, and email address to the registered keeper of the vehicle that you have enquired about if requested to do so by that person. Your use of this service indicates your consent to the release this information</li>
+</ul>
+
+<p>By using this service you are confirming your acceptance of these terms and conditions and your agreement that you will only use the information you receive for purposes relating to your possible purchase of the vehicle.</p>
+      
+           
+      
+      
+        
+          
+            @this.ScriptBlock(
+              @<script>
+                queue.push("@Html.ScriptPath("modules/M020-on-this-page.min.js")", null);
+              </script>
+            )
+          
+        
+      
+    </div>
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+                <a href="/modes/driving/congestion-charge" class="heading">
+                    <h3 id="sub-menu-heading" class="h2">Congestion Charge<span class="visually-hidden"> navigation</span></h3>
+                </a>
+                <ul>
+                    
+                                <li class="parent" aria-label="page with sub pages"><div class="link-wrapper"><a href="/modes/driving/congestion-charge/congestion-charge-zone">Congestion Charge zone</a></div></li>
+                            
+ 
+                                <li class="parent" aria-label="page with sub pages"><div class="link-wrapper"><a href="/modes/driving/congestion-charge/paying-the-congestion-charge">Congestion Charge payments</a></div></li>
+                            
+ 
+                                <li aria-label="page with no sub pages"><div class="link-wrapper"><a href="/modes/driving/congestion-charge/discounts-and-exemptions">Discounts and exemptions</a></div></li>
+                            
+ 
+                                <li aria-label="page with no sub pages"><div class="link-wrapper"><a href="/modes/driving/congestion-charge/dart-charge">Dart Charge</a></div></li>
+                            
+ 
+                                <li class="selected parent" aria-label="selected page with sub pages"><div class="link-wrapper"><a href="/modes/driving/congestion-charge/penalties-and-enforcement">Penalties and enforcement</a></div>
+                                <ul>
+                                    
+                                <li class="parent" aria-label="page with sub pages"><div class="link-wrapper"><a href="/modes/driving/congestion-charge/penalties-and-enforcement/challenge-a-penalty-charge">Challenge a penalty charge</a></div></li>
+                            
+ 
+                                <li aria-label="page with no sub pages"><div class="link-wrapper"><a href="/modes/driving/congestion-charge/penalties-and-enforcement/enforcement-process">Enforcement process</a></div></li>
+                            
+ 
+                                <li aria-label="page with no sub pages"><div class="link-wrapper"><a href="/modes/driving/congestion-charge/penalties-and-enforcement/enforcement-agents-and-bailiffs">Enforcement agents and bailiffs</a></div></li>
+                            
+ 
+                                        <li class="selected" aria-label="selected page with no sub pages"><div class="link-wrapper"><a href="/modes/driving/congestion-charge/penalties-and-enforcement/newly-purchased-vehicles">Newly purchased vehicles</a></div>
+                                    </li>
+ 
+                                </ul>
+                            </li>
+ 
+                                <li class="parent" aria-label="page with sub pages"><div class="link-wrapper"><a href="/modes/driving/congestion-charge/contact-congestion-charge">Contact Congestion Charge</a></div></li>
+                            
+ 
+                                <li class="parent" aria-label="page with sub pages"><div class="link-wrapper"></div></li>
+                            
+ 
+                </ul>
+            
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+      </div>
+    
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="advert-tile unsponsored-style google-ads" aria-hidden="true">
+  <div class="advert-link">
+    <div class="advert-content">
+        <div class="medium-large" data-advert="/76889402/driving/ulez" data-advert-sizes="300, 250"></div>
+        <div class="small" data-advert="/76889402/driving/ulez" data-advert-sizes="300, 250"></div>
+    </div>
+  </div>
+</div>
+@{
+    ViewBag.AmazonSlot = "'amznslots'";
+    ViewBag.AmazonAds = "'3199'"; // to add another value, this needs to be ViewBag.AmazonAds = "'3199','xx'";
+}
+      
+
+ </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "Avoiding PCNs for contraventions that occured before you bought the vehicle";}
+        
+            
+        
+
+
+ 

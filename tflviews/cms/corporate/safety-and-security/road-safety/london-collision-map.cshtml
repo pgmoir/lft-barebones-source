@@ -1,0 +1,68 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "London collision map";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/corporate/safety-and-security/road-safety/london-collision-map";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        <div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/corporate/safety-and-security/index">Safety & security</a></li>
+                
+            
+                 <li><a href="/corporate/safety-and-security/road-safety">Reducing road danger</a></li>
+                
+            
+            
+                <li><span class="last-breadcrumb">London collision map</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1 class="acc-stats-uppercase">London collision map</h1>
+  </div>
+</div>
+<div class="main-and-aside r">
+
+    
+ @{
+    Html.RenderAction("Index", "AccStats");
+ }
+
+</div>
+ 
+ 
+        
+        
+        
+            @{ViewBag.Description = "Discover where road traffic collisions have happened in London";}
+        
+            
+        
+
+
+ 

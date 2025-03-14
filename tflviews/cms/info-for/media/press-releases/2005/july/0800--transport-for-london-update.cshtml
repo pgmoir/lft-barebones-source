@@ -1,0 +1,92 @@
+﻿
+
+
+@{ViewBag.Title = "08:00 - Transport for London Update";}
+        
+        
+
+<div class="r">
+    <div class="headline-container plain">
+        <h1>08:00 - Transport for London Update</h1>
+        <div class="content-page-press-release">
+        09 July 2005
+        </div>
+    </div>
+</div>
+<div class="main-and-aside r">
+    <div class="main" role="main">
+
+    <div class="article-teaser">
+        In addition to the services running yesterday we have the following services running this morning
+        
+    </div>
+
+
+
+ <div class="on-this-page">
+<ul>
+<li>Metropolitan - services now running between Baker Street and Moorgate</li>
+<li>Hammersmith and City - Shuttle between Hammersmith and Paddington (Suburban)</li></ul>
+<p>We are also running a bus shuttle between Royal Oak on the H&amp;C and Baker Street</p>
+<p>Please also note:</p>
+<ul>
+<li>The Waterloo and City is not running this morning due to scheduled maintenance work (it would normally run on Saturday)</li></ul>
+<p><strong>We continue to encourage our passengers and staff to remain vigilant, to question who owns items that remain unattended and to report any unattended items or suspicious activity to transport staff or the Police. </strong></p>
+<p><strong>We also asking people to please make sure they help keep transport running as smoothly as possible, both by keeping hold of their own bags and luggage at all times, and by taking litter home with them to avoid unnecessary security alerts.</strong> <br></p>
+
+     
+
+        
+        
+        
+        @this.ScriptBlock(
+        @<script>
+        //queue.push("@Html.ScriptPath("modules/M020-on-this-page.min.js")", null);
+        </script>
+        )
+        
+        
+        
+        </div>
+    </div>
+    <div class="aside" role="complementary">
+
+       
+        <div data-set="sidenav-container" class="large">
+
+            
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+        </div>
+
+
+
+            
+        <div data-set="sidenav-container" class="small-medium"></div>
+    </div>
+</div>
+
+<!-- Crumbs: PGtype:  -->
+
+ 
+ 
+        
+        
+            @{ViewBag.Description = "Metropolitan - services now running between Baker Street and MoorgateHammersmith and City - Shuttle between Hammersmith and Paddington (Suburban)We are also running a bus shuttle between Royal Oak on the H&amp;C and Baker StreetPlease also note:The";}
+        
+        
+
+
+ 

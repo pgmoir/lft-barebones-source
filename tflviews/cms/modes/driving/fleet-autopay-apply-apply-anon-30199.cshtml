@@ -1,0 +1,180 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Set up Fleet Auto Pay";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/fleet-autopay-apply-apply-anon-30199";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                 <li><a href="/modes/driving/auto-pay">Auto Pay</a></li>
+                
+            
+            
+            
+                <li><span class="last-breadcrumb">Set up Fleet Auto Pay</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Set up Fleet Auto Pay</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+      <div class="article-teaser">
+        <p>Fleet Auto Pay automatically records the number of charging days a vehicle travels within the Congestion Charge/ULEZ zone, and then bills users each month.</p>
+        
+      </div>
+    
+    
+      
+      
+           
+      <div>
+
+<p>To apply you need to:</p>
+
+<ul>
+	<li>Complete a Direct Debit mandate as part of your application</li>
+	<li>Provide certain documents about your company</li>
+	<li>Be over 18</li>
+</ul>
+
+<h3>Evidence you need</h3>
+
+<p>You'll need to provide 1 of the following:</p>
+
+<ul>
+	<li><strong>Registered companies</strong> - headed paper with your company number OR a copy of your company's Certificate of Incorporation (issued by Companies House or the equivalent within an European Economic Area state)</li>
+	<li><strong>Public organisations</strong> - headed paper including organisation name (further verification may be required)</li>
+	<li><strong>Charities</strong> - headed paper including organisation name and registered charity number</li>
+</ul>
+
+<h3>London Road User Charging account</h3>
+
+<p>You also need to create a London Road User Charging account before setting up Fleet Auto Pay.</p>
+
+<p>Account features:</p>
+
+<ul>
+	<li>Add up to 5 additional authorised users</li>
+	<li>Each user gets a unique login</li>
+	<li>Optional services include mobile phone text alerts to help you manage your account</li>
+</ul>
+
+<p>Once you sign in to your new London Road User Charging account, you will be directed to complete your Fleet Auto Pay application.</p>
+</div>
+ <div>
+
+<p><strong>Setting up Fleet Auto Pay can take up to 10 working days to complete.</strong></p>
+<p>Until we have confirmed that you can add vehicles to activate your service, you will need to pay the Congestion Charge another way if your vehicles are driven within the zone.</p>
+</div>
+ 
+
+        @{
+           Html.RenderAction(
+                RucDictionary.AutoPayFleet.ApplyAnonEnterActionName,
+            "AutoPayApplyFleet",
+            new
+                {
+                    area = "Ruc",
+                    zone = TfL.Ruc.Domain.Entities.Ruc.ZoneChargeZone.CongestionCharge,                    
+                    accountSettingsUrl = "/modes/driving/account-account-landing-29377",
+                    loggedInApplicationStartUrl = "/modes/driving/fleet-autopay-apply-apply-29058",                    
+                    //loginUrl = "/modes/driving/login",       
+                    signUpUrl = "/modes/driving/fleet-autopay-apply-before-you-begin-30131",
+                    journeyStartUrl = "/modes/driving/fleet-autopay-apply-apply-29058",                    
+                    beforeYouBeginUrl = "/modes/driving/fleet-autopay-apply-before-you-begin-30131"
+                }
+            );
+        }
+      
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+    
+    
+    <div></div>
+    
+      <div class="module-grid clearfix">
+                    
+        <div class="vertical-button-container">
+    <ul>
+        
+        
+        
+        <li><a href="/modes/driving/congestion-charge/paying-the-congestion-charge"  class="plain-button">Congestion Charge payments</a></li>
+        
+        
+        <li><a href="/modes/driving/congestion-charge/congestion-charge-zone"  class="plain-button">Congestion Charge zone</a></li>
+        
+        
+        <li><a href="/modes/driving/auto-pay"  class="plain-button">Auto Pay</a></li>
+        
+        
+        <li><a href="/modes/driving/congestion-charge/discounts-and-exemptions"  class="plain-button">Discounts and exemptions</a></li>
+        
+        
+        <li><a href="/modes/driving/congestion-charge/contact-congestion-charge"  class="plain-button">Contact Congestion Charge</a></li>
+        
+    </ul>
+</div>
+
+      </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "Fleet Auto Pay automatically records the number of charging days a vehicle travels within the Congestion Charge/ULEZ zone, and then bills users each month.";}
+        
+            
+        
+
+
+ 

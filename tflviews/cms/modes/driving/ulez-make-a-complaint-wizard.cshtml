@@ -1,0 +1,187 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Make a ULEZ complaint";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/ulez-make-a-complaint-wizard";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Make a ULEZ complaint</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Make a ULEZ complaint</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+      <div class="article-teaser">
+        <p>Tell us about your complaint in the space below.</p>
+        
+      </div>
+    
+    
+      
+      
+           
+      
+
+ 
+
+
+        
+        <!-- te-make-a-complaint-wizard -->
+        @{
+            dynamic content = new ContentModel();
+            content.MakeComplaintHeading = " ";
+            content.MakeComplaintSubText = "Select the category that best fits and then give as much detail as possible.";
+            content.MakeComplaintFAQText = "<p>You maybe able to find your answer quickly using our FAQs sections?</p>";
+            content.ComplaintDetailsSectionLabel = "Your message";
+            content.ComplaintCategoryLabel = "Type of complaint";
+            content.MessageLabel = "Details of your complaint";
+            content.AttachmentLabel = "Supporting documents";
+            content.AttachmentSubText = "Upload any documents you think may help us address your complaint.";
+            content.AdditionalInformationLabel = "Additional information (if it applies)";
+            content.AdditionalInformationSubText = "If you have a reference number from a related enquiry, enter it here.";
+            content.PreviousReferenceNumberLabel = "Previous reference number: ";
+            content.VrmLabel = "Number plate (Vehicle Registration Mark)";
+            content.VrmPlaceholder = "eg AB01ABC";
+            content.AccountNumberLabel = "Account number";
+            content.ReceiptNumberLabel = "Receipt number";
+            content.ReceiptNumberPlaceholder = " ";
+            content.PcnLabel = "Penalty Charge Notice (PCN) number";
+            content.PersonalDetailsSectionLabel = "Your details";
+            content.FirstNameLabel = "First name";
+            content.MiddleNameLabel = "Middle name";
+            content.SurnameLabel = "Last name";
+            content.PersonalContactDetailsSectionLabel = "Contact details";
+            content.EmailAddressLabel = "Email address";
+            content.ConfirmEmailAddressLabel = "Confirm email address";
+            content.ReviewComplaintDetailsSectionLabel = "Complaint details";
+            content.ReviewComplaintTypeLabel = "Complaint type";
+            content.ReviewComplaintMessageLabel = "Your message";
+            content.ReviewComplaintSupportingEvidencesLabel = "Supporting documents";
+            content.ReviewPersonalDetailsSectionLabel = "Personal details";
+            content.ReviewPersonalDetailsLabel = "Personal details";
+            content.PrivacyNotice = "<p>Read the <a href='/corporate/privacy-and-cookies/road-user-charging' target='_blank'>London Road User Charging privacy notice</a>.</p>";
+            content.ContinueButtonText = "Continue";
+            content.LastContinueButtonText = "Submit";
+            content.BackButtonText = "Back";
+
+            content.CategoryRequired = "Select a category";
+            content.MessageRequired = "Enter details to continue";
+            content.FirstNameAlphaOnly = "Don't use numerals in this field";
+            content.MiddleNameAlphaOnly = "Don't use numerals in this field";
+            content.SurnameAlphaOnly = "Don't use numerals in this field";
+            content.FirstNameRequired = "Enter a first name";
+            content.SurnameRequired = "Enter a last name";
+            content.EmailAddressRequired = "Enter an email address";
+            content.EmailAddressEmailAddress = "Enter a valid email address to continue";
+            content.EmailAddressConfirmEmailAddress = "Enter a valid email address to continue";
+            content.ConfirmEmailAddressRequired = "Confirm your email address";
+            content.ConfirmEmailAddressEmailAddress = "Enter a valid email address to continue";
+            content.ConfirmDetailsRequireTrue = "Confirm you have read and understand the privacy notice.";
+            content.ConfirmEmailAddressCompare = "Email addresses do not match";
+            content.MessageStringLength ="Please reduce the length of this message.";
+            content.AdditionalInformationText = "Additional information";
+            content.NoAdditionalInformationText = "";
+            content.NameLabel = "Name";
+
+            Html.RenderAction(
+            "MakeComplaint",
+            "Complaint",
+            new
+            {
+                area = "Ruc",
+                enquiryComplaintEntryPageUrl = "/modes/driving/red-routes/red-routes-complaints-procedure",
+                successUrl = "/modes/driving/te-contact-us-make-complaint-confirmation-25446",
+                failureUrl = "/modes/driving/te-contact-us-make-complaint-failure-26703",
+                content = content,
+                businessArea = BusinessArea.TraficEnforcement
+            });
+        }
+        
+      
+  
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+      </div>
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "How to make a complaint about an Ultra Low Emission Zone issue";}
+        
+            
+        
+
+
+ 

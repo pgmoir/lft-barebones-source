@@ -1,0 +1,213 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Manage greener vehicle discount";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-greener-vehicle-manage-34721";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Manage greener vehicle discount</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Manage greener vehicle discount</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+
+	    
+		<!-- 3. greener-vehicle -->
+		@{
+            dynamic content = new ContentModel();
+    
+            content.SingleActiveCountText = "Discount status: Active on 1 vehicle";
+            content.ActiveCountTextFormat = "Discount status: Active";
+            content.ActiveVehiclesText = "ACTIVEVEHICLESTEXT (GREENER)";
+            content.ExpiryDateLabel = "The discount for all vehicles expires on: ";
+  
+            Html.RenderAction("DiscountActiveVehicleCount", "DiscountManage", new
+                {
+                    area = "Ruc",
+                    discountStyle = ZoneChargeDiscountStyle.GreenerVehicle,
+                    content = content
+                }
+            );
+        }
+     
+        @{
+            dynamic listContent = new ContentModel();
+            
+            listContent.ListHeading = "Greener vehicle discount vehicle(s)";
+            listContent.CustomResultsMessageFormat = "<h2>Vehicles on discount: {0}</h2>";
+            listContent.DownloadFilteredListButtonText = "Download this list";
+            listContent.ActiveDiscountText = "Active on: ";
+            listContent.StartDateLabel = "Start date: ";
+            listContent.AddVehicleButtonText = "Add vehicle to discount";
+            listContent.ReplaceVehicleButtonText = "Replace discount vehicle";
+            listContent.ConfirmRemoveItemText = "<p>Are you sure you want to remove this vehicle from the discount?</p>";
+            listContent.ItemRemoveSuccessTextFormat = "You have removed {0} from the greener vehicle discount.";
+            listContent.ServiceNotAffectedTextFormat = "SERVICENOTAFFECTEDTEXTFORMAT (SHARED)";
+            //listContent.SearchLabel = "Search for VRM";
+            //listContent.FilterButtonText = "Confirm and apply filters";
+            //listContent.SortByText = "Sort by";
+            //listContent.TypeText = "Type";
+            //listContent.OrderText = "Order";
+            listContent.VrmOption = "VRMOPTION (SHARED)";
+            listContent.DateOption = "Expiry date";
+            //listContent.AscendingOption = "Ascending";
+            //listContent.DescendingOption = "Descending";
+                
+            listContent.ItemRemoveErrorTextFormat = "There was a problem. Please try removing {0} from the greener vehicle discount again.";
+
+            Html.RenderAction("List", "VehicleList", new
+                { 
+                    area = "Ruc",
+                    discountStyle = ZoneChargeDiscountStyle.GreenerVehicle,
+                    listContent = listContent, 
+                    scheduled = false
+                }
+            );
+        }
+      
+        @ModulesHelpers.BoxedLink(
+            href: "/modes/driving/cc-autopay-manage-view-vehicle-history-30894?Search.ServiceType=GreenerVehicle", 
+            id: "vehicle-history", 
+            text: "Greener vehicle discount vehicle history", 
+            soloButton: true)
+
+        @FormHelpers.DottedSeparator()
+        @ModulesHelpers.BackLink()
+
+        @this.ScriptBlock(
+            @<script>
+                 queue.push("@Html.ScriptPath("specific/list-filters-text.min.js")", null);
+                 queue.push("@Html.ScriptPath("modules/M020-on-this-page.min.js")", null);
+                 queue.push("@Html.ScriptPath("specific/results-paginator.min.js")", function () {
+                   $('#vehicle-list').paginator({
+                        showItemCount: true
+                   });
+                });
+             </script>
+        )
+		
+	  
+
+  
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        <div class="vertical-button-container">
+    <ul>
+        
+        
+        
+        <li><a href="/modes/driving/account-vehicles"  class="plain-button">Pay to drive in London</a></li>
+        
+        
+        <li><a href="/modes/driving/congestion-charge/congestion-charge-zone"  class="plain-button">Congestion Charge/ULEZ zone</a></li>
+        
+        
+        <li><a href="/modes/driving/check-your-vehicle-35896"  class="plain-button">Check your vehicle</a></li>
+        
+        
+        <li><a href="/modes/driving/amend-or-refund-a-driving-charge"  class="plain-button">Amend/refund a charge</a></li>
+        
+        
+        <li><a href="/modes/driving/congestion-charge/contact-congestion-charge"  class="plain-button">Contact us</a></li>
+        
+        
+        <li><a href="/modes/driving/ultra-low-emission-zone/scrappage-scheme"  class="plain-button">Scrappage scheme</a></li>
+        
+    </ul>
+</div>
+
+      </div>
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

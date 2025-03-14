@@ -1,0 +1,207 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Pay for a dispensation";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/dispensation-payment-confirmation";}
+@{ViewBag.Language = "en";}
+        
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Pay for a dispensation</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Pay for a dispensation</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      <h2>You have paid for your dispensation</h2>
+      
+           
+      
+
+            @model TfL.Ruc.Services.ViewModels.Ruc.Dispensation.DispensationPaymentCommitViewModel
+            @{
+                dynamic content = new ContentModel();
+                content.ThankYouHeading = "Thank you for your payment.";
+                content.TotalAmount = "Your total amount is: ";
+                content.PaymentReferenceNumber = "Your payment reference number is: ";
+
+                Html.RenderAction("PaymentConfirmation", "Dispensation", new { area = "Ruc", content = content });
+            }
+      
+  
+ <div class="vertical-button-container">
+    <ul>
+        
+        
+        
+        <li><a href="/modes/driving/view-dispensations-entry"  class="plain-button">Pay for another dispensation</a></li>
+        
+    </ul>
+</div>
+<div>
+
+<h2>What happens next?</h2>
+<p>In a few moments, you will receive your permit(s) by email. For the dispensation to be valid, you must display the permit on the vehicle dashboard(s).</p>
+</div>
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+        @ModulesHelpers.PrintButton()
+      
+ 
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+      </div>
+    
+    <div></div>
+    
+      <div class="module-grid clearfix">
+                    
+        <div class="vertical-button-container">
+    <ul>
+        
+        
+        
+        <li><a href="/modes/driving/red-routes"  class="plain-button">Red routes</a></li>
+        
+        
+        <li><a href="/modes/driving/red-routes/rules-of-red-routes"  class="plain-button">Rules of red routes</a></li>
+        
+        
+        <li><a href="/modes/driving/red-routes/penalty-charge-notices"  class="plain-button">Penalty Charge Notices</a></li>
+        
+        
+        <li><a href="/modes/driving/red-routes/dispensations"  class="plain-button">Dispensations</a></li>
+        
+        
+        <li><a href="/modes/driving/red-routes/exemptions"  class="plain-button">Exemptions</a></li>
+        
+    </ul>
+</div>
+
+      </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

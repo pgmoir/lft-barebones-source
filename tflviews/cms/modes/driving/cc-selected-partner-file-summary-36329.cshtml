@@ -1,0 +1,136 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Selected partner discount";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-selected-partner-file-summary-36329";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Selected partner discount</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Selected partner discount</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      <h2>File summary</h2>
+      
+           
+      
+
+
+        
+        <!-- 4. file-summary -->
+        @using TfL.Ruc.Common.ConfigSection
+        @{
+            dynamic content = new ContentModel();
+
+            content.UploadedFileText = "Uploaded file";
+            content.TotalNumberofVehiclesText = "Number of vehicles on the selected partner discount following this upload: ";
+            content.TotalActiveOnServiceText = "Number of vehicles on the selected partner discount before upload:";
+            content.ZeroVehicleWarningText = "<p>ZEROVEHICLEWARNNIGTEXT</p>";
+            content.BackButtonText = "Back";
+            content.ContinueButtonText = "Confirm";
+            content.ConfirmText = "<p>If the new total number of vehicles is not what you were expecting, go back, check your file and re-upload. You must include existing vehicles on your upload file to keep them on your discount.</p><p>Click 'Confirm' to upload this file and replace your current selected partner vehicle list.</p>";
+            content.ProcessNotStartedErrorText = "PROCESSNOTSTARTEDERRORTEXT";
+
+            Html.RenderAction("FileSummary", "FileUpload", new
+                {
+                    area = "Ruc",
+                    manageUrl = "/modes/driving/account-account-landing-29377",
+                    uploadFileUrl = "/modes/driving/cc-selected-partner-upload-file-36333",
+                    processFileUrl = "/modes/driving/cc-selected-partner-process-file-36330",
+                    fileUploadOperation = FileUploadOperation.SelectedPartner,
+                    content = content
+                }
+            );
+        }
+        
+		
+        
+		
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

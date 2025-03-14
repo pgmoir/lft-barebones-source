@@ -1,0 +1,115 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Change a charge";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-change-a-charge-payment-result-26496";}
+@{ViewBag.Language = "en";}
+        
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Change a charge</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Change a charge</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+ 
+
+
+		
+		<!-- 8. cc-payment-result -->
+		@{
+            Html.RenderAction(
+            "PaymentResult",
+            "ChangeZoneCharge", new
+            {
+                area = "Ruc",
+                zoneType = ZoneChargeZone.CongestionCharge,
+                paymentConfirmationUrl = "/modes/driving/cc-change-a-charge-payment-confirmation-26499",
+                paymentFailureUrl = "/modes/driving/cc-change-a-charge-payment-failure-26502",
+                changeVehicleCancelUrl = "/modes/driving/cc-change-a-charge-review-37243",
+                changeStartDateCancelUrl = "/modes/driving/cc-change-a-charge-review-37243",
+                changeVehicleAndStartDateCancelUrl = "/modes/driving/cc-change-a-charge-review-37243"
+            });
+        }
+		
+	  
+
+  
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

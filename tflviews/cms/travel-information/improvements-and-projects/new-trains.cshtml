@@ -1,0 +1,331 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "New trains";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/travel-information/improvements-and-projects/new-trains";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/travel-information/improvements-and-projects/index">Improvements & projects</a></li>
+                
+            
+                 <li><a href="/travel-information/improvements-and-projects/elizabeth-line">Elizabeth line</a></li>
+                
+            
+            
+                <li><span class="last-breadcrumb">New trains</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>New trains</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+      <div class="article-teaser">
+        New trains have been introduced on the Liverpool Street to Shenfield, and Paddington to Reading routes which currently operate as TfL Rail.
+        
+      </div>
+    
+    <div class="on-this-page">
+      These trains are designed to serve the Elizabeth line when it launches.
+      
+           
+      <div class="clearfix">
+    <div class="image-box">
+    
+        
+        
+        <img src="/cdn/static/cms/images/elizabeth-line-train-interior-seats.jpg" alt="Interior of Elizabeth line trains running on TfL Rail" />
+        
+        
+        
+    </div>   
+ </div>
+ <div>
+
+<h2>Features</h2>
+<p>The new, high-capacity trains have:</p>
+<ul>
+    <li>Seven fully interconnected, walk-through carriages. These will be converted to nine carriages</li>
+    <li>More standing room with a mixture of seating types</li>
+    <li>Air-conditioning</li>
+    <li>CCTV</li>
+    <li>Information on next stops for customers</li>
+    <li>Four dedicated wheelchair spaces as well as separate multi-use spaces which can also be used for buggies, luggage and bicycles</li>
+</ul>
+<p>Three sets of double doors along each carriage make it quicker and easier for customers to get on and off the train. Intelligent lighting and temperature control on the driver-operated trains help to regenerate electricity back into the supply when braking and use up to 30% less energy.</p>
+<h2>Building the new trains</h2>
+<p>The new trains are being built at Bombardier Transportation's UK site, helping to support 760 UK jobs and 80 apprenticeships in Derby.</p>
+</div>
+ <div class="video-gallery-wrapper">
+
+    <div class="ytplayer"></div>
+
+    <div class="gallery-carousel-wrap">
+       
+  
+  
+ @this.ScriptBlock(
+     @<script>
+          queue.push(
+            "@Html.ScriptPath("plugins/gallery-media.min.js")", null,
+        
+            function() {
+                var videoPlayer = $(".ytplayer");
+
+                if (videoPlayer.length){
+                    videoPlayer.gallery({ videoMode: true });
+                }
+            }
+    );
+     </script>
+ )
+        
+  
+   <ul class="gallery-carousel">
+  
+    <!--  -->
+    
+    
+     <li class="gallery-thumb" data-youtubeid="8V7kXcIowl4" data-video-caption="Building trains - time lapse"></li>
+  
+    <!--  -->
+    
+    
+     <li class="gallery-thumb" data-youtubeid="5ezWVZ5UHdU" data-video-caption="CGI of new Elizabeth line trains"></li>
+  
+  </ul>
+</div>
+</div>
+ 
+      
+        
+          
+            @this.ScriptBlock(
+              @<script>
+                queue.push("@Html.ScriptPath("modules/M020-on-this-page.min.js")", null);
+              </script>
+            )
+          
+        
+      
+    </div>
+  </div>
+  <div class="aside" role="complementary">
+
+   
+    
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                <a href="/travel-information/improvements-and-projects/elizabeth-line" class="heading">
+                    <h2 id="sub-menu-heading">Elizabeth line<span class="visually-hidden"> navigation</span></h2>
+                </a>
+                <ul>
+                    
+                                <li><div class="link-wrapper"><a href="/travel-information/improvements-and-projects/preparing-for-the-elizabeth-line">Preparing for the Elizabeth line</a></div></li>
+                            
+ 
+                                <li class="selected"><div class="link-wrapper"><a href="/travel-information/improvements-and-projects/new-trains">New trains</a></div>
+                            </li>
+ 
+                                <li><div class="link-wrapper"><a href="/travel-information/improvements-and-projects/improving-accessibility">Improving accessibility</a></div></li>
+                            
+ 
+                </ul>
+            
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+      </div>
+    
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="advert-tile unsponsored-style google-ads" aria-hidden="true">
+  <div class="advert-link">
+    <div class="advert-content">
+        <div class="medium-large" data-advert="/76889402/improvements_projects" data-advert-sizes="300, 250"></div>
+        <div class="small" data-advert="/76889402/improvements_projects" data-advert-sizes="300, 250"></div>
+    </div>
+  </div>
+</div>
+@{
+    ViewBag.AmazonSlot = "'amznslots'";
+    ViewBag.AmazonAds = "'3199'"; // to add another value, this needs to be ViewBag.AmazonAds = "'3199','xx'";
+}
+      
+
+ </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+ 
+ 
+        
+        
+        
+            @{ViewBag.Description = "We have introduced new trains on the Liverpool Street to Shenfield route currently operating as TfL Rail";}
+        
+            
+        
+
+
+ 

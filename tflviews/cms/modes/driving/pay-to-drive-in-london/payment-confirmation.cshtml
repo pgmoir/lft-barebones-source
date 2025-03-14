@@ -1,0 +1,197 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Thanks for paying";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/pay-to-drive-in-london/payment-confirmation";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                 <li><a href="/modes/driving/pay-to-drive-in-london">Pay to drive in London</a></li>
+                
+            
+            
+            
+            
+                
+                <li><span class="last-breadcrumb">Thanks for paying</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Thanks for paying</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/account-account-landing-29377"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+
+	    @{
+            dynamic content = new ContentModel();
+            content.YourPaymentReferenceIsMessageText = "Your payment reference is:";
+            content.PrintButtonText = "Print this page";
+            content.ReceiptSentToText = "We've sent a receipt to {0}";
+            content.AutoPaySectionHeading = "Set up Auto Pay";
+            content.AutoPaySectionBody = "<p><strong>We will:</strong></p><ul>	<li>Automatically record the number of charging days your vehicle is driven within the Congestion Charge zone and the ULEZ (if your vehicle is subject to it) and then bill you each month</li></ul><p><strong>You will:</strong></p><ul>	<li>Save on the Congestion Charge each time you pay</li>	<li>Only be charged if you drive within the zones - and you won't need to remember to pay the charges</li></ul>";
+            content.AutoPayButtonText = "Register now";
+            content.FinishButtonText = "Finish";            
+            content.FinishButtonUrl = "/modes/driving/pay-to-drive-in-london";
+            content.AutoPayUrl = "/modes/driving/autopay-apply";
+            content.GoToAccountButtonText = "Go to account";
+            content.GoToAccountButtonUrl = "/modes/driving/account-account-landing-29377";
+            Html.RenderAction("PaymentConfirmation", "PayCharges", new 
+            { 
+                area = "Ruc", 
+                content = content 
+            });
+        }    
+	
+
+  
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+      </div>
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

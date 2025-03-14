@@ -1,0 +1,219 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "DVS Enquiry Form";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/dvs-enquiry-wizard";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+                
+                <li><span class="last-breadcrumb">DVS Enquiry Form</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>DVS Enquiry Form</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+
+        
+        @{
+            dynamic content = new ContentModel();
+            
+            content.MakeEnquiryHeading = "Make an Enquiry";
+            content.MakeEnquirySubText = "Ask a question about the Direct Vision Standard and Safety Permit for HGVs.";
+            content.MakeEnquiryFAQText = "<p>You maybe able to find your answer quickly using our FAQs sections?</p>";
+            content.EnquiryDetailsSectionLabel = "Your message";
+            content.EnquiryCategoryLabel = "What is the nature of your enquiry?";
+            content.EnquiryCategoryPlaceholder = "Select your enquiry reason";
+            content.SubCategoryLabel = "Category";
+            content.SubCategoryPlaceholder = "Select your type";
+            content.MessageLabel = "Message";
+            content.AttachmentLabel = "Supporting documentation";
+            content.AttachmentSubText = "Attach evidence that may help you support your enquiry:";
+            content.AdditionalInformationLabel = "Additional information";
+            content.AdditionalInformationSubText = "(if your enquiry relates to a previous enquiry, please supply the reference number so that we are able to deal with your enquiry without delay)";
+            content.PreviousReferenceNumberLabel = "Previous reference number (Optional)";
+            content.VrmLabel = "Vehicle Registration Number (Optional)";
+            content.VrmPlaceholder = "e.g. HX67XYZ";
+            content.AccountNumberLabel = "Account number (if applicable):";
+            content.ReceiptNumberLabel = "Receipt number (if applicable):";
+            content.ReceiptNumberPlaceholder = "e.g 1234";
+            content.PcnLabel = "Penalty Charge Notice (PCN) number (Optional)";
+            content.PersonalDetailsSectionLabel = "Your details";
+            content.FirstNameLabel = "First name";
+            content.MiddleNameLabel = "Middle name (Optional)";
+            content.SurnameLabel = "Last name";
+            content.PersonalContactDetailsSectionLabel = "Contact Details";
+            content.EmailAddressLabel = "Email address";
+            content.ConfirmEmailAddressLabel = "Confirm email address";
+            content.ReviewEnquiryDetailsSectionLabel = "Review enquiry details";
+            content.ReviewEnquiryTypeLabel = "Enquiry Type";
+            content.ReviewEnquiryMessageLabel = "Your message";
+            content.ReviewEnquirySupportingEvidencesLabel = "Supporting evidence";
+            content.ReviewPersonalDetailsSectionLabel = "Personal Details";
+            content.ReviewPersonalDetailsLabel = "Personal Details";
+            content.PrivacyNotice = "<p>Read the <a href='/corporate/privacy-and-cookies/road-user-charging#Road User Charging Privacy' target='_blank'>London Road User Charging privacy notice</a>.</p>";
+            content.ContinueButtonText = "Continue";
+            content.LastContinueButtonText = "Submit";
+            content.BackButtonText = "Back";
+            
+            content.CategoryRequired = "Please select a category";
+            content.SubCategoryRequired = "Please select a sub-category";
+            content.MessageRequired = "Please provide us with some details.";
+            content.FirstNameRequired = "Please enter a first name.";
+            content.FirstNameAlphaOnly = "Numbers are not accepted in this field";
+            content.MiddleNameAlphaOnly = "Numbers are not accepted in this field";
+            content.SurnameRequired = "Please enter a last name.";
+            content.SurnameAlphaOnly = "Numbers are not accepted in this field";
+            content.EmailAddressRequired = "Your email address is required";
+            content.EmailAddressEmailAddress = "You must enter a valid email address";
+            content.ConfirmEmailAddressEmailAddress = "";
+            content.ConfirmEmailAddressRequired = "You must confirm your email address";
+            content.ConfirmEmailAddressCompare = "Email addresses must match";
+            content.ConfirmDetailsRequireTrue = "Please confirm you have read and understand the privacy notice.";
+            content.MessageStringLength ="Please reduce the length of this message.";
+
+            content.AdditionalInfoText = "Additional infomation";
+            content.PreviousReferenceNumberText = "Previous reference number";
+            content.NoAdditionalInfoAddedText = "No additional information added.";
+            content.VRMText = "<abbr title=\"Vehicle Registration Mark\">VRM</abbr>";
+            content.AccountNumberText = "Account number";
+            content.ReceiptNumberText = "Receipt number (Optional)";
+            content.PcnNumberText = "<abbr title=\"Penalty Charge Notice\">PCN</abbr> number";
+
+
+            Html.RenderAction(
+            "MakeEnquiry",
+            "DvsEnquiry",
+                new
+                {
+                    area = "Ruc",
+                    enquiryComplaintEntryPageUrl = "/modes/driving/dvs-contact-us",
+                    successUrl = "/modes/driving/dvs-enquiry-success",
+                    failureUrl = "/modes/driving/dvs-failure",
+                    content = content,
+                    businessArea = BusinessArea.DVS
+                }
+            );
+        }
+       
+       
+      
+  
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+      </div>
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

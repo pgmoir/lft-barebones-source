@@ -1,0 +1,263 @@
+﻿
+    
+  
+
+
+<!-- rhroot -->
+@{ViewBag.Title = "Coaches";}
+@{ViewBag.Keywords = "Coaches ,TfL";}
+@{ViewBag.Url = "/modes/coaches/index";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+            
+                <li><span class="last-breadcrumb">Coaches</span></li>
+            
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+    <div class="headline-container landing-page section-landing-container with-logo">
+        <h1>Coaches</h1>
+        
+        <div class="heading-logo">
+            <img src="/cdn/static/cms/images/logos/coaches-partner.png" alt="Coaches logo" />
+        </div>
+        
+    </div>
+</div>
+<div class="main-and-aside r">
+    <div class="main" role="main">
+        <div class="small-medium" data-set="widget"></div>
+        <div class="primary-teaser landing-page-teaser">
+            <div class="news-teaser ">
+  
+  <a href="/modes/coaches/victoria-coach-station?intcmp=3976"  data-img="/cdn/static/cms/images/promos/victoria-coach-station-700x350px.jpg" data-img-breakpoint="" data-img-alt="Victoria Coach Station">
+    <img src="/cdn/static/cms/images/promos/victoria-coach-station-700x350px_rdax_600x300.jpg" alt="Victoria Coach Station" />
+    <div class="text-link sit-top">
+      <h2>Victoria Coach Station</h2>
+      <p>Find the best way to get there</p>
+    </div>
+  </a>
+</div>
+
+ 
+        </div>
+        
+        <div class="clearfix">
+            <div>
+
+<p>Coaches from Victoria Coach Station travel to destinations around the UK and some parts of Europe. Find out more about coach companies operating from this station, the station's facilities and booking mobility assistance.</p>
+</div>
+ 
+        </div>
+        <div class="module-grid clearfix">
+            <div>
+
+<div class="news-teaser coach">
+
+    <a href="/modes/coaches/victoria-coach-station-facilities?intcmp=2435" >
+        
+        
+        <div class="text-link">
+             <h2>Victoria Coach Station facilities</h2>
+            <p>Victoria Coach Station offers a range of station facilities. Find out more</p>
+        </div>
+    </a>
+</div>
+ 
+ <div class="news-teaser coach">
+
+    <a href="/modes/coaches/coach-companies?intcmp=2441" >
+        
+        
+        <div class="text-link">
+             <h2>Coach companies</h2>
+            <p>Coach companies in London serve destinations across the UK and abroad</p>
+        </div>
+    </a>
+</div>
+ 
+ <div class="vertical-button-container">
+
+
+
+<a href="/corporate/terms-and-conditions/bus-and-coach-passenger-rights"  class="plain-button">Coach terminal user rights</a>
+
+</div>
+
+</div>
+ <div>
+
+<div class="news-teaser coach">
+
+    <a href="/modes/coaches/mobility-assistance?intcmp=2438" >
+        
+        
+        <div class="text-link">
+             <h2>Mobility assistance</h2>
+            <p>If you need mobility help at Victoria Coach Station, book assistance here.</p>
+        </div>
+    </a>
+</div>
+ 
+ <div class="vertical-button-container">
+
+
+
+<a href="/modes/tube/index"  class="plain-button">Tube </a>
+
+
+<a href="/modes/buses/index"  class="plain-button">Buses</a>
+
+
+<a href="/travel-information/visiting-london/index"  class="plain-button">Visiting London</a>
+
+</div>
+
+</div>
+ 
+        </div>
+    </div>
+    <div class="aside" role="complementary">
+        <div class="large" data-set="widget">
+            <div class="moving-source-order">
+            
+
+                <div class="widget-wrapper">
+                    <div class="expandable-box">
+                        <div class="content">
+                            <div class="always-visible widget-heading">
+                                <div class="controls">&nbsp;</div>
+                                <div class="widget-title">
+                                    <h2>Plan a journey</h2>
+                                </div>
+                            </div>
+                            <div class="start-hidden widget-content journey-planner-widget clearfix">
+                                @{Html.RenderAction("Index", "JourneyPlanner", new
+                                    { jptype = "publictransport", mode = Library.MeansOfTransport.Coach } 
+                                );}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+ 
+            </div>
+        </div>
+        <div class="module-grid">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="advert-tile unsponsored-style google-ads" aria-hidden="true">
+  <div class="advert-link">
+    <div class="advert-content">
+        <div class="medium-large" data-advert="/76889402/coaches" data-advert-sizes="300, 250"></div>
+        <div class="small" data-advert="/76889402/coaches" data-advert-sizes="300, 250"></div>
+    </div>
+  </div>
+</div>
+@{
+    ViewBag.AmazonSlot = "'amznslots'";
+    ViewBag.AmazonAds = "'3199'"; // to add another value, this needs to be ViewBag.AmazonAds = "'3199','xx'";
+}
+      
+
+ 
+            <div>
+    
+    <div class="contact-info-box">
+        <div class="contact-info-header">
+            <h3>Contact us</h3>
+        </div>
+                                                         
+        <div class="content-group">
+            We're open 24 hours a day, 7 days a week.
+        </div>
+        
+        
+            
+        
+        
+            
+                
+        
+        
+        <div class="content-group">
+            <p>
+                <abbr title="Chat">Chat</abbr><br />
+                 
+        On <a href="https://m.me/transportforlondon">Facebook</a> or <a href="https://twitter.com/messages/compose?recipient_id=47319664">Twitter</a>
+        
+        
+            </p>
+        </div>
+        
+        
+        <div class="content-group">
+            <p>
+                <abbr title="Telephone number">Call</abbr>&nbsp;<a href="/corporate/terms-and-conditions/tfl-call-charges">Charges apply</a><br />
+                0343 222 1234
+            </p>
+        </div>
+        
+        
+        
+        
+    </div>
+</div>
+ <div class="follow-social email">
+  
+  <div class="social-image">
+    
+  </div>
+  <div class="social-text">
+    <h3>Email updates</h3>
+    <p>Hop aboard the TfL email service for updates, personalised offers and promotions</p>
+  </div>
+  <div class="social-button">
+    <a class="secondary-button" href="/travel-information/social-media-and-email-updates/email-updates">Register</a>
+  </div> 
+</div>
+ 
+        </div>
+    </div>
+    <div class="small-medium" data-set="content">&nbsp;</div>
+</div>
+ 
+        
+        
+        
+            @{ViewBag.Description = "Landing page for Coaches section";}
+        
+            
+        
+
+
+ 

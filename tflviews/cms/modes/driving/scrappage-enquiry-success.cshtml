@@ -1,0 +1,151 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Make a scrappage enquiry";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/scrappage-enquiry-success";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Make a scrappage enquiry</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Make a scrappage enquiry</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/account-account-landing-29377"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+    
+      <h2>Your message has been sent</h2>
+
+<p>We aim to respond within 10 working days.</p>
+      
+           
+      
+
+ 
+
+        @{
+            dynamic content = new ContentModel();
+            content.ThankYouHeading = "Thank you for your enquiry";
+            content.ReferenceNumberText = "Your reference number is: ";
+            content.EmailRespondMessage = "We will email you with our response. We aim to respond within 10 working days.";
+            content.EnquiryDetailsStepHeading = "Enquiry details";
+            content.PersonalDetailsStepHeading = "Personal details";
+            content.ReviewStepHeading = "Review";
+            content.ConfirmationStepHeading = "Confirmation";
+            
+            Html.RenderAction("ConfirmEnquiry", "Enquiry", new { area = "Ruc", content });
+        }
+      
+  
+ <div>
+
+<h2>What happens next?</h2>
+
+<p>We'll let you know if we need more information or if our reply will be delayed.</p>
+
+<p>If your initial application has been successful we'll email you with next steps - don't take any further action until you hear from us. Don't make arrangements for your vehicle(s) to be scrapped until we confirm that they are eligible for the scheme.</p>
+
+<p>To upload any documents that we ask for, return to the <a href="/modes/driving/ultra-low-emission-zone/scrappage-scheme">Scrappage scheme page</a> and make another enquiry. Quote the reference number above.</p>
+</div>
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+        @ModulesHelpers.PrintButton()
+      
+ 
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+      </div>
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

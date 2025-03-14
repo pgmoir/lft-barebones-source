@@ -1,0 +1,134 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Manage Fleet Auto Pay";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-autopay-fleet-payment-make-payment-32458";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                 <li><a href="/modes/driving/auto-pay">Auto Pay</a></li>
+                
+            
+            
+            
+                <li><span class="last-breadcrumb">Manage Fleet Auto Pay</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Manage Fleet Auto Pay</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      <h2>Make a payment </h2>
+      
+           
+      
+
+ 
+
+
+		
+		<!-- 8.1 Fleet-make-payment -->
+        @using TfL.Ruc.Services.ViewModels.Ruc.Autopay
+		@{
+            dynamic content = new ContentModel();
+
+            content.BackButtonText = "Back";
+            content.ContinueButtonText = "Continue";
+            content.BasketTitle = "Payment summary";
+            content.BalanceText = "Balance";
+            content.TotalText = "Total to pay: ";
+            content.PaymentSummaryText = "<p>After your payment goes through the total amount shown in the summary below will be deducted from your Fleet Auto Pay balance.</p><p>Your next monthly statement will reflect this.</p><p>Your new Fleet Auto Pay balance will be shown on the payment confirmation page.</p>";
+
+            Html.RenderAction(
+                RucDictionary.AutoPayManage.MakePaymentActionName,
+                "AutoPayManage",
+                new
+                {
+                    area = "Ruc",
+                    autoPayManageUrl = "/modes/driving/cc-autopay-manage-manage-29152",
+                    enterPaymentUrl = "/modes/driving/cc-autopay-manage-manage-autopay-cc-29141",
+                    paymentUrl = "/modes/driving/cc-autopay-fleet-payment-payment-35285",
+                    content = content
+                }
+            );
+        }
+		
+	  
+
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

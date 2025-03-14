@@ -1,0 +1,182 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Pay a PCN";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/pay-a-pcn";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+                <li><span class="last-breadcrumb">Pay a PCN</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Pay a PCN</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/account-account-landing-29377"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+        @{ViewBag.Title = "Pay a PCN";}
+                <div>
+                    @{
+                        dynamic content = new ContentModel();
+                          content.EnterPcnLabel = "PCN number";
+                          content.EnterVrmLabel = "Number plate (Vehicle Registration Mark)";
+                          content.EnterVrmPlaceholder = "eg AB01ABC";
+                          content.FindPcnTooltipTitle = "Where can I find my PCN number?";
+                          content.FindPcnTooltip = "The PCN number can be found above the vehicle image in the top right hand corner of the PCN.";
+                          content.SubmitButtonText = "Continue";
+                          content.CancelButtonText = "Cancel";
+                          content.NotFoundError = "No match has been found against our records. Please check the details entered and try again.";
+                          content.PcnNumberRequired = "Enter a PCN number to continue";
+                          content.PcnNumberRegularExpression = "PCN and vehicle combination not found. Please try again";
+                          content.VrmRequired = "Enter a number plate to continue";
+                          content.CantAddToBasketButtonText = "Can't add to basket";
+                           content.GoToBasket = "Go to basket";
+                          
+                          
+                        Html.RenderAction("Entry", "PenaltyChargeNotice", new
+                           {
+                               area = "Ruc",
+                               actionUrl = "/modes/driving/pay-a-pcn",
+                               pcnDetailsUrl = "/modes/driving/pay-pcn-details",
+                               issuedPcnsUrl = "/modes/driving/view-issued-pcns",
+                               confirmationPcnsUrl = "/modes/driving/we-have-confirmed-your-payment",
+                               referredBackUrl = "/",
+                               content = content,
+                               pcnJourney = TfL.Ruc.Domain.Entities.Ruc.PcnJourney.Pay
+                           }); 
+                    }
+                </div>
+      
+  
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+      </div>
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "Pay a Penalty Charge Notice";}
+        
+            
+        
+
+
+ 

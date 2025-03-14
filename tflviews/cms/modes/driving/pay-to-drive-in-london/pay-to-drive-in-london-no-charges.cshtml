@@ -1,0 +1,184 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "No charges for this vehicle";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/pay-to-drive-in-london/pay-to-drive-in-london-no-charges";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                 <li><a href="/modes/driving/pay-to-drive-in-london">Pay to drive in London</a></li>
+                
+            
+            
+                
+                <li><span class="last-breadcrumb">No charges for this vehicle</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>No charges for this vehicle</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+      <div class="article-teaser">
+        <p>Based on the information we hold, you don't have to pay any charges to drive this vehicle in London.</p>
+        
+      </div>
+    
+    
+      
+      
+           
+      
+
+        @{
+            dynamic content = new ContentModel();
+            content.ChargesDetailHeading = "Charging information";
+            content.CongestionChargeLabel = "Congestion Charge";
+            content.UlezChargeLabel = "ULEZ";
+            content.LezChargeLabel = "LEZ";
+
+            content.ComplianceHeadingText = "No charge due for this vehicle";
+            content.ComplianceDetailText = "<p>This vehicle either meets the required emission standards, is exempt from the scheme,&nbsp;has a 100% discount or a charge doesn't have to be paid.</p>";
+
+            content.ExemptHeadingText = "Exempt";
+            content.ExemptDetailText = "<p>Based on the vehicle details entered and information held by the DVLA and TfL today, this vehicle is exempt from {0}.</p><p><strong>This can change at any time - always check to see if you need to pay to drive within the zone(s).</strong></p>";
+
+            content.FullDiscountHeadingText = "100% discount";
+			content.FullDiscountDetailText = "<p>Based on the vehicle details entered and information held by the DVLA and TfL today, you don't have to pay the {0} for this vehicle.</p><p><strong>This can change - always check to see if you need to pay to drive within the zone(s).</strong></p>";
+
+            content.NonChargeableHeadingText = "No charge due";
+            content.NonChargeableDetailText = "<p>Based on the vehicle details entered and information held by the DVLA and TfL today,  you don't have to pay the {0} for this vehicle.</p><p><strong>This can change at any time - always check to see if you need to pay to drive within the zone(s).</strong></p>";
+
+            content.BasketDetailsPageUrl = "/modes/driving/pay-to-drive-in-london/basket-details";
+            content.GoToBasketButtonText = "Go to basket";
+            
+            content.FinishButtonText = "Finish";
+            content.AccountLandingUrl = "/modes/driving/account-account-landing-29377";
+            content.DrivingPageUrl = "/modes/driving/index";
+            
+            content.SelectVehicleUrl = "/modes/driving/pay-the-charge-select-vehicle-26283";
+            
+            content.EditLinkText = "Change vehicle";
+
+            content.CongestionChargeExemptMessage = "Exempt";
+            content.CongestionChargeNoChargesMessage = "No charges";
+            content.CongestionChargeExemptDetailedMessage = "<p>Based on the vehicle details entered and information held by the DVLA and TfL today, this vehicle is exempt from the Congestion Charge.</p><p><strong>This may change - always check to see if you need to pay to drive within the zone.</strong></p>";
+            content.CongestionChargeNoChargesDetailedMessage = "<p>Based on the vehicle details entered and information held by the DVLA and TfL today, you don't have to pay any Congestion Charges.</p><p><strong>This may change - always check to see if you need to pay to drive within the zone.</strong></p>";
+
+            Html.RenderAction("NoCharges", "PayCharges", new { content = content });
+        }
+
+      
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+      </div>
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "Based on the information we hold, you don't have to pay any charges to drive this vehicle in London.";}
+        
+            
+        
+
+
+ 

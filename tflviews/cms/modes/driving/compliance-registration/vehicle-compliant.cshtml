@@ -1,0 +1,137 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "You don't have to register this vehicle";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/compliance-registration/vehicle-compliant";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+                 <li><a href="/modes/driving/compliance-registration/before-you-start">Register a vehicle for LEZ and ULEZ</a></li>
+                
+            
+            
+                <li><span class="last-breadcrumb">You don't have to register this vehicle</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>You don't have to register this vehicle</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/compliance-registration/vehicle-compliant"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+        @{
+            dynamic content = new ContentModel();
+            content.AddAnotherButtonText = "Register a different vehicle";
+            content.ReviewButtonText = "Review application";
+            content.ContinueButtonText = "Finish";
+            content.BackButtonText = "Back";
+            content.ComplianceRegistrationIntro = "<p>You don't have to pay the ULEZ or LEZ charge for this vehicle.</p><p>There is no need to register it - we know it already meets the emissions standards for ULEZ and LEZ, has no charge due or is exempt from the schemes.</p><p>You will need to <a href='/modes/driving/pay-the-charge-select-vehicle-26283'>pay the Congestion Charge</a> as normal.</p>";
+
+            Html.RenderAction("VehicleCompliant", "ComplianceRegistration", new
+            {
+                area = "Ruc",
+                content = content,
+                backUrl = "/modes/driving/compliance-registration/vrm-lookup",
+                addAnotherUrl = "/modes/driving/compliance-registration/add-another",
+                unauthenticatedAccountUrl = "/modes/driving/congestion-charge",
+                authenticatedAccountUrl = "/modes/driving/account-personal-account-29357",
+                reviewUrl = "/modes/driving/compliance-registration/review"
+            }); 
+        }
+    
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "Vehicle compliant";}
+        
+            
+        
+
+
+ 

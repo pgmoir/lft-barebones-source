@@ -1,0 +1,153 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Add new account user";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/account-add-user-35049";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Add new account user</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Add new account user</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+
+          
+        <!-- account / add-user -->
+        @{
+            dynamic content = new ContentModel();
+        
+            content.TheirDetailsHeading = "";
+            content.DetailsText = "<p>You can give access to your account to up to 5 account users.</p><p>Account users have the same permissions as the account holder to make changes, except they can't remove the account holder, themselves or close the account.</p><p>Each account user will have their own sign in credentials.</p>";
+            content.UserNameLabel = "New account user name";
+            content.TelephoneNumberLabel = "Their telephone number";
+            content.EnterEmailAddressLabel = "Their email address";
+            content.ConfirmEmailAddressLabel = "Confirm their email address";
+        
+            content.GeneratePinText = "Security PIN";
+            content.WhyPinNeededTitle = "Why do I need to provide a PIN?";
+            content.WhyPinNeededText = "<p>You need to create a 6-digit number to set up secure access for the new user of your London Road User Charging account.</p><p>Make a note of this number and pass it to the new user. It will help us identify them if they need to contact us by phone.</p><p>They will also need it the first time they sign in to your account - they will be asked to set up&nbsp;security questions and a password.</p>";
+            
+            content.PinSectionHeading = ""; 
+            content.PinDescriptionText = "<p>The account holder and each account user should have a unique PIN.</p><p>As you are completing these details on behalf of a new account user, make a note of the PIN you created for them.</p><p>You need to give them their PIN and their unique Customer ID&nbsp;- you'll get that when you complete this process. They will need these to sign in to your account.</p>";
+            content.PinLabel = "Create a security PIN (6 digits)";         
+            content.PinRequired = "Enter a 6-digit PIN ";
+            content.PinRegularExpression = "The PIN must be exactly 6 digits";
+        
+            content.SendInviteLabel = "Submit request";
+        
+            content.UserNameRequired =  "Enter an account user name";
+            content.EmailAddressRequired =  "Enter an email address ";
+            content.EmailAddressEmailAddress =  "Enter a valid email address ";
+            content.ConfirmEmailAddressRequired =  "Confirm email address ";
+            content.ConfirmEmailAddressEmailAddress =  "Enter a valid email address ";
+            content.ConfirmEmailAddressCompare =  "Email addresses do not match";
+            content.TelephoneNumberRequired =  "Enter a telephone number ";
+            content.TelephoneNumberStringLength = "Too many digits";
+
+            content.AddUserErrorMessage =  "Unable to add new account user as PIN is not unique - enter a unique PIN to continue";
+        
+            content.BackButtonText = "Back";
+            content.SendInviteButtonText = "Submit request";
+        
+            Html.RenderAction(
+                "AddAccountUser",
+                "AccountSettings",
+                new
+                {
+                    Area = "Ruc",
+                    content = content,
+                    accountSettingsUrl = "/modes/driving/account-account-settings-29386",
+                    userConfirmationUrl = "/modes/driving/account-add-user-confirmation-35050"
+                });
+        }
+        
+        
+	  
+
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

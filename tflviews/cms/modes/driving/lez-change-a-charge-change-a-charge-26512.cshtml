@@ -1,0 +1,154 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Amend a LEZ charge";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/lez-change-a-charge-change-a-charge-26512";}
+@{ViewBag.Language = "en";}
+        
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Amend a LEZ charge</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Amend a LEZ charge</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/account-account-landing-29377"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+    
+      <h2>Change charge details</h2>
+      
+           
+      
+
+
+		
+		<!-- 4.1 lez-change-a-charge -->
+		@using TfL.Ruc.Services.ViewModels.Ruc.ZoneCharge.PayZoneCharge
+        @{
+            dynamic content = new ContentModel();
+            
+            content.ChangeDateLinkText = "Change start date";
+            content.ChangeVehicleAndDateLinkText = "Change vehicle and start date";
+            content.ChangeVehicleLinkText = "Change vehicle";
+            content.BackButtonText = "Back";
+            
+            //content.DailyCongestionChargesBasketText = "Daily congestion charge(1 day)";
+            //content.WeeklyCongestionChargesBasketText = "Weekly congestion charge ({0} days)";
+            //content.MonthlyCongestionChargesBasketText = "Monthly congestion charge ({0} days)";
+            //content.AnnualCongestionChargesBasketText = "Annual congestion charge ({0} days)";
+            //content.RangeCongestionChargesBasketText = "congestion charge ({0} days)";
+            content.LezStandardChargeBasketText = "Daily LEZ charge Low";
+            content.LezHigherChargeBasketText = "Daily LEZ charge High";
+
+            Html.RenderAction(
+            "ChangeOptions",
+            "ChangeZoneCharge",
+            new
+            {
+                area = "Ruc",
+                zoneType = ZoneChargeZone.LowEmission,
+                backUrl = "/modes/driving/lez-change-a-charge-find-a-charge-26509",
+                content = content,
+                changeDateUrl = "/modes/driving/lez-change-a-charge-start-date-26518",
+                changeVehicleUrl = "/modes/driving/lez-change-a-change-vehicle-26522",
+                changeVehicleAndDateUrl = "/modes/driving/lez-change-a-charge-vehicle-and-start-date-26525"
+            });
+        }
+		
+	  
+
+  
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/low-emission-zone" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

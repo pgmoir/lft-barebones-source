@@ -1,0 +1,201 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Find a charge";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/find-a-charge";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                 <li><a href="/modes/driving/amend-or-refund-a-driving-charge">Amend or refund a driving charge</a></li>
+                
+            
+                
+                <li><span class="last-breadcrumb">Find a charge</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Find a charge</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/account-account-landing-29377"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+
+		@using TfL.Ruc.Services.ViewModels.Ruc.ZoneCharge;
+        @using TfL.Ruc.Services.ViewModels.Ruc.ZoneCharge.RefundZoneCharge;
+		@{
+            dynamic content = new ContentModel();
+            
+            content.BackButtonText = "Back";
+            content.ContinueButtonText = "Continue";
+            content.ChargeDetailsHeading = "Charge details";
+            content.VrmTextBoxLabel = "Number plate (Vehicle Registration Mark)";
+            content.VrmTextBoxPlaceHolder = "eg AB01ABC";
+            content.ReceiptNumberTextBoxLabel = "Receipt number";
+            content.ReceiptNumberTextBoxPlaceHolder = "eg AB12-01";
+            content.StartDateTextBoxLabel = "Charge start date";
+            content.UserNotSignedInErrorMessage = string.Format("We can't find your charge - please check the details you entered. If you paid for this charge while signed into your account, sign in and search again. {0}", string.Format("<a href=\"{0}?returnUrl={1}\">{2}</a>", "/Ruc/Auth/login", "/modes/driving/find-a-charge?fromLogin=true", "Sign in"));
+            content.ChargeNotFoundErrorMessage = "We can't find your charge - please check the details you entered.";
+            content.ChargeNotAuthorisedErrorMessage = "We can't find your charge - please check the details you entered. If you paid for this charge while signed into your account, sign in and search again.";
+            content.ChargeFindErrorMessage = "Something went wrong. Please try again.";
+            content.VrmRequired = "Enter a number plate to continue";
+            content.ReceiptNumberRequired = "Enter a receipt number";
+            content.StartDateRequired = "Enter a start date";
+            
+            Html.RenderAction("FindCharge", "FindZoneCharge", new
+                {
+                    area = "Ruc",
+                    resultUrl = "/modes/driving/amend-or-refund-charge-details",
+                    backUrl = "/modes/driving/amend-or-refund-a-driving-charge",
+                    content = content
+                }
+            );
+        }
+
+		
+	
+
+  
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+      </div>
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "Find a charge to amend it or get a refund for it";}
+        
+            
+        
+
+
+ 

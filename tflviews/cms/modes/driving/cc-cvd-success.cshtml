@@ -1,0 +1,191 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Application in progress";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-cvd-success";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Application in progress</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Application in progress</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+        @using TfL.Ruc.Services.ViewModels.Ruc.DiscountApply
+        @{
+            dynamic content = new ContentModel();
+            content.ConfirmationHeadingSuccess = "We're now processing your CVD discount application";
+            content.ReferenceNumber = "Application reference number: {0}";
+            content.ConfirmationText = "<p>Your application can take up to 10 working days to process - we'll contact you to let you know the outcome. In the meantime you need to pay the Congestion Charge if you drive within the zone.</p><p>The discount only applies to the Congestion Charge. If a vehicle does not meet the emission standards you still need to pay the ULEZ charge.</p>";
+            content.PaymentReferenceText = "Receipt number for application payment: {0}";
+            content.PayCcLinkTitle = "Pay the Congestion Charge";
+            content.EmailAddressSentToPrefixText = "We have sent an email to: {0}";
+            content.SMSConfirmationText = "A receipt has been sent to mobile number {0}";
+
+            content.AccountLandingButtonText = "Go to account";
+            
+            content.PayCcTitle = "Travelling in the next few days?";
+            content.PayCcText = "<p>You need to pay the Congestion Charge until your discount has been approved. Find out if you also need to pay the ULEZ charge by selecting 'Pay to drive in London'.</p>";
+            content.PayCcButtonText = "Pay to drive in London";
+            
+            content.ToxicityChargeTitle = " ";
+            content.ToxicityChargeText = @" ";
+            
+            content.AutoPayApplyTitle = "Pay ULEZ automatically";
+            content.AutoPayApplyText = "<p>Set up Auto Pay to be billed automatically for the ULEZ. If your vehicle does not meet the emission standards you need to pay the ULEZ charge when you drive within central London.</p>";
+            content.AutoPayApplyButtonText = "Set up Auto Pay";
+            content.AutoPayManageTitle = "Add vehicles to Auto Pay?";
+            content.AutoPayManageText = "<p>You'll pay automatically for any Congestion Charge or ULEZ charges for driving within central London.</p>";
+            content.AutoPayManageButtonText = "Manage Auto Pay";
+
+            content.AccountCreatedPrefix = "Your account number is {0}";
+            content.AccountCreatedMessage = "Take a note of your account number. You will need it to sign into your account.";
+            content.AccountLandingPageUrl = "/modes/driving/account-account-landing-29377";
+
+            Html.RenderAction(
+                "SubmissionSuccess",
+                "Uled",
+                new
+                {
+                    area = "Ruc",
+                    content = content,
+                    discountStyle = ZoneChargeDiscountStyle.UltraLowEmission,
+                    payCcUrl = "/modes/driving/pay-the-charge-select-vehicle-26283",
+                    journeyStartUrl = "/modes/driving/cc-select-discount-29641",
+                    autoPayApplyUrl = "/modes/driving/auto-pay",
+                    manageAutoPayUrl = "/modes/driving/cc-autopay-manage-manage-29152",
+                    manageAccountUrl = "/modes/driving/account-account-landing-29377"
+                }
+            );
+        }
+
+
+    
+    
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+        @ModulesHelpers.PrintButton()
+      
+ 
+      </div>
+    
+    <div></div>
+    
+      <div>
+                    
+        <div class="vertical-button-container">
+    <ul>
+        
+        
+        
+        <li><a href="/modes/driving/congestion-charge/paying-the-congestion-charge"  class="plain-button">Congestion Charge payments</a></li>
+        
+        
+        <li><a href="/modes/driving/congestion-charge/congestion-charge-zone"  class="plain-button">Congestion Charge zone</a></li>
+        
+        
+        <li><a href="/modes/driving/auto-pay"  class="plain-button">Auto Pay</a></li>
+        
+        
+        <li><a href="/modes/driving/congestion-charge/discounts-and-exemptions"  class="plain-button">Discounts and exemptions</a></li>
+        
+        
+        <li><a href="/modes/driving/congestion-charge/contact-congestion-charge"  class="plain-button">Contact Congestion Charge</a></li>
+        
+    </ul>
+</div>
+
+      </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

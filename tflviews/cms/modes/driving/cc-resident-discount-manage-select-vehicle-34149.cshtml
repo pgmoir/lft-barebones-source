@@ -1,0 +1,171 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Add vehicle";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-resident-discount-manage-select-vehicle-34149";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Add vehicle</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Add vehicle</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+
+		
+		<!-- 4. select-vehicle -->
+		@{
+            dynamic content = new ContentModel();
+            content.SelectVehicleTitle = "Select a vehicle ";
+            content.SelectVehicleText = "Tell us which vehicle you want to add to this discount.";
+            content.VehicleTypeHelperTitle = "What types of vehicle can I add to this discount? ";
+            content.VehicleTypeHelperText = "<p>You can only have the discount for 1 vehicle at a time.</p><p>If you are the registered keeper of the vehicle, it must be registered with the DVLA in your name and at the address you are using to apply for the residents' discount.</p><p>You can also add a company car or lease vehicle as long as it is for your own use only.</p>";
+            content.SkipVehicleSelection = "Select vehicle after application has been approved.";
+            content.BackButtonText = "Back";
+            content.ContinueButtonText = "Continue";
+            content.VehicleNotFoundErrorText = "'Find vehicle' to continue";
+            content.ShowAddtoQmlCheckboxSelectedByDefaultText = "'Add vehicle to Quick Management list' is selected by default";
+            // JSON content.FindVehicleButtonText = "Find vehicle";
+            content.ConfirmEnteredVehicleButtonText = "Confirm";
+            // JSON content.VrmHelpMessageText = "Be careful not to mix up the letters 'I' and 'O' with the numbers '1' and '0'";
+            // JSON content.VrmTitle = "Vehicle Registration Mark";
+            // JSON content.VrmPlaceHolder = "eg AB01ABC";
+            // JSON content.CountryofRegistrationTitle = "Country of registration";
+            content.CcDiscountedTitle = "No charge due for ";
+            content.CcDiscountedText = "<p>Based on the vehicle details entered and information held by the DVLA and TfL today, your vehicle is eligible for a 100% discount from the Congestion Charge. If you believe this is incorrect and you still want to pay the Congestion Charge, add this vehicle or apply for a discount, then you can continue with this process.</p><p><strong>This may change - always check to see if you need to pay to drive within the zone.</strong></p>";
+            content.CcExemptTitle = "No charge due for ";
+            content.CcExemptText = "<p>Based on the vehicle details entered and information held by the DVLA and TfL today, this vehicle is exempt from the Congestion Charge. If you believe this is incorrect and you still want to pay the Congestion Charge, add this vehicle or apply for a discount, then you can continue with this process.</p><p><strong>This may change - always check to see if you need to pay to drive within the zone.</strong></p>";
+            content.ThisisNotMyVehicleTitle = "What if my vehicle details are incorrect?";
+            content.ThisisNotMyVehicleText = "<p>If the number plate is correct but the vehicle description shown is wrong, you can still continue to add this vehicle.</p><p>Vehicle information is provided to TfL by the DVLA, so you'll need to let the DVLA&nbsp;know if your details are wrong or need to be updated.</p>";
+            content.VehicleNotFoundTitle = "<p><strong>We do not hold any details for this vehicle</strong></p>";
+            // JSON content.ConfirmEnteredVrmDetailsText = "Yes, this is the correct vehicle";
+            content.VehicleNotFoundText = "<p>If your UK-registered vehicle's make and model details have not been returned, make sure you entered the number plate correctly before continuing.</p>";
+            content.QmlLimitReachedTitle = "You already have 10 vehicles saved on your Quick Management list";
+            content.QmlLimitReachedText = "To add another vehicle, you will first need to remove one. You can edit your Quick Management list once you have completed this process";
+            content.ConfirmSaveVehicleToQmlText = "Save this vehicle to your account to speed up making payments";
+            content.QmlUseDifferentVehicleText = "Use a different vehicle";
+            content.ResidentDiscountAppliedText = "Active on resident's discount";
+            content.VehicleAlreadyAddedErrorText = "This vehicle is already on your account to help you pay the charge";
+            content.ActiveDiscountText = "Active on: ";
+            // JSON content.VrmAcceptedRequireTrue = "Confirm that this is the correct vehicle to continue";
+            // JSON content.VehicleRegistrationMarkRequired = "Enter a Vehicle Registration Mark to continue";
+            content.CheckQmlVehicleButtonText = "Check";
+            content.CcAndToxicityChargeableText = "<p>You&nbsp;need to pay&nbsp;the T-Charge to drive your vehicle within the Congestion Charge area if&nbsp;it does not meet the required emissions standard. If you qualify for the 90% residents' discount you also get a 90% discount from the T-Charge.</p>";
+            content.CcExemptAndToxicityChargeableText = "Your vehicle does not meet the required emissions standard. Although your vehicle is currently exempt from the Congestion Charge you will need to pay a T-Charge value to drive your vehicle in the Congestion Charge Zone. Vehicles that are subject to a 90 per cent Residents discount also receive a 90 per cent discount from the T-Charge";
+            content.ToxicityChargeHeaderText = "T-Charge to pay";
+            // JSON content.CountryOptionUk = "United Kingdom";
+            // JSON content.CountryOptionOther = "Other";
+            content.ConfirmVehicleErrorText = "Find a vehicle to continue";
+            //content.NumberOfSeatsRequired = "Please enter number of seats";
+            //content.NumberOfSeatsRange = "The value must be greater than 9";
+
+            Html.RenderAction("SelectVehicle", "DiscountManage", new
+                {
+                    area = "Ruc",
+                    discountStyle = ZoneChargeDiscountStyle.ResidentsDiscount,
+                    discountAction = DiscountAction.Manage,
+                    backUrl = "/modes/driving/cc-resident-discount-manage-before-you-begin-34145",
+                    uploadEvidenceUrl = "/modes/driving/cc-resident-discount-manage-upload-evidence-34159",
+                    manageUrl = "/modes/driving/cc-resident-discount-manage-32832",
+                    content = content,
+                    zone = TfL.Ruc.Domain.Entities.Ruc.ZoneChargeZone.CongestionCharge,
+                    lookupType = VehicleLookupType.DiscountResident,
+                    journeyStartUrl = "/modes/driving/cc-select-discount-29641",
+                }
+            );
+        }
+		
+	  
+
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

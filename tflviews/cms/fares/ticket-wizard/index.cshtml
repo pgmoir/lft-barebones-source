@@ -1,0 +1,83 @@
+﻿
+    
+  
+
+
+<!-- rhroot -->
+@{ViewBag.Title = "Ticket Wizard";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/fares/ticket-wizard/index";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Ticket Wizard</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    <div class="on-this-page">
+      <p>The Ticket Wizard tool has been discontinued &#45;
+please use the 'Single Fares Finder' or 'Fares Table' for help with
+ticketing queries</p>
+      
+           
+      
+      
+        
+          
+            @this.ScriptBlock(
+              @<script>
+                queue.push("@Html.ScriptPath("modules/M020-on-this-page.min.js")", null);
+              </script>
+            )
+          
+        
+      
+    </div>
+  </div>
+  <div class="aside" role="complementary">
+
+   
+    
+    
+    
+    <div>
+<div class="advert-tile unsponsored-style google-ads" aria-hidden="true">
+  <div class="advert-link">
+    <div class="advert-content">
+        <div class="medium-large" data-advert="/76889402/non-targeted" data-advert-sizes="300, 250"></div>
+        <div class="small" data-advert="/76889402/non-targeted" data-advert-sizes="300, 250"></div>
+    </div>
+  </div>
+</div>
+@{
+    ViewBag.AmazonSlot = "'amznslots'";
+    ViewBag.AmazonAds = "'3199'"; // to add another value, this needs to be ViewBag.AmazonAds = "'3199','xx'";
+}
+      
+
+ </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+ 
+ 
+        
+        
+        
+            @{ViewBag.Description = "Ticket wizard decommission";}
+        
+            
+        
+
+
+ 

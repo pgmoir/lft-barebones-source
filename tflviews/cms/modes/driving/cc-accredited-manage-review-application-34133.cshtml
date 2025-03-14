@@ -1,0 +1,176 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Review vehicle(s)";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-accredited-manage-review-application-34133";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Review vehicle(s)</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Review vehicle(s)</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+      <div class="article-teaser">
+        <p>You can add a group of up to 15 vehicles at a time to your accredited breakdown discount.</p>
+        
+      </div>
+    
+    
+      <p><strong>Vehicles are covered by the 100% discount straight away, but it may take up to 24 hours for its new discounted status to appear here.</strong></p>
+      
+           
+      
+
+
+		
+		<!-- 4. review-application -->
+        @{
+            dynamic content = new ContentModel();
+            
+            content.IntroText = "A &pound;10 registration charge applies to each vehicle added. This charge should also be paid for every vehicle active on the discount when it is renewed.";
+            content.SelectedVehicleLabel = "Selected vehicles: {0} / {1}";
+            content.ChargePerSelectionMessage = "{0} charge";
+            content.AddAccountVehicleUrl = "/modes/driving/accredited-breakdown-account-vehicle?sourceUrl=/modes/driving/cc-accredited-manage-review-application-34133";
+            content.AddVrmLookupUrl = "/modes/driving/cc-accredited-manage-vrm-lookup?sourceUrl=/modes/driving/cc-accredited-manage-review-application-34133";
+            content.AddAccountVehicle = "Add account vehicle";
+            content.AddNewVehicle = "Add a new vehicle";
+            content.ContinueButtonText = "Continue";
+            content.PaymentHeading = "Payment summary";
+            content.PayementText = "<p>There is a {0} charge for each vehicle added.</p>";
+            content.PaymentTotalText = "Total";
+            content.PasHeading = "PAS";
+            content.PasExpiryText = "Expiry date";
+
+            /* Charge labels and messages */
+            content.ShowMoreLabel = "Charge details";
+            content.ShowLessLabel = "Charge details";
+            content.CCShortLabel = "CC";
+            content.ULEZShortLabel = "ULEZ";
+            content.FullDiscountLabel = "100% discount";
+            content.FullDiscountMessage = "This vehicle is currently registered for a 100% discount from this charge. Check when the discount expires in the 'Manage discounts' section of your account.";
+            content.UlezHighLabel = "Should be paid";
+            content.PayableLabel = "Should be paid";
+            content.UlezLowLabel = "Should be paid";
+            content.ExemptLabel = "Exempt";
+            content.NonchargeableLabel = "No charge due";
+            content.CongestionChargeLabelForDetailSection = "Congestion Charge";
+            content.UlezHighLabelForDetailSection = "ULEZ";
+            content.UlezLowLabelForDetailSection = "ULEZ";
+            content.UlezCompliantLabelForDetailSection = "Meets the standard";
+            content.CC100PercentDiscountMessage = "This vehicle is currently registered for a 100% discount from this charge. Check when the discount expires in the 'Manage discounts' section of your account.";
+            content.CCExemptMessage = "Based on the vehicle details entered and information held by the DVLA and TfL today, this vehicle is exempt from this charge. This may change - always check to see if you need to pay to drive with the zone(s).";
+            content.CCPayableMessage = "You need to pay the Congestion Charge for this vehicle if you drive within the zone Monday to Friday 07:00-18:00 excluding bank holidays and the period between Christmas Day and New Year's Day.";
+            content.CompliantLabel = "Meets the standard";
+            content.Ulez100PercentDiscount = "This vehicle is currently registered for a 100% discount from this charge. Check when the discount expires in the 'Manage discounts' section of your account.";
+            content.UlezExemptMessage = "Based on the vehicle details entered and information held by the DVLA and TfL today, this vehicle is exempt from this charge. This may change - always check to see if you need to pay to drive within the zone(s).";
+            content.UlezNoChargesMessage = "Based on the vehicle details entered and information held by the DVLA and TfL today, you don't have to pay the ULEZ charge for this vehicle. This may change - always check to see if you need to pay to drive within the zone.";
+            content.HighChargesPayableMessage = "This vehicle does not meet the ULEZ emissions standards. You will need to pay the ULEZ charge if you drive within the zone. The zone operates at all times - charging days run from midnight to midnight.";
+            content.LowChargesPayableMessage = "This vehicle does not meet the ULEZ emissions standards. You will need to pay the ULEZ charge if you drive within the zone. The zone operates at all times - charging days run from midnight to midnight.";
+            content.UlezCompliantMessage = "This vehicle meets the ULEZ emissions standards. You don't have to pay the charge.";
+
+            Html.RenderAction("ReviewApplication", "AccreditedBreakdown", new
+                {
+                    area = "Ruc",
+                    content = content,
+                    addAccountVehicleUrl = "/modes/driving/accredited-breakdown-account-vehicle?sourceUrl=/modes/driving/cc-accredited-manage-review-application-34133",
+                    addVrmLookupUrl = "/modes/driving/cc-accredited-manage-vrm-lookup?sourceUrl=/modes/driving/cc-accredited-manage-review-application-34133",
+                    successUrl = "/modes/driving/cc-accredited-manage-success-34139",
+                    failureUrl = "/modes/driving/cc-accredited-manage-failure-34127",
+                    submissionUrl = "/modes/driving/cc-accredited-manage-submit-34137",
+                    paymentUrl = "/modes/driving/cc-accredited-manage-payment-34131",
+                    journeyStartUrl = "/modes/driving/cc-accredited-breakdown-manage-34762"
+                }
+            );
+        }
+		
+	  
+
+
+
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "You can add a group of up to 15 vehicles at a time to your accredited breakdown discount.";}
+        
+            
+        
+
+
+ 

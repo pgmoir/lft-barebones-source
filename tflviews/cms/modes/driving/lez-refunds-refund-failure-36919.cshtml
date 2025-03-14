@@ -1,0 +1,171 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Refund a LEZ charge";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/lez-refunds-refund-failure-36919";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Refund a LEZ charge</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Refund a LEZ charge</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/account-account-landing-29377"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+    
+      <h2>Refund failed</h2>
+      
+           
+      
+
+
+		
+		<!-- 10. lez-refund-failure -->
+		@using TfL.Ruc.Services.ViewModels.Ruc.ZoneCharge.RefundZoneCharge
+		@{
+            dynamic content = new ContentModel();
+            
+            content.FailureHeading = "There was a problem submitting your refund request.";
+            content.FailureText = "<p>Your request has not been received. To re-submit, please try again later.</p>";
+            //content.ReferenceNumber = "Request reference number: ";
+            content.ContactCustomerServices = "<p>If you need help, please contact Customer services on 0343 222 3333 (<a href='/corporate/terms-and-conditions/tfl-call-charges'>TfL call charges</a>) 08:00-20:00 Monday to Friday.</p>";
+            //content.StepOneText = "Find the charge";
+            //content.StepTwoText = "Enter the personal details";
+            //content.StepThreeText = "Select refund dates";
+            //content.StepFourText = "Confirmation";
+
+            Html.RenderAction(
+                "RefundFailure", 
+                "RefundZoneCharge", 
+                new
+                {
+                    area = "Ruc", 
+                    content = content,
+                    zoneType = ZoneChargeZone.CongestionCharge
+                }
+            );
+        }
+		
+	  
+
+  
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/low-emission-zone" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+      <div>
+                    
+        <div class="vertical-button-container">
+    <ul>
+        
+        
+        
+        <li><a href="/modes/driving/pay-to-drive-in-london"  class="plain-button">Pay to drive in London</a></li>
+        
+        
+        <li><a href="/modes/driving/amend-or-refund-a-charge"  class="plain-button">Amend or refund a charge</a></li>
+        
+        
+        <li><a href="/modes/driving/compliance-registration/before-you-start"  class="plain-button">Register your vehicle with us</a></li>
+        
+        
+        <li><a href="/modes/driving/low-emission-zone/contact-lez"  class="plain-button">Contact LEZ</a></li>
+        
+    </ul>
+</div>
+
+      </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

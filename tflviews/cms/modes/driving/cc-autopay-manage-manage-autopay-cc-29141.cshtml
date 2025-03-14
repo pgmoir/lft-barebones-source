@@ -1,0 +1,279 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Manage Auto Pay";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-autopay-manage-manage-autopay-cc-29141";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                 <li><a href="/modes/driving/auto-pay">Auto Pay</a></li>
+                
+            
+            
+            
+                <li><span class="last-breadcrumb">Manage Auto Pay</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Manage Auto Pay</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/account-account-landing-29377"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+    
+      <h2>Service summary</h2>
+      
+           
+      
+
+        @using TfL.Ruc.Services.ViewModels.Ruc.Autopay
+        @{
+            dynamic content = new ContentModel();
+
+            /* Statements/balance/payment */
+            content.PayOutstandingBalanceButtonText = "Pay outstanding balance";
+            content.BalanceLabel = "Balance: {0}";
+            content.AccountInDebitText = "debit";
+            content.AccountInCreditText = "credit";
+            content.NextScheduledStatementDateLabel = "Next statement date: ";
+            content.LastStatementBalanceText = "Last statement balance: ";
+            content.MakeAPaymentButtonText = "Make an interim payment";
+            content.ViewOlderStatementsButtonText = "View Auto Pay transaction history";
+            content.DownloadStatementsButtonText = "Auto Pay statements";                       
+            content.OutstandingBalanceWarningText = "<p><strong>Your scheduled payment of {0} failed.</strong>&nbsp;If you don't reactivate your service it will be suspended. Once suspended you will need to pay the charge another way or you will receive a Penalty Charge Notice.</p><p>To reactivate your Auto Pay you need to pay the current balance. This may include charges incurred since your last statement. The current balance payable is {1}.</p>";
+            content.OutstandingBalanceErrorText = "<p><strong>Your scheduled payment of {0} failed. </strong>Your Auto Pay service is now closed. You will need to pay the charge another way or you will receive a Penalty Charge Notice.</p><p>Failure to pay the full outstanding balance of {1} may lead to recovery action.</p>";
+            content.OutstandingBalanceSuspendedErrorText = "<p><strong>Your scheduled payment of {0} failed. </strong>Your Auto Pay service is now suspended. If you do not reactivate your service you will need to pay the charge another way or you will receive a Penalty Charge Notice.</p><p>To reactivate your Auto Pay you will need to pay the current balance. This may include charges incurred since your last statement. The current balance payable is {1}.</p><p><strong>If you do not pay the outstanding balance now your Auto Pay will be closed and you will need to pay additional vehicle registration charges to reactivate it.</strong></p>";
+
+            /* Tooltips */
+            content.WarningTooltipText = "<p><strong>‘Active’ </strong>status means that your Auto Pay service is fully operational and no further action is needed.</p><p><strong>‘Pending suspension’</strong> status means that a scheduled payment has failed and you now need to pay the outstanding balance. If you do not pay this, your Auto Pay will be 'Suspended'. Once 'Suspended' you will need to pay the charge in another way or you will receive a Penalty Charge Notice.</p><p><strong>‘Suspended’</strong> status means that a scheduled payment has failed and you now need to pay the outstanding balance. If you drive any of your vehicles within the charging zone you will need to pay the charge in another way or you will receive a Penalty Charge Notice. If you do not clear your balance quickly, your Auto Pay service will be closed and you will need to pay vehicle registration charges to reactivate it.</p><p><strong>‘Closed’</strong> status means that your Auto Pay service is no longer available. You will need to pay the charge in another way or you will receive a Penalty Charge Notice.</p>";
+            content.ErrorTooltipText = "<p><strong>‘Active’ </strong>status means that your Auto Pay service is fully operational and no further action is needed.</p><p><strong>‘Pending suspension’</strong> status means that a scheduled payment has failed and you now need to pay the outstanding balance. If you do not pay this, your Auto Pay will be 'Suspended'. Once 'Suspended' you will need to pay the charge in another way or you will receive a Penalty Charge Notice.</p><p><strong>‘Suspended’</strong> status means that a scheduled payment has failed and you now need to pay the outstanding balance. If you drive any of your vehicles within the charging zone you will need to pay the charge in another way or you will receive a Penalty Charge Notice. If you do not clear your balance quickly, your Auto Pay service will be closed and you will need to pay vehicle registration charges to reactivate it.</p><p><strong>‘Closed’</strong> status means that your Auto Pay service is no longer available. You will need to pay the charge in another way or you will receive a Penalty Charge Notice.</p>";
+            content.SuccessTooltipText = "<p><strong>‘Active’ </strong>status means that your Auto Pay service is fully operational and no further action is needed.</p><p><strong>‘Pending suspension’</strong> status means that a scheduled payment has failed and you now need to pay the outstanding balance. If you do not pay this, your Auto Pay will be 'Suspended'. Once 'Suspended' you will need to pay the charge in another way or you will receive a Penalty Charge Notice.</p><p><strong>‘Suspended’</strong> status means that a scheduled payment has failed and you now need to pay the outstanding balance. If you drive any of your vehicles within the charging zone you will need to pay the charge in another way or you will receive a Penalty Charge Notice. If you do not clear your balance quickly, your Auto Pay service will be closed and you will need to pay vehicle registration charges to reactivate it.</p><p><strong>‘Closed’</strong> status means that your Auto Pay service is no longer available. You will need to pay the charge in another way or you will receive a Penalty Charge Notice.</p>";
+            
+            /* Misc */
+            content.ActiveVehiclesLabel = "Vehicles active on Auto Pay";
+            content.AddNewVehicleButtonText = "Add a new vehicle";
+            content.ViewRecentActivityButtonText = "View charges since last statement";
+            content.ViewAutopayHistoryButtonText = "View Auto Pay vehicle history";
+            content.ReapplyForAutoPayButtonText = "Set up Auto Pay again";
+            content.CannotAddMoreVehiclesWarningText = "<p>You can only add 5 vehicles to your Auto Pay service. To add another vehicle you will first need to remove one.</p><p>If you have a business account you can set up Fleet Auto Pay. This is designed for customers with 6 or more vehicles.</p>";
+            content.AccountVehicles = "Account vehicles";
+            content.AccountVehiclesLink = "/modes/driving/autopay-apply-choose-vehicles?commingFromManageAutoPay=true";
+            content.NewVehicle = "New vehicle";
+            content.NewVehicleLink = "/modes/driving/autopay-apply-find-vehicle";
+            content.BasketLimit = 5;
+            content.ApplyAutoPaySummaryPage = "/modes/driving/autopay-apply-summary";
+
+            /* Payment method */
+            content.SortCodeLabel = "Sort Code";
+            content.AccountNameLabel = "Name of account holder(s)";
+            content.AccountNumberLabel = "Bank/building society account no.";
+            content.CardTitle = "Stored Auto Pay payment card";
+            content.CardTitleExpired = "Stored Auto Pay payment card expired";
+            content.WithinTenDaysWarningMessage = "You can't change your payment method right now - your statement is due within the next 10 days. You can change it after your statement has been issued.";
+            content.AccountStatusWarningMessage = "Your Auto Pay service is suspended. You can't add or remove vehicles. Pay the outstanding balance to reactivate your service.";
+            content.UpdatePaymentDetailsButtonText = "Change payment details";
+            content.UpdatePaymentDetailsButtonUrl = "/modes/driving/cc-autopay-manage-select-payment-option-37989";
+
+            /* Charge labels and messages */
+            content.NonChargeableLabel = "No charge due"; 
+            content.NonChargeableMessage =  "<p>Based on the vehicle details entered and information held by the DVLA and TfL today, you don't have to pay the ULEZ charge for this vehicle. This may change - always check to see if you need to pay to drive in the zone.</p>";
+            content.PayableHighLabel = "Should be paid";
+            content.PayableHighMessage = "This vehicle does not meet the ULEZ emissions standards. You need to pay the ULEZ charge if you drive within the zone. The zone operates all the time (except 25 December) - charging days run from midnight to midnight.";
+            content.PayableLowLabel = "Should be paid";
+            content.PayableLowMessage = "This vehicle does not meet the ULEZ emissions standards. You need to pay the ULEZ charge if you drive within the zone. The zone operates all the time (except 25 December) - charging days run from midnight to midnight.";
+            content.ExemptLabel = "Exempt";
+            content.ExemptMessage = "<p>Based on the vehicle details entered and information held by the DVLA and TfL today, this vehicle is exempt from this charge. This may change - always check to see if you need to pay to drive within the zone.</p>";
+            content.CompliantLabel = "Meets the standard";
+            content.CompliantMessage = "<p>This vehicle either meets the ULEZ emissions standards, is exempt or you don't need to pay the charge for it.</p>";
+            content.PayableLabel = "Should be paid";
+            content.PayableMessage = "You need to pay the Congestion Charge for this vehicle if you drive within the zone Monday to Friday 07:00-18:00 excluding bank holidays and the period between Christmas Day and New Year's Day.";
+            content.ChargeabilityUnknownLabel = "Unknown";
+            content.ChargeabilityUnknownMessage = "We don't hold any charge details for this vehicle";
+            content.UnknownVehicleWarningMessage = "<p>We don't have any details for this vehicle at the moment. To add it to a discount application or to Auto Pay you need to add it as a new vehicle.</p>";            
+            
+            /* CommonList CMS properties */
+            content.ServiceError = "<p>There was a problem - we can't retrieve your vehicles</p>";
+
+            /* Search, Sort Filter Section */
+            content.SearchLabelText = "Search by number plate";
+            content.SearchPlaceholderText = "eg AB01ABC";
+            content.SortLabelText = "Sort";
+            content.ApplyFilterButtonText = "Apply filter";
+            content.ResetFilterButtonText = "Reset filter";
+
+            /* Composite Vehicle List Summary*/
+            content.TotalRecordsLabelTemplate = "{0} vehicle";
+            content.PluralTotalRecordsLabelTemplate = "{0} vehicles";
+            content.DownloadButtonText = "Download list";
+
+            /* Composite Vehicle List Panel */
+            content.AddTagText = "Add tag";
+            content.EditTagText = "Edit tag";
+            content.CcLabel = "CC";
+            content.UlezLabel = "ULEZ";
+            content.DateAddedText = "Date added: ";
+            content.ExpiryDateText = "Expiry date: ";
+            content.MoreDetailsLabelText = "Charge details";
+            content.LessDetailsLabelText= "Charge details";
+
+            /* Add, Edit, Remove Tag Modal */
+            content.AddTagModalHeadingText = "Add a tag";
+            content.AddTagModalMessageText = "<p>A tag will help you identify your vehicle more easily.</p>";
+            content.EditTagModalHeadingText = "Edit tag";
+            content.EditTagModalMessageText = "<p>Change your vehicle tag or remove it.</p>";
+            content.AddTagLabel = "A tag will help you identify your vehicle more easily.";
+            content.EditTagLabel = "Edit tag";
+            content.TagModalSaveButtonText = "Save";
+            content.TagModalCancelButtonText = "Cancel";
+
+            /* Remove Vehicle Modal */
+            content.RemoveVehicleModalHeadingText = "Are you sure?";
+            content.RemoveVehicleModalMessageText = "<p>If you remove the vehicle from your Auto Pay service it will cost £10 to add it again.</p>";
+            content.RemoveVehicleModalConfirmButtonText = "Remove"; //Remove vehicle modal delete button text
+            content.RemoveVehicleModalCancelButtonText = "Keep"; // Remove vehicle modal cancel button text
+
+            /* Custom messages */
+            content.CustomResultsMessageFormat = "{0} / 5 vehicles on Auto Pay"; // Number of vehicles on Auto Pay label
+            content.ChargePerVehicleMessageFormat = System.Web.HttpUtility.HtmlDecode("&pound;{0} annual charge"); // Total yearly charge label
+            content.UnableToRemoveVehicleModalMessageText = "Something went wrong with the removal of your vehicle. Try again later.";
+
+            content.FullDiscountLabel = "100% discount";
+            content.FullDiscountMessage = "This vehicle is currently registered for a 100% discount from this charge. Check when the discount expires in the 'Manage discounts' section of your account.";
+            
+            content.ManageMyVehiclesHeading = "Manage my vehicles";
+            content.ManageMyVehiclesText = "To make any changes to your vehicles, use the links below.";
+            content.QuickManageListUrl = "/modes/driving/account-quick-management-list-37474";
+            content.QuickManageListText = "Manage vehicles on Quick Management List";
+            content.ManageVehiclesOnDiscountUrl = "/modes/driving/cc-discount-manage-discounts-32822";
+            content.ManageVehiclesOnDiscountText = "Manage vehicles on discount";
+            content.AllVehicleHistoryUrl = "/modes/driving/cc-autopay-manage-view-vehicle-history-30894";
+            content.AllVehicleHistoryText = "All vehicle history";            
+
+            Html.RenderAction(
+                RucDictionary.AutoPayManage.ManageAutoPayActionName,
+                "AutoPayManage",
+                new
+                {
+                    area = "Ruc",
+                    backUrl = "/modes/driving/account-account-landing-29377",
+                    content = content,
+                    makePaymentUrl = "/modes/driving/cc-autopay-payment-enter-payment-31058",
+                    viewPaymentDetailsUrl = "/modes/driving/cc-autopay-payment-payment-details-31055",
+                    addVehiclesUrl = "/Ruc/AutoPayManage/AccountVehicles",
+                    viewRecentActivityUrl = "/modes/driving/cc-autopay-manage-view-recent-statement-36849",
+                    viewVehicleHistoryUrl = "/modes/driving/cc-autopay-manage-view-vehicle-history-30894?Search.ServiceType=CongestionCharge",
+                    viewOlderStatementsUrl = "/modes/driving/cc-autopay-manage-view-statements-29248",
+                    downloadStatementsUrl = "/modes/driving/cc-autopay-manage-download-statements",                    
+                    changeStatementDateUrl = "",
+                    closeAutoPayServiceUrl = "",
+                    manageVehiclesUrl = "/modes/driving/autopay-apply-select-service",
+                    payOutstandingBalanceUrl = "/modes/driving/cc-autopay-payment-make-payment-31018",
+                    applyUrl ="/modes/driving/autopay-apply",
+                    style = ZoneChargeAutoPayStyle.CongestionCharge
+                }
+            );
+        }
+      
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+      <div>
+                    
+        <div class="related-links">
+
+    <h3>Help with Auto Pay</h3>
+
+<div class="vertical-button-container">
+
+<a href="/modes/driving/pay-to-drive-in-london" class="plain-button">Auto Pay user guides</a>
+    </div>
+</div>
+ 
+      </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

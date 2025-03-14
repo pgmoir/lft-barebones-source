@@ -1,0 +1,247 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "London Road User Charging account";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/account-business-account-29362";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">London Road User Charging account</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>London Road User Charging account</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+
+
+          
+<!-- 3. business-account -->          
+    @{
+        dynamic content = new ContentModel();
+    
+        content.AccountRefLabel = "Account number: ";
+        content.AccountHolderLabel = "Account holder: ";
+        content.CompanyNameLabel = "Company name: ";
+        content.StatusOnCCAutoPayText = "<p>Your Auto Pay service is {0}. <a href='/modes/driving/cc-autopay-manage-manage-autopay-cc-29141' target='_self'>Manage my Auto Pay</a></p>";    
+        content.StatusOnFleetAutoPayText = "<p>Your Fleet Auto Pay service is {0}. <a href='/modes/driving/fleet-autopay-manage-autopay-fleet-28966' target='_self'>Manage my Fleet Auto Pay</a></p>";
+        content.ActiveOnAccreditedBreakdownDiscountText = "Accredited breakdown discount expires on {0}";
+        content.ActiveOnBlueBadgeDiscountText = "Blue Badge discount expires on {0}";
+        content.StatusOnMotorTricyclesDiscountText = "Vehicles on motor tricycle discount: {0}";
+        content.StatusOnRoadsideRecoveryVehicleDiscountText = "Vehicles on recovery vehicle discount: {0}";
+        content.StatusOnUltraLowEmissionsVehicleDiscountText = "Vehicles on cleaner vehicle discount: {0}";            
+        content.StatusOnNinePlusSeatsDiscountText = "Vehicles on 9+ seater discount: {0}"; 
+        content.MyOptionsTitle = "My options";
+        content.ApplyAutoPayTitle = "Set up Auto Pay";
+        content.ApplyAutoPayText = "Auto Pay automatically records the number of charging days a vehicle travels within the Congestion Charge zone, and if it doesn't meet the emissions standards, the ULEZ and then bills users each month.";
+        content.ManageAutoPayTitle = "Manage Auto Pay";    
+        content.ManageAutoPayText = "Check your balance, add and remove vehicles, and view your payments";
+    
+        content.ManageFleetAutoPayTitle = "Manage Fleet Auto Pay";
+        content.ManageFleetAutoPayText = "Check your balance, add and remove vehicles, and view your payments";
+    
+        //content.AllAccountActivityTitle = "Account activity";
+        //content.AllAccountActivityText = "View all activity on your account including payment history, correspondence and any refunds.";
+        content.PaymentHistoryTitle = "Payment history";
+        content.PaymentHistoryText = "View your non-Auto Pay payment history";
+        content.CorrespondenceHistoryTitle = "Correspondence history";
+        content.CorrespondenceHistoryText = "View all incoming and outgoing correspondence";
+        
+        content.MyVehiclesTitle = "My vehicles";
+        content.MyVehicleText = "View all vehicles associated with this account";
+        content.DiscountTitle = "My discounts";
+        content.DiscountText = "Apply, view, renew, amend or cancel discounts";
+        content.AccountSettingsTitle = "Account settings";
+        content.AccountSettingsText = "View personal details, payment cards and account users";
+        content.LezServicesTitle = "LEZ/ULEZ services";
+        content.LezServicesText = "Check if you need to pay the LEZ or ULEZ charge for a vehicle and make daily charge payments";
+    
+        content.NavAmendChargeText = "Amend a charge";    
+        content.NavRefundChargeText = "Refund a charge";
+        content.NavApplyAutoPayText = "Set up Auto Pay";            
+        content.NavManageAutoPayText = "Manage Auto Pay";    
+        content.NavManageDiscountsText = "Manage my discounts";
+        content.NavPayChargeText = "Pay a charge";
+        content.NavMyVehiclesText = "My vehicles";
+        content.NavContactUsText = "Contact us";
+        content.NavAccountSettingsText = "Account settings";
+        content.NavCheckZonesText = "Check zones";
+        content.NavFaqsText = "FAQs";
+    
+        //content.AccreditedBreakdownInvalidAccountApplicationError = "You can't apply for an accredited breakdown discount with this account";
+        content.AccreditedBreakdownServiceExistsApplicationError = "An accredited breakdown discount is already set up on this account";
+        //content.BlueBadgeInvalidAccountApplicationError = "You cannot apply for a Blue Badge discount with this account";
+        content.BlueBadgeServiceExistsApplicationError = "A Blue Badge discount is already set up on this account";
+        content.ResidentsDiscountInvalidAccountApplicationError = "You can't apply for a residents' discount with this account";
+        content.ResidentsDiscountServiceExistsApplicationError = "A residents' discount is already set up on this account";
+        content.PersonalAutopayInvalidAccountApplicationError = "You can't set up Auto Pay with this account";
+        content.PersonalAutopayServiceExistsApplicationError = "Auto Pay is already set up on this account";
+        //content.BusinessAutopayInvalidAccountApplicationError = "You can't set up Fleet Auto Pay with this account";
+        content.BusinessAutopayServiceExistsApplicationError = "Auto Pay is already set up on this account";
+        //content.FleetAutopayInvalidAccountApplicationError = "You can't set up Fleet Auto Pay with this account";
+        content.FleetAutopayServiceExistsApplicationError = "Fleet Auto Pay is already set up on this account";
+        content.ProxyBlueBadgeLoggedInApplicationError = "You can't apply for a Blue Badge discount on behalf of someone else while signed in to your own account - sign out and create a new account in the Blue Badge holder's name";
+        content.ToxicityChargeButtonHeader = "";
+        content.ToxicityChargeButtonText = "";
+        content.PayToDriveToLondonTitle = "Pay to drive in London";
+        content.PayToDriveToLondonText = @"Pay to drive within the Congestion Charge zone, the Ultra Low Emission Zone and the Low Emission Zone";
+        content.PayToDriveToLondonMyVehiclesLink = "/modes/driving/account-vehicles";
+        
+        content.ComplianceRegistrationTitle = "Register for ULEZ and/or LEZ";
+        content.ComplianceRegistrationText = "If you think a vehicle is being charged at the wrong rate, send us proof so we can change our records.";
+    }
+
+    @{
+        Html.RenderAction(
+            "GetBusinessAccount",
+            "Account",
+            new
+                {
+                    area = "Ruc",
+                    applyAutoPayUrl = "/modes/driving/autopay-apply-select-service",
+                    applyPersonalAutoPayUrl = "/modes/driving/autopay-apply-select-service",
+                    applyBusinessAutopayUrl = "",
+                    manageAutoPayUrl = "/modes/driving/cc-autopay-manage-manage-29152",
+                    //allAccountActivityUrl = "",
+                    correspondenceHistoryUrl = "/modes/driving/account-correspondence-history-37389",
+                    paymentHistoryUrl = "/modes/driving/account-payment-history-37384",
+                    myVehiclesUrl = "/modes/driving/account-active-vehicles-37471",
+                    discountUrl = "/modes/driving/cc-discount-manage-discounts-32822",
+                    accountSettingsUrl = "/modes/driving/account-account-settings-29386",
+                    lezServicesUrl = "/modes/driving/lez-lez-services-37309",
+                    toxicityChargeInformationUrl = "",
+                    complianceRegistrationUrl = "/modes/driving/compliance-registration/before-you-start",
+                    content
+                }
+            );
+    }
+    @this.ScriptBlock(
+        @<script>queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+        window.tfl.expandableList.init('#right-hand-nav', false);
+    });</script>)
+
+
+      
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            userInfoBoxContent.HideMyAccountButton = true;
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+      <div>
+                    
+        <div class="vertical-button-container">
+    <ul>
+        
+        
+        
+        <li><a href="/modes/driving/congestion-charge/congestion-charge-zone"  class="plain-button">Congestion Charge/ULEZ zone</a></li>
+        
+        
+        <li><a href="/modes/driving/check-your-vehicle-35896"  class="plain-button">Check your vehicle</a></li>
+        
+        
+        <li><a href="/modes/driving/amend-or-refund-a-driving-charge"  class="plain-button">Amend or refund a driving charge</a></li>
+        
+        
+        <li><a href="/modes/driving/congestion-charge/contact-congestion-charge"  class="plain-button">Contact Congestion Charge</a></li>
+        
+        
+        <li><a href="/modes/driving/ultra-low-emission-zone/scrappage-scheme"  class="plain-button">Scrappage scheme - vans &amp; minibuses</a></li>
+        
+        
+        <li><a href="/modes/driving/ultra-low-emission-zone/car-and-motorcycle-scrappage-scheme"  class="plain-button">Car and motorcycle scrappage scheme</a></li>
+        
+    </ul>
+</div>
+<div class="related-links">
+
+    <h3>Help with Auto Pay</h3>
+
+<div class="vertical-button-container">
+
+<a href="/modes/driving/pay-to-drive-in-london" class="plain-button">Auto Pay user guides</a>
+    </div>
+</div>
+ 
+      </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

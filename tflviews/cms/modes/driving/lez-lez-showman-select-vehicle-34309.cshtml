@@ -1,0 +1,174 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Showman's discount";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/lez-lez-showman-select-vehicle-34309";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Showman's discount</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Showman's discount</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      <h2>Add vehicle</h2>
+      
+           
+      
+
+
+        
+        <!-- 11. lez-showman -->
+        @{
+            dynamic content = new ContentModel();
+            content.SelectVehicleTitle = "Vehicle details";
+            content.SelectVehicleText = "Tell us which vehicle(s) you want to add to this discount.";
+            content.VehicleTypeHelperTitle = "What types of vehicle can I add to this discount?";
+            content.VehicleTypeHelperText = "<p>Vehicles must be registered to a person following the business of a travelling showman, and have been modified or specially constructed. Trailers and semi-trailers which have been modified or specially constructed are not eligible for the 100% discount.</p><p>Modifications or special constructions for the purpose of the show must be either:</p><ul>	<li>Used during the performance OR</li>	<li>Used for the purpose of providing the performance OR</li>	<li>Used for carrying performance equipment OR</li>	<li>Used for displaying animals to the public OR</li>	<li>Below the chassis level, making it impossible to fit emission abatement equipment</li></ul>";
+            content.BackButtonText = "Back";
+            content.ContinueButtonText = "Continue";
+            content.VehicleNotFoundErrorText = "'Find vehicle' to continue";
+            content.CannotAddMoreVehiclesErrorText = "<p>You can only register 1 vehicle for this discount. If you want to change the vehicle details you entered, use the 'Back' button.</p>";
+            // JSON content.FindVehicleButtonText = "Find vehicle";
+            content.ConfirmEnteredVehicleButtonText = "Confirm";
+            // JSON content.VrmHelpMessageText = "Be careful not to mix up the letters 'I' and 'O' with the numbers '1' and '0'";
+            // JSON content.VrmTitle = "Vehicle Registration Mark";
+            // JSON content.VrmPlaceHolder = "eg AB01ABC";
+            // JSON content.CountryofRegistrationTitle = "Country of registration";
+            content.CcDiscountedTitle = "No charge is due for ";
+            content.CcDiscountedText = "<p>Based on the vehicle details entered and information held by the DVLA and TfL today, your vehicle is registered for a 100% discount from the Congestion Charge. If you believe this is incorrect and you still want to pay the Congestion Charge, add this vehicle or apply for a discount, then you can continue.</p><p><strong>This may change - always check to see if you need to pay to drive within the zone.</strong></p>";
+            content.CcExemptTitle = "No charge is due for ";
+            content.CcExemptText = "<p>Based on the vehicle details entered and information held by the DVLA and TfL today, this vehicle is exempt from the Congestion Charge. If you believe this is incorrect and you still want to pay the Congestion Charge, add this vehicle or apply for a discount, then you can continue.</p><p><strong>This may change - always check to see if you need to pay to drive within the zone.</strong></p>";
+            content.ThisisNotMyVehicleTitle = "What if my vehicle details are incorrect?";
+            content.ThisisNotMyVehicleText = "<p>If the number plate (Vehicle Registration Mark) is correct but the description shown is wrong, you can still continue to register this vehicle.</p><p>Vehicle information is provided to TfL by the DVLA, so you'll need to let the DVLA know if your details are wrong or need to be updated.</p>";
+            // JSON content.VehicleNotFoundTitle = "<p><strong>We do not hold any details for this vehicle</strong></p>";
+            // JSON content.ConfirmEnteredVrmDetailsText = "Yes, this is the correct vehicle";
+            // JSON content.VehicleNotFoundText = "<p><strong>UK-registered:</strong> If your vehicle’s make and model details have not been returned, make sure you entered the Vehicle Registration Mark correctly before continuing.</p><p><strong>Registered outside the United Kingdom:</strong> We are unable to display the make, model and colour information. Confirm your details before continuing.</p>";
+            content.QmlLimitReachedTitle = "<p>You already have 10 vehicles on your Quick Management list</p>";
+            content.QmlLimitReachedText = "<p>You can continue with the discount application and add this vehicle to your Quick Management list later.</p><p>Once you have submitted the application, you will need to remove a vehicle before adding another.</p>";
+            content.ConfirmSaveVehicleToQmlText = "Save this vehicle to my account Quick Management list";
+            content.QmlUseDifferentVehicleText = "Use a different vehicle";
+            content.ResidentDiscountAppliedText = "Active on residents' discount";
+            content.VehicleAlreadyAddedErrorText = "No need to check the box above. This vehicle is already on your account to help you pay the charge.";
+            content.ActiveDiscountText = "Active on:  ";
+            content.LezHigherNonCompliantTitle = "The &pound;200 daily LEZ charge is due for this vehicle.";
+            content.LezHigherNonCompliantText = "<p>According to our records your vehicle is subject to the £200 daily LEZ charge. This could be because your vehicle’s details are registered with us and it doesn’t meet the required Low Emission Zone standards.</p><p>If we don’t recognise your vehicle details then the £200 daily LEZ charge automatically applies. (For example, if your vehicle is registered outside the United Kingdom.) If you believe your vehicle does meet the required standards, you will need to <a href='/modes/driving/compliance-registration/before-you-start'>register it with us</a>.</p><p>Until your vehicle is successfully registered you will need to pay the £200 daily LEZ charge every time you drive it within the zone.</p>";
+            content.LezStandardNonCompliantTitle = "The &pound;100 daily LEZ charge is due for this vehicle.";
+            content.LezStandardNonCompliantText = "<p>Our records show that this vehicle does not meet the required Low Emission Zone standards.</p>";
+            //content.LezLowerNonCompliantTitle = "The &pound;100 Daily LEZ Charge Low is due for this vehicle.";
+            //content.LezLowerNonCompliantText = "<p>Our records show that this vehicle does not meet the required Low Emissions Zone standards.</p>";
+            content.LezUnknownNonCompliantTitle = "The &pound;200 daily LEZ charge is due for this vehicle.";
+            content.LezUnknownNonCompliantText = "<p>According to our records your vehicle is subject to the £200 daily LEZ charge. This could be because your vehicle’s details are registered with us and it doesn’t meet the required Low Emission Zone standards.</p><p>If we don’t recognise your vehicle details then the £200 daily LEZ charge automatically applies. (For example, if your vehicle is registered outside the United Kingdom.) If you believe your vehicle does meet the required standards, you will need to <a href='/modes/driving/compliance-registration/before-you-start'>register it with us</a>.</p><p>Until your vehicle is successfully registered you will need to pay the £200 daily LEZ charge every time you drive it within the zone.</p>";
+            content.LezCompliantTitle = "No charge is due for this vehicle.";
+            content.LezCompliantText = "<p>This vehicle either meets the required Low Emission Zone standards, is exempt from the scheme or is subject to a 100% discount.</p>";
+            content.CheckQmlVehicleButtonText = "Check";
+            // JSON content.VrmAcceptedRequireTrue = "Confirm that this is the correct vehicle to continue";
+            // JSON content.VehicleRegistrationMarkRequired = "Enter a Vehicle Registration Mark to continue";
+            // JSON content.CountryOptionUk = "United Kingdom";
+            // JSON content.CountryOptionOther = "Other";
+            content.ConfirmVehicleErrorText = "'Find vehicle' to continue";
+
+            Html.RenderAction("SelectVehicle", "DiscountApply", new
+                {
+                    area = "Ruc",
+                    discountStyle = ZoneChargeDiscountStyle.ShowMan,
+                    discountAction = DiscountAction.Apply,                    
+                    uploadEvidenceUrl = "/modes/driving/lez-lez-showman-upload-evidence-34313",
+                    reviewUrl = "/modes/driving/lez-lez-showman-review-application-34307",
+                    backUrl = "/modes/driving/lez-lez-services-37309",
+                    content = content,
+                    zone = ZoneChargeZone.LowEmission,
+                    lookupType = VehicleLookupType.DiscountShowman,
+                    journeyStartUrl = "/modes/driving/cc-select-discount-29641",
+                }
+            );
+        }
+        
+	  
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/low-emission-zone" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

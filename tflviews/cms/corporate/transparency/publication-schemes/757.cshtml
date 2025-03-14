@@ -1,0 +1,87 @@
+﻿
+
+
+@{ViewBag.Title = "London River Services";}
+        
+        
+
+<div class="r">
+    <div class="headline-container plain">
+        <h1>London River Services</h1>
+    </div>
+</div>
+
+<div class="main-and-aside r">
+    <div class="main">
+
+<div class="on-this-page">
+
+
+     
+
+
+
+        <p>London River Services Limited (LRS) operates and manages eight piers on the River Thames. LRS also licenses boat services using those piers and subsidises multi-stop commuter services provided by a private operator. </p>
+        <p>To find out what information LRS makes available, please select a category from the drop down list below</p>
+    
+
+
+<h2>Categories</h2>
+<ul>
+<li><a href="/corporate/transparency/publication-schemes/247">Who we are and what we do</a></li><li><a href="/corporate/transparency/publication-schemes/233">What we spend and how we spend it</a></li><li><a href="/corporate/transparency/publication-schemes/244">Our priorities and how we are doing</a></li><li><a href="/corporate/transparency/publication-schemes/254">How we make decisions</a></li><li><a href="/corporate/transparency/publication-schemes/256">Our policies and procedures</a></li><li><a href="/corporate/transparency/publication-schemes/240">Lists and registers</a></li><li><a href="/corporate/transparency/publication-schemes/236">The services we offer</a></li>                
+</ul>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+        
+        
+        
+        @this.ScriptBlock(
+        @<script>
+        queue.push("@Html.ScriptPath("modules/M020-on-this-page.js")", null);
+        </script>
+        )
+        
+        
+        
+        </div>
+    </div>
+    <div class="aside">
+        
+        <div data-set="sidenav-container" class="large">
+
+            
+<div id="right-hand-nav" class="expandable-list moving-source-order">
+        
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+        </div>
+
+<div class="share-widget-wrapper"></div>
+
+<div></div>
+
+        <div data-set="sidenav-container" class="small-medium"></div>
+    </div>
+</div>
+ 
+
+
+ 

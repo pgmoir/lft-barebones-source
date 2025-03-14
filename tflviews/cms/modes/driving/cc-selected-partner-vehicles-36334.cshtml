@@ -1,0 +1,268 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "View, add and/or remove vehicles";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-selected-partner-vehicles-36334";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">View, add and/or remove vehicles</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>View, add and/or remove vehicles</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+      <div class="article-teaser">
+        <p>You can view, add and/or remove vehicles from your selected partner Congestion Charge discount.</p>
+        
+      </div>
+    
+    
+      <p>Records of vehicles that you have added and removed from your discount are in your <a href="/modes/driving/cc-autopay-manage-view-vehicle-history-30894">vehicle history</a>.</p>
+<p><strong>Find out more about adding or removing vehicles</strong> in the selected partner user guide.</p>
+      
+           
+      
+<div>
+
+
+
+
+
+<div class="multi-document-download-container">
+    
+
+<a class="document-download-wrap pdf" href="/ruc-cdn/static/cms/documents/selected-partner-user-guide.pdf">
+    <div class="document-download-text">
+        <p>Selected partner user guide</p>
+    </div>
+    <div class="document-download-attachment">
+        <p>
+                        
+            PDF 772KB
+            
+        </p>
+    </div>
+    <div class="document-download-icon download-doc">
+    </div>
+
+</a>
+
+<!-- 0.75 -->
+ 
+</div>
+
+</div>
+ 
+
+
+        
+        <!-- 9. vehicles -->
+        @using TfL.Ruc.Common.ConfigSection
+        @{
+            dynamic content = new ContentModel();
+            content.AddVehicleText = "<p><span style='background-color:#ffffff; color:#2d3039; font-family:arial,helvetica,sans-serif; font-size:15px; line-height:22.95px'>Vehicles can be added/removed one by one or you can use our automated multiple upload facility to upload a .csv, .xls or .xslx or file.</span></p>";
+            content.AddVehicleIndividuallyLinkText = "Add vehicles one by one";
+  
+            Html.RenderAction("ManuallyAddVehiclesSection", "SelectedPartnerManage", new
+                {
+                    area = "Ruc",
+                    content = content,
+                    addVehicleUrl = "/modes/driving/cc-selected-partner-add-vehicle-36325"
+                }
+            );
+        }
+        
+        @{
+            content.ServiceHeading = "Multiple upload facility";
+            content.ServiceText = "<p>You can make multiple changes to your selected partner discount vehicle list by uploading a single file.</p><p>When you add vehicles for the first time, you need to download a blank template.</p><p>If you already have vehicles on your discount you should download and modify your current list.</p>";
+            content.UploadFileLinkText = "Make multiple vehicle changes";
+            content.CanNotUploadFileWarningText = "You can't upload your vehicle list because your account is currently suspended. Pay your outstanding balance to reactivate your account and try again.";
+            content.UploadWillOverwriteWarningText = "<p><strong>Uploading a new list will overwrite your existing list.</strong> This means that any vehicles not on your new list will not be active on your selected partner discount and you will need to pay the charge another way if you drive within the Congestion Charge zone.&nbsp;</p><p>If you have vehicles that don't meet or are not exempt from the ULEZ emissions standards, you need to upload them to your Auto Pay service to avoid getting a penalty.</p>";
+
+            Html.RenderAction("AddVehicle", "FileUpload", new
+                {
+                    area = "Ruc",
+                    content = content,
+                    templateUrl = "/ruc-cdn/static/cms/documents/example.xlsx",
+                    uploadFileUrl = "/modes/driving/cc-selected-partner-upload-file-36333",
+                    fileUploadOperation = FileUploadOperation.SelectedPartner,
+                    addVehicleUrl = "/modes/driving/cc-selected-partner-add-vehicle-36325",
+                    backUrl = "/modes/driving/cc-selected-partner-vehicles-36334"
+
+                }
+            );
+        }
+        
+        @{
+            dynamic vehicleListContent = new ContentModel();
+
+            /* Charge labels and messages */
+            vehicleListContent.NonChargeableLabel = "No charge due";
+            vehicleListContent.NonChargeableMessage = "Based on the vehicle details entered and information held by the DVLA and TfL today, you don't have to pay the ULEZ charge for this vehicle. This may change - always check to see if you need to pay to drive in the zone.";
+            vehicleListContent.PayableHighLabel = "Should be paid";
+            vehicleListContent.PayableHighMessage = "This vehicle does not meet the ULEZ emissions standards. You need to pay the ULEZ charge if you drive within the zone. The zone operates at all times - charging days run from midnight to midnight.";
+            vehicleListContent.PayableLowLabel = "Should be paid";
+            vehicleListContent.PayableLowMessage = "This vehicle does not meet the ULEZ emissions standards. You need to pay the ULEZ charge if you drive within the zone. The zone operates at all times - charging days run from midnight to midnight.";
+            vehicleListContent.ExemptLabel = "Exempt";
+            vehicleListContent.ExemptMessage = "Based on the vehicle details entered and information held by the DVLA and TfL today, this vehicle is exempt from this charge. This may change - always check to see if you need to pay to drive within the zone.";
+            vehicleListContent.CompliantLabel = "Meets the standard";
+            vehicleListContent.CompliantMessage = "Based on the vehicle details entered and information held by the DVLA and TfL today, this vehicle meets the ULEZ emissions standards. You don't have to pay the charge..";
+            vehicleListContent.PayableLabel = "Should be paid";
+            vehicleListContent.PayableMessage = " You need to pay the Congestion Charge for this vehicle if you drive within the zone Monday to Friday 07:00-18:00 excluding bank holidays and the period between Christmas Day and New Year's Day.";
+
+            /* CommonList CMS properties */
+            vehicleListContent.ServiceError = "There was a problem - we can't retrieve your vehicles ";
+
+            /* Search, Sort Filter Section */
+            vehicleListContent.SearchLabelText = "Search by number plate";
+            vehicleListContent.SearchPlaceholderText = "eg AB01ABC";
+            vehicleListContent.SortLabelText = "Sort";
+            vehicleListContent.ApplyFilterButtonText = "Apply filter";
+            vehicleListContent.ResetFilterButtonText = "Reset filter";
+
+            /* Composite Vehicle List Summary*/
+            vehicleListContent.TotalRecordsLabelTemplate = "{0} vehicle(s)";
+            vehicleListContent.PluralTotalRecordsLabelTemplate = "{0} vehicles";
+            vehicleListContent.DownloadButtonText = "Download list";
+
+            /* Composite Vehicle List Panel */
+            vehicleListContent.AddTagText = "Add tag";
+            vehicleListContent.EditTagText = "Edit tag";
+            vehicleListContent.CcLabel = "CC";
+            vehicleListContent.UlezLabel = "ULEZ";
+            vehicleListContent.DateAddedText = "Date added: ";
+            vehicleListContent.ExpiryDateText = "Expiry date: ";
+            vehicleListContent.MoreDetailsLabelText = "Charge details";
+            vehicleListContent.LessDetailsLabelText= "Charge details";
+
+            /* Remove Vehicle Modal */
+            vehicleListContent.RemoveVehicleModalHeadingText = "Are you sure?";
+            vehicleListContent.RemoveVehicleModalMessageText = "This will remove the vehicle from your selected partner discount.";
+            vehicleListContent.RemoveVehicleModalConfirmButtonText = "Remove";
+            vehicleListContent.RemoveVehicleModalCancelButtonText = "Keep";
+            
+            vehicleListContent.FullDiscountLabel = "100% discount";
+            vehicleListContent.FullDiscountMessage = "This vehicle is currently registered for a 100% discount from this charge. You can check when this discount expires in the 'Manage discounts' section of your account.";
+            
+            Html.RenderAction("Index","CompositeVehicles",
+                new
+                {
+                    content = vehicleListContent,
+                    compositeVehicleServiceStyle = CompositeVehicleServiceStyle.Discount,
+                    zoneChargeDiscountStyle = ZoneChargeDiscountStyle.SelectedPartner
+                }
+            );
+        }
+
+        @ModulesHelpers.BoxedLink(
+            href: "/modes/driving/cc-autopay-manage-view-vehicle-history-30894?Search.ServiceType=SelectedPartners", 
+            id: "vehicle-history", 
+            text: "Selected partner vehicle history", 
+            soloButton: true)
+
+        @FormHelpers.DottedSeparator()
+        @ModulesHelpers.BackLink()
+        
+        @this.ScriptBlock(
+            @<script>
+                queue.push(
+                    "@Html.ScriptPath("specific/list-filters-text.min.js")", null,
+                    "@Html.ScriptPath("specific/results-paginator.min.js")", function () {
+                         $('#vehicle-list').paginator({
+                             showFiltersOnLoad: true
+                         });
+                     }
+                );
+            
+            </script>
+        )
+        
+		
+        
+		
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "You can view, add and/or remove vehicles from your selected partner Congestion Charge discount.";}
+        
+            
+        
+
+
+ 

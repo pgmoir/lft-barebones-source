@@ -1,0 +1,115 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Payment failure";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/payment-failure";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+                 <li><a href="/modes/driving/pay-a-pcn">Pay a PCN</a></li>
+                
+            
+                 <li><a href="/modes/driving/pay-pcn-details">PCN details</a></li>
+                
+            
+                 <li><a href="/modes/driving/basket">Basket</a></li>
+                
+            
+                 <li><a href="/modes/driving/payment-result">Payment result</a></li>
+                
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Payment failure</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+        @{ViewBag.Title = "Payment failed";}
+                @{
+                    dynamic content = new ContentModel();
+
+                        content.ErrorTitle = "We are unable to process your payment.";
+                        content.PaymentErrorText = "Please review your payment information and try again or select a different payment method.";
+                        content.PaymentDeclinedText = "Please review your payment information and try again or select a different payment method.";
+
+                    Html.RenderAction("PaymentFailure", "PenaltyChargeNotice", new { area = "Ruc", content = content });
+
+                }        
+      
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

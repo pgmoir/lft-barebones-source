@@ -1,0 +1,137 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Apply for the Car and Motorcycle scrappage scheme";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/ultra-low-emission-zone/car-and-motorcycle-scrappage-scheme/check-your-postcode";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                 <li><a href="/modes/driving/ultra-low-emission-zone">Ultra Low Emission Zone</a></li>
+                
+            
+                 <li><a href="/modes/driving/ultra-low-emission-zone/car-and-motorcycle-scrappage-scheme">ULEZ Car and motorcycle scrappage scheme</a></li>
+                
+            
+            
+            
+                <li><span class="last-breadcrumb">Apply</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Apply for the Car and Motorcycle scrappage scheme</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/ultra-low-emission-zone/car-and-motorcycle-scrappage-scheme/check-your-postcode"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+        @{
+            dynamic content = new ContentModel();
+
+            content.ContinueButtonText = "Check postcode";
+            content.SchemeLandingUrl = "/modes/driving/ultra-low-emission-zone/car-and-motorcycle-scrappage-scheme";
+
+            Html.RenderAction("CheckPostcode", "CarScrappageApplication", new 
+            { 
+                area = "Ruc",
+                content = content,
+                postcodeNotEligibleUrl = "/modes/driving/ultra-low-emission-zone/car-and-motorcycle-scrappage-scheme/postcode-not-eligible",
+                checkVrmUrl = "/modes/driving/ultra-low-emission-zone/car-and-motorcycle-scrappage-scheme/check-your-vrm",
+            });
+        }
+      
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

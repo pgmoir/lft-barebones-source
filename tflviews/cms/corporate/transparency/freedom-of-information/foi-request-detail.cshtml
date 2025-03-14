@@ -1,0 +1,137 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "FOI request detail";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/corporate/transparency/freedom-of-information/foi-request-detail";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/corporate/transparency/index">Transparency</a></li>
+                
+            
+                 <li><a href="/corporate/transparency/freedom-of-information">Freedom of Information</a></li>
+                
+            
+            
+            
+                <li><span class="last-breadcrumb">FOI request detail</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>FOI request detail</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+        <div class="primary-teaser landing-page-teaser">
+            <div>
+                
+@{
+
+                    dynamic content = new ContentModel();
+                    content.ResolvedRequestsHeading = "Related resolved requests";
+                    content.InvalidRequestErrorText = "Could not find any request. Please check that the provided reference is valid.";
+                    content.YouAskedText = "You asked";
+                    content.WeAnsweredText = "We answered";
+                    content.BackToTopText = "Back to top";
+                    content.AttachmentsHeading = "Attachments";
+                    content.RequestIdLabel = "Request ID";
+                    content.DatePublishedLabel = "Date published";
+                    Html.RenderAction("RequestDetail", "Foi", new { content });
+}
+
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+   
+    
+    
+    
+    <div></div>
+    
+      <div class="module-grid clearfix">
+                    
+        
+		<div>
+			<div class="news-teaser"><div>
+                                <div class="text-only">
+                                    <h2>Want to make a request?</h2>
+<p>We'll email you the response within 20 working days.</p>
+<br />
+<p>We'll publish the response online without disclosing any personal information.</p>
+                                </div></div>
+                                <div class="call-to-action-button"><a href="/corporate/transparency/freedom-of-information/foi-make-request" class="secondary-button">Make a request</a></div>
+            </div>
+        </div>
+                        <div class="news-teaser">
+                            <div class="text-link">
+                                <h2>Something wrong with this request?</h2>
+<br />
+<p>If you believe this request is not suitable, you can report it for attention, at <a href="mailto:foi&#64;tfl.gov.uk">foi&#64;tfl.gov.uk</a></p>
+                            </div>
+          		        </div>
+
+      </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+ 
+ 
+        
+        
+        
+            @{ViewBag.Description = "FOI request detail";}
+        
+            
+        
+
+
+ 

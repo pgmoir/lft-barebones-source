@@ -1,0 +1,288 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Active travel";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/campaign/active-travel";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/campaign/index">Campaigns</a></li>
+                
+            
+            
+                <li><span class="last-breadcrumb">Active travel</span></li>
+            
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Active travel</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+      <div class="article-teaser">
+        Why not improve your health, save money, and experience London in a different way? Leave your car at home and walk or cycle instead.
+        
+      </div>
+    
+    
+      
+      
+           
+      <div class="video-gallery-wrapper">
+
+    <div class="ytplayer"></div>
+
+    <div class="gallery-carousel-wrap">
+       
+  
+  
+ @this.ScriptBlock(
+     @<script>
+          queue.push(
+            "@Html.ScriptPath("plugins/gallery-media.min.js")", null,
+        
+            function() {
+                var videoPlayer = $(".ytplayer");
+
+                if (videoPlayer.length){
+                    videoPlayer.gallery({ videoMode: true });
+                }
+            }
+    );
+     </script>
+ )
+        
+  
+   <ul class="gallery-carousel">
+  
+    <!--  -->
+    
+    
+     <li class="gallery-thumb" data-youtubeid="oscipmO41J4" data-video-caption="Try a new route, find a new London"></li>
+  
+  </ul>
+</div>
+</div>
+ <div>
+
+<h2>Walking</h2>
+<p>Research by Public Health England shows that leaving your car at home and walking briskly for just ten minutes, twice a day, improves your health.</p>
+<p>In London, at least <a href="/modes/walking/health-and-walking">42% of adults aren't doing enough physical activity</a> to stay healthy.</p>
+</div>
+ 
+<div class="module-grid clearfix">
+<div class="news-teaser">
+
+    <a href="https://londonblog.tfl.gov.uk/2019/08/30/travel-mindfulness-tips-with-headspace/?intcmp=59569" >
+        <img src="/cdn/static/cms/images/promos/headspace_rdax_400x200.png" alt="""" />
+        
+        <div class="text-link">
+             <h2>Use Headspace for free</h2>
+            <p>Make your journeys more mindful with walking meditations on the Headspace app</p>
+        </div>
+    </a>
+</div>
+ 
+ <div class="news-teaser">
+
+    <a href="/modes/walking/index?intcmp=63" >
+        <img src="/cdn/static/cms/images/promos/active-travel-walking_rdax_400x200.jpg" alt="Two people holding hands" />
+        
+        <div class="text-link">
+             <h2>Discover walking</h2>
+            <p>Find beautiful walks around London and see how walking improves your health</p>
+        </div>
+    </a>
+</div>
+ 
+ <div class="news-teaser">
+
+    <a href="https://www.nhs.uk/oneyou/active10/home#uBTLs8FEarqHHT6D.97?intcmp=53494" >
+        
+        
+        <div class="text-link">
+             <h2>A brisk walk improves your health</h2>
+            <p>Walk for ten minutes, twice a day and track your progress in the Active 10 app</p>
+        </div>
+    </a>
+</div>
+ 
+ <div class="news-teaser">
+
+    <a href="http://content.tfl.gov.uk/walking-tube-map-journey-times.pdf?intcmp=53493" >
+        
+        
+        <div class="text-link">
+             <h2>See our walking tube map</h2>
+            <p>You can easily fit walking into your journey around London using our walking tube map</p>
+        </div>
+    </a>
+</div>
+ 
+ 
+</div>
+ <div>
+
+<h2>Cycling</h2>
+
+<p>The number of cyclists on London's roads has almost doubled in the last ten years. Our&nbsp;<a href="/modes/cycling/routes-and-maps/cycleways">Cycleways</a> are transforming streets, making cycling easier, safer and available to everyone.</p>
+
+<p>Why not improve your cycling with free <a href="/modes/cycling/cycle-skills">cycle skills training</a>? Whether you've just starting cycling, or you ride&nbsp;regularly,&nbsp;our sessions are for all abilities.</p>
+</div>
+ 
+<div class="module-grid clearfix">
+<div class="news-teaser">
+
+    <a href="/modes/cycling/index?intcmp=61" >
+        <img src="/cdn/static/cms/images/promos/active-travel-cycling_rdax_400x200.jpg" alt="woman on bike looking over a river" />
+        
+        <div class="text-link">
+             <h2>Discover cycling</h2>
+            <p>Find cycle routes, maps and scenic rides, and read about cycling in London</p>
+        </div>
+    </a>
+</div>
+ 
+ <div class="news-teaser">
+
+    <a href="http://www.londonblog.tfl.gov.uk/cycling-tips?intcmp=53499" >
+        <img src="/cdn/static/cms/images/promos/cycling-people-street2_rdax_400x200.jpg" alt="People cycling down a busy street." />
+        
+        <div class="text-link">
+             <h2>New to cycling?</h2>
+            <p>Read our cycling tips</p>
+        </div>
+    </a>
+</div>
+ 
+ <div class="news-teaser">
+
+    <a href="/modes/cycling/santander-cycles?intcmp=2295" >
+        
+        
+        <div class="text-link">
+             <h2>Ride Santander Cycles</h2>
+            <p>Hire a Santander Cycle from any terminal across London from as little as &pound;2</p>
+        </div>
+    </a>
+</div>
+ 
+ <div class="related-links">
+
+    <h3>Experience London blog</h3>
+<p>Read about London's hidden gems, new cycling and walking routes and other exciting&nbsp;things to do&nbsp;on our blog.</p>
+<div class="vertical-button-container">
+
+<a href="https://londonblog.tfl.gov.uk/" class="plain-button">Read our blog</a>
+    </div>
+</div>
+ 
+</div>
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+   
+    
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        <div class="follow-social twitter">
+  
+  <div class="social-image">
+    
+  </div>
+  <div class="social-text">
+    <h3>News about London's transport system</h3>
+    <p>News and latest information </p>
+  </div>
+  <div class="social-button">
+    <a class="secondary-button" href="https://twitter.com/TfL">Follow &#64;TfL</a>
+  </div> 
+</div>
+ 
+      </div>
+    
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="advert-tile unsponsored-style google-ads" aria-hidden="true">
+  <div class="advert-link">
+    <div class="advert-content">
+        <div class="medium-large" data-advert="/76889402/non-targeted" data-advert-sizes="300, 250"></div>
+        <div class="small" data-advert="/76889402/non-targeted" data-advert-sizes="300, 250"></div>
+    </div>
+  </div>
+</div>
+@{
+    ViewBag.AmazonSlot = "'amznslots'";
+    ViewBag.AmazonAds = "'3199'"; // to add another value, this needs to be ViewBag.AmazonAds = "'3199','xx'";
+}
+      
+
+ </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+ 
+ 
+        
+        
+        
+            @{ViewBag.Description = "Useful links to active travel related information, including walking and cycling.";}
+        
+            
+        
+
+
+ 

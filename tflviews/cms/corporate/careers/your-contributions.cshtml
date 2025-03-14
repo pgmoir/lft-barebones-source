@@ -1,0 +1,170 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Your contributions";}
+
+
+        <!-- empty placeholder -->
+ 
+        
+
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Your contributions</h1>
+  </div>
+</div>
+<div class="main-and-aside r">
+  <div class="main">
+    
+      <div class="article-teaser">
+        As an employee you contribute 5% of your pensionable salary. The actual cost to you is less because contributions are deducted from your salary before tax is calculated, so they generate tax relief at your highest rate.
+      </div>
+    
+    <div class="on-this-page">
+      <p>You also pay reduced National Insurance contributions because the Fund is contracted-out of the State Second Pension.
+</p>
+<h2>Part-time workers</h2>
+<p>If you work part-time you contribute 5% of your pro-rated pensionable salary.</p>
+<h2>Employer contributions</h2>
+<p>Your employer makes contributions to meet the balance of the costs of the Fund. The Actuary regularly looks at funding levels and advises on how much each employer should contribute, so the amount can vary. At the moment the Fund is in deficit so:</p>
+<ul>
+    <li>        The principal employer is paying 6.2 times the amount its employees pay</li>
+    <li>        All the other participating employers are paying additional contributions over a period of ten years, as well as paying more than three times the amount their employees pa</li>
+</ul>
+<p>You can find full details in the Trustees' Annual Report and Accounts, which can be found in <a href="/corporate/careers/documents">Fund documents</a>.</p>
+<h2>Changes to contributions</h2>
+<p>Contributions normally change in January of each year and are based on pensionable salary in the previous November.</p>
+<p>Contributions remain the same for the calendar year unless working hours change. In this case they will be based on your pro-rated pensionable salary following each change.</p>
+<h2>When contributions stop</h2>
+<p>Your contributions stop when you retire or leave service. While you are in service they will only stop if you:</p>
+<ul>
+    <li>Complete 40 years' pensionable service and choose to stop paying contributions</li>
+    <li>Reach age 65 and choose to stop paying contributions</li>
+    <li>Opt out of the Fund</li>
+    <li>Are an Existing Member and choose to stop paying contributions when you reach age 60</li>
+</ul>
+<h2>Increasing your contributions</h2>
+<p>You can increase your contributions by joining the <a href="/corporate/careers/additional-voluntary-contributions">Additional Voluntary Contributions</a> Plan.</p>
+<h2>If your pay falls</h2>
+<p>Occasionally, when changing jobs, your pensionable salary may fall. If this happens the pension that you have already earned is protected.</p>
+      
+           
+      
+      
+        
+          
+            @this.ScriptBlock(
+              @<script>
+                queue.push("@Html.ScriptPath("modules/M020-on-this-page.min.js")", null);
+              </script>
+            )
+          
+        
+      
+    </div>
+  </div>
+  <div class="aside">
+    
+    
+      <div class="share-widget-wrapper"></div>
+    
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+<div id="right-hand-nav" class="expandable-list moving-source-order">
+        
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+      </div>
+    
+    <div>
+
+
+
+
+<div class="advert-tile unsponsored-style google-ads">
+  <div class="advert-link">
+    <div class="advert-content">
+        <div class="medium-large" data-advert="/3595/TFL/Homepage" data-advert-sizes="300, 250"></div>
+        <div class="small" data-advert="/3595/TFL/Homepage" data-advert-sizes="300, 250|300, 600"></div>
+    </div>
+  </div>
+</div>
+@{
+    ViewBag.AmazonSlot = "'amznslots'";
+    ViewBag.AmazonAds = "'3199'"; // to add another value, this needs to be ViewBag.AmazonAds = "'3199','xx'";
+}
+      
+
+ </div>
+    
+      <div class="module-grid clearfix">
+                    
+        <div>
+
+    <div class="contact-info-box">
+         <div class="contact-info-header">
+             <h3>Contact TfL Pension Fund Office</h3>
+         </div>
+        
+        <span class="contact-name">TfL Pension Fund</span>
+        
+        
+        <p class="content-group">
+            <span class="hide-text icon email-icon">Email address</span>
+            <a href="mailto:helpdesk&#64;tflpensionfund.co.uk">helpdesk&#64;tflpensionfund.co.uk</a>
+        </p>
+        
+        <div class="content-group">
+            <p>
+                <span class="hide-text icon phone-icon">Phone details</span>
+                <abbr title="Telephone number">Phone</abbr>: 0343 222 1234<br />
+                <abbr title="Fax number">Fax</abbr>: 0343 222 6000<br />
+                <abbr title="Textphone">Textphone</abbr>: 0800 112 3456
+            </p>
+            <p>&nbsp;08:30 and 16:30, Monday to Friday</p>
+        </div>
+        
+        <div class="content-group">
+            
+            
+            <p>
+                <span class="hide-text icon mail-icon">Address details</span>
+                4th Floor<br />
+                Wing over Station<br />
+                55 Broadway<br />
+                London SW1H 0BD
+            </p>
+            
+            <p>&nbsp;08:30 and 16:30, Monday to Friday</p>
+        </div>
+        
+        
+    </div>
+</div>
+ 
+      </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+ 
+ 
+
+
+ 

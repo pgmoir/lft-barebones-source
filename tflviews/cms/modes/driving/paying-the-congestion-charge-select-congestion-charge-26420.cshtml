@@ -1,0 +1,367 @@
+﻿
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@section adverts {
+    <div class="top-banner-advert" aria-hidden="true">
+        <div class="large" data-advert="/76889402/driving/payment" data-advert-sizes="970, 90|970, 250"></div>
+        <div class="medium" data-advert="/76889402/driving/payment" data-advert-sizes="728, 90"></div>
+        <div class="small" data-advert="/76889402/driving/payment" data-advert-sizes="300, 50|320, 50"></div>
+    </div>
+}
+
+
+ 
+  
+
+
+
+@{ViewBag.Title = "Pay a charge";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/paying-the-congestion-charge-select-congestion-charge-26420";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                 <li><a href="/modes/driving/pay-to-drive-in-london">Pay to drive in London</a></li>
+                
+            
+            
+            
+                <li><span class="last-breadcrumb">Pay a charge</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Pay a charge</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/account-account-landing-29377"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+      <div class="article-teaser">
+        <p>Customers with a residents' discount on the Congestion Charge will, for a limited time, also benefit from a 100% discount on the Ultra Low Emission Zone (ULEZ) charge.</p>
+        
+      </div>
+    
+    
+      <p>If your vehicle doesn't meet the T-Charge emissions standards you still need to pay the T-Charge, discounted by 90%, until 24 October 2021.</p>
+      
+           
+      
+
+        @using TfL.Ruc.Services.ViewModels.Ruc.Common
+        @using TfL.Ruc.Services.ViewModels.Ruc.ZoneCharge.PayZoneCharge
+        @{
+            dynamic content = new ContentModel();
+
+            content.AddAnotherLezChargeButtonText = "Pay another Congestion Charge";
+            
+            content.LezStandardChargeBasketText = "Daily LEZ charge";
+            content.LezHigherChargeBasketText = "Daily LEZ charge (1 day)";
+            content.LezStandardPrevChargeBasketText = "Previous LEZ charge";
+            content.LezHigherPrevChargeBasketText = "Daily LEZ charge - previous day (1 day)";
+
+
+            content.SelectDateTooltip = "<p>The LEZ operates 24 hours a day, every day of the year, including weekends and bank holidays.</p><p>Charging days run from midnight to midnight. So if you drive within the LEZ between 23:30 and 01:00 the next day, you need to pay for two days.</p><p>Vehicles parked in the zone but not driven are not subject to the LEZ requirements for that day.</p>";
+            content.AddCcChargeToBasketButtonText = "Add to basket";
+            content.ConfirmSelectedVehicleButtonText = "Confirm vehicle";
+            content.ConfirmEnteredVehicleDetailsButtonText = "Confirm vehicle details";
+            content.PayCongestionChargeButtonText = "Continue to payment";
+            content.PayAnotherCongestionChargeButtonText = "Pay another Congestion Charge";
+            
+            content.PrivacyNoticeText = "<p>I confirm that I have read and understood the <a href='/corporate/privacy-and-cookies/road-user-charging' target='_blank'>London Road User Charging privacy notice</a>.</p>";
+            content.BackButtonText = "Back";
+            content.AddAtLeastOneItemToBasketErrorText = "Add at least 1 item to your basket";
+            content.ConfirmVehicleErrorText = "Select 'Find vehicle' to continue";
+            
+            content.CongestionChargeSelectionHeading = "Pay the Congestion Charge for: ";
+            content.AddAnotherVehicleHeading = "Add charge for another vehicle";
+            content.ChargeTypeSelectionValidationMessage = "<p>Select one of these options</p>";
+            content.BasketCapacityExceededError = "Maximum 10 items per basket";
+            content.ResidentsDiscountAppliedToVehicleText = "Active on ";
+       
+            content.SendEmailReceiptHeading = "Send me an email receipt";
+            content.SendSMSReceiptHeading = "Send receipt to my mobile";
+            content.EmailReceiptLabel = "Email address";
+            content.MobileReceiptLabel = "Mobile number";
+            content.DetailsExistInAccountDetailsMessage = "We'll send receipts by your preferred channel.";
+    
+            // JSON content.FindVehicleButtonText = "Find vehicle";
+            content.ConfirmEnteredVehicleButtonText = "Confirm";
+            // JSON content.VrmTitle = "VRM TITLE";
+            // JSON content.VrmPlaceHolder = "eg AB01ABC";
+            // JSON content.CountryofRegistrationTitle = "Country of registration";
+            content.CcDiscountedTitle = "No charge to pay for ";
+            content.CcDiscountedText = "<p>Based on the vehicle details entered and information held by the DVLA and TfL today, your vehicle is 100% discounted and you do not have to pay the Congestion Charge. If you believe this is incorrect and you still want to pay the Congestion Charge, then you can continue.</p><p><strong>This may change - always check to see if you need to pay to drive within the zone.</strong></p>";
+            content.CcExemptTitle = "No charge to pay for ";
+            content.CcExemptText = "<p>Based on the vehicle details entered and information held by the DVLA and TfL today, your vehicle is exempt and you do not have to pay the Congestion Charge. If you believe this is incorrect and you still want to pay the Congestion Charge, then you can continue.</p><p><strong>This may change - always check to see if you need to pay to drive within the zone.</strong></p>";
+            content.ThisisNotMyVehicleTitle = "What if my vehicle details are incorrect?";
+            content.ThisisNotMyVehicleText = "<p>If the number plate is correct but the vehicle description shown is wrong, you can still pay for this vehicle.</p><p>Vehicle information is provided to TfL by the DVLA, so you'll need to let them know if your vehicle details are wrong or need to be updated.</p>";
+            // JSON content.VehicleNotFoundTitle = "The vehicle make and model details could not be found in our records. Check that you entered the number plate (Vehicle Registration Mark) correctly.";
+            // JSON content.ConfirmEnteredVrmDetailsText = "Yes, this is the correct vehicle";
+            // JSON content.VehicleNotFoundText = "<p>VEHICLE NOT FOUND TEXT</p>";
+            content.ConfirmSaveVehicleToQmlText = "Save this vehicle to your account to speed up making payments";
+            content.QmlUseDifferentVehicleText = "Use a different vehicle";
+            content.ResidentDiscountAppliedText = "Active on ";
+            content.QmlLimitReachedTitle = "Maximum number of saved vehicles reached";
+            content.QmlLimitReachedText = "You can save a maximum of 10 vehicles to your account to speed up Congestion Charge payments. If you want to save this vehicle you must first remove a saved vehicle in your account settings.";
+            content.VehicleAlreadyAddedErrorText = "You have already added this vehicle to your Quick Management List.";
+               
+            content.DailyChargesHeadingText = "Daily charges";
+            content.WeeklyMonthlyAnnualChargesHeadingText = "Weekly, monthly, annual and bespoke charges";
+            content.CustomChargesHeadingText = "Select custom dates";
+            content.PayTodayTitle = "Pay for today";
+            content.PayTomorrowTitle = "Pay for next charging day";
+            content.PayLastChargingDayTitle = "Pay for the last charging day";
+            content.PayWeeklyTitle = "Weekly";
+            content.PayMonthlyTitle = "Monthly";
+            content.PayAnnualTitle = "Annual";
+            content.PayCustomTitle = "Pay for a custom date range";
+            content.PayWeeklySubtitle = "5 consecutive days";
+            content.PayMonthlySubtitle = "20 consecutive days";
+            content.PayAnnualSubtitle = "252 consecutive days";
+            content.PayCustomStartDateText = "Pay from: ";
+            content.PayCustomEndDateText = "Pay to: ";
+            content.AddToBasketSuccessText = "<p>Added to basket</p>";
+            content.AddToBasketFailedText = "This charge hasn't been added to your basket - try again";
+            
+            content.AddToBasketFailedAlreadyPaid = "<p>Already paid - could not be added to your basket</p>";
+            content.AddToBasketFailedNonChargeableText = "<p>Non-chargeable day - could not add to basket</p>";
+            content.AddToBasketFailedDaysOver65Text = "<p>More than 65 days in future - could not be added to basket</p>";
+            content.AddToBasketFailedDaysOver252ChargeableDaysText = "<p><span class='inlineMessage'><span class='defaultTextOrange'>Total chargeable days is more than the maximum allowed - could not be added to basket</span></span></p>";
+            content.AddToBasketFailedInvalidDate = "<p>The from date must be today, or in the future - could not be added to basket</p>";
+            content.AddToBasketFailedCcItemAlreadyInBasket = "<p>Already added to basket</p>";
+            content.BasketCapacityErrorText = "<p>Your basket is full</p>";
+            content.BasketHeaderText = "BASKET: You have selected {0} item(s)";
+            
+            content.AddToBasketFailedInvalidDateRange = "<p>This charge can't be added to your basket</p>";
+            content.PayUntilEndofResidentsDiscountTitle = "Your discount ends on {0}";
+            content.PayUntilEndofResidentsDiscountText = "Pay up to your discount's end date";
+    
+            content.DailyCongestionChargesBasketText = "Daily Congestion Charge (1 day)";
+            content.LastCongestionChargesBasketText = "Previous charging day (1 day)";
+            content.WeeklyCongestionChargesBasketText = "Weekly Congestion Charge (5 consecutive charging days)";
+            content.MonthlyCongestionChargesBasketText = "Monthly Congestion Charge (20 consecutive charging days)";
+            content.AnnualCongestionChargesBasketText = "Annual Congestion Charge (252 consecutive charging days)";
+            content.RangeCongestionChargesBasketText = "Congestion Charge ({0} consecutive charging days)";
+            content.SingleRangeCongestionChargesBasketText = "Congestion Charge (1 day)";
+
+
+            
+            content.WeeklyResidentDiscountChargesBasketText = "Weekly resident discount charge ({0} days)";
+            content.MonthlyResidentDiscountChargesBasketText = "Monthly resident discount charge ({0} days)";
+            content.RangeResidentDiscountChargesBasketText = "Resident discount charge ({0} days)";
+            content.AnnualResidentDiscountChargesBasketText = "Annual residents' discount charge ({0}) days";
+            
+            content.ActiveDiscountText = "Active on";
+            // JSON content.CountryOptionUk = "United Kingdom";
+            // JSON content.CountryOptionOther = "Non-UK";
+            
+            content.EmailAddressRequired = "Enter email address";
+            content.EmailAddressEmailAddress = "Enter a valid email address to continue";
+            content.MobileNumberRequired = "Enter mobile number";
+            content.PaymentStartDateRequired = "Enter a start date";
+            content.PaymentCustomStartDateRequired = "Enter a start date";
+            content.PaymentCustomEndDateRequired = "Enter an end date";
+            
+            content.ConfirmDetailsRequireTrue = "Confirm you have read the privacy notice to continue";
+            content.ExplainCustomDateText = "If you're paying for a single date, make sure the date of travel is entered in BOTH the Pay from and Pay to fields.";
+            //content.ExplainCustomDateText = "";
+            //content.AddToBasketFailedAlreadyPaid = "";
+            //content.AddToBasketFailedInvalidDate = "Invalid date";
+            // JSON content.VrmHelpMessageText = "VRM HELP MESSAGE TEXT";
+            content.MobileNumberStringLength = "";
+            content.CustomPayUntilEndofResidentsDiscountTitle = "Your residents' discount expires on {0}";
+            content.CustomPayUntilEndofResidentsDiscountText = "Choose a custom start date - change will end on discount expiry date";
+            
+            content.TransactionAreaTitle = "<p><strong>The latest charge applied to your vehicle is shown below.</strong>&nbsp;If you want to pay the charge to the end of your discount it can't overlap any charges already paid. Select a start date that occurs after any existing charges expire.</p>";
+            content.TransactionTypeLabel = "Payment type";
+            content.PaymentDateLabel = "Transaction date";
+            content.VRMLabel = "Number plate (Vehicle Registration Mark)";
+            content.DateRangeLabel = "Dates covered";
+            content.PaymentHistoryLinkText = "<p>To view the charges already paid <a href='/modes/driving/account-payment-history-37384'>go to payment history</a></p>";
+
+
+            content.ToxicityMessageTitle = " ";
+            content.ToxicityMessageText = "";
+            content.ToxicityChargeCalculationText = " ";
+            content.CcAndToxicityChargeableText = "";
+            content.CcExemptAndToxicityChargeableText = "";
+            content.ToxicityChargeHeaderText = " ";
+            content.ToxicityMessageResidentText = "";
+            content.ToxicityChargeWarningMessageText = "Congestion Charge includes an additional T-Charge value";
+            content.UntilEndofNinePlusDiscountTitle = "Your 9+ Seater discount ends on {0}";
+            content.PayUntilEndofNinePlusDiscountText = "Pay up to your 9+ Seater discount ends date";
+            content.PayUntilEndofNinePlusDiscountTitle = "Your 9+ Seater discount ends on {0}";
+            content.CustomPayUntilEndofNinePlusDiscountTitle = "Your 9+ Seater discount ends on {0}";
+            content.CustomPayUntilEndofNinePlusDiscountText = "Pay from your selected date up to your 9+ Seater discount ends date";
+            
+            Html.RenderAction(
+                RucDictionary.PayCongestionCharge.ActionName,
+                "PayZoneCharge",
+                new
+                {
+                    area = "Ruc",
+                    backUrl = "/modes/driving/account-vehicles",
+                    continueUrl = "/modes/driving/paying-the-congestion-charge-payment-30703",
+                    paymentHistoryUrl = "/modes/driving/account-payment-history-37384",
+                    content = content,
+                    lookupType = VehicleLookupType.PayCc,
+                    zoneType = ZoneChargeZone.CongestionCharge
+                }
+            );
+        }
+      
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="advert-tile unsponsored-style google-ads" aria-hidden="true">
+  <div class="advert-link">
+    <div class="advert-content">
+        <div class="medium-large" data-advert="/76889402/driving/payment" data-advert-sizes="300, 250"></div>
+        <div class="small" data-advert="/76889402/driving/payment" data-advert-sizes="300, 250"></div>
+    </div>
+  </div>
+</div>
+@{
+    ViewBag.AmazonSlot = "'amznslots'";
+    ViewBag.AmazonAds = "'3199'"; // to add another value, this needs to be ViewBag.AmazonAds = "'3199','xx'";
+}
+      
+
+ </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+     @section scripts {
+<div class="bottom-advert ">
+    <div class="close-ad-button visually-hidden"><span class="close-icon-circle"></span></div>
+    <div data-advert="/76889402/driving/" data-advert-sizes="320, 50"></div>
+</div>
+}
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "Customers with a residents' discount on the Congestion Charge will, for a limited time, also benefit from a 100% discount on the Ultra Low Emission Zone (ULEZ) charge.";}
+        
+            
+        
+
+
+ 

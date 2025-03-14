@@ -1,0 +1,268 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Pay the LEZ Charge";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/lez-paying-the-low-emission-charge-select-dates-26465";}
+@{ViewBag.Language = "en";}
+        
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Pay the LEZ Charge</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Pay the LEZ Charge</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/account-account-landing-29377"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+    
+      <h2>Select date </h2>
+      
+           
+      
+
+
+		
+		<!-- 2. select-dates -->
+		@using TfL.Ruc.Services.ViewModels.Ruc.Common
+        @using TfL.Ruc.Services.ViewModels.Ruc.ZoneCharge.PayZoneCharge
+		@{
+            dynamic content = new ContentModel();
+
+            content.AddLezChargeError = "A charge for this date could not be added";
+            content.AddLezChargeText = "LEZ charge";
+            content.VehicleIsAffectedByLez = "{0} is affected by the Low Emission Zone";
+            content.WhatIsTheLezTitle = "What is the LEZ?";
+            content.WhatIsTheLezText = "<p>The LEZ covers most of Greater London and operates 24-hours-a-day, every day of the year. It was introduced in 2008 to encourage the most polluting heavy diesel vehicles driving in the Capital to become cleaner.</p><p>If you want to drive a lorry, bus, coach, or other specialist heavy diesel vehicle in the LEZ without paying a daily charge, it needs to meet certain emissions standards.</p><p>Larger vans, minibuses and other specialist diesel vehicles are also affected by the LEZ. If you own this type of vehicle, it must meet certain emissions standards to be driven within the LEZ without paying a daily charge.</p><p>It doesn't matter whether your vehicle is used for commercial or private purposes - it still needs to meet the standards.</p>";
+            content.ConfirmLezPaymentDateButtonText = "Confirm date";
+            content.AddCcChargeToBasketButtonText = "Add to basket";
+            content.AddLezChargeToBasketButtonText = "Add to basket";
+            content.AddAnotherLezChargeButtonText = "Pay another LEZ charge";
+            content.ConfirmSelectedVehicleButtonText = "Confirm vehicle";
+            content.ConfirmEnteredVehicleDetailsButtonText = "Confirm vehicle details";
+            content.PayCongestionChargeButtonText = "Continue to payment";
+            content.PayAnotherCongestionChargeButtonText = "Pay another Congestion Charge";
+            content.PrivacyNoticeText = "<p>Read the <a href='/corporate/privacy-and-cookies/road-user-charging' target='_blank'>London Road User Charging privacy notice</a>.</p>";
+            content.BackButtonText = "Back";
+            content.AddAtLeastOneItemToBasketErrorText = "Add at least one item to your basket to continue";
+            content.ConfirmVehicleErrorText = "'Find vehicle' to continue";
+            content.CongestionChargeSelectionHeading = "Pay the Congestion Charge for this vehicle";
+            content.AddAnotherVehicleHeading = "Add LEZ charge for another vehicle";
+            content.ChargeTypeSelectionValidationMessage = "Select one of the charge types to continue";
+            content.CannotConfirmErrorText = "You cannot select this vehicle";
+
+            content.SendEmailReceiptHeading = "Send me an email receipt";
+            content.SendSMSReceiptHeading = "Send a receipt to my mobile";
+            content.EmailReceiptLabel = "Email address";
+            content.MobileReceiptLabel = "Mobile number";
+            content.DetailsExistInAccountDetailsMessage = "Receipts will be sent by your preferred channel.";
+
+            // JSON content.FindVehicleButtonText = "Find vehicle";
+            content.ConfirmEnteredVehicleButtonText = "Confirm";
+            // JSON content.VrmHelpMessageText = "<p>Be careful not to mix up the letters 'I' and 'O' with the numbers '1' and '0'.</p><p>Make sure you enter the country of registration accurately. If incorrect information is provided, a Penalty Charge Notice may be issued.</p>";
+            // JSON content.VrmTitle = "Vehicle Registration Mark";
+            // JSON content.VrmPlaceHolder = "eg AB01ABC";
+            
+            // JSON content.CountryofRegistrationTitle = "Country of registration";
+            content.LezHigherNonCompliantTitle = "The &pound;200 daily LEZ charge is due for this vehicle";
+            content.LezHigherNonCompliantText = "<p>According to our records your vehicle is subject to the £200 daily LEZ charge. This could be because your vehicle's details are registered with us and it doesn't meet the required Low Emission Zone standards.</p><p>If we don't recognise your vehicle details then the £200 daily LEZ charge automatically applies. (For example, if your vehicle is registered outside the United Kingdom.) If you believe your vehicle does meet the required standards, you will need to <a data-mce-href='/modes/driving/low-emission-zone/find-out-if-you-need-to-register/how-to-register' href='[ioID]CF19FE454D3C4DDAB97B89FBF241C221'>register it with us</a>.</p><p>Until your vehicle is successfully registered you will need to pay the £200 daily LEZ charge&nbsp;every time you drive it within the zone.</p>";
+            content.LezLowerNonCompliantTitle = "The &pound;200 daily LEZ charge is due for this vehicle";
+            content.LezLowerNonCompliantText = "<p>According to our records your vehicle is subject to the £200 daily LEZ charge. This could be because your vehicle's details are registered with us and it doesn't meet the required Low Emission Zone standards.</p><p>If we don't recognise your vehicle details then the £200 daily LEZ charge automatically applies. (For example, if your vehicle is registered outside the United Kingdom.) If you believe your vehicle does meet the required standards, you will need to <a data-mce-href='/modes/driving/low-emission-zone/find-out-if-you-need-to-register/how-to-register' href='[ioID]CF19FE454D3C4DDAB97B89FBF241C221'>register it with us</a>.</p><p>Until your vehicle is successfully registered you will need to pay the £200 daily LEZ charge every time you drive it within the zone.</p>";
+            
+            content.LezUnknownNonCompliantTitle = "The &pound;200 daily LEZ charge is due for this vehicle";
+            content.LezUnknownNonCompliantText = "<p>According to our records your vehicle is subject to the £200 daily LEZ charge. This could be because your vehicle's details are registered with us and it doesn't meet the required Low Emission Zone standards.</p><p>If we don't recognise your vehicle details then the £200 daily LEZ charge automatically applies. (For example, if your vehicle is registered outside the United Kingdom.) If you believe your vehicle does meet the required standards, you will need to <a data-mce-href='/modes/driving/low-emission-zone/find-out-if-you-need-to-register/how-to-register' href='[ioID]CF19FE454D3C4DDAB97B89FBF241C221'>register it with us</a>.</p><p>Until your vehicle is successfully registered you will need to pay the £200 daily LEZ charge every time you drive it within the zone.</p>";
+            content.LezCompliantTitle = "No charge is due for this vehicle";
+            content.LezCompliantText = "<p>This vehicle either meets the required standards, is exempt from the scheme or is subject to a 100% discount.</p>";
+            content.ThisisNotMyVehicleTitle = "What if my vehicle details are incorrect?";
+            content.ThisisNotMyVehicleText = "<p>If the number plate is correct but the description shown is wrong, you can still continue to register this vehicle.</p><p>Vehicle information is provided to TfL by the DVLA or DVA, so you'll need to let the DVLA or DVA know if your details are wrong or need to be updated.</p>";
+            // JSON content.VehicleNotFoundTitle = "<p><strong>We do not hold details for this vehicle</strong></p>";
+            // JSON content.ConfirmEnteredVrmDetailsText = "Yes, this is the correct vehicle ";
+            // JSON content.VehicleNotFoundText = "<p><strong>UK-registered:</strong> If your vehicle’s make and model details have not been returned, make sure you entered the Vehicle Registration Mark correctly before continuing.</p><p><strong>Registered outside the United Kingdom:</strong> We are unable to display the make, model and colour information. Confirm this is the correct vehicle to continue.</p>";
+            content.QmlUseDifferentVehicleText = "Use a different vehicle";
+            content.VehicleAlreadyAddedErrorText = "No need to check the box as this vehicle is already on your account";
+
+            content.DailyChargesHeadingText = "Daily charges";
+            content.WeeklyMonthlyAnnualChargesHeadingText = "Other daily, weekly, monthly, annual and custom charges";
+            content.CustomChargesHeadingText = "Select custom dates";
+            content.PayTodayTitle = "Pay for today";
+            content.PayTomorrowTitle = "Pay for the next charging day";
+            content.PayLastChargingDayTitle = "Pay for the previous charging day";
+            content.PayWeeklyTitle = "Weekly";
+            content.PayMonthlyTitle = "Monthly";
+            content.PayAnnualTitle = "Annual";
+            content.PayCustomTitle = "Pay for a single date or custom date range";
+            content.PayWeeklySubtitle = "5 consecutive charging days";
+            content.PayMonthlySubtitle = "20 consecutive charging days";
+            content.PayAnnualSubtitle = "252 consecutive charging days";
+            content.PayCustomStartDateText = "Pay from: ";
+            content.PayCustomEndDateText = "Pay to: ";
+            content.PayUntilEndofResidentsDiscountTitle = "Your residents' discount ends on {0}";
+            content.PayUntilEndofResidentsDiscountText = "Pay until your discount expiry date";
+            content.AddToBasketSuccessText = "<dynamic text> has been added to your basket.";
+            content.AddToBasketFailedText = "You cannot pay the charge for this date. It may already have been paid or it may not be a charging day";
+            content.BasketCapacityErrorText = "You cannot add this charge because it exceeds your basket limit";
+
+            content.DailyCongestionChargesBasketText = "Daily Congestion Charge (1 day)";
+            content.LastCongestionChargesBasketText = "previous charging day (1 day)";
+            content.WeeklyCongestionChargesBasketText = "Weekly Congestion Charge (5 consecutive charging days)";
+            content.MonthlyCongestionChargesBasketText = "Monthly Congestion Charge (20 consecutive charging days)";
+            content.AnnualCongestionChargesBasketText = "Annual Congestion Charge (252 consecutive charging days)";
+            content.RangeCongestionChargesBasketText = "Custom Congestion Charge ({0} consecutive charging days)";
+            content.LezStandardChargeBasketText = "Daily LEZ charge low (1 day)";
+            content.LezHigherChargeBasketText = "Daily LEZ Charge High (1 day)";
+            content.LezHigherChargeDateText = "Select date";
+            content.LezStandardPrevChargeBasketText = "Daily LEZ charge low - previous day (1 day)";
+            content.LezHigherPrevChargeBasketText = "Daily LEZ Charge High - previous day (1 day)";
+            
+            content.WeeklyResidentDiscountChargesBasketText = "Weekly residents' discount Congestion Charge (5 consecutive days)";
+            content.MonthlyResidentDiscountChargesBasketText = "Monthly residents' discount Congestion Charge (20 consecutive days)";
+            content.AnnualResidentDiscountChargesBasketText = "Annual residents' discount Congestion Charge (252 consecutive days)";
+            content.RangeResidentDiscountChargesBasketText = "Residents' discount Congestion Charge ({0} consecutive charging days)";
+
+            content.ActiveDiscountText = "Active on: ";
+            // JSON content.CountryOptionUk = "United Kingdom";
+            // JSON content.CountryOptionOther = "Other";
+            content.CompliantVehicleErrorText = "No charge is due for this vehicle";
+            content.SelectDateTooltip = "<p>Select the date that this vehicle will be driven in the LEZ. The charge covers a 24-hour period from midnight to midnight, so if you are travelling in the zone on the evening of day <strong>1</strong> and leaving on the morning of day <strong>2 </strong>you will need to pay the charge for both days.</p>";
+            
+            content.EmailAddressRequired = "Enter your email address";
+            content.EmailAddressEmailAddress = "Enter a valid email address";
+            content.MobileNumberRequired = "Enter your mobile phone number";
+            content.MobileNumberStringLength = "Too many digits";
+            content.PaymentStartDateRequired = "Enter a charge start date";
+            content.PaymentCustomStartDateRequired = "Enter a start date for your custom charge";
+            content.PaymentCustomEndDateRequired = "Enter an end date for your custom charge";
+            content.LezChargeDateRequired = "Enter a date";
+            content.ConfirmDetailsRequireTrue = "Please confirm you have read the privacy notice.";
+            content.AddToBasketFailedInvalidDate = "You cannot pay the charge from this date as it is not a charging day";
+            content.AddToBasketFailedLezInvalidDate = "<p>You cannot pay the charge for this date as it is too far in the past. You can only pay from the last working day, today or a day in the future.</p><p>For example, if today is Wednesday, you can pay the LEZ charge for Tuesday or any date from today up to 65 working days in the future.</p><p>However if today is Monday, you can pay the LEZ charge for Friday, Saturday or Sunday, or any date from today up to 65 working days in the future.</p>";
+            content.AddToBasketFailedAlreadyPaid = "A charge has already been paid for this vehicle on this day";     
+            content.AddToBasketFailedCcItemAlreadyInBasket = "You have already added this charge to your basket";
+            content.AddToBasketFailedDaysOver65Text = "You cannot select a charge more than 90 calendar days in the future";
+            content.AddToBasketFailedInvalidDateRange = "Invalid date range";
+            content.AddToBasketFailedNonChargeableText = "Select a chargeable date";
+            
+            content.ExplainCustomDateText = "If you're paying for a single date, make sure the date of travel is entered in BOTH the Pay from and Pay to fields.";
+            content.CustomPayUntilEndofResidentsDiscountTitle = "Pay from a different start date until your discount expires";
+            content.CustomPayUntilEndofResidentsDiscountText = "You can pay the 90% discounted charge from a future date until your discount expires";
+            content.BasketHeaderText = "BASKET: You have selected {0} item(s)";
+            
+            content.QmlLimitReachedTitle = "You already have 10 vehicles saved to your Quick Management list";
+            content.QmlLimitReachedText = "To add another vehicle, you will first need to remove one. You can make changes to your Quick Management list once you have finished paying for this vehicle.";
+            // JSON content.VrmAcceptedRequireTrue = "Confirm that this is the correct vehicle to continue";
+            content.LezInformationHelperText = "<p>If your vehicle is being charged the £200 daily LEZ charge there may be a number of reasons for this. The higher charge rate will apply if your vehicle is registered with us, does not meet the required emissions standards and is a lorry, bus or coach.</p><p>The £200 daily LEZ charge automatically applies if we don’t recognise your vehicle details (for example if your vehicle is registered outside the United Kingdom). If you believe your vehicle does meet the required standards, you will need to <a href='/modes/driving/lez-lez-services-37309' target='_blank'>register it with us</a>.</p><p>If your vehicle is being charged the £100 daily LEZ charge it is because it does not meet the emissions standards and is registered with us as a larger van or minibus.</p>";
+            content.LezInformationHelperTitle = "Why is my vehicle being charged this rate?";
+            // JSON content.VehicleRegistrationMarkRequired = "Enter a Vehicle Registration Mark";
+            content.ToxicityChargeCalculationText = "Amount due includes a T-Charge value";
+            content.LezToxicityMessageTitle = "How have available charges been calculated?";
+            content.LezToxicityMessageText = "<p>If your vehicle meets the required emissions standards you will pay the standard Congestion Charge. If it does not meet the standards then your charge will include an additional T – Charge value. If your vehicle is exempt or discounted from the Congestion Charge and does not meet the Emissions standards then you may still need to pay the T – Charge. The charge you need to pay will be automatically calculated and displayed. For further information go to <a href='https://tfl.gov.uk/modes/driving/emissions-surcharge' target='_blank'>tfl.gov.uk/driving/t-charge</a></p>";
+            content.ToxicityChargeWarningMessageText = "Congestion Charge includes an additional T-Charge value";
+            
+            Html.RenderAction("PayCongestionCharge", "PayZoneCharge", new
+                {
+                    area = "Ruc",
+                    backUrl = "/modes/driving/lez-paying-the-low-emission-charge-select-vehicle-26462",
+                    continueUrl = "/modes/driving/lez-paying-the-low-emission-charge-payment-36517",
+                    zoneType = ZoneChargeZone.LowEmission,
+                    lookupType = VehicleLookupType.PayLez,
+                    content = content
+                }
+            );
+        }
+		
+	  
+
+  
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/low-emission-zone" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

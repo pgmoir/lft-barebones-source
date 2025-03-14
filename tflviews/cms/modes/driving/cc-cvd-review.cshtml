@@ -1,0 +1,163 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Review application";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-cvd-review";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Review application</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Review application</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+        @{
+        
+        dynamic content = new ContentModel();
+
+            content.VehicleAndProofHeading = "Vehicles and proof";
+            content.IntroText = "<p>Review the vehicles you have added to the discount, remove them or add more.</p><p>You can add up to 10 vehicles to each application (uploading a maximum of 50 files altogether). A £10 annual registration charge applies to each one.</p>";
+            content.CC100PercentDiscountMessage = "<p>This vehicle is currently registered for a 100% discount from the Congestion Charge. You can check when this discount expires in the 'Manage discounts' section of your account.</p>";
+            content.CCExemptMessage = "<p>Based on the vehicle details entered and information held by the DVLA and TfL today, this vehicle is exempt from the Congestion Charge.</p><p>This may change - always check to see if you need to pay to drive within the zone.</p>";
+            content.CCPayableMessage = "<p>You need to pay the Congestion Charge for this vehicle if you drive within the zone Monday-Friday, 07:00-18:00 excluding bank holidays and the period between Christmas Day and New Year's Day.&nbsp;</p>";
+            content.Ulez100PercentDiscount = "<p>This vehicle is currently registered for a 100% discount from the ULEZ.</p>";
+            content.UlezExemptMessage = "<p>Based on the vehicle details entered and information held by the DVLA and TfL today, this vehicle is exempt from the ULEZ charge.</p><p>This may change - always check to see if you need to pay to drive within the zone.</p>";
+            content.UlezNoChargesMessage = "<p>Based on the vehicle details entered and information held by the DVLA and TfL today, you don't have to pay the ULEZ charge for this vehicle.</p><p>This may change - always check to see if you need to pay to drive within the zone.</p>";
+            content.HighChargesPayableMessage = "<p>This vehicle does not meet the ULEZ emissions standards. You need to pay the ULEZ charge if you drive within the zone. The zone operates at all times - charging days run from midnight to midnight.</p><p>If you believe this is incorrect, and you can provide evidence that your vehicle does meet the ULEZ emissions standards, you can <a href='/modes/driving/compliance-registration/before-you-start'>register it with us</a>.</p>";
+            content.LowChargesPayableMessage = "<p>This vehicle does not meet the ULEZ emissions standards. You need to pay the ULEZ charge if you drive within the zone. The zone operates at all times - charging days run from midnight to midnight.</p><p>If you believe this is incorrect, and you can provide evidence that your vehicle does meet the ULEZ emissions standards, you can <a href='/modes/driving/compliance-registration/before-you-start'>register it with us</a>.</p>";
+            content.AccountVehicles = "Account vehicles";
+            content.UlezHighLabel = "Should be paid";
+            content.PayableLabel = "Should be paid";
+            content.UlezLowLabel = "Should be paid";
+            content.ExemptLabel = "Exempt";
+            content.NonchargeableLabel = "No charge to pay";
+            content.FullDiscountLabel = "100% discount";
+            content.CongestionChargeLabelForDetailSection = "Congestion Charge";
+            content.UlezHighLabelForDetailSection = "ULEZ charges";
+            content.UlezLowLabelForDetailSection = "ULEZ charges";
+            content.UlezCompliantLabelForDetailSection = "Meets the ULEZ standard";
+            content.AccountVehiclesLink = "/modes/driving/cc-cvd-add-account-vehicles";
+            content.NewVehcile = "New vehicle";
+            content.NewVehicleLink = "/modes/driving/cc-cvd-vrm-lookup?addnew=true";
+            content.ShowMoreLabel = "Charge details";
+            content.ShowLessLabel = "Charge details";
+            content.CCShortLabel = "CC";
+            content.ULEZShortLabel = "ULEZ";
+            content.AcceptTermsMessage = "<p>I accept the <a href='/corporate/terms-and-conditions/pay-to-drive-in-london' target='_blank'>terms and conditions</a></p>";
+            content.AcceptTermsRequireTrue = "<p>Accept the terms and conditions to continue</p>";
+            content.AddTagMessage = "<p>A tag will help you identify your vehicle more easily</p>";
+            content.EditTagMessage = "<p>Change your vehicle tag or remove it entirely</p>";
+            content.SaveButtonText = "Done";
+            content.CancelButtonText = "Cancel";
+            content.AddTagTitle = "Add tag";
+            content.EditTagTitle = "Edit tag";
+            content.CompliantLabel = "Meets the standard";
+            content.UlezCompliantMessage = "<p>Based on the vehicle details entered and information held by the DVLA and TfL today, this vehicle meets the ULEZ emissions standards. You don't have to pay the charge.</p>";
+            content.UlezExemptLabel = "Exempt";
+            content.SelectedVehicleLabel = "Vehicles: {0} / {1}";
+            content.ChargePerSelectionMessage = "{0} per year";
+            content.ApplicationSummaryText = "<p>We aim to process your registration within 10 working days and will email you with the outcome. In the meantime, you need to pay the Congestion Charge for journeys within the zone.</p><p>The discount only applies to the Congestion Charge. If your vehicle doesn't meet the emissions standards you will still need to pay the <a href='/modes/driving/ultra-low-emission-zone'>Ultra Low Emission Zone charge</a>.</p>";
+            content.ContinueButtonText = "Confirm and pay";
+
+            Html.RenderAction("Review", "Uled", new
+            {
+                area = "Ruc",
+                content = content,
+                paymentUrl = "/modes/driving/cc-cvd-payment"
+            });
+
+        }
+    
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

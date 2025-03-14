@@ -1,0 +1,123 @@
+﻿
+    
+@section adverts {
+    <div class="top-banner-advert" aria-hidden="true">
+        <div class="large" data-advert="/76889402/stations_stops_piers" data-advert-sizes="970, 90|970, 250"></div>
+        <div class="medium" data-advert="/76889402/stations_stops_piers" data-advert-sizes="728, 90"></div>
+        <div class="small" data-advert="/76889402/stations_stops_piers" data-advert-sizes="300, 50|320, 50"></div>
+    </div>
+}
+
+
+ 
+  
+
+
+
+@{ViewBag.Title = "Stations, stops & piers";}
+@{ViewBag.Keywords = "TfL,stations stops piers";}
+@{ViewBag.Url = "/travel-information/stations-stops-and-piers/index";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        @if(Library.Dictionary.ShowBroadcastMessage) {
+    this.Html.RenderPartialIfExists("_BroadcastCommsWrapper");
+}
+
+
+<div id="ssp-hero" class="spot-grid-background SSP-landing" >
+@{ Html.RenderAction("Breadcrumbs", "Modules", new { lastBreadcrumbName = ViewBag.Title }); }
+    <div class="r">
+        <div class="headline-container">
+            <h1><span class="hero-headline">@ViewBag.Title</span></h1>
+        </div>
+    </div>
+    <div class="r main-and-aside one-row">
+        <div>
+            <div class="SSP-search-wrapper">
+                <div class="search-filter">
+                    <div class="heading clearfix">
+                        <div class="search-icon-black"></div>
+                        <h3>Search</h3>
+                    </div>
+                    @{
+                        Html.RenderAction("SearchFilter", "Modules", new
+                            {
+                                actionUrl = Library.DisambiguationSettings.DisambiguationUrl,
+                                buttonText = "Go",
+                                isSspHome=true,
+                                dataSets = new string[][] { 
+                                        new[]{ Library.DisambiguationDataSets.StopPoints, "/{{mode}}/stop/{{naptanId}}/{{stopName}}/" },
+                                        new[]{ Library.DisambiguationDataSets.Routes, "/{{mode}}/route/{{lineIds}}/" }
+                                    },
+                                modes = string.Format(
+                                    "{0},{1},{2},{3},{4},{5},{6},{7},{8},{9}",
+                                    Library.MeansOfTransport.Bus,
+                                    Library.MeansOfTransport.Tube,
+                                    Library.MeansOfTransport.DLR,
+                                    Library.MeansOfTransport.Overground,
+                                    Library.MeansOfTransport.TflRail,
+                                    Library.MeansOfTransport.River,
+                                    Library.MeansOfTransport.RiverTours,
+                                    Library.MeansOfTransport.Tram,
+                                    Library.MeansOfTransport.CableCar,
+                                    Library.MeansOfTransport.NationalRail),
+                                placeHolderText = "Station, bus route or stop name",
+                                searchLabel = "Search for stations, stops and piers (e.g. Victoria)",
+                                displaySelectedModesOnly = true
+                            });
+                    }                
+               </div>
+            </div>
+            @{
+            Html.RenderAction("ModeLineRouteSelector", "Routes", new
+                {
+                    modes = string.Format(
+                        "{0},{1},{2},{3},{4},{5},{6},{7},{8}",
+                        Library.MeansOfTransport.Bus,
+                        Library.MeansOfTransport.Tube,
+                        Library.MeansOfTransport.DLR,
+                        Library.MeansOfTransport.Overground,
+                        Library.MeansOfTransport.TflRail,
+                        Library.MeansOfTransport.River,
+                        Library.MeansOfTransport.RiverTours,
+                        Library.MeansOfTransport.Tram,
+                        Library.MeansOfTransport.CableCar),
+                    pageType = Library.Dictionary.RoutesUrlText
+                });
+            }
+            <div class="small">
+               <div class="news-teaser " data-highlight-image="/cdn/static/cms/images/promos/tfl-travelbot-koala-jp.png" data-highlight-for="#ssp-hero" data-highlight-size="medium-large">
+
+<img src="/cdn/static/cms/images/promos/tfl-travelbot-koala-jp_rdax_400x300.png" alt="A koala hanging on a bus stop post promotes TfL's Facebook TravelBot" />
+
+<a href="https://m.me/tfltravelbot?intcmp=hero-Stations, stops & piers-No need to hang around">
+<div class="text-link"><h2>No need to hang around</h2><p>Get instant answers. Just ask &#64;TfLTravelBot on Facebook Messenger.</p></div>
+</a>
+
+
+
+</div>
+
+
+  
+ 
+                </div>          
+            </div>
+            <div class="main hero-content-container">
+                <div class="content-area medium-large"></div>
+            </div>
+        </div>
+    </div>    
+
+        
+        
+        
+            @{ViewBag.Description = "Tube stations, Overground stations, Bus and Tram stops and piers in London";}
+        
+            
+        
+
+
+ 

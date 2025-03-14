@@ -1,0 +1,314 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Road signs";}
+@{ViewBag.Keywords = "Businesses,Drivers,Public,Driving,TfL";}
+@{ViewBag.Url = "/modes/driving/congestion-charge/congestion-charge-zone/road-signs";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                 <li><a href="/modes/driving/congestion-charge">Congestion Charge</a></li>
+                
+            
+                 <li><a href="/modes/driving/congestion-charge/congestion-charge-zone">Congestion Charge zone</a></li>
+                
+            
+                
+                <li><span class="last-breadcrumb">Road signs</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Road signs</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/account-account-landing-29377"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+      <div class="article-teaser">
+        <p>Traffic signs and road markings make it clear when you are approaching, entering, and leaving the charging zone. </p>
+        
+      </div>
+    
+    <div class="on-this-page">
+      
+    
+      
+           
+      <div class="clearfix">
+    <div class="image-box">
+    
+        
+        
+        <img src="/ruc-cdn/static/cms/images/zone-sign.jpg" alt="" />
+        <span class="caption">Near or at the start of the zone, you'll see these signs, which also say when the zone operates.</span>
+        
+        
+    </div>   
+ </div>
+ <div class="clearfix">
+    <div class="image-box campaign-graphic right-float">
+    
+        <img src="/ruc-cdn/static/cms/images/advance-direction-sign.jpg" alt="" />
+    </div>
+    
+        <h2>On approach</h2>
+        <p>Directional signs and/or road markings show which routes take you into the charging zone and which don't.
+        </p>
+     
+</div>
+ <div class="clearfix">
+    <div class="image-box campaign-graphic right-float">
+    
+        <img src="/ruc-cdn/static/cms/images/white-cc-sign-road.jpg" alt="" />
+    </div>
+    
+        <p>Some approach lanes to the charging zone are also marked with a white symbol.&nbsp;</p>
+     
+</div>
+ <div class="clearfix">
+    <div class="image-box campaign-graphic right-float">
+    
+        <img src="/ruc-cdn/static/cms/images/zone-markings.jpg" alt="" />
+    </div>
+    
+        <h2>Within the zone</h2>
+        There are signs to remind you that there are cameras operating in the zone.&nbsp;
+     
+</div>
+ <div class="clearfix">
+    <div class="image-box campaign-graphic right-float">
+    
+        <img src="/ruc-cdn/static/cms/images/red-cc-marking-on-road.jpg" alt="" />
+    </div>
+    
+        <p>You will often see red C road markings close to the entry of the zone. </p>
+     
+</div>
+ <div class="clearfix">
+    <div class="image-box campaign-graphic right-float">
+    
+        <img src="/ruc-cdn/static/cms/images/zone-ends-sign.jpg" alt="" />
+    </div>
+    
+        <h2>Leaving the charging zone </h2>
+        <p>As you leave the congestion charging zone you'll see this sign showing the end of the zone.</p>
+     
+</div>
+ <div class="clearfix">
+    <div class="image-box campaign-graphic right-float">
+    
+        <img src="/ruc-cdn/static/cms/images/cc-advance-info.jpg" alt="" />
+    </div>
+    
+        <h2>Advance information</h2>
+        <p>On the main approach roads two types of sign show hours of operation and some also show how much you have to pay.
+        </p>
+     
+</div>
+ 
+      
+        
+          
+            @this.ScriptBlock(
+              @<script>
+                queue.push("@Html.ScriptPath("modules/M020-on-this-page.min.js")", null);
+              </script>
+            )
+          
+        
+      
+    </div>
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+                <a href="/modes/driving/congestion-charge" class="heading">
+                    <h3 id="sub-menu-heading" class="h2">Congestion Charge<span class="visually-hidden"> navigation</span></h3>
+                </a>
+                <ul>
+                    
+                                <li class="selected parent" aria-label="selected page with sub pages"><div class="link-wrapper"><a href="/modes/driving/congestion-charge/congestion-charge-zone">Congestion Charge zone</a></div>
+                                <ul>
+                                    
+                                        <li class="selected" aria-label="selected page with no sub pages"><div class="link-wrapper"><a href="/modes/driving/congestion-charge/congestion-charge-zone/road-signs">Road signs</a></div>
+                                    </li>
+ 
+                                </ul>
+                            </li>
+ 
+                                <li class="parent" aria-label="page with sub pages"><div class="link-wrapper"><a href="/modes/driving/congestion-charge/paying-the-congestion-charge">Congestion Charge payments</a></div></li>
+                            
+ 
+                                <li aria-label="page with no sub pages"><div class="link-wrapper"><a href="/modes/driving/congestion-charge/discounts-and-exemptions">Discounts and exemptions</a></div></li>
+                            
+ 
+                                <li aria-label="page with no sub pages"><div class="link-wrapper"><a href="/modes/driving/congestion-charge/dart-charge">Dart Charge</a></div></li>
+                            
+ 
+                                <li class="parent" aria-label="page with sub pages"><div class="link-wrapper"><a href="/modes/driving/congestion-charge/penalties-and-enforcement">Penalties and enforcement</a></div></li>
+                            
+ 
+                                <li class="parent" aria-label="page with sub pages"><div class="link-wrapper"><a href="/modes/driving/congestion-charge/contact-congestion-charge">Contact Congestion Charge</a></div></li>
+                            
+ 
+                                <li class="parent" aria-label="page with sub pages"><div class="link-wrapper"></div></li>
+                            
+ 
+                </ul>
+            
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+      </div>
+    
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="advert-tile unsponsored-style google-ads" aria-hidden="true">
+  <div class="advert-link">
+    <div class="advert-content">
+        <div class="medium-large" data-advert="/76889402/driving/cc" data-advert-sizes="300, 250"></div>
+        <div class="small" data-advert="/76889402/driving/cc" data-advert-sizes="300, 250"></div>
+    </div>
+  </div>
+</div>
+@{
+    ViewBag.AmazonSlot = "'amznslots'";
+    ViewBag.AmazonAds = "'3199'"; // to add another value, this needs to be ViewBag.AmazonAds = "'3199','xx'";
+}
+      
+
+ </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "Images and explanations of road signs relating to the Congestion Charge Zone";}
+        
+            
+        
+
+
+ 

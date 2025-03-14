@@ -1,0 +1,229 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Travel date and charges";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/fleet-autopay-adhoc-add-adhoc-vehicle-date-34814";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                 <li><a href="/modes/driving/auto-pay">Auto Pay</a></li>
+                
+            
+            
+            
+                <li><span class="last-breadcrumb">Travel date and charges</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Travel date and charges</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+      <div class="article-teaser">
+        <p>Choose the date and time of day you will be driving the vehicle in central London.</p>
+        
+      </div>
+    
+    
+      
+      
+           
+      <div>
+
+
+</div>
+ 
+
+        <!-- autopay/fleet/adhoc/add-adhoc-vehicle-date -->
+        @{
+            dynamic content = new ContentModel();
+        
+            content.CcDiscountedTitle = "No charge payable for ";
+            content.CcDiscountedText = "<p>Based on the vehicle registration (VRM) details that you have entered and the classification information held by Transport for London (TfL) on this day, your vehicle is deemed 100% discounted and you are not required to pay the congestion charge.</p><p>If you believe that this information is incorrect and you still want to pay the Congestion Charge, then you can continue.</p><p><strong>Please be aware that classification may change without notification, so you should always check to see if payment is required for journeys into the zone.</strong></p>";
+            content.CcExemptTitle = "No charge payable for ";
+            content.CcExemptText = "<p>Based on the vehicle registration (VRM) details that you have entered and the classification information held by Transport for London (TfL) on this day, your vehicle is deemed exempt and you are not required to pay the congestion charge.</p><p>If you believe that this information is incorrect and you still want to pay the Congestion Charge, then you can continue.</p><p><strong>Please be aware that classification may change without notification, so you should always check to see if payment is required for journeys into the zone.</strong></p>";
+            content.SelectDateInstructionText = "Days run from midnight to midnight. You can pay up to 64 working days in advance.";
+            content.DatePickerInstructionText = "Choose your travel date";
+            content.ChosenDateInformation = "<p>1 charging day {0}.</p>";
+            content.SummaryInformation = "";
+            content.ContinueButtonText = "Continue";
+            content.BackButtonText = "Back";
+
+            content.FindVehicleUrl = "/modes/driving/fleet-autopay-adhoc-add-adhoc-vehicle-34815";
+            content.ChangeVehicleText = "Change vehicle";
+            content.SummaryInformation = "The day selected here will be charged to your next monthly statement. There is no registration charge to pay for this temporary addition.";  
+            content.WhenTravellingInCentralLondonHeading = "When will you be travelling in central London?";
+            content.ShowChargesButtonText = "Show charges";
+
+            content.StartDateGreatherThan65CCDaysMessage = "Start date can't be more than 65 working days in the future";
+
+            content.FreeCongestionChargesHeading = "Congestion Charges";
+            content.FreeCongestionChargesMessage = "No charges for this day.";
+            content.CongestionChargeTimings = "Monday to Friday, 07:00-18:00";
+
+            content.UlezComplianceMessage = "Your vehicle is ulez compliant.";
+            content.UlezExemptMessage = "You are exempt";
+            //content.UlezNoChargesMessage = "You don't have to pay any charges.";
+            content.UlezLabel = "ULEZ charge";
+            content.CCExemptMessage = "<p>This vehicle is exempt from the Congestion Charge.</p>";
+            content.CCLabel = "Congestion Charge";
+            content.DateRequired = "Enter a date";
+            content.UlezLowText = "ULEZ charge";
+            content.UlezHighText = "ULEZ charge";
+            content.UlezDefaultLabel = "ULEZ";
+            
+            content.DailyChargeLabelForPayChargeView = "Daily charge";
+            content.StartDateGreaterThan65CCDaysMessage = "Start date can't be more than 65 working days in the future";
+            
+            content.CcFullDiscountMessage = "This vehicle has a 100% Congestion Charge discount on this date";
+            content.UlezFullDiscountMessage = "Your vehicle has a Full Ulez Charge discount on this date.";
+
+            content.UlezComplianceMessage = "Your vehicle is ulez compliant.";
+
+            content.UlezExempt = "Exempt";
+            content.PaidAlready = "Charge already paid";
+            content.AllowanceMessageForOneChargeOnly = "This will use 1 charge from your allowance";
+            content.AllowanceMessageForTwoCharges = "This will use 2 charges from your allowance";
+            content.AllowanceMessageForNoCharges = "No charges to pay for this day";
+            content.NotEnoughAllowances = "You don't have enough allowances to pay ad hoc charges for this vehicle";
+
+            content.CongestionChargeTimeLabel = "Monday-Friday, 07:00-18:00";
+            content.OutsideCongestionChargeTimeLabel = "Outside these times";
+            content.UlezNoChargesMessage = "You don't have to pay any charges.";
+            
+            content.ContinueButtonText = "Continue";
+            content.TravelAfterCongestionChargeTime = "No Congestion Charge 18:00-07:00";
+            
+            content.ExemptDetailMessage = "Exempt detail message";
+            content.NoChargesDetailMessage = "No charges";
+            content.ChargesToPayMessage = "Charges to pay";
+            content.AlreadyPaidDetailMessage = "Already paid";
+            content.DiscountDetailMessage = "This vehicle has a 100% Congestion Charge discount for this date. If you still want to pay the charge, tick the box.";
+            content.TravelAfterCongestionChargeMessageDetailMessage = "Travel outside";
+            content.UlezLowDetailMessage = "This vehicle does not meet ULEZ emissions standards. You need to pay the ULEZ charge for cars, motorbikes, small vans and other lighter vehicles if you drive within the zone. The zone operates at all times - charging days run from midnight to midnight. ";
+            content.UlezHighDetailMessage = "This vehicle does not meet ULEZ emissions standards. You need to pay the ULEZ charge for lorries, buses, coaches and other heavier vehicles if you drive within the zone. The zone operates at all times - charging days run from midnight to midnight.";
+            content.UlezTimings = "Days run from midnight to midnight.";
+            content.ChargeDetailsHeading1 = "Charge details";
+            content.ChargeDetailsHeading2 = "Charge details";
+
+            content.CompliantDescription = "Meets the standard";
+            content.CompliantDetailedMessage = "Your vehicle is exempt from the Congestion Charge";
+            content.CongestionChargeLabel = "Congestion Charge";
+            content.CongestionChargeDetailedMessage = "You need to pay the Congestion Charge for this vehicle if you drive within the zone Monday to Friday 07:00-18:00 excluding bank holidays and the period between Christmas and New Year's Day.";
+            content.ExemptDescription = "This vehicle is exempt from the Congestion Charge on this date. If you believe this is incorrect and still want to pay the charge you can check the box to continue.";
+            content.ExemptDetailedMessage = "Based on the vehicle details entered, and information held by the DVLA and TfL today, this vehicle is exempt from the Congestion Charge. This may change - always check to see if you need to pay to drive within the zone.";
+            content.UlezChargeLabel = "ULEZ";
+            content.UlezChargeDetailedMessage = "PAY ULEZ CHARGES";
+            content.NonChargeableDescription = "No charge on this day";
+            content.NonChargeableDetailedMessage = "You don't have to pay the Congestion Charge on weekends, bank holidays and the 3 other days between Christmas and New Year's Day.";
+            content.UlezLowDescription = "ULEZ charge";
+            content.UlezLowDetailedMessage = "This vehicle does not meet ULEZ emissions standards. You need to pay the ULEZ charge for cars, motorbikes, small vans and other lighter vehicles if you drive within the zone. The zone operates at all times - charging days run from midnight to midnight. ";
+            content.UlezHighDescription = "ULEZ charge";
+            content.UlezHighDetailedMessage = "This vehicle does not meet ULEZ emissions standards. You need to pay the ULEZ charge for lorries, buses, coaches and other heavier vehicles if you drive within the zone. The zone operates at all times - charging days run from midnight to midnight.";
+            content.TravelAfterCongestionChargeTimeDescription = "No Congestion Charge 18:00-07:00";
+            content.TravelAfterCongestionChargeTimeDetailedMessage = "DETAILED MESSAGE FOR TRAVELAFTERCONGESTIONCHARGETIMEDETAILEDMESSAGE";
+            content.NoChargeDescription = "No Congestion Charge for this";
+            content.NoChargeDetailedMessage = "No Congestion Charge for this";
+            content.UlezText = "ULEZ charge";
+            content.ChargePeriodType = "Daily charge";
+            content.CongestionChargeFullDiscountDescription = "This vehicle is subject to a 100% Congestion Charge discount";
+            content.CongestionChargeFullDiscountDetailedMessage = "You can check when this discount expires in the 'Manage discounts' section of your account. You can still continue to pay charges for Congestion Charge and ULEZ.";
+            content.UlezFullDiscountDescription = "YOU HAVE A FULL ULEZ DISCOUNT";
+            content.UlezFullDiscountDetailedMessage = "YOU HAVE FULL DISCOUNT ON ULEZ CHARGE AND YOU DON'T HAVE TO PAY ANY THING";
+   
+            
+            Html.RenderAction(
+                RucDictionary.AutoPayManage.AddAdhocVehicleDateActionName,
+                "AutoPayManageAdhocVehicle",
+                new
+                {
+                    area = "Ruc",
+                    backUrl = "/modes/driving/fleet-autopay-adhoc-add-adhoc-vehicle-34815",
+                    successUrl = "/modes/driving/fleet-autopay-adhoc-success-34816",
+                    failureUrl = "/modes/driving/fleet-autopay-adhoc-failure-34817",
+                    content = content,
+                    feePerVehicle = 10m,
+                    style = ZoneChargeAutoPayStyle.Fleet,
+                    lookupType = VehicleLookupType.AutoPayFleetAdhoc,
+                }
+            );
+        }
+	  
+
+
+
+
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "Choose the date and time of day you will be driving the vehicle in central London.";}
+        
+            
+        
+
+
+ 

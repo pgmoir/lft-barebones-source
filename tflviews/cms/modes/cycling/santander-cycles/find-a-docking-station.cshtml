@@ -1,0 +1,351 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Find a docking station";}
+@{ViewBag.Keywords = "Cyclists,Cycling,TfL";}
+@{ViewBag.Url = "/modes/cycling/santander-cycles/find-a-docking-station";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/cycling/index">Cycling</a></li>
+                
+            
+                 <li><a href="/modes/cycling/santander-cycles">Santander Cycles</a></li>
+                
+            
+            
+                <li><span class="last-breadcrumb">Find a docking station</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Find a docking station</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+      <div class="article-teaser">
+        There are more than 11,500 bikes at over 750 docking stations across London.<BR>
+        
+      </div>
+    
+    
+      
+        <p>Enter your location in the search box below to find a docking station near you. </p>
+    
+      
+           
+      
+
+        <div class="search-filter">
+          <div class="heading clearfix">
+            <div class="search-icon-black"></div>
+            <h3>Search</h3>
+          </div>
+          @{
+            Html.RenderAction("SearchFilter", "Modules", new
+            {
+              actionUrl = Library.DisambiguationSettings.DisambiguationUrl,
+              ajaxEnabled = true,
+              currentLocationSubmitUrl = "/maps/cycle-hire",
+              additionalFields = new List<string> { "InputGeolocation" },
+              buttonText = "Go",
+              dataSets = new[] { 
+              new[]{ Library.DisambiguationDataSets.PlacesExtra, "/maps/cycle-hire?Input={{input}}&InputGeolocation={{lon}},{{lat}}" },
+              new[]{ Library.DisambiguationDataSets.StopPoints, "/maps/cycle-hire?Input={{input}}&InputGeolocation={{lon}},{{lat}}" },
+              new[]{ Library.DisambiguationDataSets.BikePoints, "/maps/cycle-hire?Input={{input}}&InputGeolocation={{lon}},{{lat}}" }
+              },
+              modes = string.Format(
+              "{0},{1},{2},{3},{4},{5},{6},{7},{8}",
+              Library.MeansOfTransport.Tube,
+              Library.MeansOfTransport.DLR,
+              Library.MeansOfTransport.Overground,
+              Library.MeansOfTransport.TflRail,
+              Library.MeansOfTransport.Bus,
+              Library.MeansOfTransport.River,
+              Library.MeansOfTransport.RiverTours,
+              Library.MeansOfTransport.Tram,
+              Library.MeansOfTransport.CableCar
+             ),
+             placeHolderText = "Enter a postcode, address, station, stop or pier"
+            });
+          }
+        </div>
+        @{ 
+          Html.RenderAction("EmbeddedMap", "Maps", new
+          {
+            layers = "cycle-hire,station-stop",
+            layersVisibleAtLoad = "cycle-hire",
+            centreLat = "",
+            centreLng = "",
+            zoom = "13",
+            showSatelliteMap = "0",
+            showUserLocation = "1",
+            kmlUrl = "",
+            zoomThresholds = new EmbeddedMapViewModel.EmbeddedMapZoomThresholds() { DisplayBusStopsBy = 21, DisplayLargeBusStopsBy = 21 }
+          });
+        }      
+      
+  
+ <div>
+
+<h2>Suspended docking stations</h2>
+
+<p>Hoxton Station, Hoxton &amp; George Street, Westminster - due to&nbsp;power outages (TBC)</p>
+
+<p>Old Ford Road, Bethnal Green - due to a power outage (TBC)</p>
+
+<p>Smith Square, Westminster - for tree pruning (1400 on 5 March)</p>
+
+<p>&nbsp;</p>
+
+<h2>Removed docking stations</h2>
+
+<p>Stockwell Roundabout, Oval Way &amp; Lansdowne Way Bus Garage, Stockwell&nbsp;- for relocation</p>
+
+<p>The Green Bridge, Mile End - relocated to Maplin Street (now live)</p>
+
+<p>Copper Box Arena, QEOP - for development (replacement site expected&nbsp;April 2020)</p>
+
+<p>Portugal Street, Holborn - for building works (October 2020)</p>
+
+<p>Kennington Lane Tesco, Vauxhall - for development</p>
+
+<p>One Tower Bridge, Bermondsey - for Cycleway 4 works</p>
+
+<p>Hammersmith Town Hall, Hammersmith - for development&nbsp;</p>
+
+<p>Westfield Library Corner, Hammersmith - for development</p>
+
+<p>Updated&nbsp;Thursday&nbsp;5 March</p>
+</div>
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+   
+    
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                <a href="/modes/cycling/index" class="heading">
+                    <h2 id="sub-menu-heading">Cycling<span class="visually-hidden"> navigation</span></h2>
+                </a>
+                <ul>
+                    
+                                <li class="parent"><div class="link-wrapper"><a href="/modes/cycling/routes-and-maps">Routes and maps</a></div></li>
+                            
+ 
+                                <li><div class="link-wrapper"><a href="/modes/cycling/cycle-skills">Cycle skills</a></div></li>
+                            
+ 
+                                <li><div class="link-wrapper"><a href="/modes/cycling/cycles-on-public-transport">Cycles on public transport</a></div></li>
+                            
+ 
+                                <li><div class="link-wrapper"><a href="/modes/cycling/cycle-parking">Cycle parking</a></div></li>
+                            
+ 
+                                <li class="selected parent"><div class="link-wrapper"><a href="/modes/cycling/santander-cycles">Santander Cycles</a></div>
+                                <ul>
+                                    
+                                <li><div class="link-wrapper"><a href="/modes/cycling/santander-cycles/how-it-works">How it works</a></div></li>
+                            
+ 
+                                <li><div class="link-wrapper"><a href="/modes/cycling/santander-cycles/what-you-pay">What you pay</a></div></li>
+                            
+ 
+                                        <li class="selected"><div class="link-wrapper"><a href="/modes/cycling/santander-cycles/find-a-docking-station">Find a docking station</a></div>
+                                    </li>
+ 
+                                <li><div class="link-wrapper"><a href="/modes/cycling/santander-cycles/register-for-your-own-key">Santander Cycles membership</a></div></li>
+                            
+ 
+                                <li><div class="link-wrapper"><a href="/modes/cycling/santander-cycles/lost-stolen-or-faulty">Lost, stolen or faulty</a></div></li>
+                            
+ 
+                                <li><div class="link-wrapper"><a href="/modes/cycling/santander-cycles/community">Santander Cycles app</a></div></li>
+                            
+ 
+                                <li><div class="link-wrapper"><a href="/modes/cycling/santander-cycles/suggestions-and-complaints">Suggestions & complaints</a></div></li>
+                            
+ 
+                                <li><div class="link-wrapper"><a href="/modes/cycling/santander-cycles/business-accounts">Santander Cycles business accounts</a></div></li>
+                            
+ 
+                                <li><div class="link-wrapper"><a href="/modes/cycling/santander-cycles/blaze-laserlights">Blaze Laserlights</a></div></li>
+                            
+ 
+                                </ul>
+                            </li>
+ 
+                </ul>
+            
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ <div class="login-widget option-one moving-source-order">
+
+    <h3>My account</h3>
+    <a href="https://santandercycles.tfl.gov.uk/" class="primary-button">Sign in</a>
+    <p>Not signed up? <a href="https://santandercycles.tfl.gov.uk/Registration">Become a member</a></p>
+</div>
+ 
+      </div>
+    
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="advert-tile unsponsored-style google-ads" aria-hidden="true">
+  <div class="advert-link">
+    <div class="advert-content">
+        <div class="medium-large" data-advert="/76889402/cycle_hire" data-advert-sizes="300, 250"></div>
+        <div class="small" data-advert="/76889402/cycle_hire" data-advert-sizes="300, 250"></div>
+    </div>
+  </div>
+</div>
+@{
+    ViewBag.AmazonSlot = "'amznslots'";
+    ViewBag.AmazonAds = "'3199'"; // to add another value, this needs to be ViewBag.AmazonAds = "'3199','xx'";
+}
+      
+
+ </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+ 
+ 
+        
+        
+        
+            @{ViewBag.Description = "Find a Santander Cycles docking station near you";}
+        
+            
+        
+
+
+ 

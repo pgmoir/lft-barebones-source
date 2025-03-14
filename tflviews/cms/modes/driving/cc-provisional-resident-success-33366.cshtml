@@ -1,0 +1,200 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Application in progress";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-provisional-resident-success-33366";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Application in progress</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Application in progress</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+ 
+
+        
+        <!-- 6. provisional-resident-discount -->
+         @{
+            dynamic content = new ContentModel();
+            content.ConfirmationHeadingSuccess = "We're now processing your residents' discount application";
+            content.ReferenceNumber = "Application reference number: ";
+            content.ConfirmationText = "<p>We will contact you to let you know what happens next. We'll explain how to complete your full application and what documents you need to send us.</p><p>You will have 12 weeks to sign in and complete the full application. If your application is successful we will refund 90% of the charges you've paid while you have been waiting.</p>";
+            //content.PaymentReferenceText = "Receipt number for application payment: {0}";
+            content.PayCcTitle = "Driving in the next few days?";
+            content.PayCcText = "<p>You need to pay the full Congestion Charge&nbsp;until your discount has been approved. If your vehicle doesn't meet the emissions standards you will also need to pay the ULEZ charge to drive within the zone.</p><p>Congestion Charge discounts don't apply to the ULEZ.</p>";
+            content.AutoPayApplyTitle = "Set up Auto Pay";
+            content.AutoPayApplyText = "<p>Auto Pay is the easiest way to pay the Congestion Charge and ULEZ charges.</p>";
+            content.AutoPayApplyButtonText = "Sign up for Auto Pay";
+            content.AutoPayManageTitle = "Your Auto Pay ";
+            content.AutoPayManageText = "<p>Even before your discount is approved you can add this vehicle to your Auto Pay service.</p>";
+            content.AutoPayManageButtonText = "Manage Auto Pay";
+            content.AutoPayOutsideBoxTitle = "Auto Pay";
+            content.AutoPayOutsideBoxSummaryText = "<p>Auto Pay automatically records the number of charging days your vehicle travels within the Congestion Charge zone and, if it does not meet the emissions standards, the ULEZ. You are then billed each month.</p><p><strong>Benefits of Auto Pay</strong></p><ul>	<li>Never forget to pay the charge again</li>	<li>A reduced daily charge</li>	<li>Protection from receiving penalties as long as your vehicle is registered and your Auto Pay is active</li>	<li>Register up to<strong> </strong>5 vehicles</li></ul>";
+            content.AutoPayFindOutMoreLink = "";
+            content.AutoPayFindOutMoreText = "Find out more about Auto Pay";
+            content.CCOutsideBoxTitle = "If this vehicle is not on your Auto Pay service you need to pay the Congestion Charge and, if it does not meet the emissions standards, the ULEZ every time you drive within the zone.";
+            content.CCOutsideBoxSummaryText = "<p>You need to pay the full Congestion Charge if you drive within the charging zone before your discount has been approved. If your vehicle doesn't meet the emissions standards you will also need to pay the ULEZ charge to drive with the zone.</p><p>Congestion Charge discounts don't apply to the ULEZ.</p>";
+            content.PayCcLinkTitle = "Pay to drive in London";
+            content.PayCcButtonText = "Pay to drive in London";
+            content.FinishButtonText = "Finish";
+            content.FinishButtonUrl = "";
+            content.EmailAddressSentToPrefixText = "An email has been sent to: {0}";
+            content.SMSConfirmationText = "A receipt has been sent to mobile number: {0}";
+
+            Html.RenderAction("SubmissionSuccess", "DiscountApply", new
+                {
+                    area = "Ruc",
+                    discountStyle = ZoneChargeDiscountStyle.ResidentsDiscount,
+                    content = content,
+                    payCcUrl = "/modes/driving/pay-the-charge-select-vehicle-26283",
+                    autoPayApplyUrl = "/modes/driving/autopay-apply-select-service",
+                    manageAutoPayUrl = "/modes/driving/cc-autopay-manage-manage-29152",
+                    journeyStartUrl = "/modes/driving/cc-select-discount-29641"
+                }
+            );
+        }
+        
+        <h2>Next steps</h2>
+
+<p>You have 12 weeks to complete your residents' discount application.</p>
+
+<p>Once you have all the documents, sign in to your account. Click on 'My discounts' and continue to apply for the residents' discount.</p>
+
+<p>We will let you know if your application is successful and confirm you can pay the charge at the reduced rate. We will automatically refund 90% of the charges you've paid while you have been waiting.</p>
+        
+        @ModulesHelpers.BoxedLink("/modes/driving/account-account-landing-29377", "to-my-account", text: "Go to My account", soloButton: true)
+        
+        <div class="call-to-action-button button-set">
+            <a href="" class="primary-button" title="Finish">Finish</a>
+        </div>
+        
+            
+    
+
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+        @ModulesHelpers.PrintButton()
+      
+ 
+      </div>
+    
+    <div></div>
+    
+      <div>
+                    
+        <div class="vertical-button-container">
+    <ul>
+        
+        
+        
+        <li><a href="/modes/driving/congestion-charge/paying-the-congestion-charge"  class="plain-button">Congestion Charge payments</a></li>
+        
+        
+        <li><a href="/modes/driving/congestion-charge/congestion-charge-zone"  class="plain-button">Congestion Charge zone</a></li>
+        
+        
+        <li><a href="/modes/driving/auto-pay"  class="plain-button">Auto Pay</a></li>
+        
+        
+        <li><a href="/modes/driving/congestion-charge/discounts-and-exemptions"  class="plain-button">Discounts and exemptions</a></li>
+        
+        
+        <li><a href="/modes/driving/congestion-charge/contact-congestion-charge"  class="plain-button">Contact Congestion Charge</a></li>
+        
+    </ul>
+</div>
+
+      </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

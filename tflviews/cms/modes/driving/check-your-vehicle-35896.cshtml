@@ -1,0 +1,277 @@
+﻿
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@section adverts {
+    <div class="top-banner-advert" aria-hidden="true">
+        <div class="large" data-advert="/76889402/driving/checker" data-advert-sizes="970, 90|970, 250"></div>
+        <div class="medium" data-advert="/76889402/driving/checker" data-advert-sizes="728, 90"></div>
+        <div class="small" data-advert="/76889402/driving/checker" data-advert-sizes="300, 50|320, 50"></div>
+    </div>
+}
+
+
+ 
+  
+
+
+
+@{ViewBag.Title = "Check your vehicle";}
+@{ViewBag.Keywords = "Driving,LEZ,Low Emission Zone ,TfL";}
+@{ViewBag.Url = "/modes/driving/check-your-vehicle-35896";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Check your vehicle</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Check your vehicle</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/account-account-landing-29377"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+      <div class="article-teaser">
+        <p>Find out if your vehicle meets the current emissions standards required for the Ultra Low Emission Zone (ULEZ) and/or the Low Emission Zone (LEZ) or if you need to pay a daily charge.</p>
+        
+      </div>
+    
+    
+      <ul>
+	<li><a href="/modes/driving/ultra-low-emission-zone">ULEZ</a>: covers all vehicles driven within the central London area</li>
+	<li><a href="/modes/driving/low-emission-zone">LEZ</a>: covers&nbsp;HGVs, lorries, vans, buses, coaches, minibuses and other specialist diesel vehicles&nbsp;driven within Greater London</li>
+</ul>
+
+<p>The ULEZ operates every day of the year except Christmas Day (25 December) and the LEZ operates every day of the year - charging days run from midnight to midnight. You might also need to pay the <a href="/modes/driving/congestion-charge">Congestion Charge</a>.</p>
+
+<p>This checker doesn't reflect&nbsp;<a href="/modes/driving/low-emission-zone/changes-to-the-lez">changes we're making to LEZ standards in 2020</a>.</p>
+      
+           
+      
+
+
+        @{
+            dynamic content = new ContentModel();
+            content.BackButtonText = "Back";
+            content.VrmHelpMessageText = "<p>Be careful not to mix up the letters '<strong>I</strong>' and '<strong>O</strong>' with the numbers '<strong>1</strong>' and '<strong>0</strong>'.</p><p>Choose the correct country of registration. You risk getting a penalty if you pick the wrong one.</p>";
+            content.LezHigherNonCompliantTitle = "LEZ charge applies to this vehicle";
+            content.LezHigherNonCompliantText = "<p><strong>Daily charge:</strong> £200</p><p><strong>Why: </strong>The vehicle’s details as registered with us show it doesn’t meet the required LEZ standards OR it's registered outside the UK and we don't hold any details for it.</p><p><strong>The LEZ is different from the ULEZ - it doesn't apply to cars and motorbikes.</strong></p><p>If you believe your vehicle does meet the required standards, <a href='/modes/driving/compliance-registration/before-you-start'>register it with us</a>. Until we confirm your vehicle is registered you need to pay the £200 daily LEZ charge if you drive it within the zone.</p>";
+            content.LezStandardNonCompliantTitle = "LEZ charge applies to this vehicle";
+            content.LezStandardNonCompliantText = "<p><strong>Daily charge:</strong> £100</p><p><strong>Why:</strong> The vehicle's details as registered with us show it doesn't meet the required LEZ standards.</p><p><strong>The LEZ is different from the ULEZ - it doesn't apply to cars and motorbikes.</strong></p><p>If you believe your vehicle does meet the required standards, <a href='/modes/driving/compliance-registration/before-you-start'>register it with us</a>. Until we confirm your vehicle is registered you need to pay the daily LEZ charge if you drive it within the zone.</p>";
+            content.LezCompliantTitle = "No LEZ charge due for this vehicle";
+            content.LezCompliantText = "<p><strong>The LEZ is different from the ULEZ - it doesn't apply to cars and motorbikes.</strong> This vehicle either meets the required emission standards, is exempt from or not affected by the scheme, or is subject to a 100% discount.</p>";
+            content.UlezLowChargesTitle = "ULEZ charge applies to this vehicle";
+            content.UlezLowChargesText = "<p><strong>Daily charge:</strong> £12.50</p><p><strong>Why:</strong> This could be because the vehicle’s details as registered with us show it doesn’t meet the required ULEZ standards OR it's registered outside the UK and we don't hold any details for it.</p><p>If you believe your vehicle meets the standards, you will need to register it with us.</p><p>How you register your vehicle will depend on its country of registration:</p><ul>	<li><a href='https://www.epcplc.com/ulez/login'>Non-UK registered vehicles must be registered through our partner, EPCplc.</a>&nbsp;You will be taken to their website</li>	<li><a href='/modes/driving/compliance-registration/before-you-start'>UK-registered vehicles can be registered directly with us</a></li></ul><p>Until we confirm that your vehicle meets the emissions standards, you need to pay the daily ULEZ charge whenever you drive within the zone.</p><p>The checker ONLY checks the emissions standard of the vehicle. To check if a discount or exemption applies to your vehicle - and whether you need to pay the charge - go to <a href='/modes/driving/pay-to-drive-in-london'>Pay to drive in London</a>.</p>";
+            content.UlezHighChargesTitle = "ULEZ charge applies to this vehicle";
+            content.UlezHighChargesText = "<p><strong>Daily charge:</strong> £100</p><p><strong>Why:</strong> The vehicle's details as registered with us show it doesn't meet the required ULEZ standards.</p><p>If you believe your vehicle meets the standards, you will need to register it with us.</p><p>How you register your vehicle will depend on its country of registration:</p><ul>	<li><a href='https://www.epcplc.com/ulez/login'>Non-UK registered vehicles must be registered through our partner, EPCplc.</a>&nbsp;You will be taken to their website</li>	<li><a href='/modes/driving/compliance-registration/before-you-start'>UK-registered vehicles can be registered directly with us</a></li></ul><p>Until we confirm that your vehicle meets the emissions standards, you need to pay the daily ULEZ charge whenever you drive within the zone.</p><p>The checker ONLY checks the emissions standard of the vehicle. To check if a discount or exemption applies to your vehicle - and whether you need to pay the charge - go to <a href='/modes/driving/pay-to-drive-in-london'>Pay to drive in London</a>.</p>";
+            content.UlezCompliantTitle = "No ULEZ charge due for this vehicle";
+            content.UlezCompliantText = "<p>This vehicle meets the emission standards for ULEZ so you don't have to pay this charge when driving within the zone.</p><p><strong>Double check that the vehicle details have been typed correctly.</strong> You risk getting a penalty if you've identified the wrong vehicle.</p>";
+            content.UlezExemptTitle = "No ULEZ charge due for this vehicle";
+            content.UlezExemptText = "<p>Based on the vehicle details entered and information held by the DVLA and TfL today, this vehicle is exempt from the ULEZ.</p><p><strong>This may change - always check to see if you need to pay to drive within the zone.</strong></p>";
+            content.UlezNotChargeableTitle = "No ULEZ charge due for this vehicle";
+            content.UlezNonChargeableText = "<p>Based on the vehicle details entered and information held by the DVLA and TfL today, you don't have to pay the ULEZ charge for this vehicle.</p><p><strong>This may change - always check to see if you need to pay to drive within the zone.</strong></p>";
+            content.UlezFullDiscountTitle = "No ULEZ charge due for this vehicle";
+            content.UlezFullDiscountText = "<p>A 100% ULEZ discount applies to this vehicle. You don't have to pay the charge to drive within the zone.</p>";
+            content.WhatToDoNext = "<h2>Check your zone</h2><p>If you're not sure where the zones are, use our <a href='/modes/driving/ultra-low-emission-zone/ulez-where-and-when' target='_blank'>ULEZ zone map</a> and <a href='/modes/driving/low-emission-zone/about-the-lez' target='_blank'>LEZ zone map</a> to check if you're driving into or within any of the zones.</p><h2>Options</h2><p>If you're thinking of buying a new or second-hand car, look up its emissions in real-world driving conditions on the Mayor's <a href='https://www.london.gov.uk/what-we-do/environment/pollution-and-air-quality/cleaning-londons-vehicles/cleaner-vehicle-checker'>Cleaner Vehicle Checker</a>.</p>";
+        }
+        <form class="responsive-form" method="POST" id="lez-check">
+            @{
+                Html.RenderAction("VehicleLookup", "VehicleLookup", new
+                    {
+                        area = "Ruc",
+                        lookupType = TfL.Ruc.Domain.Entities.Ruc.VehicleLookupType.ComplianceCheckerLezUlez,
+                        content = content,
+                        useQml = false
+                    });
+            }
+        </form>
+        
+        @FormHelpers.DottedSeparator()
+        @ModulesHelpers.BackLink()
+        
+        @this.ScriptBlock(
+        @<script>
+             queue.push(function(){
+                 $('#vehicle-search-inputs').vehicleLookUp({
+                     vrmField: "#VehicleRegistrationMark",
+                     countryField: "#CountryofRegistration"
+                 });
+             }, null);
+        </script>
+        )
+	  
+
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+    
+    
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="advert-tile unsponsored-style google-ads" aria-hidden="true">
+  <div class="advert-link">
+    <div class="advert-content">
+        <div class="medium-large" data-advert="/76889402/driving/checker" data-advert-sizes="300, 250"></div>
+        <div class="small" data-advert="/76889402/driving/checker" data-advert-sizes="300, 250"></div>
+    </div>
+  </div>
+</div>
+@{
+    ViewBag.AmazonSlot = "'amznslots'";
+    ViewBag.AmazonAds = "'3199'"; // to add another value, this needs to be ViewBag.AmazonAds = "'3199','xx'";
+}
+      
+
+ </div>
+    
+      <div>
+                    
+        <div class="vertical-button-container">
+    <ul>
+        
+        
+        
+        <li><a href="/modes/driving/pay-to-drive-in-london"  class="plain-button">Pay to drive in London</a></li>
+        
+        
+        <li><a href="/modes/driving/ultra-low-emission-zone/ways-to-meet-the-standard"  class="plain-button">Ways to meet the ULEZ standards</a></li>
+        
+        
+        <li><a href="/modes/driving/low-emission-zone/ways-to-meet-the-standards"  class="plain-button">Ways to meet the LEZ standards</a></li>
+        
+        
+        <li><a href="/modes/driving/ultra-low-emission-zone/ulez-where-and-when"  class="plain-button">ULEZ zone</a></li>
+        
+        
+        <li><a href="/modes/driving/low-emission-zone/about-the-lez"  class="plain-button">LEZ zone</a></li>
+        
+    </ul>
+</div>
+
+      </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+     @section scripts {
+<div class="bottom-advert ">
+    <div class="close-ad-button visually-hidden"><span class="close-icon-circle"></span></div>
+    <div data-advert="/76889402/driving/" data-advert-sizes="320, 50"></div>
+</div>
+}
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "Check that your vehicle meets the required emissions standards";}
+        
+            
+        
+
+
+ 

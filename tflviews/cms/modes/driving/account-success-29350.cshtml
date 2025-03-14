@@ -1,0 +1,124 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Confirmation";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/account-success-29350";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Confirmation</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Confirmation</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+
+		@{
+		    dynamic content = new ContentModel();
+            content.AccountNumberText = "<p>You will need your account number to sign in. Make note of your individual account number: <strong>{0}</strong></p>";
+            content.ScrappageFormLink = "/modes/driving/scrappage-enquiry";
+            content.ScrappageFormLinkText = "Continue your scrappage application";
+
+            Html.RenderAction("Success", "CreateAccount", new
+                {
+                    area = "Ruc",
+                    content = content
+                }
+            );
+        }
+
+        @ModulesHelpers.BoxedLink("/modes/driving/account-account-landing-29377", "manage-account-link", text: "Go to your account", soloButton: true)
+
+	  
+
+  <div>
+
+<h2>Save vehicles to your account</h2>
+
+<p>You can make future payments more quickly if you save vehicles to your London Road User Charging account.</p>
+</div>
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+        @ModulesHelpers.PrintButton()
+      
+ 
+      </div>
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

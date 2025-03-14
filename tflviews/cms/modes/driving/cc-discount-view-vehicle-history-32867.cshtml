@@ -1,0 +1,137 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Vehicle history";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-discount-view-vehicle-history-32867";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Vehicle history</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Vehicle history</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+        @{
+        
+            Html.RenderAction("ListHistory", "VehicleList", new
+                {
+                    area = "Ruc",
+                    backUrl = "/modes/driving/cc-discount-manage-discounts-32822",
+                    historyDetailUrl = "/modes/driving/cc-vehicle-history-details-37495",
+                    onlyActiveDiscount = true
+                }
+            );
+        }
+        
+        @FormHelpers.DottedSeparator()
+        @ModulesHelpers.BackLink()
+        
+        @this.ScriptBlock(
+            @<script>
+             queue.push(
+                "@Html.ScriptPath("specific/list-filters-text.min.js")", null,
+                "@Html.ScriptPath("specific/results-paginator.min.js")", function () {             
+                 $('#vehicle-history').paginator({
+                     showItemCount: true,
+                     endPoints: {
+                         page: "/Ruc/VehicleList/ListHistoryAjax",
+                         remove: ""
+                    }
+                 });
+                 window.setTimeout(function() {
+                     $("#Search_StartDate").datepicker();
+                     $("#Search_EndDate").datepicker();
+                 }, 0);
+            });
+            </script>
+        )
+              
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

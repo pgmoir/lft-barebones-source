@@ -1,0 +1,132 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Make a complaint";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/ulez-make-a-complaint-confirmation";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Make a complaint</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Make a complaint</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      <h2>Your message has been sent</h2>
+      
+           
+      
+
+ 
+
+        @{
+            dynamic content = new ContentModel();
+                
+            content.ThankYouHeading = "Thank you for contacting us.";
+            content.ReferenceNumberText = "Your reference number is:  ";
+            content.EmailRespondMessage = "A response will be sent via email. We aim to do this within 15 days.";
+            content.ComplaintDetailsStepHeading = "Complaint details";
+            content.PersonalDetailsStepHeading = "Personal details";
+            content.ReviewStepHeading = "Review";
+            content.ConfirmationStepHeading = "Confirmation";
+            
+            Html.RenderAction("ConfirmComplaint", "Complaint", new { area = "Ruc", content });
+        }
+
+      
+  
+ <div>
+
+<h2>What happens next?</h2>
+<p>We aim to reply to you, usually by email, earlier than the 15 working days.  We will let you know if we require any further information or if there is an unavoidable delay in replying.</p>
+<p>If you need to send us any updates or further information before you receive a response, please send another enquiry, remembering to quote the above reference number.</p>
+</div>
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+        @ModulesHelpers.PrintButton()
+      
+ 
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+      </div>
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

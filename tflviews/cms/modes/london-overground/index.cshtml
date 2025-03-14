@@ -1,0 +1,294 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "London Overground";}
+@{ViewBag.Keywords = "London Overground,TfL";}
+@{ViewBag.Url = "/modes/london-overground/index";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+            
+                <li><span class="last-breadcrumb">London Overground</span></li>
+            
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+    <div class="headline-container landing-page section-landing-container with-logo">
+        <h1>London Overground</h1>
+        
+        <div class="heading-logo">
+            <img src="/cdn/static/cms/images/logos/overground-partner.png" alt="London Overground logo" />
+        </div>
+        
+    </div>
+</div>
+<div class="main-and-aside r">
+    <div class="main" role="main">
+        <div class="small-medium" data-set="widget"></div>
+        <div class="primary-teaser landing-page-teaser">
+            <div class="news-teaser overground">
+  
+  <a href="/modes/london-overground/improving-london-overground?intcmp=32665"  data-img="/cdn/static/cms/images/promos/westanglia-lo-700x350.gif" data-img-breakpoint="medium" data-img-alt="London Overground is expanding">
+    <img src="/cdn/static/cms/images/promos/westanglia-lo-700x350_rdax_600x300.gif" alt="London Overground is expanding" />
+    <div class="text-link sit-bottom">
+      <h2>Improving London Overground</h2>
+      <p>We reinvest our income to continually improve the network. Find out more</p>
+    </div>
+  </a>
+</div>
+
+ 
+        </div>
+        
+        <div class="clearfix">
+            
+
+<div class="search-filter">
+    <h3>Find an Overground station</h3>
+    <p>For live departures, status information, route maps and timetables</p>
+     @{
+          Html.RenderAction("SearchFilter", "Modules", new
+          {
+               actionUrl = Library.DisambiguationSettings.DisambiguationUrl,
+               buttonText = "Go",
+               dataSets = new string[][]
+               {
+                    new[]{ Library.DisambiguationDataSets.StopPoints, "/{{mode}}/stop/{{naptanId}}/{{stopName}}/" }
+               },
+               modes = Library.MeansOfTransport.Overground,
+               placeHolderText = "Overground station (e.g. Hoxton)"
+          });
+     }
+</div>           
+ 
+        </div>
+        <div class="module-grid clearfix">
+            <div class="news-teaser">
+
+    <a href="https://m.me/tfltravelbot?intcmp=58765" >
+        <img src="/cdn/static/cms/images/promos/tfl-fb-travelbot_rdax_400x200.png" alt="Facebook TravelBot" />
+        
+        <div class="text-link">
+             <h2>Facebook TravelBot</h2>
+            <p>Ask us how Overground is running and get an instant response while you're on the move</p>
+        </div>
+    </a>
+</div>
+ 
+ <div class="news-teaser">
+
+    <a href="/status-updates/planned-track-closures?intcmp=54286" >
+        
+        
+        <div class="text-link">
+             <h2>Service changes</h2>
+            <p>Check for planned line closures and service changes on all modes</p>
+        </div>
+    </a>
+</div>
+ 
+ <div class="news-teaser">
+
+    <a href="/modes/london-overground/changes-to-ticket-office-hours?intcmp=61581" >
+        
+        
+        <div class="text-link">
+             <h2>Ticket office opening hours</h2>
+            <p>We are changing ticket office opening hours at some stations</p>
+        </div>
+    </a>
+</div>
+ 
+ <div class="vertical-button-container">
+
+
+
+<a href="/modes/london-overground/london-overground-timetables"  class="plain-button">Timetables</a>
+
+
+<a href="/modes/cycling/cycles-on-public-transport"  class="plain-button">Cycles on London Overground</a>
+
+
+<a href="/transport-accessibility/index"  class="plain-button">Transport accessibility</a>
+
+
+<a href="/modes/london-overground/shorter-trains"  class="plain-button">Shorter trains</a>
+
+
+<a href="/campaign/station-wifi"  class="plain-button">Station Wi-Fi</a>
+
+
+<a href="/corporate/about-tfl/what-we-do"  class="plain-button">About London Overground</a>
+
+
+<a href="/modes/london-overground/improving-london-overground"  class="plain-button">Improving London Overground</a>
+
+
+<a href="https://tfl.gov.uk/corporate/about-tfl/culture-and-heritage/londons-transport-a-history/london-overground"  class="plain-button">History of London Overground</a>
+
+</div>
+
+        </div>
+    </div>
+    <div class="aside" role="complementary">
+        <div class="large" data-set="widget">
+            <div class="moving-source-order">
+            
+
+                <div class="widget-wrapper">
+
+                        <div class="board-wrapper service-board-collapsed">
+                            @{ Html.RenderAction("StatusBoard", "StatusUpdates", new { modes = Library.MeansOfTransport.TubeDlrOvergroundTflRail, collapsed = true, isHomeOrModePageStatusBoard = true }); }
+                        </div>
+
+
+                </div>
+             
+ 
+            </div>
+        </div>
+        <div class="module-grid">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="advert-tile unsponsored-style google-ads" aria-hidden="true">
+  <div class="advert-link">
+    <div class="advert-content">
+        <div class="medium-large" data-advert="/76889402/london_overground" data-advert-sizes="300, 250"></div>
+        <div class="small" data-advert="/76889402/london_overground" data-advert-sizes="300, 250"></div>
+    </div>
+  </div>
+</div>
+@{
+    ViewBag.AmazonSlot = "'amznslots'";
+    ViewBag.AmazonAds = "'3199'"; // to add another value, this needs to be ViewBag.AmazonAds = "'3199','xx'";
+}
+      
+
+ 
+            <div>
+    
+    <div class="contact-info-box">
+        <div class="contact-info-header">
+            <h3>Contact us</h3>
+        </div>
+                                                         
+        <div class="content-group">
+            We're open 24 hours a day, 7 days a week.
+        </div>
+        
+        
+            
+        
+        
+            
+                
+        
+        
+        <div class="content-group">
+            <p>
+                <abbr title="Chat">Chat</abbr><br />
+                 
+        On <a href="https://m.me/transportforlondon">Facebook</a> or <a href="https://twitter.com/messages/compose?recipient_id=47319664">Twitter</a>
+        
+        
+            </p>
+        </div>
+        
+        
+        <div class="content-group">
+            <p>
+                <abbr title="Telephone number">Call</abbr>&nbsp;<a href="/corporate/terms-and-conditions/tfl-call-charges">Charges apply</a><br />
+                0343 222 1234
+            </p>
+        </div>
+        
+        
+        
+        <div class="content-group">
+            <p>
+                <abbr title="Address">Write</abbr>
+            </p>
+            <p><a href="/help-and-contact/contact-us-about-tube-and-rail">Fill in a general enquiries form</a> <br /><a href="/help-and-contact/contact-us-about-tube-and-rail-staff">Give feedback about staff</a><br />Or send a letter to:</p>
+        </div>
+        
+        
+        <div class="content-group">
+            <p>TfL Customer Service<br />
+4th Floor<br />
+14 Pier Walk<br />
+London SE10 0ES</p>
+        </div>
+        
+    </div>
+</div>
+ <div class="follow-social email">
+  
+  <div class="social-image">
+    
+  </div>
+  <div class="social-text">
+    <h3>Email updates</h3>
+    <p>Hop aboard the TfL email service for updates, personalised offers and promotions</p>
+  </div>
+  <div class="social-button">
+    <a class="secondary-button" href="/travel-information/social-media-and-email-updates/email-updates">Register</a>
+  </div> 
+</div>
+ <div class="related-links">
+
+    <h3>Related websites</h3>
+
+<div class="vertical-button-container">
+
+<a href="http://www.londontravelwatch.org.uk/home/" class="plain-button">London TravelWatch</a>
+<a href="http://www.transportfocus.org.uk/" class="plain-button">Transport Focus</a>
+<a href="http://www.nationalrail.co.uk/" class="plain-button">National Rail Enquiries</a>
+    </div>
+</div>
+ 
+        </div>
+    </div>
+    <div class="small-medium" data-set="content">&nbsp;</div>
+</div>
+ 
+        
+        
+        
+            @{ViewBag.Description = "London's suburban rail network travels through most London boroughs, as well as Watford in Hertfordshire";}
+        
+            
+        
+
+
+ 

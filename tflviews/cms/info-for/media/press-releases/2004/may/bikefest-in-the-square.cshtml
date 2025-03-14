@@ -1,0 +1,95 @@
+﻿
+
+
+@{ViewBag.Title = "BikeFest in the Square";}
+        
+        
+
+<div class="r">
+    <div class="headline-container plain">
+        <h1>BikeFest in the Square</h1>
+        <div class="content-page-press-release">
+        07 May 2004
+        </div>
+    </div>
+</div>
+<div class="main-and-aside r">
+    <div class="main" role="main">
+
+    <div class="article-teaser">
+        Sunday 13th June, 1pm - 5pm, Trafalgar Square<BR>Transport for London will be hosting BikeFest in the Square, a dynamic cycling festival and a flagship event for Bike Week 2004.
+        
+    </div>
+
+
+
+ <div class="on-this-page">
+<p>This is not just a cycling event for cyclists - it will demonstrate to everyone, young and old, those who have never cycled or haven't cycled in years, that this is a great option for getting around London. </p>
+<p>The afternoon of celebrations will involve bike-themed entertainment and activities including:</p>
+<ul>
+<li>A large central screen and stage providing a focus for the afternoons activities with cycling footage and special guests 
+</li><li>Junk funk band Weapons of Sound, instruments created from bicycle parts 
+</li><li>The Half Pipe Show - a spectacular BMX stunt bike show 
+</li><li>Roving street theatre performances 
+</li><li>A cycle art zone 
+</li><li>An area where members of the public can learn to ride a bike or try out a tandem, recumbent bike or crazy bike 
+</li><li>Bollywood on Bikes - a choreographed dance piece with all the glamour and allure of Bollywood 
+</li><li>LifeCycle themed stalls area - wide range of information on cycling in London. </li></ul>
+<p>For more information, contact: Transport for London press office on 020 7941 4141</p>
+
+     
+
+        
+        
+        
+        @this.ScriptBlock(
+        @<script>
+        //queue.push("@Html.ScriptPath("modules/M020-on-this-page.min.js")", null);
+        </script>
+        )
+        
+        
+        
+        </div>
+    </div>
+    <div class="aside" role="complementary">
+
+       
+        <div data-set="sidenav-container" class="large">
+
+            
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+        </div>
+
+
+
+            
+        <div data-set="sidenav-container" class="small-medium"></div>
+    </div>
+</div>
+
+<!-- Crumbs: PGtype:  -->
+
+ 
+ 
+        
+        
+            @{ViewBag.Description = "This is not just a cycling event for cyclists - it will demonstrate to everyone, young and old, those who have never cycled or haven't cycled in years, that this is a great option for getting around London. The afternoon of celebrations will involve";}
+        
+        
+
+
+ 

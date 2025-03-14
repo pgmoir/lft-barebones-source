@@ -1,0 +1,125 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Auto Pay statements";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-autopay-manage-download-statements";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                 <li><a href="/modes/driving/auto-pay">Auto Pay</a></li>
+                
+            
+            
+            
+                <li><span class="last-breadcrumb">Auto Pay statements</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Auto Pay statements</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+      <div class="article-teaser">
+        <p>View and download your Auto Pay statements from the last 2 years.</p>
+        
+      </div>
+    
+    
+      
+      
+           
+      
+
+        @{
+            dynamic content = new ContentModel();
+
+            content.AmountLabel = "Total";
+            content.DueDateLabel = "Date";
+            content.NotApplicableLabel = "N/A";
+            content.NoStatementsToShow = "No statements to show";
+
+            Html.RenderAction(
+                "GetIssuedStatements",
+                "FinancialHistory",
+                new
+                {
+                    content = content,
+                    area = "Ruc",
+                    downloadErrorUrl = "/modes/driving/cc-autopay-manage-download-statements"
+                }
+            );
+        }
+
+        <div>
+            <a class="tertiary-link go-back" href="/modes/driving/cc-autopay-manage-manage-29152" id="go-back">
+                <span class="button-text">Back</span>
+            </a>
+        </div>
+
+      
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "View and download your Auto Pay statements from the last 2 years.";}
+        
+            
+        
+
+
+ 

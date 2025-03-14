@@ -1,0 +1,180 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Add vehicle";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-selected-partner-add-vehicle-36325";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Add vehicle</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Add vehicle</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+      <div class="article-teaser">
+        <p>You can add vehicles to your selected partner discount one at a time.</p>
+        
+      </div>
+    
+    
+      <p>Once a vehicle is added it will be eligible for the 100% discount from the Congestion Charge immediately. It may take up to 24 hours for its status to update from 'CC - should be paid' to CC - 100% discount' in your account..</p>
+
+<p>If your vehicle doesn't meet, or isn't exempt from, the ULEZ emissions standards, you need to upload it to your Auto Pay service to avoid getting a penalty.</p>
+
+<p>You can add a batch of up to 15 vehicles one at a time. Or, to make multiple vehicle changes,&nbsp;<a href="/modes/driving/cc-selected-partner-upload-file-36333">upload a vehicle list file</a>.</p>
+      
+           
+      
+
+
+        
+        <!-- 1. add-vehicle -->
+        @using TfL.Ruc.Services.ViewModels.Ruc.Autopay
+        @{
+            dynamic content = new ContentModel();
+            
+            
+            /*Required data retrieved from JSON file*/
+            // JSON content.CountryOptionUk = "United Kingdom";
+            // JSON content.CountryOptionOther = "Other";
+            // JSON content.FindVehicleButtonText = "Find vehicle";  
+            // JSON content.VrmHelpMessageText = "Please be careful not to mix up the letters 'I' and 'O' with the numbers '1' and '0'";
+            // JSON content.VrmTitle = "Vehicle Registration Mark";
+            // JSON content.VrmPlaceHolder = "eg AB01ABC";
+            // JSON content.CountryofRegistrationTitle = "Country of registration";
+            // JSON content.VehicleNotFoundTitle = "<p><strong>We do not hold details for this vehicle</strong></p>";
+            // JSON content.ConfirmEnteredVrmDetailsText = "Yes, this is the correct vehicle";
+            // JSON content.VehicleNotFoundText = "<p><strong>UK-registered:</strong> If your vehicle’s make and model details have not been returned, please make sure you entered the Vehicle Registration Mark correctly before continuing.</p><p><strong>Registered outside the United Kingdom:</strong> We are unable to display the make, model and colour information. Confirm your details before continuing.</p>";
+            // JSON content.VrmAcceptedRequireTrue = "Confirm that this is the correct vehicle to continue";
+            // JSON content.VehicleRegistrationMarkRequired = "Enter a Vehicle Registration Mark to continue";
+
+            /*VRM lookup content*/
+            content.ActiveDiscountText = "Active on ";
+            content.FriendlyNameLabel = "Add an optional tag";
+            content.VehicleAlreadyAddedErrorText = "You have already added this vehicle to the discount";
+            content.VehicleAlreadyOnDiscountHeading = "Vehicle already on selected partner discount";
+            content.VehicleAlreadyOnDiscountMessage = "<p>The vehicle selected is already active on a selected partner discount.</p>";
+            content.ThisisNotMyVehicleTitle = "What if my vehicle details are incorrect?";
+            content.ThisisNotMyVehicleText = "<p>If the number plate is correct but the description shown is wrong, you can still add this vehicle to the discount.</p><p>Vehicle information is provided to TfL by the DVLA, so you'll need to let the DVLA know if your details are wrong or need to be updated.</p>";
+            
+            /*Page specific content*/
+            content.SelectedVehiclesCountText =  "<p>Total number of vehicles you are adding to the selected partner discount: {0}</p>";
+            content.ContinueButtonText = "Continue";
+            content.ContinueUrl = "/modes/driving/selected-partner-review-vehicles-52181";
+
+            /* Charge labels and messages */
+            content.NonChargeableLabel =  "No charge due";
+            content.NonChargeableMessage =  "Based on the vehicle details entered and information held by the DVLA and TfL today, you don't have to pay the ULEZ charge for this vehicle. This may change - always check to see if you need to pay to drive in the zone.";
+            content.PayableHighLabel = "Should be paid";
+            content.PayableHighMessage = "This vehicle does not meet the ULEZ emissions standards. You need to pay the ULEZ charge if you drive within the zone. The zone operates at all times - charging days run from midnight to midnight.";
+            content.PayableLowLabel = "Should be paid";
+            content.PayableLowMessage = "This vehicle does not meet the ULEZ emissions standards. You need to pay the ULEZ charge if you drive within the zone. The zone operates at all times - charging days run from midnight to midnight.";
+            content.ExemptLabel = "Exempt";
+            content.ExemptMessage = "Based on the vehicle details entered and information held by the DVLA and TfL today, this vehicle is exempt from this charge. This may change - always check to see if you need to pay to drive within the zone.";
+            content.CompliantLabel = "Meets the standard";
+            content.CompliantMessage = "Based on the vehicle details entered and information held by the DVLA and TfL today, this vehicle meets the ULEZ emissions standards. You don't have to pay the charge.";
+            content.PayableLabel = "Should be paid";
+            content.PayableMessage = "You need to pay the Congestion Charge for this vehicle if you drive within the zone Monday to Friday 07:00-18:00 excluding bank holidays and the period between Christmas Day and New Year's Day.";
+            content.ChargeabilityUnknownLabel = "Unknown";
+            content.ChargeabilityUnknownMessage = "We don't know if this vehicle meets the emissions standards";
+
+            Html.RenderAction("FindVehicle", "SelectedPartnerManage", new
+                {
+                    area = "Ruc",
+                    backUrl = "/modes/driving/cc-selected-partner-vehicles-36334",
+                    content = content,
+                    discountStyle = ZoneChargeDiscountStyle.SelectedPartner,
+                    lookupType = VehicleLookupType.DiscountSelectedPartners
+                }
+            );
+        }
+        
+		
+        
+		
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "You can add vehicles to your selected partner discount one at a time.";}
+        
+            
+        
+
+
+ 

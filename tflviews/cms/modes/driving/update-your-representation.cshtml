@@ -1,0 +1,189 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Challenge a PCN";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/update-your-representation";}
+@{ViewBag.Language = "en";}
+        
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Challenge a PCN</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Challenge a PCN</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      <h2>Update your representation</h2>
+<p>We have asked you to send in additional evidence to a previously submitted representation.</p>
+<p>Please follow the guidance below to ensure we have all the evidence we need to consider your representation.</p>
+      
+           
+          
+        
+        @{
+            dynamic content = new ContentModel();
+                                  content.BackButtonText = "Back";
+                                  content.ContinueButtonText = "Continue";
+                                  content.StepOneLabel = "Additional information";
+                                  content.StepTwoLabel = "Review";
+                                  content.ContraventionDescriptionHeading = "Contravention description";
+                                  content.IntroductoryText = "We have asked you to send in additional evidence to a previously submitted representation. Please follow the guidance below to ensure we have all the evidence we need to consider your representation.";
+                                  content.DetailsHeading = "Additional details";
+                                  content.DetailsText = "Supply information that will support your representation.";
+                                  content.InformationLabel = "Add details: ";
+                                  content.AttachmentsLabel = "Attachments";
+                                  content.SupportingDocumentationHeading = "Supporting documents";
+                                  content.SupportingDocumentationText = "Attach any evidence or documents that may support your representation.";
+                                  content.AdditionalInformationHeading = "Additional details";
+                                  content.FalseStatementWarning = "A false statement may result in prosecution and a possible fine of up to &pound;5000.";
+                                  content.DeclarationText = "I confirm that the above is correct";
+                                  content.PrivacyNoticeDeclarationText = "<p>Read the <a href='/corporate/privacy-and-cookies/road-user-charging' target='_blank'>London Road User Charging privacy notice</a>.</p>";
+                                  content.AdditionalInformationRequired = "Provide additional information to continue";
+                                  content.ConfirmDetailsRequireTrue = "Confirm that the information you have provided is correct";
+                                  content.ConfirmPrivacyNoticeRequireTrue = "Confirm you have read and understood the privacy notice";
+            Html.RenderAction(
+            "UpdateRepresentation",
+            "PenaltyChargeNotice",
+                new
+                    {
+                        area = "Ruc",
+                        resultUrl = "/modes/driving/we-have-confirmed-your-representation-update",
+                        challengePcnDetailUrl = "/modes/driving/challenge-a-pcn-details?fromJourney=true",
+                        viewPcnDetailUrl = "/modes/driving/view-pcn-details?fromJourney=true",
+                        content = content
+                    });
+        }
+      
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+      </div>
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

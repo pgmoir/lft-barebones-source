@@ -1,0 +1,147 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Select vehicle";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-nine-plus-seater-add-account-vehicles";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Select vehicle</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Select vehicle</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+        @{
+            dynamic content = new ContentModel();
+
+            content.AccountVehiclesIntroText = "<p>An annual £10 registration charge applies to each vehicle you add to this discount. The vehicle must have 9 seats or more to qualify, including the driver's seat.</p><p>You can select a vehicle that's already on your account or add a new one.</p>";
+            content.VehicleNotInMyListText = "New vehicle";
+            content.ContinueButtonText = "Continue";
+            content.BackButtonText = "Back";
+            content.SortLabel = "Sort";
+            content.SearchLabel = "Search by number plate";
+            content.ApplyFilterLabel = "Apply filter";
+            content.ResetFilterLabel = "Reset filter";
+            content.DetailNotFoundMessage = "<p>We don't hold any details for this vehicle. Make sure the number plate (Vehicle Registration Mark) is correct before continuing.</p>";
+            content.ExemptAllMessage = "<p>This vehicle is exempt from the Congestion Charge. This is based on the vehicle details entered and information held by the DVLA and TfL today. It may change without notice - always check to see if you need to pay to drive within the zone.</p>";
+            content.VehicleAlreadyExistsOnThisApplicationErrorText = "<p>You've already added this vehicle to the application.</p>";
+
+            var resetVehicle = false;
+            if(Request.QueryString.AllKeys.Contains("resetVehicle")){
+                resetVehicle = Convert.ToBoolean(Request.QueryString["resetVehicle"]);
+            }
+
+            // Back Url parameters
+            if(Request.QueryString.AllKeys.Contains("sourceRoutingKey")){
+                content.SourceRoutingKey = Request.QueryString["sourceRoutingKey"];
+            }        
+            content.NinePlusSeaterReviewPageLink = "/modes/driving/cc-discount-nine-plus-seater-review";
+            content.DiscountsAndExemptionsLink = "/modes/driving/congestion-charge/discounts-and-exemptions";
+            content.ManageNinePlusSeaterLink = "/modes/driving/cc-nine-plus-seater-manage-33830";
+            content.ApplyCcDiscountLink = "/modes/driving/cc-select-discount-29641";
+
+            Html.RenderAction("AccountVehicles", 
+                "NinePlusSeater", 
+                new {
+                    area = "Ruc",
+                    content = content,
+                    nextUrl = "/modes/driving/cc-nine-plus-seater-upload-evidence?sourceRoutingKey=account-vehicles",
+                    vrmLookupUrl = "/modes/driving/cc-nine-plus-seater-vrm-lookup?sourceRoutingKey=account-vehicles",
+                    reviewUrl = "?sourceRoutingKey=account-vehicles",
+                    resetVehicle  = resetVehicle
+                });
+        }
+    
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

@@ -1,0 +1,280 @@
+﻿
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@section adverts {
+    <div class="top-banner-advert" aria-hidden="true">
+        <div class="large" data-advert="/76889402/driving/ulez" data-advert-sizes="970, 90|970, 250"></div>
+        <div class="medium" data-advert="/76889402/driving/ulez" data-advert-sizes="728, 90"></div>
+        <div class="small" data-advert="/76889402/driving/ulez" data-advert-sizes="300, 50|320, 50"></div>
+    </div>
+}
+
+
+ 
+  
+
+
+
+@{ViewBag.Title = "Register a vehicle for ULEZ and LEZ";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/compliance-registration/before-you-start";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+                <li><span class="last-breadcrumb">Register a vehicle for ULEZ and LEZ</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Register a vehicle for ULEZ and LEZ</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/compliance-registration/before-you-start"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+      <div class="article-teaser">
+        <p>Register with us if we have said you need to pay ULEZ or LEZ charges for your vehicle, and you believe that's not the case.</p>
+        
+      </div>
+    
+    
+      
+      
+           
+      
+
+        <h2>Before you start</h2>
+
+<p>Before we can process your application, you need to have&nbsp;a London Road User Charging account. You will create one as part of this process.</p>
+
+<p>To register you will need to upload documents proving that your vehicle meets the required emissions standards, should be exempt or is subject to the showman's 100% discount.</p>
+
+<p>Find out about meeting <a href="/modes/driving/ultra-low-emission-zone/ways-to-meet-the-standard">ULEZ emissions standards</a> and <a href="/modes/driving/low-emission-zone/find-out-if-you-need-to-register">LEZ emissions standards</a>.</p>
+
+<h3>Documents you need for proof</h3>
+
+<h4>All vehicles:</h4>
+
+<ul>
+	<li>A copy of the vehicle's V5C or non-UK equivalent</li>
+</ul>
+
+<p>Plus</p>
+
+<h4>To prove your vehicle meets the ULEZ standards:</h4>
+
+<ul>
+	<li>A letter from the vehicle manufacturer's homologation department stating the vehicle's Euro standard or a conformity certificate</li>
+</ul>
+
+<h4>To prove your vehicle meets the LEZ standards:</h4>
+
+<ul>
+	<li>Proof of abatement equipment fitted to the vehicle</li>
+</ul>
+
+<h2>Showman's discount</h2>
+
+<p>To apply for the 100% showman's discount, or to prove a vehicle is exempt from either scheme, you will also need to provide four photographs of the vehicle (front, sides, rear and interior).</p>
+
+<p>You will get more details of what is needed for proof during the application process.</p>
+    
+ <div class="accordion">
+
+
+
+
+<div class="expandable-box">
+
+
+
+
+        <div class="content">
+            <div class="always-visible" role="button" aria-controls="cherished-transfer-content" aria-expanded="false" tabindex="0">
+                <div class="controls" data-tracking="prop36" data-tracking-value="Register a vehicle for LEZ and ULEZ-Cherished Transfer"><span class="visually-hidden">Toggle accordion</span></div>
+                <div id="cherished-transfer-heading" class="accordion-heading">Cherished Transfer</div>
+            </div>
+            <div id="cherished-transfer-content" class="start-hidden" role="region" aria-labelledby="cherished-transfer-heading">
+<p>You must notify the <a href="https://www.gov.uk/government/organisations/driver-and-vehicle-standards-agency">Driver and Vehicle Standards Agency (DVSA)</a> immediately when the number plate of your vehicle has changed if it has a Reduced Pollution or Low Emission Certificate.</p>
+
+<p>For Heavy Goods Vehicles over 3.5 tonnes Gross Vehicle Weight you will need to submit a Notifiable Alteration Form, the appropriate fee along with the original Reduced Pollution or Low Emission Certificate. You can <a href="https://www.gov.uk/government/publications/details-of-notifiable-alterations-or-application-for-a-change-of-plated-details-of-a-goods-motor-vehicle">download the notifiable alteration form and guidance notes on GOV.UK</a>.</p>
+
+<p>For Light Goods Vehicles 3.5 tonnes Gross Vehicle Weight and under, you will need to send a copy of the V5C vehicle registration certificate (logbook) displaying the new number plate along with the original Reduced Pollution or Low Emission Certificate to:</p>
+
+<p>RPC Section<br />
+DVSA<br />
+Ellipse<br />
+Padley Road<br />
+Swansea SA1 8AN</p>
+
+<p>There is no fee for the issue of a new certificate.</p>
+
+<p>For buses, coaches or minibuses, you need to submit a copy of the V5C vehicle registration certificate (logbook) displaying the new number plate along with the original Reduced Pollution or Low Emission Certificate and, if it applies, the original Certificate of Initial Fitness. All documents should be sent together to the address above.</p>
+
+<p>There is no fee for the issue of new Reduced Pollution or Low Emission Certificates due to number plate change.</p>
+
+            </div>
+        </div>
+    </div>
+ 
+</div>
+ 
+
+        @{
+            dynamic content = new ContentModel();
+            content.ContinueButtonText = "Start";
+
+            Html.RenderAction("BeforeYouStart", "ComplianceRegistration", new
+            {
+                area = "Ruc",
+                content = content,
+                vehicleTypeUrl = "/modes/driving/compliance-registration/vehicle-type"
+            });
+        }
+    
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="advert-tile unsponsored-style google-ads" aria-hidden="true">
+  <div class="advert-link">
+    <div class="advert-content">
+        <div class="medium-large" data-advert="/76889402/driving/ulez" data-advert-sizes="300, 250"></div>
+        <div class="small" data-advert="/76889402/driving/ulez" data-advert-sizes="300, 250"></div>
+    </div>
+  </div>
+</div>
+@{
+    ViewBag.AmazonSlot = "'amznslots'";
+    ViewBag.AmazonAds = "'3199'"; // to add another value, this needs to be ViewBag.AmazonAds = "'3199','xx'";
+}
+      
+
+ </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+     @section scripts {
+<div class="bottom-advert ">
+    <div class="close-ad-button visually-hidden"><span class="close-icon-circle"></span></div>
+    <div data-advert="/76889402/driving/" data-advert-sizes="320, 50"></div>
+</div>
+}
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "Before you start check if you need to register your vehicle";}
+        
+            
+        
+
+
+ 

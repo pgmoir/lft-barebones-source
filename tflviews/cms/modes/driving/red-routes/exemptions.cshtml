@@ -1,0 +1,296 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Exemptions";}
+@{ViewBag.Keywords = "Businesses,Drivers,Motorbikers,Public,Driving,Motorcycle,TfL";}
+@{ViewBag.Url = "/modes/driving/red-routes/exemptions";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                 <li><a href="/modes/driving/red-routes">Red routes</a></li>
+                
+            
+                
+                <li><span class="last-breadcrumb">Exemptions</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Exemptions</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/account-account-landing-29377"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+      <div class="article-teaser">
+        <p>If you have a Blue Badge or drive a motorcycle, taxi or private hire vehicle, you'll have more flexibility when using red routes. </p>
+        
+      </div>
+    
+    
+      
+        <h2>Blue Badge holders</h2>
+        <p>If you have one, you can often park where
+        others can't. Make sure you display your badge. Signs tell you exactly
+        when and where. Always check the sign.</p>
+        <p>Loading boxes: Generally for up to three hours<br />
+        Parking boxes: Generally for as long as you like<br />
+        Red lines: You can stop on these to pick up and drop off blue badge holders but you'll need to move on quickly
+        </p>
+        <h2>Taxi and Private Hire
+        </h2>
+        <p>Always display your licence and exemption sticker. Private hire vehicle owners will now be offered red route exemption stickers at the point of inspection. We will not, under any circumstances, issue a red route sign to an individual whose vehicle is not on site for a licensing inspection.</p>
+        <p>You can pick up and drop off passengers on most red routes as long as you display your private hire vehicle (PHV) license. It will tell police, CCTV operators and other road users that you're allowed to do this. It also means that you'll avoid receiving a penalty charge.</p>
+        <p>You can't stop on the parts of the red route with a wide red line, pedestrian crossings or zigzags.</p>
+        <h3>Bus lanes</h3>
+        <p>
+        PHVs can also cross bus lanes to gain access to the kerbside to
+        pick up or drop off passengers, but must leave the bus lane straight
+        away.
+        </p>
+        <p>In most cases, taxis are permitted to use bus lanes but licensed PHVs
+        are not.</p>
+        <h2>Motorcycles and other vehicles in bus lanes
+        </h2>
+        <h3>Who can use a bus lane?</h3>
+        <ul>
+            <li>
+            Motorcycles (without side cars) </li>
+            <li>Mopeds </li>
+            <li>Scooters </li>
+            <li>Tricycles (non-motorised, motorised under 450kg, not with side cars) </li>
+            <li>Buses which have a minimum of 10 seats (including the driver) </li>
+        </ul>
+        <h2>Safety</h2>
+        <p><strong>Drivers</strong>: look out for motorcyclists in bus lanes, especially when turning out of or into a side road.</p>
+        <p><strong>Motorcyclists, cyclists and pedestrians</strong>: look out for vehicles turning across bus lanes and remain visible when using bus lanes. </p>
+    
+      
+           
+      
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+ 
+ 
+ 
+                <a href="/modes/driving/red-routes" class="heading">
+                    <h3 id="sub-menu-heading" class="h2">Red routes<span class="visually-hidden"> navigation</span></h3>
+                </a>
+                <ul>
+                    
+                                <li aria-label="page with no sub pages"><div class="link-wrapper"><a href="/modes/driving/red-routes/red-route-maps">Red route maps</a></div></li>
+                            
+ 
+                                <li class="parent" aria-label="page with sub pages"><div class="link-wrapper"><a href="/modes/driving/red-routes/rules-of-red-routes">Rules of red routes</a></div></li>
+                            
+ 
+                                <li class="parent" aria-label="page with sub pages"><div class="link-wrapper"><a href="/modes/driving/red-routes/penalty-charge-notices">Penalty Charge Notices</a></div></li>
+                            
+ 
+                                <li aria-label="page with no sub pages"><div class="link-wrapper"><a href="/modes/driving/red-routes/dispensations">Red route dispensations</a></div></li>
+                            
+ 
+                                <li class="selected" aria-label="selected page with no sub pages"><div class="link-wrapper"><a href="/modes/driving/red-routes/exemptions">Exemptions</a></div>
+                            </li>
+ 
+                                <li class="parent" aria-label="page with sub pages"><div class="link-wrapper"><a href="/modes/driving/red-routes/contact-red-routes">Contact red routes</a></div></li>
+                            
+ 
+                </ul>
+            
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+      </div>
+    
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="advert-tile unsponsored-style google-ads" aria-hidden="true">
+  <div class="advert-link">
+    <div class="advert-content">
+        <div class="medium-large" data-advert="/76889402/driving/" data-advert-sizes="300, 250"></div>
+        <div class="small" data-advert="/76889402/driving/" data-advert-sizes="300, 250"></div>
+    </div>
+  </div>
+</div>
+@{
+    ViewBag.AmazonSlot = "'amznslots'";
+    ViewBag.AmazonAds = "'3199'"; // to add another value, this needs to be ViewBag.AmazonAds = "'3199','xx'";
+}
+      
+
+ </div>
+    
+      <div>
+                    
+        <div>
+
+    <div class="contact-info-box">
+         <div class="contact-info-header">
+             <h3>Red routes</h3>
+         </div>
+        
+        
+        
+        
+        <div class="content-group">
+            <p>
+                
+                
+                <abbr title="Telephone number">Phone</abbr>: 0343 222 3333<br />
+                
+                
+                
+                
+                
+                
+            </p>
+            <p>08:00-20:00 Monday to Friday, closed on weekends and bank holidays (<a href="/corporate/terms-and-conditions/tfl-call-charges">TfL call charges</a>)</p>
+        </div>
+        
+        <div class="content-group">
+            
+            
+            <p>
+                
+                Transport for London <br />
+                PO Box 335<br />
+                Darlington DL1 9PU<br />
+                
+            </p>
+            
+            
+        </div>
+        
+                
+        <div class="vertical-button-container clearfix">
+            <a href="/modes/driving/red-routes/contact-red-routes" class="plain-button">Contact red routes</a>
+        </div>
+        
+    </div>
+</div>
+ 
+      </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "Blue Badge holders, motorcyclists and taxi or private hire vehicles have more flexibility on red routes";}
+        
+            
+        
+
+
+ 

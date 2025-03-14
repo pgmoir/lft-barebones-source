@@ -1,0 +1,147 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "DVS Enquiry Success";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/dvs-enquiry-success";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+                
+                <li><span class="last-breadcrumb">DVS Enquiry Success</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>DVS Enquiry Success</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      <h2>Your enquiry has been sent</h2>
+      
+           
+      
+
+        @{
+            dynamic content = new ContentModel();
+            content.ThankYouHeading = "Thank you for your enquiry";
+            content.ReferenceNumberText = "Your reference number is";
+            content.EmailRespondMessage = "We will aim to respond to you at the email address as soon as possible. This is normally within 15 working days.";
+            content.EnquiryDetailsStepHeading = "Enquiry details";
+            content.PersonalDetailsStepHeading = "Personal details";
+            content.ReviewStepHeading = "Review";
+            content.ConfirmationStepHeading = "Confirmation";
+            
+            Html.RenderAction("ConfirmEnquiry", "Enquiry", new { area = "Ruc", content });
+        }
+      
+  
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+      </div>
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

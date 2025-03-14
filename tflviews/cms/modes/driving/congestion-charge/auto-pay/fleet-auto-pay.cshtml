@@ -1,0 +1,71 @@
+﻿
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@section adverts {
+    <div class="top-banner-advert" aria-hidden="true">
+        <div class="large" data-advert="/76889402/driving/cc" data-advert-sizes="970, 90|970, 250"></div>
+        <div class="medium" data-advert="/76889402/driving/cc" data-advert-sizes="728, 90"></div>
+        <div class="small" data-advert="/76889402/driving/cc" data-advert-sizes="300, 50|320, 50"></div>
+    </div>
+}
+
+
+ 
+  
+
+
+
+@{ViewBag.Title = "Fleet Auto Pay - Redirect";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/congestion-charge/auto-pay/fleet-auto-pay";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+
+@{
+    Response.Status = "302 Moved temporarily";
+    Response.AddHeader("Location", "/modes/driving/fleet-auto-pay");   
+}
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

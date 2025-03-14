@@ -1,0 +1,255 @@
+﻿
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@section adverts {
+    <div class="top-banner-advert" aria-hidden="true">
+        <div class="large" data-advert="/76889402/driving/payment" data-advert-sizes="970, 90|970, 250"></div>
+        <div class="medium" data-advert="/76889402/driving/payment" data-advert-sizes="728, 90"></div>
+        <div class="small" data-advert="/76889402/driving/payment" data-advert-sizes="300, 50|320, 50"></div>
+    </div>
+}
+
+
+ 
+  
+
+
+
+@{ViewBag.Title = "Basket";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/pay-to-drive-in-london/basket-details";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                 <li><a href="/modes/driving/pay-to-drive-in-london">Pay to drive in London</a></li>
+                
+            
+            
+            
+                
+                <li><span class="last-breadcrumb">Basket</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Basket</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/account-account-landing-29377"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+
+	    @{
+            dynamic content = new ContentModel();
+            content.ClearBasketButtonText = "Clear basket";
+            content.BasketTotalAsideLabelText = "Basket: ";
+            content.TotalText = "Total";
+            content.SendEmailReceiptText = "Email receipt";
+            content.SendTextMessageReceiptText = "Text message receipt";
+            content.PayButtonText = "Confirm and pay";
+            content.EmptyBasketText = "Basket is empty";
+            content.PayForAVehicleButtonText = "Pay for a vehicle";
+            content.AddAnotherChargeButtonText = "Add another charge";
+            content.PayForADifferentVehicleButtonText = "Pay for a different vehicle";
+            content.BasketItemsRemoveText = "If you remove this charge you may get a penalty.";
+            content.DiscardRemoveButtonText = "Keep";
+            content.ConfirmRemoveButtonText = "Remove";
+            content.ReturnUrl = "/modes/driving/pay-to-drive-in-london/payment-result";
+            content.SendAReceiptTitleText = "Send receipt (optional)";
+            content.EmailAddressTooltip = "Enter email address";
+            content.EmailAddressLabel = "Email address";
+            content.MobileTelTooltip = "Enter mobile number";
+            content.MobileTelLabel = "Mobile number";
+            content.DisclaimerHeadingText = "Disclaimer";
+            content.AcceptDisclaimerText = "I accept responsibility for paying the correct charges for my journey. The charges I am paying cover the correct zones for the dates and times I am travelling.";
+            content.CongestionChargeLabelText = "Congestion Charge";
+            content.LezChargeLabelText = "LEZ charge";
+            content.UlezChargeLabelText = "ULEZ charge";
+            content.AddAnotherChargeUrl = "/modes/driving/pay-to-drive-in-london/select-charges";
+            content.PayForADifferentVehicleUrl = "/modes/driving/pay-the-charge-select-vehicle-26283";
+            content.PayToDriveInLondonUrl = "/modes/driving/pay-the-charge-select-vehicle-26283";
+            content.DisclaimerNotAcceptedValidationMessage = "Accept to continue";
+            content.EmailAddressIsInvalidValidationMessage = "Not a valid email address";
+            content.EmailAddressRequiredValidationMessage = "Enter email address";
+            content.MobileNumberIsInvalidValidationMessage = "Not a valid mobile number";
+            content.MobileNumberRequiredValidationMessage = "Enter mobile number";
+            content.PaymentUrl = "/modes/driving/pay-to-drive-in-london/select-payment-card"; 
+            content.AccountVehiclesPageUrl = "/modes/driving/account-vehicles";
+            
+            Html.RenderAction("BasketDetails", "PayCharges", new
+            {
+                content = content 
+            });
+        }    
+	  
+
+  
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="advert-tile unsponsored-style google-ads" aria-hidden="true">
+  <div class="advert-link">
+    <div class="advert-content">
+        <div class="medium-large" data-advert="/76889402/driving/payment" data-advert-sizes="300, 250"></div>
+        <div class="small" data-advert="/76889402/driving/payment" data-advert-sizes="300, 250"></div>
+    </div>
+  </div>
+</div>
+@{
+    ViewBag.AmazonSlot = "'amznslots'";
+    ViewBag.AmazonAds = "'3199'"; // to add another value, this needs to be ViewBag.AmazonAds = "'3199','xx'";
+}
+      
+
+ </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+     @section scripts {
+<div class="bottom-advert ">
+    <div class="close-ad-button visually-hidden"><span class="close-icon-circle"></span></div>
+    <div data-advert="/76889402/driving/" data-advert-sizes="320, 50"></div>
+</div>
+}
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "Basket";}
+        
+            
+        
+
+
+ 

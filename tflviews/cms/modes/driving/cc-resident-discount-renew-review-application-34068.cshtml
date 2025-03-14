@@ -1,0 +1,155 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Review application";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-resident-discount-renew-review-application-34068";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Review application</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Review application</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+ 
+        
+        <!-- 8. resident-discount -->
+        @{
+            dynamic content = new ContentModel();
+
+            content.BackButtonText = "Back";
+            content.ContinueButtonText = "Continue";
+
+            content.VehiclesHeading = "Vehicle";
+            //content.SeatCountText = "Seat count:";
+
+            //content.TermsAndConditionsHeading = "Terms and Conditions";
+            //content.TermsAndConditionsText = "I confirm that I have read and understood and accept the <a href=\"/\" target=\"_blank\">Resident discount terms and conditions</a>";
+
+            content.EvidenceHeading = "Uploaded documents";
+            content.EvidenceByPostText = "You have not uploaded any documents.";
+
+            content.PaymentHeading = "Payment summary";
+            content.PayementText = "<p>You need to pay the £10 registration charge before your application can be considered. </p><p>'Continue' to make this payment.</p>";
+            content.PaymentTotalText = "Total";
+
+            content.AddressHeading = "Address";
+            content.AddressText = "Address";
+
+            content.ReviewEditButtonText = "Edit";
+            content.ActiveDiscountText = "Active on: ";
+
+            //content.SkippedVehicleText = "<p>You have not yet added a vehicle.</p>";
+            content.NoVehicleText = "You have no vehicles on your discount.";
+            
+            //content.TermsAndConditionsAcceptedRequireTrue = "You must accept the terms and conditions.";
+
+            Html.RenderAction("ReviewApplication", "DiscountRenew", new
+                {
+                    area = "Ruc",
+                    discountStyle = ZoneChargeDiscountStyle.ResidentsDiscount,
+                    discountAction = DiscountAction.Renew,
+                    content = content,                    
+                    enterDetailsUrl = "/modes/driving/cc-resident-discount-renew-check-zone-34059",
+                    uploadEvidenceUrl = "/modes/driving/cc-resident-discount-renew-upload-evidence-34078",
+                    selectVehicleUrl = "/modes/driving/cc-resident-discount-renew-check-vehicle-34057",                    
+                    paymentUrl = "/modes/driving/cc-resident-discount-renew-payment-34063",
+                    journeyStartUrl = "/modes/driving/cc-discount-manage-discounts-32822"
+                }
+            );
+        }
+        
+	  
+
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

@@ -1,0 +1,203 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Quick Management list";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/account-quick-management-list-37474";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Quick Management list</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Quick Management list</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+      <div class="article-teaser">
+        <p>You can save a maximum of 10 vehicles to your account to speed up making payments.</p>
+        
+      </div>
+    
+    
+      
+      
+           
+      
+
+
+		
+		<!-- 3. account-quick-management-list -->
+		@{
+            dynamic content = new ContentModel();
+            content.VehiclesUsedText = "Vehicles added";
+            content.BackButtonText = "Back";
+            content.AddVehicleButtonText = "Add vehicle";
+            content.QmlLimitReachedTitle = "You already have 10 vehicles saved on your Quick Management list";
+            content.QmlLimitReachedText = "To add another vehicle, you first need to remove one.";
+
+            /* Charge labels and messages */
+            content.NonChargeableLabel = "No charge due";
+            content.NonChargeableMessage = "Based on the vehicle details entered and information held by the DVLA and TfL today, you don't have to pay the ULEZ charge for this vehicle. This may change - always check to see if you need to pay to drive within the zone.";
+            content.PayableHighLabel = "Should be paid";
+            content.PayableHighMessage = "This vehicle does not meet the ULEZ emissions standards. You need to pay the ULEZ charge if you drive within the zone. The zone operates all the time except Christmas Day - charging days run from midnight to midnight.";
+            content.PayableLowLabel = "Should be paid";
+            content.PayableLowMessage = "This vehicle does not meet the ULEZ emissions standards. You need to pay the ULEZ charge if you drive within the zone. The zone operates all the time except Christmas Day - charging days run from midnight to midnight.";
+            content.ExemptLabel = "Exempt";
+            content.ExemptMessage = "Based on the vehicle details entered and information held by the DVLA and TfL today, this vehicle is exempt from this charge. This may change - always check to see if you need to pay to drive within the zone.";
+            content.CompliantLabel = "Meets the standard";
+            content.CompliantMessage = "This vehicle either meets the ULEZ emissions standards, is exempt or you don't have to pay the charge for it.";
+            content.PayableLabel = "Should be paid";
+            content.PayableMessage = "You need to pay the Congestion Charge for this vehicle if you drive within the zone Monday to Friday, 07:00-18:00 excluding bank holidays and the period between Christmas Day and New Year's Day.";
+            content.FullDiscountLabel = "100% discount";
+            content.FullDiscountMessage = "This vehicle is currently registered for a 100% discount from this charge. Check when the discount expires in the 'Manage discounts' section of your account.";
+            content.ChargeabilityUnknownLabel = "Unknown";
+            content.ChargeabilityUnknownMessage = "We don't hold any charge details for this vehicle.";
+            content.UnknownVehicleWarningMessage = "We don't have any details for this vehicle at the moment. If you want to add it to a discount application or to Auto Pay you need to add it as a new vehicle.";
+    
+            /* CommonList CMS properties */
+            content.ServiceError = "There was a problem - we can't retrieve your vehicles";
+    
+            /* Search, Sort Filter Section */
+            content.SearchLabelText = "Search by number plate";
+            content.SearchPlaceholderText = "eg AB01ABC";
+            content.SortLabelText = "Sort";
+            content.ApplyFilterButtonText = "Apply filter";
+            content.ResetFilterButtonText = "Reset filter";
+    
+            /* Composite Vehicle List Summary*/
+            content.TotalRecordsLabelTemplate = "{0} vehicle";
+            content.PluralTotalRecordsLabelTemplate = "{0} vehicles";
+            content.DownloadButtonText = "Download list";
+            content.DownloadButtonUrl = "//";
+    
+            /* Composite Vehicle List Panel */
+            content.AddTagText = "Add tag";
+            content.EditTagText = "Edit tag";
+            content.CcLabel = "CC";
+            content.UlezLabel = "ULEZ";
+            content.DateAddedText = "Date added";
+            content.ExpiryDateText = "Expiry date";
+            content.MoreDetailsLabelText = "Charge details";
+            content.LessDetailsLabelText= "Charge details";
+    
+            /* Add, Edit, Remove Tag Modal */
+            content.AddTagModalHeadingText = "Add a tag";
+            content.AddTagModalMessageText = "Adding a tag will help you identify your vehicle more easily.";
+            content.EditTagModalHeadingText = "Edit tag";
+            content.EditTagModalMessageText = "Change your vehicle tag or remove it.";
+            content.AddTagLabel = "Add tag";
+            content.EditTagLabel = "Edit tag";
+            content.TagModalSaveButtonText = "Save";
+            content.TagModalCancelButtonText = "Cancel";
+    
+            /* Remove Vehicle Modal */
+            content.RemoveVehicleModalHeadingText = "Are you sure?";
+            content.RemoveVehicleModalMessageText = "This will remove the vehicle from your list.";
+            content.RemoveVehicleModalConfirmButtonText = "Remove";
+            content.RemoveVehicleModalCancelButtonText = "Keep";
+    
+            content.ManageMyVehiclesHeading = "Manage my vehicles";
+            content.ManageMyVehiclesText = "To make any changes to your vehicles, use the links below.";
+            content.ManageOrApplyAutoPayText = "Manage or set up Auto Pay";
+            content.ManageOrApplyAutoPayUrl = "/modes/driving/cc-autopay-manage-manage-29152";
+            content.ManageVehiclesOnDiscountText = "Manage vehicles on discounts";
+            content.ManageVehiclesOnDiscountUrl = "/modes/driving/cc-discount-manage-discounts-32822";
+            content.AllVehicleHistoryUrl = "/modes/driving/cc-autopay-manage-view-vehicle-history-30894";
+            content.AllVehicleHistoryText = "All vehicle history";
+    
+            /* Custom messages */
+            content.CustomResultsMessageFormat = "{0}/{1} vehicles";
+
+            Html.RenderAction("QMLManage", "QMLManage", new
+                {
+                    Area = "Ruc",
+                    content = content,
+                    backUrl = "/modes/driving/account-active-vehicles-37471",
+                    addVehicleUrl = "/modes/driving/account-add-qml-vehicle-37477"
+                }
+            );
+                
+        }
+
+		
+	  
+
+  
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "You can save a maximum of 10 vehicles to your account to speed up making payments.";}
+        
+            
+        
+
+
+ 

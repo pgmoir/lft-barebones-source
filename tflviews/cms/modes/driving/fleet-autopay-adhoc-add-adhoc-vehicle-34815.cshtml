@@ -1,0 +1,191 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Vehicle details";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/fleet-autopay-adhoc-add-adhoc-vehicle-34815";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                 <li><a href="/modes/driving/auto-pay">Auto Pay</a></li>
+                
+            
+            
+            
+                <li><span class="last-breadcrumb">Vehicle details</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Vehicle details</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+      <div class="article-teaser">
+        <p>You can pay the daily Congestion Charge and the ULEZ charge for a vehicle that is not on your Fleet Auto Pay service.</p>
+        
+      </div>
+    
+    
+      <h2></h2>
+      
+           
+      <div>
+
+<p>You do not have to pay the annual registration charge for these vehicles. The Congestion Charge and/or ULEZ&nbsp; charge will be added to your next monthly statement.</p>
+
+<p>You are allowed a number of ad hoc charges each month. This is based on the number of vehicles you had on your Fleet Auto Pay service when your last statement was issued.</p>
+</div>
+ 
+
+          <!-- /autopay/fleet/adhoc/add-adhoc-vehicle -->
+        @{
+            dynamic content = new ContentModel();
+
+            content.ConfirmVehicleButtonText = "Confirm vehicle";
+            content.BackButtonText = "Back";
+            content.ContinueButtonText = "Continue";
+            // JSON content.FindVehicleButtonText = "Find vehicle";
+            // JSON content.VrmHelpMessageText = "Be careful not to mix up the letters 'I' and 'O' with the numbers '1' and '0'. Choose the correct country of registration. You risk getting a penalty if you pick the wrong one.";
+            // JSON content.VrmTitle = "Enter a Vehicle Registration Mark";
+            // JSON content.VrmPlaceHolder = "eg AB01ABC";
+            // JSON content.CountryofRegistrationTitle = "Country of registration";
+            content.CcDiscountedTitle = "This vehicle is currently registered for a 100% Congestion Charge discount";
+            content.CcDiscountedText = "<p>You can check when this discount expires in the 'Manage discounts' section of your account. You can still continue to pay for Congestion Charges and ULEZ charges.</p>";
+            content.CcExemptTitle = "This vehicle is exempt from the Congestion Charge";
+            content.CcExemptText = "<p>Based on the vehicle details entered and information held by us today, your vehicle is  exempt from the Congestion Charge.</p><p>If you believe this information is incorrect you can still continue.</p><p><strong>This exemption could change without notice - always check to see if you need to pay for journeys into the zone.</strong></p>";
+            //content.ThisisNotMyVehicleTitle = "What if my vehicle details are incorrect?";
+            //content.ThisisNotMyVehicleText = "<p>If the Vehicle Registration Mark is correct but the description shown is wrong, you can still pay for this vehicle.</p><p>Vehicle information is provided to TfL by the DVLA, so you'll need to let the DVLA know if your details are wrong or need to be updated.</p>";
+            // JSON content.VehicleNotFoundTitle = "<strong>No details returned for this vehicle</strong><div><strong><br /></strong></div>";
+            // JSON content.ConfirmEnteredVrmDetailsText = "Yes, this is the correct vehicle ";
+            // JSON content.VehicleNotFoundText = "<p><strong>UK-registered:</strong> If your vehicle’s make and model details have not been returned, please make sure you entered the Vehicle Registration Mark correctly before continuing.</p><p><strong>Registered outside the United Kingdom:</strong> We are unable to display the make, model and colour information. Confirm your details before continuing.</p>";
+            content.VehicleOnAutoPayErrorText = "<p>This vehicle is already on an Auto Pay service and can't be added again.</p><p> If it is not on your service, please call 0343 222 2222 (<a href='/corporate/terms-and-conditions/tfl-call-charges'>TfL call charges</a>) for more information.</p>";
+            content.VehicleAlreadyAddedErrorText = "No need to check this box as your vehicle is already on your account.";
+            content.QmlLimitReachedTitle = "You can save up to 10 vehicles to your Quick Management List";
+            content.QmlLimitReachedText = "To add another vehicle, you will first need to remove one.";
+            content.ActiveDiscountText = "Active on: ";
+            content.QmlUseDifferentVehicleText = "Use a different vehicle";
+            content.ConfirmSaveVehicleToQmlText = "Save this vehicle to my account";
+            content.SelectDateInstructionText = "Select a date to pay an ad hoc Congestion Charge";
+            content.DatePickerInstructionText = "";
+            content.ChosenDateInformation = "<p>1 charging day<strong> </strong>{0}.</p>";
+            content.SummaryInformation = "The charge will be added to your next monthly statement.  This is an ad hoc payment and the vehicle has <strong>not </strong>been added to your Fleet Auto Pay service.";
+            // JSON content.CountryOptionUk = "United Kingdom";
+            // JSON content.CountryOptionOther = "Non-UK";
+            content.CheckQmlVehicleButtonText = "Check";
+            content.ConfirmVehicleErrorText = "Find a vehicle to continue";
+            // JSON content.VrmAcceptedRequireTrue = "Confirm this is the correct vehicle to continue";
+            // JSON content.VehicleRegistrationMarkRequired = "Enter a Vehicle Registration Mark to continue";
+            content.FriendlyNameLabel = "Tag";
+            content.FriendlyNameStringLength = "The vehicle tag can't be more than 40 characters";
+            content.CcAndToxicityChargeableText = "Your vehicle does not meet the required emissions standard, when paying the Congestion Charge the total amount payable will include an additional T- Charge value. More information on the T-Charge can be found at <a href='/modes/driving/emissions-surcharge' target='_blank'>tfl.gov.uk/driving/t-charge</a>";
+            content.CcExemptAndToxicityChargeableText = "Your vehicle does not meet the required emissions standard, although you are currently exempt from the Congestion Charge you will need a T-Charge value to drive your vehicle in the Congestion Charging zone. More information on the T-Charge can be found at <a href='/modes/driving/emissions-surcharge' target='_blank'>tfl.gov.uk/driving/t-charge</a>";
+            content.ToxicityChargeHeaderText = "T-Charge payable";
+            content.GeneralMessageHeading = "<h2>What if my vehicle details are incorrect?</h2>";
+            content.GeneralMessageBody = "<p>If the number plate is correct but the description shown is wrong, you can still continue.</p><p>Vehicle information is provided to TfL by the DVLA so you'll need to let the DVLA know if your details are wrong or need to be updated.</p>";
+            content.ExemptFromAllChargesHeading = "This vehicle is exempt";
+            content.ExemptFromAllChargesMessage = "<p>EXEMPT FROM ALL CHARGES MESSAGE</p>";
+
+            Html.RenderAction(
+                RucDictionary.AutoPayManage.AddAdhocVehicleActionName,
+                "AutoPayManageAdhocVehicle",
+                new
+                {
+                    area = "Ruc",
+                    continueUrl = "/modes/driving/fleet-autopay-adhoc-add-adhoc-vehicle-date-34814",
+                    content = content,
+                    feePerVehicle = 10m,
+                    style = ZoneChargeAutoPayStyle.Fleet,
+                    lookupType = VehicleLookupType.AutoPayFleetAdhoc,
+                }
+            );
+        }
+        
+        @this.ScriptBlock(@<script>
+            queue.push(function () {
+                var vrm = "@Request.QueryString["vrm"]",
+                    $vrmSearchBox = $("#VehicleRegistrationMark");
+        
+                if ($.trim(vrm).length > 0) {
+                    $vrmSearchBox.val(vrm);
+                    var url = String(window.location.href).replace("?vrm=" + vrm, "");
+                    history.pushState({}, document.title, url);
+                }
+            })
+        </script>)                    
+        
+	  
+
+
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "You can pay the daily Congestion Charge and the ULEZ charge for a vehicle that is not on your Fleet Auto Pay service.";}
+        
+            
+        
+
+
+ 

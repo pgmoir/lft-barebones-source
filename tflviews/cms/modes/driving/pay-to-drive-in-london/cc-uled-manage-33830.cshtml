@@ -1,0 +1,185 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Manage Ultra Low Emission Discount";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-uled-manage-33830";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Manage Ultra Low Emission Discount</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Manage Ultra Low Emission Discount</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+
+	    
+		<!-- 10. uled -->
+		@{
+            dynamic content = new ContentModel();
+
+            content.SingleActiveCountText = "Discount status: Active on <strong>1</strong> vehicle";
+            content.ActiveCountTextFormat = "Discount status: Active on <strong>{0}</strong> vehicles";
+
+            Html.RenderAction(
+                "DiscountActiveVehicleCount",
+                "DiscountManage",
+                new
+                {
+                    area = "Ruc",
+                    discountStyle = ZoneChargeDiscountStyle.UltraLowEmission,
+                    content = content
+                }
+            );
+        }
+
+        @{
+            dynamic listContent = new ContentModel();
+            
+            listContent.ListHeading = "Ultra Low Emission Discount (ULED) vehicle(s)";
+            listContent.ConfirmRemoveItemText = "Are you sure you want to remove this vehicle from the discount?";
+            listContent.ItemRemoveSuccessTextFormat = "You have removed {0} from the ULED.";
+            listContent.ItemRemoveErrorTextFormat = "An error occurred. Please try removing {0} from the ULED again.";
+            //listContent.SearchLabel = "Search for VRM";
+            listContent.RenewDiscountLinkText = "Renew discount";            
+            listContent.DownloadFilteredListButtonText = "Download this list";
+            //listContent.FilterButtonText = "Confirm and apply filters";
+            //listContent.SortByText = "Sort by";
+            //listContent.TypeText = "Type";
+            //listContent.OrderText = "Order";
+            listContent.VrmOption = "Vehicle Registration Mark";
+            listContent.DateOption = "Expiry date";
+            //listContent.AscendingOption = "Ascending";
+            //listContent.DescendingOption = "Descending";
+            
+            Html.RenderAction(
+                CommonDictionary.ListModule.ListActionName,
+                "VehicleList",
+                new
+                {
+                    area = "Ruc",
+                    discountStyle = ZoneChargeDiscountStyle.UltraLowEmission,
+                    listContent = listContent,
+                    itemSelectUrl = "/modes/driving/cc-uled-renew-renew-22942?VRM={0}&ServiceId={1}"
+                }
+            );
+        }
+
+        @ModulesHelpers.LinkWithIcon(
+            "Apply for another vehicle", 
+            "add-vehicle",
+            "/modes/driving/cc-uled-before-you-begin?sourceRoutingKey=manage-uled",
+            responsive: true
+        )
+
+        @ModulesHelpers.BoxedLink(
+            href: "/modes/driving/cc-discount-view-vehicle-history-32867?Search.ServiceType=UltraLowEmission", 
+            id: "vehicle-history", 
+            text: "ULED discount vehicle history", 
+            soloButton: true
+        )
+
+        @FormHelpers.DottedSeparator()
+        @ModulesHelpers.BackLink(href: "/modes/driving/cc-discount-manage-discounts-32822")
+      
+        @this.ScriptBlock(
+          @<script>
+               queue.push(
+                    "@Html.ScriptPath("specific/list-filters-text.min.js")", null,
+                    "@Html.ScriptPath("modules/M020-on-this-page.min.js")", null,
+                    "@Html.ScriptPath("specific/results-paginator.min.js")", function() {
+                       $('#vehicle-list').paginator({
+                           showItemCount: true
+                       });
+                   });
+          </script>
+        )
+		
+	  
+
+  
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+    
+    
+    
+   
+    
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+ 
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

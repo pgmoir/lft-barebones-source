@@ -1,0 +1,140 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Manage Auto Pay";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-autopay-payment-payment-details-31055";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Manage Auto Pay</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Manage Auto Pay</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      <h2>Payment details</h2>
+<p>Your monthly payments are being taken from the bank account or payment card shown below.  If you are paying using a card please check the expiry date.  If your card expires payments will fail, and you may be issued with Penalty Charge Notices.</p>
+      
+           
+      
+
+ 
+
+
+		
+		<!-- 9. CC-payment-details -->
+        @{
+            dynamic content = new ContentModel();
+            content.CardTitle = "Card registered for Auto Pay";
+            content.CardTitleExpired = "Card registered for Auto Pay has expired";
+            content.AccountNameLabel = "Name of bank/building society";
+            content.SortCodeLabel = "Sort code";
+            content.AccountNumberLabel = "Account number";
+            content.WithinTenDaysWarningMessage = "You can't change your payment method because your next statement date falls within the next 10 days. You'll need to try again after your statement has been issued.";
+            content.AccountStatusWarningMessage = "You can't change your payment method because your Auto Pay service is not active. ";
+            content.BackButtonText = "Back";
+            content.ContinueButtonText = "Change payment details";
+            content.UpdatePaymentDetailsButtonText = "Change payment details";
+            content.UpdatePaymentDetailsButtonUrl = "/modes/driving/cc-autopay-manage-select-payment-option-37989";
+
+            Html.RenderAction(
+                "AutoPayPaymentDetail",
+                "AutoPayManage",
+                new
+                {
+                    Area = "Ruc",
+                    style = ZoneChargeAutoPayStyle.CongestionCharge,
+                    content = content
+                }
+            );
+        }
+		
+	  
+
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

@@ -1,0 +1,179 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Showman's discount";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/lez-lez-showman-before-you-begin-34305";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Showman's discount</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Showman's discount</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/account-account-landing-29377"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+    
+      <h2>Before you start</h2>
+<p>Before we can process your application for the showman's  discount, you need to set up a London Road User Charging account.</p>
+<h3>Setting up a London Road User Charging account</h3>
+<p>To create an account, click on 'Continue' and complete all required fields. You can also set up optional services, such as mobile phone text alerts, to help you manage your discount. (Sign in now if you already have an account.)</p>
+<p><strong>Benefits of a London Road User Charging account</strong></p>
+<p>Having an account with us means you can:</p>
+<ul>
+    <li>Manage and easily renew your discount online</li>
+    <li>View your discount vehicle history</li>
+    <li>Store your contact, vehicle and payment details</li>
+    <li>Allow up to <strong>5 </strong>people access to your London Road User Charging account</li>
+</ul>
+<h3>Applying for your showman's discount</h3>
+<p>Once your London Road User Charging account has been created and you sign in, you will be directed automatically to complete your discount application.</p>
+      
+           
+      
+
+
+        
+        <!-- 11. lez-showman -->
+        @using TfL.Ruc.Services.ViewModels.Ruc.DiscountApply
+        @{
+            dynamic content = new ContentModel();
+            content.WhatEvidenceHelpTitle = "What documents do I need to complete my application?";
+            content.WhatEvidenceHelpText = "<p>Supply the following photographs with your registration form:</p><ul>	<li>At least four photographs of the vehicle, one from each angle: front, back and both sides</li>	<li>Where relevant, additional photographs of the vehicle body interior to show internal structure and adaptations or any specialised equipment fitted inside or underneath the vehicle</li></ul><p>The photographs must be good enough to let us to assess whether the vehicle meets the criteria, particularly where specialist equipment is being shown.</p><p>The number plate (Vehicle Registration Mark) must be visible in one of the photographs.</p>";
+            content.ContinueButtonText = "Start";
+
+            Html.RenderAction("DiscountBeforeYouBegin", "DiscountApply", new
+                {
+                    area = "Ruc",
+                    content = content,
+                    createAccountUrl = "/modes/driving/account-start-create-account-29657",
+                    discountStyle = ZoneChargeDiscountStyle.ShowMan
+                }
+            );
+        }
+        
+
+	  
+
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/low-emission-zone" });
+        }
+        
+      
+
+ 
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        <div class="vertical-button-container">
+    <ul>
+        
+        
+        
+        <li><a href="/modes/driving/pay-to-drive-in-london"  class="plain-button">Pay to drive in London</a></li>
+        
+        
+        <li><a href="/modes/driving/amend-or-refund-a-charge"  class="plain-button">Amend or refund a charge</a></li>
+        
+        
+        <li><a href="/modes/driving/compliance-registration/before-you-start"  class="plain-button">Register your vehicle with us</a></li>
+        
+        
+        <li><a href="/modes/driving/low-emission-zone/contact-lez"  class="plain-button">Contact LEZ</a></li>
+        
+    </ul>
+</div>
+
+      </div>
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "Register for a London Road User Charging account so you can apply for a Showman's discount";}
+        
+            
+        
+
+
+ 

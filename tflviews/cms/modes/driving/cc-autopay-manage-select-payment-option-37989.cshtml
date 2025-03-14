@@ -1,0 +1,141 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Select payment method";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-autopay-manage-select-payment-option-37989";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                 <li><a href="/modes/driving/auto-pay">Auto Pay</a></li>
+                
+            
+            
+            
+                <li><span class="last-breadcrumb">Select payment method</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Select payment method</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      <h2></h2>
+      
+           
+      
+
+ 
+
+
+		
+		<!-- 1. / congestion-charge / autopay / manage / select-payment-option -->
+		@using TfL.Ruc.Services.ViewModels.Ruc.Autopay
+        @using TfL.Ruc.Services.ViewModels.Ruc.ZoneCharge;
+        @{
+            dynamic content = new ContentModel();
+            content.BackButtonText = "Back";
+            content.ContinueButtonText = "Continue";
+            content.ConfirmPaymentMethodText = "Confirm";
+            content.PreferredPaymentHeading = "Select payment method";
+            content.PaymentOptionHeading = "Select your preferred payment option";
+            content.PaymentCardLabel = "Pay by debit or credit card";            
+            content.PaymentDirectDebitOnlineLabel = "Pay by direct debit (online)";
+            content.DirectDebitOnlineManualText = "<p>If you are not the bank/building society account holder, or more than one person is required to authorise debits from this account, you will not be able to authorise a Direct Debit mandate online.</p>";
+            content.DirectDebitOnlineCorrespondenceText = "<p>All correspondence regarding this Direct Debit mandate will be sent using the preferred contact details on your London Road User Charging account.</p>";
+            content.DirectDebitOnlineAuthorisedText = "<hr class='form-separator' /><p>I confirm that I am the bank/building society account holder, and/or I have the sole responsibility for authorising debits from this account.</p>";
+            content.PaymentOptionRequired = "Select payment method to continue";
+            content.CardInfoText = "<p>I confirm that I am the cardholder and that I authorise TfL to claim varying amounts from the payment card specified above as and when they become due for the purposes of Auto Pay.</p><p>I also authorise TfL to take the annual £10 registration charge(s) for each vehicle. I understand that TfL will advise me of the amount to be paid and the dates on which payment is due, and that TfL may only change these after giving me prior notice.</p>";
+            content.WithinTenDaysWarningMessage = "You can't change your payment method to direct debit because your next statement date falls within the next 10 days. You'll need to try again after your statement has been issued.";
+            content.CardWarningText = "<p><strong>The best payment to select is direct debit</strong></p><p>If you use a payment card, don’t forget to update your new card details when they expire. Your payments will fail if you forget. This could mean that your Auto Pay service is closed and Penalty Charge Notices may be issued. This is why we&nbsp; recommend you use direct debit.</p>";
+            
+            Html.RenderAction("SelectPaymentOption", "AutoPayManage", new
+                {
+                    area = "Ruc",
+                    style = ZoneChargeAutoPayStyle.CongestionCharge,
+                    backUrl = "/modes/driving/cc-autopay-manage-manage-29152",
+                    directDebitUrl = "/modes/driving/cc-autopay-manage-direct-debit-37990",
+                    cardConfirmUrl = "/modes/driving/cc-autopay-manage-card-confirm-38087",
+                    addToExistingAutoPayServiceSuccessUrl = "/modes/driving/cc-autopay-manage-success-29161",
+                    addToExistingAutoPayServiceFailureUrl = "/modes/driving/cc-autopay-manage-failure-29132",
+                    content = content
+                }
+            );
+        }
+		
+	  
+
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

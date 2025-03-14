@@ -1,0 +1,290 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Make a representation";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/make-a-representation-wizard";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+                 <li><a href="/modes/driving/challenge-a-pcn">Challenge a PCN</a></li>
+                
+            
+            
+            
+                <li><span class="last-breadcrumb">Make a representation</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Make a representation</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+        @{
+            dynamic content = new ContentModel();
+
+            content.BackButtonText = "Back";
+            content.ContinueButtonText = "Continue";
+            content.StepOneLabel = "Reason";
+            content.StepTwoLabel = "Personal details";
+            content.StepThreeLabel = "<h2>Review your representation</h2>";
+            content.ContraventionDescriptionHeading = "Contravention details";
+            //content.IntroductoryText = "<p>You received this PCN because this vehicle was seen driving in the Congestion Charging zone.</p>";
+            content.RegisteredKeeperHeading = "Are you the vehicle's registered keeper?";
+            content.RegisteredKeeperLabel = "Select";
+            content.RelationshipToRegisteredKeeperLabel = "Relationship to registered keeper";
+            content.RelationshipToRegisteredKeeperPlaceHolder = "(eg spouse, company director, carer)";
+            content.SupportingDocumentationHeading = "Supporting documents";
+            content.EvidenceRegisterKeeper = "Attach any relevant evidence to confirm you are authorised to act on the registered keeper's behalf eg written authorisation from the registered keeper.";
+            content.AttachmentsLabel = "Attachments";
+            content.ReasonForRepresentationHeading = "Reason for representation";
+            content.MultipleReasonInformation = "<p>Select the main reason for making your representation from the list below. If an additional ground(s) applies, then reference them in the additional comments box.</p>";
+            content.DetailsOfSaleHeading = "Details of sale/transfer";
+            content.DateOfSaleLabel = "Date";
+            
+            content.DriverDetailsHeading = "New/previous keeper";
+            content.NewOwnerHeading = "New/previous keeper details";
+            content.NewOwnerFirstNameLabel = "First name";
+            content.NewOwnerLastNameLabel = "Last name";
+            content.RepresentationDetailsHeading = "Details of your representation";
+            content.RepresentationDetailsText = "Tell us why you want to challenge this PCN.";
+            content.ReasonHireVehicleText = "Give us the details of the hire agreement and who the vehicle was on hire to.";
+            content.ReasonSoldText = "Give us any other details of who the registered keeper was on the date of the contravention.";
+            content.ReasonStolenText = "Give us any other details to support your representation, for example a crime reference number and the name of the police station to which the crime was reported.";
+            content.ReasonAlreadyPaidText = "Give us more details of the payment.";
+            content.RepresentationDetailsLabel = "Additional comments";
+            content.SupportYourCaseText = "To avoid any delay in processing your representation, attach any relevant evidence that may support it.";
+            content.SupportYourHireCaseText = "Attach a copy of the hire agreement confirming the vehicle details, who it was on hire to, their address, the period of hire and a signed statement of liability.";
+            content.SupportYourSoldCaseText = "Provide copies of all relevant documents that confirm the name and address of either the new or the previous keeper as well as the date of the change of ownership.";
+            content.SupportYourStolenCaseText = "Attach evidence such as a copy of a letter from your insurance company or the crime report.";
+            content.SupportYourPaidCaseText = "To avoid any delay in processing your representation, attach any relevant evidence that may support it.";
+            content.SupportYourOtherCaseText = "To avoid any delay in processing your representation, attach any relevant evidence that may support it.";
+            
+            content.LateRepresentationHeading = "Late representation";
+            content.LateRepresentationText = "The time in which a representation can be made has lapsed. TfL does not have to consider representations that have been made late. If you weren't able to make a representation during the statutory timeframe, detail the reason(s) below eg hospitalisation.";
+            content.LateRepresentationLabel = "Reason for late representation";
+            content.PaymentReceiptHeading = "Details of charge payment";
+            content.PaymentReceiptLabel = "Payment receipt reference";
+            content.VehicleStolenHeading = "Details of when the vehicle was taken";
+            content.VehicleStolenLabel = "Date vehicle taken";
+            content.RelatedPcnsHeading = "Related PCNs";
+            content.RelatedPcnsText = "If you want to add other PCNs to this challenge, please select them below.";
+            //content.PersonalDetailsText = "Enter your personal details below: ";
+            
+            content.NameHeading = "Your details";
+            content.FirstNameLabel = "First name";
+            content.MiddleNameLabel = "Middle name";
+            content.LastNameLabel = "Last name";
+            content.AddressHeading = "Address";
+            content.ContactDetailsHeading = "Contact details";
+            content.ContactNumberLabel = "Contact number";
+            content.EmailLabel = "Email";
+            content.ConfirmEmailLabel = "Confirm email";
+            content.ResponseNotes = "<p>Our response to your representation may be served using this email address. By challenging the PCN online, you are agreeing to this. Contact us if this email address changes and make sure our emails aren’t blocked.</p>";
+            content.CompanyNameLabel = "Company name";
+            content.FalseStatementWarning = "A false statement may result in prosecution and a possible fine of up to £5000.";
+            content.DeclarationText = "I confirm that the details above are correct";
+            content.PrivacyNoticeDeclarationText = "<p>Read the <a href='/corporate/privacy-and-cookies/road-user-charging' target='_blank'>London Road User Charging privacy notice</a>.</p>";
+            content.UnableToSubmitEvidence = "<p>You have not uploaded any evidence to support your representation. If you are unable to submit your evidence at this time, you can mail it to us at:</p>";
+            
+            content.RegisteredKeeper = "Registered keeper";
+            content.SaleDetailsHeading = "Sale/transfer details";
+            content.AlreadyPaidHeading = "This PCN can't be paid";
+            content.VehicleStolen = "The vehicle was taken (ie stolen)";
+            content.SupportingEvidenceHeading = "Supporting documents";
+            content.DateSoldHeading = "Date vehicle sold/transferred";
+            content.DetailsNewKeeperHeading = "<p>Enter the details of either the new or the previous keeper, if known.</p><p><strong>The registered keeper is liable for the PCN even if someone else was driving the vehicle at the time of the contravention.</strong></p>";
+            content.DateStolenHeading = "Date the vehicle was taken (ie stolen) ";
+            content.SupportingCommentsHeading = "Additional comments";
+            content.PersonalDetailsHeading = "Personal details";
+            content.Evidence = "Supporting documents";
+
+            content.ReasonRequired = "Select the reason for your representation";
+            content.LateRepresentationRequired = "Explain why your representation is late";
+            content.LateRepresentationStringLength = "Maximum 5000 characters";
+            content.LateSupportingDocumentationHeading = "Supporting documents for late representation";
+            content.LateSupportYourCaseText = "To avoid any delay in processing your representation, attach any relevant evidence that may support your reasons for the representation being submitted late eg proof of hospitalisation.";      
+            content.RelationshipWithKeeperRequired = "Enter your relationship to the keeper";
+            content.RelationshipWithKeeperStringLength = "Maximum 1000 characters";
+            content.AdditionalInformationRequired = "Give additional information about your representation";
+            content.AdditionalInformationStringLength = "Maximum 5000 characters";
+            content.FirstNameRequired = "Enter a first name";
+            content.SurnameRequired = "Enter a last name";
+            content.AddressLineOneRequired = "Enter house name/number and street";
+            content.PostCodeRequired = "Enter a postcode";
+            content.PostCodeRegularExpression = "Check your postcode";
+            //content.DaytimeTelNumberStringLength = "Too many digits - try again";
+            content.EmailAddressRequired = "Enter email address";
+            //content.EmailAddressEmailAddress = "Enter a valid email address to continue";
+            content.EmailAddressConfirmRequired = "Confirm email address";
+            content.EmailAddressConfirmCompare = "Email addresses do not match";
+            content.CountryRequired = "Select a country to continue";
+            content.ConfirmDetailsRequireTrue = "Confirm that the information you have provided is correct";
+            content.ConfirmPrivacyNoticeRequireTrue = "Confirm you have read and understood the privacy notice";
+
+            content.RelationshipToKeeperText = "Relationship to keeper: {0}";
+            content.NoKeeperInformationEnteredText = "No keeper information entered";
+            content.NoStolenDataEnteredText = "No stolen date entered";
+            content.NoCompanyInformationProvidedText = "No company information provided";
+            content.NoSoldDateEntered = "No sold date entered";
+            content.NoEvidenceProvidedText = "No supporting documents added";
+
+            content.EmailAddressConfirmEmailAddress = "Enter a valid email address to continue";
+            content.SendEmailText = "Send me an email confirmation";
+             content.AssoicatedPcnsHeading = "Add associated PCNs";
+            content.LocationText = "Contravention location";
+            content.StatusText = "Current status";
+            content.DateText = "Contravention date and time";
+            content.DueAmountText = "Outstanding amount";
+            content.AssociatedPcnsSelectedText = "Selected associated PCNs:";
+            content.BasketLimitErrorMessage = "Can't add more associated PCNs to this challenge";
+            content.CanNotAddButtonText = "Can't add this to challenge";
+            content.AddAssociatedPcnButtonText = "Add to this ";
+            content.RemoveAssociatedButtonText = "Already added - select 'Remove'";
+            content.PcnHistoryHeading = "PCN history";
+            
+            content.NoAssociatedPcnSelectedMessage = "No associated PCNs selected";
+            content.AssociatedPcnSelectionHeadingText = "PCN: {0}";
+            content.RemoveAssociatedPcnMessage = "Do you want to remove this?";
+            content.KeepButtonText = "Keep";
+            content.RemoveButtonText = "Remove";
+            content.ReviewLabelForAssociatedPcns = "Associated PCNs";
+            content.ReviewLateRepresentationLabel = "Late representation";
+
+            Html.RenderAction(
+            "MakeRepresentation",
+            "PenaltyChargeNotice",
+                new
+                    {
+                        area = "Ruc",
+                        resultUrl = "/modes/driving/your-representation-has-been-submitted",
+                        backUrl = "/modes/driving/make-a-representation?type=" + Request.QueryString["type"],
+                        queryJourney = Request.QueryString["journey"],
+                        content = content
+                    }
+                    );
+        }
+      
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+      </div>
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "Make a representation - Wizard";}
+        
+            
+        
+
+
+ 

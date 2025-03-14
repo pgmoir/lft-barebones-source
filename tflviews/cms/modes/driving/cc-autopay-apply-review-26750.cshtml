@@ -1,0 +1,178 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Set up Auto Pay";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-autopay-apply-review-26750";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Set up Auto Pay</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Set up Auto Pay</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      <h2>Review application</h2>
+<p>Confirm your payment details below and 'Submit' to complete your application.</p>
+      
+           
+      
+
+        @{
+            dynamic content = new ContentModel();
+            
+            content.BackButtonText = "Back";
+            content.ContinueButtonText = "Submit";
+            content.CardSectionReviewHeading = "Payment card details";
+            content.EditCardDetailsButtonText = "Edit";
+            content.CardNumberHeading = "Card number";
+            content.CardExpiryDateHeading = "Expiry date";
+            content.VehicleSectionReviewHeading = "Vehicle details";
+            content.EditVehiclesButtonText = "Edit";
+            //content.VehicleTileInfoText = "CC Auto Pay";
+            content.CardLastFourPrefix = "XXXX-XXXX-XXXX-";
+            //content.CannotSubmitApplicationErrorText = "Unable to submit your application. Please select at least one vehicle and confirm how you would like to pay.";
+            content.AdminChargeStatement = "<p><strong>You will need to pay an annual &pound;10 registration charge for each vehicle added to your Auto Pay service. This will appear on your first statement.</strong></p>";
+            content.CalculationStatement = "Once we have confirmed that your application has been successful, we'll automatically record the number of charging days a vehicle travels within the Congestion Charge zone and bill you each month.";
+            content.ActiveDiscountText = "Active on ";
+            content.DirectDebitDetailsHeading = "Direct debit details";
+            content.AccountNameLabel = "Name of account holder(s)";
+            content.SortCodeLabel = "Branch Sort Code";
+            content.AccountNumberLabel = "Bank/Building society account number";
+            
+            content.AccountNameHeading = "Name of account holder(s)";
+            content.BankBuildingSocietyNameHeading = "Bank/building society name";
+            content.SortCodeHeading = "Sort Code";
+            content.AccountNumberHeading = "Bank/building society account number";
+            content.ReviewEditButtonText = "Edit";
+            
+            content.InstructionsHeading = "Instruction to your bank/building society";
+            content.DirectDebitLogoText = "Direct debit logo";            
+            content.ServiceUserNumberHeading = "Service user number";
+            content.ServiceUserNumberText = "<p class='dd-service-user-number'>298608</p>";
+            content.InstuctionsText = "<p>Please pay Transport for London direct debits from the account detailed in this instruction subject to the safeguards assured by the direct debit Guarantee. I understand that this instruction may remain with Transport for London and, if so, details will be passed electronically to my bank/building society.</p>";
+            content.BankNameAndAddressLabel = "Name and full address of your bank/building society";
+            content.DateLabel = "Date";
+            content.DirectDebitGuaranteeHeading = "Direct Debit Guarantee";
+            content.DirectDebitGuaranteeText = "<h3><img alt='Direct Debit Guarantee logo' src='/ruc-cdn/static/cms/images/ddlogo.png' /></h3><p>This Guarantee is offered by all banks and building societies that accept instructions to pay direct debits.</p><p>If there are any changes to the amount, date or frequency of your direct debit, Transport for London will notify you no more than 10 working days in advance of your account being debited. Notifications will be sent either by email or post depending on your account preferences you have set with us.</p><p>If you request that Transport for London collects a payment, confirmation of the amount and date will be given to you at the time of the request.</p><p>If an error is made in the payment of your direct debit by Transport for London or your bank or building society, you are entitled to a full and immediate refund of the amount paid from your bank or building society. If you receive a refund you are not entitled to, you must pay it back when Transport for London asks you to.</p><p>You can cancel a direct debit at any time by simply contacting your bank or building society - written confirmation may be required. Please also notify Transport for London.</p><p>Questions or further information about your direct debit can be directed to Transport for London:</p><p><strong>Email:</strong>&nbsp;<a href='mailto:CCLondon@CCLondon.com'>CCLondon@CCLondon.com</a><br /><strong>Phone:</strong> 0343 222 2222<br /><strong>Address:</strong><br />Congestion Charging<br />PO Box 344<br />Darlington DL1 9QE</p>"; 
+            content.UserHasReadTheInstructionsForDirectDebitMessage = "I can confirm I have ready and agree to the above";
+            content.UserHasReadTheInstructionsForDirectDebitRequireTrue = "You need to confirm above before proceeding.";
+            content.EmailAddressLabel = "Email:";
+            content.PhoneNumberLabel = "Phone:";
+            content.AddressLabel = "Address:";
+
+            Html.RenderAction(
+                RucDictionary.AutoPayApply.ReviewCcActionName,
+                "AutoPayApply",
+                new
+                {
+                    area = "Ruc",
+                    backUrl = "/modes/driving/cc-autopay-apply-add-vehicle-26747",
+                    content = content,
+                    paymentEditUrl = "/modes/driving/autopay-apply-select-payment?review=true",
+                    directDebitDetailEditUrl = "?review=true",
+                    vehicleEditUrl = "/modes/driving/cc-autopay-apply-add-vehicle-26747",
+                    successUrl = "",
+                    failureUrl = "",
+                    journeyStartUrl = "/modes/driving/autopay-apply"
+                }
+            );
+        }
+        
+        @this.ScriptBlock(
+            @<script>
+                queue.push(
+                    function () {
+                         tfl.forms.attachUnload("You have not completed your form. If you leave your data will be lost.");
+                    }
+                );
+            </script>
+        )
+      
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

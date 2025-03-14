@@ -1,0 +1,136 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Upload documents";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-motor-tricycle-upload-evidence-33240";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Upload documents</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Upload documents</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+
+        
+        <!-- 4. motor-tricycle -->
+         @{
+            dynamic content = new ContentModel();
+            content.UploadEvidenceTitle = "Upload evidence of address and vehicle";
+            content.UploadEvidenceText = "<p>We need to see evidence of the vehicle before we can process your application.</p><p>Upload images of:</p><ul>	<li>The V5C vehicle registration certificate (logbook) issued by the DVLA - all pages</li></ul><p>AND</p><ul>	<li>4 photographs of your motor tricycle (front, back and both sides). 1 of these photographs must show the number plate (Vehicle Registration Mark)</li></ul>";
+            content.UploadEvidenceHelperTitle = "How do I upload the documents?";
+            content.UploadEvidenceHelperText = "<p>You can scan paper documents to your computer, or take photographs of them with your camera, smartphone or tablet. You’ll need to save each file as a .jpg, .jpeg, .tif, .tiff or .pdf.</p><p>Once you have saved your document(s) on your computer/mobile device, drag them into the box below or click 'Or browse to your files' and select the file you want to upload. Double check you have selected the correct file.</p><p>Repeat for every document you want to attach. If you make a mistake, you can add or remove files before submitting your application.</p>";
+            content.UploadEvidenceDescription = "If you're unable to scan or photograph these documents clearly, you can send a copy to us at the address shown at the end of this application.";
+            content.FileNotUploadedError = "Upload a file to continue";
+            content.BackButtonText = "Back";
+            content.ContinueButtonText = "Continue";
+        
+            Html.RenderAction("UploadEvidence", "DiscountApply", new
+                {
+                    area = "Ruc",
+                    backUrl = "/modes/driving/cc-motor-tricycle-select-vehicle-33239",
+                    continueUrl = "/modes/driving/cc-motor-tricycle-review-application-33241",
+                    discountStyle = ZoneChargeDiscountStyle.MotorTricycle,
+                    discountAction = DiscountAction.Apply,
+                    reviewUrl = "/modes/driving/cc-motor-tricycle-review-application-33241",
+                    descriptionUrl = "",
+                    journeyStartUrl = "/modes/driving/cc-select-discount-29641",
+                    content = content
+                }
+            );
+        }
+            
+	  
+
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

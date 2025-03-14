@@ -1,0 +1,143 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Motor tricycle discount";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-motor-tricycle-payment-33242";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Motor tricycle discount</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Motor tricycle discount</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      <h2>Payment details </h2>
+      
+           
+      
+
+ 
+        @this.ScriptBlock(
+          @<script>
+               queue.push("@Html.ScriptPath("modules/M020-on-this-page.min.js")", null);
+          </script>
+        )
+        
+        <!-- 3. motor-tricycle -->
+        @{
+        
+            dynamic content = new ContentModel();
+        
+            content.StoredCardHeading = "Use stored card";
+            content.SelectPaymentCardAssistiveText = "Select payment card ending: ";
+            content.UseAnotherCardButtonText = "Use a different card";
+            content.StoredCardExpiredHeading = "Stored card expired";
+        
+            Html.RenderAction(
+                "SelectStoredCard",
+                "Payment",
+                new
+                {
+                    area = "Ruc",
+                    returnUrl = "/modes/driving/cc-motor-tricycle-submit-33282",
+                    paymentRefSessionKey = SessionKeys.DiscountApply.MotorTricycle.PaymentId,
+                    paymentAmountSessionKey = SessionKeys.DiscountApply.MotorTricycle.PaymentAmount,
+                    paymentDescription = "Discount application payment",
+                    content = content
+                });
+        }
+        
+        <hr class='form-separator' />
+        <a class="tertiary-link go-back" href="/modes/driving/cc-motor-tricycle-review-application-33241" id="go-back">
+            <span class="button-text">Back</span>
+        </a>
+        
+    
+
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

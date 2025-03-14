@@ -1,0 +1,197 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Request a dispensation";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/request-a-dispensation-confirmation";}
+@{ViewBag.Language = "en";}
+        
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+                
+                <li><span class="last-breadcrumb">Request a dispensation</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Request a dispensation</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      <h2>Request submitted</h2>
+      
+           
+      
+
+           @using TfL.Ruc.Services.ViewModels.Ruc.Dispensation
+           @model TfL.Ruc.Services.ViewModels.Ruc.Dispensation.RequestDispensationConfirmationViewModel
+           @{
+                dynamic content = new ContentModel();
+                
+                content.ThankYouHeading = "Thank you for your application";
+                content.ThankYouText = "Your application will now be reviewed.";
+                content.ReferenceNumber = "Reference number: ";
+                content.WhatHappensNextTitle = "What happens next?";
+                content.WhatHappensNextText = "<p>Your application must be approved to make sure it will not conflict with scheduled works or have an adverse impact on traffic flow.</p><p>Your application may have to be reviewed by our traffic engineer teams so our response times vary.</p><p>After 48 hours, you may be able to <a href='/modes/driving/view-dispensations-entry'>check the status of your application here</a>.</p><p>If approved, you will be asked to provide the vehicle details (vehicle registration, make, model and colour). You will then be asked to pay online. Once payment is received, we will send you a confirmation email including a dispensation permit. This must be printed and placed in the dashboard of your vehicle for your dispensation to be valid.</p><p>Note, we may offer an alternative date, time or location if your application is initially rejected. Please take care to read the details of the alternative before accepting.</p><p>If rejected, we will try to give adequate reasons why.</p>";
+                
+                Html.RenderAction("RequestDispensationConfirmation", "Dispensation", new { area = "Ruc", content = content });
+            }
+            
+      
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+        @ModulesHelpers.PrintButton()
+      
+ 
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+      </div>
+    
+    <div></div>
+    
+      <div class="module-grid clearfix">
+                    
+        <div class="vertical-button-container">
+    <ul>
+        
+        
+        
+        <li><a href="/modes/driving/red-routes"  class="plain-button">Red routes</a></li>
+        
+        
+        <li><a href="/modes/driving/red-routes/rules-of-red-routes"  class="plain-button">Rules of red routes</a></li>
+        
+        
+        <li><a href="/modes/driving/red-routes/penalty-charge-notices"  class="plain-button">Penalty Charge Notices</a></li>
+        
+        
+        <li><a href="/modes/driving/red-routes/dispensations"  class="plain-button">Dispensations</a></li>
+        
+        
+        <li><a href="/modes/driving/red-routes/exemptions"  class="plain-button">Exemptions</a></li>
+        
+    </ul>
+</div>
+
+      </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

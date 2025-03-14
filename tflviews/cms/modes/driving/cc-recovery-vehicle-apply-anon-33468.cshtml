@@ -1,0 +1,123 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "CC Discount - Recovery vehicle - Apply (anon)";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-recovery-vehicle-apply-anon-33468";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+                
+                <li><span class="last-breadcrumb">CC Discount - Recovery vehicle - Apply (anon)</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>CC Discount - Recovery vehicle - Apply (anon)</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+
+        
+        <!-- 7. recovery-vehicle -->
+        @using TfL.Ruc.Domain.Entities.Ruc
+        @{
+             dynamic content = new ContentModel();
+            
+             Html.RenderAction(
+                "StartAnon",
+                "DiscountApply",
+                new
+                {
+                    area = "Ruc",
+                    backUrl = "/modes/driving/cc-select-discount-29641",
+                    accountSettingsUrl = "/modes/driving/account-account-landing-29377",
+        			beforeYouBeginUrl = "/modes/driving/cc-recovery-vehicle-before-you-begin",
+        			journeyContinueUrl = "/modes/driving/cc-recovery-vehicle-continue-34696",
+                    journeyStartUrl = "/modes/driving/cc-recovery-vehicle-apply-33469",
+                    content = content,
+                    zone = TfL.Ruc.Domain.Entities.Ruc.ZoneChargeZone.CongestionCharge,
+                    discountStyle = ZoneChargeDiscountStyle.RecoveryVehicle
+                }
+            );
+        }
+        
+      
+
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

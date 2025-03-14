@@ -1,0 +1,178 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Amend or refund details";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/amend-or-refund-a-charge";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                 <li><a href="/modes/driving/amend-or-refund-a-driving-charge">Amend or refund a driving charge</a></li>
+                
+            
+            
+                <li><span class="last-breadcrumb">Amend or refund details</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Amend or refund details</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/account-account-landing-29377"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+
+
+    		@{
+                dynamic content = new ContentModel();
+                
+                content.AmendTabText = "Amend";
+                content.RefundTabText = "Refund";
+                content.RefundModalHeading = "Note: ";
+                content.RefundModalMessage = "If you complete a refund you will lose any amendments you have made.";
+                content.RefundModalContinueButtonText = "Continue";
+                content.RefundModalCancelButtonText = "Cancel";
+                content.ChangeVehicleHeading = "Change vehicle";
+                content.ChangeVehicleMessageText = "<p>Enter the new vehicle's details. A charge can only be transferred to a vehicle with exactly the same charge.</p>";
+                content.NewVehicleButtonUrl = "/modes/driving/find-vehicle-for-amend";
+                content.NewVehicleButtonText = "Change vehicle";
+                content.ChargeDetailsListUrl =  "/modes/driving/amend-or-refund-charge-details";
+                content.ChangeDateHeading = "Change start date";
+                content.ChangeDateMessageText = "<p>Choose a new start date for the charge. If your original charge didn't include weekends and bank holidays, your amended one won't either.</p>";
+                content.DatePickerLabel = "Enter a new start date";
+                content.StartDateNotAmendableMessage = "You can't change the start date for this charge. You may be able to request a refund instead.";
+                content.ChargeNotAmendableHeading = "This charge can't be amended";
+                content.ChargeNotAmendableMessage = "<p>You may be able to apply for a refund instead.</p>";
+                content.DateCannotBeBeyond65CCDaysMessage = "Start date can't be more than 65 working days in the future ";
+                content.ContinueButtonText = "Continue";
+                content.FindVehicle = "/modes/driving/find-vehicle-for-amend";
+                content.NewStartDateText = "New start date";
+                content.NewVrmMatchesOldVrmMessage = "A charge has already been paid for this vehicle on one or more of the days selected. Select another vehicle.";
+                content.AmendingVehicleWithResidentsDiscountError = "<p>This is a discounted residents' charge. If you want to change the vehicle it applies to, contact the call centre on 0343 222 2222 (<a href='/corporate/terms-and-conditions/tfl-call-charges'>TfL call charges</a>).</p>";
+                content.AmendingVehicleWithResidentsDiscountAndChargeHasStartedError = "<p>This is a discounted residents' charge that has already started. If you want to change the vehicle it applies to, contact the call centre on 0343 222 2222 (<a href='/corporate/terms-and-conditions/tfl-call-charges'>TfL call charges</a>).</p>";
+                content.NewEndDatePassesDiscountEndDate = "Since this is a discounted residents' charge, the new charge end date can't be later than the discount expiry date of {0}.";
+                content.ExistingVehicleIncompleteInformationErrorMessage = "<p>We don't have enough information about this vehicle. To amend this charge contact the call centre on 0343 222 2222 (<a href='/corporate/terms-and-conditions/tfl-call-charges'>TfL call charges</a>).</p>";
+                content.RefundTabHeading = "Refund process";
+                content.RefundDatePickerLabel = "Refund start date";
+                content.RefundTabInstructions = "<p>A £10 administration charge will be deducted from your refund. Not all charges are refundable and a refund is not guaranteed.</p>";
+                content.RefundInformationHeading = "How we work out your refund";
+                content.RefundInformationText = "<p>Refunds are not available for single daily Congestion Charges or for dates in the past.</p><p>We calculate refunds by taking the number of whole charging days from and including the refund date, and multiplying that by the cost for each of those days, minus a £10 administration charge. The cost per day will be the value of the charge purchased divided by the number of charging days purchased.</p><p>For example, If you have an annual charge purchased at £2898 divided by 252 days = £11.50 per day. If the charge has 10 unexpired days you will receive a refund of £105 (that is £11.50 x 10 = £115 less £10 administration = £105).</p><p>If you are a resident and have 30 unexpired days on a resident's discounted Congestion Charge (at £1.15 per day), you will receive a refund of £24.50 (that is 30 days @ £1.15 = £34.50, less £10 administration = £24.50 refund).</p><p>If your original payment was by credit or debit card, your refund will be credited to the original card. If payment was made by cheque, you will be refunded by cheque.</p>";
+                content.RefundNotPossibleTabHeading = "Refund not possible";
+                content.RefundNotPossibleMessage = "You can't apply for a refund for this charge.";
+                content.RefundStartDateNotValidErrorText = "Select a date for the start of your refund";
+                content.RefundDateNotSelectedErrorText = "Select a date for the start of your refund";
+                content.RefundStartDateRequired = "Select a date for the start of your refund";
+                content.ChargeDatesPassedErrorMessage = "End date of charge is in the past. You can't request a refund.";
+                content.SingleDayForCcErrorMessage = "<p>It is not currently possible to refund a single daily charge, but you can <a href='/modes/driving/find-a-charge'>move the charge to another date</a>.</p>";
+                content.ContinueButtonTextForRefundSubmission = "Submit";
+                content.ContinueButtonTextForRefundPersonalDetails = "Continue";
+                content.NewEndDateBeyondDiscountEndDateMessage = "New end date can't be later than the discount expiry date";
+                content.NewStartDateAlreadyPaidMessage = "New start date already paid for - select a new start date";
+                content.EndDateCannotBeExtendedMessage = "End date of the charge can't be extended";
+                content.ResidentDiscountAppliedErrorMessageWithNoEndDateReturned = "You are registered for a residents' discount";
+                
+                Html.RenderAction("AmendOrRefund", "DisplayZoneCharge", new 
+                    {
+                        area = "Ruc",
+                        content = content,
+                        refundSuccessUrl = "/modes/driving/refund-confirmation",
+                        refundFailureUrl = "/modes/driving/refund-failure",
+                        refundPersonalDetailsUrl = "/modes/driving/refund-personal-details",
+                        chargeDetailsUrl = "/modes/driving/amend-or-refund-charge-details"
+                    }
+                ); 
+            }
+		
+	    
+
+  
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

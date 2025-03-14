@@ -1,0 +1,173 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Upload file";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-selected-partner-upload-file-36333";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Upload file</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Upload file</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+      <div class="article-teaser">
+        <p>To make multiple changes to your selected partner discount, upload a .csv, .xls or .xlsx file below.</p>
+        
+      </div>
+    
+    
+      
+      
+           
+      <div>
+
+<p><strong>The vehicles you include in a successful file upload will be eligible for the 100% discount straight away,&nbsp;but it may take up to 24 hours for its new discounted status to update from 'CC - should be paid' to 'CC - 100% discount' in your account.</strong></p>
+
+<p><strong>Uploading a new list will overwrite your existing list.</strong> Your new list must include all your vehicles, not just vehicles that you would like to add.</p>
+
+<p>Any vehicles not on your new list will not be active on your selected partner discount. You need to pay the charge another way if you drive within the Congestion Charge zone.</p>
+</div>
+ 
+
+
+        
+        <!-- 8. upload-file -->
+        @using TfL.Ruc.Common.ConfigSection
+        @{
+            dynamic content = new ContentModel();
+            content.UploadFileTemplateText = "<h2>Download template or list</h2><p><strong>First time:</strong> Download a blank template If you are adding vehicles for the first time.</p><p>Make sure that the Country Code column is completed for all vehicles with UK or your upload will fail.</p><p><strong>Already have vehicles:</strong> If you already have vehicles on your selected partner discount you can either download and modify your current list or download a blank template. But if you use a new template remember that your <strong>new list must include all existing AND new vehicles</strong>.</p>";
+            content.DownloadTemplateLabel = "Download a blank template";
+            content.UploadGuidelinesTitle = "How do I upload a file?";
+            content.UploadGuidelinesText = "<p>Your uploaded vehicle list must be a .csv, .xls or .xslx or file. It must also be laid out in the same way as our blank template.</p><p>You can use the blank upload template provided. Or, if you already have a list of vehicles on your selected partner discount, it may be easier to download and edit that list.</p><p>Remember that the upload facility will completely replace all your selected partner discounted vehicles. Any vehicles not included in your latest upload file will be deleted.</p><p>Each upload file you submit must:</p><ul>	<li>Contain all the vehicles you wish to keep on your selected partner discount</li>	<li>Contain all the new vehicles you want to add to your selected partner discount</li>	<li>Not contain vehicles you want to remove from your selected partner discount</li></ul><p>Once you have created your vehicle upload file, either drag it over to the upload files area or click on the ‘Browse to your files’ link to find the location on your computer where you have saved your file.</p><p>When you've found the file and click 'Open', you should see it in the upload section before you 'Continue'.</p><p>When you've found the file and clicked the ‘Open’ button, the file should be visible in the upload section and the ‘Continue’ button enabled.</p>";
+            content.BackButtonText = "Back";
+            content.ContinueButtonText = "Continue";
+            content.FileNotUploadedErrorText = "Upload a .csv, .xls or .xslx file to continue";
+            content.UsePrimaryEmailAddressHeading = "Use account email address only";
+            content.UseAnotherEmailAddressHeading = "Add an additional email address ";
+            content.EnterEmailAddressText = "Enter new email address";
+            content.BulkUploadProcessNotStartedErrorText = "Can't upload file - please try again";
+            content.DownloadTemplateButtonText = "Download blank template";
+            content.WhyWeNeedEmailText = "<p>An email will be sent automatically to the account holder once the upload process has finished. If you want us to send an additional email to another account user, enter the email address details below.</p>";
+            content.fileUploadLabel = "Upload file";
+            content.UserCustomEmailAddressRequired = "Enter an additional email address to continue";
+            content.UserCustomEmailAddressEmailAddress = "Enter a valid email address to continue";
+            content.EmailSelectionRequired = "EMAILSELECTIONREQUIRED";
+            content.PrimaryEmailAddressMissingErrorMessage = "<p>You must provide an email address before you can upload your vehicle list. <a href='/modes/driving/account-account-settings-29386'>Go to your account settings</a>.</p>";
+            content.DownloadVehicleListButtonText = "Download vehicle list";
+            content.UploadErrorText = "You can only upload a .csv, .xls or .xlsx file. Failed to upload ";
+            content.DiscardRemoveButtonText = "Back";
+            content.ConfirmRemoveButtonText = "Continue";
+            content.CancelButtonText = "Cancel upload";
+            content.ProcessFileUrl = "/modes/driving/cc-selected-partner-process-file-36330";
+            content.ReplaceOldListPopupHeading = "Replace your vehicles";
+            content.ReplaceOldListPopupMessage = "All vehicles on your selected partner discount will be replaced with vehicles in this file.";
+            content.EmailConfirmationMessageHeading = "Email confirmation";
+            content.EmailConfirmationMessage = @"An email will be sent automatically to {0} once the upload is finished. To send an additional email to another user, enter their email address.";
+            content.CustomEmailAddressLabel = "Send additional confirmation to:";      
+            content.BeforeUploadTextMessage = "Total number of vehicles on selected partner discount before upload: {0}";
+            content.AfterUploadTextMessage = "Total number of vehicles on selected partner discount after upload: {0}";
+            content.CustomEmailFieldRestrictedMessage = "To add or change this additional email address you need to remove your file first, then upload it again.";
+
+            Html.RenderAction("UploadFile", "FileUpload", new
+                {
+                    area = "Ruc",
+                    manageUrl = "/modes/driving/account-account-landing-29377",
+                    vehiclesUrl = "/modes/driving/cc-selected-partner-vehicles-36334",
+                    fileSummaryUrl = "/modes/driving/cc-selected-partner-file-summary-36329",
+                    templateUrl = "/ruc-cdn/static/cms/documents/bulk-upload-template.csv",
+                    fileUploadOperation = FileUploadOperation.SelectedPartner,
+                    content = content
+                }
+            );
+        }
+        
+		
+        
+		
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "To make multiple changes to your selected partner discount, upload a .csv, .xls or .xlsx file below.";}
+        
+            
+        
+
+
+ 

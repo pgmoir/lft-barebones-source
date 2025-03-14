@@ -1,0 +1,102 @@
+﻿
+
+
+@{ViewBag.Title = "Central line services tonight";}
+        
+        
+
+<div class="r">
+    <div class="headline-container plain">
+        <h1>Central line services tonight</h1>
+        <div class="content-page-press-release">
+        08 September 2005
+        </div>
+    </div>
+</div>
+<div class="main-and-aside r">
+    <div class="main" role="main">
+
+    <div class="article-teaser">
+        London Underground (LU) has issued the following important travel advice to Central line passengers this evening.
+        
+    </div>
+
+
+
+ <div class="on-this-page">
+<div class="pullquote right">
+<p>
+Passengers are advised to allow extra time for their journeys
+</p>
+</div>
+<p>Following a line train radio failure earlier this afternoon, Central line services have been severely disrupted throughout the day but have now resumed to all destinations.</p>
+<p>While the line train radio fault has now been repaired, passengers should continue to expect delays on the Central line throughout the evening peak.</p>
+<p>LU passengers travelling on the Central line between Liverpool Street and Ealing Broadway/West Ruislip this evening are advised to allow extra time for their journeys.</p>
+<p><strong>Alternative travel arrangements</strong></p>
+<p>To support Central line services, a special bus service will be in operation until 1900 hours between Northholt and Rayners Lane to connect with Piccadilly line services, and between North Acton and Willesden Junction to connect with Bakerloo line services.<br />
+<br />
+Valid Underground tickets will be accepted on:</p>
+<ul>
+    <li>Chiltern Railways between West Ruislip and London Marylebone
+    </li>
+    <li>First Great Western Link between Greenford and London Paddington
+    </li>
+    <li>London Buses between Liverpool Street and Ealing Broadway/West Ruislip</li>
+</ul>
+
+     
+
+        
+        
+        
+        @this.ScriptBlock(
+        @<script>
+        //queue.push("@Html.ScriptPath("modules/M020-on-this-page.min.js")", null);
+        </script>
+        )
+        
+        
+        
+        </div>
+    </div>
+    <div class="aside" role="complementary">
+
+       
+        <div data-set="sidenav-container" class="large">
+
+            
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+        </div>
+
+
+
+            
+        <div data-set="sidenav-container" class="small-medium"></div>
+    </div>
+</div>
+
+<!-- Crumbs: PGtype:  -->
+
+ 
+ 
+        
+        
+            @{ViewBag.Description = "Following a line train radio failure earlier this afternoon, Central line services have been severely disrupted throughout the day but have now resumed to all destinations.While the line train radio fault has now been repaired, passengers should continue";}
+        
+        
+
+
+ 

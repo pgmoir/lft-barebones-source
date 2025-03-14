@@ -1,0 +1,502 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Wi-Fi data collection";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/corporate/privacy-and-cookies/wi-fi-data-collection";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/corporate/privacy-and-cookies/index">Privacy & cookies</a></li>
+                
+            
+            
+                <li><span class="last-breadcrumb">Wi-Fi data collection</span></li>
+            
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Wi-Fi data collection</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+      <div class="article-teaser">
+        This page explains how and why TfL collects Wi-Fi connection data from mobile devices at London Underground stations.
+        
+      </div>
+    
+    <div class="on-this-page">
+      <p><strong>Wi-Fi connection data collection began on 8 July 2019.</strong></p>
+
+<p>Wi-Fi connection data can provide us with a far better understanding of how customers move through stations. It is not used to identify specific individuals or monitor browsing activity.</p>
+
+<p>TfL has partnered with Virgin Media to bring free Wi-Fi access to 97% of London Underground stations, giving customers internet access. <a href="/campaign/station-wifi">Find out more about station Wi-Fi</a>.</p>
+
+<p>Signs have been put up at every station explaining the Wi-Fi data collection that is taking place and how to opt-out.</p>
+
+<p>In summary, we are collecting the location of devices on our network, identifying them by a pseudonymised version of their MAC address.</p>
+
+<p>We are trying to understand patterns of movement across our network and how customers as a whole use it, not how specific individuals use it.</p>
+
+<p>We are not collecting data on browsing activity, cookies, phone numbers or whether the Wi-Fi service is used.</p>
+
+<p>However, if you would like to opt-out, you can do this by turning off Wi-Fi on your device, turning your device off or putting your device into airplane mode while at our stations.</p>
+
+<h2>What Wi-Fi connection data is</h2>
+
+<p>When a device such as a smartphone or tablet has Wi-Fi enabled, the device will continually search for a Wi-Fi network to connect to. When searching for a Wi-Fi network, the device sends out a probing request which contains an identifying number specific to that device known as a Media Access Control (MAC) address.This is what we mean by 'Wi-Fi connection data'.</p>
+
+<h2>How we collect it</h2>
+
+<p>If the device finds a Wi-Fi network that is known to the device, it will automatically connect to that network. If the device finds unknown networks, it will list these in your device settings so you can decide whether to connect to one of them.</p>
+
+<p>When you are near one of our station Wi-Fi access points (installed on TfL privately-owned property) and you have Wi-Fi enabled, your device will send a probing request to connect. This will be received by our Wi-Fi network, even if your device does not subsequently connect.</p>
+
+<p>This data collection is carried out independently by TfL, not via Virgin Media.</p>
+
+<h2>How we make sure we can't identify people</h2>
+
+<p>We will not be able to identify any individuals from the data collected. We have designed the process to identify patterns and to avoid identifying individuals. We are trying to understand how customers as a whole use the network, not how specific individuals use it.</p>
+
+<p>All data collected is automatically de-depersonalised, using a one-way pseudonymisation process to ensure TfL is unable to identify any individual. This happens immediately after the data is first collected.</p>
+
+<p>TfL has no plans to match the Wi-Fi connection data to any other data held about individuals (eg Oyster and Contactless data). There is no way to systematically do this if we wanted to.</p>
+
+<p>Pseudonymisation is the process of distinguishing individuals in a dataset by using a unique identifier that does not reveal their 'real world' identity. This is a way of protecting people's privacy in accordance with the <a href="https://ico.org.uk/media/1061/anonymisation-code.pdf">Information Commissioner's Anonymisation Code of Practice</a>.</p>
+
+<h2>How we process it and how to prevent processing</h2>
+
+<h3>Un-authenticated devices</h3>
+
+<p>If your device has not signed up to use the free Wi-Fi provided on the London Underground network, it's an 'un-authenticated device'.</p>
+
+<p>When your device sends a probing request, it will contain a MAC address. Most modern devices send out a randomly generated MAC address to prevent unknown routers identifying the device.</p>
+
+<p>We will not process un-authenticated devices for the purposes described below. We will remove un-authenticated devices from the data that we will be analysing as soon as possible after receipt.</p>
+
+<h4>Preventing processing</h4>
+
+<p>If you would like to stop your device from sending out probing requests, you can turn off Wi-Fi on your device, turn your device off or put the device into airplane mode while at our stations.</p>
+
+<h3>Authenticated devices</h3>
+
+<p>If the device has been signed up for free Wi-Fi on the London Underground network, the device will disclose its genuine MAC address. This is known as an authenticated device.</p>
+
+<p>The following processing only relates to authenticated devices.</p>
+
+<p>We process authenticated device MAC address connections (along with the date and time the device authenticated with the Wi-Fi network and the location of each router the device connected to). This helps us to better understand how customers move through and between stations - we look at how long it took for a device to travel between stations, the routes the device took and waiting times at busy periods.</p>
+
+<p>As a customer enters a station (if their device has Wi-Fi enabled), the device will attempt to connect to the Wi-Fi network. This is recorded in our Wi-Fi data control system. We carry out a process of hashing once a MAC address is collected. Hashing is the process of generating a new value from a string of text (in this instance the MAC address).</p>
+
+<p>We carry out two rounds of hashing to make sure we never hold the original MAC address. One hash is with a single value (pepper), and the second is with another unique random value (salt) for each MAC address. This pseudonymisation process provides continuity to the data without needing to record the MAC address which could identify an individual device. This means that we have to preserve our hashing key to maintain continuity of the pseudonymised data.</p>
+
+<p>We do not collect any other data generated by your device. This includes web browsing data and data from website cookies.</p>
+
+<h4>Preventing processing</h4>
+
+<p>You can turn off Wi-Fi on your device, turn your device off or put the device into airplane mode while at our stations.</p>
+
+<h2>Why TfL is doing this</h2>
+
+<p>In 2016, TfL carried out a pilot collection of depersonalised Wi-Fi connection data from devices using the station Wi-Fi at 54 Tube stations in central London. We found that:</p>
+
+<ul>
+	<li>Wi-Fi data can help to understand the paths people take in stations, the platforms and lines they use, the routes they take when they have many options and the interchanges they make</li>
+	<li>Aggregated data can show which sections of the network are crowded, at what times and how this changes in response to events and network alterations</li>
+	<li>Data can be used with analytical tools and services to improve the way we run and plan our network, and provide customers with more detailed information</li>
+</ul>
+
+<p><a href="/corporate/publications-and-reports/wifi-data-collection">Find out more about the pilot and our findings</a>.</p>
+
+<p>We want to use technology to provide better information to our customers. Wi-Fi connection data can give us a better understanding of crowding, collective travel patterns and changes over time to understand how regular and less regular customers use our stations. From this, we can improve services and information for customers. We expect the benefits to be as follows.</p>
+
+<ul>
+	<li>We will be able to give customers better information to help them plan their journeys and avoid congestion. For example, we plan to use aggregated Wi-Fi connection data to show the relative 'busy-ness' of London Underground stations, in near real time. We will make this available on our website</li>
+	<li>We will be able to manage disruptions and events more effectively, deploy staff to best meet customer needs and ensure a safe environment</li>
+	<li>We will be able to make better transport planning decisions &#45; for example about timetables, station designs and major station upgrades</li>
+	<li>By understanding how many customers we have and how they move around stations (eg the total number of unique devices passing through a zone of a station) we will be able to maximise revenue from the companies which advertise on our poster sites and those who rent retail units on our property. This money can be invested in improving our services</li>
+</ul>
+
+<p>Oyster and Contactless Payment Card ticketing data helps us understand where customers enter and exit the London Underground network (as well as any intermediate validations). But it does not tell us the platforms and lines they are using, the stations they interchange at or how they navigate around our stations. The nature of the Tube network means that people can take many different options for their journeys.</p>
+
+<p>TfL has previously used paper surveys - but these are expensive, only provide a snapshot of travel patterns on the day of survey and are unable to provide a continuous flow of information. Depersonalised Wi-Fi connection data provides more accurate real time information for improving our services.</p>
+
+<p>more accurate real time information for improving our services.</p>
+
+<h3>Benefits already provided</h3>
+
+<ul>
+	<li>Using aggregate Wi-Fi connection data, we have gained further understanding of patterns of movements across the network &#45; not how specific individuals travel, but customers as a whole.&nbsp; We have identified the approximate time it takes to move through our stations and board trains at different times of the day. We have updated our Journey Planner&nbsp;to reflect this information so people have more accurate timings when they plan their journeys</li>
+	<li>Aggregate footfall information of how people move across the network can also help to improve our advertising business. It helps us to position and sell possible locations for future advertising opportunities and ensure we efficiently use our existing advertising assets. This means we can raise additional revenue to reinvest in the transport network. To do this, TfL shares aggregate data with our advertising partner, Global. Data shared with Global consists only of estimated numbers of people (eg walking past an advert at different times of the day), never of data related to individual journeys</li>
+</ul>
+
+<h2>Legal basis for using this information</h2>
+
+<p>Under privacy and data protection legislation, TfL is only allowed to use personal information if we have a proper reason or 'legal basis' to do so. In the case of Wi-Fi connection data, our 'legal ground' for processing this data is:</p>
+
+<ul>
+	<li>Our statutory and public functions
+	<ul>
+		<li>to undertake activities to promote and encourage safe, integrated, efficient and economic transport facilities and services, and to deliver the Mayor's Transport Strategy</li>
+	</ul>
+	</li>
+</ul>
+
+<h2>Data protection impact assessments</h2>
+
+<p>To ensure our approach to the collection of Wi-Fi connection data is appropriate, we completed two data protection impact assessments. We carried out an assessment for the pilot and a new assessment before we began collecting depersonalised Wi-Fi data from all stations with free Wi-Fi. Both assessments followed our formal TfL governance and project management processes.</p>
+      
+           
+      
+<div>
+
+
+
+
+
+<div class="multi-document-download-container">
+    
+
+<a class="document-download-wrap pdf" href="/cdn/static/cms/documents/data-protection-impact-assessment-routine-collection.pdf">
+    <div class="document-download-text">
+        <p>Data protection impact assessment for routine Wi-Fi connection data collection</p>
+    </div>
+    <div class="document-download-attachment">
+        <p>
+                        
+            PDF 290KB
+            
+        </p>
+    </div>
+    <div class="document-download-icon download-doc">
+    </div>
+
+</a>
+
+<!-- 0.28 -->
+ 
+
+<a class="document-download-wrap pdf" href="/cdn/static/cms/documents/data-protection-impact-assessment-pilot.pdf">
+    <div class="document-download-text">
+        <p>Data protection impact assessment for pilot Wi-Fi connection data collection</p>
+    </div>
+    <div class="document-download-attachment">
+        <p>
+                        
+            PDF 328KB
+            
+        </p>
+    </div>
+    <div class="document-download-icon download-doc">
+    </div>
+
+</a>
+
+<!-- 0.32 -->
+ 
+</div>
+
+</div>
+ <div>
+
+<h2>Length of time we keep Wi-Fi connection data</h2>
+
+<p>TfL will retain any data collected in line with our data retention policies. This means that we will not hold information for longer than is necessary for the purposes we obtained it for. Depersonalised Wi-Fi connection data will be held for two years. When this retention period is over, only aggregated data will be held. Aggregation enables us to understand patterns and movements over time and ensures that individual depersonalised data does not need to be held for more than two years.</p>
+
+<p>The exact parameters of the aggregation are still to be confirmed, but will result in the individual Wi-Fi connection data being removed. Instead, we will retain counts of activities grouped into specific time periods and locations. There will be process controls in place to make sure that aggregated data is at a crowd level only. Any data relating to totals of fewer than five will not be included. This will ensure that TfL does not unintentionally identify any individual.</p>
+
+<h2>Keeping information secure</h2>
+
+<p>We take the privacy of our customers very seriously. A range of policies, processes and technical measures are in place to control and safeguard access to, and use of, Wi-Fi connection data. Anyone with access to this data must complete TfL's privacy and data protection training every year.</p>
+
+<p>Each MAC address is automatically depersonalised (pseudonymised) and encrypted to prevent the identification of the original MAC address and associated device. At no time does TfL store a device's original MAC address.</p>
+
+<p>The data collected is stored in a restricted area of a secure location. All access is governed through industry standard authentication methods. Access is limited to a restricted group of users &#45; ie only those whose access to the data is necessary for their role.</p>
+
+<p>Our encryption keys are held securely in an industry standard computer program for secrets and key management , and we use an industry standard one-way hashing algorithm. All data is encrypted at rest and when in transit.</p>
+
+<p>We also publish guidance on <a href="/corporate/privacy-and-cookies/protect-your-data">steps you can take to protect your personal information</a>.</p>
+
+<h2>Sharing information</h2>
+
+<p>Individual depersonalised device Wi-Fi connection data is accessible only to a controlled group of TfL employees. Aggregated data developed by combining depersonalised data from many devices may be shared with other TfL departments and external bodies. Aggregated data will include counts of numbers of devices, rather than data containing pseudonymised MAC addresses.</p>
+
+<p>We understand that there may be scenarios where the data could be useful to the police and other law enforcement bodies. As with current processes for other data held, when we get a request to disclose data, we require the police to demonstrate that the data concerned will help them to prevent or detect crime and/or prosecute offenders.</p>
+
+<p>Requests will be dealt with on a strictly case-by-case basis to ensure that any disclosure is lawful. We would only be able to disclose pseudonymised data, as we do not hold the original MAC address.</p>
+
+<h2>Your information rights</h2>
+
+<p>Please also refer to the guidance above on how to choose not to provide your device's Wi-Fi connection data.</p>
+
+<p>In order to realise some of the benefits of collecting this data, it is important that patterns of travel are understood over time. This means that we have to preserve our hashing key to maintain continuity of the pseudonymised data. It would therefore technically be possible to align the same MAC address to the same pseudonym. However, the only way TfL can determine a specific pseudonym is for the MAC address to be provided to us, as we do not retain the MAC address itself.</p>
+
+<p>The rights under Articles 15 to 20 of the General Data Protection Regulation (GDPR) do not apply if TfL is not in a position to identify a specific individual, unless the individual provides additional information to enable identification. Only providing a MAC address does not establish a definite link between that individual and the pseudonymised journey information.</p>
+
+<p>Even if we could associate a particular journey with a pseudonymised MAC address, we cannot assume the same individual was in possession of the same device on all other journeys. It would not be practical or proportionate to establish who was carrying the phone at each point in time.</p>
+
+<p>This means that we are unable to provide data in response to any requests to access the Wi-Fi data generated by your device.</p>
+
+<p>The TfL Privacy and Data Protection team consider and coordinate responses to any requests that relate to an individual's rights under the GDPR and complaints from people whose personal data is processed by TfL and its subsidiary companies. You can contact the Data Protection Officer by email at <a href="mailto:dpo&#64;tfl.gov.uk">dpo&#64;tfl.gov.uk</a> or by writing to:</p>
+
+<p>Data Protection Officer<br />
+4th Floor<br />
+5 Endeavour Square<br />
+London E20 1JN</p>
+
+<h2>Changes to this page</h2>
+
+<p>It's likely that we'll need to update this statement from time to time, so check back here regularly to find out more. This page was last updated in July 2019.</p>
+</div>
+ 
+      
+        
+          
+            @this.ScriptBlock(
+              @<script>
+                queue.push("@Html.ScriptPath("modules/M020-on-this-page.min.js")", null);
+              </script>
+            )
+          
+        
+      
+    </div>
+  </div>
+  <div class="aside" role="complementary">
+
+   
+    
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                <a href="/corporate/privacy-and-cookies/index" class="heading">
+                    <h2 id="sub-menu-heading">Privacy & cookies<span class="visually-hidden"> navigation</span></h2>
+                </a>
+                <ul>
+                    
+                                <li><div class="link-wrapper"><a href="/corporate/privacy-and-cookies/access-your-data">Access your data</a></div></li>
+                            
+ 
+                                <li><div class="link-wrapper"><a href="/corporate/privacy-and-cookies/capital-call">Capital Call</a></div></li>
+                            
+ 
+                                <li><div class="link-wrapper"><a href="/corporate/privacy-and-cookies/cctv">CCTV & surveillance cameras</a></div></li>
+                            
+ 
+                                <li><div class="link-wrapper"><a href="/corporate/privacy-and-cookies/compulsory-purchase">Compulsory purchase</a></div></li>
+                            
+ 
+                                <li><div class="link-wrapper"><a href="/corporate/privacy-and-cookies/contactless-payment">Contactless payment</a></div></li>
+                            
+ 
+                                <li><div class="link-wrapper"><a href="/corporate/privacy-and-cookies/cookies">Cookies </a></div></li>
+                            
+ 
+                                <li><div class="link-wrapper"><a href="/corporate/privacy-and-cookies/dial-a-ride">Dial-a-Ride</a></div></li>
+                            
+ 
+                                <li><div class="link-wrapper"><a href="/corporate/privacy-and-cookies/direct-vision-standard-and-the-hgv-safety-permit-scheme">Direct Vision Standard and the HGV safety permit scheme</a></div></li>
+                            
+ 
+                                <li><div class="link-wrapper"><a href="/corporate/privacy-and-cookies/employment">Employment</a></div></li>
+                            
+ 
+                                <li><div class="link-wrapper"><a href="/corporate/privacy-and-cookies/event-data-from-mobile-devices">Event data from mobile devices</a></div></li>
+                            
+ 
+                                <li><div class="link-wrapper"><a href="/corporate/privacy-and-cookies/external-recruitment">External Recruitment</a></div></li>
+                            
+ 
+                                <li><div class="link-wrapper"><a href="/corporate/privacy-and-cookies/oyster-card">Oyster card</a></div></li>
+                            
+ 
+                                <li><div class="link-wrapper"><a href="/corporate/privacy-and-cookies/privacy-and-data-protection-policy">Privacy & data protection policy</a></div></li>
+                            
+ 
+                                <li><div class="link-wrapper"><a href="/corporate/privacy-and-cookies/protect-your-data">Protect your data</a></div></li>
+                            
+ 
+                                <li><div class="link-wrapper"><a href="/corporate/privacy-and-cookies/reporting-street-problems">Reporting street problems</a></div></li>
+                            
+ 
+                                <li><div class="link-wrapper"><a href="/corporate/privacy-and-cookies/road-user-charging">Road User Charging</a></div></li>
+                            
+ 
+                                <li><div class="link-wrapper"><a href="/corporate/privacy-and-cookies/santander-cycles">Santander Cycles</a></div></li>
+                            
+ 
+                                <li><div class="link-wrapper"><a href="/corporate/privacy-and-cookies/taxi-and-private-hire">Taxi & private hire licensing</a></div></li>
+                            
+ 
+                                <li><div class="link-wrapper"><a href="/corporate/privacy-and-cookies/website-privacy">Website privacy</a></div></li>
+                            
+ 
+                                <li class="selected"><div class="link-wrapper"><a href="/corporate/privacy-and-cookies/wi-fi-data-collection">Wi-Fi data collection</a></div>
+                            </li>
+ 
+                                <li><div class="link-wrapper"><a href="/corporate/privacy-and-cookies/your-information-rights">Your information rights</a></div></li>
+                            
+ 
+                                <li><div class="link-wrapper"><a href="/corporate/privacy-and-cookies/zip-oyster-photocard">Zip Oyster photocard</a></div></li>
+                            
+ 
+                                <li><div class="link-wrapper"><a href="/corporate/privacy-and-cookies/18-student-oyster-photocard">18+ Student Oyster photocard </a></div></li>
+                            
+ 
+                                <li><div class="link-wrapper"><a href="/corporate/privacy-and-cookies/60-oyster-photocard">60+ Oyster photocard</a></div></li>
+                            
+ 
+                </ul>
+            
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+      </div>
+    
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="advert-tile unsponsored-style google-ads" aria-hidden="true">
+  <div class="advert-link">
+    <div class="advert-content">
+        <div class="medium-large" data-advert="/76889402/non-targeted" data-advert-sizes="300, 250"></div>
+        <div class="small" data-advert="/76889402/non-targeted" data-advert-sizes="300, 250"></div>
+    </div>
+  </div>
+</div>
+@{
+    ViewBag.AmazonSlot = "'amznslots'";
+    ViewBag.AmazonAds = "'3199'"; // to add another value, this needs to be ViewBag.AmazonAds = "'3199','xx'";
+}
+      
+
+ </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+ 
+ 
+        
+        
+        
+            @{ViewBag.Description = "How and why TfL collects Wi-Fi connection data from devices signed up to use the Wi-Fi available at London Underground stations";}
+        
+            
+        
+
+
+ 

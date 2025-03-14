@@ -1,0 +1,127 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "LEZ Discount - Lez-showman - Submit";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/lez-lez-showman-submit-34310";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+                
+                <li><span class="last-breadcrumb">LEZ Discount - Lez-showman - Submit</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>LEZ Discount - Lez-showman - Submit</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+ 
+        
+        <!-- 11. lez-showman -->    
+        @using TfL.Ruc.Services.ViewModels.Ruc.DiscountApply
+        @{
+            Html.RenderAction(
+                "Submit",
+                "DiscountApply",
+                new
+                {
+                    area = "Ruc",
+                    successUrl = "/modes/driving/lez-lez-showman-succes-34312",
+                    failureUrl = "/modes/driving/lez-lez-showman-failure-34306",
+                    discountStyle = ZoneChargeDiscountStyle.Showman,
+                    discountAction = DiscountAction.Apply,
+                    journeyStartUrl = "/modes/driving/lez-select-discount-34301"
+                }
+            );
+        }
+        
+      
+
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

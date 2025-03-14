@@ -1,0 +1,91 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Journey results";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/plan-a-journey/results";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+
+@section scripts {
+<div class="bottom-advert ">
+    <div class="close-ad-button visually-hidden"><span class="close-icon-circle"></span></div>
+    <div data-advert="/76889402/Stations_All/plan_a_journey" data-advert-sizes="320, 50"></div>
+</div>
+}
+              
+@section adverts {
+        <div class="top-banner-advert">
+            <div class="large" data-advert="/76889402/Stations_All/jp-results" data-advert-sizes="970, 90|970, 250"></div>
+            <div class="medium" data-advert="/76889402/Stations_All/jp-results" data-advert-sizes="728, 90"></div>
+            <div class="small" data-advert="/76889402/Stations_All/jp-results" data-advert-sizes="300, 50|320, 50"></div>
+        </div>
+}
+              
+            <div class="journey-planner-results">
+            <div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/plan-a-journey/index">Plan a journey</a></li>
+                
+            
+            
+                <li><span class="last-breadcrumb">Journey results</span></li>
+            
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+                <div class="r">
+                    <div class="headline-container">
+                        <h1><span class="jp-results-headline" data-favourite-journey="My journey">@ViewBag.Title</span></h1>
+                    </div>
+                </div>
+                <div class="r no-margin">
+                    @{Html.RenderAction("Search", "JourneyPlanner");}
+                </div>
+                @{Html.RenderAction("Results", "JourneyPlanner");}
+             <div class="advert-tile unsponsored-style google-ads">
+        <div class="advert-link">
+            <div class="advert-content">
+                <div class="medium-large" data-advert="/76889402/Stations_All/jp-results" data-advert-sizes="300, 250"></div>
+                <div class="small" data-advert="/76889402/Stations_All/jp-results" data-advert-sizes="300, 250"></div>
+            </div>
+        </div>
+    </div>
+
+    @{
+        ViewBag.AmazonSlot = "'amznslots'";
+        ViewBag.AmazonAds = "'3199'"; // to add another value, this needs to be ViewBag.AmazonAds = "'3199','xx'";
+    }
+            </div>
+          
+ 
+        
+        
+        
+            @{ViewBag.Description = " ";}
+        
+            
+        
+
+
+ 

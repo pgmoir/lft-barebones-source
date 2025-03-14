@@ -1,0 +1,157 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "LEZ registration";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/lez-registration-upload-37320";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">LEZ registration</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>LEZ registration</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      <h2>Registration documents</h2>
+      
+           
+      
+
+
+          
+        
+		<!-- 3. upload -->
+		@{
+            dynamic content = new ContentModel();
+            content.UploadTitle = "You will need to download and complete a LEZ registration form, and supply evidence of your vehicle. <p>";
+            content.UploadText = "<p>When you have filled in the application form you can upload it, along with your supporting evidence, using the link below. We need to see evidence that the vehicle meets the LEZ emission standards to process your application. The evidence we require is detailed in the registration form.</p>";
+            content.UploadHelperTitle = "How do I upload the documents?";
+            content.UploadHelperText = "<p>You can scan paper documents to your computer, or take photographs of them with your camera, smartphone or tablet. You’ll need to save each file as a .jpg, .jpeg, .tif, .tiff or .pdf.</p><p>Once you have saved your document(s) on your computer/mobile device, drag them into the box below or click 'Or browse to your files' and select the file you want to upload. Remember to double check you have selected the correct file.</p><p>Repeat for every document you want to attach. If you make a mistake, you can add or remove files before submitting your application.</p>";
+            content.UploadEvidenceDescription = "If you are unable to scan or photograph these documents clearly, you can send them directly to us at the address and reference number provided at the end of this process.<p>";
+            content.FileNotUploadedError = "Upload a file or tick 'Send documents by post' to continue";
+            content.BackButtonText = "Back";
+            content.ContinueButtonText = "Continue";
+            content.DownloadRegistrationFormText = "Download a LEZ registration form";
+
+            Html.RenderAction("Upload", "LezRegistration", new
+                {
+                    area = "Ruc",
+                    backUrl = "/modes/driving/lez-lez-services-37309",
+                    reviewUrl = "/modes/driving/lez-registration-review-37316",
+                    journeyStartUrl = "/modes/driving/lez-registration-start-37318",
+                    registrationFormUrl = "/ruc-cdn/static/cms/documents/lez-registration-form.pdf",
+                    content = content
+                }
+            );
+        }
+		
+		
+	  
+
+  
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/low-emission-zone" });
+        }
+        
+      
+
+ 
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        <div class="vertical-button-container">
+    <ul>
+        
+        
+        
+        <li><a href="/modes/driving/pay-to-drive-in-london"  class="plain-button">Pay to drive in London</a></li>
+        
+        
+        <li><a href="/modes/driving/amend-or-refund-a-charge"  class="plain-button">Amend or refund a charge</a></li>
+        
+        
+        <li><a href="/modes/driving/compliance-registration/before-you-start"  class="plain-button">Register your vehicle with us</a></li>
+        
+        
+        <li><a href="/modes/driving/low-emission-zone/contact-lez"  class="plain-button">Contact LEZ</a></li>
+        
+    </ul>
+</div>
+
+      </div>
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

@@ -1,0 +1,84 @@
+﻿
+
+
+@{ViewBag.Title = "Art of the poster";}
+        
+        
+
+<div class="r">
+    <div class="headline-container plain">
+        <h1>Art of the poster</h1>
+        <div class="content-page-press-release">
+        15 October 2008
+        </div>
+    </div>
+</div>
+<div class="main-and-aside r">
+    <div class="main" role="main">
+
+    <div class="article-teaser">
+        MORE than 60 original artworks, celebrating a century of outstanding poster design for the capital's transport network, go on display at the London Transport Museum tomorrow.
+        
+    </div>
+
+
+
+ <div class="on-this-page">
+<p>'The Art of the Poster: a Century of Design' features leading artists of the day, and delves into how Transport for London became a pioneering patron of poster art - a legacy which continues today.</p> <p>Exploring the relationship between fine artists, graphic designers and the commissioning process, the exhibition reveals the stories behind some of&nbsp;the artworks. Discover, for example, why the painting by world-renowned artist John Nash was never published as a poster, and find out why a controversial poster by Edward Wadsworth was withdrawn in the 1930s.</p> <p>Poster artworks will form the bulk of the display, supported by photographs, letters, sketches and other artists' materials.</p> <p>The exhibition - which runs until March 31 - will be accompanied by a lively talks and events programme, together with a new book 'London Transport Posters - a Century of Art and Design'.</p> <ul> <li>Admission to the exhibition is included in the entry price to the Museum. For more information, go to <a class="external-site" title=" (Opens in new window)" href="http://www.ltmuseum.com" jquery1224061804471="6">www.ltmuseum.com</a></li></ul> <p>
+
+     
+
+        
+        
+        
+        @this.ScriptBlock(
+        @<script>
+        //queue.push("@Html.ScriptPath("modules/M020-on-this-page.min.js")", null);
+        </script>
+        )
+        
+        
+        
+        </div>
+    </div>
+    <div class="aside" role="complementary">
+
+       
+        <div data-set="sidenav-container" class="large">
+
+            
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+        </div>
+
+
+
+            
+        <div data-set="sidenav-container" class="small-medium"></div>
+    </div>
+</div>
+
+<!-- Crumbs: PGtype:  -->
+
+ 
+ 
+        
+        
+            @{ViewBag.Description = "'The Art of the Poster: a Century of Design' features leading artists of the day, and delves into how Transport for London became a pioneering patron of poster art - a legacy which continues today. Exploring the relationship between fine artists, graphic";}
+        
+        
+
+
+ 

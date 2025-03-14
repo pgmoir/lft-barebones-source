@@ -1,0 +1,187 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "London Road User Charging account";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/account-selected-partner-account-29381";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">London Road User Charging account</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>London Road User Charging account</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+
+
+  
+<!-- 4. selected-partner-account -->
+    @{
+        dynamic content = new ContentModel();
+    
+        content.AccountRefLabel = "Account number: ";
+        content.AccountHolderLabel = "Account holder: ";
+        content.CompanyNameLabel = "Company name: ";
+        content.StatusOnSelectedPartnerDiscountText = "Active selected partner discount";
+        content.MyOptionsTitle = "My options";
+        //content.AllAccountActivityTitle = "Account activity";
+        //content.AllAccountActivityText = "View all activity on your account including correspondence history and details of past vehicle upload files.";
+        content.CorrespondenceHistoryTitle = "Correspondence history";
+        content.CorrespondenceHistoryText = "View all activity on your account including correspondence history and details of past vehicle upload files";
+        content.AccountSettingsTitle = "Account settings";
+        content.AccountSettingsText = "View and amend your account details, and add or remove account users";
+        content.SelectedPartnerDiscountTitle = "Selected partner ";
+        content.SelectedPartnerDiscountText = "View and make changes to your vehicle list";
+    
+        content.NavAccountActivityText = "Account activity";
+        content.NavSelectedDiscountPartnerText = "Manage vehicles"; 
+        content.NavContactUsText = "Contact us";
+        content.NavAccountSettingsText = "Account settings";
+        content.NavCheckZonesText = "Check zones";
+        content.NavFaqsText = "FAQs";
+    
+        //content.AccreditedBreakdownInvalidAccountApplicationError = "You can't apply for an accredited breakdown discount with this account";
+        //content.BlueBadgeInvalidAccountApplicationError = "You cannot apply for a Blue Badge discount with this account";
+        //content.ResidentsDiscountInvalidAccountApplicationError = "You can't apply for a residents' discount with this account";
+        //content.UledInvalidAccountApplicationError = "CVDINVALIDCCOUNTAPPLICAITONERROR";
+        //content.NinePlusInvalidAccountApplicationError = "NINEPLUSINVALIDACCOUNTAPPLICATIONERROR";
+        //content.MotortrikeInvalidAccountApplicationError = "MOTORTRIKEINVALIDACCOUNTAPPLICATIONERROR";
+        //content.RecoveryVehicleInvalidAccountApplicationError = "RECOVERYVEHICLEINVALIDACCOUNTAPPLICATIONERROR";
+        //content.PersonalAutopayServiceInvalidAccountApplicationError = "You can't set up Auto Pay with this account";
+        //content.BusinessAutopayInvalidAccountApplicationError = "You can't set up Fleet Auto Pay with this account";
+        //content.FleetAutopayInvalidAccountApplicationError = "You can't set up Fleet Auto Pay with this account";
+        //content.LezShowmanInvalidAccountApplicationError = "LEZSHOWMANINVALIDACCOUNTAPPLICATIONERROR";
+        //content.ProxyBlueBadgeLoggedInApplicationError = "You can't apply for a Blue Badge discount on behalf of someone else while signed in to your own account - sign out and create a new account in the Blue Badge holder's name";
+        
+        content.ApplyAutoPayFleetBusinessUrl = "/modes/driving/autopay-apply-select-service";
+        content.ApplyAutoPayFleetPersonalUrl = "/modes/driving/autopay-apply-select-service";
+        content.ApplyAutoPayFleetTitle = "Set up Auto Pay";
+        content.ApplyAutoPayFleetDetailedMessage = "Auto Pay automatically records the number of charging days a vehicle travels within the Congestion Charge zone, and if it doesn't meet the emissions standards, the ULEZ and then bills users each month.";
+
+        content.ManageAutoPayFleetBusinessUrl = "/modes/driving/cc-autopay-manage-manage-29152";
+        content.ManageAutoPayFleetPersonalUrl = "/modes/driving/cc-autopay-manage-manage-29152";
+        content.ManageAutoPayFleetTitle = "Manage Fleet Auto Pay";
+        content.ManageAutoPayDetailedMessage = "Check your balance, add and remove vehicles, and view your payments";
+    }
+
+    @{
+        Html.RenderAction(
+            "GetSelectedPartnerAccount",
+            "Account",
+            new
+                {
+                    area = "Ruc",
+                    //allAccountActivityUrl = "",
+                    correspondenceHistoryUrl = "/modes/driving/account-correspondence-history-37389",
+                    accountSettingsUrl = "/modes/driving/account-account-settings-29386", 
+                    selectedPartnerDiscountUrl = "/modes/driving/cc-selected-partner-vehicles-36334",
+                    content
+                }
+            );
+    }
+
+     @this.ScriptBlock(
+     @<script>queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+        window.tfl.expandableList.init('#right-hand-nav', false);
+    });</script>)
+
+      
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+      <div>
+                    
+        <div class="vertical-button-container">
+    <ul>
+        
+        
+        
+        <li><a href="/modes/driving/congestion-charge/contact-congestion-charge"  class="plain-button">Contact us</a></li>
+        
+    </ul>
+</div>
+
+      </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

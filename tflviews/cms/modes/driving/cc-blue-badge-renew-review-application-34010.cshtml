@@ -1,0 +1,163 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Renew Blue Badge discount";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-blue-badge-renew-review-application-34010";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Renew Blue Badge discount</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Renew Blue Badge discount</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      <h2>Review details</h2>
+      
+           
+      
+
+ 
+        
+        <!-- 2. blue-badge -->
+        @{
+            dynamic content = new ContentModel();
+
+            content.BackButtonText = "Back";
+            content.ContinueButtonText = "Continue";
+
+            content.BlueBadgeHeading = "Blue Badge details";
+            content.BlueBadgeExpiryText = "Expiry date";
+            content.BlueBadgeEuIssuedText = "Non-UK issued badge";
+            content.BlueBadgeIssuerText = "Issuing authority";
+            content.BlueBadgeNumberText = "Blue Badge number";
+
+            content.VehiclesHeading = "Vehicle(s)";
+            content.NoVehiclesHeading = "Vehicle";
+            content.NoVehicleText = "You have no vehicles on your discount.";
+
+            //content.TermsAndConditionsHeading = "Terms and Conditions";
+            //content.TermsAndConditionsText = "I confirm that I have read and understood and accept the Blue Badge discount terms and conditions";
+
+            content.EvidenceHeading = "Uploaded documents";
+            content.EvidenceByPostText = "You have not uploaded any documents.";
+
+            //content.SkippedVehicleText = "<p>You have not yet added a vehicle.</p>";
+
+            content.ActiveDiscountText = "Active on: ";
+            content.BBNumNotProvided = "Badge number not provided";
+            content.IssuingAuthNotProvided = "Issuing authority not provided";
+            content.ExpiryDateNotProvided = "Expiry date not provided";
+
+            //content.TermsAndConditionsAcceptedRequireTrue = "You must accept the terms and conditions.";
+            content.CheckVehicleDetailsCorrect = "<p><span style='font-style: normal; font-variant: normal; font-weight: normal; font-size: 14px; line-height: 20px; font-family: arial, sans-serif; color: #333333; text-transform: none; text-indent: 0px; letter-spacing: normal; word-spacing: 0px; float: none; white-space: normal; widows: 1; -webkit-text-stroke-width: 0px; display: inline !important; background-color: #ffffff;'>Check the vehicle(s) below is correct, if you want to change it you will need to go back to <a href='/modes/driving/cc-discount-manage-discounts-32822'>My discounts</a>.</span></p>";
+            content.ReviewEditButtonText = "Edit";
+            content.Under18Text = "I am under 18 years old or applying on behalf of someone under 18";
+            content.Over18Text = "I am over 18 years old";
+            content.Under18Heading = "Under 18";
+            content.Under18Required = "Select an over/under 18 option to continue";
+            
+            Html.RenderAction("ReviewApplication", "DiscountRenew", new
+                {
+                    area = "Ruc",
+                    discountStyle = ZoneChargeDiscountStyle.BlueBadge,
+                    discountAction = DiscountAction.Renew,
+                    content = content,
+                    successUrl = "/modes/driving/cc-blue-badge-renew-success-34012",
+                    failureUrl = "/modes/driving/cc-blue-badge-failure-29707",
+                    uploadEvidenceUrl = "/modes/driving/cc-blue-badge-renew-upload-evidence-34013",
+                    enterDetailsUrl = "/modes/driving/cc-blue-badge-renew-enter-details-30681",
+                    submissionUrl = "/modes/driving/cc-blue-badge-renew-submit-34011",
+                    journeyStartUrl = "/modes/driving/cc-discount-manage-discounts-32822"
+                }
+            );
+        }
+        
+	  
+
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

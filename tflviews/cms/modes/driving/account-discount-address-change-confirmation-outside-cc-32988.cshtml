@@ -1,0 +1,163 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Application in progress";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/account-discount-address-change-confirmation-outside-cc-32988";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Application in progress</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Application in progress</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+
+          
+
+<!-- 6. discount-address-change-confirmation-outside-cc -->
+
+        @{
+            dynamic content = new ContentModel();
+            content.ConfirmationLabel = "<h2>Your address change request has been submitted</h2><p>Your details will be updated within 10 working days.&nbsp;</p>";
+            content.WhatHappensNextHeading = "What happens next";
+            content.WhatHappensNextText = "<p>Once we have made the changes we will let you know by your preferred communication channel.</p><p>Remember, as&nbsp;your new address is not within the Congestion Charge zone you are not eligible for the residents' discount. Your residents' discount will be cancelled and you will need to pay the full Congestion Charge and, if your vehicle doesn't meet the emissions standards, the ULEZ charge to drive within the zone.</p><p>Any charges you may have made at the reduced rate will be refunded automatically to you.</p>";
+            content.FurtherEvidenceText = "<h4>Posting documents</h4><p>If you need to send any copies of documents by post, please either:</p><ul>    <li>    Print this page and send in with your documents OR</li>    <li>Quote your account number on each piece of correspondence</li></ul><p>This will speed up the application process.</p><p><strong>Address:</strong></p><p>Congestion Charging<br />PO Box 344<br />Darlington<br />DL1 9QE</p><p>If you prefer to email images or copies of your documents, send them to:</p><p><a href='mailto:cclondon@cclondon.com'>CCLondon@CCLondon.com</a></p>";
+            
+            Html.RenderAction(
+                "AddressChangeConfirmation",
+                "AccountSettings",
+                new
+                {
+                    Area = "Ruc",
+                    content = content,
+                    accountSettingsUrl = "/modes/driving/account-account-settings-29386",
+                    insideDiscountZone = false           
+                });
+        
+        }
+        <h4>What happens next</h4>
+        <p>Once we have made the changes we will let you know by your preferred communication channel.</p>
+
+<p>Remember, as&nbsp;your new address is not within the Congestion Charge zone you are not eligible for the residents' discount. Your residents' discount will be cancelled and you will need to pay the full Congestion Charge and, if your vehicle doesn't meet the emissions standards, the ULEZ charge to drive within the zone.</p>
+
+<p>Any charges you may have made at the reduced rate will be refunded automatically to you.</p>
+        <!-- <h4>Posting documents</h4>
+<p>If you need to send any copies of documents by post, please either:</p>
+<ul>
+    <li>    Print this page and send in with your documents OR</li>
+    <li>Quote your account number on each piece of correspondence</li>
+</ul>
+<p>This will speed up the application process.</p>
+<p><strong>Address:</strong></p>
+<p>Congestion Charging<br />
+PO Box 344<br />
+Darlington<br />
+DL1 9QE</p>
+<p>If you prefer to email images or copies of your documents, send them to:</p>
+<p><a href="mailto:cclondon&#64;cclondon.com">CCLondon&#64;CCLondon.com</a></p> -->
+            
+      
+        @ModulesHelpers.BoxedLink(
+            "/modes/driving/account-account-settings-29386",
+            "view-payment-details",
+            "Go back to Account settings",
+            soloButton: true
+        )
+
+        
+      
+
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+        @ModulesHelpers.PrintButton()
+      
+ 
+      </div>
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

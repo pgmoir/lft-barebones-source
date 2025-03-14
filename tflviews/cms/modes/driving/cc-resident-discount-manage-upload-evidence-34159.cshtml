@@ -1,0 +1,140 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Upload proof";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-resident-discount-manage-upload-evidence-34159";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Upload proof</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Upload proof</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+
+		
+		<!-- 5. upload-evidence -->
+		@{
+            dynamic content = new ContentModel();
+            content.UploadEvidenceTitle = "Upload documents";
+            content.UploadEvidenceText = "<p>To change the vehicle on your discount you must supply an image or copy of 1 document from this list.</p><p>(If you don't have your proof available yet, send it to us within 40 days. Find out how at the end of this process.)</p><p>Your own private vehicle:</p><ul>	<li>Your V5C vehicle registration certificate (logbook). (The vehicle must also be registered with the DVLA in your name and at the address you are using to apply for the residents’ discount). When you receive your V5C, you'll need to send it to us - instructions for this will be on the confirmation page</li></ul><p>Company car:</p><ul>	<li>A company car authorisation letter - this must be on company headed paper, state your full name, the number plate and confirm that the vehicle is for your use only. (The vehicle must be registered in the company name with the DVLA)</li></ul><p>Lease vehicle:</p><ul>	<li>Vehicle lease document - this is the document that you signed to lease the vehicle. (The vehicle must be registered in the lease company name with the DVLA)</li></ul><p>A company car provided by a lease company:</p><ul>	<li>Your company’s vehicle lease document (this is the document that you signed to lease the vehicle)</li></ul><p>AND</p><ul>	<li>A company car authorisation letter - this must be on company headed paper, state your full name, the number plate and confirm that the vehicle is for your use only. (The vehicle must be registered in the company or lease name with the DVLA)</li></ul><p>All documents must be clear enough to read easily. If we can't read them we may ask you for more proof. This will delay the registration process.</p>";
+            content.SkipEvidence = "<p>SKIPEVIDENCE</p>";
+            content.UploadEvidenceHelperTitle = "How do I upload the documents?";
+            content.UploadEvidenceHelperText = "<p>You can scan paper documents into your computer, or take photographs of them with your camera, smartphone or tablet. You’ll need to save each file as a .jpg, .jpeg, .tif, .tiff or .pdf.</p><p>Once you have saved your document(s) on your computer/mobile device, click 'Browse' (this may display as 'Choose' or 'Choose File' depending on the web browser you are using) and select the file you want to upload. Remember to double check you have selected the correct file.</p><p>Repeat the process for every document you want to attach. If you make a mistake, you can add or remove files before submitting your application.</p>";
+            content.UploadEvidenceDescription = "<p>If you're unable to scan or photograph these documents clearly, you can send them directly to us at the address provided at the end of this process.</p>";
+            content.FileNotUploadedError = "Upload a file to continue";
+            content.BackButtonText = "Back";
+            content.ContinueButtonText = "Continue";
+
+            Html.RenderAction("UploadEvidence", "DiscountManage", new
+                {
+                    area = "Ruc",
+                    backUrl = "/modes/driving/cc-resident-discount-manage-select-vehicle-34149",
+                    continueUrl = "/modes/driving/cc-resident-discount-manage-submit-34151",
+                    discountStyle = ZoneChargeDiscountStyle.ResidentsDiscount,
+                    discountAction = DiscountAction.Manage,
+                    vehicleSelectedDescriptionUrl = "",
+                    vehicleSelectionSkippedDescriptionUrl = "",
+                    provisionalVehicleSelectedDescriptionUrl = "",
+                    provisionalVehicleSelectionSkippedDescriptionUrl = "",
+                    reviewUrl = "/modes/driving/cc-resident-discount-review-application-29589",
+                    journeyStartUrl = "/modes/driving/cc-discount-manage-discounts-32822",
+                    content = content
+                }
+            );
+        }
+		
+	  
+
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

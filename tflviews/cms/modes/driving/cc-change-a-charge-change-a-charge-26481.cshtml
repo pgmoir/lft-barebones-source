@@ -1,0 +1,162 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Amend a Congestion Charge";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-change-a-charge-change-a-charge-26481";}
+@{ViewBag.Language = "en";}
+        
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Amend a Congestion Charge</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Amend a Congestion Charge</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/account-account-landing-29377"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+    
+      <h2>Change charge details</h2>
+      
+           
+      
+
+ 
+
+
+		
+		<!-- 4. cc-change-a-charge -->
+		@using TfL.Ruc.Services.ViewModels.Ruc.ZoneCharge.PayZoneCharge
+		@{
+            dynamic content = new ContentModel();
+            
+            content.ChangeDateLinkText = "Change start date";
+            content.ChangeVehicleAndDateLinkText = "Change vehicle and start date";
+            content.ChangeVehicleLinkText = "Change vehicle";
+            content.BackButtonText = "Back";
+            content.AmendingVehicleWithResidentsDiscountWarningText = "<p>This is a discounted residents' charge. If you want to change the vehicle it applies to, contact the call centre on 0343 222 2222. (<a href='/corporate/terms-and-conditions/tfl-call-charges'>TfL call charges</a>)</p>";
+            content.AmendingVehicleWithResidentsDiscountAndChargeHasStartedErrorText = "<p>This is a discounted residents' charge that has already started. If you want to change the vehicle is applies to, call the call centre on 0343 222 2222. (<a href='/corporate/terms-and-conditions/tfl-call-charges' target='_blank'>TfL call charges</a>)</p>";
+            content.DailyCongestionChargesBasketText = "Daily Congestion Charge (1 day)";
+            content.LastCongestionChargesBasketText = "Last Congestion Charge (1 day)";
+            content.WeeklyCongestionChargesBasketText = "Weekly Congestion Charge";
+            content.MonthlyCongestionChargesBasketText = "Monthly Congestion Charge ({0} days)";
+            content.AnnualCongestionChargesBasketText = "Annual Congestion Charge ({0} days)";
+            content.RangeCongestionChargesBasketText = "Custom Congestion Charge ({0} days)";
+            content.WeeklyResidentDiscountChargesBasketText = "Weekly residents' discount charge ({0} days)";
+            content.MonthlyResidentDiscountChargesBasketText = "Monthly residents' discount charge ({0} days)";
+            content.AnnualResidentDiscountChargesBasketText = "Annual residents' discount charge ({0} days)";
+            content.RangeResidentDiscountChargesBasketText = "Residents' discount charge ({0} days)";
+            //content.LezStandardChargeBasketText = "Daily low emission zone charge (standard)";
+            //content.LezHigherChargeBasketText = "Daily low emission zone charge (higher)";
+
+            Html.RenderAction(
+            "ChangeOptions",
+            "ChangeZoneCharge",
+            new
+            {
+                area = "Ruc",
+                backUrl = "/modes/driving/cc-change-a-charge-find-a-charge-26478",
+                content = content,
+                zoneType = ZoneChargeZone.CongestionCharge,
+                changeDateUrl = "/modes/driving/cc-change-a-charge-start-date-26484",
+                changeVehicleUrl = "/modes/driving/cc-change-a-charge-vehicle-26487",
+                changeVehicleAndDateUrl = "/modes/driving/cc-change-a-charge-vehicle-and-start-date-26490"
+            });
+        }
+		
+	  
+
+  
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

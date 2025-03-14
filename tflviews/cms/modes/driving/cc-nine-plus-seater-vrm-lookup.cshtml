@@ -1,0 +1,165 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Vehicle details";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-nine-plus-seater-vrm-lookup";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Vehicle details</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Vehicle details</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+        @{
+            dynamic content = new ContentModel();
+
+            content.ContinueButtonText = "Confirm and continue";
+            content.BackButtonText = "Back";
+
+            content.SelectVehicleHeading = "Select Vehicle";
+
+            content.VrmHelpMessageText = "<p>Be careful not to mix up the letters '<strong>I</strong>' and '<strong>O</strong>' with the numbers '<strong>1</strong>' and '<strong>0</strong>'.</p><p>Choose the correct country of registration. You risk getting a penalty if you pick the wrong one.</p>";
+            content.VrmTitle = "Number plate (Vehicle Registration Mark)";
+            content.VrmPlaceHolder = "eg AB01ABC";
+            content.CountryofRegistrationTitle = "Country of registration";
+            content.CountryOptionUk = "United Kingdom";
+            content.CountryOptionOther = "Non-UK";
+            content.FindVehicleButtonText = "Find vehicle";
+
+            content.ExemptFromCcChargesHeading = "This vehicle is exempt from the Congestion Charge";
+            content.ExemptFromCcChargesMessage = "<p>This is based on the vehicle details entered and information held today by the DVLA and TfL. It may change without notice.</p>";
+
+            content.VehicleAlreadyOnDiscountHeading = "Vehicle already on this discount";
+            content.VehicleAlreadyOnDiscountMessage = "You can't add it again. Select a different vehicle.";
+
+            content.ConfirmEnteredVehicleButtonText = "Confirm and continue";
+            content.VehicleNotFoundTitle = "<p><strong>We do not hold details for this vehicle</strong></p>";
+            content.VehicleNotFoundText = "<p><strong>UK-registered:</strong> If your vehicle’s make and model details have not been returned, make sure you entered the number plate correctly before continuing.</p><p><strong>Registered outside the UK:</strong> We are unable to display the make, model and colour information. Confirm this is the correct vehicle to continue.</p>";
+
+            content.ConfirmEnteredVrmDetailsText = "Yes, this is the correct vehicle";
+            content.VehicleAlreadyExistsOnThisApplicationErrorText = "You've already added this vehicle to the application";
+            content.VehicleVrmCompliantErrorText = "You do not have to register this vehicle because it will not be charged for ULEZ. Go back or choose a different vehicle.";
+            content.GeneralMessageHeading = "<p><strong>What if my vehicle details are incorrect?</strong></p>";
+            content.GeneralMessageBody = "<p>If the number plate is correct but the description is wrong, you can still continue.</p><p>Vehicle information is provided to TfL by the DVLA so you'll need to let the DVLA know if your details are wrong or need to be updated.</p>";
+
+            var resetVehicle = false;        
+            if(Request.QueryString.AllKeys.Contains("resetVehicle")){
+                resetVehicle = Convert.ToBoolean(Request.QueryString["resetVehicle"]);
+            }
+            
+            // Back Url parameters        
+            if(Request.QueryString.AllKeys.Contains("sourceRoutingKey")){
+                content.SourceRoutingKey = Request.QueryString["sourceRoutingKey"];
+            }
+            content.NinePlusSeaterAccountVehiclesPageLink = "/modes/driving/cc-nine-plus-seater-add-account-vehicles";        
+            content.NinePlusSeaterReviewPageLink = "/modes/driving/cc-discount-nine-plus-seater-review";
+            content.DiscountsAndExemptionsLink = "/modes/driving/congestion-charge/discounts-and-exemptions";
+            content.ManageNinePlusSeaterLink = "/modes/driving/cc-nine-plus-seater-manage-33830";
+            content.ApplyCcDiscountLink = "/modes/driving/cc-select-discount-29641";
+            
+            Html.RenderAction("VrmLookup", "NinePlusSeater", new
+            {
+                area = "Ruc",
+                content = content,
+                nextUrl = "/modes/driving/cc-nine-plus-seater-upload-evidence?sourceRoutingKey=vrm-lookup",
+                vrmLookupUrl = "/modes/driving/cc-nine-plus-seater-vrm-lookup",
+                reviewUrl = "/modes/driving/cc-discount-nine-plus-seater-review?sourceRoutingKey=vrm-lookup",
+                resetVehicle  = resetVehicle
+            });
+
+        }
+    
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

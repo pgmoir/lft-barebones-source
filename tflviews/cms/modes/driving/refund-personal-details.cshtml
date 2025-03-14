@@ -1,0 +1,152 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Personal details";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/refund-personal-details";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                 <li><a href="/modes/driving/amend-or-refund-a-driving-charge">Amend or refund a driving charge</a></li>
+                
+            
+            
+                <li><span class="last-breadcrumb">Personal details</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Personal details</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/account-account-landing-29377"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+            @{
+            dynamic content = new ContentModel();
+
+            content.BackButtonText = "Back";
+            content.ContinueButtonText = "Continue";
+
+            content.AddressSectionHeading = "Your address";
+            content.FirstNameLabel = "First name";
+            content.LastNameLabel = "Last name";
+            content.EnterContactNumberLabel = "Telephone (optional)";
+            content.EnterEmailAddressLabel = "Email address";
+
+            content.FirstNamePlaceHolderText = "Enter a first name";
+            content.LastNamePlaceHolderText = "Enter a last name";
+            content.EmailPlaceHolderText = "Enter email";
+            content.TelephoneNumberPlaceHolderText = "+44";
+            content.PostCodePlaceHolderText = "Enter postcode";
+
+            content.FirstNameRequired = "Enter a first name";
+            content.SurnameRequired = "Enter a last name";
+            content.ContactNumberStringLength = "Your telephone number can't be more than 30 characters long";
+            content.EmailAddressRequired = "Enter an email address";
+            content.EmailAddressEmailAddress = "Enter a valid email address";
+
+            Html.RenderAction(
+                RucDictionary.RefundZoneCharge.PersonalDetailsAction,
+                "RefundZoneCharge",
+                new
+                {
+                    area = "Ruc",
+                    backUrl = "/modes/driving/amend-or-refund-a-charge",
+                    refundSuccessUrl = "/modes/driving/refund-confirmation",
+                    refundFailureUrl = "/modes/driving/refund-failure",
+                    content = content
+                }
+            );
+            }
+        
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

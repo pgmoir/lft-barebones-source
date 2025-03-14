@@ -1,0 +1,145 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Processing your file";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-selected-partner-process-file-36330";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Processing your file</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Processing your file</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+
+        
+        <!-- 5. process-file -->
+        @using TfL.Ruc.Common.ConfigSection
+        @{
+            dynamic content = new ContentModel();
+
+            content.FileProcessingText = "The following file is being processed: ";
+            content.ProcessinBackgroundButtonText = "Process in background";
+            content.NotificationCreationErrorText = "Something's gone wrong - please try again";
+            content.Note = "<p>The uploaded file is being processed and may take some time to run, especially if the file contains more than 1000 vehicles. You can let the process run in the background while you access other programs on your computer.</p><p>An email will be sent automatically to the account holder, and any additional email address you added earlier, once the upload process has finished.</p>";
+            
+            content.TotalAddedText = "Total new vehicles added: ";
+            content.TotalUnchangedText = "Total vehicles unchanged: ";
+            content.TotalRemovedText = "Total vehicles removed: ";
+            content.RejectedText = "Total vehicles not added (rejected): ";
+            content.FileInProcessHeading = "Processing file";
+            content.FileProcessedHeading = "File processed";
+            content.WarningText = "Total warning: ";
+            content.ModifiedText = "Total edited: ";
+            content.FinishButtonUrl = "/modes/driving/cc-selected-partner-vehicles-36334";
+            content.FinishButtonText = "Finish";
+            content.BulkUploadResultText = @"<p>File name: {0} Selected partner discount is active on {1} vehicles.</p>";
+            
+            Html.RenderAction("ProcessFile", "FileUpload", new
+                {
+                    area = "Ruc",
+                    manageUrl = "/modes/driving/account-account-landing-29377",
+                    failureBulkUrl = "/modes/driving/cc-selected-partner-failure-36873",
+                    processResultUrl = "/modes/driving/cc-selected-partner-process-results-36332",
+                    fileUploadOperation = FileUploadOperation.SelectedPartner,
+                    content = content
+                }
+            );
+        }
+
+        
+		
+        
+		
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

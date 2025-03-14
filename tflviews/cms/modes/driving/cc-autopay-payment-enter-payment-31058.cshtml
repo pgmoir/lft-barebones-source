@@ -1,0 +1,140 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Make a payment";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-autopay-payment-enter-payment-31058";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Make a payment</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Make a payment</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      <h2>Choose payment amount </h2>
+      
+           
+      
+
+ 
+
+
+		
+		<!-- 3. CC-enter-payment -->
+		@using TfL.Ruc.Services.ViewModels.Ruc.Autopay
+        @{  
+            dynamic content = new ContentModel();
+
+            content.BackButtonText = "Back";
+            content.ContinueButtonText = "Continue";
+            content.PaymentInstructionText = "<p>If you make a payment now it will be deducted immediately from your outstanding balance. Your payment can't be more than your current balance.</p>";
+            content.BalanceText = "Balance";
+            content.AmountText = "Amount";
+            content.EnterPaymentAmountLabel = "Enter the amount you want to pay:";
+            content.AmountDynamicRange = "This amount can't be more than your outstanding balance";
+            content.AmountRequired = "Enter an amount to continue";
+
+
+            Html.RenderAction(
+                "EnterPayment",
+                "AutoPayManage",
+                new
+                {
+                    area = "Ruc",
+                    content = content,
+                    autoPayManageUrl = "/modes/driving/cc-autopay-manage-manage-29152",
+                    makeIntermPaymentUrl = "/modes/driving/cc-autopay-payment-make-interim-payment-31061"
+                }
+            );
+        }
+		
+	  
+
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

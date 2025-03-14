@@ -1,0 +1,81 @@
+﻿
+
+
+@{ViewBag.Title = "Tube service disruption";}
+        
+        
+
+<div class="r">
+    <div class="headline-container plain">
+        <h1>Tube service disruption</h1>
+        <div class="content-page-press-release">
+        27 September 2007
+        </div>
+    </div>
+</div>
+<div class="main-and-aside r">
+    <div class="main" role="main">
+
+
+
+ <div class="on-this-page">
+<p>A TfL spokesperson said: "There is no service on the Circle and Hammersmith &amp; City lines, or on the District line between High Street Kensington and Edgware Road, this morning.&nbsp; We would like to apologise to our passengers for the disruption this has caused. We would advise passengers to plan an alternative route and leave extra time for their journeys this morning. </p>
+<p>"Local trade union safety representatives&nbsp; have raised concerns about the design of the traction brake controller on the C stock trains used on these lines. As always, we are addressing the safety concerns of the trade unions. However, these trains have been in safe operation for over twenty five years, and there is no reason for the service to the public to be disrupted whilst we seek to address the issues raised.</p>
+<p>"We are working with the trade unions to resume a full service on the lines affected as soon as possible." </p>
+
+     
+
+        
+        
+        
+        @this.ScriptBlock(
+        @<script>
+        //queue.push("@Html.ScriptPath("modules/M020-on-this-page.min.js")", null);
+        </script>
+        )
+        
+        
+        
+        </div>
+    </div>
+    <div class="aside" role="complementary">
+
+       
+        <div data-set="sidenav-container" class="large">
+
+            
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+        </div>
+
+
+
+            
+        <div data-set="sidenav-container" class="small-medium"></div>
+    </div>
+</div>
+
+<!-- Crumbs: PGtype:  -->
+
+ 
+ 
+        
+        
+            @{ViewBag.Description = "A TfL spokesperson said: 'There is no service on the Circle and Hammersmith &amp; City lines, or on the District line between High Street Kensington and Edgware Road, this morning.&nbsp; We would like to apologise to our passengers for the disruption this";}
+        
+        
+
+
+ 

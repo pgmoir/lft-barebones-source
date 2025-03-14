@@ -1,0 +1,165 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Correspondence history";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/account-correspondence-history-37389";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Correspondence history</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Correspondence history</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      <p>You can view details of all correspondence such as emails and receipts, sent to us or issued to you, through your account. If you have opted to view your payment receipts 'Online only' you will be able to see them here.</p>
+<p>Use the filter options to filter the list for a particular day or dates.</p>
+<p>You can also download and print individual correspondence files.</p>
+<h3>Auto Pay </h3>
+<p>If you have Auto Pay set up on your account you can also see details of any Auto Pay correspondence such as statements. Or you can see more Auto Pay details by following the 'Manage Auto Pay' link below.</p>
+<p>If you have not set up Auto Pay and what like to find out more go back to your account sign in page for details.</p>
+      
+           
+      
+
+
+	    
+		<!-- 3. correspondence-history -->
+        @{
+            
+            dynamic linksContent = new ContentModel();
+            linksContent.ManageAutoPayText = "Manage Auto Pay";
+            linksContent.ManageAutoPayUrl = "/modes/driving/cc-autopay-manage-manage-29152";
+
+            Html.RenderAction(
+               "ManagePaymentLinks",
+               "CorrespondenceHistory",
+               new
+               {
+                   area = "Ruc",
+                   content = linksContent,
+                   manageAutoPayUrl = "/modes/driving/cc-autopay-manage-manage-29152"
+               });
+
+            dynamic content = new ContentModel();
+            content.ListHeading = "Correspondence";
+            content.SearchTypeText = "Search for ";
+            content.SearchLabel = "Search by individual correspondence reference number";
+
+            content.FilterHeadingText = "Filter by date range";
+            content.FromDateText = "From date: ";
+            content.ToDateText = "To date: ";
+            content.SortHeadingText = "Sort by";
+            content.SortOrderSelectValuesAscending = "Oldest first";
+            content.SortOrderSelectValuesDescending = "Newest first";
+
+            Html.RenderAction(
+                CommonDictionary.ListModule.ListActionName,
+                "CorrespondenceHistory",
+                new
+                    {
+                        area = "Ruc",
+                        content = content,
+                        transactionDetailUrl = "/modes/driving/account-correspondence-detail-37390"
+                    });
+        }
+        
+        <br/>
+        @FormHelpers.DottedSeparator()
+        @ModulesHelpers.BackLink()
+        
+        @this.ScriptBlock(
+            @<script>
+                queue.push(
+                    "@Html.ScriptPath("specific/list-filters-text.min.js")", null,
+                    "@Html.ScriptPath("specific/results-paginator.min.js")", null,
+                    "@Html.ScriptPath("specific/pages/correspondence-history.min.js")", function() {
+                        tfl.ruccorrespondence.init();
+                    }
+                );
+            </script>
+        )
+		
+	  
+
+  
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

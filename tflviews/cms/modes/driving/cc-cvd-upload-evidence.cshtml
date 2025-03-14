@@ -1,0 +1,136 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Upload proof";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-cvd-upload-evidence";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Upload proof</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Upload proof</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+
+        @{
+            dynamic content = new ContentModel();
+            content.FileNotUploadedError = "Upload a file to continue";
+            
+            content.UploadProofIntro = "<p>We need to see evidence about the vehicle and its emissions standard to process your application.</p>";
+            content.AcceptedDocumentHeading = "";
+            content.UploadDocumentsListIntro = "<p>Upload an image of:</p><ul>	<li>V5C (logbook) or foreign equivalent</li></ul><p>The document must show that the vehicle:</p><ul>	<li>Meets the Euro 5 emissions standards</li>	<li>Emits less than or equal to 75g/km of CO2</li></ul><p>OR</p><ul>	<li>Is registered as fuel type 'electric'</li></ul><p>You can upload a maximum of 19 documents for this application.</p>";
+            content.UploadDocumentsList = "";
+       
+            content.BackButtonText = "Back";
+            content.ContinueButtonText = "Continue";
+
+            // Back Url parameters
+            if(Request.QueryString.AllKeys.Contains("sourceRoutingKey")){
+                content.SourceRoutingKey = Request.QueryString["sourceRoutingKey"];        
+            }        
+            content.UledAccountVehiclesPageLink = "/modes/driving/cc-cvd-add-account-vehicles?resetVehicle=true";
+            content.UledVrmLookupPageLink = "/modes/driving/cc-cvd-vrm-lookup?resetVehicle=true";
+
+            Html.RenderAction("Upload", "Uled", new
+            {
+                area = "Ruc",
+                reviewUrl = "/modes/driving/cc-cvd-review?sourceRoutingKey=upload-proof",
+                content = content
+            });
+            
+        }
+
+    
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

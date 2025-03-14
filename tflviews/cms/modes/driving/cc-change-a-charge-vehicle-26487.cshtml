@@ -1,0 +1,220 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Amend a Congestion Charge";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-change-a-charge-vehicle-26487";}
+@{ViewBag.Language = "en";}
+        
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Amend a Congestion Charge</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Amend a Congestion Charge</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/account-account-landing-29377"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+    
+      <h2>Change vehicle</h2>
+      
+           
+      
+
+ 
+
+
+		
+		<!-- 3. cc-change-a-charge-vehicle  -->
+		@using TfL.Ruc.Services.ViewModels.Ruc.Common
+        @using TfL.Ruc.Services.ViewModels.Ruc.ZoneCharge.PayZoneCharge
+        @{
+            dynamic content = new ContentModel();
+            
+            content.DailyCongestionChargesBasketText = "Daily Congestion Charge (1 day)";
+            content.LastCongestionChargesBasketText = "Last Congestion Charge (1 day)";
+            content.WeeklyCongestionChargesBasketText = "Weekly Congestion Charge";
+            content.MonthlyCongestionChargesBasketText = "Monthly Congestion Charge ({0} days)";
+            content.AnnualCongestionChargesBasketText = "Annual Congestion Charge ({0} days)";
+            content.RangeCongestionChargesBasketText = "Custom Congestion Charge ({0} days)";
+
+            //content.LezStandardChargeBasketText = "Daily low emission zone charge (standard)";
+            //content.LezHigherChargeBasketText = "Daily low emission zone charge (higher)";
+            // JSON content.VrmHelpMessageText = "Be careful not to mix up the letters 'I' and 'O' with the numbers '1' and '0'.";
+            content.VrmLabel = "Vehicle Registration Mark";
+            content.NotMyVehicleMessage = "<p>If the Vehicle Registration Mark is correct but the vehicle description shown is wrong, you can still transfer the charge.</p><p>Vehicle information is provided to TfL by the DVLA or DVA, so you'll need to let the DVLA or DVA know if your vehicle details are wrong or need to be updated.</p>";
+            //content.NoChargePayableMessageHeader = "";
+            //content.NoChargePayableMessageFooter = "";
+            content.PleaseSelectAVehicleErrorMessage = "Select a vehicle to continue";
+            //content.NoChargeApplicableMessage = "Based on the vehicle registration mark details you have entered you are not required to pay this charge";
+            //content.NoChargePayableMessage = "";
+            content.ConfirmDateButtonText = "Confirm date";
+            //content.FromTodayText = "From the beginning";
+            //content.FromAnoterDayText = "From another date";
+            content.PreviousChargeDetails = "Current charge details";
+            content.ConfirmVehicleButtonText = "Confirm vehicle";
+            content.AmendChargeDetailsLabel = "New charge details";
+            content.ConfirmationText = "<p>Before paying the Congestion Charge, you may want to view our <a href='/corporate/privacy-and-cookies/road-user-charging' target='_blank'>privacy notice</a>.</p>";
+            content.ContinueButtonText = "Continue";
+            content.BackButtonText = "Back";
+            content.BasketHeading = "Payment summary";
+            content.BasketText = "Charge amendment administration charge";
+            content.PageInstructionText = "Enter the new vehicle details.";
+            content.OverlappingChargeExistErrorText = "<p>You cannot transfer the charge to this vehicle - it has already been paid for some or all of the dates you have selected. Please choose another vehicle or consider <a target='_blank' href='/modes/driving/cc-refunds-find-a-charge-to-refund-36931'>applying for a refund</a>.</p>";
+            // JSON content.FindVehicleButtonText = "Find vehicle";
+            content.ConfirmEnteredVehicleButtonText = "Confirm";
+            // JSON content.VrmTitle = "Vehicle Registration Mark";
+            // JSON content.VrmPlaceHolder = "eg AB01ABC";
+            // JSON content.CountryofRegistrationTitle = "Country of registration";
+            //content.CcDiscountedTitle = "No charge payable for ";
+            //content.CcDiscountedText = "<p>Based on the vehicle registration (VRM) details that you have entered and the classification information held by Transport for London (TfL) on this day, your vehicle is deemed 100% discounted and you are not required to pay the congestion charge.</p><p>If you believe that this information is incorrect and you still want to pay the Congestion Charge, then you can continue.</p><p><strong>Please be aware that classification may change without notification, so you should always check to see if payment is required for journeys into the zone.</strong></p>";
+            content.CcExemptTitle = "No charge due for ";
+            content.CcExemptText = "<p>Based on the vehicle registration details you have entered and the classification information held by the DVLA or DVA and TfL on this day, this vehicle is exempt from the Congestion Charge.</p><p>If you believe this information is incorrect and you still want to pay the Congestion Charge, add this vehicle or apply for a discount, then you can continue with this process.</p><p><strong>This information is correct as of today’s date, but may change without notice. Always check to see if payment is required for travel within the zone.</strong></p>";
+            content.ThisisNotMyVehicleTitle = "What if my vehicle details are incorrect?";
+            content.ThisisNotMyVehicleText = "<p>If the Vehicle Registration Mark is correct but the vehicle description shown is wrong, you can still continue to pay for this vehicle.</p><p>Vehicle information is provided to TfL by the DVLA or DVA, so you'll need to let the DVLA or DVA know if your vehicle details are wrong or need to be updated.</p>";
+            // JSON content.VehicleNotFoundTitle = "<p><strong>We do not hold any details for your vehicle.</strong></p>";
+            // JSON content.ConfirmEnteredVrmDetailsText = "Yes, this is the correct vehicle";
+            // JSON content.VehicleNotFoundText = "<p><strong>UK-registered:</strong> If your vehicle’s make and model details have not been returned, please make sure you entered the Vehicle Registration Mark correctly before continuing.</p><p><strong>Registered outside the UK:</strong> We are unable to display the make, model and colour information. Confirm your details before continuing.</p>";
+            content.ConfirmSaveVehicleToQmlText = "Save this vehicle to your account to speed up making payments.";
+            content.QmlUseDifferentVehicleText = "Use a different vehicle";
+            //content.ResidentDiscountAppliedText = "Residents discount applied";
+            content.SendEmailReceiptHeading = "Send receipt by email";
+            content.SendSMSReceiptHeading = "Send receipt to mobile";
+            content.EmailReceiptLabel = "Email address";
+            content.MobileReceiptLabel = "Mobile number";
+            content.DetailsExistInAccountDetailsMessage = "We'll send receipts by your preferred channel.";
+            content.ActiveDiscountText = "Active on: ";
+            content.VehicleAlreadyAddedErrorText = "No need to check the box as this vehicle is already on your account.";
+            // JSON content.CountryOptionUk = "United Kingdom";
+            // JSON content.CountryOptionOther = "Non-UK";
+            content.NewDetailsHeading = "New charge details";
+            content.ConfirmPrivacyNoticeRequired = "<p>Before paying the Congestion Charge, you may want to view our <a href='/corporate/privacy-and-cookies/road-user-charging' target='_blank'>privacy notice</a>.</p>";
+            content.ConfirmVehicleErrorText = "'Find vehicle' to continue";
+            content.CheckQmlVehicleButtonText = "Check";
+
+            content.EmailAddressRequired = "Enter an email address to continue";
+            content.EmailAddressEmailAddress = "Enter a valid email address to continue";
+            content.MobileNumberRequired = "Enter a mobile number to continue";
+            content.MobileNumberStringLength = "Too many digits, try again";
+            content.OverlappingChargesErrorText = "<p>You cannot transfer the charge to this vehicle - it has already been paid for some or all of the dates you have selected. Please choose another vehicle or consider <a href='/modes/driving/cc-refunds-find-a-charge-to-refund-36931' target='_blank'>applying for a refund</a>.</p>";
+            content.CongestionChargeStartDateUnchanged = "This vehicle is already on the charge. Edit to change to a different vehicle.";
+            // JSON content.VRMAcceptedRequireTrue = "Confirm that this is the correct vehicle to continue";
+            // JSON content.VehicleRegistrationMarkRequired = "Enter a Vehicle Registration Mark to continue";
+            content.ToxicityChargeCannotAmend ="<h4>Charge cannot be amended</h4><p>The vehicle you have selected is charged at a different value to the original vehicle. Charges can only be amended to vehicles that attract the same Congestion Charge value. If you still intend to drive the new vehicle in the zone you will need to pay an additional charge</p>";
+            content.CcAndToxicityChargeableText = "Your vehicle does not meet the required emissions standard, when paying the Congestion Charge the total amount payable will include an additional T- Charge value. More information on the T-Charge can be found at <a href='/modes/driving/emissions-surcharge' target='_blank'>tfl.gov.uk/driving/t-charge</a>";
+            content.CcExemptAndToxicityChargeableText = "Your vehicle does not meet the required emissions standard, although you are currently exempt from the Congestion Charge you will need a T-Charge value to drive your vehicle in the Congestion Charging zone. More information on the T-Charge can be found at <a href='/modes/driving/emissions-surcharge' target='_blank'>tfl.gov.uk/driving/t-charge</a>";
+            content.ToxicityChargeHeaderText = "T-Charge payable";
+            
+            Html.RenderAction(
+                "CheckCharge",
+                "ChangeZoneCharge",
+                new
+                {
+                    area = "Ruc",
+                    backUrl = "/modes/driving/cc-change-a-charge-change-a-charge-26481",
+                    content = content,
+                    changeVehicleContent = content,
+                    changeType = ChangeChargeType.Vehicle,
+                    reviewUrl = "/modes/driving/cc-change-a-charge-review-37243",
+                    administrationFee = 2.50m,
+                    zoneType = TfL.Ruc.Domain.Entities.Ruc.ZoneChargeZone.CongestionCharge,
+                    lookupType = VehicleLookupType.ChangeCc
+                });
+        }   
+		
+	  
+
+  
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

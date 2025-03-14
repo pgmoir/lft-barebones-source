@@ -1,0 +1,177 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Email updates ";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/travel-information/social-media-and-email-updates/email-updates";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/travel-information/social-media-and-email-updates/index">Social media & email updates</a></li>
+                
+            
+            
+                <li><span class="last-breadcrumb">Email updates </span></li>
+            
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Email updates </h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+                @using TfL.Web.ViewModels.FormBuilder
+                <div class="responsive-form responsive-table-wrapper with-icon">
+                @using (Html.BeginForm())
+                {
+                    
+
+                var pageTitle = "";
+                var introText = "<p>Get weekly advance warning of weekend closures on TfL services by subscribing to our free weekend travel updates email.</p><p>Sign up for customer service email updates to find out about any changes to your regular journeys. We also provide traffic updates, Oyster news and information on accessibility across our network.</p><p>You can also receive our automated <a href='/travel-information/social-media-and-email-updates/journey-alerts'>Journey Alert and Status Updates</a> emails to avoid disruptions on your journeys. </p>";
+                var emailConfirmationSubject = "TfL Customer email updates {0}";
+                var successText = "<h2>Thank you</h2><p>Thank you for signing up to our email updates.</p><p></p><p></p>";
+                var failureText = "<p>There was an error. Please try again.</p>";
+                var dataProtectionText = "<p>Transport for London (TfL), its subsidiaries and service providers will use the personal information you provide on this form to process your feedback and provide you with a response, or the information or services you have requested. Your personal information will be properly safeguarded and processed in accordance with the requirements of privacy and data protection legislation. To find out more about how TfL handles personal data, see our <a href='/corporate/privacy-and-cookies/index' target='_blank'>Privacy and cookies pages</a>.</p>";
+                var locationHelperText = "<p>Please let us know the pier location or journey made.</p>";
+                var bodyText = "";
+            
+
+			    dynamic personalDetailsModel = new ContentModel();
+                personalDetailsModel.PhoneNumberToolTip = "It may be quicker to resolve your enquiry by calling you back.";
+                personalDetailsModel.EmailAddressToolTip = "";
+                personalDetailsModel.TitleRequireIfTrue = "Select your title.";
+                personalDetailsModel.FirstNameRequireIfTrue = "Enter your first name.";
+                personalDetailsModel.LastNameRequireIfTrue = "Enter your surname.";
+                personalDetailsModel.EmailAddressRequireIfTrue = "Enter your email address.";
+                personalDetailsModel.ConfirmEmailAddressRequireIfTrue = "Enter your email address.";
+                personalDetailsModel.PhoneNumberRequireIfTrue = "Enter your phone number.";
+                personalDetailsModel.PhoneNumberRegularExpression = "The phone number must be numeric.";
+            
+
+
+                dynamic addressDetailsContent = new ContentModel();
+                addressDetailsContent.AddressLine1RequireIfTrue = "Enter your address.";
+                addressDetailsContent.AddressLine2RequireIfTrue = "Enter your address.";
+                addressDetailsContent.CityRequireIfTrue = "Enter your city.";
+                addressDetailsContent.CountryRequireIfTrue = "Enter your country.";
+                addressDetailsContent.PostcodeRequireIfTrue = "Enter your postcode.";
+                addressDetailsContent.PostcodeRegularExpression = "Please enter a valid UK postcode";
+                            
+                Html.RenderAction("Index", "FormBuilder", new
+                {
+                    formSetup = new FormSetupViewModel
+                    {
+                        FormName = "Email Updates Form",
+                        FormType = "EmailUpdates",
+                        FormSections = new List<string>() { "PersonalDetails", "AddressDetails", "EmailUpdates" },
+                        EmailConfirmationToUser = true,
+                        EmailConfirmationSubject = @emailConfirmationSubject,
+                        FormRecipient = "",
+                        IntroductionMessages = new Dictionary<string, string>() { { "intro", @introText } },
+                        BodyText = @bodyText
+                    },
+                    personalDetailsViewModel = new PersonalDetailsFormViewModel { Heading = "Your contact details", Content = personalDetailsModel, TitleRequired = true, FirstNameRequired = true, SurnameRequired = true, EmailAddressRequired = true, ConfirmEmailAddressRequired = true, OysterImageRequired = true, OysterNumberVisible = true, OysterNumberRequired = false },
+                    submission = new FormSubmissionViewModel { DataProtection = @dataProtectionText, SuccessfulSubmissionMessage = @successText, FailedSubmissionMessage = @failureText },
+                    addressDetailsFormViewModel = new AddressDetailsFormViewModel { Content = addressDetailsContent, PostcodeVisible = true },
+                    emailUpdatesFormViewModel =  new EmailUpdatesFormViewModel()
+                });
+                        
+                }
+                
+                
+                
+                </div>
+            
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+   
+    
+    
+    
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="advert-tile unsponsored-style google-ads" aria-hidden="true">
+  <div class="advert-link">
+    <div class="advert-content">
+        <div class="medium-large" data-advert="/76889402/non-targeted" data-advert-sizes="300, 250"></div>
+        <div class="small" data-advert="/76889402/non-targeted" data-advert-sizes="300, 250"></div>
+    </div>
+  </div>
+</div>
+@{
+    ViewBag.AmazonSlot = "'amznslots'";
+    ViewBag.AmazonAds = "'3199'"; // to add another value, this needs to be ViewBag.AmazonAds = "'3199','xx'";
+}
+      
+
+ </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+ 
+ 
+        
+        
+        
+            @{ViewBag.Description = "Customer email updates. Sign up to receive email updates to help you plan your travel in London ";}
+        
+            
+        
+
+
+ 

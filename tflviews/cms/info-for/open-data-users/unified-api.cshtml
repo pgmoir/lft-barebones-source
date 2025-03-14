@@ -1,0 +1,291 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Unified API";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/info-for/open-data-users/unified-api";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/info-for/open-data-users/index">Open data users</a></li>
+                
+            
+            
+                <li><span class="last-breadcrumb">Unified API</span></li>
+            
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Unified API</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+      <div class="article-teaser">
+        Our open data spans a large spectrum of quality, accuracy and data formats. We are simplifying your access to this data with a new front-end for our unified API.
+        
+      </div>
+    
+    <div class="on-this-page">
+      <p>Our improved unified API has a number of benefits over our older processes:</p>
+<h2>Benefits of a unified API</h2>
+<p><strong>Unification of the data for modes of transport into a common format and structure (common canonical data model).</strong></p>
+<p>The majority of the transport data provided by each mode of transport is semantically similar. Historically, the data for each mode has been shared with you in different formats and structures.  This makes the development of multi-mode applications difficult as you will need to write code for each mode of transport.</p>
+<p>The unified API presents all the data that is semantically similar for each mode of transport in the same format and consistent structures. This enables you to write once, and access all of the same types of data across all the modes of transport quickly, making multi-mode application development easier.</p>
+<p>The core identifiers for all stations and platforms have been normalised to the national Naptan standard.  This standard is an identification scheme that is supported by the DfT nationally, allowing the API to integrate data from transport authorities outside of London.  The complexity of mapping between multiple identification systems used within TfL has been hidden from consumers of the API.</p>
+<p><strong>Live and web scale</strong></p>
+<p>The unified API is designed for applications to use in realtime and at high volume.</p>
+<p>Previously the data has been provided in a variety of ways from flat file to streams.  In particular the flat files encourage an approach where you create applications with copies of the data, meaning the local copy quickly becomes outdated.  The new API is designed to allow you to query in realtime and on demand, so that end customers always have the latest information.</p>
+<p><strong>Low latency</strong></p>
+<p>Some data sets are time-sensitive; in particular bus and rail arrivals can be out of date within 30s.  The unified API supports the latest technologies to deliver this information at the lowest possible latencies (websockets) in ways that scale to meet high volumes. This capability is delivered for rail and buses even though the source data systems use differing paradigms behind the scenes (bus Countdown uses streams, Trakernet uses polling).</p>
+<p><strong>Minimise structural and operational complexity</strong></p>
+<p>Much of TfL's source data is provided from back-office operational systems.  The data is rich, but in many places it is over-complicated for most consumer applications.  The unified API is designed with customer-facing applications in mind and the data that is output is designed to be easily understandable, and supportive of common customer-facing application use cases.</p>
+<p><strong>Support of common web and data formats</strong></p>
+<p>The unified API supports output in both XML and JSON format.</p>
+<p>JSON is quickly becoming the de facto data format for web and mobile applications, due to its ease of integration into browser technologies and server technologies that support Javascript.  XML is also widely used as the data interchange format for data rich applications.</p>
+<p>JSON also allows easier integration with web-based mapping technologies such as Google Maps and Open Street map.</p>
+<p><strong>Supportive of future change whilst minimising user impact</strong></p>
+<p>The unified API acts as a mediator and fa&ccedil;ade between the users of the API and changes to the core source systems that provide the data.  This shields users of the API from changes to those source systems as the API can implement logic to maintain the structures and methods that applications have been developed against.</p>
+<p>JSON is a schema-less standard which is particularly suited to allowing new data to be incorporated without impacting previously developed solutions.</p>
+<h2>Available datasets</h2>
+<p>The API supports all the data requirements of the TfL website.  Every data-driven aspect of the website (including maps) is powered by the unified API.</p>
+<p>Some of the multi-modal core datasets included and available to developers are:</p>
+<ul>
+    <li>Journey Planning (current and future)</li>
+    <li>Status (current and future)</li>
+    <li>Disruptions (current) and Planned works (future)</li>
+    <li>Arrival/departure predictions (instant and websockets)</li>
+    <li>Timetables</li>
+    <li>Embarkation points and facilities</li>
+    <li>Routes and lines (topology and geographical)</li>
+    <li>Fares</li>
+</ul>
+<p>Additionally, the API supports an extensive places capability for looking up and matching locations by name, postcode etc. It also includes cycle hire data.</p>
+<p>Other datasets are also available for Cabwise, providing locations of registered taxi firms and WebCAT, which includes modelling information on transport, such as travel times between locations.</p>
+<h2>Using the unified API</h2>
+<p>Using the new API is designed to be as simple as possible, and is available to all:</p>
+<p><a href="https://api.tfl.gov.uk"><strong>Access the unified API</strong></a></p>
+<p>To use the API, you need to register for access tokens and must send those tokens as part of your request. The default response format is JSON, but developers can also request XML if preferred.  These examples are live and it is recommended that a JSON formatter plugin is installed in your browser to make it easier to view the results.</p>
+<h2>How it works</h2>
+<p>Unlike the old API, the unified API consumes and aggregates many of the existing open data sources that you are working with already.</p>
+<p>When the data emerges from the API, it is uniformly consistent in output and structure.  The core benefit for this approach is that with the API acting as a facade, the logic and processes behind creating the API and merging the datasets are abstracted away from you.</p>
+<p>This means that we deal with all of the complexity of stitching the many formats and nuances of the many data formats and qualities from their source systems, and provide you with a unified API that is easier to use.</p>
+<p>This approach also allows us to maintain a compatibility layer going forward. If the input source data systems change, the data can still be provided in the same format out of the API and allow your systems to carry on working in the future.</p>
+<p>The data provided by the API regularly updates from the source systems to deliver the most accurate information available at the time.</p>
+<p>The unified API also represents a step change in the way that the data is provided to you. Traditionally much of the data has been provided as flat files - this required you to do a lot of work to pull the data into your own databases and systems before being able to query that data.</p>
+<p>The API is designed to support a model of interaction where you query the API rather than needing to load the data into your own systems.  It is possible for you to use the data from the API to populate your own databases, but we encourage you to use the API directly as this will minimise issues with data freshness across all delivery channels.</p>
+<h2>Existing data sources</h2>
+<p>Going forward it would be beneficial for you to adopt the new API and to request enhancements and updates to this rather than reverting to the old feeds.</p>
+<p>In the future, we may begin to phase out the old sources of data when the information they currently contain is fully available through the API.  In some cases, there is additional data and value in the old raw data, and these will continue to be made available.</p>
+<p>It should be noted that creating multi-modal applications from those old data sources would be more challenging than using the API and, in these cases, using the old data sources is not recommended.</p>
+      
+           
+      
+      
+        
+          
+            @this.ScriptBlock(
+              @<script>
+                queue.push("@Html.ScriptPath("modules/M020-on-this-page.min.js")", null);
+              </script>
+            )
+          
+        
+      
+    </div>
+  </div>
+  <div class="aside" role="complementary">
+
+   
+    
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        <div class="login-widget option-one moving-source-order">
+
+    <h3>Sign in or register for data feeds</h3>
+    <a href="https://api-portal.tfl.gov.uk/" class="primary-button">Sign in</a>
+    <a href="https://api.tfl.gov.uk">See detailed developer documentation</a>
+</div>
+ 
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                <a href="/info-for/open-data-users/index" class="heading">
+                    <h2 id="sub-menu-heading">Open data users<span class="visually-hidden"> navigation</span></h2>
+                </a>
+                <ul>
+                    
+                                <li><div class="link-wrapper"><a href="/info-for/open-data-users/open-data-policy">Open data policy</a></div></li>
+                            
+ 
+                                <li class="selected"><div class="link-wrapper"><a href="/info-for/open-data-users/unified-api">Unified API</a></div>
+                            </li>
+ 
+                                <li><div class="link-wrapper"><a href="/info-for/open-data-users/our-open-data">Our open data</a></div></li>
+                            
+ 
+                                <li><div class="link-wrapper"><a href="/info-for/open-data-users/design-and-branding">Design & branding</a></div></li>
+                            
+ 
+                </ul>
+            
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+      </div>
+    
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="advert-tile unsponsored-style google-ads" aria-hidden="true">
+  <div class="advert-link">
+    <div class="advert-content">
+        <div class="medium-large" data-advert="/76889402/non-targeted" data-advert-sizes="300, 250"></div>
+        <div class="small" data-advert="/76889402/non-targeted" data-advert-sizes="300, 250"></div>
+    </div>
+  </div>
+</div>
+@{
+    ViewBag.AmazonSlot = "'amznslots'";
+    ViewBag.AmazonAds = "'3199'"; // to add another value, this needs to be ViewBag.AmazonAds = "'3199','xx'";
+}
+      
+
+ </div>
+    
+      <div class="module-grid clearfix">
+                    
+        <div class="vertical-button-container">
+
+
+
+<a href="https://api.tfl.gov.uk"  class="plain-button">Access the Unified API</a>
+
+</div>
+
+      </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+ 
+ 
+        
+        
+        
+            @{ViewBag.Description = "Our open data spans a large spectrum of quality, accuracy and data formats - all easily accessible via TfL's unified API";}
+        
+            
+        
+
+
+ 

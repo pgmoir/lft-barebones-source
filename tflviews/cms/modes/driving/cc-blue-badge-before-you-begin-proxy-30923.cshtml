@@ -1,0 +1,206 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Blue Badge discount";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-blue-badge-before-you-begin-proxy-30923";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Blue Badge discount</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Blue Badge discount</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/account-account-landing-29377"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+      <div class="article-teaser">
+        <p>You can apply for a 100% discount on the Congestion Charge on behalf of a Blue Badge holder or on behalf of an institution.</p>
+        
+      </div>
+    
+    
+      <h2>Before you start</h2>
+
+<p>Before you apply for the Blue Badge discount on behalf of a Blue Badge holder, a London Road User Charging account must be set up <strong>in their name</strong>. (Sign in now if they already have an account.)</p>
+
+<p>To create an account, click on 'Continue' and complete all required fields. You can also set up optional services, such as mobile phone text alerts, to help you and/or the account holder manage the discount.</p>
+
+<h3>Applying for the Blue Badge discount</h3>
+
+<p>Once the London Road User Charging account has been created and you or the account holder sign in, you will be directed automatically to complete the discount application. You will need to upload images of:</p>
+
+<ul>
+	<li>Both sides of the Blue Badge</li>
+</ul>
+
+<p>Plus 1 of the following proofs of identity:</p>
+
+<ul>
+	<li>DSS benefit entitlement letter (less than 7 months old)</li>
+	<li>Current passport</li>
+	<li>Current driver's licence</li>
+	<li>Pension book/entitlement letter (less than 7 months old)</li>
+	<li>Birth certificate (same first and last names as the Blue Badge - not a Certificate of Registration of Birth)</li>
+	<li>Marriage certificate (same first and last names as the Blue Badge)</li>
+	<li>Current bank or credit card statement (no more than 3 months old)</li>
+	<li>Deed Poll Certificate (same first and last names as the Blue Badge)</li>
+</ul>
+
+<h3>Authorisation form</h3>
+
+<p>As you are not the Blue Badge holder you will also need to download, complete and return an authorisation form. This form will confirm that you are authorised to act on behalf of the Blue Badge holder.</p>
+
+<p>The completed form can be scanned and uploaded along with other documents we need later in this application. If you are unable to scan or upload documents you can post them to the address provided at the end of the application process.</p>
+      
+           
+      
+
+
+        
+        <!-- 2.1 blue-badge-proxy -->
+        @ModulesHelpers.LinkWithIcon("Download authorisation form", "download-csv", "/ruc-cdn/static/cms/documents/blue-badge-application-on-behalf-of-badge-holder-declaration-of-authority.pdf")
+        
+        @{
+            dynamic content = new ContentModel();
+            content.ContinueButtonText = "Start";
+
+            Html.RenderAction("DiscountBeforeYouBegin", "DiscountApply", new
+                {
+                    area = "Ruc",
+                    discountStyle = ZoneChargeDiscountStyle.BlueBadge,
+                    createAccountUrl = "/modes/driving/cc-blue-badge-continue-34688",
+                    content = content,
+                    combined = true,
+                    proxy = true
+                }
+            );                
+        }
+        
+
+	  
+
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+      <div>
+                    
+        <div class="vertical-button-container">
+    <ul>
+        
+        
+        
+        <li><a href="/modes/driving/congestion-charge/paying-the-congestion-charge"  class="plain-button">Congestion Charge payments</a></li>
+        
+        
+        <li><a href="/modes/driving/congestion-charge/congestion-charge-zone"  class="plain-button">Congestion Charge zone</a></li>
+        
+        
+        <li><a href="/modes/driving/auto-pay"  class="plain-button">Auto Pay</a></li>
+        
+        
+        <li><a href="/modes/driving/congestion-charge/discounts-and-exemptions"  class="plain-button">Discounts and exemptions</a></li>
+        
+        
+        <li><a href="/modes/driving/congestion-charge/contact-congestion-charge"  class="plain-button">Contact Congestion Charge</a></li>
+        
+    </ul>
+</div>
+
+      </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "Before we can process your application for the Blue Badge discount on behalf of a Blue Badge holder, a London Road User Charging account must be set up in their name.";}
+        
+            
+        
+
+
+ 

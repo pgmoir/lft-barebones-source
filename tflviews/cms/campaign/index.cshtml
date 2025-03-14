@@ -1,0 +1,136 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Campaigns";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/campaign/index";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+
+@{
+    Response.Status = "301 Moved permanently";
+    Response.AddHeader("Location", "/");   
+}
+
+ 
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+            
+                <li><span class="last-breadcrumb">Campaigns</span></li>
+            
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Campaigns</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+      <div class="article-teaser">
+        We run campaigns to alert people to changes and events that may affect them, to provide information about alternative ways to travel and to promote safety.
+        
+      </div>
+    
+    <div class="on-this-page">
+      
+        <p>The subjects we cover include:</p>
+        <ul>
+            <li>Events that are likely to cause travel disruption</li>
+            <li>Changes to the transport system</li>
+            <li>Changes to fares and ticketing</li>
+            <li>Road safety</li>
+            <li>Safer travel at night</li>
+            <li>Alternative ways to travel such as cycling and walking</li>
+            <li>Corporate information such as transparency</li>
+        </ul>
+        <p>Use the menu to navigate to our current campaigns. &nbsp;</p>
+    
+      
+           
+      
+      
+        
+          
+            @this.ScriptBlock(
+              @<script>
+                queue.push("@Html.ScriptPath("modules/M020-on-this-page.min.js")", null);
+              </script>
+            )
+          
+        
+      
+    </div>
+  </div>
+  <div class="aside" role="complementary">
+
+   
+    
+    
+    
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="advert-tile unsponsored-style google-ads" aria-hidden="true">
+  <div class="advert-link">
+    <div class="advert-content">
+        <div class="medium-large" data-advert="/76889402/non-targeted" data-advert-sizes="300, 250"></div>
+        <div class="small" data-advert="/76889402/non-targeted" data-advert-sizes="300, 250"></div>
+    </div>
+  </div>
+</div>
+@{
+    ViewBag.AmazonSlot = "'amznslots'";
+    ViewBag.AmazonAds = "'3199'"; // to add another value, this needs to be ViewBag.AmazonAds = "'3199','xx'";
+}
+      
+
+ </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+ 
+ 
+        
+        
+        
+            @{ViewBag.Description = "List of TfL's current campaigns";}
+        
+            
+        
+
+
+ 

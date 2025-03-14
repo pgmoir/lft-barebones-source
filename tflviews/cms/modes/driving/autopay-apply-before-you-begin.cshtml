@@ -1,0 +1,171 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Set up Auto Pay";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/autopay-apply-before-you-begin";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                 <li><a href="/modes/driving/auto-pay">Auto Pay</a></li>
+                
+            
+            
+                <li><span class="last-breadcrumb">Set up Auto Pay</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Set up Auto Pay</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/account-account-landing-29377"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+      <div class="article-teaser">
+        <p>Pay the Congestion Charge and Ultra Low Emission Zone (ULEZ) charge automatically each month.</p>
+        
+      </div>
+    
+    
+      <p>Auto Pay records the number of charging days a vehicle travels in the Congestion Charge zone and, if your vehicle does not meet the emissions standards, the ULEZ. It bills users each month.</p>
+
+<h2>Before you start</h2>
+
+<p>You need to create a London Road User charging account before setting up Auto Pay. (Already have an account? <a href="/modes/driving/cc-autopay-apply-select-vehicles">Sign in now.</a>)</p>
+
+<p>To set up Auto Pay you will need your:</p>
+
+<ul>
+	<li>Vehicle registration details</li>
+	<li>Bank or payment card details</li>
+</ul>
+
+<p>You can add a maximum of 5 vehicles to Auto Pay. If you're a business with 6 or more vehicles you can <a href="/modes/driving/fleet-autopay-apply-apply-anon-30199">set up Fleet Auto Pay</a>.</p>
+
+<h3>Annual charge</h3>
+
+<p>The &pound;10 registration charge for each vehicle added to Auto Pay must be paid every year. You don't have to pay this charge immediately - it will be added to your first statement.</p>
+      
+           
+      
+<div class="module-grid clearfix">
+<div>
+
+<div class="call-to-action-button">
+       <a href="/modes/driving/autopay-apply-choose-vehicles" class="primary-button"   title="Start">Start</a>
+
+    </div>
+</div> 
+ 
+</div>
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+      <div>
+                    
+        <div class="vertical-button-container">
+    <ul>
+        
+        
+        
+        <li><a href="/modes/driving/congestion-charge"  class="plain-button">Congestion Charge</a></li>
+        
+        
+        <li><a href="/modes/driving/ultra-low-emission-zone"  class="plain-button">Ultra Low Emission Zone (ULEZ)</a></li>
+        
+        
+        <li><a href="/modes/driving/low-emission-zone"  class="plain-button">Low Emission Zone (LEZ)</a></li>
+        
+        
+        <li><a href="/modes/driving/pay-a-pcn"  class="plain-button">Pay a PCN</a></li>
+        
+        
+        <li></li>
+        
+    </ul>
+</div>
+
+      </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "Before we can set up your Auto Pay service, you need to create a London Road User Charging account.";}
+        
+            
+        
+
+
+ 

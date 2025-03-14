@@ -1,0 +1,666 @@
+﻿
+    
+
+
+
+
+
+
+@section adverts {
+    <div class="top-banner-advert" aria-hidden="true">
+        <div class="large" data-advert="/76889402/homepage" data-advert-sizes="970, 90|970, 250"></div>
+        <div class="medium" data-advert="/76889402/homepage" data-advert-sizes="728, 90"></div>
+        <div class="small" data-advert="/76889402/homepage" data-advert-sizes="300, 50|320, 50"></div>
+    </div>
+}
+
+
+ 
+  
+
+
+
+@{ViewBag.Title = "Keeping London moving";}
+@{ViewBag.Keywords = "Maps,Plan a journey,Realtime traffic,Routes,Ticket sales,Travel updates,TfL";}
+@{ViewBag.Url = "/";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+@this.ScriptBlock(
+ @<script>queue.push(function () {
+
+    if (!$('body').hasClass('personalisation-active')) {
+        $('#home-status-updates-default').css("visibility", "visible");
+    }
+
+});</script>)
+
+
+        
+
+<div class="hero-container no-background-image" id="main-hero">
+    <div class="main-and-aside one-row r">
+        <div class="aside">
+            <div class="widget-wrapper homepage-style">
+                <div id="hp-journey-planner" class="expandable-box">
+                    <div class="content">
+                        <div class="always-visible widget-heading primary">
+                            <div class="controls">&nbsp;</div>
+                            <div class="section-style" role="heading" aria-level="2">Plan a journey</div>
+                        </div>
+                        <div class="start-hidden widget-content journey-planner-widget clearfix">
+                    
+                    @{Html.RenderAction("Index", "JourneyPlanner");}
+                                
+                        </div>
+                    </div>
+                </div>
+                <div id="hp-journeys-recents" class="expandable-box small">
+                    <div class="content">
+                        <div class="always-visible widget-heading secondary">
+                            <div class="controls">&nbsp;</div>
+                            <div class="section-style">My Journeys & recents</div>
+                        </div>
+                        <div class="start-hidden widget-content journey-planner-widget clearfix">
+                            <div id="hp-more-journey-options"></div>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+            <div class="homepage-top-links clearfix">
+                <a href="/travel-information/stations-stops-and-piers/" class="flat-button top-icon"><span class="icon live"></span><span class="text">Live<br />arrivals</span></a>
+                <a href="/maps/" class="flat-button top-icon"><span class="icon map"></span><span class="text">Maps</span></a>
+                <a href="/maps?Input=Current+location+" class="flat-button top-icon"><span class="icon nearby"></span><span class="text">Nearby</span></a>
+            </div>
+        </div>
+        <div class="main hero-content-container" id="hero-teaser-container">
+              <div class="content-area medium-large"></div>
+        </div>
+    </div>
+</div>
+<div class="main-and-aside one-row r">
+    <div class="aside"  id="home-status-updates" role="complementary">
+        
+        @if (ViewBag.IsPersonalisationActive == "personalisation-active")
+        {
+            <div id="favourites-display" class="home-favourites" style="display: none">
+
+
+                @{ Html.RenderPartial("Favourites/_HomeTubeOvergroundRailDlrTram"); }
+                @{ Html.RenderPartial("Favourites/_HomeBus"); }
+                @{ Html.RenderPartial("Favourites/_HomeRoads"); }
+                @{ Html.RenderPartial("Favourites/_HomeRiverBus"); }
+                @{ Html.RenderPartial("Favourites/_HomeCableCar"); }
+
+                <div>
+                    <h2>Other Statuses</h2>
+                </div>
+            </div>
+        }
+        <div class="basic accordion" id="home-status-updates-default" style="visibility:hidden">
+            <div class="expandable-box ">
+                <div class="content expanded" id="home-status-tube-dlr-overground-tflrail-tram">
+                    <div role="heading" aria-level="2">
+                        <a href="javascript:void(0);" class="always-visible accordion-heading" id="home-status-tube-dlr-overground-tflrail-tram-heading" role="button" aria-expanded="true" aria-controls="home-status-tube-dlr-overground-tflrail-tram-content">Tube, DLR, and London Overground, <span class="nowrap">TfL Rail</span> and Tram</a>
+                    </div>
+                    <div class="start-hidden" id="home-status-tube-dlr-overground-tflrail-tram-content" role="region" aria-labelledby="home-status-tube-dlr-overground-tflrail-tram-heading">
+                        <div class="board-wrapper service-board-collapsed">
+
+                    
+                                   @{ Html.RenderAction("StatusBoard", "StatusUpdates", new { modes = Library.MeansOfTransport.TubeDlrOvergroundTflRail, collapsed = true, isHomeOrModePageStatusBoard = true }); }
+                                
+
+                </div>
+                    @Html.Partial("_ThisWeekend", Library.MeansOfTransport.TubeDlrOverground)    
+                    <a href="/status-updates/" class="link-button">View all statuses</a>
+                    </div>
+                </div>
+            </div>
+            <div class="expandable-box">
+                <div class="content" id="home-status-bus">
+                    <div role="heading" aria-level="2">
+                        <a href="javascript:void(0);" class="always-visible accordion-heading tracked" data-tracking="prop36" data-tracking-value="Buses" id="home-status-bus-heading" role="button" aria-expanded="false" aria-controls="home-status-bus-content">Buses</a>
+                    </div>
+                    <div class="start-hidden" id="home-status-bus-content" role="region" aria-labelledby="home-status-bus-heading">
+                        <div class="search-filter without-box button-text-search">
+                            @{
+                                Html.RenderAction("SearchFilter", "Modules", new
+                                {
+                                    actionUrl = Library.DisambiguationSettings.DisambiguationUrl,
+                                    buttonText = "Search",
+                                    buttonClass = "secondary-button",
+                                    dataSets = new string[][] 
+                                    { 
+                                        new[]{ Library.DisambiguationDataSets.StopPoints, "/maps/bus?Input={{input}}&InputGeolocation={{lat}},{{lon}}&searchBoxType=bus" },
+                                        new[]{ Library.DisambiguationDataSets.Routes, "/{{mode}}/route/{{lineIds}}/"}
+                                    },
+                                    modes = Library.MeansOfTransport.Bus,
+                                    placeHolderText = "Bus route or stop name",
+                                    displaySelectedModesOnly = true,
+                                    searchLabel = "Search for stations, stops and piers (e.g. Bank)",
+                                    includeGeolocation = true,
+                                    currentLocationSubmitUrl = "/maps/bus"
+                                });
+                            }      
+                        </div>
+                        <div class="favourite-and-recent"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="expandable-box" id="home-status-traffic">
+               @{ System.Globalization.TextInfo textInfo = new System.Globalization.CultureInfo("en-US", false).TextInfo;}
+                <div class="content">
+                    <div role="heading" aria-level="2">
+                        <a href="javascript:void(0);" class="always-visible accordion-heading" id="home-status-traffic-heading" role="button" aria-expanded="false" aria-controls="home-status-traffic-content">Traffic</a>
+                    </div>
+                    <div class="start-hidden" id="home-status-traffic-content" role="region" aria-labelledby="home-status-traffic-heading">
+                        <div class="board-wrapper service-board-collapsed">@{ Html.RenderAction("StatusBoard", "StatusUpdates", new { modes = Library.MeansOfTransport.Traffic, collapsed = true, isHomeOrModePageStatusBoard = true }); }
+                    </div>
+                    @Html.Partial("_ThisWeekend", Library.MeansOfTransport.Traffic )
+                    <a href="/traffic/status/" class="link-button">View all reported incidents</a></div>
+                </div>
+            </div>      
+            <div class="expandable-box" id="home-status-river-bus">
+                <div class="content">
+                    <div role="heading" aria-level="2">
+                        <a href="javascript:void(0);" class="always-visible accordion-heading" id="home-status-river-bus-heading" role="button" aria-expanded="false" aria-controls="home-status-river-bus-content">River</a>
+                    </div>
+                    <div class="start-hidden" id="home-status-river-bus-content" role="region" aria-labelledby="home-status-river-bus-heading">
+                        <div class="board-wrapper service-board-collapsed">
+            @{ Html.RenderAction("StatusBoard", "StatusUpdates", new { modes = Library.MeansOfTransport.River, collapsed = true, isHomeOrModePageStatusBoard = true }); }
+                        </div>
+                        <a href="/river/status/" class="link-button">View all statuses</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="expandable-box" id="home-status-cable-car">
+                <div class="content">
+                    <div role="heading" aria-level="2">
+                        <a href="javascript:void(0);" class="always-visible accordion-heading" id="home-status-cable-car-heading" role="button" aria-expanded="false" aria-controls="home-status-cable-car-content">Emirates Air Line</a>
+                    </div>
+                    <div class="start-hidden" id="home-status-cable-car-content" role="region" aria-labelledby="home-status-cable-car-heading">
+                        <div class="board-wrapper service-board-collapsed">
+              @{ Html.RenderAction("StatusBoard", "StatusUpdates", new { modes = Library.MeansOfTransport.CableCar, collapsed = true, isHomeOrModePageStatusBoard = true }); }                        </div>
+                        <a href="/cable-car/status/" class="link-button">View status</a>
+                    </div>
+                </div>
+            </div>
+            <div class="expandable-box">
+                <div class="content">
+                    <div role="heading" aria-level="2">
+                        <a href="javascript:void(0);" class="always-visible accordion-heading" id="home-national-rail-heading" role="button" aria-expanded="false" aria-controls="home-national-rail-content">National Rail</a>
+                    </div>
+                    <div class="start-hidden" id="home-national-rail-content" role="region" aria-labelledby="home-national-rail-heading">
+                        <div class="board-wrapper service-board-collapsed">
+                            @{ Html.RenderAction("StatusBoard", "StatusUpdates", new { modes = Library.MeansOfTransport.NationalRail, collapsed = true, isHomeOrModePageStatusBoard = true }); }
+                        </div>
+                        <a href="/national-rail/status/" class="link-button">View all statuses</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main" role="main">
+        <div class="sub-main">
+            <div class="primary-teaser small">
+
+                <div class="news-teaser " data-highlight-image="/cdn/static/cms/images/promos/offpeak-winter-hp.jpg" data-highlight-for="#main-hero" data-highlight-size="medium-large">
+
+<img src="/cdn/static/cms/images/promos/offpeak-winter-hp_rdax_400x200.jpg" alt="Go and discover London this winter" />
+
+<a href="https://londonblog.tfl.gov.uk/2019/11/25/winter-activities/?intcmp=hero-Home-Go and discover London this winter" data-tracking="navigational_element" data-tracking-value="Home | PrimaryTeaser | Go and discover London this winter">
+<div class="text-link"><h2>Go and discover London this winter</h2><p>There's lots to see and do in London this winter ❄️</p></div>
+</a>
+
+
+
+</div>
+
+
+  
+ 
+            </div>
+            <div class="secondary-teaser">
+
+                <div class="news-teaser">
+
+    <a href="/status-updates/travel-tools?intcmp=49250" >
+        <img src="/cdn/static/cms/images/promos/traveltools_rdax_400x200.jpg" alt="Photo of hands, one hand typing on a laptop, the other holding a smartphone" />
+        
+        <div class="text-link">
+             <h2>Check your travel</h2>
+            <p>All the travel tools you'll need to check your journey in advance</p>
+        </div>
+    </a>
+</div>
+ 
+ 
+            </div>
+            <div data-set="reserved-teaser" class="small-medium tertiary-teaser"></div>
+            <div>
+
+                <div class="news-teaser">
+
+    <a href="/travel-information/visiting-london/experience-london/bus-leisure-routes?intcmp=53128" >
+        
+        
+        <div class="text-link">
+             <h2>Where will your bus take you?</h2>
+            <p>Visit iconic London sights on iconic London buses</p>
+        </div>
+    </a>
+</div>
+ 
+ 
+            </div>
+            <div>
+
+                <div class="news-teaser">
+
+    <a href="https://m.me/tfltravelbot?intcmp=49756" >
+        
+        
+        <div class="text-link">
+             <h2>Facebook TravelBot</h2>
+            <p>Ask us about your Tube, bus and rail status on Facebook Messenger</p>
+        </div>
+    </a>
+</div>
+ 
+ 
+            </div>
+            <div>
+                
+
+
+
+
+<div class="advert-tile unsponsored-style google-ads" aria-hidden="true">
+  <div class="advert-link">
+    <div class="advert-content">
+        <div class="medium-large" data-advert="/76889402/homepage" data-advert-sizes="300, 250"></div>
+        <div class="small" data-advert="/76889402/homepage" data-advert-sizes="300, 250"></div>
+    </div>
+  </div>
+</div>
+@{
+    ViewBag.AmazonSlot = "'amznslots'";
+    ViewBag.AmazonAds = "'3199'"; // to add another value, this needs to be ViewBag.AmazonAds = "'3199','xx'";
+}
+      
+
+ 
+            </div>
+        </div>
+        <div class="sub-main">
+            <div class="main-services">
+                <div class="clearfix">
+                    <a href="/fares/how-to-pay-and-where-to-buy-tickets-and-oyster" class="flat-button top-icon">
+                        <span class="services-icon oyster"><span class="visually-hidden">Oyster card logo</span></span>
+                        Top up Oyster
+                    </a>
+                    <a href="/modes/driving/congestion-charge" class="flat-button top-icon">
+                        <span class="services-icon congestion"><span class="visually-hidden">Congestion Charge logo</span></span>
+                        Congestion Charge
+                    </a>
+                </div>
+                <div class="clearfix">
+                    <a href="/modes/cycling/santander-cycles" class="flat-button top-icon">
+                        <span class="services-icon cycle-hire"><span class="visually-hidden">Santander Cycles logo</span></span>
+                        Santander Cycles
+                    </a>
+                    <a href="/modes/emirates-air-line/index" class="flat-button top-icon">
+                        <span class="services-icon airline"><span class="visually-hidden">Emirates Airline logo</span></span>
+                        Emirates Air Line
+                    </a>
+                </div>
+            </div>
+            <div data-set="reserved-teaser" class="large tertiary-teaser">
+            <div class="moving-source-order">
+
+                <div class="news-teaser">
+
+    <a href="/status-updates/major-works-and-events?intcmp=25505" >
+        <img src="/cdn/static/cms/images/promos/tfl-ambassador-crowd_rdax_400x200.jpg" alt="TfL Travel Ambassador in a crowd" />
+        
+        <div class="text-link">
+             <h2>Major works & events</h2>
+            <p>Find out about upcoming works or events across London which may affect your journey</p>
+        </div>
+    </a>
+</div>
+ 
+ 
+            </div>
+            </div>
+<div class="vertical-button-container">
+
+
+
+<a href="https://londonblog.tfl.gov.uk/"   data-tracking="prop43" data-tracking-value="PopularLinks"  class="plain-button">Experience London blog</a>
+
+
+<a href="https://madeby.tfl.gov.uk"   data-tracking="prop43" data-tracking-value="PopularLinks"  class="plain-button">Made by TfL blog</a>
+
+
+<a href="https://consultations.tfl.gov.uk/"   data-tracking="prop43" data-tracking-value="PopularLinks"  class="plain-button">Consultations</a>
+
+
+<a href="/corporate/about-tfl/air-quality"   data-tracking="prop43" data-tracking-value="PopularLinks"  class="plain-button">Air quality </a>
+
+
+<a href="/status-updates/travel-tools"   data-tracking="prop43" data-tracking-value="PopularLinks"  class="plain-button">Travel tools</a>
+
+
+<a href="/corporate/transparency/index"   data-tracking="prop43" data-tracking-value="PopularLinks"  class="plain-button">Modern slavery statement</a>
+
+</div>
+
+</div>
+    </div>
+</div>
+
+
+
+
+
+@section scripts {
+    <script>
+        queue.push(function () {
+            $("#From").attr("data-jumpback", ".show-mobile-search:visible, #search-button:visible");
+            tfl.journeyPlanner.init("home");
+        });
+    </script>
+ <div class="bottom-advert ">
+    <div class="close-ad-button visually-hidden"><span class="close-icon-circle"></span></div>
+    <div data-advert="/76889402/homepage" data-advert-sizes="320, 50"></div>
+</div>
+}
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "Information on all forms of transport in London including cycle hire. Routes, maps, plan a journey, tickets sales, realtime traffic and travel updates.";}
+        
+            
+        
+<div style="display:none;">
+@*@{Layout=null;}
+            <div id="more-panel" class="extra-nav r" role="tabpanel" aria-hidden="true">
+                <div class="menu" role="navigation" aria-label="Main Menu">
+                    <ul class="extras clearfix">
+                        <li class="plan-journey"><a href="/plan-a-journey/index" data-jumpback=".top-row-extras .more a:first:visible">Plan a journey</a></li>
+ <li class="status-update"><a href="/status-updates/index" data-jumpback=".extras .plan-journey a:visible,.more a:first:visible">Status updates</a></li>
+ <li class="maps"><a href="/maps_/maps" data-jumpback=".extras .status-update a:visible,.more a:first:visible">Maps</a></li>
+ <li class="fares-and-payments"><a href="/fares/index" data-jumpback=".extras .maps a:visible,.more a:first:visible">Fares</a></li>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <li class="help-and-contact"><a href="/help-and-contact/index" data-jumpback="#recent-journeys a:last">Help &amp; contacts</a></li>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                    </ul>
+                </div>
+                <div class="menu-sub-section" role="navigation" aria-label="Travel information menu">
+                    <h2 class="header-two">Travel information</h2>
+                    <ul class="clearfix">
+                      
+ 
+ 
+ 
+ <li><a href="/travel-information/visiting-london/index" >Visiting London </a></li>
+ <li><a href="/transport-accessibility/index" >Transport accessibility</a></li>
+ 
+ <li><a href="/travel-information/safety/index" >Safety</a></li>
+ <li><a href="/travel-information/improvements-and-projects/index" >Improvements &amp; projects</a></li>
+ <li><a href="/travel-information/timetables/index" >Timetables</a></li>
+ <li><a href="/travel-information/stations-stops-and-piers/index" >Stations, stops &amp; piers</a></li>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                    </ul>
+                </div>
+                <div class="menu-sub-section getting-around" role="navigation" aria-label="Ways to get around menu">
+                    <h2 class="header-two">Ways to get around</h2>
+                    <ul class="clearfix">
+                                   <li><a href="/modes/buses/index">Buses</a></li> <li><a href="/modes/driving/index">Driving</a></li> <li><a href="/modes/tube/index">Tube</a></li> <li><a href="/modes/cycling/index">Cycling</a></li> <li><a href="/modes/dlr/index">DLR</a></li> <li><a href="/modes/london-overground/index">London Overground</a></li> <li><a href="/modes/emirates-air-line/index">Emirates Air Line </a></li> <li><a href="/modes/taxis-and-minicabs/index">Taxis &amp; minicabs</a></li> <li><a href="/modes/trams/index">Trams</a></li> <li><a href="/modes/river/index">River</a></li> <li><a href="/modes/coaches/index">Coaches</a></li> <li><a href="/modes/dial-a-ride/index">Dial-a-Ride</a></li>   <li><a href="/modes/tfl-rail/index">TfL Rail</a></li>                        <li><a href="/modes/walking/index">Walking</a></li>        
+                    </ul>
+                </div>
+                <div class="menu-sub-section quick-links" role="navigation" aria-label="Quick links menu">
+                    <h2 class="header-two">Quick links</h2>
+                    <ul class="clearfix">
+
+
+<li><a href="/fares/contactless-and-oyster-account">Contactless and Oyster account</a></li>
+
+
+<li><a href="/fares/refunds-and-replacements">Refunds and replacements</a></li>
+
+
+<li><a href="/modes/driving/pay-to-drive-in-london">Pay to drive in London</a></li>
+
+
+<li><a href="/status-updates/travel-tools" data-jumpto=".login a">Travel tools</a></li>
+
+
+</ul>
+ 
+                </div>
+            </div>            
+ 
+@{Layout=null;}
+            <div class="primary-footer r">
+                <div class="about-tfl-menu" role="navigation" aria-labelledby="about-tfl-heading">
+                    <h2 id="about-tfl-heading" class="visually-hidden">About TfL</h2>
+                    <ul class="footer-links">
+                        <li><a href="/help-and-contact/">Help &amp; contacts</a></li>
+                        
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <li><a class="" href="/corporate/careers/index" >Careers</a></li>
+ <li><a class="" href="/corporate/about-tfl/index" >About TfL</a></li>
+ 
+ <li><a class="" href="/corporate/safety-and-security/index" >Safety &amp; security</a></li>
+ <li><a class="" href="/corporate/transparency/index" >Transparency</a></li>
+ <li><a class="" href="/corporate/publications-and-reports/index" >Publications &amp; reports</a></li>
+ <li><a class="" href="/travel-information/social-media-and-email-updates/index" >Social media &amp; email updates</a></li>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                        <li><a href="https://www.ltmuseumshop.co.uk/">Gift Shop</a></li>
+                        <li><div id="google-translate"></div></li>
+                    </ul>
+                </div>                    
+                <div role="navigation" aria-labelledby="information-for-heading">
+                    <h2 id="information-for-heading" class="heading">Information for...</h2>
+                    <ul class="info-for clearfix">
+                        <li><a href="/info-for/media/index">Media</a></li><li><a href="/info-for/business-and-commercial/index">Business &amp; commercial</a></li><li><a href="/info-for/boroughs/index">Boroughs and communities</a></li><li><a href="/info-for/schools-and-young-people/index">Schools &amp; young people</a></li><li><a href="/info-for/deliveries-in-london/index">Deliveries in London</a></li><li><a href="/info-for/urban-planning-and-construction/index">Urban planning and construction</a></li><li><a href="/info-for/taxis-and-private-hire/index">Taxi &amp; private hire </a></li><li><a href="/info-for/suppliers-and-contractors/index">Suppliers &amp; contractors</a></li><li><a href="/info-for/bus-operators/index">Bus operators</a></li><li><a href="/info-for/open-data-users/index">Open data users</a></li><li><a href="/info-for/coach-drivers/index">Coach drivers</a></li><li><a href="/info-for/investors/index">Investors</a></li>
+                    </ul>
+                </div>
+                <div class="footer-MOL-logo" role="navigation" aria-label="Other public bodies">
+                    <ul class="links-list" id="gla-list" data-selected-item-id="Mayor Of London Logo" data-dropdown-target="footer-MOL-logo" data-dropdown-option="gla-dropdown">
+                        <li class="MOL-logo-dropdown" data-item-id="Mayor Of London Logo"><img src="/static/cms/images/MoL.png" alt="Mayor of London"></li>
+                        <li data-item-id="" class="greater-london-authority-li"><img src="/static/cms/images/GLA_Logo.png" alt="Greater London Authority" /></li>
+                        <li data-item-id="MOL1"><a href="http://www.london.gov.uk/">Mayor of London</a></li>
+                        <li data-item-id="LA2"><a href="http://www.london.gov.uk/mayor-assembly/london-assembly">London Assembly</a></li>
+                        <li data-item-id="LP3"><a href="http://www.londonandpartners.com/">London and Partners</a></li>
+                        <li data-item-id="MPS4"><a href="http://content.met.police.uk/">Metropolitan Police Service</a></li>
+                        <li data-item-id="LFEPA5"><a href="http://www.london-fire.gov.uk/index.asp">London Fire and Emergency Planning Authority</a></li>
+                        <li data-item-id="MOPC6"><a href="https://www.london.gov.uk/what-we-do/mayors-office-policing-and-crime-mopac">The Mayors Office of Policing and Crime</a></li>
+                        <li data-item-id="LLDC" class="lldc"><a href="http://www.londonlegacy.co.uk/">London Legacy Development Corporation</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            
+            <div class="secondary-footer">
+                <div class="r">
+                    <div class="terms-and-conditions-menu" role="navigation" aria-labelledby="legal-information-heading">
+                        <h2 id="legal-information-heading" class="visually-hidden">Legal information</h2>
+                        <ul>
+                            <li><a href="/corporate/terms-and-conditions/index">Terms &amp; conditions </a></li><li><a href="/corporate/privacy-and-cookies/index">Privacy &amp; cookies</a></li><li><a href="/corporate/website-accessibility/index">Website accessibility</a></li>
+                        </ul>
+                    </div>
+                    <span class="heading">Copyright TfL</span>
+                </div>
+            </div>
+            
+                <div>
+                    
+                </div>
+
+ 
+ 
+ 
+ 
+ 
+ *@
+</div>
+
+ 

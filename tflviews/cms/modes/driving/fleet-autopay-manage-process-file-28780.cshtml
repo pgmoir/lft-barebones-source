@@ -1,0 +1,144 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Upload a new vehicle list";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/fleet-autopay-manage-process-file-28780";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                 <li><a href="/modes/driving/auto-pay">Auto Pay</a></li>
+                
+            
+            
+            
+                <li><span class="last-breadcrumb">Upload a new vehicle list</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Upload a new vehicle list</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+        @using TfL.Ruc.Common.ConfigSection
+        @{
+            ViewBag.Refresh = 5;
+
+            dynamic content = new ContentModel();
+
+            content.FileProcessingText = "Don't navigate away from this page while your file is being processed.";
+            content.ProcessinBackgroundButtonText = "Process in the background";
+            content.NotificationCreationErrorText = "There was a problem. Please try again.";
+            content.Note = "<p>When the upload is finished you'll be taken to the ‘File processed’ confirmation page.</p>";
+            
+            
+            content.TotalAddedText = "Total added: ";
+            content.TotalUnchangedText = "Total unchanged vehicles";
+            content.TotalRemovedText = "Total removed: ";
+            content.RejectedText = "Total rejected: ";
+            //content.AddedWithWarningText = "Total added: ";
+            content.FileInProcessHeading = "Processing file";
+            content.FileProcessedHeading = "File processed";
+            content.WarningText = "Total warning: ";
+            content.ModifiedText = "Total edited: ";
+            content.FinishButtonUrl = "/modes/driving/fleet-autopay-manage-vehicles-28948";
+            content.FinishButtonText = "Finish";
+            
+            
+            content.BulkUploadResultText = @"<h2>{0}</h2><h3>Fleet Auto Pay is active on {1} vehicles.</h3><p>From today, any Congestion Charges or ULEZ charges for the vehicle(s) you have added will be taken from your bank account by monthly direct debit.</p><p>The £10 annual registration charge for each vehicle added to your Fleet Auto Pay service will show on your next statement. We will send a summary and detailed vehicle list to your account email.</p>";
+            
+            Html.RenderAction(
+                "ProcessFile",
+                "FileUpload",
+                new
+                {
+                    area = "Ruc",
+                    manageUrl = "/modes/driving/fleet-autopay-manage-autopay-fleet-28966",
+                    processResultUrl = "/modes/driving/fleet-autopay-manage-process-result-28908",
+                    failureBulkUrl = "/modes/driving/fleet-autopay-manage-failure-bulk-41376",
+                    fileUploadOperation = FileUploadOperation.AutoPayFleet,
+                    content = content
+                }
+            );
+        }
+      
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

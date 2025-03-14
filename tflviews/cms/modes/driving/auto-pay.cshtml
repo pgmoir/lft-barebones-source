@@ -1,0 +1,241 @@
+﻿
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@section adverts {
+    <div class="top-banner-advert" aria-hidden="true">
+        <div class="large" data-advert="/76889402/driving/" data-advert-sizes="970, 90|970, 250"></div>
+        <div class="medium" data-advert="/76889402/driving/" data-advert-sizes="728, 90"></div>
+        <div class="small" data-advert="/76889402/driving/" data-advert-sizes="300, 50|320, 50"></div>
+    </div>
+}
+
+
+ 
+  
+
+
+
+@{ViewBag.Title = "Auto Pay";}
+@{ViewBag.Keywords = "Businesses,Drivers,Public,Driving,TfL";}
+@{ViewBag.Url = "/modes/driving/auto-pay";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+                <li><span class="last-breadcrumb">Auto Pay</span></li>
+            
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Auto Pay</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/account-account-landing-29377"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+      <div class="article-teaser">
+        <p>With Auto Pay, we'll bill you automatically for the number of charging days your vehicle travels within the Congestion Charge area and, if it doesn't meet the standards, the Ultra Low Emission Zone (ULEZ).</p>
+        
+      </div>
+    
+    
+      <p>We offer two payment options - Auto Pay and Fleet Auto Pay. If you or your business regularly drive more than 5 vehicles within a charging zone, choose Fleet Auto Pay.</p>
+
+<h2>Benefits of Auto Pay</h2>
+
+<ul>
+	<li>A reduced daily Congestion Charge</li>
+	<li>Never forget to pay charges again</li>
+	<li>Protection from receiving Penalty Charge Notices while registered</li>
+	<li>Registration for up to five vehicles</li>
+</ul>
+
+<p>You must:</p>
+
+<ul>
+	<li>Be at least 18 years old</li>
+	<li>Either complete a Direct Debit mandate or link a payment card</li>
+	<li>Tell us which vehicles you want to register</li>
+</ul>
+
+<p>See the <a href="/corporate/terms-and-conditions/pay-to-drive-in-london">Auto Pay terms and conditions</a>.</p>
+
+<p>An annual &pound;10 registration charge will apply to each vehicle you add to Auto Pay.</p>
+      
+           
+      
+<div class="module-grid clearfix">
+<div>
+
+<div class="call-to-action-button">
+       <a href="/modes/driving/cc-autopay-apply-apply-anon-personal-30865" class="secondary-button no-hover"   title="Apply for an Auto Pay personal account">Set up Auto Pay - Personal</a>
+
+    </div>
+</div> 
+ <div>
+
+<div class="call-to-action-button">
+       <a href="/modes/driving/cc-autopay-apply-apply-anon-business-30860" class="secondary-button no-hover"   title="Apply for an Auto Pay business account">Set up Auto Pay - Business</a>
+
+    </div>
+</div> 
+ 
+</div>
+ <div>
+
+<h2>Fleet Auto Pay</h2>
+
+<p>The Fleet Auto Pay service is only available to business customers using more than five vehicles.</p>
+
+<p>You can add up to five account users to help you manage your Fleet Auto Pay service.</p>
+
+<p><a href="/modes/driving/fleet-auto-pay">Find out more and set up Fleet Auto Pay.</a></p>
+</div>
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="advert-tile unsponsored-style google-ads" aria-hidden="true">
+  <div class="advert-link">
+    <div class="advert-content">
+        <div class="medium-large" data-advert="/76889402/driving/" data-advert-sizes="300, 250"></div>
+        <div class="small" data-advert="/76889402/driving/" data-advert-sizes="300, 250"></div>
+    </div>
+  </div>
+</div>
+@{
+    ViewBag.AmazonSlot = "'amznslots'";
+    ViewBag.AmazonAds = "'3199'"; // to add another value, this needs to be ViewBag.AmazonAds = "'3199','xx'";
+}
+      
+
+ </div>
+    
+      <div>
+                    
+        <div class="vertical-button-container">
+    <ul>
+        
+        
+        
+        <li><a href="/modes/driving/fleet-auto-pay"  class="plain-button">Fleet Auto Pay</a></li>
+        
+    </ul>
+</div>
+
+      </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+     @section scripts {
+<div class="bottom-advert ">
+    <div class="close-ad-button visually-hidden"><span class="close-icon-circle"></span></div>
+    <div data-advert="/76889402/driving/" data-advert-sizes="320, 50"></div>
+</div>
+}
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "Benefit from more flexibility and less administration with an organisation account";}
+        
+            
+        
+
+
+ 

@@ -1,0 +1,135 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "LEZ registration";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/lez-registration-failure-37315";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">LEZ registration</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>LEZ registration</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      <h2>Application failed</h2>
+      
+           
+      
+
+
+          
+        
+		<!-- 6. failure -->
+        @FormHelpers.GlobalError("LEZ registration failed.", "<p>Your registration has not been successful.</p>")
+		
+		
+	  
+
+  
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/low-emission-zone" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+      <div>
+                    
+        <div class="vertical-button-container">
+    <ul>
+        
+        
+        
+        <li><a href="/modes/driving/pay-to-drive-in-london"  class="plain-button">Pay to drive in London</a></li>
+        
+        
+        <li><a href="/modes/driving/amend-or-refund-a-charge"  class="plain-button">Amend or refund a charge</a></li>
+        
+        
+        <li><a href="/modes/driving/compliance-registration/before-you-start"  class="plain-button">Register your vehicle with us</a></li>
+        
+        
+        <li><a href="/modes/driving/low-emission-zone/contact-lez"  class="plain-button">Contact LEZ</a></li>
+        
+    </ul>
+</div>
+
+      </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

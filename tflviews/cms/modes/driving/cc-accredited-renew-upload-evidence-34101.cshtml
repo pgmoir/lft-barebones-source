@@ -1,0 +1,136 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Upload proof";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-accredited-renew-upload-evidence-34101";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Upload proof</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Upload proof</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+
+		
+		<!-- 1. accredited-breakdown -->
+		@{
+            dynamic content = new ContentModel();
+            content.UploadEvidenceTitle = "Upload scanned or photo images of the following documents so we can process your application:";
+            content.UploadEvidenceText = "<p>We need to see evidence of your company's relevant accreditations to process your application.</p><p>Upload images of the following documents:</p><ul>	<li>A copy of the company’s BS EN ISO 9001:2008 certification document</li>	<li>Evidence of compliance with PAS 43 standards (the BS EN ISO 9001:2008 should state this)</li></ul><p>You can upload a maximum of 19 documents for this application.</p>";
+            content.UploadEvidenceHelperTitle = "How do I upload the documents?";
+            content.UploadEvidenceHelperText = "<p>You can scan paper documents to your computer, or take photographs of them with your camera, smartphone or tablet. You’ll need to save each file as a .jpg, .jpeg, .tif, .tiff or .pdf.</p><p>Once you have saved your document(s) on your computer/mobile device, drag them into the box below or click 'Or browse to your files' and select the file you want to upload. Remember to double check you have selected the correct file.</p><p>Repeat for every document you want to attach. If you make a mistake, you can add or remove files before submitting your application.</p>";
+            content.UploadEvidenceDescription = "<p>If you're unable to scan or photograph these documents clearly, you can send them to us at the address you'll see at the end of this process.</p>";
+            content.FileNotUploadedError = "Upload a file to continue";
+            content.BackButtonText = "Back";
+            content.ContinueButtonText = "Continue";
+
+            Html.RenderAction("UploadEvidence", "DiscountRenew", new
+                {
+                    area = "Ruc",
+                    backUrl = "/modes/driving/cc-accredited-renew-enter-details-34104",
+                    continueUrl = "/modes/driving/cc-accredited-renew-review-application-34092",
+                    discountStyle = ZoneChargeDiscountStyle.AccreditedBreakdown,
+                    discountAction = DiscountAction.Apply,
+                    descriptionUrl = "",
+                    reviewUrl = "/modes/driving/cc-accredited-renew-review-application-34092",
+                    journeyStartUrl = "/modes/driving/cc-discount-manage-discounts-32822",
+                    content = content
+                }
+            );
+        }
+		
+	  
+
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

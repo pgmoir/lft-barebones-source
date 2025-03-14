@@ -1,0 +1,262 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Facebook TravelBot";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/travel-information/social-media-and-email-updates/facebook-travelbot";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/travel-information/social-media-and-email-updates/index">Social media & email updates</a></li>
+                
+            
+            
+                <li><span class="last-breadcrumb">Facebook TravelBot</span></li>
+            
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Facebook TravelBot</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+      <div class="article-teaser">
+        Find out how to check the status of your Tube, rail or bus and check when your next bus will arrive using our automated service on Facebook.
+        
+      </div>
+    
+    <div class="on-this-page">
+      <h2>About the service</h2>
+<p>We have created an <a href="https://m.me/tfltravelbot">automated service on Facebook Messenger</a> to help you check the status of your Tube, rail or bus route. The service is free and uses our latest data.</p>
+<p>The status checker is available for all Tube lines, DLR, London Overground, TfL Rail, trams and all bus routes.
+Try out our Facebook Travelbot  on Messenger or read about what it can do here.</p>
+      
+           
+      <div class="clearfix">
+    <div class="image-box right-float">
+    
+        
+        
+        <img src="/cdn/static/cms/images/tfl-travelbot_rdax_400x250.png" alt="TfL TravelBot image" />
+        
+        
+        
+    </div>
+    <h2>How to check your bus arrival times</h2>
+<p>Check when your bus is due to arrive by sharing your location or providing the bus stop code. </p>
+<p>To check, type something like:
+'When's the next bus' or 'next bus'. You will then be asked to share where you are using your phone's location, or you can provide the bus stop code if you know it.</p>
+<h2>
+How to check your bus route status</h2>
+<p>Find out if there are disruptions on your bus route. </p>
+<p>To check, type something like: 'How's the 38 bus' or '38 bus'.</p>
+<h2>How to find your nearest bus stop</h2>
+<p>Find out which bus stop you need or where your nearest one is.
+</p>
+<p>Type something like 'nearest bus' and you will be asked to send your location. You will be given a map and a list of the 5closest bus stops. Choose one to get the next buses from that stop.
+</p>
+<h2>
+How to check your Tube or rail line status</h2>
+<p>
+Find out if there are disruptions on any Tube line, London Overground, TfL Rail, trams or the DLR.
+</p>
+<p>To check, type something like:
+'Is the Central line running OK' or 'central', and you will be given the latest status  along with details if there is a disruption. This also works with 'dlr', 'overground', 'tfl rail' or 'trams'.</p>
+<h2>How to view Tube and rail maps</h2>
+<p>View or download our Tube, rail and Night Tube maps.
+</p>
+<p>To get the maps type something like:
+'Tube map' or 'rail map' or 'map'. You will be given the choice to view, download or send the map.</p>
+ </div>
+ 
+      
+        
+          
+            @this.ScriptBlock(
+              @<script>
+                queue.push("@Html.ScriptPath("modules/M020-on-this-page.min.js")", null);
+              </script>
+            )
+          
+        
+      
+    </div>
+  </div>
+  <div class="aside" role="complementary">
+
+   
+    
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                <a href="/travel-information/social-media-and-email-updates/index" class="heading">
+                    <h2 id="sub-menu-heading">Social media & email updates<span class="visually-hidden"> navigation</span></h2>
+                </a>
+                <ul>
+                    
+                                <li class="selected"><div class="link-wrapper"><a href="/travel-information/social-media-and-email-updates/facebook-travelbot">Facebook TravelBot</a></div>
+                            </li>
+ 
+                                <li><div class="link-wrapper"><a href="/travel-information/social-media-and-email-updates/email-updates">Email updates </a></div></li>
+                            
+ 
+                                <li><div class="link-wrapper"><a href="/travel-information/social-media-and-email-updates/other-feeds-and-pages">Other social media feeds and pages</a></div></li>
+                            
+ 
+                                <li><div class="link-wrapper"><a href="/travel-information/social-media-and-email-updates/journey-alerts">Journey alerts</a></div></li>
+                            
+ 
+                </ul>
+            
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+      </div>
+    
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="advert-tile unsponsored-style google-ads" aria-hidden="true">
+  <div class="advert-link">
+    <div class="advert-content">
+        <div class="medium-large" data-advert="/76889402/non-targeted" data-advert-sizes="300, 250"></div>
+        <div class="small" data-advert="/76889402/non-targeted" data-advert-sizes="300, 250"></div>
+    </div>
+  </div>
+</div>
+@{
+    ViewBag.AmazonSlot = "'amznslots'";
+    ViewBag.AmazonAds = "'3199'"; // to add another value, this needs to be ViewBag.AmazonAds = "'3199','xx'";
+}
+      
+
+ </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+ 
+ 
+        
+        
+        
+            @{ViewBag.Description = "How to use Facebook TravelBot";}
+        
+            
+        
+
+
+ 

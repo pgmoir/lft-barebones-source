@@ -1,0 +1,176 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Set up direct debit";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/autopay-apply-direct-debit";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                 <li><a href="/modes/driving/auto-pay">Auto Pay</a></li>
+                
+            
+            
+                <li><span class="last-breadcrumb">Set up direct debit</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Set up direct debit</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/account-account-landing-29377"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+        @{
+            dynamic content = new ContentModel();
+
+            @* This page will have two versions: 1. Direct debit entry and 2. Direct debit instructions/guarantee, displayed after details have been entered *@
+        
+            @* Properties common and same between details entry and instructions page *@ 
+            content.AccountNameLabel = "Name of account holder";
+            content.AccountNumberLabel = "Bank/building society account no.";
+            content.SortCodeLabel = "Sort code *";
+            content.BackButtonText = "Back";
+         
+            @* Details entry version of page properties: *@
+            content.DirectDebitValidationErrorText = "We have been unable to validate your direct debit details.";
+            content.SortCode3ValidateSortCode = "Enter a 6-digit sort code";
+            content.AccountNameRequired = "Enter account holder name";
+            content.AccountNumberRequired = "Enter your bank account number";
+            content.AccountNumberRegularExpression = "Your account number can only contain numbers";
+            content.AccountNumberStringLength = "Enter an 8-digit number";
+            content.BillingAddressHeading = "Billing address";
+            content.BillingAddressText = "<p>This is the address the bank/building society account is registered to. Correspondence from us will only be sent to this address if it is also the address saved in your London Road User Charging account.</p>";
+            content.DirectDebitHeading = "Direct debit mandate";
+            content.RequiredFieldsText = "All fields required unless otherwise noted";
+            content.ContinueButtonTextFormPage = "Continue";
+            content.DirectDebitLookupUrl = "/Ruc/AutoPayApply/LookupBankAccountFromDirectDebitDetailsAjax";            
+            content.SelectPaymentUrl = "/modes/driving/autopay-apply-select-payment?back=true";
+        
+            @* Instructions page properties: *@
+            content.InstructionsHeading = "Instructions to your Bank or Building Society to pay by direct debit";
+            content.DirectDebitLogoText = "direct debit logo";
+            content.ServiceUserNumberHeading = "Service user number";
+            content.ServiceUserNumberText = "<p class='dd-service-user-number'>298608</p>";
+            content.InstructionsText = "";
+            content.BankNameAndAddressLabel = "Name and full address of your bank/building society";
+            content.DateLabel = "Date";
+            content.DirectDebitGuaranteeHeading = "The Direct Debit Guarantee";
+            content.DirectDebitGuaranteeText = "<p>This Guarantee is offered by all banks and building societies that accept instructions to pay direct debits.</p><p>If there are any changes to the amount, date or frequency of your direct debit, Transport for London will notify you no more than 10 working days in advance of your account being debited. Notifications will be sent either by email or post depending on your account preferences you have set with us.</p><p>If you request that Transport for London collects a payment, confirmation of the amount and date will be given to you at the time of the request.</p><p>If an error is made in the payment of your direct debit by Transport for London or your bank or building society, you are entitled to a full and immediate refund of the amount paid from your bank or building society. If you receive a refund you are not entitled to, you must pay it back when Transport for London asks you to.</p><p>You can cancel a direct debit at any time by simply contacting your bank or building society - written confirmation may be required. Please also notify Transport for London.</p><p>Questions or further information about your direct debit can be directed to Transport for London:</p><p><strong>Email:</strong>&nbsp;<a class='allow-exit' href='mailto:CCLondon@CCLondon.com'>CCLondon@CCLondon.com</a><br /><strong>Phone:</strong> 0343 222 2222 (<a href='/corporate/terms-and-conditions/tfl-call-charges'>TfL call charges</a>)<br /><strong>Address:</strong><br />Congestion Charging<br />PO Box 344<br />Darlington DL1 9QE</p>";
+            content.UserHasReadTheInstructionsForDirectDebitMessage = "I can confirm I have read and agree to the above";
+            content.UserHasReadTheInstructionsForDirectDebitRequireTrue = "Confirm to continue";
+            content.SubmitButtonText = "Submit";
+
+            Html.RenderAction(
+                RucDictionary.AutoPayApply.SubmitApplicationWithDirectDebitActionName,
+                "AutoPayApply",
+                new
+                    {
+                        area = "Ruc",
+                        successUrl = "/modes/driving/autopay-apply-success",
+                        failureUrl = "/modes/driving/autopay-apply-failure",
+                        content = content
+                    }
+                );
+        }
+        @this.ScriptBlock(
+            @<script>
+                 queue.push(
+                     function () {
+                         tfl.forms.attachUnload("You have not completed your form. If you leave your data will be lost.");
+                     }
+                     );
+            </script>
+        )
+      
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

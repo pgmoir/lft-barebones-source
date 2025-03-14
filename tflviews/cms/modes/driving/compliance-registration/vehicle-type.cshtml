@@ -1,0 +1,141 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "What is your vehicle type?";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/compliance-registration/vehicle-type";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+                 <li><a href="/modes/driving/compliance-registration/before-you-start">Register a vehicle for LEZ and ULEZ</a></li>
+                
+            
+                
+                <li><span class="last-breadcrumb">What is your vehicle type?</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>What is your vehicle type?</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/compliance-registration/vehicle-type"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+        @{
+            dynamic content = new ContentModel();
+            content.VanMinibusTitle = "Van, 4x4 utility vehicle or minibus";
+            content.VanMinibusHelp = "<p>Includes vans (over 1.205 tonnes unladen weight but not exceeding 3.5 tonnes gross vehicle weight) or minibuses (not over 5 tonnes gross vehicle weight). Also included are motor caravans, motorised horse boxes, breakdown and recovery vehicles, private ambulances, motor hearses, dual-purpose vehicles and other specialist types fitting the weight criteria.</p>";
+            content.BusCoachHgvTitle = "HGV, coach or bus";
+            content.BusCoachHgvHelp = "<p>Includes HGVs (over 3.5 tonnes gross vehicle weight) or buses and coaches (over 5 tonnes gross vehicle weight). Also included are breakdown and recovery vehicles, refuse collection vehicles, road sweepers and any other specialist equipment built onto a heavy commercial chassis fitting the weight criteria.</p>";
+            content.CarMotorbikeTitle = "Car, small van or motorcycle";
+            content.CarMotorbikeHelp = "<p>Includes cars, motorcycles and small vans (under 1.205 tonnes unladen weight and not exceeding 3.5 tonnes gross vehicle weight).</p>";
+            content.NonRoadTitle = "A vehicle that is exempt from the schemes";
+            content.NonRoadHelp = "<p>Includes non-road going vehicles, military vehicles, agricultural vehicles and mobile cranes.</p>";
+            
+            content.ContinueButtonText = "Continue";
+            content.BackButtonText = "Back";
+
+            Html.RenderAction("VehicleType", "ComplianceRegistration", new
+            {
+                area = "Ruc",
+                content = content,
+                backUrl = "/modes/driving/compliance-registration/before-you-start",
+                vrmLookupUrl = "/modes/driving/compliance-registration/vrm-lookup"
+            });
+            
+        }
+      
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "Vehicle type";}
+        
+            
+        
+
+
+ 

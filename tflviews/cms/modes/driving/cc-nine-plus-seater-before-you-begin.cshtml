@@ -1,0 +1,197 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "9+ seater discount";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-nine-plus-seater-before-you-begin";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">9+ seater discount</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>9+ seater discount</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/account-account-landing-29377"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+      <div class="article-teaser">
+        <p>You can apply for a 100% discount on the Congestion Charge if your vehicle has 9 seats or more.</p>
+        
+      </div>
+    
+    
+      <h2>Before you start</h2>
+
+<p>Before you apply for the 9+ seater discount, you need to set up a London Road User Charging account. (Sign in now if you already have an account.)</p>
+
+<p>To create an account, click on 'Continue' and complete all required fields. You can also set up optional services, such as mobile phone text alerts, to help you manage your discount.</p>
+
+<h3>Applying for your 9+ seater discount</h3>
+
+<p>Once your London Road User Charging account has been created and you sign in, you will be directed automatically to complete your discount application.</p>
+
+<p>You will need to upload an image of:</p>
+
+<ul>
+	<li>V5C (logbook) or foreign equivalent</li>
+</ul>
+
+<p>and, to prove that the vehicle has 9 or more seats, an image of ONE:</p>
+
+<ul>
+	<li>Vehicle's MOT certificate</li>
+	<li>Vehicle's CIF or COIF (Certificate of Initial Fitness Certificate)</li>
+	<li>Your insurance document</li>
+	<li>Another proof that shows the number of seats</li>
+</ul>
+      
+           
+      
+
+        @{
+            dynamic content = new ContentModel();
+            content.ContinueButtonText = "Start";
+            
+            // Back Url parameters
+            bool hasSourceRoutingKey = Request.QueryString.AllKeys.Contains("sourceRoutingKey");
+            string sourceRoutingKey = string.Empty;
+            if (hasSourceRoutingKey)
+            {
+                content.SourceRoutingKey = sourceRoutingKey = Request.QueryString["sourceRoutingKey"];
+            }
+
+            Html.RenderAction("BeforeYouStart", "NinePlusSeater", new
+            {
+                area = "Ruc",
+                content = content,
+                continueUrl = "/modes/driving/cc-nine-plus-seater-check-authentication-and-redirect?sourceRoutingKey=" + sourceRoutingKey,
+                vrmLookupUrl = "/modes/driving/cc-nine-plus-seater-vrm-lookup?sourceRoutingKey=" + sourceRoutingKey,
+                accountVehicleUrl = "/modes/driving/cc-nine-plus-seater-add-account-vehicles?sourceRoutingKey=" + sourceRoutingKey
+            });
+        }
+    
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+      <div>
+                    
+        <div class="vertical-button-container">
+    <ul>
+        
+        
+        
+        <li><a href="/modes/driving/congestion-charge/paying-the-congestion-charge"  class="plain-button">Congestion Charge payments</a></li>
+        
+        
+        <li><a href="/modes/driving/congestion-charge/congestion-charge-zone"  class="plain-button">Congestion Charge zone</a></li>
+        
+        
+        <li><a href="/modes/driving/auto-pay"  class="plain-button">Auto Pay</a></li>
+        
+        
+        <li><a href="/modes/driving/congestion-charge/discounts-and-exemptions"  class="plain-button">Discounts and exemptions</a></li>
+        
+        
+        <li><a href="/modes/driving/congestion-charge/contact-congestion-charge"  class="plain-button">Contact Congestion Charge</a></li>
+        
+    </ul>
+</div>
+
+      </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "Before we can process your application for the 9+ seater discount, you need to set up a London Road User Charging account.";}
+        
+            
+        
+
+
+ 

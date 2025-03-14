@@ -1,0 +1,85 @@
+﻿
+
+
+@{ViewBag.Title = "July 21, 13:25 hours - Incidents on London Underground";}
+        
+        
+
+<div class="r">
+    <div class="headline-container plain">
+        <h1>July 21, 13:25 hours - Incidents on London Underground</h1>
+        <div class="content-page-press-release">
+        21 July 2005
+        </div>
+    </div>
+</div>
+<div class="main-and-aside r">
+    <div class="main" role="main">
+
+    <div class="article-teaser">
+        We are responding to reports of incidents at Warren Street and Oval Underground stations.
+        
+    </div>
+
+
+
+ <div class="on-this-page">
+<p>There are no reports of any casualties at this stage. </p>
+<p>We have suspended the Bakerloo, Piccadilly, Hammersmith & City, Victoria and Northern lines.</p>
+
+     
+
+        
+        
+        
+        @this.ScriptBlock(
+        @<script>
+        //queue.push("@Html.ScriptPath("modules/M020-on-this-page.min.js")", null);
+        </script>
+        )
+        
+        
+        
+        </div>
+    </div>
+    <div class="aside" role="complementary">
+
+       
+        <div data-set="sidenav-container" class="large">
+
+            
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+        </div>
+
+
+
+            
+        <div data-set="sidenav-container" class="small-medium"></div>
+    </div>
+</div>
+
+<!-- Crumbs: PGtype:  -->
+
+ 
+ 
+        
+        
+            @{ViewBag.Description = "There are no reports of any casualties at this stage. We have suspended the Bakerloo, Piccadilly, Hammersmith & City, Victoria and Northern lines.";}
+        
+        
+
+
+ 

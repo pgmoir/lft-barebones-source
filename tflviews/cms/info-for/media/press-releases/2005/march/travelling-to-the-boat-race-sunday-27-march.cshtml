@@ -1,0 +1,100 @@
+﻿
+
+
+@{ViewBag.Title = "Travelling to the Boat Race Sunday 27 March?";}
+        
+        
+
+@{
+    Response.Status = "301 Moved permanently";
+    Response.AddHeader("Location", "/info-for/media/press-releases");   
+}
+
+ 
+
+<div class="r">
+    <div class="headline-container plain">
+        <h1>Travelling to the Boat Race Sunday 27 March?</h1>
+        <div class="content-page-press-release">
+        24 March 2005
+        </div>
+    </div>
+</div>
+<div class="main-and-aside r">
+    <div class="main" role="main">
+
+    <div class="article-teaser">
+        The 2005 Oxford v Cambridge boat race is this Sunday March 27 at 3.05pm. Both clubs have returning Olympians in their squads this season, including Robin Bourne-Taylor for Oxford and Tom James for Cambridge.
+        
+    </div>
+
+
+
+ <div class="on-this-page">
+<p>Thousands of people flock to the Thames each year to watch one of the few free sporting spectacles in London. If you want to witness a slice of the 600 stroke challenge, there are plenty of ways to get there. </p>
+<p>Various bus routes take you to key locations along the course, including Putney (start), Hammersmith (middle) and Mortlake (finish). </p>
+<p>There are London Underground closures on Race Day this year due to unavoidable and pre-planned engineering works. There is no Circle or District line between Earl's Court and Whitechapel. From the centre of London, Hammersmith is accessible via the Piccadilly and Hammersmith &amp; City lines. There will be a District line service between Edgware Road and Wimbledon for Putney. </p>
+<p>To help you avoid these closures, here is some advice </p>
+<p>If you're travelling from King's Cross station, you should : <strong>take the westbound Piccadilly line service from platform 5 to Hammersmith station </strong></p>
+<p>From Liverpool Street station, you should : <strong>take the westbound Hammersmith and City line service from platform 2 to Hammersmith station </strong></p>
+<p>From Euston station you should : <strong>follow the signs to Euston Square station. At Euston Square take the westbound Hammersmith and City line service from platform 1 to Hammersmith station </strong></p>
+<p>At Victoria station: <strong>take the northbound Victoria line service to Green Park and change there for the westbound Piccadilly line service to Hammersmith station.</strong> </p>
+<p>And at Paddington station: <strong>take the westbound Hammersmith and City line service from platform 15 to Hammersmith</strong> </p>
+<p><strong>Enjoy the race! <br></strong></p>
+
+     
+
+        
+        
+        
+        @this.ScriptBlock(
+        @<script>
+        //queue.push("@Html.ScriptPath("modules/M020-on-this-page.min.js")", null);
+        </script>
+        )
+        
+        
+        
+        </div>
+    </div>
+    <div class="aside" role="complementary">
+
+       
+        <div data-set="sidenav-container" class="large">
+
+            
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+        </div>
+
+
+
+            
+        <div data-set="sidenav-container" class="small-medium"></div>
+    </div>
+</div>
+
+<!-- Crumbs: PGtype:  -->
+
+ 
+ 
+        
+        
+            @{ViewBag.Description = "Thousands of people flock to the Thames each year to watch one of the few free sporting spectacles in London. If you want to witness a slice of the 600 stroke challenge, there are plenty of ways to get there. Various bus routes take you to key locations";}
+        
+        
+
+
+ 

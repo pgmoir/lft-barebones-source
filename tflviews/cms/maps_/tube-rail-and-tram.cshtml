@@ -1,0 +1,596 @@
+﻿
+
+
+
+<div>
+    
+    
+    
+    <h2>Tube</h2>
+    
+    
+    <div class="large-icon-accordion">
+        <ul>
+        <li class="nearby"><a href="?Input=Current+location+" class="with-subtext maps-nearby-current-location"><span class="mini-map"></span>Nearby<span class="subtext">Find your nearest station</span></a></li>
+        </ul>
+    </div>
+    <ul class="tabs-style-2">
+    <li class="day-map @(Model==Library.MeansOfTransport.NightTube?string.Empty: "selected")"><a href="@Url.Action("Index", "Maps", new {navGroup="track",navItem="tube" })">Day maps</a></li>
+    <li class="night-map  @(Model==Library.MeansOfTransport.NightTube?"selected": string.Empty)"><a href="@Url.Action("Index", "Maps", new {navGroup="track", navItem="tube", input="", inputGeolocation="", secondaryMap="night-tube"})">Night Tube maps</a></li>
+    </ul>
+    
+    <div>
+        <div id="day-map" class="@(Model==Library.MeansOfTransport.NightTube?"hidden": string.Empty)">
+            <div class="multi-document-download-container">
+                
+
+<a class="document-download-wrap pdf" href="/cdn/static/cms/documents/standard-tube-map.pdf">
+    <div class="document-download-text">
+        <p>Tube map</p>
+    </div>
+    <div class="document-download-attachment">
+        <p>
+                        
+            PDF 617KB
+            
+        </p>
+    </div>
+    <div class="document-download-icon download-doc">
+    </div>
+
+</a>
+
+<!-- 0.60 -->
+ 
+
+<a class="document-download-wrap pdf" href="/cdn/static/cms/documents/large-print-tube-map.pdf">
+    <div class="document-download-text">
+        <p>Large print Tube map in colour</p>
+    </div>
+    <div class="document-download-attachment">
+        <p>
+                        
+            PDF 591KB
+            
+        </p>
+    </div>
+    <div class="document-download-icon download-doc">
+    </div>
+
+</a>
+
+<!-- 0.58 -->
+ 
+
+<a class="document-download-wrap pdf" href="/cdn/static/cms/documents/bw-large-print-map.pdf">
+    <div class="document-download-text">
+        <p>Large print Tube map in black & white</p>
+    </div>
+    <div class="document-download-attachment">
+        <p>
+                        
+            PDF 518KB
+            
+        </p>
+    </div>
+    <div class="document-download-icon download-doc">
+    </div>
+
+</a>
+
+<!-- 0.51 -->
+ 
+
+<a class="document-download-wrap pdf" href="/cdn/static/cms/documents/step-free-tube-guide-map.pdf">
+    <div class="document-download-text">
+        <p>Step-free Tube guide</p>
+    </div>
+    <div class="document-download-attachment">
+        <p>
+                        
+            PDF 1.15MB
+            
+        </p>
+    </div>
+    <div class="document-download-icon download-doc">
+    </div>
+
+</a>
+
+<!-- 1.15 -->
+ 
+
+<a class="document-download-wrap pdf" href="/cdn/static/cms/documents/step-free-tube-guide-accessible.pdf">
+    <div class="document-download-text">
+        <p>Step-free Tube guide (accessible version)</p>
+    </div>
+    <div class="document-download-attachment">
+        <p>
+                        
+            PDF 390KB
+            
+        </p>
+    </div>
+    <div class="document-download-icon download-doc">
+    </div>
+
+</a>
+
+<!-- 0.38 -->
+ 
+
+<a class="document-download-wrap pdf" href="/cdn/static/cms/documents/avoiding-stairs-tube-guide.pdf">
+    <div class="document-download-text">
+        <p>Avoiding stairs Tube guide</p>
+    </div>
+    <div class="document-download-attachment">
+        <p>
+                        
+            PDF 466KB
+            
+        </p>
+    </div>
+    <div class="document-download-icon download-doc">
+    </div>
+
+</a>
+
+<!-- 0.45 -->
+ 
+
+<a class="document-download-wrap pdf" href="/cdn/static/cms/documents/cycles-on-public-transport.pdf">
+    <div class="document-download-text">
+        <p>Taking cycles on the TfL network</p>
+    </div>
+    <div class="document-download-attachment">
+        <p>
+                        
+            PDF 337KB
+            
+        </p>
+    </div>
+    <div class="document-download-icon download-doc">
+    </div>
+
+</a>
+
+<!-- 0.33 -->
+ 
+
+<a class="document-download-wrap pdf" href="/cdn/static/cms/documents/tube-map-with-tunnels.pdf">
+    <div class="document-download-text">
+        <p>Tube map showing tunnels</p>
+    </div>
+    <div class="document-download-attachment">
+        <p>
+                        
+            PDF 237KB
+            
+        </p>
+    </div>
+    <div class="document-download-icon download-doc">
+    </div>
+
+</a>
+
+<!-- 0.23 -->
+ 
+
+<a class="document-download-wrap pdf" href="/cdn/static/cms/documents/walking-tube-map.pdf">
+    <div class="document-download-text">
+        <p>Walking times between stations (Zones 1-2)</p>
+    </div>
+    <div class="document-download-attachment">
+        <p>
+                        
+            PDF 621KB
+            
+        </p>
+    </div>
+    <div class="document-download-icon download-doc">
+    </div>
+
+</a>
+
+<!-- 0.61 -->
+ 
+
+<a class="document-download-wrap pdf" href="/cdn/static/cms/documents/steps-tube-map.pdf">
+    <div class="document-download-text">
+        <p>Steps at street level between stations (Zones 1-2)</p>
+    </div>
+    <div class="document-download-attachment">
+        <p>
+                        
+            PDF 620KB
+            
+        </p>
+    </div>
+    <div class="document-download-icon download-doc">
+    </div>
+
+</a>
+
+<!-- 0.61 -->
+ 
+
+<a class="document-download-wrap pdf" href="/cdn/static/cms/documents/walking-tube-map-zones-1-3.pdf">
+    <div class="document-download-text">
+        <p>Walking times between stations including National Rail (Zones 1-3)</p>
+    </div>
+    <div class="document-download-attachment">
+        <p>
+                        
+            PDF 322KB
+            
+        </p>
+    </div>
+    <div class="document-download-icon download-doc">
+    </div>
+
+</a>
+
+<!-- 0.31 -->
+ 
+
+<a class="document-download-wrap pdf" href="/cdn/static/cms/documents/steps-tube-map-zones-1-3.pdf">
+    <div class="document-download-text">
+        <p>Steps at street level between stations including National Rail (Zones 1-3)</p>
+    </div>
+    <div class="document-download-attachment">
+        <p>
+                        
+            PDF 328KB
+            
+        </p>
+    </div>
+    <div class="document-download-icon download-doc">
+    </div>
+
+</a>
+
+<!-- 0.32 -->
+ 
+
+<a class="document-download-wrap pdf" href="/cdn/static/cms/documents/toilets-map.pdf">
+    <div class="document-download-text">
+        <p>Toilet facilities Tube map</p>
+    </div>
+    <div class="document-download-attachment">
+        <p>
+                        
+            PDF 352KB
+            
+        </p>
+    </div>
+    <div class="document-download-icon download-doc">
+    </div>
+
+</a>
+
+<!-- 0.34 -->
+ 
+            </div>        
+        </div>
+    </div>
+    <div id="night-map" class="@(Model==Library.MeansOfTransport.NightTube?string.Empty: "hidden")">
+        <div class="multi-document-download-container">
+            
+
+<a class="document-download-wrap pdf" href="/cdn/static/cms/documents/standard-night-tube-map.pdf">
+    <div class="document-download-text">
+        <p>Night Tube and London Overground map </p>
+    </div>
+    <div class="document-download-attachment">
+        <p>
+                        
+            PDF 202KB
+            
+        </p>
+    </div>
+    <div class="document-download-icon download-doc">
+    </div>
+
+</a>
+
+<!-- 0.20 -->
+ 
+
+<a class="document-download-wrap pdf" href="/cdn/static/cms/documents/night-tube-taxi-rank-guide.pdf">
+    <div class="document-download-text">
+        <p>Night Tube taxi rank guide </p>
+    </div>
+    <div class="document-download-attachment">
+        <p>
+                        
+            PDF 219KB
+            
+        </p>
+    </div>
+    <div class="document-download-icon download-doc">
+    </div>
+
+</a>
+
+<!-- 0.21 -->
+ 
+        </div>
+    </div>
+</div>
+ 
+<div>
+    
+    
+    
+    <h2>London Overground and National Rail</h2>
+    
+    
+    @{
+    var showDayMap = true;
+    if (HttpContext.Current.Request.QueryString.Count > 0 && Request.QueryString.AllKeys.Any(k => k == "secondaryMap")) {
+        var mapToShow = HttpContext.Current.Request.QueryString["secondaryMap"].ToString();
+        if (mapToShow ==  Library.MeansOfTransport.NightOverground) {
+            showDayMap = false;
+        }
+    }
+}
+    <div class="large-icon-accordion">
+        <ul>
+        <li class="nearby"><a href="?Input=Current+location+" class="with-subtext maps-nearby-current-location"><span class="mini-map"></span>Nearby<span class="subtext">Find your nearest station</span></a></li>
+        </ul>
+    </div>
+    <ul class="tabs-style-2">
+   <li class="day-map @(showDayMap ? "selected" : "")">
+        <a href="@Url.Action("Index", "Maps", new {navGroup="track",navItem="overground" })">
+            Day maps
+        </a>
+   </li>
+   <li class="night-map @(!showDayMap ? "selected" : "")">
+        <a href="@Url.Action("Index", "Maps", new {navGroup="track", navItem="overground", input="", inputGeolocation="", secondaryMap="night-overground"})">
+            Night map
+        </a>
+   </li>
+    </ul>
+    
+    <div>
+            <div class="multi-document-download-container @(!showDayMap ? "hidden" : "")">
+                
+
+<a class="document-download-wrap pdf" href="/cdn/static/cms/documents/london-overground-network-map.pdf">
+    <div class="document-download-text">
+        <p>London Overground map</p>
+    </div>
+    <div class="document-download-attachment">
+        <p>
+                        
+            PDF 137KB
+            
+        </p>
+    </div>
+    <div class="document-download-icon download-doc">
+    </div>
+
+</a>
+
+<!-- 0.13 -->
+ 
+
+<a class="document-download-wrap pdf" href="/cdn/static/cms/documents/step-free-tube-guide-map.pdf">
+    <div class="document-download-text">
+        <p>Step-free Tube guide</p>
+    </div>
+    <div class="document-download-attachment">
+        <p>
+                        
+            PDF 1.15MB
+            
+        </p>
+    </div>
+    <div class="document-download-icon download-doc">
+    </div>
+
+</a>
+
+<!-- 1.15 -->
+ 
+
+<a class="document-download-wrap pdf" href="/cdn/static/cms/documents/cycles-on-public-transport.pdf">
+    <div class="document-download-text">
+        <p>Taking cycles on the TfL network</p>
+    </div>
+    <div class="document-download-attachment">
+        <p>
+                        
+            PDF 337KB
+            
+        </p>
+    </div>
+    <div class="document-download-icon download-doc">
+    </div>
+
+</a>
+
+<!-- 0.33 -->
+ 
+            </div>        
+   
+        <div class="multi-document-download-container @(showDayMap ? "hidden" : "")">
+            
+
+<a class="document-download-wrap pdf" href="/cdn/static/cms/documents/standard-night-tube-map.pdf">
+    <div class="document-download-text">
+        <p>Night Tube and London Overground map</p>
+    </div>
+    <div class="document-download-attachment">
+        <p>
+                        
+            PDF 202KB
+            
+        </p>
+    </div>
+    <div class="document-download-icon download-doc">
+    </div>
+
+</a>
+
+<!-- 0.20 -->
+ 
+        </div>
+</div>
+</div>
+ 
+<div>
+
+
+
+<h2>DLR</h2>
+
+
+
+        <div class="large-icon-accordion">
+        <ul>
+            <li class="nearby">
+            <a href="?Input=Current+location+" class="with-subtext">
+            <span class="mini-map"></span>Nearby
+            <span class="subtext">Find your nearest station</span></a>
+            </li>
+        </ul>
+        </div>
+    
+<div class="multi-document-download-container">
+    
+
+<a class="document-download-wrap pdf" href="/cdn/static/cms/documents/dlr-route-map.pdf">
+    <div class="document-download-text">
+        <p>DLR map </p>
+    </div>
+    <div class="document-download-attachment">
+        <p>
+                        
+            PDF 472KB
+            
+        </p>
+    </div>
+    <div class="document-download-icon download-doc">
+    </div>
+
+</a>
+
+<!-- 0.46 -->
+ 
+
+<a class="document-download-wrap pdf" href="/cdn/static/cms/documents/cycles-on-public-transport.pdf">
+    <div class="document-download-text">
+        <p>Taking cycles on the TfL network</p>
+    </div>
+    <div class="document-download-attachment">
+        <p>
+                        
+            PDF 337KB
+            
+        </p>
+    </div>
+    <div class="document-download-icon download-doc">
+    </div>
+
+</a>
+
+<!-- 0.33 -->
+ 
+
+<a class="document-download-wrap pdf" href="/cdn/static/cms/documents/step-free-tube-guide-map.pdf">
+    <div class="document-download-text">
+        <p>Step-free Tube guide</p>
+    </div>
+    <div class="document-download-attachment">
+        <p>
+                        
+            PDF 1.15MB
+            
+        </p>
+    </div>
+    <div class="document-download-icon download-doc">
+    </div>
+
+</a>
+
+<!-- 1.15 -->
+ 
+</div>
+
+</div>
+ 
+<div>
+
+
+
+
+
+        <div class="large-icon-accordion">
+        <ul>
+            <li class="nearby">
+            <a href="?Input=Current+location+" class="with-subtext">
+            <span class="mini-map"></span>Nearby
+            <span class="subtext">Find your nearest stop</span></a>
+            </li>
+        </ul>
+        </div>
+    
+<div class="multi-document-download-container">
+    
+
+<a class="document-download-wrap pdf" href="/cdn/static/cms/documents/tram-service-map.pdf">
+    <div class="document-download-text">
+        <p>London Trams map</p>
+    </div>
+    <div class="document-download-attachment">
+        <p>
+                        
+            PDF 88KB
+            
+        </p>
+    </div>
+    <div class="document-download-icon download-doc">
+    </div>
+
+</a>
+
+<!-- 0.09 -->
+ 
+</div>
+
+</div>
+ 
+<div>
+
+
+
+
+
+<div class="multi-document-download-container">
+    
+
+<a class="document-download-wrap pdf" href="/cdn/static/cms/documents/london-rail-and-tube-services-map.pdf">
+    <div class="document-download-text">
+        <p>London's rail and Tube services</p>
+    </div>
+    <div class="document-download-attachment">
+        <p>
+                        
+            PDF 333KB
+            
+        </p>
+    </div>
+    <div class="document-download-icon download-doc">
+    </div>
+
+</a>
+
+<!-- 0.33 -->
+ 
+</div>
+
+</div>
+ 
+
+ 

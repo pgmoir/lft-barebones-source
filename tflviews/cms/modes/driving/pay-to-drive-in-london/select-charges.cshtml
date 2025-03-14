@@ -1,0 +1,333 @@
+﻿
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@section adverts {
+    <div class="top-banner-advert" aria-hidden="true">
+        <div class="large" data-advert="/76889402/driving/payment" data-advert-sizes="970, 90|970, 250"></div>
+        <div class="medium" data-advert="/76889402/driving/payment" data-advert-sizes="728, 90"></div>
+        <div class="small" data-advert="/76889402/driving/payment" data-advert-sizes="300, 50|320, 50"></div>
+    </div>
+}
+
+
+ 
+  
+
+
+
+@{ViewBag.Title = "Pay charges";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/pay-to-drive-in-london/select-charges";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                 <li><a href="/modes/driving/pay-to-drive-in-london">Pay to drive in London</a></li>
+                
+            
+            
+            
+                <li><span class="last-breadcrumb">Pay charges</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Pay charges</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/account-account-landing-29377"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+          @{
+          
+            dynamic content = new ContentModel();
+            content.EditLinkText = "<div>Change</div><div>vehicle</div>";
+            content.TravelDatesSectionHeading = "Select date(s)";
+            content.TravelDatesSectionBody = "<p>Use <strong>Day view</strong> to pay for single charging days or <strong>Calendar view</strong> to pay for a block of charges or a single day in the future.</p>";
+            content.MoveNextLinkText = "Later >";
+            content.MovePrevLinkText = "< Earlier";
+            content.CalenderLinkText = "";
+            content.ChargesSectionHeading = "Charges";
+            content.AboutTheseChangesHeading = "About the charges";
+            content.AboutTheseChangesBody = "<p><strong>Congestion Charge</strong></p><p>This daily charge is for driving a vehicle within the charging zone between 07:00 and 18:00, Monday-Friday.</p><p><strong>Ultra Low Emission Zone (ULEZ)</strong></p><p>A charge must be paid when a vehicle does not meet the emissions standards and is driven within the zone. The ULEZ operates 24 hours a day, 7 days a week (except 25 December - Christmas Day),&nbsp;within the same area as the Congestion Charging zone.</p><p>A daily charge covers a vehicle between midnight and midnight.</p><p>Lighter vehicles (eg cars, motorbikes and small vans) generally produce fewer emissions - these are charged £12.50 compared to £100 for heavier vehicles. <a href='/modes/driving/compliance-registration/before-you-start' target='_blank'>Register your vehicle</a> with us if you think we have incorrect details for your vehicle and you should pay a different charge, or no charge if it meets the emissions standard.</p><p><strong>Low Emission Zone (LEZ)</strong></p><p>This charge must be paid when a vehicle does not meet the emissions standards and is driven within the zone. The LEZ operates 24 hours a day, 7 days a week and covers most of the Greater London area.</p><p>A daily charge covers a vehicle between midnight and midnight.</p><p>Lighter vehicles generally produce fewer emissions - these are charged £100 compared to £200 for heavier vehicles. <a href='/modes/driving/compliance-registration/before-you-start' target='_blank'>Register your vehicle</a> with us if you think we have incorrect details for your vehicle and you should pay a different charge, or no charge if it meets the emissions standard.</p>";
+            content.CongestionChargesPaidwarning = "The Congestion Charge has already been paid for this vehicle for this date";
+            content.LezChargesPaidWarning = "The LEZ charge has already been paid for this vehicle for this day";
+            content.UlezChargesAddToBasketwarning = "This ULEZ charge is already in your basket";
+            content.FreeCongestionChargesHeading = "Congestion Charge";
+            content.FreeCongestionChargesMessage = "No charges to pay for this day";
+            content.CongestionChargeTimings = "Monday-Friday, 07:00-18:00";
+            content.ExemptText = "Exempt";
+            content.DateViewTabText = "Day view";
+            content.CalenderTabText = "Calendar view";
+            content.ShowChargesButtonText = "Show charges";
+            content.ExcludeWeekendsText = "Exclude weekends and bank holidays";
+            content.AddToBasketText = "Add to basket";
+            content.CongestionChargesAddToBasketwarning = "This Congestion Charge is already in your basket";
+            content.UlezChargesPaidWarning = "The ULEZ charge has already been paid for this vehicle for this day";
+            content.LezChargesAddToBasketwarning = "This LEZ charge is already in your basket";
+            content.BasketLabel = "Basket: ";
+            content.CCText = "Congestion Charge";
+            content.UlezLowText = "ULEZ charge";
+            content.UlezHighText = "ULEZ charge";
+            content.LezLowText = "LEZ charge";
+            content.LezHighText = "LEZ charge";
+            content.ConfirmRemoveButtonText = "Remove";
+            content.DiscardRemoveButtonText = "Keep";
+            content.RemoveConfirmMessage = "You may get a penalty if you drive within a zone that you need to pay charges for.";
+            content.NoChargesSelected = "Select a charge to continue";
+            content.BasketDetailPageUrl = "/modes/driving/pay-to-drive-in-london/basket-details";
+            content.GoToBasketButtonText = "Go to basket";
+            content.SelectChargeUrl = "/modes/driving/pay-to-drive-in-london/select-charges?reloadvrm=true";
+            content.UlezComplianceMessage = "This vehicle meets or is exempt from the ULEZ standards";
+            content.CcChargeNotChargeable = "You don't have to pay any charges for this day - it's either a weekend or bank holiday.";
+            
+            content.PaidAlready = "Charge already paid";
+            content.UlezExemptMessage = "Exempt";
+            content.UlezNoChargesMessage = "Based on the vehicle details entered and information held by the DVLA and TfL today, you don't have to pay the ULEZ charge for this vehicle. This may change - always check to see if you need to pay to drive within the zone.";
+            content.CCExemptMessage = "This vehicle is exempt from the Congestion Charge on this date. If you believe this is incorrect and still want to pay the charge you can check the box to continue.";
+            content.CCLabel = "Congestion Charge";
+            content.UlezLabel = "ULEZ charge";
+            content.LezLabel = "LEZ charge";
+            content.PaymentHistoryPageUrl = "/modes/driving/account-payment-history-37384";
+            content.PaymentHistoryButtonText = "Payment history";
+            content.PaymentHistoryButtonAltText = "View payment history";
+            content.DiscountMessage = "<p>Your {0} discount expires on {1}. You can only pay charges to the end of your discount - to pay charges after this date you will need to renew it.</p>";
+            content.RenewButtonText = "Renew discount";
+            content.BlueBadgeButtonText = "Manage Blue Badge discount";
+            content.BlueBadgeButtonAction = "MANAGE BLUE BADGE LINK (LINK FOR BUTTON?) /modes/driving/cc-blue-badge-manage-30941";
+            content.RenewActionLink = "RENEW ACTION LINK";
+            content.DontApplyText = "No";
+            content.ApplyText  = "Yes";
+            content.RenewPopupTitle = "Do you want to continue?";
+            content.RenewPopupMessage = "It can take up to 10 working days for your discount renewal to be processed. You will need to submit proof.";
+            content.DiscountExpiredWarningMessageWhenRenewable = "<p>Your {0} discount expires on {1}.</p><p>If you want to pay charges while logged into your account after this date, you need to renew the discount.</p>";
+            content.DiscountExpiredWarningMessageWhenNotRenewable = "<p>Your {0} discount for this vehicle expires on {1}. After that you will need to pay the Congestion Charge to drive within the zone.</p>";
+            content.CcFullDiscountMessage = "This vehicle has a 100% Congestion Charge discount for this date. If you still want to pay the charge, tick the box.";
+            content.UlezFullDiscountMessage = "This vehicle has a 100% ULEZ discount for this date. If you still want to pay the charge, tick the box."; 
+            content.BlueBadgeRenewUrl = "/modes/driving/cc-blue-badge-renew-renew-34009";
+            content.NineSeatDiscountRenewUrl = "/modes/driving/cc-nine-plus-seater-renew-renew-33764";
+            content.MotorTricycleUrl = "/modes/driving/cc-motor-tricycle-renew-renew-33800";
+            content.SelectedPartnerUrl ="/modes/driving/cc-selected-partner-apply-36327";
+            content.AccreditedBreakdownUrl = "/modes/driving/cc-accredited-breakdown-manage-34762";
+            content.ResidentsDiscountUrl = "/modes/driving/cc-resident-discount-manage-32832";
+            content.UledUrl = "/modes/driving/cc-cvd-manage-33830";
+            content.RecoveryUrl = "/modes/driving/cc-recovery-vehicle-manage-34022";
+            content.StartDateGreatherThan65CCDaysMessage = "Start date cannot be more than 65 charging days in the future";
+            content.LezChargesMessageForCalendar = "<p>Your vehicle is also subject to LEZ charges. Single day charges can be paid online. If you want to pay for more than one day please contact the call centre on 0343 222 2222 (<a href='/corporate/terms-and-conditions/tfl-call-charges' target='_blank'>TfL call charges</a>).</p>";
+            content.AlreadyPaidMultipleDaysMessage = "You have already paid {0} for one or more selected days.";
+            content.ChargeDetailShowMoreLabel = "Charge details";
+            content.ChargeDetailShowLessLabel = "Charge details";
+            
+            
+            content.DailyChargeLabelForPayChargeView = "Daily charge";
+            content.PreviousChargeLabelForPayChargeView = "Previous charging day (1 day)";
+            content.NextChargeLabelForPayChargeView = "Previous charging day (1 day)";
+            content.CalendarChargesLabelForPayChargeView = "Custom calendar ({0} days)";
+
+            content.DailyChargeLabelForBasketView = "Daily charge for this vehicle";
+            content.PreviousChargeLabelForBasketView = "Previous charging day (1 day)";
+            content.NextChargeLabelForBasketView = "Previous charging day (1 day)";
+            content.CalendarChargesLabelForBasketView = "Custom calendar ({0} days)";
+            
+            content.CustomChargesLabelForPayChargeView = "Custom calendar ({0} days)";
+            content.CustomWorkingDayChargesLabelForPayChargeView = "Custom working ({0} days)";
+            
+             
+            content.CustomChargesLabelForBasketView = "Custom calendar ({0} days)";
+            content.CustomDayChargesLabelForBasketView = "Custom calendar ({0} days)";
+            content.CalendarChargesExcludingWeekendsLabelForBasketView = "Custom working ({0} days)";
+            content.CongestionChargeExemptDetailText = "Based on the vehicle details entered, and information held by the DVLA and TfL today, this vehicle is exempt from the Congestion Charge. This may change - always check to see if you need to pay to drive within the zone.";
+            content.CongestionChargeComplianceMessage = "Your vehicle is exempt from the Congestion Charge";
+            content.CongestionChargeNoChargesDetailMessage = "You don't have to pay the Congestion Charge for this day.";
+            content.CongestionChargesDetailMessage = "You need to pay the Congestion Charge for this vehicle if you drive within the zone Monday to Friday 07:00-18:00 excluding bank holidays and the period between Christmas Day and New Year's Day.";
+            
+            // LEZ
+            content.LezTimings = "Every day, 24 hours a day";
+            content.LezHighDetailChargesMessage = "This vehicle does not meet the LEZ emissions standards. You need to pay the LEZ charge if you drive within the zone. The zone operates at all times - charging days run from midnight to midnight.";
+            content.LezLowDetailChargesMessage = "This vehicle does not meet the LEZ emissions standards. You need to pay the LEZ charge if you drive within the zone. The zone operates at all times - charging days run from midnight to midnight.";
+
+            
+            content.UlezTimings = "Every day (apart from Christmas Day), 24 hours a day";
+            content.UlezHighDetailChargesMessage = "Vehicle does not meet ULEZ emissions standards. You need to pay the ULEZ charge for lorries, buses, coaches and other heavier vehicles to drive within the zone. ULEZ operates at all times (except 25 December). Charging days run from midnight to midnight.";
+            content.UlezLowDetailChargesMessage = "Vehicle does not meet ULEZ emissions standards. You need to pay the ULEZ charge for cars, motorbikes, small vans and other lighter vehicles to drive within the zone. ULEZ operates at all times (except 25 Dec). Charging days run from midnight to midnight.";
+            
+            content.UlezExemptChargesDetailMessage = "Based on the vehicle details entered and information held by the DVLA and TfL today, this vehicle is exempt from the ULEZ charge. This may change - always check to see if you need to pay to drive within the zone.";
+            content.UlezNonChargeableChargesDetailMessage = "Based on the vehicle details entered and information held by the DVLA and TfL today, you don't have to pay the ULEZ charge for this vehicle. This may change - always check to see if you need to pay to drive within the zone.";
+            content.UlezNoChargesDetailMessage = "You don't have to pay the ULEZ charge";
+            content.UlezCompliantDetailMessage = "Based on the vehicle details entered and information held by the DVLA and TfL today, you don't have to pay the ULEZ charge for this vehicle. This may change - always check to see if you need to pay to drive within the zone.";
+            
+            content.UlezNonChargeableMessage = "Based on the vehicle details entered and information held by the DVLA and TfL today, you don't have to pay the ULEZ charge for this vehicle. This may change - always check to see if you need to pay to drive within the zone.";
+            content.InvalidDateSelection = "Select a date to continue";
+
+            content.NonChargeableMessageForWeekendsAndBankHoliday = "No charge on this day";
+            content.NonChargeableMDetailedessageForWeekendsAndBankHoliday = "The Congestion Charge doesn't apply on weekends, bank holidays and the period between Christmas Day and New Year.";
+            content.NonChargeableMessageForWeekdays = "Exempt";
+            content.NonChargeableDetailedMessageForWeekdays = "This is based on the vehicle details entered and information held by the DVLA and TfL today. This may change at any time - always check to see if you need to pay to drive within the zone.";
+
+            Html.RenderAction("Index", "PayCharges", new {ContentModel = content});
+        }
+        
+          <div class="button-set">
+            <a class="tertiary-link go-back" href="#" id="go-back"><span class="button-text">Back</span></a>    
+        </div>
+
+      
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="advert-tile unsponsored-style google-ads" aria-hidden="true">
+  <div class="advert-link">
+    <div class="advert-content">
+        <div class="medium-large" data-advert="/76889402/driving/payment" data-advert-sizes="300, 250"></div>
+        <div class="small" data-advert="/76889402/driving/payment" data-advert-sizes="300, 250"></div>
+    </div>
+  </div>
+</div>
+@{
+    ViewBag.AmazonSlot = "'amznslots'";
+    ViewBag.AmazonAds = "'3199'"; // to add another value, this needs to be ViewBag.AmazonAds = "'3199','xx'";
+}
+      
+
+ </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+     @section scripts {
+<div class="bottom-advert ">
+    <div class="close-ad-button visually-hidden"><span class="close-icon-circle"></span></div>
+    <div data-advert="/76889402/driving/" data-advert-sizes="320, 50"></div>
+</div>
+}
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "Select charges";}
+        
+            
+        
+
+
+ 

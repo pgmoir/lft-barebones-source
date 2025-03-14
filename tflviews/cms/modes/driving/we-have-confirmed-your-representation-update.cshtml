@@ -1,0 +1,212 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Challenge a PCN";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/we-have-confirmed-your-representation-update";}
+@{ViewBag.Language = "en";}
+        
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Challenge a PCN</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Challenge a PCN</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+        @{
+        ViewBag.Title = "Representation update confirmed";
+        }
+        @{
+            dynamic content = new ContentModel();
+            content.ThankYouHeading = "Thank you - you have updated your representation";
+            content.ThankYouText = "Your additional information will now be reviewed in relation to your representation. A response will be sent to the registered keeper. This may take up to 15 days.";
+            content.CheckStatusText = "<strong>Please make a note of this number for your records.</strong><br><br>Check the status of your challenge by going to View a PCN with your PCN number and Vehicle Registration Mark.";
+            content.ReferenceNumberText = "Representation reference number: {0} ";
+            Html.RenderAction("UpdateRepresentationConfirmation", "PenaltyChargeNotice", new { area = "Ruc", content = content });
+        }
+      
+ <div>
+
+<h2>What happens next?</h2>
+<p>The enforcement process will now be suspended and the outstanding amount of your PCN will not increase until we have investigated and responded to your representation.</p>
+<p>Once we have made a decision you will be sent a letter of acceptance or a notice of rejection.</p>
+<h3>If your representation is rejected</h3>
+<p>If we have rejected your representation, the Notice of rejection will outline two options:</p>
+<ul>
+    <li>Pay the penalty charge by the date stipulated on the Notice of rejection OR</li>
+    <li>Use the form enclosed with your Notice of rejection to appeal to an independent adjudicator at <a href="http://www.londontribunals.gov.uk/">London Tribunals</a></li>
+</ul>
+</div>
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+      </div>
+    
+    <div></div>
+    
+      <div class="module-grid clearfix">
+                    
+        <div class="vertical-button-container">
+    <ul>
+        
+        
+        
+        <li><a href="/modes/driving/red-routes"  class="plain-button">Red routes</a></li>
+        
+        
+        <li><a href="/modes/driving/red-routes/penalty-charge-notices"  class="plain-button">Penalty Charge Notices</a></li>
+        
+        
+        <li><a href="/modes/driving/red-routes/penalty-charge-notices/enforcement-process"  class="plain-button">Enforcement process</a></li>
+        
+        
+        <li><a href="/modes/driving/red-routes/penalty-charge-notices/make-a-representation"  class="plain-button">Challenging a PCN</a></li>
+        
+        
+        <li><a href="/modes/driving/red-routes/penalty-charge-notices/making-a-representation/grounds-for-making-a-representation"  class="plain-button">Grounds for challenging</a></li>
+        
+        
+        <li><a href="/modes/driving/red-routes/penalty-charge-notices/making-a-representation/how-to-appeal"  class="plain-button">How to appeal</a></li>
+        
+        
+        <li><a href="/modes/driving/red-routes/penalty-charge-notices/making-a-representation/statutory-declarations"  class="plain-button">Statutory declarations</a></li>
+        
+        
+        <li><a href="/modes/driving/red-routes/penalty-charge-notices/making-a-representation/witness-statement"  class="plain-button">Witness statements</a></li>
+        
+    </ul>
+</div>
+
+      </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

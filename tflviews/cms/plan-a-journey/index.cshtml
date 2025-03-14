@@ -1,0 +1,98 @@
+﻿
+    
+@section adverts {
+    <div class="top-banner-advert" aria-hidden="true">
+        <div class="large" data-advert="/76889402/plan_a_journey" data-advert-sizes="970, 90|970, 250"></div>
+        <div class="medium" data-advert="/76889402/plan_a_journey" data-advert-sizes="728, 90"></div>
+        <div class="small" data-advert="/76889402/plan_a_journey" data-advert-sizes="300, 50|320, 50"></div>
+    </div>
+}
+
+
+ 
+  
+
+
+
+@{ViewBag.Title = "Plan a journey";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/plan-a-journey/index";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+
+            @section scripts {
+                <script>
+                    queue.push(function () { tfl.journeyPlanner.init(); });
+                </script>
+     <div class="bottom-advert">
+    <div class="close-ad-button visually-hidden"><span class="close-icon-circle"></span></div>
+    <div data-advert="/76889402/plan_a_journey" data-advert-sizes="320, 50"></div>
+</div>
+        }
+            <div id="jp-hero" class="journey-planner-start spot-grid-background">
+            <div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+            
+                <li><span class="last-breadcrumb">Plan a journey</span></li>
+            
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+                <div class="r">
+                    <div class="headline-container">
+                        <h1><span class="hero-headline">@ViewBag.Title</span></h1>
+                    </div>
+                </div>
+                <div class="main-and-aside one-row r hero-row">
+                    <div class="aside">
+                        @{Html.RenderAction("Index", "JourneyPlanner", new {IsWidget = false});}
+                        <div class="small">
+                      <div class="news-teaser " data-highlight-image="/cdn/static/cms/images/promos/offpeak-winter-jp.jpg" data-highlight-for="#jp-hero" data-highlight-size="medium-large">
+
+<img src="/cdn/static/cms/images/promos/offpeak-winter-jp_rdax_400x300.jpg" alt="Go and discover London this winter" />
+
+<a href="https://londonblog.tfl.gov.uk/2019/11/25/winter-activities/?intcmp=hero-Plan a journey-Go and discover London this winter">
+<div class="text-link"><h2>Go and discover London this winter</h2><p>There's lots to see and do in London this winter ❄️</p></div>
+</a>
+
+
+
+</div>
+
+
+  
+ 
+                        </div>
+                    </div>
+                    <div class="main hero-content-container" class="medium-large">
+                     <div class="content-area medium-large"></div>   
+                    </div>
+                </div>
+            </div>
+          
+ 
+        
+        
+        
+            @{ViewBag.Description = "Plan your journey across the TfL network. Journey planner for Bus, Tube, London Overground, DLR, TfL Rail, National Rail, Tram, River Bus, Emirates Air Line, Coach";}
+        
+            
+        
+
+
+ 

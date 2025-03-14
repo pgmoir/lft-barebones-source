@@ -1,0 +1,196 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Pay the LEZ charge";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/lez-paying-the-low-emission-charge-confirmation-26471";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Pay the LEZ charge</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Pay the LEZ charge</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/account-account-landing-29377"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+    
+      <h2>Confirmation</h2>
+      
+           
+      
+
+
+		
+		<!-- 5. confirmation -->
+		@using TfL.Ruc.Services.ViewModels.Ruc.ZoneCharge.PayZoneCharge
+		@{
+            dynamic content = new ContentModel();
+
+            content.ThankYouHeading = "Thank you for your payment";
+            content.TotalAmount = "Total amount paid: ";
+            content.PaymentReferenceNumber = "Your receipt number is: ";
+            content.ConfirmationEmailText = "Confirmation email sent to: {0}";
+            content.ConfirmationSMSText = "A confirmation message has been sent to your mobile phone.";
+            content.ContactCustomerServices = "<p>If you need further help, you can contact us.</p>";
+            content.SummaryText = "Summary";
+            content.CreateanAccountTitle = "Create a London Road User Charging account";
+            content.CreateanAccountText = "Speed up future payments by creating an account.";
+            content.ReceiptNumber = "Your receipt number is: ";
+            
+            content.DailyCongestionChargesBasketText = "Daily Congestion Charge (1 day)";
+            content.LastCongestionChargesBasketText = "previous charging day (1 day)";
+            content.WeeklyCongestionChargesBasketText = "Weekly Congestion Charge (5 consecutive charging days)";
+            content.MonthlyCongestionChargesBasketText = "Monthly Congestion Charge (20 consecutive charging days)";
+            content.AnnualCongestionChargesBasketText = "Annual Congestion Charge (252 consecutive charging days)";
+            content.WeeklyResidentDiscountChargesBasketText = "Weekly residents' discount Congestion Charge (5 consecutive days)";
+            content.MonthlyResidentDiscountChargesBasketText = "Monthly residents' discount Congestion Charge (20 consecutive days)";
+            content.AnnualResidentDiscountChargesBasketText = "Annual residents' discount Congestion Charge (252 consecutive days)";
+            content.RangeResidentDiscountChargesBasketText = "Residents' discount Congestion Charge ({0} consecutive charging days)";
+            content.RangeCongestionChargesBasketText = "Custom Congestion Charge ({0} consecutive charging days)";
+            content.SingleRangeCongestionChargesBasketText = "daily congestion charge (1 day)";
+            content.LezStandardChargeBasketText = "Daily LEZ charge low (1 day)";
+            content.LezStandardPrevChargeBasketText = "Daily LEZ charge low - previous day (1 day)";
+            content.LezHigherPrevChargeBasketText = "Daily LEZ Charge High - previous day (1 day)";
+            content.LezHigherChargeBasketText = "Daily LEZ Charge High (1 day)";
+            content.PaymentSummaryHeadingText = "Payment summary";
+
+            Html.RenderAction("PaymentConfirmation", "PayZoneCharge", new
+                { 
+                    area = "Ruc", 
+                    content = content, 
+                    zoneType = TfL.Ruc.Domain.Entities.Ruc.ZoneChargeZone.LowEmission, 
+                    createAccountUrl = "/modes/driving/account-start-create-account-29657"
+                }
+            );
+        }
+		
+	  
+
+  
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/low-emission-zone" });
+        }
+        
+      
+
+ 
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+        @ModulesHelpers.PrintButton()
+      
+ 
+      </div>
+    
+    <div></div>
+    
+      <div>
+                    
+        <div class="vertical-button-container">
+    <ul>
+        
+        
+        
+        <li><a href="/modes/driving/pay-to-drive-in-london"  class="plain-button">Pay to drive in London</a></li>
+        
+        
+        <li><a href="/modes/driving/amend-or-refund-a-charge"  class="plain-button">Amend or refund a charge</a></li>
+        
+        
+        <li><a href="/modes/driving/compliance-registration/before-you-start"  class="plain-button">Register your vehicle with us</a></li>
+        
+        
+        <li><a href="/modes/driving/low-emission-zone/contact-lez"  class="plain-button">Contact LEZ</a></li>
+        
+    </ul>
+</div>
+
+      </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

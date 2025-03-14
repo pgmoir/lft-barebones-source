@@ -1,0 +1,363 @@
+﻿
+
+
+@{ViewBag.Title = "Filming & photography on the roads";}
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                <li>
+                    <a href="/info-for/media/index">Media</a>
+                </li>
+                
+                <li>
+                    <a href="/info-for/media/filming-and-photography">Filming & photography</a>
+                </li>
+                
+                <li>
+                    <span class="last-breadcrumb">Filming & photography on the roads</span>
+                </li>
+            
+ 
+            
+ 
+            
+ 
+        </ul>
+    </div>
+</div>
+     
+ 
+<div class="r">
+    <div class="headline-container plain">
+        <h1>Filming & photography on the roads</h1>
+    </div>
+</div>
+
+<div class="main-and-aside r">
+    <div class="main" role="main">
+
+    <div class="article-teaser">
+        London's roads provide many popular locations for filming and photography.        
+        
+            
+        
+    </div>
+
+<div class="on-this-page">
+<p>We are the Highway Authority for <a href="https://tfl.gov.uk/modes/driving/red-routes">London's red routes</a>. You need to get permission from us before you start to film or photograph on our network.</p>
+<p>This is true for everyone, no matter what subject is being filmed, the equipment being used, or size of crew.</p>
+<p>Use the map below to find out if we are the authority for the road you want to film or photograph on. </p>
+<p>All red routes are marked on the map. All other roads are managed by the local borough - you need to contact them directly for the permission you need.</p>
+<h2>Check your location</h2>
+
+     
+
+
+        <div class="search-filter">
+          <div class="heading clearfix">
+            <div class="search-icon-black"></div>
+            <h3>Search</h3>
+          </div>
+          @{
+            Html.RenderAction("SearchFilter", "Modules", new
+            {
+              actionUrl = Library.DisambiguationSettings.DisambiguationUrl,
+              ajaxEnabled = true,
+              currentLocationSubmitUrl = "/maps/congestion-charge",
+              additionalFields = new List<string> { "InputGeolocation" },
+              buttonText = "Go",
+              dataSets = new[] { 
+                 new[]{ Library.DisambiguationDataSets.PlacesExtra, "/maps/congestion-charge?Input={{input}}&InputGeolocation={{lon}},{{lat}}" },                         
+              },
+              modes = string.Format(
+                "{0},{1},{2},{3},{4},{5},{6},{7},{8}",
+                Library.MeansOfTransport.Tube,
+                Library.MeansOfTransport.DLR,
+                Library.MeansOfTransport.Overground,
+                Library.MeansOfTransport.TflRail,
+                Library.MeansOfTransport.Bus,
+                Library.MeansOfTransport.River,
+                Library.MeansOfTransport.RiverTours,
+                Library.MeansOfTransport.Tram,
+                Library.MeansOfTransport.CableCar
+              ),
+              placeHolderText = "Victoria, Fleet street, SW1H 0BD"                    
+            });
+          }
+        </div>
+      
+
+
+  
+    @{ Html.RenderAction("EmbeddedMap", "Maps", new
+      {                     
+        layers="gla-boundary,road-corridors", 
+        layersVisibleAtLoad="road-corridors",
+        centreLat="",
+        centreLng="",
+        allowNationalBounds="0",
+        zoom="16",
+        resultSelectedZoom="14",
+        showSatelliteMap="0",
+        showUserLocation="1", 
+        kmlUrl=""
+      });
+    }
+  
+ 
+<h2>Application fees</h2>
+<div class="table-container">
+    <strong>
+</strong>
+<div class="table-container"><table>
+    <thead>
+        <tr>
+            <th id="table_heading_0" rowspan="1" colspan="1"><strong>Name</strong><br />
+            </th>
+            <th id="table_heading_1" rowspan="1" colspan="1"><strong>Shoot details</strong><br />
+            </th>
+            <th id="table_heading_2" rowspan="1" colspan="1"><strong>Fees</strong><br />
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td headers="table_heading_0">Small</td>
+            <td headers="table_heading_1">Cast and crew of up to 5 people<br />
+            </td>
+            <td headers="table_heading_2">&pound;75<br />
+            </td>
+        </tr>
+        <tr>
+            <td headers="table_heading_0">Medium</td>
+            <td headers="table_heading_1">Cast and crew of 6-25 people<br />
+            </td>
+            <td headers="table_heading_2">&pound;225<br />
+            </td>
+        </tr>
+        <tr>
+            <td headers="table_heading_0">Large<br />
+            </td>
+            <td headers="table_heading_1">Cast and crew of 26+ <br />
+            </td>
+            <td headers="table_heading_2">&pound;450<br />
+            </td>
+        </tr>
+        <tr>
+            <td headers="table_heading_0">Multi-location<br />
+            </td>
+            <td headers="table_heading_1">3+ locations<br />
+            </td>
+            <td headers="table_heading_2">&pound;1350<br />
+            (+&pound;450 for every additional location)<br />
+            </td>
+        </tr>
+        <tr>
+            <td headers="table_heading_0">Additional changes<br />
+            </td>
+            <td headers="table_heading_1">Any changes to applications will incur a supplementary fee, for example for dates, equipment, location changes<br />
+            </td>
+            <td style="text-align: left; vertical-align: top;" headers="table_heading_2">&pound;150</td>
+        </tr>
+        <tr>
+            <td headers="table_heading_0">Meeting(s)<br />
+            </td>
+            <td headers="table_heading_1">With TfL representatives<br />
+            </td>
+            <td headers="table_heading_2">&pound;150 per meeting<br />
+            </td>
+        </tr>
+    </tbody>
+</table></div>
+</div>
+
+
+ <div>
+
+
+
+
+
+        <p>TfL's terms and conditions and associated licence fees are detailed in the application form below.</p>
+    
+<div class="multi-document-download-container">
+    
+
+<a class="document-download-wrap " href="/cdn/static/cms/documents/applicaton-to-film-or-photograph-on-transport-for-londons-red-routes.pdf">
+    <div class="document-download-text">
+        <p>Apply to film on roads managed by TfL (red routes)</p>
+    </div>
+    <div class="document-download-attachment">
+        <p>
+                        
+            PDF 133KB
+            
+        </p>
+    </div>
+    <div class="document-download-icon download-doc">
+    </div>
+
+</a>
+
+ 
+
+<a class="document-download-wrap " href="/cdn/static/cms/documents/traffic-order-parking-loading-suspension-request.doc">
+    <div class="document-download-text">
+        <p>Traffic order or loading/parking suspension request form</p>
+    </div>
+    <div class="document-download-attachment">
+        <p>
+                        
+            DOC 121KB
+            
+        </p>
+    </div>
+    <div class="document-download-icon download-doc">
+    </div>
+
+</a>
+
+ 
+</div>
+
+</div>
+
+
+
+ 
+        
+        
+        
+        @this.ScriptBlock(
+        @<script>
+        queue.push("@Html.ScriptPath("modules/M020-on-this-page.js")", null);
+        </script>
+        )
+        
+        
+        
+        </div>
+    </div>
+    <div class="aside" role="complementary">
+        
+        <div data-set="sidenav-container" class="large">
+
+            
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+                <a href="/info-for/media/index" class="heading">
+                    <h2 id="sub-menu-heading">Media<span class="visually-hidden"> navigation</span></h2>
+                </a>
+                <ul>
+                    
+                                <li class="parent"><div class="link-wrapper"><a href="/info-for/media/press-releases">Press releases</a></div></li>
+                            
+ 
+                                <li><div class="link-wrapper"><a href="/info-for/media/photos">Photos</a></div></li>
+                            
+ 
+                                <li><div class="link-wrapper"><a href="/info-for/media/contact-the-press-office">Contact the Press Office</a></div></li>
+                            
+ 
+                                <li class="selected parent"><div class="link-wrapper"><a href="/info-for/media/filming-and-photography">Filming & photography</a></div>
+                                <ul>
+                                    
+                                <li class="parent"><div class="link-wrapper"><a href="/info-for/media/filming-and-photography/filming-and-photography-on-tfl">Filming & photography on TfL</a></div></li>
+                            
+ 
+                                <li><div class="link-wrapper"><a href="/info-for/media/filming-and-photography/filming-and-photography-on-buses">Filming & photography on buses</a></div></li>
+                            
+ 
+                                        <li class="selected"><div class="link-wrapper"><a href="/info-for/media/filming-and-photography/filming-and-photography-on-the-roads">Filming & photography on the roads</a></div>
+                                    </li>
+ 
+                                </ul>
+                            </li>
+ 
+                </ul>
+            
+ 
+ 
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+        </div>
+
+
+<div></div>
+
+        <div class="module-grid clearfix">
+            
+        <div>
+    
+    <div class="contact-info-box">
+        <div class="contact-info-header">
+            <h3>Contact us</h3>
+        </div>
+        
+        
+            
+        
+        
+            
+                
+                 
+        
+        
+        
+        <div class="content-group">
+            <p>
+                <abbr title="Telephone number">Call</abbr>&nbsp;<a href="https://tfl.gov.uk/corporate/terms-and-conditions/tfl-call-charges">Charges apply</a><br />
+                020 3054 6680
+            </p>
+        </div>
+        
+        
+        
+        <div class="content-group">
+            <p>
+                <abbr title="Address">Write</abbr>
+            </p>
+            <p>Email <a href="mailto:redroutefilming&#64;tfl.gov.uk">redroutefilming&#64;tfl.gov.uk</a></p>
+
+<p>&nbsp;</p>
+
+<p>For all filming enquiries about Santander Cycles email <a href="mailto:CycleHireOperations&#64;tfl.gov.uk">CycleHireOperations&#64;tfl.gov.uk</a></p>
+        </div>
+        
+        
+    </div>
+</div>
+ 
+        </div>
+
+        <div data-set="sidenav-container" class="small-medium"></div>
+    </div>
+</div>
+ 
+        
+        
+            @{ViewBag.Description = "You need to get permission for any filming that may disrupt traffice on TfL's road network";}
+        
+        
+
+
+ 

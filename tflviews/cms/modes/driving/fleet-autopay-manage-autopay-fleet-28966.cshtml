@@ -1,0 +1,224 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Manage Fleet Auto Pay";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/fleet-autopay-manage-autopay-fleet-28966";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                 <li><a href="/modes/driving/auto-pay">Auto Pay</a></li>
+                
+            
+            
+            
+                <li><span class="last-breadcrumb">Manage Fleet Auto Pay</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Manage Fleet Auto Pay</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/account-account-landing-29377"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+    
+      <h2>Service summary</h2>
+      
+           
+      
+
+        @using TfL.Ruc.Services.ViewModels.Ruc.Autopay        
+        @{
+            dynamic content = new ContentModel();
+            content.PayOutstandingBalanceButtonText = "Pay outstanding balance";
+            content.BalanceLabel = "Balance: {0}";
+            content.AccountInDebitText = "debit";
+            content.AccountInCreditText = "credit";
+            content.StatusLabel = "Status: ";
+            content.NextScheduledStatementDateLabel = "Next statement date: ";
+            content.LastStatementBalanceText = "Last statement balance: ";
+            content.CancelApplicationButtonText = "Cancel application";
+            content.UsageChargesSinceLastBillExplanationText = "<p><strong>If your Auto Pay status is 'Active' and you have driven within the zone in the last few days, these charges may not be included in your balance.</strong></p>";
+            content.MakeAPaymentButtonText = "Make an interim payment";
+            content.UploadFileLinkText = "Upload a file";
+            content.ViewPaymentDetailsButtontext = "View direct debit details";
+            content.TotalUsageSinceLastBillLabel = "Total charges since last statement";
+            content.ActiveVehiclesLabel = "Vehicles active on Fleet Auto Pay";
+            content.FleetVehiclesReadyStatusText = "<p>You must have at least 6 vehicles to activate this service. You can use vehicles already on your account or add new ones. Add vehicles one by one or use the bulk upload facility.</p><p>Each vehicle costs £10 a year to use with Fleet Auto Pay.</p>";
+            content.FleetVehiclesActiveStatusTextForMoreThanOneVehicle = "You have {0} vehicles on Fleet Auto Pay. Add or remove vehicles.";
+            content.FleetVehiclesActiveStatusTextForOneVehicle = "You have 1 vehicle on Fleet Auto Pay. Add or remove vehicles.";
+            content.VehiclesUsedText = "You have {0} vehicles on your Fleet Auto Pay service."; 
+            content.AddNewVehicleButtonText = "Add a new vehicle";
+            
+            content.BulkManageVehiclesButtonText = "Upload a list";
+            content.RecentAutoPlayActivityLabel = "Charges since last statement";
+            content.RecentAutoPlayActivityText = "Find details of all Fleet Auto Pay charges and payments since your last statement.";
+            content.ViewRecentActivityButtonText = "View charges since last statement";
+            content.AutoPayHistoryHeader = "Fleet Auto Pay vehicle history";
+            content.AutoPayHistoryText = "<p>Find details of all vehicles added to Fleet Auto Pay in the past 2 years (or since you registered for Fleet Auto Pay if this is less than 2 years), along with the dates the vehicles were active.</p>";
+            content.ViewAutopayHistoryButtonText = "View Fleet Auto Pay vehicle history";
+            content.StatementHeader = "Statements and older charges";
+            content.StatementText = "View all Auto Pay charges and copies of statements.";
+            content.StatementButtonText = "View statements";
+            content.ChangeStatementDateButtonText = "Change my statement date";
+            content.ViewPaymentDetailsButtonText = "View direct debit details";
+            content.ViewOlderStatementsButtonText = "View Auto Pay transaction history";
+            content.SuccessTooltipText = "<p><strong>‘Active’ </strong>status means that your Auto Pay service is fully operational and no further action is required.</p><p><strong>‘Pending’</strong> status means that your Auto Pay application has not yet been approved. Once approved we'll tell you that your Auto Pay is ready and you can add vehicles to activate it.</p><p><strong>'Ready’</strong> status means that your Auto Pay is not yet active, but is now ready for you to add vehicles which will activate your service.</p><p><strong>‘Pending suspension’</strong> status means that a scheduled payment has failed and you will now need to pay the outstanding balance. If you do not pay the amount outstanding, your Auto Pay will be suspended. You will need to pay the charge in another way or you will receive a Penalty Charge Notice.</p><p><strong>‘Suspended’</strong> status means that a scheduled payment has failed and you must now pay the outstanding balance. If you drive any of your vehicles within the charging zone you will need to pay the charge in another way or you will receive a Penalty Charge Notice. If you do not clear your balance quickly, your Auto Pay service will be closed and you will need to pay vehicle registration charges to reactivate it.</p><p><strong>‘Closed’</strong> status means that your Auto Pay service is no longer available. You will need to pay the charge in another way or you will receive a Penalty Charge Notice.</p>";
+            content.WarningTooltipText = "<p><strong>‘Active’ </strong>status means that your Auto Pay service is fully operational and no further action is required.</p><p><strong>‘Pending’</strong> status means that your Auto Pay application has not yet been approved. Once approved we'll tell you that your Auto Pay is ready and you can add vehicles to activate it.</p><p><strong>'Ready’</strong> status means that your Auto Pay is not yet active, but is now ready for you to add vehicles which will activate your service.</p><p><strong>‘Pending suspension’</strong> status means that a scheduled payment has failed and you will now need to pay the outstanding balance. If you do not pay the amount outstanding, your Auto Pay will be suspended. You will need to pay the charge in another way or you will receive a Penalty Charge Notice.</p><p><strong>‘Suspended’</strong> status means that a scheduled payment has failed and you must now pay the outstanding balance. If you drive any of your vehicles within the charging zone you will need to pay the charge in another way or you will receive a Penalty Charge Notice. If you do not clear your balance quickly, your Auto Pay service will be closed and you will need to pay vehicle registration charges to reactivate it.</p><p><strong>‘Closed’</strong> status means that your Auto Pay service is no longer available. You will need to pay the charge in another way or you will receive a Penalty Charge Notice.</p>";
+            content.ErrorTooltipText = "<p><strong>‘Active’ </strong>status means that your Auto Pay service is fully operational and no further action is required.</p><p><strong>‘Pending’</strong> status means that your Auto Pay application has not yet been approved. Once approved we'll tell you that your Auto Pay is ready and you can add vehicles to activate it.</p><p><strong>'Ready’</strong> status means that your Auto Pay is not yet active, but is now ready for you to add vehicles which will activate your service.</p><p><strong>‘Pending suspension’</strong> status means that a scheduled payment has failed and you will now need to pay the outstanding balance. If you do not pay the amount outstanding, your Auto Pay will be suspended. You will need to pay the charge in another way or you will receive a Penalty Charge Notice.</p><p><strong>‘Suspended’</strong> status means that a scheduled payment has failed and you must now pay the outstanding balance. If you drive any of your vehicles within the charging zone you will need to pay the charge in another way or you will receive a Penalty Charge Notice. If you do not clear your balance quickly, your Auto Pay service will be closed and you will need to pay vehicle registration charges to reactivate it.</p><p><strong>‘Closed’</strong> status means that your Auto Pay service is no longer available. You will need to pay the charge in another way or you will receive a Penalty Charge Notice.</p>";
+            content.AddVehicleInstructionText = "<p>You need to add 6 or more vehicles to activate your Fleet Auto Pay service.</p>";
+            content.OutstandingBalanceWarningText = "<p><strong>Your scheduled payment of {0} failed. </strong>If you don't reactivate your Fleet Auto Pay it will be suspended. Once suspended you will need to pay the charge another way or you will receive a Penalty Charge Notice.</p><p>To reactivate your Fleet Auto Pay you need to pay the current balance. This may include charges incurred since your last statement. The current balance payable is {1}.</p>";
+            content.OutstandingBalanceErrorText = "<p><strong>Your scheduled payment of {0} failed. </strong>Your Fleet Auto Pay service is now closed. You will need to pay the charge another way or you will receive a Penalty Charge Notice.</p><p>Failure to pay the full outstanding balance of {1} may lead to recovery action.</p>";
+            content.OutstandingBalanceSuspendedErrorText = "<p><strong>Your scheduled payment of {0} failed. </strong>Your Fleet Auto Pay service is now suspended. If you do not reactivate your service you will need to pay the charge another way or you will receive a Penalty Charge Notice.</p><p>To reactivate your Fleet Auto Pay you will need to pay the current balance. This may include charges incurred since your last statement. The current balance payable is {1}.</p><p><strong>If you do not pay the outstanding balance now your Fleet Auto Pay will be closed and you will need to pay additional vehicle registration charges to reactivate it.</strong></p>";
+            content.FleetPaymentHeader = "Payment";
+            content.FleetPaymentText = "<h3>Current payment method</h3>";
+            content.FleetReadyStatusPaymentText = "<p>View your direct debit information. Activate Auto Pay to make any changes.</p>";
+            content.AccountNameLabel = "Name of bank/building society";
+            content.AccountNumberLabel = "Account number";
+            content.SortCodeLabel = "Sort Code";
+            content.DownloadStatementsButtonText = "Auto Pay statements";
+            content.AutoPayFleetAddAdHocVehicleButtonText = "Add a temporary vehicle";
+            content.AutoPayFleetAddAdHocVehicleButtonUrl = "/modes/driving/fleet-autopay-adhoc-add-adhoc-vehicle-landing";
+            content.UpdatePaymentDetailsButtonText = "Update payment details";
+            content.UpdatePaymentDetailsButtonUrl = "/modes/driving/fleet-autopay-manage-select-payment-option-38004";
+            
+            content.ManageVehiclesButtonTextWhenVehiclesDoNotExist = "Add vehicles to Fleet Auto Pay";
+            content.ManageVehiclesButtonTextWhenVehiclesExist = "View and manage vehicles";
+            
+            content.AccountStatusWarningMessage = "You can't change your payment method until your Fleet Auto Pay service is active";
+            content.WithinTenDaysWarningMessage = "You can't change your payment method because your next statement date falls within the next 10 days. You'll need to try again after your statement has been issued.";
+            
+            content.ReapplyForAutoPayButtonText = "Set up Fleet Auto Pay again";
+
+            content.ManageMyVehiclesHeading = "Manage my vehicles";
+            content.ManageMyVehiclesText = "To make any changes to your vehicles, use the links below.";
+            content.QuickManageListUrl = "/modes/driving/account-quick-management-list-37474";
+            content.QuickManageListText = "Manage vehicles on Quick Management list";
+            content.ManageVehiclesOnDiscountUrl = "/modes/driving/cc-discount-manage-discounts-32822";
+            content.ManageVehiclesOnDiscountText = "Manage vehicles on discount";
+            content.AllVehicleHistoryUrl = "/modes/driving/cc-autopay-manage-view-vehicle-history-30894";
+            content.AllVehicleHistoryText = "All vehicle history";
+
+            Html.RenderAction(
+                RucDictionary.AutoPayManage.ManageAutoPayActionName,
+                "AutoPayManage",
+                new
+                {
+                    area = "Ruc",
+                    backUrl = "/modes/driving/account-account-landing-29377",
+                    content = content,
+                    makePaymentUrl = "/modes/driving/cc-autopay-fleet-payment-enter-payment-32459",
+                    viewPaymentDetailsUrl = "/modes/driving/cc-autopay-fleet-payment-payment-details-32457",
+                    addANewVehicleUrl = "#",
+                    viewRecentActivityUrl = "/modes/driving/fleet-autopay-manage-view-recent-statement-36852",
+                    viewVehicleHistoryUrl = "/modes/driving/cc-autopay-manage-view-vehicle-history-30894?Search.ServiceType=Fleet",
+                    viewOlderStatementsUrl = "/modes/driving/fleet-autopay-manage-view-statements-29042",
+                    downloadStatementsUrl = "/modes/driving/fleet-autopay-manage-download-statements",
+                    changeStatementDateUrl = "#",
+                    closeAutoPayServiceUrl = "#",
+                    payOutstandingBalanceUrl = "/modes/driving/cc-autopay-fleet-payment-make-payment-32458",
+                    manageVehiclesUrl = "/modes/driving/fleet-autopay-manage-vehicles-28948",
+                    bulkManageVehiclesUrl = "/modes/driving/fleet-autopay-manage-upload-file-28768",
+                    applyUrl = "/modes/driving/autopay-apply-select-service",
+                    style = ZoneChargeAutoPayStyle.Fleet
+                }
+            );
+        }
+        @this.ScriptBlock(
+        @<script>
+             queue.push(
+                 "@Html.ScriptPath("specific/results-paginator.min.js")", function () 
+                 {$('#paginated-list').paginator();}
+             );
+             
+        </script>
+        )
+      
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

@@ -1,0 +1,159 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Absence from work";}
+
+
+        <!-- empty placeholder -->
+ 
+        
+
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Absence from work</h1>
+  </div>
+</div>
+<div class="main-and-aside r">
+  <div class="main">
+    
+    <div class="on-this-page">
+      <h2>Maternity leave</h2>
+<p>If you take maternity leave, the first 39 weeks count towards your pension. Contributions are deducted from your maternity pay in the same way they are deducted from your usual salary, but it's worth noting that:</p>
+<ul>
+    <li> For the first 26 weeks contributions are paid at the usual rate</li>
+    <li>For the following 13 weeks contributions are payable at 5 per cent of any statutory maternity pay received</li>
+</ul>
+<p>Any further period of maternity leave can be:</p>
+<ul>
+    <li> Non-pensionable &#45; that means that no contributions are payable and this period will not count for any benefits on leaving service
+    </li>
+    <li>Pensionable &#45; with your membership being treated as continuous. Payment of contributions can be deferred and paid on your return to work</li>
+</ul>
+<p>Your human resources office will provide you with a form to complete to tell us which of these options you'd like to choose.</p>
+<h2>Paternity and other paid family leave</h2>
+<p>Provided that you are paid during your period of leave, your membership and contributions will continue as usual.</p>
+<h2>Sick leave</h2>
+<p>If you are off work due to illness, your membership will continue as usual and you will continue to pay contributions. If your sick pay runs out, you will not have to pay contributions but will continue to earn benefits in the Fund.</p>
+<h2>Unpaid leave</h2>
+<p>Please contact the <a href="/pensions/contact">Fund office</a> for further information about what happens to your pension contributions if you take unpaid leave.</p>
+      
+           
+      
+      
+        
+          
+            @this.ScriptBlock(
+              @<script>
+                queue.push("@Html.ScriptPath("modules/M020-on-this-page.min.js")", null);
+              </script>
+            )
+          
+        
+      
+    </div>
+  </div>
+  <div class="aside">
+    
+    
+      <div class="share-widget-wrapper"></div>
+    
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+<div id="right-hand-nav" class="expandable-list moving-source-order">
+        
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+      </div>
+    
+    <div>
+
+
+
+
+<div class="advert-tile unsponsored-style google-ads">
+  <div class="advert-link">
+    <div class="advert-content">
+        <div class="medium-large" data-advert="/3595/TFL/Homepage" data-advert-sizes="300, 250"></div>
+        <div class="small" data-advert="/3595/TFL/Homepage" data-advert-sizes="300, 250|300, 600"></div>
+    </div>
+  </div>
+</div>
+@{
+    ViewBag.AmazonSlot = "'amznslots'";
+    ViewBag.AmazonAds = "'3199'"; // to add another value, this needs to be ViewBag.AmazonAds = "'3199','xx'";
+}
+      
+
+ </div>
+    
+      <div class="module-grid clearfix">
+                    
+        <div>
+
+    <div class="contact-info-box">
+         <div class="contact-info-header">
+             <h3>Contact Pensions Fund</h3>
+         </div>
+        
+        
+        
+        
+        <p class="content-group">
+            <span class="hide-text icon email-icon">Email address</span>
+            <a href="mailto:helpdesk&#64;tflpensionfund.co.uk">helpdesk&#64;tflpensionfund.co.uk</a>
+        </p>
+        
+        <div class="content-group">
+            <p>
+                <span class="hide-text icon phone-icon">Phone details</span>
+                <abbr title="Telephone number">Phone</abbr>: 0343 222 1234<br />
+                
+                <abbr title="Textphone">Textphone</abbr>: 0800 112 3456 
+            </p>
+            <p>&nbsp;08:30-16:30 Monday to Friday</p>
+        </div>
+        
+        <div class="content-group">
+            <h4>TfL Pension Fund</h4>
+            
+            <p>
+                <span class="hide-text icon mail-icon">Address details</span>
+                4th Floor<br />
+                Wing over Station<br />
+                55 Broadway<br />
+                London SW1H 0BD
+            </p>
+            
+            
+        </div>
+        
+        
+    </div>
+</div>
+ 
+      </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+ 
+ 
+
+
+ 

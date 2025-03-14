@@ -1,0 +1,127 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "ULEZ vehicle checker";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/ultra-low-emission-zone/ulez-vrm-checker";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+
+@{
+    Response.Status = "302 Moved temporarily";
+    Response.AddHeader("Location", "/modes/driving/check-your-vehicle-35896");   
+}
+
+ 
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                 <li><a href="/modes/driving/ultra-low-emission-zone">Ultra Low Emission Zone</a></li>
+                
+            
+            
+                
+                <li><span class="last-breadcrumb">ULEZ vehicle checker</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>ULEZ vehicle checker</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+      <div class="article-teaser">
+        <p>Use this tool to check if your vehicle is recognised as meeting the ULEZ standards.</p>
+        
+      </div>
+    
+    
+      <p>Any vehicle that meets the ULEZ standard can be driven within the zone without paying the ULEZ charge.</p>
+
+<p>On 25 October 2021 the ULEZ will be expanded to inner London (the area up to but not including the North and South Circular Roads). A map of the expanded zone is on the <a href="/modes/driving/ultra-low-emission-zone/ulez-where-and-when">ULEZ: Where and when page</a>.</p>
+      
+           
+      
+
+@{Html.RenderAction("UltraLowEmissionZoneIndex", "VRMChecker", new { VrmCheckerQuestion = true, VehicleRegistrationRequired = true });}<div>
+
+<p>Enforcement of the ULEZ is&nbsp;based on the declared emissions of the vehicle rather than the age. Generally speaking, petrol cars that meet the emissions standards are those registered after 2005. However cars that meet the ULEZ standards have been available since 2000.</p>
+
+<p>For diesel vans the Euro 6 standard was mandated for all new vehicles sold from September 2016..</p>
+
+<h2>Congestion Charge</h2>
+
+<p>Your vehicle may also be subject to the <a href="/modes/driving/congestion-charge">Congestion Charge</a>. This is a daily charge for driving a vehicle within the charging zone 07:00 to 18:00, Monday to Friday (two-wheeled vehicles are not affected).</p>
+
+<h2>Low Emission Zone (LEZ) compliance</h2>
+
+<p>Diesel lorries, buses, coaches, motor caravans, motorised horseboxes, larger vans, minibuses and other specialist vehicles must also comply with the emissions standards of the LEZ. You can check if your vehicle is affected by the LEZ with the LEZ vehicle checker.</p>
+
+<p>This covers most of Greater London and is in operation 24 hours a day, every day of the year.</p>
+
+<p>The LEZ has different emissions requirements to the ULEZ. If your vehicle meets the ULEZ emissions standards, it will also meet the LEZ emissions standards. However, the reverse may not be true.</p>
+
+<p>If your vehicle meets the LEZ standards but doesn't meet the ULEZ standards, and you want to drive&nbsp;your vehicle within central London, you will need to pay the ULEZ daily charge.</p>
+</div>
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "Vehicle registration mark checker for the Ultra Low Emission Zone";}
+        
+            
+        
+
+
+ 

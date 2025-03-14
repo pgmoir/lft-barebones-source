@@ -1,0 +1,89 @@
+﻿
+
+
+@{ViewBag.Title = "Revamped service information boards make journeys easier for customers to plan";}
+        
+        
+
+<div class="r">
+    <div class="headline-container plain">
+        <h1>Revamped service information boards make journeys easier for customers to plan</h1>
+        <div class="content-page-press-release">
+        31 October 2011
+        </div>
+    </div>
+</div>
+<div class="main-and-aside r">
+    <div class="main" role="main">
+
+    <div class="article-teaser">
+        Customers on the Tube will be greeted with clearer and more extensive travel information in stations from this week as redesigned service update information boards are rolled out across the network.
+        
+    </div>
+
+
+
+ <div class="on-this-page">
+<p>The boards, which are located in the ticket halls of London Underground (LU) stations, have been revamped in response to customer research on how TfL could offer more information to passengers to enable them to get up-to-the-minute updates and make choices about their onward journey.</p>
+<p>The new design will group any disrupted lines together at the top of the screen so that customers can see at a glance if their journey is likely to be affected. </p>
+<p>Disrupted lines will carry information alongside them to describe the extent and direction of the problem affecting them, rather than simply stating 'minor' or 'severe' delays as the current screen design does. </p>
+<p>Unaffected lines will be listed below those that are disrupted, and the foot of the new-look screen will carry rotating messages giving more information around any service disruption. The changes will also be reflected in web and mobile phone page views.</p>
+<p>Gareth Powell, LU's director of strategy and service development, said: 'The key changes we've made mean that electronic service update information is now much clearer - these changes will allow customers moving quickly through a busy station to see at glance whether their line is affected, and give them the information they need to make an alternative travel choice if they wish to. </p>
+<p>'Other train operating companies in the south-east are working together to improve customer information and Transport for London is assisting in that project, so that passengers on national rail within a certain distance of London could get live travel information at major interchanges and key stations.'<br></p>
+
+     
+
+        
+        
+        
+        @this.ScriptBlock(
+        @<script>
+        //queue.push("@Html.ScriptPath("modules/M020-on-this-page.min.js")", null);
+        </script>
+        )
+        
+        
+        
+        </div>
+    </div>
+    <div class="aside" role="complementary">
+
+       
+        <div data-set="sidenav-container" class="large">
+
+            
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+        </div>
+
+
+
+            
+        <div data-set="sidenav-container" class="small-medium"></div>
+    </div>
+</div>
+
+<!-- Crumbs: PGtype:  -->
+
+ 
+ 
+        
+        
+            @{ViewBag.Description = "The boards, which are located in the ticket halls of London Underground (LU) stations, have been revamped in response to customer research on how TfL could offer more information to passengers to enable them to get up-to-the-minute updates and make";}
+        
+        
+
+
+ 

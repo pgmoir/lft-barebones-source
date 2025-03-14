@@ -1,0 +1,149 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Make a reimbursement claim";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-discount-upload-reimbursement-claim-38112";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Make a reimbursement claim</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Make a reimbursement claim</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+      <div class="article-teaser">
+        <p>To make a monthly reimbursement claim, download and complete the claim template, then upload it.</p>
+        
+      </div>
+    
+    
+      
+      
+           
+      <div>
+
+<p>We can only process the first file you upload. If you want to change your file, you must delete it before uploading another.</p>
+</div>
+ 
+
+
+        
+		<!-- 1. upload-reimbursement-claim -->
+		@{
+            dynamic content = new ContentModel();
+            content.UploadFileTemplateText = "";
+            content.DownloadTemplateLabel = "Download a claim template";
+            content.UploadFileHeading = "";
+            content.UploadFileText = "<p>Once you have filled in the claim template, upload it below. Read more about completing the claim in the&nbsp;<a href='/ruc-cdn/static/cms/documents/nhs-reimbursement-user-guide.pdf' target='_blank'>NHS Reimbursement Partner User Guide</a> (PDF 839KB).</p>";
+
+            content.UploadEvidenceHelperTitle = "How do I upload a file?";
+            content.UploadEvidenceHelperText = "<p>Uploaded files must be in the same .csv format as our blank template - please use the blank upload template provided.</p><p>Once you have created your reimbursement claim .csv file, you need to either drag it into the box below or click 'Or browse to your files' and select the file you want to upload. Remember to double check you have selected the correct file.</p>";
+
+            content.UploadEvidenceDescription = "Upload scanned or photo evidence. If you can't scan or photo these documents clearly, send them directly to us using the address and reference number at the end this process.";
+
+            content.FindYourFilesLabel = "Choose file";
+
+            content.BackButtonText = "Back";
+            content.ContinueButtonText = "Continue";
+    
+            content.FileNotUploadedErrorText = "Upload a file to continue";
+
+            Html.RenderAction(
+                "UploadReimbursementClaimFile",
+                "ReimbursementClaim",
+                new
+                    {
+                        area = "Ruc",
+                        accountUrl = "/modes/driving/account-reimbursement-partner-account-33212",
+                        confirmClaimUrl = "/modes/driving/cc-discount-submit-reimbursement-claim-38113",
+                        templateUrl = "/ruc-cdn/static/cms/documents/reimbursement-claim-template-2019-09-05.csv",
+                        content = content             
+                    }
+                );
+        }
+		
+	  
+
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "To make a monthly reimbursement claim, download and complete the claim template, then upload it.";}
+        
+            
+        
+
+
+ 

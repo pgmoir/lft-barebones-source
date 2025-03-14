@@ -1,0 +1,142 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Transaction details";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/fleet-autopay-manage-transaction-detail-29512";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                 <li><a href="/modes/driving/auto-pay">Auto Pay</a></li>
+                
+            
+            
+            
+                <li><span class="last-breadcrumb">Transaction details</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Transaction details</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+        @{
+            dynamic content = new ContentModel();
+
+            //content.Heading = "Further Detail";
+            content.TransactionLabel = "Transaction: ";
+            content.AmountLabel = "Amount: ";
+            content.PaymentDateLabel = "Payment date: ";
+            content.DateRangeLabel = "Date range: ";
+            content.ReceiptNumberLabel = "Receipt number: ";
+            content.ActionedByLabel = "Actioned by: ";
+            content.ChannelLabel = "Channel: ";
+            content.AmountSuffix = "(credit)";
+            content.PaymentMethodLabel = "Payment method: ";
+            content.DownloadReceiptLinkText = "Download your receipt: ";
+            //content.DisputeThisChargeLinkText = "Dispute this charge";
+            //content.ChargeDetailNotAvailableErrorMessage = "There are no charge details or evidence available as the 60 day dispute period is now over.";
+            content.ActionsTitle = "Actions";
+
+            Html.RenderAction(
+                RucDictionary.TransactionDetail.TransactionDetailAction,
+                "TransactionDetail",
+                new
+                {
+                    area = "Ruc",
+                    content = content,
+                    autoPayTransaction = true
+                }
+            );
+        }
+        
+        @ModulesHelpers.BackLink()
+      
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+        @ModulesHelpers.PrintButton()
+      
+ 
+      </div>
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

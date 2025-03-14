@@ -1,0 +1,203 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Manage vehicles";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/account-vehicle-details-37472";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Manage vehicles</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Manage vehicles</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      <h2>Vehicle details </h2>
+      
+           
+      
+
+
+		
+		<!-- 2. account-vehicle-details -->
+        @{
+            dynamic content = new ContentModel();
+            
+            content.AutoPayButtonText = "Manage Auto Pay"; 
+            content.FleetAutoPayButtonText = "Manage Fleet Auto Pay";
+            content.AutoPayHeading = "Auto Pay";
+            content.FleetAutoPayHeading = "Fleet Auto Pay";
+            content.WarningTooltipText = "<p><strong>'Pending suspension’</strong>:<strong> </strong>a scheduled payment has failed and you now need to pay the outstanding balance.</p><p>If you do not pay the amount outstanding, your Auto Pay will be suspended. You need to pay the charge in another way or you will receive a penalty.</p>";
+            content.ErrorTooltipText = "<p><strong>‘Suspended’:</strong> a scheduled payment has failed and you now need to pay the outstanding balance. If you drive any of your vehicles within the charging zone you will need to pay the charge in another way or you will receive a penalty.</p><p>If you do not clear your balance quickly, your Auto Pay service will be closed and you will need to pay registration charges to reactivate it.</p>";
+            content.SuccessTooltipText = "<p><strong>'Active’:</strong> your Auto Pay service is working fully.</p>"; 
+            
+            content.SingleDiscountButtonText = "Manage discount";
+            content.MultipleDiscountButtonText = "Manage discounts";
+            
+            content.NinePlusSeatHeading = "9+ seater discount";
+            content.BlueBadgeHeading = "Blue Badge discount";
+            content.ResidentsDiscountHeading = "Residents' discount";
+            content.ProvisionalResidentHeading = "Provisional residents' discount";
+            content.RecoveryVehicleHeading = "Recovery vehicle discount";
+            content.AccreditedBreakdownHeading = "Accredited breakdown vehicle discount";
+            content.UltraLowEmissionHeading = "Cleaner vehicle discount";
+            content.MotorTricycleHeading  = "Motor tricycle discount";
+            content.GreenerVehicleHeading = "Greener vehicle discount  ";
+            content.SelectedPartnerHeading = "Selected partner discount";
+            content.ShowManHeading  = "Showman's discount";
+            content.LezComplaintHeading = "LEZ - meets the standard";
+            content.LezNonComplaintHighHeading = "LEZ";
+            content.LezNonComplaintLowHeading = "LEZ";
+            content.UlezCompliantHeading = "ULEZ  - meets the standard";
+            content.UlezNonCompliantHighHeading = "ULEZ";
+            content.UlezNonCompliantLowHeading = "ULEZ";            
+            
+            content.VehicleChargesHeading = "Vehicle charges"; 
+            content.VehicleChargesText = "<p>Find out which charges you need to pay to drive this vehicle in London.</p>";
+            
+            content.CcChargeableHeading = "Congestion Charge";
+            content.CcChargeableText = "<p>You need to pay the Congestion Charge for this vehicle if you drive within the zone Monday to Friday, 07:00-18:00 excluding bank holidays and the period between Christmas Day and New Year's Day.</p>";
+            content.CcExemptHeading = "Exempt";
+            content.CcExemptText = "<p>Based on the vehicle details entered and information held by the DVLA and TfL today, this vehicle is exempt from the Congestion Charge.</p><p><strong>This may change - always check to see if you need to pay to drive within the zone.</strong></p>";
+            content.CcFullDiscountHeading = "Congestion Charge discount";
+            content.CcFullDiscountText = "<p>This vehicle is currently registered for a 100% discount from the Congestion Charge. You can check when this discount expires in the 'Manage discounts' section of your account.</p>";
+            content.CcResidentDiscountHeading = "Congestion Charge discount";
+            content.CcResidentDiscountText = "<p>This vehicle is currently registered for a 90% Residents' discount. You can check when this discount expires in the 'Manage discounts' section of your account.</p>";
+        
+            content.UlezExemptHeading = "ULEZ - exempt";
+            content.UlezExemptText = "<p>Based on the vehicle details entered and information held by the DVLA and TfL today, this vehicle is exempt from the ULEZ.</p><p><strong>This may change - always check to see if you need to pay to drive within the zone.</strong></p>";
+            content.UlezNonChargeableHeading = "ULEZ - no charge due"; 
+            content.UlezNonChargeableText = "<p>Based on the vehicle details entered and information held by the DVLA and TfL today, you don't have to pay the ULEZ charge for this vehicle.</p><p><strong>This may change - always check to see if you need to pay to drive within the zone.</strong></p>";
+            content.UlezFullDiscountHeading = "ULEZ - discount";
+            content.UlezFullDiscountText = "<p>This vehicle is currently registered for a 100% discount from the ULEZ.</p>";
+            
+            content.UlezComplianceLevelLowHeading = "ULEZ";
+            content.UlezComplianceLevelLowText = "<p>This vehicle does not meet the ULEZ emissions standards. You need to pay the ULEZ charge if you drive within the zone. The zone operates at all times - charging days run from midnight to midnight.</p><p>If you believe this is incorrect, and you can supply evidence that your vehicle does meet the ULEZ emissions standards, you will need to <a href='/modes/driving/compliance-registration/before-you-start'>register it with us</a>.</p>";
+            content.UlezComplianceLevelHighHeading = "ULEZ";
+            content.UlezComplianceLevelHighText = "<p>This vehicle does not meet the ULEZ emissions standards. You need to pay the ULEZ charge if you drive within the zone. The zone operates at all times - charging days run from midnight to midnight.</p><p>If you believe this is incorrect, and you can supply evidence that your vehicle does meet the ULEZ emissions standards, you will need to <a href='/modes/driving/compliance-registration/before-you-start'>register it with us</a>.</p>";
+            content.UlezComplianceLevelCompliantHeading = "ULEZ - meets the standard";
+            content.UlezComplianceLevelCompliantText = "<p>Based on the vehicle details entered and information held by the DVLA and TfL today, this vehicle meets the ULEZ emissions standards. You don't have to pay the charge.</p>";
+            
+            content.LezComplianceLevelLowHeading = "LEZ";
+            content.LezComplianceLevelLowText = "<p>This vehicle does not meet the LEZ emissions standards. You need to pay the LEZ charge if you drive within the zone. The zone operates at all times - charging days run from midnight to midnight.</p><p>If you believe this is incorrect, and you can supply evidence that your vehicle does meet the LEZ emissions standards, you will need to <a href='/modes/driving/compliance-registration/before-you-start'>register it with us</a>.</p>";
+            content.LezComplianceLevelHighHeading = "LEZ";
+            content.LezComplianceLevelHighText = "<p>This vehicle does not meet the LEZ emissions standards. You need to pay the LEZ charge if you drive within the zone. The zone operates at all times - charging days run from midnight to midnight.</p><p>If you believe this is incorrect, and you can supply evidence that your vehicle does meet the LEZ emissions standards, you will need to <a href='/modes/driving/compliance-registration/before-you-start'>register it with us</a>.</p>";
+            
+            content.PayToDriveButtonText = "Pay to drive in London";
+ 
+            content.UlezUnknownHeading = "ULEZ - unknown";
+            content.UlezUnknownText = "We don't hold any charge details for this vehicle";
+            content.LezUnknownHeading = "LEZ - unknown";
+            content.LezUnknownText = "We don't hold any charge details for this vehicle.";
+            content.LezCompliantHeading = "LEZ - meets the standard";
+            content.LezCompliantText = "You don't have to pay the charge. The vehicle details entered and information held by the DVLA and TfL today indicate that this vehicle meets the LEZ emissions standards.";
+            content.CcUnknownHeading = "Congestion Charge  - unknown";
+            content.CcUnknownText = "We don't hold any charge details for this vehicle.";
+            
+            Html.RenderAction("GetVehicleDetail", "VehicleList", new
+                { 
+                    autoPayUrl = "/modes/driving/cc-autopay-manage-manage-29152",
+                    discountUrl = "/modes/driving/cc-discount-manage-discounts-32822",
+                    payToDriveUrl = "/modes/driving/pay-the-charge-select-vehicle-26283",
+                    area = "Ruc",
+                    content = content
+                }
+            );
+        }
+
+        @FormHelpers.DottedSeparator()
+        @ModulesHelpers.BackLink()
+        
+        @this.ScriptBlock(
+          @<script>
+               queue.push(
+                   "@Html.ScriptPath("modules/M020-on-this-page.min.js")", null,
+                   "@Html.ScriptPath("specific/results-paginator.min.js")", function () {
+                       $('#vehicle-list').paginator();
+                   });
+          </script>
+        )
+		
+	  
+
+  
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

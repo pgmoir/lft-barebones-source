@@ -1,0 +1,185 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Account settings";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/account-payment-details-35126";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Account settings</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Account settings</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      <h2>Payment details</h2>
+<p>Any card listed here is saved to your account. It will not be used for CC Auto Pay unless you have registered it separately for that.</p>
+      
+           
+      
+
+
+		
+		<!-- account / payment-details -->
+		@{
+            dynamic content = new ContentModel();
+            content.AddPaymentCardLabel = "Add a payment card";
+            content.ChangePaymentCardLabel = "Change saved payment card";
+          
+            content.CCAutoPayCardLabel = "Card registered for Auto Pay";
+            content.CCAutoPayCardText = "<p>You have registered a payment card against your Auto Pay service. This card will be charged each month for your total usage during the previous month.</p><p>Update or change your registered card before it is due to expire. Payments can no longer be taken once the card has expired. This could lead to the closure of your Auto Pay service.</p>";
+            content.ManageAutoPayCardLinkLabel = "Change the card registered for Auto Pay";
+            content.ManageAutoPayCardUrl = "/modes/driving/cc-autopay-payment-payment-details-31055";
+            
+            content.ConfirmRemoveItemText = "Are you sure you want to remove this card?";
+            content.ItemRemoveSuccessTextFormat = "Card removed successfully";
+            
+            content.RemovePaymentCardAssititveText = "Remove payment card";
+           
+            Html.RenderAction(
+                CommonDictionary.ListModule.ListActionName,
+                "Payment",
+                new
+                    {
+                        Area = "Ruc",
+                        content = content,
+                        paymentDetailsUrl = "/modes/driving/account-payment-details-35126",
+                        cardFailureUrl = "/modes/driving/account-card-error-29308",
+                        cancelUrl = "/modes/driving/account-payment-details-35126"
+                    });
+
+
+            Html.RenderAction(
+                "ManagePaymentCard",
+                "Payment",
+                new
+                {
+                    Area = "Ruc",
+                    paymentCardDetailUrl = "/modes/driving/account-payment-details-35126",
+                    confirmUrl = "/modes/driving/account-change-card-error-35145",
+                    paymentDetailsUrl = "/modes/driving/account-payment-details-35126",
+                    content = content,
+                    
+                });
+                    
+        }
+
+        @FormHelpers.DottedSeparator()
+        <a class="tertiary-link go-back" href="/modes/driving/account-account-settings-29386" id="go-back"><span class="button-text">Back</span></a>
+        
+        @this.ScriptBlock(
+        @<script>
+             
+        queue.push(
+            "@Html.ScriptPath("specific/results-paginator.min.js")", function(){
+                var $paymentCardList = $('#payment-card'),
+                    allCardsRemoved = function allCardsRemoved() {
+                        $('.add-card-wrapper').removeClass('hidden');
+                        $('.change-card-wrapper, .display-alongside-card').addClass('hidden');
+                    };
+        
+                $paymentCardList.paginator({
+                    itemListId: '#payment-card-Common-list',
+                    endPoints: {
+                        remove: '/Ruc/Payment/ConfirmItemRemoveAjax'
+                    },
+                    deleteParam: 'removeId',
+                    deleteMethod : 'DELETE'
+                        
+                });
+        
+                $paymentCardList.on('itemRemoved', function (e) {
+                    if (e.itemCount === 0) {
+                        allCardsRemoved();
+                    }
+                });
+            }
+        );
+             
+        </script>
+        )
+
+		
+	  
+
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

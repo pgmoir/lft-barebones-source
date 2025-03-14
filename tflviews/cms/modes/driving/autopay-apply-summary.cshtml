@@ -1,0 +1,265 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Add vehicles to Auto Pay";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/autopay-apply-summary";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                 <li><a href="/modes/driving/auto-pay">Auto Pay</a></li>
+                
+            
+                
+                <li><span class="last-breadcrumb">Add vehicles to Auto Pay</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Add vehicles to Auto Pay</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/account-account-landing-29377"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+      <div class="article-teaser">
+        <p>You can add up to 5 vehicles to your Auto Pay service. An annual &pound;10 registration charge applies to each vehicle - this will be added to your monthly statement.</p>
+        
+      </div>
+    
+    
+      <p>You can select a vehicle that is already on your account or add a new one.</p>
+      
+           
+      
+
+
+        @{
+            dynamic content = new ContentModel();
+            
+            /* Charge labels and messages */
+            content.NonChargeableLabel = "No charge due";
+            content.NonChargeableMessage = "Based on the vehicle details entered and information held by the DVLA and TfL, you don't have to pay the ULEZ charge for this vehicle. This may change - always check to see if you need to pay to drive within the zone.";
+            content.PayableHighLabel = "Should be paid";
+            content.PayableHighMessage = "This vehicle does not meet the ULEZ emissions standards. You need to pay the ULEZ charge if you drive within the zone. The zone operates at all times except Christmas Day - charging days run from midnight to midnight.";
+            content.PayableLowLabel = "Should be paid";
+            content.PayableLowMessage = "This vehicle does not meet the ULEZ emissions standards. You need to pay the ULEZ charge if you drive within the zone. The zone operates at all times except Christmas Day - charging days run from midnight to midnight.";
+            content.ExemptLabel = "Exempt";
+            content.ExemptMessage = "Based on the vehicle details entered and information held by the DVLA and TfL today, this vehicle is exempt from this charge. This may change - always check to see if you need to pay to drive within the zone.";
+            content.CompliantLabel = "Meets the standard";
+            content.CompliantMessage = "This vehicle either meets the ULEZ emissions standards, is exempt or you don't need to pay the charge for it.";
+            content.PayableLabel = "Should be paid";
+            content.PayableMessage = "You need to pay the Congestion Charge for this vehicle if you drive within the zone Monday-Friday, 07:00-18:00 excluding bank holidays and the period between Christmas Day and New Year's Day.";
+            content.FullDiscountLabel = "100% discount";
+            content.FullDiscountMessage = "This vehicle is currently registered for a 100% discount from this charge. Check when the discount expires in the 'Manage discounts' section of your account.";
+            content.CC100PercentDiscountMessage = "<p>This vehicle is currently registered for a 100% discount from the Congestion Charge. You can check when this discount expires in the 'Manage discounts' section of your account.</p>";
+            content.CCExemptMessage = "<p>Based on the vehicle details entered and information held by the DVLA and TfL today, this vehicle is exempt from the Congestion Charge. This may change - always check to see if you need to pay to drive within the zone.</p>";
+            content.CCPayableMessage = "<p>You need to pay the Congestion Charge for this vehicle if you drive within the zone Monday-Friday, 07:00-18:00 excluding bank holidays and the period between Christmas Day and New Year's Day.</p>";
+            content.Ulez100PercentDiscount = "This vehicle is currently registered for a 100% discount from the ULEZ";
+            content.UlezExemptMessage = "<p>Based on the vehicle details entered and information held by the DVLA and TfL today, this vehicle is exempt from the ULEZ charge. This may change - always check to see you need to pay to drive within the zone.</p>";
+            content.UlezNoChargesMessage = "<p> ULEZNoChargesMessage</p>";
+            content.HighChargesPayableMessage = "<p>This vehicle does not meet the ULEZ emissions standards. You need to pay the ULEZ charge if you drive within the zone. The zone operates at all times except Christmas Day - charging days run from midnight to midnight. If you can supply evidence that your vehicle does meet the ULEZ emissions standards, you need to register it with us.</p>";
+            content.LowChargesPayableMessage = "<p>This vehicle does not meet the ULEZ emissions standards. You need to pay the ULEZ charge if you drive within the zone. The zone operates at all times except Christmas Day - charging days run from midnight to midnight. If you can supply evidence that your vehicle does meet the ULEZ emissions standards, you need to register it with us.</p>";
+            content.UlezHighLabel = "Should be paid";
+            content.UlezLowLabel = "Should be paid";
+            content.PayableLabel = "Should be paid";
+            content.ExemptLabel = "Exempt";
+            content.NonchargeableLabel = "No charge due";
+            content.FullDiscountLabel = "100% discount";
+            content.CongestionChargeLabelForDetailSection = "Congestion Charge:";
+            content.UlezHighLabelForDetailSection = "ULEZ charges: ";
+            content.UlezLowLabelForDetailSection = "ULEZ charges:";
+            content.UlezCompliantLabelForDetailSection = "ULEZ charges:";
+            content.NewVehicle = "New vehicle";
+            content.AccountVehicles = "Account vehicles";
+            content.ShowMoreLabel = "Charge details";
+            content.ShowLessLabel = "Charge details";
+            content.CCShortLabel = "CC";
+            content.ULEZShortLabel = "ULEZ";
+            content.AcceptTermsMessage = "<p>I confirm that I have read, understood and accept the <a href='/corporate/terms-and-conditions/pay-to-drive-in-london' target='_blank'>Auto Pay terms and conditions</a>.</p>";
+            content.BasketLimit = 5;
+            content.AccountVehiclesLink = "/modes/driving/autopay-apply-choose-vehicles";
+            content.NewVehicleLink = "/modes/driving/autopay-apply-find-vehicle";
+            content.ApplyAutoPaySummaryPage = "/modes/driving/autopay-apply-summary";
+            content.AcceptTermsRequireTrue = "Accept the terms and conditions to continue";
+            content.AddTagMessage = "A tag will help you identify your vehicle more easily.";
+            content.EditTagMessage = "Change your vehicle tag or remove it.";
+            content.SaveButtonText = "Done";
+            content.CancelButtonText = "Cancel";
+            content.AddTagTitle = "Add a tag";
+            content.EditTagTitle = "Edit tag";
+            content.BasketLimitExceededWarningMessage = "You can't have more than 5 vehicles on an Auto Pay service.";
+            content.CompliantLabel = "Meets the standard";
+            content.UlezCompliantMessage = "This vehicle either meets the ULEZ emissions standards, is exempt or you don't need to pay the charge for it.";
+            content.UlezExemptLabel = "Exempt";
+            content.UlezUnknownComplianceLabel ="Unknown";  
+            content.UlezUnknownComplianceMessage ="STF_ULEZUNKNOWNCOMPLIANCEMESSAGE";
+            content.AddTagText = "Add tag";
+            content.EditTagText = "Edit tag";
+            content.SelectedVehicleLabel = "Selected vehicles: {0} / {1}";
+            content.ChargePerSelectionMessage = "£{0} charge";
+
+            
+            Html.RenderAction(
+                "ApplyAutoPaySummary",
+                "AutoPayApply",
+                new
+                { 
+                    content = content
+                });
+        }
+        <div class="button-set">
+            <a id="continue-button" href="/modes/driving/autopay-apply-select-payment" data-disabled-class="disabled-button" class="primary-button js-element--disable-on-click">Continue</a>
+           
+        </div>
+        
+        @this.ScriptBlock(
+            @<script>
+                 queue.push(
+                     function () {
+                         tfl.forms.attachUnload("You have not completed your form. If you leave your data will be lost.");
+                     });
+            </script>
+        )
+
+      
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+      </div>
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "You can add up to 5 vehicles to your Auto Pay service. An annual £10 registration charge applies to each vehicle - this will be added to your monthly statement.";}
+        
+            
+        
+
+
+ 

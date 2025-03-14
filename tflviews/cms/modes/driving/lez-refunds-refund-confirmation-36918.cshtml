@@ -1,0 +1,180 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Refund a LEZ charge";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/lez-refunds-refund-confirmation-36918";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Refund a LEZ charge</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Refund a LEZ charge</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/account-account-landing-29377"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+    
+      <h2>Confirmation</h2>
+      
+           
+      
+
+
+		
+		<!-- 8. lez-refund-confirmation -->
+		@using TfL.Ruc.Services.ViewModels.Ruc.ZoneCharge.RefundZoneCharge
+		@{
+            dynamic content = new ContentModel();
+
+            content.ConfirmationHeading = "Thank you. Your refund request has been submitted.";
+            content.ConfirmationText = "<p>We will send you a confirmation if your refund has been approved.</p><p>We aim to respond to you within the next 10 working days.</p>";
+            content.ReferenceNumberText = "Request reference number: ";
+            content.NextStepTitle = "What happens next?";
+            content.NextStepText = "<p>We are considering your request. We will let you know the outcome via your preferred communication channel.</p><p>If you need to reach us before then, see <a href='/modes/driving/low-emission-zone/contact-lez' target='_blank'>our contact details</a>.</p>";
+            //content.StepOneText = "Find the charge";
+            //content.StepTwoText = "Enter the personal details";
+            //content.StepThreeText = "Select refund dates";
+            //content.StepFourText = "Confirmation";
+
+            Html.RenderAction(
+                "RefundConfirmation", 
+                "RefundZoneCharge", 
+                new
+                {
+                    area = "Ruc", 
+                    content = content,
+                    zoneType = ZoneChargeZone.CongestionCharge
+                }
+            );
+        }
+		
+	  
+
+  
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/low-emission-zone" });
+        }
+        
+      
+
+ 
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+        @ModulesHelpers.PrintButton()
+      
+ 
+      </div>
+    
+    <div></div>
+    
+      <div>
+                    
+        <div class="vertical-button-container">
+    <ul>
+        
+        
+        
+        <li><a href="/modes/driving/pay-to-drive-in-london"  class="plain-button">Pay to drive in London</a></li>
+        
+        
+        <li><a href="/modes/driving/amend-or-refund-a-charge"  class="plain-button">Amend or refund a charge</a></li>
+        
+        
+        <li><a href="/modes/driving/compliance-registration/before-you-start"  class="plain-button">Register your vehicle with us</a></li>
+        
+        
+        <li><a href="/modes/driving/low-emission-zone/contact-lez"  class="plain-button">Contact LEZ</a></li>
+        
+    </ul>
+</div>
+
+      </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

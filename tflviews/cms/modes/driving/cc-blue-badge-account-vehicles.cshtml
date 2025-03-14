@@ -1,0 +1,151 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Select vehicle";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-blue-badge-account-vehicles";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Select vehicle</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Select vehicle</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+      <div class="article-teaser">
+        <p>You can select vehicles already on your account or add a new one.</p>
+        
+      </div>
+    
+    
+      
+      
+           
+      
+
+        @{
+            dynamic content = new ContentModel();
+
+            content.VehicleNotInMyListText = "New vehicle";
+            content.ContinueButtonText = "Continue";
+            content.BackButtonText = "Back";
+            content.SortLabel = "Sort";
+            content.SearchLabel = "Search";
+            content.ApplyFilterLabel = "Apply filter";
+            content.ResetFilterLabel = "Reset";
+            content.DetailNotFoundMessage = "<p>We do not hold details for this vehicle</p>";
+            content.ExemptAllMessage = "<p>No charges due - this vehicle is either exempt, discounted or not liable for all charges. You can still continue to pay.</p>";
+            content.VehicleAlreadyExistsOnThisApplicationErrorText = "<p>This vehicle has&nbsp;already been added to this registration application. Select another vehicle.</p>";
+            content.BasketLimitMessage = "You have reached the maximum number of vehicles for Blue Badge.";
+            content.NoSelectionErrorMessage = "Select a vehicle to continue";
+            content.SelectedVehicleLabel = "Selected vehicles: {0} / 1";
+
+            var resetVehicle = false;
+            if(Request.QueryString.AllKeys.Contains("resetVehicle")){
+                resetVehicle = Convert.ToBoolean(Request.QueryString["resetVehicle"]);
+            }
+
+            // Back Url parameters
+            if(Request.QueryString.AllKeys.Contains("sourceRoutingKey")){
+                content.SourceRoutingKey = Request.QueryString["sourceRoutingKey"];
+            }        
+            
+            Html.RenderAction("AccountVehicles", 
+                "BlueBadge", 
+                new {
+                    area = "Ruc",
+                    content = content,
+                    vrmLookupUrl = "/modes/driving/cc-blue-badge-vrm-lookup?sourceRoutingKey=account-vehicles",
+                    resetVehicle  = resetVehicle,
+                    selectVehicleUrl = "/modes/driving/cc-blue-badge-select-vehicle-29715",
+                    nextUrl = "/modes/driving/cc-blue-badge-upload-evidence-29753",
+                    discountAction = DiscountAction.Apply
+                });
+        }
+    
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "You can select vehicles already on your account or add a new one.";}
+        
+            
+        
+
+
+ 

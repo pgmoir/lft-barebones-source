@@ -1,0 +1,55 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Travel Alerts - Unsubscribe";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/shared/alerts-unsubscribe";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+
+@{ViewBag.Title = "Unsubscribe";}
+
+@ModulesHelpers.PrimaryPageHeading("Unsubscribe Travel Alerts")
+
+<div class="r">
+    <div class="main"><p>
+        @{
+            dynamic content = new ContentModel();
+        
+            content.UnsubscribeSuccessfull = "Thank you for letting us know you no longer want to receive this travel alert. You have been unsubscribed.";
+            content.JourneyAlertsAlreadyUnsubscribed = "Thank you for letting us know you no longer want to receive this travel alert. You have been unsubscribed.";
+            content.StatusAlertsAlreadyUnsubscribed = "Thank you for letting us know you no longer want to receive this status alert. You have been unsubscribed.";
+            content.AllAlertsAlreadyUnsubscribed = "Thank you for letting us know you no longer want to receive this travel alert. You have been unsubscribed.";
+            content.InvalidRequest = "You have reached this page in error.";
+
+            Html.RenderAction(
+                "Unsubscribe",
+                "TravelAlerts",
+                new
+                {
+                    content = content
+                }
+            );
+         }
+        </p>
+        <p>Did you accidentally unsubscribe? <a href="/login?returnUrl=/travelalerts">Set up a new alert</a>.</p>
+    </div>
+</div>
+<div class="aside large small-medium" data-set="sidenav-container"></div>
+        
+        
+        
+        
+            @{ViewBag.Description = "Email Alerts unsubscribe response messages";}
+        
+            
+        
+
+
+ 

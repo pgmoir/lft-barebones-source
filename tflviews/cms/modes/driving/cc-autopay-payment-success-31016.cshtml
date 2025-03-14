@@ -1,0 +1,174 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Confirmation";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-autopay-payment-success-31016";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Confirmation</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Confirmation</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+ 
+
+
+		
+		<!-- 11. CC-success -->
+		@using TfL.Ruc.Services.ViewModels.Ruc.Autopay
+        @{
+            dynamic content = new ContentModel();
+
+            content.SuccessTitle = "Your payment has been successful";
+            content.SuccessText = "<p>You have made a payment of {0} to your Auto Pay service.</p>";
+            content.ReferenceText = "Your reference number is:";
+            content.OutstandingBalanceText = "New outstanding balance: ";
+            content.AccountStatusText = "Auto Pay status: ";
+            content.ClosedAccountWarning = "You need to reapply to reactivate your Auto Pay service.";
+            content.FailedToReactivateWarning = "<p><strong>Your Auto Pay service has been updated. </strong></p><p>To check your Auto Pay status go to <a href='/modes/driving/account-personal-account-29357'>My account</a>&nbsp;or&nbsp;call us on 0343 222 2222 (<a href='/corporate/terms-and-conditions/tfl-call-charges'>TfL call charges</a>).</p><p>If you drive within the zone before your Auto Pay status is active you will need to pay the charge another way.&nbsp;</p>";
+            content.ReactivateSuccessText = "<p>Auto Pay is now active</p>";
+            content.ApplyLinkText = "Set up Auto Pay again";
+            content.ManageLinkText = "Manage my Auto Pay";
+            content.WhatHappensNextTitle = "<h3>What happens next</h3>";
+            content.WhatHappensNextText = "<p>The amount you have paid will be deducted from your next monthly statement.</p><p>The card used to make this payment will not replace your existing Auto Pay payment details. If you want to update the payment card used for Auto Pay, go to 'Manage my Auto Pay'.</p>";
+
+
+            Html.RenderAction(
+                "PaymentSuccess",
+                "AutoPayManage",
+                new
+                {
+                    area = "Ruc",
+                    autoPayManageUrl = "/modes/driving/cc-autopay-manage-manage-29152",
+                    applyUrl = "/modes/driving/autopay-apply-select-service",
+                    manageUrl = "/modes/driving/cc-autopay-manage-manage-29152",
+                    content = content
+                }
+            );
+        }
+		
+	  
+
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+      <div>
+                    
+        <div class="vertical-button-container">
+    <ul>
+        
+        
+        
+        <li><a href="/modes/driving/account-vehicles"  class="plain-button">Pay to drive in London</a></li>
+        
+        
+        <li><a href="/modes/driving/congestion-charge/congestion-charge-zone"  class="plain-button">Congestion Charge/ULEZ zone</a></li>
+        
+        
+        <li><a href="/modes/driving/check-your-vehicle-35896"  class="plain-button">Check your vehicle</a></li>
+        
+        
+        <li><a href="/modes/driving/amend-or-refund-a-driving-charge"  class="plain-button">Amend/refund a charge</a></li>
+        
+        
+        <li><a href="/modes/driving/congestion-charge/contact-congestion-charge"  class="plain-button">Contact us</a></li>
+        
+        
+        <li><a href="/modes/driving/ultra-low-emission-zone/scrappage-scheme"  class="plain-button">Scrappage scheme</a></li>
+        
+    </ul>
+</div>
+
+      </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

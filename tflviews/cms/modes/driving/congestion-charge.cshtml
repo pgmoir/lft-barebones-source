@@ -1,0 +1,462 @@
+﻿
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@section adverts {
+    <div class="top-banner-advert" aria-hidden="true">
+        <div class="large" data-advert="/76889402/driving/cc" data-advert-sizes="970, 90|970, 250"></div>
+        <div class="medium" data-advert="/76889402/driving/cc" data-advert-sizes="728, 90"></div>
+        <div class="small" data-advert="/76889402/driving/cc" data-advert-sizes="300, 50|320, 50"></div>
+    </div>
+}
+
+
+ 
+  
+
+
+<!-- rhroot -->
+@{ViewBag.Title = "Congestion Charge (Official)";}
+@{ViewBag.Keywords = "Businesses,Drivers,Public,Driving,Congestion Charge ,TfL";}
+@{ViewBag.Url = "/modes/driving/congestion-charge";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+
+  
+
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                
+                <li><span class="last-breadcrumb">Congestion Charge</span></li>
+            
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+
+  
+  <div class="r">
+    <div class="headline-container section-title section-landing-container with-logo">
+      <div class="section-title-wrap">
+        <h1 class="hero-headline">Congestion Charge</h1>
+        
+          <div class="heading-logo">
+            <img src="/ruc-cdn/static/cms/images/logos/cc-partner.png" alt="" />
+          </div>
+        
+      </div>
+    </div>
+  </div>
+
+
+  
+  
+    
+  
+
+
+    
+    <div class="r">
+        <div class="section-overview clearfix ">
+            <div class="small-medium" data-set="section-intro"></div>
+            <div class="main">
+                <div class="large" data-set="section-intro">
+                    
+                </div>
+                <p>The Congestion Charge is an &pound;11.50 daily charge for driving a vehicle within the charging zone&nbsp;<strong>between 07:00 and 18:00, Monday to Friday.</strong>&nbsp;The easiest way to pay is by setting up Auto Pay. Exemptions and discounts are&nbsp;available too.</p>
+
+<p>The Congestion Charge will not operate from 25 December to 1 January.</p>
+
+<p>You'll also need to&nbsp;check if your vehicle is affected by the <a href="/modes/driving/ultra-low-emission-zone">Ultra Low Emission Zone (ULEZ)</a>.</p>
+            </div>
+            
+            <div class="aside">
+                
+                
+
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/account-account-landing-29377"
+                        }
+                    );
+                }
+            
+      
+
+ 
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+                
+            </div>
+            
+        </div>
+    </div>
+    
+   
+    <div class="r">
+        <div class="main clearfix" role="main">
+            
+        
+        
+         
+        
+        
+        
+                
+                <div class="clearfix">
+                    <div>
+
+<p>The cost of the daily Congestion Charge payments is cut by up to &pound;1 if you <a href="/modes/driving/auto-pay">set up Auto Pay</a>. There's an annual registration charge of &pound;10 for each vehicle you register.</p>
+</div>
+ 
+<div class="module-grid clearfix">
+<div>
+
+<div class="call-to-action-button">
+       <a href="/modes/driving/pay-to-drive-in-london" class="secondary-button no-hover" >Pay to drive in London</a>
+
+    </div>
+</div> 
+ <div>
+
+<div class="call-to-action-button">
+       <a href="/modes/driving/pay-a-pcn" class="secondary-button no-hover" >Pay a penalty</a>
+
+    </div>
+</div> 
+ 
+</div>
+ 
+                </div>
+                <hr>
+                
+                
+                <div class="module-grid clearfix">
+                    
+                    
+                    
+                    <div>
+
+<div class="news-teaser driving">
+
+    <a href="/modes/driving/congestion-charge/congestion-charge-zone?intcmp=2055"  data-img="/ruc-cdn/static/cms/images/promos/car-at-congestion-charge-entrance_rdax_400x200.jpg" data-img-breakpoint="medium" data-img-alt="Car at entrance of Congestion Charge">
+        
+        
+        <div class="text-link">
+             <h2>Charging zone</h2>
+            <p>See if an address or postcode is in the Congestion Charge zone</p>
+        </div>
+    </a>
+</div>
+ 
+ <div class="news-teaser driving">
+
+    <a href="/modes/driving/auto-pay?intcmp=2154#autopay" >
+        
+        
+        <div class="text-link">
+             <h2>Auto Pay</h2>
+            <p>Find out how to save up to &pound;1 a day and avoid a Penalty Charge Notice</p>
+        </div>
+    </a>
+</div>
+ 
+ <div class="news-teaser driving">
+
+    <a href="/modes/driving/congestion-charge/penalties-and-enforcement?intcmp=2067" >
+        
+        
+        <div class="text-link">
+             <h2>Penalties and enforcement</h2>
+            <p>If you receive a PCN you can either pay it or challenge it</p>
+        </div>
+    </a>
+</div>
+ 
+ <div class="news-teaser">
+
+    
+</div>
+ 
+ <div class="vertical-button-container">
+    <ul>
+        
+        
+        
+        <li><a href="/modes/driving/unofficial-selling-websites"  class="plain-button">Avoid payment fraud</a></li>
+        
+        
+        <li><a href="/corporate/terms-and-conditions/pay-to-drive-in-london"  class="plain-button">Terms &amp; conditions</a></li>
+        
+        
+        <li><a href="/corporate/publications-and-reports/congestion-charge"  class="plain-button">Congestion Charge publications</a></li>
+        
+    </ul>
+</div>
+
+</div>
+ <div>
+
+<div class="news-teaser">
+
+    <a href="/modes/driving/ultra-low-emission-zone?intcmp=26434" >
+        <img src="/ruc-cdn/static/cms/images/promos/ulez-van-green-teaser_rdax_400x200.jpg" alt=" " />
+        
+        <div class="text-link">
+             <h2>ULEZ</h2>
+            <p>Find out about the the Ultra Low Emission Zone (ULEZ)</p>
+        </div>
+    </a>
+</div>
+ 
+ <div class="news-teaser driving">
+
+    <a href="/modes/driving/congestion-charge/discounts-and-exemptions?intcmp=2133" >
+        
+        
+        <div class="text-link">
+             <h2>Discounts and exemptions</h2>
+            <p>Find out if you can get a discount or drive in the zone for free</p>
+        </div>
+    </a>
+</div>
+ 
+ <div class="news-teaser">
+
+    <a href="/modes/driving/congestion-charge/contact-congestion-charge?intcmp=2178" >
+        
+        
+        <div class="text-link">
+             <h2>Contact us</h2>
+            <p>Find out how to get in touch with the Congestion Charge team</p>
+        </div>
+    </a>
+</div>
+ 
+ <div class="related-links">
+
+    <h3>Source London</h3>
+
+        Register for Source London, the electric vehicle charging network
+    
+<div class="vertical-button-container">
+
+<a href="https://www.sourcelondon.net/" class="plain-button">Source London</a>
+    </div>
+</div>
+ 
+</div>
+ 
+                </div>
+        
+        
+        
+          
+        
+    </div>
+    
+      
+      <div class="aside" role="complementary">
+    
+        <div data-set="sidenav-container" class="large">
+          
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+                <a href="/modes/driving/congestion-charge" class="heading">
+                    <h3 id="sub-menu-heading" class="h2">Congestion Charge<span class="visually-hidden"> navigation</span></h3>
+                </a>
+                <ul>
+                    
+                                <li class="parent" aria-label="page with sub pages"><div class="link-wrapper"><a href="/modes/driving/congestion-charge/congestion-charge-zone">Congestion Charge zone</a></div></li>
+                            
+ 
+                                <li class="parent" aria-label="page with sub pages"><div class="link-wrapper"><a href="/modes/driving/congestion-charge/paying-the-congestion-charge">Congestion Charge payments</a></div></li>
+                            
+ 
+                                <li aria-label="page with no sub pages"><div class="link-wrapper"><a href="/modes/driving/congestion-charge/discounts-and-exemptions">Discounts and exemptions</a></div></li>
+                            
+ 
+                                <li aria-label="page with no sub pages"><div class="link-wrapper"><a href="/modes/driving/congestion-charge/dart-charge">Dart Charge</a></div></li>
+                            
+ 
+                                <li class="parent" aria-label="page with sub pages"><div class="link-wrapper"><a href="/modes/driving/congestion-charge/penalties-and-enforcement">Penalties and enforcement</a></div></li>
+                            
+ 
+                                <li class="parent" aria-label="page with sub pages"><div class="link-wrapper"><a href="/modes/driving/congestion-charge/contact-congestion-charge">Contact Congestion Charge</a></div></li>
+                            
+ 
+                                <li class="parent" aria-label="page with sub pages"><div class="link-wrapper"></div></li>
+                            
+ 
+                </ul>
+            
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+        </div>
+        <div class="module-grid clearfix">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="advert-tile unsponsored-style google-ads" aria-hidden="true">
+  <div class="advert-link">
+    <div class="advert-content">
+        <div class="medium-large" data-advert="/76889402/driving/cc" data-advert-sizes="300, 250"></div>
+        <div class="small" data-advert="/76889402/driving/cc" data-advert-sizes="300, 250"></div>
+    </div>
+  </div>
+</div>
+@{
+    ViewBag.AmazonSlot = "'amznslots'";
+    ViewBag.AmazonAds = "'3199'"; // to add another value, this needs to be ViewBag.AmazonAds = "'3199','xx'";
+}
+      
+
+ 
+          <div class="follow-social email">
+  
+  <div class="social-image">
+    
+  </div>
+  <div class="social-text">
+    <h3>Email updates</h3>
+    <p>Customer updates and advance warning of weekend closures and planned works</p>
+  </div>
+  <div class="social-button">
+    <a class="secondary-button" href="/travel-information/social-media-and-email-updates/email-updates">Register</a>
+  </div> 
+</div>
+ <div class="related-links">
+
+    <h3>Also on this site </h3>
+
+<div class="vertical-button-container">
+
+<a href="/modes/driving/low-emission-zone" class="plain-button">Low Emission Zone</a>
+<a href="/modes/driving/electric-vehicles-and-rapid-charging" class="plain-button">Electric vehicle and charge points</a>
+    </div>
+</div>
+ <div class="related-links">
+
+    <h3>Related websites</h3>
+
+<div class="vertical-button-container">
+
+<a href="http://www.londontravelwatch.org.uk/home" class="plain-button">London TravelWatch</a>
+<a href="https://www.london.gov.uk/what-we-do/environment/pollution-and-air-quality/cleaning-londons-vehicles" class="plain-button">Cleaner vehicle checkers</a>
+    </div>
+</div>
+ 
+        </div>
+        <div data-set="sidenav-container" class="small-medium"></div>
+      </div>
+  </div>
+ 
+     @section scripts {
+<div class="bottom-advert ">
+    <div class="close-ad-button visually-hidden"><span class="close-icon-circle"></span></div>
+    <div data-advert="/76889402/driving/" data-advert-sizes="320, 50"></div>
+</div>
+}
+
+        
+        
+        
+            @{ViewBag.Description = "Information about the Congestion Charge";}
+        
+            
+        
+
+
+ 

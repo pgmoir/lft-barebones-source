@@ -1,0 +1,204 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Report criminal damage or antisocial behaviour";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/help-and-contact/report-criminal-damage-or-antisocial-behaviour";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/help-and-contact/index">Help & contacts</a></li>
+                
+            
+            
+                <li><span class="last-breadcrumb">Report criminal damage or antisocial behaviour</span></li>
+            
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Report criminal damage or antisocial behaviour</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    <div class="on-this-page">
+      
+      
+           
+      
+                @using TfL.Web.ViewModels.FormBuilder
+                <div class="responsive-form responsive-table-wrapper with-icon">
+                @using (Html.BeginForm())
+                {
+                    
+
+			    dynamic personalDetailsModel = new ContentModel();
+                personalDetailsModel.PhoneNumberToolTip = "It may be quicker to resolve your enquiry by calling you back.";
+                personalDetailsModel.EmailAddressToolTip = "";
+                personalDetailsModel.TitleRequireIfTrue = "Select your title.";
+                personalDetailsModel.FirstNameRequireIfTrue = "Enter your first name.";
+                personalDetailsModel.LastNameRequireIfTrue = "Enter your surname.";
+                personalDetailsModel.EmailAddressRequireIfTrue = "Enter your email address.";
+                personalDetailsModel.ConfirmEmailAddressRequireIfTrue = "Enter your email address.";
+                personalDetailsModel.PhoneNumberRequireIfTrue = "Enter your phone number.";
+                personalDetailsModel.PhoneNumberRegularExpression = "The phone number must be numeric.";
+            
+
+
+                dynamic formCommentsContent = new ContentModel();
+                formCommentsContent.CommentsToolTip = "Please provide us with as much detail as you can. This will help us handle your enquiry more quickly.";
+                formCommentsContent.CommentsPrivateTaxiHireToolTip = "Tell us about the service or incident you want to comment on. Where relevant, it would be helpful if you can include any of the following:<ul>    <li>Badge number of driver</li>    <li>Registration number of taxi or minicab</li>    <li>Plate number of private hire vehicle</li>    <li>Contact details of police or witnesses</li>    <li>Details of operator through which your minicab was booked</li></ul>";
+                formCommentsContent.CommentsRequired = "Enter your comments.";
+            
+
+                dynamic feedbackContent =  new ContentModel();
+                feedbackContent.BestTimeToCallToolTip = "Sometimes it's quicker for us to help by giving you a call.";
+                feedbackContent.BestTimeToContactRequireIfTrue = "Select best time to contact.";
+                feedbackContent.GiveFeedbackRequireIfTrue = "Select feedback preference.";
+            
+
+                dynamic criminalAndAntiSocialContent =  new ContentModel();
+                criminalAndAntiSocialContent.AgeRequireIfTrue = "Select Age.";
+                criminalAndAntiSocialContent.DangerousOrThreateningRequireIfTrue = "Select if behaviour was dangerous or threatening.";
+                criminalAndAntiSocialContent.ReportingTypeRequireIfTrue = "Select either criminal damage or antisocial behaviour.";
+                criminalAndAntiSocialContent.CriminalTypeRequireIfTrue = "Tell us more about the kind of criminal damage being committed.";
+                criminalAndAntiSocialContent.AntisocialTypeRequireIfTrue = "Tell us more about the kind of antisocial behaviour involved.";
+                criminalAndAntiSocialContent.OtherRequireIfTrue = "Enter the type of incident.";
+                criminalAndAntiSocialContent.DangerousAndThreateningToolTip = "Did you feel like the behaviour could cause physical harm to you or others?";
+            
+
+                dynamic streetLocationContent = new ContentModel();
+                streetLocationContent.DirectionOfTravelToolTip = "For example: towards Richmond or traffic lights at A13 junction";
+                streetLocationContent.EnquiryAboutRequired = "Select a reason for your enquiry.";
+                streetLocationContent.OtherRequireIfTrue = "Enter a reason for your enquiry.";
+                streetLocationContent.LocationRequired = "Enter your location.";
+                streetLocationContent.LocationDateRequired = "Enter a valid date (eg. 15/03/1984).";
+                streetLocationContent.LocationTimeRequired = "Select the time.";
+                        
+                Html.RenderAction("Index", "FormBuilder", new
+                {
+                    formSetup = new FormSetupViewModel
+                    {
+                         FormType="CriminalAndAntiSocial",
+                         FormSections = new List<string>(){ "PersonalDetails", "Feedback", "CriminalAndAntiSocial", "StreetLocation", "LeafletMap", "FormComments","FormAttachments" },
+                         IntroductionMessages = new Dictionary<string,string>{{"intro","<p>Send us your enquiry or feedback by completing the form below. We aim to respond to you within 10 working days.</p><p>If you see a problem with graffiti or flyposting on bus stops and shelters, traffic lights and other street equipment, the quickest way to let us know is to <a href='https://streetcare.tfl.gov.uk/'>report a problem with our street care reporting tool.</a></p><p>For graffiti or flyposting on Underground, TfL Rail, Tram and London Overground services, please use the form below.</p>"}},
+                         FormName = "Form builder - Report criminal damage or antisocial behaviour",
+                         EmailConfirmationToUser = false,
+                         EmailConfirmationSubject = "",
+                         FormRecipient = "",
+                         BodyText = ""
+                        },
+                     personalDetailsViewModel = new PersonalDetailsFormViewModel {Content = personalDetailsModel, Heading="Your contact details", TitleRequired = true, PhoneNumberRequired = true, PhoneNumberIsRequired = true, PhoneNumberVisible = true, FirstNameRequired = true, SurnameRequired = true, EmailAddressRequired = true, ConfirmEmailAddressRequired = true },
+                     feedbackViewModel = new FeedbackViewModel { Content = feedbackContent, GiveFeedbackRequired = false, GiveFeedbackVisible = false, BestTimeToContactRequired = true, BestTimeToContactVisible = true, UseLaterContactTime = true },
+                     streetLocationViewModel = new StreetLocationViewModel { Content = streetLocationContent, OtherRequired= false, ShowHeading = false, ShowEnquiryAbout = false, ShowDirectionOfTravel = false, EnquiryAboutRequired = false, DateLabel = "Date of Incident", TimeLabel = "Time of incident", LocationDateRequired = false, LocationTimeRequired = false, LocationRequired = false},
+                     leafletViewModel  =  new LeafletViewModel { MapPlaceholderId = "leaflet-map-wrapper", ValidationRequired = false },
+                     formCommentsViewModel = new FormCommentsViewModel { Content = formCommentsContent },
+                     formAttachmentsViewModel = new FormAttachmentsViewModel { FormName = "StreetForm" , FileCountLimit = 3 },
+                     criminalAndAntiSocialFormViewModel = new CriminalAndAntiSocialFormViewModel{Content = criminalAndAntiSocialContent, ReportingTypeRequired = true, DangerousOrThreateningRequired = true, AntisocialTypeRequired = true, CriminalTypeRequired = true, AgeRequired = true, OtherRequired = true},
+                     submission = new FormSubmissionViewModel { DataProtectionHeading = "Privacy Statement", DataProtection = "<p>Transport for London (TfL), its subsidiaries and service providers will use the personal information you provide on this form to process your feedback, to investigate the incident you have reported and provide you with a response. We may contact you to ask for further information where we need it to fully investigate your complaint. Some of the details about incidents reported on this form may be made publicly available to avoid duplicate reports being made by other users. Your contact details will not be published and will be available only to the officer dealing with the case. Please note that you do not need to provide any personal data and you may submit a complaint anonymously if you wish. However, if you do this, it will limit the extent to which TfL, or its partners, can reply or keep you informed about the progress of your complaint. Your personal information will be properly safeguarded and processed in accordance with the requirements of privacy and data protection legislation. To find out more about how TfL handles personal data please visit www.tfl.gov.uk/privacy</p>", SuccessfulSubmissionMessage = "<p>Thank you for submitting this form. We will get back to you within 10 working days.</p>", FailedSubmissionMessage = "There was an error. Please try again." } 
+                        });
+
+            
+                }
+                
+                
+                @{
+                    Html.RenderAction("SearchFilterForm", "FormBuilder");
+                }
+                
+                
+                </div>
+            
+      
+        
+          
+            @this.ScriptBlock(
+              @<script>
+                queue.push("@Html.ScriptPath("modules/M020-on-this-page.min.js")", null);
+              </script>
+            )
+          
+        
+      
+    </div>
+  </div>
+  <div class="aside" role="complementary">
+
+   
+    
+    
+    
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="advert-tile unsponsored-style google-ads" aria-hidden="true">
+  <div class="advert-link">
+    <div class="advert-content">
+        <div class="medium-large" data-advert="/76889402/help_contact" data-advert-sizes="300, 250"></div>
+        <div class="small" data-advert="/76889402/help_contact" data-advert-sizes="300, 250"></div>
+    </div>
+  </div>
+</div>
+@{
+    ViewBag.AmazonSlot = "'amznslots'";
+    ViewBag.AmazonAds = "'3199'"; // to add another value, this needs to be ViewBag.AmazonAds = "'3199','xx'";
+}
+      
+
+ </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+ 
+ 
+        
+        
+        
+            @{ViewBag.Description = "Report criminal damage or antisocial behaviour";}
+        
+            
+        
+
+
+ 

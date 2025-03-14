@@ -1,0 +1,279 @@
+﻿
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@section adverts {
+    <div class="top-banner-advert" aria-hidden="true">
+        <div class="large" data-advert="/76889402/driving/payment" data-advert-sizes="970, 90|970, 250"></div>
+        <div class="medium" data-advert="/76889402/driving/payment" data-advert-sizes="728, 90"></div>
+        <div class="small" data-advert="/76889402/driving/payment" data-advert-sizes="300, 50|320, 50"></div>
+    </div>
+}
+
+
+ 
+  
+
+
+
+@{ViewBag.Title = "Pay to drive in London";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/pay-to-drive-in-london";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                
+                <li><span class="last-breadcrumb">Pay to drive in London</span></li>
+            
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Pay to drive in London</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/account-account-landing-29377"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+      <div class="article-teaser">
+        <p>If you drive in London you may need to pay the Congestion Charge, Ultra Low Emission Zone (ULEZ) and/or Low Emission Zone (LEZ) charges. Your number plate (Vehicle Registration Mark) will tell us which charges you need to pay.</p>
+        
+      </div>
+    
+    
+      <h2>Charges you can pay</h2>
+
+<ul>
+	<li><strong>Congestion Charge:</strong> pay for the previous <strong>charging</strong> day, today, the next <strong>charging</strong> day or for a custom date range</li>
+	<li><strong>ULEZ:</strong> pay for the previous <strong>working</strong> day, today, tomorrow or for a custom date range</li>
+	<li><strong>LEZ:</strong> pay for the previous <strong>working</strong> day, today or any day up to 90 days in the future</li>
+</ul>
+
+<p>Discounts or exemptions won't be applied to your vehicle unless you <a href="/modes/driving/account-account-landing-29377">sign in to your account</a>.</p>
+
+<h2>Changes to the LEZ</h2>
+
+<p>From 26 October 2020, LEZ standards will be tougher for heavier vehicles. Your vehicle may not meet these new standards. <a href="/modes/driving/low-emission-zone/changes-to-the-lez">Check if you will need to pay a LEZ charge.</a></p>
+
+<h3>Charging zones</h3>
+
+<ul>
+	<li><a href="/modes/driving/congestion-charge/congestion-charge-zone">Congestion Charge</a></li>
+	<li><a href="/modes/driving/ultra-low-emission-zone/ulez-where-and-when">ULEZ</a></li>
+	<li><a href="/modes/driving/low-emission-zone/about-the-lez">LEZ</a></li>
+</ul>
+      
+           
+      
+<div class="module-grid clearfix">
+<div>
+
+<div class="call-to-action-button">
+       <a href="/modes/driving/pay-the-charge-select-vehicle-26283" class="primary-button"   title="Pay">Pay</a>
+
+    </div>
+</div> 
+ 
+</div>
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+      </div>
+    
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="advert-tile unsponsored-style google-ads" aria-hidden="true">
+  <div class="advert-link">
+    <div class="advert-content">
+        <div class="medium-large" data-advert="/76889402/driving/payment" data-advert-sizes="300, 250"></div>
+        <div class="small" data-advert="/76889402/driving/payment" data-advert-sizes="300, 250"></div>
+    </div>
+  </div>
+</div>
+@{
+    ViewBag.AmazonSlot = "'amznslots'";
+    ViewBag.AmazonAds = "'3199'"; // to add another value, this needs to be ViewBag.AmazonAds = "'3199','xx'";
+}
+      
+
+ </div>
+    
+      <div>
+                    
+        <div class="vertical-button-container">
+    <ul>
+        
+        
+        
+        <li><a href="/modes/driving/congestion-charge"  class="plain-button">Congestion Charge</a></li>
+        
+        
+        <li><a href="/modes/driving/low-emission-zone"  class="plain-button">Low Emission Zone</a></li>
+        
+        
+        <li><a href="/modes/driving/ultra-low-emission-zone"  class="plain-button">Ultra Low Emission Zone</a></li>
+        
+        
+        <li><a href="/modes/driving/pay-a-pcn"  class="plain-button">Pay a penalty</a></li>
+        
+        
+        <li><a href="/modes/driving/autopay-apply-before-you-begin"  class="plain-button">Set up Auto Pay</a></li>
+        
+    </ul>
+</div>
+
+      </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+     @section scripts {
+<div class="bottom-advert ">
+    <div class="close-ad-button visually-hidden"><span class="close-icon-circle"></span></div>
+    <div data-advert="/76889402/driving/" data-advert-sizes="320, 50"></div>
+</div>
+}
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "Pay to drive in London";}
+        
+            
+        
+
+
+ 

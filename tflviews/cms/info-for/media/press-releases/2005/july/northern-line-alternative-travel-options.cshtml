@@ -1,0 +1,89 @@
+﻿
+
+
+@{ViewBag.Title = "Northern line alternative travel options";}
+        
+        
+
+<div class="r">
+    <div class="headline-container plain">
+        <h1>Northern line alternative travel options</h1>
+        <div class="content-page-press-release">
+        22 July 2005
+        </div>
+    </div>
+</div>
+<div class="main-and-aside r">
+    <div class="main" role="main">
+
+    <div class="article-teaser">
+        Due to security alert at Stockwell Station, the Northern Line has no service between Morden Station and Kennington Station in both directions.  This will affect journeys from 10:47 on 22/07/05 until further notice.
+        
+    </div>
+
+
+
+ <div class="on-this-page">
+<p><br>For: <br><strong>Oval</strong><br><strong>Stockwell</strong> <br>Use Kennington & Vauxhall then walk or use local bus services</p>
+<p>For <br><strong>Clapham North <br>Clapham Common<br></strong>Use National Rail from Victoria and Waterloo to Clapham Junction and walk or use local bus services<br>Or<br>Use Southern services from Victoria to Clapham High Street</p>
+<p>For <br><strong>Clapham South<br>Balham<br>Tooting Bec<br></strong>Use Southern Trains to Balham and walk or use bus routes 155, 355 to Clapham South and 155, 355 and 249 to Tooting Bec</p>
+<p>For<br><strong>Tooting Broadway <br>Colliers Wood <br>South Wimbledon<br></strong>Go to Wimbledon via South West Trains or District lines and use Rail replacement bus service (Wim, S Wim, CW TB) and local bus service 57, 219, 249</p>
+<p>For<br><strong>Morden</strong><br><br>Go to Wimbledon via South West Trains or District lines and use bus service 93 or Rail replacement bus service to South Wimbledon and walk<br>Or Tramlink to Morden Road.</p>
+<p>In addition for <strong>Tooting Broadway</strong> you may want to use South West Trains from Waterloo to Earsfield and use bus services 44, 77 and 270 </p>
+
+     
+
+        
+        
+        
+        @this.ScriptBlock(
+        @<script>
+        //queue.push("@Html.ScriptPath("modules/M020-on-this-page.min.js")", null);
+        </script>
+        )
+        
+        
+        
+        </div>
+    </div>
+    <div class="aside" role="complementary">
+
+       
+        <div data-set="sidenav-container" class="large">
+
+            
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+        </div>
+
+
+
+            
+        <div data-set="sidenav-container" class="small-medium"></div>
+    </div>
+</div>
+
+<!-- Crumbs: PGtype:  -->
+
+ 
+ 
+        
+        
+            @{ViewBag.Description = "For: OvalStockwell Use Kennington & Vauxhall then walk or use local bus servicesFor Clapham North Clapham CommonUse National Rail from Victoria and Waterloo to Clapham Junction and walk or use local bus servicesOrUse Southern services from Victoria to";}
+        
+        
+
+
+ 

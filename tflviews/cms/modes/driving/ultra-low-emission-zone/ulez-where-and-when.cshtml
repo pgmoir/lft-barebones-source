@@ -1,0 +1,579 @@
+﻿
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@section adverts {
+    <div class="top-banner-advert" aria-hidden="true">
+        <div class="large" data-advert="/76889402/driving/ulez" data-advert-sizes="970, 90|970, 250"></div>
+        <div class="medium" data-advert="/76889402/driving/ulez" data-advert-sizes="728, 90"></div>
+        <div class="small" data-advert="/76889402/driving/ulez" data-advert-sizes="300, 50|320, 50"></div>
+    </div>
+}
+
+
+ 
+  
+
+
+
+@{ViewBag.Title = "ULEZ: Where and when";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/ultra-low-emission-zone/ulez-where-and-when";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                 <li><a href="/modes/driving/ultra-low-emission-zone">Ultra Low Emission Zone</a></li>
+                
+            
+                
+                <li><span class="last-breadcrumb">ULEZ: Where and when</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>ULEZ: Where and when</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/account-account-landing-29377"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+      <div class="article-teaser">
+        <p>The Ultra Low Emission Zone (ULEZ) replaced the T-Charge on 8 April 2019. It operates 24 hours a day, 7 days a week, every day of the year (except Christmas Day), within the same area as the Congestion Charge zone.</p>
+        
+      </div>
+    
+    <div class="on-this-page">
+      
+      
+           
+      
+<div class="module-grid clearfix">
+<div>
+
+<div class="call-to-action-button">
+       <a href="/modes/driving/pay-to-drive-in-london" class="secondary-button no-hover"   title="If you already have an account, you can sign in to pay the charge">Pay to drive in London</a>
+
+    </div>
+</div> 
+ <div>
+
+<div class="call-to-action-button">
+       <a href="/modes/driving/check-your-vehicle-35896" class="secondary-button no-hover" >Check your vehicle</a>
+
+    </div>
+</div> 
+ 
+</div>
+ 
+        
+
+      <h2>Postcode and map search</h2>
+            <div class="responsive-form zone-checker-in-page">
+                 
+                 <p>Enter a postcode to see if it's inside one or more of the charging zones. Results will not be displayed on the map.</p>
+                @{
+                    dynamic content = new ContentModel();
+                    content.PayCongestionChargeLinkText = "Pay to drive in London";
+                    content.PayCongestionChargeUrl = "/modes/driving/account-vehicles";
+                    content.PayCongestionChargeAnonymousUrl = "/modes/driving/pay-to-drive-in-london";
+                    content.ResidentDiscountUrl = "/modes/driving/cc-resident-discount-apply-anon-32525";
+                    content.ResidentDiscountLinkText = "Apply for residents' discount";
+                    content.AddressLinePostcodeText = "Check a postcode";
+                    
+                    Html.RenderAction(RucDictionary.ZoneChecker.DefaultActionName, "ZoneChecker", new
+                        {
+                            area = "Ruc",
+                            zoneChargeType = ZoneChargeType.CongestionCharge,
+                            content = content,
+                            findAnotherUrl = "/maps/congestion-charge"
+                        });
+                }
+            </div>
+
+            <h2>Where it operates</h2>
+
+<p>Enter a street name, postcode or landmark in the search box to see its location in relation to the charging zones.</p>
+
+<p>View zones to show/hide their areas.</p>
+
+<p>To see if an address is inside or outside the zones, use the postcode search instead.</p>
+            <div class="search-filter">
+                <div class="heading clearfix">
+                    <div class="search-icon-black"></div>
+                    <h3>Map search</h3>
+                </div>
+                @{
+                    Html.RenderAction("SearchFilter", "Modules", new
+                    {
+                        actionUrl = Library.DisambiguationSettings.DisambiguationUrl,
+                        ajaxEnabled = true,
+                        currentLocationSubmitUrl = "/maps/congestion-charge",
+                        additionalFields = new List<string> { "InputGeolocation" },
+                        buttonText = "Go",
+                        dataSets = new[] { 
+ new[]{ Library.DisambiguationDataSets.PlacesExtra, "/maps/congestion-charge?Input={{input}}&InputGeolocation={{lon}},{{lat}}" }, 
+ },
+                        modes = string.Format(
+                        "{0},{1},{2},{3},{4},{5},{6},{7}",
+                        Library.MeansOfTransport.Tube,
+                        Library.MeansOfTransport.DLR,
+                        Library.MeansOfTransport.Overground,
+                        Library.MeansOfTransport.Bus,
+                        Library.MeansOfTransport.River,
+                        Library.MeansOfTransport.RiverTours,
+                        Library.MeansOfTransport.Tram,
+                        Library.MeansOfTransport.CableCar
+                        ),
+                        placeHolderText = "Location, postcode or landmark",
+                        noResultsFoundMessage = "Couldn't find any results to match your search. Please try again."
+                    });
+                }
+            </div>
+
+            
+             <p class="visually-hidden" aria-label="Go to postcode checker at the top of the page">
+                Go to postcode checker at the top of the page
+            </p>
+            <div id="view-map-button-container"></div>
+            @{ 
+                Html.RenderAction("EmbeddedMap", "Maps", new
+                {
+                    layers = "congestion-charging-zone,low-emissions-zone",
+                    layersVisibleAtLoad = "congestion-charging-zone",
+                    centreLat = "",
+                    centreLng = "",
+                    zoom = "12",
+                    showSatelliteMap = "0",
+                    showUserLocation = "0",
+                    kmlUrl = "",
+                    zoomThresholds = new EmbeddedMapViewModel.EmbeddedMapZoomThresholds() { },
+                    resultSelectedZoom = "14",
+                    showStreetView = false
+                });
+            }
+            
+
+            <p>
+                <h2>Charging times</h2>
+
+<ul>
+	<li><strong>Congestion Charge:</strong>&nbsp;No charge&nbsp;18:00-07:00 on weekdays or on weekends, public holidays or any days between Christmas Day and New Year's Day</li>
+	<li><strong>ULEZ:</strong> Operates midnight to midnight, every day of the year, except Christmas Day (25 December)</li>
+	<li><strong>LEZ:</strong> Operates midnight to midnight, every day of the year</li>
+	<li><strong>Direct Vision Standard (DVS) and HGV Safety Permit:</strong> Operates at all times for lorries over 12 tonnes gross vehicle weight</li>
+</ul>
+
+<p>Find out&nbsp;more about paying the <a href="/modes/driving/congestion-charge/paying-the-congestion-charge">Congestion Charge</a>, <a href="/modes/driving/ultra-low-emission-zone/ulez-payments">ULEZ</a>&nbsp;and&nbsp;<a href="/modes/driving/low-emission-zone/make-a-payment">LEZ</a>, and&nbsp;learn more&nbsp;about <a href="https://turing.online.tfl.gov.uk/info-for/deliveries-in-london/delivering-safely/direct-vision-in-heavy-goods-vehicles">DVS</a>.</p>
+            </p>
+            
+            @{ 
+                var ulezChargeGif = "/ruc-cdn/static/cms/images/ultra-low-emission-zone-map.gif";
+                ulezChargeGif = string.IsNullOrEmpty(ulezChargeGif) ? "#" : ulezChargeGif;
+                
+                var ulezChargePdf = "/ruc-cdn/static/cms/documents/ultra-low-emission-zone-map.pdf";
+                ulezChargePdf = string.IsNullOrEmpty(ulezChargePdf) ? "#" : ulezChargePdf;
+            }
+            
+            <div class="download-accordion">
+                <div class="expandable-box congestion-map-accordion">
+    	        <div class="content">
+    		        <div class="always-visible">
+    			        <a href="javascript:void(0);" class="controls">&nbsp;</a>
+    			        <div class="accordion-heading"><h2>Download maps</h2></div>
+    		        </div>
+    		        <div class="start-hidden">                             
+                        <div class="map-downloads">
+    	                    <a title="Download the Ultra Low Emission Zone map in PDF format" class="btn-download-map"
+                                href="@ulezChargePdf">
+    		                    <span>ULEZ map (PDF)</span>
+    		                    <span class="download-pdf">PDF 1490.49</span>
+    	                    </a>
+    
+    	                    <a title="Download the Ultra Low Emission Zone map in GIF format" class="btn-download-map"
+                                href="@ulezChargeGif">
+    		                    <span>ULEZ map (GIF)</span>
+    		                    <span class="download-image">GIF 315.78</span>
+    	                    </a>
+                        </div>                    
+    		        </div>
+	            </div>
+            </div>
+            </div>
+                
+            
+            
+            @this.ScriptBlock(
+                @<script>
+                      queue.push("@Html.ScriptPath("modules/M020-on-this-page.min.js")", null);
+                </script>
+            )
+
+
+	  <div>
+
+<h3>Journey planning</h3>
+
+<p>Third-party organisations such as <a href="https://www.waze.com/en-GB/">WAZE</a>, a community-based GPS traffic and navigation app, can alert drivers if their planned route goes through the ULEZ area. Drivers can also indicate in that app if their vehicles meet the ULEZ standards.&nbsp;</p>
+
+<p>Anyone using apps such as WAZE does so at their own risk. Other organisations may have similar ULEZ apps - we do not endorse or recommend any specific ones. Check back here for updates.</p>
+
+<h2>When ULEZ operates</h2>
+
+<p>A daily charge runs from midnight to midnight. If you drive within the ULEZ area across two days, for example before midnight and after midnight, you need to pay two daily charges if your vehicle doesn't meet the ULEZ standards.</p>
+
+<h3>Which vehicles are affected</h3>
+
+<p>See the <strong>emissions standards, daily charges and penalties</strong> for these four vehicle groups:</p>
+
+<ul>
+	<li><a href="/modes/driving/ultra-low-emission-zone/cars">Cars</a> (petrol and diesel)</li>
+	<li><a href="/modes/driving/ultra-low-emission-zone/vans-minibuses-and-more">Vans, minibuses and lighter specialist vehicles</a></li>
+	<li><a href="/modes/driving/ultra-low-emission-zone/motorcycles-mopeds-and-more">Motorcycles, mopeds and more</a></li>
+	<li><a href="/modes/driving/ultra-low-emission-zone/larger-vehicles">Lorries, coaches and other larger vehicles</a></li>
+</ul>
+
+<p>If your vehicle is affected there are ways to <a href="/modes/driving/ultra-low-emission-zone/ways-to-meet-the-standard">avoid the charge and/or meet the standards</a>.</p>
+
+<p>The ULEZ daily charge is:</p>
+
+<ul>
+	<li>&pound;12.50 for most vehicle types, including cars, motorcycles and vans (up to and including 3.5 tonnes)</li>
+	<li>&pound;100 for heavier vehicles, including lorries (over 3.5 tonnes) and buses/coaches (over 5 tonnes)</li>
+</ul>
+</div>
+ <div>
+
+<h3>A change from LEZ standards</h3>
+
+<p>If you drive a lorry, van, bus, minibus or other specialist vehicle and it currently meets the London-wide LEZ emissions standards, <strong>it may not meet the ULEZ standards for central London</strong>.</p>
+
+<p><strong>From 26 October 2020 <a href="/modes/driving/low-emission-zone/changes-to-the-lez">LEZ emissions standards will change</a>.</strong></p>
+
+<h3>Non-UK registered vehicles</h3>
+
+<p>Owners of non-UK registered vehicles must also pay the ULEZ charge to drive within the zone if they do not meet the emissions standards.</p>
+
+<p>Our vehicle checker holds information on many vehicles registered outside the UK. If we don't hold your vehicle's details you will get the option to submit a copy of your vehicle's registration document showing the Euro standard it was manufactured to.</p>
+</div>
+ 
+<div>
+
+
+
+
+<h2>ULEZ expansion - October 2021</h2>
+
+<p>From 25 October 2021 the ULEZ boundary will be extended to create a single larger zone bounded by the North and South Circular Roads. If you are driving any petrol or diesel vehicle within the expansion you will also need to meet the tighter emissions standards or pay a daily charge.</p>
+
+<p>This daily charge is in addition to the weekday Congestion Charge if you drive in central London as well.</p>
+
+<p>Vehicles using the North and South Circular Roads and not going into the ULEZ will not be charged.</p>
+<div class="multi-document-download-container">
+    
+
+<a class="document-download-wrap landscape-download-image with-image pdfpdf" href="/ruc-cdn/static/cms/documents/ulez-boundary-map-from-25-october-2021.pdf">
+    <div class="document-download-text">
+        <p>ULEZ boundary map from 26 October 2021</p>
+    </div>
+    <div class="document-download-attachment">
+        <p>
+                        
+            PDF 179KB
+            
+        </p>
+    </div>
+    <div class="document-download-icon download-doc">
+    </div>
+
+    <div class="document-download-image">
+        <img src="/ruc-cdn/static/cms/images/ulez-boundary-2021-thumb.jpg" alt="thumbnail of ulez boundary map - 2021" />
+    </div>
+
+</a>
+
+<!-- 0.17 -->
+ 
+
+<a class="document-download-wrap landscape-download-image with-image pdfpdf" href="/ruc-cdn/static/cms/documents/ulez-boundary-2021-map-local-detail.pdf">
+    <div class="document-download-text">
+        <p>ULEZ boundary map from 26 October 2021 - with local detail</p>
+    </div>
+    <div class="document-download-attachment">
+        <p>
+                        
+            PDF 1.42MB
+            
+        </p>
+    </div>
+    <div class="document-download-icon download-doc">
+    </div>
+
+    <div class="document-download-image">
+        <img src="/ruc-cdn/static/cms/images/ulez-boundary-map-local-detail.jpg" alt="detail of ulez boundary map" />
+    </div>
+
+</a>
+
+<!-- 1.42 -->
+ 
+</div>
+
+</div>
+ <div>
+
+<h2>Discounts and exemptions</h2>
+
+<p>Residents who are registered for the <a href="/modes/driving/congestion-charge/discounts-and-exemptions">residents' Congestion Charge discount</a> will get a 100% ULEZ discount until 24 October 2021 to give them more time to change their vehicle to meet the ULEZ standards.</p>
+
+<p>Residents will continue to pay the T-Charge, at a discounted rate of 90%, during this ULEZ resident&nbsp;grace period.</p>
+
+<p>Find out about other <a href="/modes/driving/ultra-low-emission-zone/discounts-and-exemptions">discounts and exemptions</a>.</p>
+</div>
+ 
+      
+        
+          
+            @this.ScriptBlock(
+              @<script>
+                queue.push("@Html.ScriptPath("modules/M020-on-this-page.min.js")", null);
+              </script>
+            )
+          
+        
+      
+    </div>
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+ 
+                <a href="/modes/driving/ultra-low-emission-zone" class="heading">
+                    <h3 id="sub-menu-heading" class="h2">Ultra Low Emission Zone<span class="visually-hidden"> navigation</span></h3>
+                </a>
+                <ul>
+                    
+                                <li class="selected parent" aria-label="selected page with sub pages"><div class="link-wrapper"><a href="/modes/driving/ultra-low-emission-zone/ulez-where-and-when">ULEZ: Where and when</a></div>
+                                <ul>
+                                    
+                                <li aria-label="page with no sub pages"><div class="link-wrapper"><a href="/modes/driving/ultra-low-emission-zone/ulez-road-signs">ULEZ road signs</a></div></li>
+                            
+ 
+                                </ul>
+                            </li>
+ 
+                                <li class="parent" aria-label="page with sub pages"><div class="link-wrapper"><a href="/modes/driving/ultra-low-emission-zone/ulez-payments">Paying the ULEZ charge</a></div></li>
+                            
+ 
+                                <li aria-label="page with no sub pages"><div class="link-wrapper"><a href="/modes/driving/ultra-low-emission-zone/why-we-need-ulez">Why we need the ULEZ</a></div></li>
+                            
+ 
+                                <li class="parent" aria-label="page with sub pages"><div class="link-wrapper"><a href="/modes/driving/ultra-low-emission-zone/ways-to-meet-the-standard">ULEZ standards</a></div></li>
+                            
+ 
+                                <li aria-label="page with no sub pages"><div class="link-wrapper"><a href="/modes/driving/ultra-low-emission-zone/discounts-and-exemptions">Discounts and exemptions</a></div></li>
+                            
+ 
+                                <li aria-label="page with no sub pages"><div class="link-wrapper"><a href="/modes/driving/ultra-low-emission-zone/cars">Cars</a></div></li>
+                            
+ 
+                                <li aria-label="page with no sub pages"><div class="link-wrapper"><a href="/modes/driving/ultra-low-emission-zone/vans-minibuses-and-more">Vans, minibuses and more</a></div></li>
+                            
+ 
+                                <li aria-label="page with no sub pages"><div class="link-wrapper"><a href="/modes/driving/ultra-low-emission-zone/motorcycles-mopeds-and-more">Motorcycles, mopeds and more</a></div></li>
+                            
+ 
+                                <li aria-label="page with no sub pages"><div class="link-wrapper"><a href="/modes/driving/ultra-low-emission-zone/larger-vehicles">Lorries, coaches and larger vehicles</a></div></li>
+                            
+ 
+                                <li class="parent" aria-label="page with sub pages"><div class="link-wrapper"><a href="/modes/driving/ultra-low-emission-zone/penalty-charges-for-ulez">Penalty charges for ULEZ</a></div></li>
+                            
+ 
+                                <li class="parent" aria-label="page with sub pages"><div class="link-wrapper"><a href="/modes/driving/ultra-low-emission-zone/scrappage-scheme">Scrappage scheme for vans and minibuses</a></div></li>
+                            
+ 
+                                <li class="parent" aria-label="page with sub pages"><div class="link-wrapper"><a href="/modes/driving/ultra-low-emission-zone/car-and-motorcycle-scrappage-scheme">ULEZ Car and motorcycle scrappage scheme</a></div></li>
+                            
+ 
+                                <li aria-label="page with no sub pages"><div class="link-wrapper"><a href="/modes/driving/ultra-low-emission-zone/organisations-supporting-ulez-scrappage-schemes">Organisations supporting ULEZ scrappage schemes</a></div></li>
+                            
+ 
+                                <li class="parent" aria-label="page with sub pages"><div class="link-wrapper"><a href="/modes/driving/ultra-low-emission-zone/contact-ulez">Contact ULEZ</a></div></li>
+                            
+ 
+                                <li class="parent" aria-label="page with sub pages"><div class="link-wrapper"></div></li>
+                            
+ 
+                </ul>
+            
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+      </div>
+    
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="advert-tile unsponsored-style google-ads" aria-hidden="true">
+  <div class="advert-link">
+    <div class="advert-content">
+        <div class="medium-large" data-advert="/76889402/driving/ulez" data-advert-sizes="300, 250"></div>
+        <div class="small" data-advert="/76889402/driving/ulez" data-advert-sizes="300, 250"></div>
+    </div>
+  </div>
+</div>
+@{
+    ViewBag.AmazonSlot = "'amznslots'";
+    ViewBag.AmazonAds = "'3199'"; // to add another value, this needs to be ViewBag.AmazonAds = "'3199','xx'";
+}
+      
+
+ </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+     @section scripts {
+<div class="bottom-advert ">
+    <div class="close-ad-button visually-hidden"><span class="close-icon-circle"></span></div>
+    <div data-advert="/76889402/driving/" data-advert-sizes="320, 50"></div>
+</div>
+}
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "Where and when the ULEZ will operate";}
+        
+            
+        
+
+
+ 

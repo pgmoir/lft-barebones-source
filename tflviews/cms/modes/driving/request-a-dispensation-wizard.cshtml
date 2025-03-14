@@ -1,0 +1,270 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Request a dispensation";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/request-a-dispensation-wizard";}
+@{ViewBag.Language = "en";}
+        
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+                
+                <li><span class="last-breadcrumb">Request a dispensation</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Request a dispensation</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+        @using TfL.Web.Services.ViewModels.Ruc.Dispensation
+        @using TfL.Web.Services.ViewModels.Ruc.Enquiry
+        @{
+        dynamic content = new ContentModel();
+        
+        content.BackButtonText = "Back";
+        content.ContinueButtonText = "Continue";
+        content.LastContinueButtonText = "Submit";
+        content.FirstSectionTitle = "Reason for dispensation";
+        content.EnterReasonLabel = "Select the reason for your request";
+        content.EnterOtherReasonLabel = "Other reason";
+        content.EnterAdditionalInformationLabel = "Additional information";
+        content.EnterAdditionalInformationPrompt = "Provide details of your reason. For example, if selecting 'Building works', tell us a little more about the nature of the works. This will help to prevent delays to your application. ";
+        content.DateSectionHeading = "Select date(s)";
+        content.DateSectionExplanation = "<ol>	<li>Select the date you want the dispensation to start</li>	<li>Select the start time and how many hours it should run - avoiding peak hours will help get your application approved</li>	<li>Save</li></ol><p>The maximum dispensation length is <strong>7</strong> consecutive days. <strong>You must add and save each day separately.</strong></p><p>We require <strong>5</strong> working days to process your application.</p>";
+        content.EnterFromDateLabel = "From date";
+        content.EnterToDateLabel = "To date";
+        content.DatePickerPlaceholder = "dd/mm/yyyy";
+        content.TimeSectionHeading = "Specify the time for the dispensation request.";
+        content.TimeSectionExplanation = "The same time to be used on each of the days requested.";
+        content.EnterAllDayLabel = "All day";
+        content.StartTimeLabel = "Start time";
+        content.EndTimeLabel = "End time";
+        content.SecondSectionTitle = "Location for dispensation";
+        content.LocationInformationExplanation = "Tell us about the exact location where you want to park. For example, outside/opposite house number or building/shop name. This will help you avoid a rejected application.";
+        content.EnterLocationInformationLabel = "Location information";
+        content.EnterRestrictionsLabel = "Restrictions at this location";
+        content.VehicleSectionHeading = "Vehicle type(s)";
+        content.VehicleSectionInstruction = "Select the type of vehicle(s) required for the dispensation. (If the application is for one vehicle only, do not select details for vehicles 2 and 3.)";
+        content.FirstVehicleTypeLabel = "Vehicle 1";
+        content.SecondVehicleTypeLabel = "Vehicle 2";
+        content.ThirdVehicleTypeLabel = "Vehicle 3";
+        content.ThirdSectionTitle = "Personal details";
+        content.PersonalDetailsSectionHeading = "Your details";
+        content.EnterFirstNameLabel = "First name";
+        content.EnterSurnameLabel = "Last name";
+        content.EnterMiddleNameLabel = "Middle name";
+        content.AddressSectionHeading = "Your contact address";
+        content.ContactDetailsLabel = "Contact details";
+        content.EnterContactNumberLabel = "Telephone number";
+        content.EnterEmailAddressLabel = "Email address";
+        content.ConfirmEmailAddressLabel = "Confirm email address";
+        content.EnterCompanynameLabel = "Company name";
+        content.ReviewSectionHeading = "Review your request";
+        content.FirstSectionReviewHeading = "Reason and dates";
+        content.EditFirstSectionButtonText = "Edit";
+        content.DispensationPeriodReviewHeading = "Date and time period";
+        content.DispensationReasonHeading = "Reason for your dispensation request";
+        content.SecondSectionReviewHeading = "Location and vehicles";
+        content.EditSecondSectionButtonText = "Edit";
+        content.ReviewLocationHeading = "Street address";
+        content.ReviewRestrictionHeading = "Restriction";
+        content.ReviewVehicleHeading = "Vehicle(s)";
+        content.ThirdSectionReviewHeading = "Personal details";
+        content.EditThirdSectionButtonText = "Edit";
+        content.ReviewLocationInformationHeading = "Location information";
+        content.ReviewNameHeading = "Name";
+        content.ReviewAddressHeading = "Address";
+        content.ReviewContactNumberHeading = "Telephone number";
+        content.ReviewEmailAddressHeading = "Email address";
+        content.ReviewCompanyHeading = "Company";
+        content.DeclarationText = "<p>I confirm that I have read and agree to the red routes dispensation terms and conditions.</p>";
+        content.PrivacyNoticeDeclarationText = "<p>Read the <a href='/corporate/privacy-and-cookies/road-user-charging' target='_blank'>London Road User Charging privacy notice</a>.</p>";
+        content.EstimatedPriceText = "Estimated cost for this dispensation application is: ";
+        content.EnterWorksPermitLabel = "Permit reference number";
+        content.EnterAboutChosenRestrictionLabel = "Tell us about the restriction at this location.";
+        content.OtherRestrictionHelperTextHeader = "What are restrictions?";
+        content.OtherRestrictionHelperText = "<p><strong>Double red lines</strong><br />Vehicles are not allowed to stop at any time on double red lines. They operate every day, 24 hours a day, 365 days a year and do not require a time plate (sign).</p><p><strong>Single Red lines</strong><br />Vehicles are allowed to stop on single red lines at certain times of day. There will be a sign located near to the line that will inform you of the times.</p><p><strong>Parking bays</strong><br />Their availability is limited and some are only available during specified periods when their use will not cause any major disruption to our busy road network. We often limit the amount of time you have to park at popular locations so that others drivers can also use the bay. Always check the signs to see when and for how long you can park.</p><p><strong>Loading bays</strong><br />Loading bays are an essential part of the red route network as they allow businesses and the general public to make and receive vital, and often bulky deliveries. We often limit the amount of time you have to load at popular locations so that others drivers can also use the bay. Always check the signs to see when and for how long you can park.</p><p><strong>Bus Stop</strong><br />As the name suggests these are bays restricted for use by vehicles that are defined as buses Bus stops have a double red line or wide red line with yellow lines to outline the box.</p><p><strong>Other bays</strong><br />Bays are provided for either specific activity or vehicles. For example, a disabled bay can only be used if the vehicle is displaying a valid Blue Badge. Or a bus stand can only be used if the vehicle is defined as a bus.</p>";
+        content.TermsAndConditionsConfirmationText = "<p>I confirm that I have read and agree to the red routes dispensation terms and conditions.</p>";
+        content.VehicleDetailsToBeAddedText = "If approved, you will be asked to provide the vehicle details (vehicle registration, make, make, model and colour) at a later date.";
+        content.WorksPermitInstructionText = "Do you have an existing TfL works permit for this location? If so, please enter the reference number.";
+
+        content.ReasonRequired = "Select a reason for your dispensation";
+        content.ReasonTextRequired = "Tell us more about why you need a dispensation";
+        content.AddressLineOneText = "Street name (only)";
+        content.AddressLineOneRequired = "Required field";
+        content.PostCodeRegularExpression = "Check you have entered the correct postcode";
+        content.LocationRestrictionRequired = "Select the current restriction at this location";
+        content.DispensationLocationRequired = "Enter the address of the location you want the dispensation for.";
+        content.LocationInformationRequired = "Provide detailed information about the location you would like the dispensation for.";
+
+        content.TypeRequired = "Select this vehicle type";
+        content.FirstVehicleTypeRequired = "Select this vehicle type";
+        content.FirstNameRequired = "Enter first name";
+        content.SurnameRequired = "Enter last name";
+        content.PostCodeRequired = "Enter a postcode to continue";
+        content.ContactNumberRequired = "Enter a telephone number to continue";
+        content.ContactNumberStringLength = "Maximum 31 characters for telephone number";
+        content.EmailAddressRequired = "Enter a valid email address to continue";
+        content.EmailAddressEmailAddress = "Confirm email address to continue";
+        content.ConfirmEmailAddressCompare = "Email addresses do not match (case sensitive)";
+        content.ConfirmDetailsRequireTrue = "Accept the terms and conditions to continue";
+        content.ConfirmPrivacyNoticeRequireTrue = "Confirm that you have read and understood the privacy notice";         
+
+        content.MaxAvailableDaysForDispensationReachedWarning = "You have reached the maximum number of days available for this dispensation request";
+        content.DateTimeOfDispensationRequestText = "Date and times of your dispensation request";
+        content.MustSelectTimeAndDurationErrorText = "Select and save a start time and number of hours to continue";
+        content.AddStartTimeAndDurationText = "Please add a start time and a duration to your request.";
+        content.DispensationOnText = "Dispensation on";
+        content.CheckDateText = "Please check the date you are trying to add.";
+        content.NextAvailableDateLabel = "Your next available date";
+        content.ConfirmEmailAddressRequired = "Confirm email address to continue";
+
+
+        Html.RenderAction(
+        "RequestDispensation",
+        "Dispensation",
+        new
+        {
+            area = "Ruc",
+            resultUrl = "/modes/driving/request-a-dispensation-confirmation",
+            backUrl = "/modes/driving/request-a-dispensation",
+            content = content
+        });
+    }
+      
+  
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+      </div>
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

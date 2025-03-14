@@ -1,0 +1,160 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Renew recovery vehicle discount";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-recovery-vehicle-renew-before-you-begin-34015";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Renew recovery vehicle discount</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Renew recovery vehicle discount</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      <h2>Before you start</h2>
+      
+           
+      
+
+ 
+        
+        <!-- 7. recovery-vehicle -->
+        <p>Your recovery vehicle discount is due to expire.</p>
+
+<p>If the vehicle is still eligible you can renew the discount for another year.</p>
+
+<p>You&nbsp;don't have to submit any more documents - we verified your vehicle's eligibility for the discount when you first applied.</p>
+        @{
+            dynamic content = new ContentModel();
+            content.ContinueButtonText = "Continue";
+            content.Title = "Before you begin";
+            content.CostInfoTitle = "<h4>Cost</h4>";
+            content.CostInfoText = "<p>You need to pay £10 to renew the discount. If you pay now, it will be renewed immediately.</p>";
+            content.BackButtonText = "Back";
+            
+            Html.RenderAction("DiscountBeforeYouBegin", "DiscountRenew", new
+                {
+                    area = "Ruc",
+                    nextUrl = "/modes/driving/cc-recovery-vehicle-renew-review-34019",
+                    backUrl = "/modes/driving/cc-recovery-vehicle-manage-34022",
+                    content = content,
+                    discountStyle = ZoneChargeDiscountStyle.RecoveryVehicle
+                }
+            );
+        }
+        
+	  
+
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+      <div>
+                    
+        <div class="vertical-button-container">
+    <ul>
+        
+        
+        
+        <li><a href="/modes/driving/congestion-charge/paying-the-congestion-charge"  class="plain-button">Congestion Charge payments</a></li>
+        
+        
+        <li><a href="/modes/driving/congestion-charge/congestion-charge-zone"  class="plain-button">Congestion Charge zone</a></li>
+        
+        
+        <li><a href="/modes/driving/auto-pay"  class="plain-button">Auto Pay</a></li>
+        
+        
+        <li><a href="/modes/driving/congestion-charge/discounts-and-exemptions"  class="plain-button">Discounts and exemptions</a></li>
+        
+        
+        <li><a href="/modes/driving/congestion-charge/contact-congestion-charge"  class="plain-button">Contact Congestion Charge</a></li>
+        
+    </ul>
+</div>
+
+      </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

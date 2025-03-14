@@ -1,0 +1,160 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Amend a Congestion Charge";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-change-a-charge-find-a-charge-26478";}
+@{ViewBag.Language = "en";}
+        
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Amend a Congestion Charge</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Amend a Congestion Charge</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/account-account-landing-29377"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+    
+      <h2>Find a charge</h2>
+      
+           
+      
+
+ 
+
+
+		
+		<!-- 5. cc-find-a-charge -->
+		@using TfL.Ruc.Services.ViewModels.Ruc.ZoneCharge;
+		@{
+            dynamic content = new ContentModel();
+            
+            content.BackButtonText = "Cancel";
+            content.ContinueButtonText = "Continue";
+            content.InstructionText = "Enter the details of the charge you want to amend. There is a &pound;2.50 charge to change a Congestion Charge payment.";
+            content.VrmTextBoxLabel = "Vehicle Registration Mark";
+            content.VrmTextBoxPlaceHolder = "eg AB01ABC";
+            content.ReceiptNumberTextBoxLabel = "Receipt number";
+            content.ReceiptNumberTextBoxPlaceHolder = "";
+            content.StartDateTextBoxLabel = "Current charge start date";
+            content.UserHasAccountErrorMessage = "";
+            content.ChargeNotFoundErrorMessage = "We cannot find your charge - please check your details. If you paid this charge through an account you need to sign in to search for it.";
+            content.ChargeDetailsHeading = "Charge details";
+            content.ChargeDatesPassedErrorMessage = "You cannot amend a charge with a start date earlier than today";
+            content.ChargeNotAuthorisedErrorMessage = "";
+
+            content.VrmRequired = "Enter a Vehicle Registration Mark to continue";
+            content.ReceiptNumberRequired = "Enter a receipt number to continue";
+            content.StartDateRequired = "Enter a start date to continue";
+            
+            Html.RenderAction(
+            "FindCharge",
+            "ChangeZoneCharge",
+            new
+            {
+                area = "Ruc",
+                resultUrl = "/modes/driving/cc-change-a-charge-change-a-charge-26481",
+                backUrl = "/modes/driving/congestion-charge",
+                content = content,
+                zoneType = ZoneChargeZone.CongestionCharge,
+                loginUrl = "/modes/driving/login"
+            });
+        }
+		
+	  
+
+  
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "Enter the details of the charge you want to amend. There is a £2.50 charge to change a Congestion Charge payment.";}
+        
+            
+        
+
+
+ 

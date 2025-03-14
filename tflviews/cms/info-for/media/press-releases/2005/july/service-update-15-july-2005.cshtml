@@ -1,0 +1,89 @@
+﻿
+
+
+@{ViewBag.Title = "Service Update 15 July 2005";}
+        
+        
+
+<div class="r">
+    <div class="headline-container plain">
+        <h1>Service Update 15 July 2005</h1>
+        <div class="content-page-press-release">
+        15 July 2005
+        </div>
+    </div>
+</div>
+<div class="main-and-aside r">
+    <div class="main" role="main">
+
+    <div class="article-teaser">
+        Following agreement with the Police the Victoria line is now stopping at King's Cross St. Pancras.
+        
+    </div>
+
+
+
+ <div class="on-this-page">
+<p>From the first train tomorrow (18 July) King's Cross St Pancras Underground station is open for the Metropolitan, Northern and Victoria lines and interchange with other Underground lines is available.</p>
+<p>We will not be in a position to add to the current level of service on the Metropolitan, Circle, District and Hammersmith and City lines for a number of days.</p>
+<p>The service on the Piccadilly line will remain suspended between Arnos Grove and Hyde Park Corner and for the foreseeable future.</p>
+<p>Thank you for your continued patience as we work to resume full services.</p>
+<p><a href="http://www.tfl.gov.uk/tube/travelinfo/realtime/default.asp">Click here to view all the live travel news</a></p>
+<p>Mike Brown<br>Chief Operating Officer<br></p>
+
+     
+
+        
+        
+        
+        @this.ScriptBlock(
+        @<script>
+        //queue.push("@Html.ScriptPath("modules/M020-on-this-page.min.js")", null);
+        </script>
+        )
+        
+        
+        
+        </div>
+    </div>
+    <div class="aside" role="complementary">
+
+       
+        <div data-set="sidenav-container" class="large">
+
+            
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+        </div>
+
+
+
+            
+        <div data-set="sidenav-container" class="small-medium"></div>
+    </div>
+</div>
+
+<!-- Crumbs: PGtype:  -->
+
+ 
+ 
+        
+        
+            @{ViewBag.Description = "From the first train tomorrow (18 July) King's Cross St Pancras Underground station is open for the Metropolitan, Northern and Victoria lines and interchange with other Underground lines is available.We will not be in a position to add to the current";}
+        
+        
+
+
+ 

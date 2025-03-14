@@ -1,0 +1,506 @@
+﻿
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@section adverts {
+    <div class="top-banner-advert" aria-hidden="true">
+        <div class="large" data-advert="/76889402/driving/low_emission_zone" data-advert-sizes="970, 90|970, 250"></div>
+        <div class="medium" data-advert="/76889402/driving/low_emission_zone" data-advert-sizes="728, 90"></div>
+        <div class="small" data-advert="/76889402/driving/low_emission_zone" data-advert-sizes="300, 50|320, 50"></div>
+    </div>
+}
+
+
+ 
+  
+
+
+
+@{ViewBag.Title = "LEZ: Where and when";}
+@{ViewBag.Keywords = "Bus operators,Businesses,Coach drivers,Drivers,Freight industry,Planning and construction,Public,Schools and young people,Suppliers,Buses,Coaches,Driving,TfL";}
+@{ViewBag.Url = "/modes/driving/low-emission-zone/about-the-lez";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                 <li><a href="/modes/driving/low-emission-zone">Low Emission Zone</a></li>
+                
+            
+                
+                <li><span class="last-breadcrumb">LEZ: Where and when</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>LEZ: Where and when</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/account-account-landing-29377"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+      <div class="article-teaser">
+        <p>The Low Emission Zone (LEZ) was set up to encourage the most polluting heavy diesel vehicles driving in the Capital to become cleaner. It covers most of Greater London and operates 24 hours a day, every day of the year.</p>
+        
+      </div>
+    
+    <div class="on-this-page">
+      
+    
+      
+           
+      
+<div class="module-grid clearfix">
+<div>
+
+<div class="call-to-action-button">
+       <a href="/modes/driving/pay-to-drive-in-london" class="secondary-button no-hover" >Pay to drive in London</a>
+
+    </div>
+</div> 
+ 
+</div>
+ <div>
+
+<h2>Where it operates</h2>
+
+<p>Enter a street name, postcode or landmark in the search box to see its location in relation to the charging zones. View zones to show/hide their areas. To see if an address is inside or outside the zones, use the postcode search instead.</p>
+</div>
+ 
+   
+         <h2>Postcode and map search</h2>
+            <div class="responsive-form zone-checker-in-page">
+                
+                <p>Enter a postcode to see if it's inside one or more of the charging zones. Results will not be displayed on the map.</p>
+
+                @{
+                    dynamic content = new ContentModel();
+                    
+                    content.PayCongestionChargeLinkText = "Pay to drive in London";
+                    content.PayCongestionChargeUrl = "/modes/driving/account-vehicles";
+                    content.PayCongestionChargeAnonymousUrl = "/modes/driving/pay-to-drive-in-london";
+                    content.ResidentDiscountLinkText = "Apply for residents' discount";
+                    content.ResidentDiscountUrl = "/modes/driving/cc-resident-discount-before-you-begin-29632";
+
+                    <p class="visually-hidden" aria-label="Please go to post code checker at the bottom of the page">
+                        Please go to post code checker at the bottom of the page
+                    </p>                    
+
+                    Html.RenderAction(RucDictionary.ZoneChecker.DefaultActionName, "ZoneChecker", new
+                        {
+                            area = "Ruc",
+                            zoneChargeType = ZoneChargeType.LowEmissionZone,
+                            content = content,
+                            findAnotherUrl = "/modes/driving/low-emission-zone/about-the-lez"
+                        });
+                }
+            </div>
+            
+            <div class="search-filter">
+                <div class="heading clearfix">
+                    <div class="search-icon-black"></div>
+                    <h3>Map search</h3>
+                </div>
+                @{
+                    Html.RenderAction("SearchFilter", "Modules", new
+                    {
+                        actionUrl = Library.DisambiguationSettings.DisambiguationUrl,
+                        ajaxEnabled = true,
+                        currentLocationSubmitUrl = "/maps/lez",
+                        additionalFields = new List<string> { "InputGeolocation" },
+                        buttonText = "Go",
+                        dataSets = new[] {
+ new[]{ Library.DisambiguationDataSets.PlacesExtra, "/maps/congestion-charge?Input={{input}}&InputGeolocation={{lon}},{{lat}}" }, 
+ },
+                        modes = string.Format(
+                        "{0},{1},{2},{3},{4},{5},{6},{7}",
+                        Library.MeansOfTransport.Tube,
+                        Library.MeansOfTransport.DLR,
+                        Library.MeansOfTransport.Overground,
+                        Library.MeansOfTransport.Bus,
+                        Library.MeansOfTransport.River,
+                        Library.MeansOfTransport.RiverTours,
+                        Library.MeansOfTransport.Tram,
+                        Library.MeansOfTransport.CableCar
+                        ),
+                        placeHolderText = "Location, postcode or landmark",
+                        noResultsFoundText = "Couldn't find any results to match your search. Please try again."
+                    });
+                }
+            </div>
+            
+            <p class="visually-hidden" aria-label="Please use the postcode checker instead">
+                Please use the postcode checker instead
+            </p>
+            
+            <p>Click View zones&nbsp;to also check the Congestion Charge,&nbsp;ULEZ and DVS zones.</p>
+
+            @{ 
+                Html.RenderAction("EmbeddedMap", "Maps", new
+                {
+                    layers = "congestion-charging-zone,low-emissions-zone",
+                    layersVisibleAtLoad = "low-emissions-zone",
+                    centreLat = "",
+                    centreLng = "",
+                    zoom = "10",
+                    showSatelliteMap = "0",
+                    showUserLocation = "0",
+                    kmlUrl = "",
+                    zoomThresholds = new EmbeddedMapViewModel.EmbeddedMapZoomThresholds() { },
+                    resultSelectedZoom = "11",
+                    showStreetView = false
+                });
+            }
+
+
+            @{
+                var lezChargePdf = "/ruc-cdn/static/cms/documents/low-emission-zone-map.pdf";
+                lezChargePdf = string.IsNullOrEmpty(lezChargePdf) ? "#" : lezChargePdf;
+            }
+
+            <div class="map-downloads-wrapper">
+	            <a title="Download the Low Emission zone map as a PDF"
+                    class="btn-download-map" 
+                    href="@lezChargePdf">
+		            <span>Low Emission Zone Map</span>
+		            <span class="download-pdf">PDF 1632.84</span>
+	            </a>
+            </div>
+            @this.ScriptBlock(
+                @<script>
+                    queue.push("@Html.ScriptPath("modules/M020-on-this-page.min.js")", null);         
+                </script>
+            )
+	  
+			  <div>
+
+<h2>Charging times</h2>
+
+<ul>
+	<li><strong>Congestion Charge (CC):</strong>&nbsp;No charge&nbsp;18:00-07:00 on weekdays or on weekends, public holidays or any days between Christmas Day and New Year's Day</li>
+	<li><strong>ULEZ: </strong>Operates midnight to midnight, every day of the year, except Christmas Day (25 December)</li>
+	<li><strong>LEZ:</strong> Operates midnight to midnight, every day of the year</li>
+	<li><strong>Direct Vision Standard (DVS) and HGV Safety Permit:</strong> Operates at all times for lorries over 12 tonnes gross vehicle weight.</li>
+</ul>
+
+<p>Find out&nbsp;more about paying the <a href="https://turing.online.tfl.gov.uk/modes/driving/congestion-charge/paying-the-congestion-charge">Congestion Charge</a>, <a href="https://turing.online.tfl.gov.uk/modes/driving/ultra-low-emission-zone/ulez-payments">ULEZ</a>,&nbsp;<a href="https://turing.online.tfl.gov.uk/modes/driving/low-emission-zone/make-a-payment">LEZ</a>, and learn more&nbsp;about&nbsp;<a href="https://turing.online.tfl.gov.uk/info-for/deliveries-in-london/delivering-safely/direct-vision-in-heavy-goods-vehicles?intcmp=52876">DVS</a>.</p>
+</div>
+ <div>
+
+<p>All roads within Greater London, those at Heathrow and parts of the M1 and M4 are included. However, the M25 is not included (even where it passes within the GLA boundary). Look out for signs at the boundary and side of the road to see <a href="/modes/driving/low-emission-zone/about-the-lez/lez-road-signs">where&nbsp;LEZ applies</a>.</p>
+
+<h3>Driving in central London</h3>
+
+<p><strong>The LEZ isn't the same as the Congestion Charge zone in central London.</strong> The <a href="/modes/driving/congestion-charge">Congestion Charge</a> applies 07:00-18:00 Monday to Friday, excluding public and bank holidays and the period between Christmas and New Year's Day. If you drive within the charging zone during these times you need to pay the Congestion Charge, even if you meet the LEZ emissions standards or have paid the daily LEZ charge.</p>
+
+<p>You will also need to pay the <a href="/modes/driving/ultra-low-emission-zone">Ultra Low Emission Zone (ULEZ)</a> charge if you don't meet the ULEZ standards - the ULEZ operates 24 hours a day, every day of the year except Christmas Day (25 December).</p>
+
+<h2>When it operates</h2>
+
+<p>The LEZ operates 24 hours a day, every day of the year - this includes&nbsp;weekends, public and bank holidays, and the period between Christmas and New Year's Day.</p>
+
+<p>Charging days run from midnight to midnight - if you drive within the LEZ between 23:30 and 01:00 the next day, you'd need to pay for two days.</p>
+
+<p>Vehicles parked in the zone but not driving are not subject to LEZ requirements for that day.</p>
+</div>
+ <div>
+
+<h2>How the LEZ works</h2>
+
+<p>There are no barriers or toll booths within the LEZ. Instead, cameras will read your number plate as you drive within the LEZ and check it against our database of registered vehicles.</p>
+
+<p>This database is compiled using information from the DVLA and the Driver and Vehicle Standards Agency (DVSA), generic vehicle weight data typical of the make and model, and drivers and operators who have registered with us.</p>
+
+<p>This tells us automatically whether your vehicle meets the LEZ emissions standards, is exempt, is registered for a discount, or if you've already paid the daily charge.</p>
+
+<h2>Vehicles registered outside the UK</h2>
+
+<p>If you're driving a vehicle registered outside the UK, you'll need to register it with us to let us know that it meets the LEZ emissions standards so we can add your vehicle to our database.</p>
+
+<p>It's important that you do this, because if you drive in the LEZ without registering, even if your vehicle meets the standards, you'll have to pay the daily charge, or may receive a Penalty Charge Notice.</p>
+
+<p><a href="/modes/driving/low-emission-zone/find-out-if-you-need-to-register">Find out more about registering your vehicle</a>.</p>
+
+<h2>Future changes to LEZ and ULEZ</h2>
+
+<p>In addition to the existing LEZ emissions standards operating across most of Greater London, a phased implementation of tougher emissions standards will affect different vehicle types and different geographical areas within London.</p>
+
+<h3>LEZ from 26 October 2020</h3>
+
+<p>Emissions standards, daily charges and penalties will change for HGVs, lorries, vans and other specialist heavy vehicles over 3.5 tonnes, as well as buses/minibuses and coaches over 5 tonnes being used within the LEZ. (Vehicles that comply with ULEZ will already meet the tougher emissions standards.)</p>
+
+<p>Our vehicle checker will show if you're likely to be affected by <a href="/modes/driving/low-emission-zone/changes-to-the-lez">changes to the LEZ emissions standards</a>.</p>
+
+<h3>ULEZ from 25 October 2021</h3>
+
+<p>The ULEZ boundary around central London will be extended to create a larger zone bounded by the North and South Circular Roads. If you drive any vehicle within this enlarged area you will need to meet tougher emissions standards or pay a daily charge. This daily charge is in addition to the weekday Congestion Charge.</p>
+
+<h2>Non-road mobile machinery</h2>
+
+<p>We also need to reduce emissions from non-road mobile machinery (NRMM) to protect and improve Londoners' health.</p>
+
+<p>A NRMM LEZ sets minimum emissions standards for machinery used on construction sites. More information is on the <a href="https://nrmm.london/">NRMM London website</a>.</p>
+</div>
+ 
+      
+        
+          
+            @this.ScriptBlock(
+              @<script>
+                queue.push("@Html.ScriptPath("modules/M020-on-this-page.min.js")", null);
+              </script>
+            )
+          
+        
+      
+    </div>
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/low-emission-zone" });
+        }
+        
+      
+
+ 
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+ 
+ 
+                <a href="/modes/driving/low-emission-zone" class="heading">
+                    <h3 id="sub-menu-heading" class="h2">Low Emission Zone<span class="visually-hidden"> navigation</span></h3>
+                </a>
+                <ul>
+                    
+                                <li class="selected parent" aria-label="selected page with sub pages"><div class="link-wrapper"><a href="/modes/driving/low-emission-zone/about-the-lez">LEZ: Where and when</a></div>
+                                <ul>
+                                    
+                                <li aria-label="page with no sub pages"><div class="link-wrapper"><a href="/modes/driving/low-emission-zone/about-the-lez/lez-road-signs">LEZ road signs</a></div></li>
+                            
+ 
+                                </ul>
+                            </li>
+ 
+                                <li class="parent" aria-label="page with sub pages"><div class="link-wrapper"><a href="/modes/driving/low-emission-zone/make-a-payment">Pay a LEZ charge</a></div></li>
+                            
+ 
+                                <li class="parent" aria-label="page with sub pages"><div class="link-wrapper"><a href="/modes/driving/low-emission-zone/ways-to-meet-the-standards">Ways to meet the LEZ standards</a></div></li>
+                            
+ 
+                                <li class="parent" aria-label="page with sub pages"><div class="link-wrapper"><a href="/modes/driving/low-emission-zone/find-out-if-you-need-to-register">Find out if you need to register</a></div></li>
+                            
+ 
+                                <li class="parent" aria-label="page with sub pages"><div class="link-wrapper"><a href="/modes/driving/low-emission-zone/check-if-your-vehicle-is-affected">Check if your vehicle is affected</a></div></li>
+                            
+ 
+                                <li aria-label="page with no sub pages"><div class="link-wrapper"><a href="/modes/driving/low-emission-zone/lorries-vans-buses-and-coaches">HGVs, lorries, vans, buses/minibuses and coaches</a></div></li>
+                            
+ 
+                                <li aria-label="page with no sub pages"><div class="link-wrapper"><a href="/modes/driving/low-emission-zone/vans-minibuses-and-specialist-diesel-vehicles">Vans, minibuses and specialist diesel vehicles </a></div></li>
+                            
+ 
+                                <li class="parent" aria-label="page with sub pages"><div class="link-wrapper"><a href="/modes/driving/low-emission-zone/penalty-charges">Penalty charges for the LEZ</a></div></li>
+                            
+ 
+                                <li aria-label="page with no sub pages"><div class="link-wrapper"><a href="/modes/driving/low-emission-zone/manufacturers-and-fitters">Manufacturers and fitters</a></div></li>
+                            
+ 
+                                <li aria-label="page with no sub pages"><div class="link-wrapper"><a href="/modes/driving/low-emission-zone/changes-to-the-lez">Changes to the LEZ</a></div></li>
+                            
+ 
+                                <li class="parent" aria-label="page with sub pages"><div class="link-wrapper"><a href="/modes/driving/low-emission-zone/contact-lez">Contact LEZ</a></div></li>
+                            
+ 
+                </ul>
+            
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+      </div>
+    
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="advert-tile unsponsored-style google-ads" aria-hidden="true">
+  <div class="advert-link">
+    <div class="advert-content">
+        <div class="medium-large" data-advert="/76889402/driving/lez" data-advert-sizes="300, 250"></div>
+        <div class="small" data-advert="/76889402/driving/lez" data-advert-sizes="300, 250"></div>
+    </div>
+  </div>
+</div>
+@{
+    ViewBag.AmazonSlot = "'amznslots'";
+    ViewBag.AmazonAds = "'3199'"; // to add another value, this needs to be ViewBag.AmazonAds = "'3199','xx'";
+}
+      
+
+ </div>
+    
+      <div>
+                    
+        <div class="related-links">
+
+    <h3>Also on this site</h3>
+
+<div class="vertical-button-container">
+
+<a href="/modes/driving/congestion-charge/contact-congestion-charge" class="plain-button">Contact Congestion Charge</a>
+<a href="/modes/driving/ultra-low-emission-zone/contact-ulez" class="plain-button">Contact ULEZ</a>
+<a href="/info-for/deliveries-in-london/" class="plain-button">Deliveries in London</a>
+<a href="/corporate/publications-and-reports/low-emission-zone" class="plain-button">LEZ publications</a>
+    </div>
+</div>
+ <div class="related-links">
+
+    <h3>Related websites</h3>
+
+<div class="vertical-button-container">
+
+<a href="https://www.gov.uk/government/organisations/driver-and-vehicle-standards-agency" class="plain-button">DVSA</a>
+<a href="http://www.dft.gov.uk/dvla/about.aspx" class="plain-button">DVLA</a>
+<a href="http://www.cleanerairforlondon.org.uk/" class="plain-button">Cleaner Air for London</a>
+<a href="https://www.sourcelondon.net/" class="plain-button">Source London</a>
+    </div>
+</div>
+ 
+      </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+     @section scripts {
+<div class="bottom-advert ">
+    <div class="close-ad-button visually-hidden"><span class="close-icon-circle"></span></div>
+    <div data-advert="/76889402/driving/" data-advert-sizes="320, 50"></div>
+</div>
+}
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "The Low Emission Zone (LEZ) covers most of Greater London and operates 24/7";}
+        
+            
+        
+
+
+ 

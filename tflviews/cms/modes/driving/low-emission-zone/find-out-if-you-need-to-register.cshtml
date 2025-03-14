@@ -1,0 +1,369 @@
+﻿
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@section adverts {
+    <div class="top-banner-advert" aria-hidden="true">
+        <div class="large" data-advert="/76889402/driving/low_emission_zone" data-advert-sizes="970, 90|970, 250"></div>
+        <div class="medium" data-advert="/76889402/driving/low_emission_zone" data-advert-sizes="728, 90"></div>
+        <div class="small" data-advert="/76889402/driving/low_emission_zone" data-advert-sizes="300, 50|320, 50"></div>
+    </div>
+}
+
+
+ 
+  
+
+
+
+@{ViewBag.Title = "Find out if you need to register";}
+@{ViewBag.Keywords = "Bus operators,Businesses,Coach drivers,Drivers,Freight industry,Planning and construction,Public,Schools and young people,Suppliers,Buses,Coaches,Driving,TfL";}
+@{ViewBag.Url = "/modes/driving/low-emission-zone/find-out-if-you-need-to-register";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                 <li><a href="/modes/driving/low-emission-zone">Low Emission Zone</a></li>
+                
+            
+                
+                <li><span class="last-breadcrumb">Find out if you need to register</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Find out if you need to register</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/account-account-landing-29377"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+      <div class="article-teaser">
+        <p>Most vehicles don't need to register with us because we already know if they meet the emissions standards for the Low Emission Zone (LEZ) and the Ultra Low Emission Zone (ULEZ).</p>
+        
+      </div>
+    
+    <div class="on-this-page">
+      <h2>Vehicles registered in the United Kingdom</h2>
+
+<p>Register your vehicle with us if:</p>
+
+<ul>
+	<li>It is <a href="/modes/driving/low-emission-zone/check-if-your-vehicle-is-affected">listed by us as NOT meeting LEZ/ULEZ emissions standards</a> but you can provide evidence that it does</li>
+	<li>You are a <a href="/modes/driving/low-emission-zone/check-if-your-vehicle-is-affected/exemptions-and-discounts">showman with a modified or specially constructed vehicle</a></li>
+</ul>
+
+<h2>Vehicles registered outside the United Kingdom</h2>
+
+<p>Register your vehicle with us if:</p>
+
+<ul>
+	<li>It is <a href="/modes/driving/low-emission-zone/check-if-your-vehicle-is-affected">listed by us as NOT meeting LEZ/ULEZ emissions standards</a> but you can provide evidence that it does</li>
+	<li>It qualifies for an exemption or discount. <a href="/modes/driving/low-emission-zone/check-if-your-vehicle-is-affected/exemptions-and-discounts">Read more about exemptions and discounts</a></li>
+</ul>
+
+<h2>Next steps</h2>
+
+<p>First, click the button below to check your vehicle. At the end of the process you will be able to register your vehicle with us if you still need to.</p>
+      
+           
+      
+<div class="module-grid clearfix">
+<div>
+
+<div class="call-to-action-button">
+       <a href="/modes/driving/check-your-vehicle-35896" class="secondary-button no-hover" >Check your vehicle</a>
+
+    </div>
+</div> 
+ 
+</div>
+ <div>
+
+<p>You can also check if your vehicle will be affected by the <a href="/modes/driving/low-emission-zone/changes-to-the-lez">tougher LEZ emissions standards coming on 26 October 2020</a>.</p>
+
+<h2>Cherished Transfer</h2>
+
+<p>If you have already registered with us you must notify the <a href="https://www.gov.uk/government/organisations/driver-and-vehicle-standards-agency">Driver and Vehicle Standards Agency (DVSA)</a> immediately when your vehicle's number plate of your vehicle has changed if it has a Reduced Pollution or Low Emission Certificate.</p>
+
+<p>For Heavy Goods Vehicles over 3.5 tonnes Gross Vehicle Weight you will need to submit a Notifiable Alteration Form, the appropriate fee along with the original Reduced Pollution or Low Emission Certificate. You can <a href="https://www.gov.uk/government/publications/details-of-notifiable-alterations-or-application-for-a-change-of-plated-details-of-a-goods-motor-vehicle">download the notifiable alteration form and guidance notes on GOV.UK</a>.</p>
+
+<p>For Light Goods Vehicles 3.5 tonnes Gross Vehicle Weight and under, you will need to send a copy of the V5C vehicle registration certificate (logbook) displaying the new Vehicle Registration Mark along with the original Reduced Pollution or Low Emission Certificate to:</p>
+
+<p>Driver and Vehicle Standards Agency<br />
+PSV section<br />
+The Ellipse<br />
+Padley Road<br />
+Swansea<br />
+SA1 8AN</p>
+
+<p>There is no fee for the issue of a new certificate.</p>
+
+<p>For buses, coaches or minibuses, you will need to submit a copy of the V5C vehicle registration certificate (logbook) displaying the new number plate (Vehicle Registration Mar) along with the original Reduced Pollution or Low Emission Certificate and, if is applies, the original Certificate of Initial Fitness. All documents should be sent together to the address above.</p>
+
+<p>There is no fee for the issue of new Reduced Pollution or Low Emission Certificates due to number plate change.</p>
+</div>
+ 
+      
+        
+          
+            @this.ScriptBlock(
+              @<script>
+                queue.push("@Html.ScriptPath("modules/M020-on-this-page.min.js")", null);
+              </script>
+            )
+          
+        
+      
+    </div>
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/low-emission-zone" });
+        }
+        
+      
+
+ 
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+ 
+ 
+                <a href="/modes/driving/low-emission-zone" class="heading">
+                    <h3 id="sub-menu-heading" class="h2">Low Emission Zone<span class="visually-hidden"> navigation</span></h3>
+                </a>
+                <ul>
+                    
+                                <li class="parent" aria-label="page with sub pages"><div class="link-wrapper"><a href="/modes/driving/low-emission-zone/about-the-lez">LEZ: Where and when</a></div></li>
+                            
+ 
+                                <li class="parent" aria-label="page with sub pages"><div class="link-wrapper"><a href="/modes/driving/low-emission-zone/make-a-payment">Pay a LEZ charge</a></div></li>
+                            
+ 
+                                <li class="parent" aria-label="page with sub pages"><div class="link-wrapper"><a href="/modes/driving/low-emission-zone/ways-to-meet-the-standards">Ways to meet the LEZ standards</a></div></li>
+                            
+ 
+                                <li class="selected parent" aria-label="selected page with sub pages"><div class="link-wrapper"><a href="/modes/driving/low-emission-zone/find-out-if-you-need-to-register">Find out if you need to register</a></div>
+                                <ul>
+                                    
+                                <li aria-label="page with no sub pages"><div class="link-wrapper"><a href="/modes/driving/low-emission-zone/find-out-if-you-need-to-register/how-to-register">How to register</a></div></li>
+                            
+ 
+                                </ul>
+                            </li>
+ 
+                                <li class="parent" aria-label="page with sub pages"><div class="link-wrapper"><a href="/modes/driving/low-emission-zone/check-if-your-vehicle-is-affected">Check if your vehicle is affected</a></div></li>
+                            
+ 
+                                <li aria-label="page with no sub pages"><div class="link-wrapper"><a href="/modes/driving/low-emission-zone/lorries-vans-buses-and-coaches">HGVs, lorries, vans, buses/minibuses and coaches</a></div></li>
+                            
+ 
+                                <li aria-label="page with no sub pages"><div class="link-wrapper"><a href="/modes/driving/low-emission-zone/vans-minibuses-and-specialist-diesel-vehicles">Vans, minibuses and specialist diesel vehicles </a></div></li>
+                            
+ 
+                                <li class="parent" aria-label="page with sub pages"><div class="link-wrapper"><a href="/modes/driving/low-emission-zone/penalty-charges">Penalty charges for the LEZ</a></div></li>
+                            
+ 
+                                <li aria-label="page with no sub pages"><div class="link-wrapper"><a href="/modes/driving/low-emission-zone/manufacturers-and-fitters">Manufacturers and fitters</a></div></li>
+                            
+ 
+                                <li aria-label="page with no sub pages"><div class="link-wrapper"><a href="/modes/driving/low-emission-zone/changes-to-the-lez">Changes to the LEZ</a></div></li>
+                            
+ 
+                                <li class="parent" aria-label="page with sub pages"><div class="link-wrapper"><a href="/modes/driving/low-emission-zone/contact-lez">Contact LEZ</a></div></li>
+                            
+ 
+                </ul>
+            
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+      </div>
+    
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="advert-tile unsponsored-style google-ads" aria-hidden="true">
+  <div class="advert-link">
+    <div class="advert-content">
+        <div class="medium-large" data-advert="/76889402/driving/lez" data-advert-sizes="300, 250"></div>
+        <div class="small" data-advert="/76889402/driving/lez" data-advert-sizes="300, 250"></div>
+    </div>
+  </div>
+</div>
+@{
+    ViewBag.AmazonSlot = "'amznslots'";
+    ViewBag.AmazonAds = "'3199'"; // to add another value, this needs to be ViewBag.AmazonAds = "'3199','xx'";
+}
+      
+
+ </div>
+    
+      <div>
+                    
+        <div class="related-links">
+
+    <h3>Also on this site</h3>
+
+<div class="vertical-button-container">
+
+<a href="/modes/driving/congestion-charge/contact-congestion-charge" class="plain-button">Contact Congestion Charge</a>
+<a href="/modes/driving/ultra-low-emission-zone/contact-ulez" class="plain-button">Contact ULEZ</a>
+<a href="/info-for/deliveries-in-london/" class="plain-button">Deliveries in London</a>
+<a href="/corporate/publications-and-reports/low-emission-zone" class="plain-button">LEZ publications</a>
+    </div>
+</div>
+ <div class="related-links">
+
+    <h3>Related websites</h3>
+
+<div class="vertical-button-container">
+
+<a href="https://www.gov.uk/government/organisations/driver-and-vehicle-standards-agency" class="plain-button">DVSA</a>
+<a href="http://www.dft.gov.uk/dvla/about.aspx" class="plain-button">DVLA</a>
+<a href="http://www.cleanerairforlondon.org.uk/" class="plain-button">Cleaner Air for London</a>
+<a href="https://www.sourcelondon.net/" class="plain-button">Source London</a>
+    </div>
+</div>
+ 
+      </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+     @section scripts {
+<div class="bottom-advert ">
+    <div class="close-ad-button visually-hidden"><span class="close-icon-circle"></span></div>
+    <div data-advert="/76889402/driving/" data-advert-sizes="320, 50"></div>
+</div>
+}
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "Find out which vehicles need to register with us.";}
+        
+            
+        
+
+
+ 

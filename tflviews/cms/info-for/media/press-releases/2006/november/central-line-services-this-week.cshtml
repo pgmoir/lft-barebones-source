@@ -1,0 +1,88 @@
+﻿
+
+
+@{ViewBag.Title = "Central line services this week";}
+        
+        
+
+<div class="r">
+    <div class="headline-container plain">
+        <h1>Central line services this week</h1>
+        <div class="content-page-press-release">
+        24 November 2006
+        </div>
+    </div>
+</div>
+<div class="main-and-aside r">
+    <div class="main" role="main">
+
+    <div class="article-teaser">
+        London Underground apologises to passengers for the disruption to Central line services this week.
+        
+    </div>
+
+
+
+ <div class="on-this-page">
+<p>This was due to a failure in the signalling computer system on Monday when London Underground introduced a new timetable for the Central line. Minor delays occurred on subsequent days while the problems were resolved.</p>
+<p>Services have now been restored on the Central line, with the new timetable.</p>
+<p>Separately, an act of vandalism at North Acton has today (Friday) caused the suspension of the Central line between North Acton and Ealing Broadway.</p>
+<p>Engineers from Metronet who maintain the Central line are now working to repair the damage so that affected services can be restored as quickly as possible.</p>
+<p>This weekend there is a partial closure between White City and West Ruislip / Ealing Broadway due to planned engineering works. Replacement buses will operate.</p>
+
+     
+
+        
+        
+        
+        @this.ScriptBlock(
+        @<script>
+        //queue.push("@Html.ScriptPath("modules/M020-on-this-page.min.js")", null);
+        </script>
+        )
+        
+        
+        
+        </div>
+    </div>
+    <div class="aside" role="complementary">
+
+       
+        <div data-set="sidenav-container" class="large">
+
+            
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+        </div>
+
+
+
+            
+        <div data-set="sidenav-container" class="small-medium"></div>
+    </div>
+</div>
+
+<!-- Crumbs: PGtype:  -->
+
+ 
+ 
+        
+        
+            @{ViewBag.Description = "This was due to a failure in the signalling computer system on Monday when London Underground introduced a new timetable for the Central line. Minor delays occurred on subsequent days while the problems were resolved.Services have now been restored on the";}
+        
+        
+
+
+ 

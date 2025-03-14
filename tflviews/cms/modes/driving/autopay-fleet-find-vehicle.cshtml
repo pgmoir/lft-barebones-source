@@ -1,0 +1,163 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Find vehicle";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/autopay-fleet-find-vehicle";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                 <li><a href="/modes/driving/auto-pay">Auto Pay</a></li>
+                
+            
+            
+                
+                <li><span class="last-breadcrumb">Find vehicle</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Find vehicle</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+        @using TfL.Ruc.Services.ViewModels.Ruc.ZoneCharge.PayZoneCharge
+        @{
+            dynamic content = new ContentModel();
+            content.ContinueButtonText = "Confirm vehicle";
+            content.BackButtonText = "Back";
+            content.SelectVehicleHeading = "Select vehicle";
+            content.ConfirmVehicleErrorText = "Find a vehicle to continue";
+            content.FindVehicleButtonText = "Find vehicle";
+            content.ConfirmEnteredVehicleButtonText = "Confirm";
+            content.CcDiscountedTitle = "This vehicle is subject to a 100% Congestion Charge discount";
+            content.CcExemptTitle = "This vehicle is exempt from the Congestion Charge";
+            content.CcExemptText = "<p>Based on the vehicle details entered and information held by us today, your vehicle is exempt from the Congestion Charge.</p><p>If you believe this information is incorrect you can still continue.</p><p><strong>This exemption could change without notice - always check to see if you need to pay to drive within the zone.</strong></p>";
+            content.ExemptFromAllChargesHeading = "This vehicle is exempt";
+            content.ExemptFromAllChargesMessage = "<p>Based on the vehicle details you have entered and information held by the DVLA and TfL today, this vehicle is exempt from London Road User Charging. You do not need to pay the Congestion Charge or the ULEZ charge.</p><p><strong>This may change without notice - always check to see if you need to pay to drive within the zones.</strong></p><p>If you still want to register for a Fleet Auto Pay service you can continue.</p>";
+            content.ConfirmEnteredVrmDetailsText = "I confirm that this is the correct Vehicle Registration Mark";
+            content.VehicleNotFoundText = "<p><strong>UK-registered:</strong>&nbsp;If your vehicle’s make and model details have not been returned, make sure you entered the number plate correctly before continuing.</p><p><strong>Registered outside the United Kingdom:</strong>&nbsp;We are unable to display the make, model and colour information. Confirm this is the correct vehicle to continue.</p>";
+            content.QmlLimitReachedTitle = "Maximum number of saved vehicles reached";
+            content.QmlLimitReachedText = "<p>You can save a maximum of 10 vehicles to your account to speed up congestion charge payments. If you would like to save this vehicle you must remove a saved vehicle in your account settings.</p>";
+            content.ConfirmSaveVehicleToQmlText = "Save this vehicle in my account to speed up my Congestion Charge payments.";
+            content.QmlUseDifferentVehicleText = "Use a different vehicle";
+            content.ActiveDiscountText = "Active on ";
+            content.VehicleAlreadyAddedErrorText = "<p>This vehicle is already on an Auto Pay service and can't be added again. If it is not on your service please call 0343 222 2222 (<a href='/corporate/terms-and-conditions/tfl-call-charges'>TfL call charges</a>).</p>";
+            content.VehicleOnAutoPayExceptionErrorText = "<p>You can't add this vehicle - please call us on 0343 222 2222 (<a href='/corporate/terms-and-conditions/tfl-call-charges'>TfL call charges</a>).</p>";
+            content.VehicleOnAutoPayErrorText = "<p>This vehicle is already on an Auto Pay service and can't be added again. If it is not on your service please call 0343 222 2222 (<a href='/corporate/terms-and-conditions/tfl-call-charges'>TfL call charges</a>).</p>";
+            content.VehicleAlreadyOnApplyAutoPayListErrorText = "This vehicle has already been added to your Set up Auto Pay list.";
+            content.CheckQmlVehicleButtonText = "Save vehicle";
+            content.CountryOptionUk = "United Kingdom";
+            content.CountryOptionOther = "Non-UK";
+            content.VrmAcceptedRequireTrue = "Confirm this is the correct vehicle to continue";
+            content.VehicleRegistrationMarkRequired = "You must enter a VRM";
+            content.CcAndToxicityChargeableText = "<p>&nbsp;CCANDTOXICITYCHARGEABLETEXT</p>";
+            content.CcExemptAndToxicityChargeableText = "<p>CCEXEMPTANDTOXICITYCHARGEABLETEXT</p>";
+            content.ToxicityChargeHeaderText = "STF_TOXICITYCHARGEHEADERTEXT";
+            content.GeneralMessageHeading="<h2>If your details are not correct</h2>";
+            content.GeneralMessageBody= "<p>Check you have entered the correct vehicle registration number. If that is correct but other details are not, you can still continue</p><p>However, you need to let the DVLA know so they can update your vehicle details.</p>";
+            content.VrmLookUpPageUrl = "/modes/driving/autopay-fleet-find-vehicle";
+            content.FriendlyNameLabel = "Add a tag (optional)";
+            content.ApplyAutoPaySummaryPage = "";
+            content.ContinueUrl = "/modes/driving/autopay-fleet-review-vehicles";
+
+            Html.RenderAction("FindVehicle", "AutoPayApplyFleet", new
+            {
+                backUrl = "/modes/driving/autopay-fleet-select-vehicles",
+                content = content,
+                lookupType = TfL.Ruc.Domain.Entities.Ruc.VehicleLookupType.AutoPay
+            });
+        }
+        
+          @this.ScriptBlock(@<script>
+            queue.push(function () {
+                var vrm = "@Request.QueryString["vrm"]",
+                    $vrmSearchBox = $("#VehicleRegistrationMark");
+        
+                if ($.trim(vrm).length > 0) {
+                    $vrmSearchBox.val(vrm);
+                    var url = String(window.location.href).replace("?vrm=" + vrm, "");
+                    history.pushState({}, document.title, url);
+                }
+            })
+            </script>)        
+      
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

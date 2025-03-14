@@ -1,0 +1,150 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Select payment card";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/pay-to-drive-in-london/select-payment-card";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                 <li><a href="/modes/driving/pay-to-drive-in-london">Pay to drive in London</a></li>
+                
+            
+            
+            
+            
+                
+                <li><span class="last-breadcrumb">Select payment card</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Select payment card</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/account-account-landing-29377"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+    
+      <p> The following payment card is currently associated with your account:</p>
+      
+           
+      
+
+
+        @{
+            dynamic content = new ContentModel();
+            content.StoredCardHeading = "Use stored card";
+            content.SelectPaymentCardAssistiveText = "Select payment card ENDING?";
+            content.UseAnotherCardButtonText = "Use a different card";
+            content.StoredCardExpiredHeading = "Stored card expired";
+
+            Html.RenderAction(
+                "SelectStoredCard",
+                "Payment",
+                new
+                {
+                    area = "Ruc",
+                    returnUrl = "/modes/driving/pay-to-drive-in-london/payment-result",
+                    paymentRefSessionKey = SessionKeys.PayCharge.PaymentId,
+                    paymentAmountSessionKey = SessionKeys.PayCharge.PaymentAmount,
+                    paymentDescription = "Charge",
+                    content = content,
+                    cardFailureUrl = "/modes/driving/pay-to-drive-in-london/payment-failure"
+                });
+        }
+        <a class="tertiary-link go-back" href="/modes/driving/pay-to-drive-in-london/basket-details" id="go-back">
+            <span class="button-text">Back</span>
+        </a>
+	  
+
+  
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "Select payment card";}
+        
+            
+        
+
+
+ 

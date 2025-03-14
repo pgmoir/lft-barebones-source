@@ -1,0 +1,169 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Charge details";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/amend-or-refund-charge-details";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                 <li><a href="/modes/driving/amend-or-refund-a-driving-charge">Amend or refund a driving charge</a></li>
+                
+            
+                
+                <li><span class="last-breadcrumb">Charge details</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Charge details</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/account-account-landing-29377"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+        @{
+            dynamic content = new ContentModel();
+
+            content.BackButtonText = "Back";
+            content.ContinueButtonText = "Continue";
+            content.CcCharge = "Congestion Charge";
+            content.LezCharge = "LEZ charge";
+            content.LezLowText = "LEZ";
+            content.LezHighText = "LEZ";
+            content.UlezCharge = "ULEZ charge";
+            content.UlezLowText = "ULEZ";
+            content.UlezHighText = "ULEZ";
+            content.UnknownCharge = "Unknown";
+            content.CustomChargeType = "Custom";
+            content.PayNextDayChargeType = "Pay next day";
+            content.CustomWorkingDaysChargeType = "Custom, working";
+            content.DailyChargeType = "Daily";
+            
+            content.UnknownChargeType = "Unknown";
+            content.AmendOrRefundUrl = "/modes/driving/amend-or-refund-a-charge";
+            content.InstructionalText = "Select which charge you'd like to change. It costs &pound;2.50 to amend each one. You can also apply for a refund.";
+            content.CongestionChargeAmendSuccessMessage = "Congestion Charge update saved. Confirm and pay below.";
+            content.UlezAmendSuccessMessage = "ULEZ charge update saved. Confirm and pay below.";
+            content.LezAmendSuccessMessage = "LEZ charge update saved. Confirm and pay below.";
+            
+            content.SendAReceiptTitleText = "Receipt options";
+            
+            content.SendEmailReceiptText = "Email receipt";
+            content.EmailAddressLabel = "Email address *";
+            content.EmailAddressIsInvalidValidationMessage = "Not a valid email address";
+            content.EmailAddressRequiredValidationMessage = "Enter a valid email address";
+
+            content.SendTextMessageReceiptText = "Text message receipt";
+            content.MobileTelLabel = "Mobile number *";
+            content.MobileNumberIsInvalidValidationMessage = "Not a valid mobile number";
+            content.MobileNumberRequiredValidationMessage = "Enter mobile number";
+            content.CancelButtonText = "Cancel";
+            content.NoAmendOrRefundMessage = "This charge can't be amended or refunded";
+            
+            content.LoggedInReciptMessage = "We'll send receipts by your preferred channel.";
+            
+        
+            Html.RenderAction(
+                "DisplayCharges",
+                "DisplayZoneCharge",
+                new
+                {
+                    area = "Ruc",
+                    backUrl = "/modes/driving/find-a-charge",
+                    paymentUrl = "/modes/driving/amend-charge-payment",
+                    content = content
+                }
+            );
+        }
+      
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

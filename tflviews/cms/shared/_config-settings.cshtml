@@ -1,0 +1,21 @@
+﻿
+
+@*
+    The primary purpose of this partial is to override appconfig settings in web config 
+    seamlessly without having to recycle app pools. Please note that after adding config
+    items here you will still need to make sure that rest of the workflow works as per
+    the acceptance criteria.   
+*@
+<script> 
+   (function (tfl) { 
+        tfl.isPersonalisationActive = true; 
+        tfl.isBusFavouritesActive = false;
+        tfl.showBusStatusOnHomePage = true;
+        tfl.showOnboarding = { personalisationStar: true };
+        tfl.showGetMeHome = { savePlace: false };
+        tfl.showBroadcastMessage = false;
+        tfl.showStrikBannerOnTubemap = false;
+        tfl.showBottomAdvertCloseButton = false;
+   })(tfl = tfl || {});
+</script>
+ 

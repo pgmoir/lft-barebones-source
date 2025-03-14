@@ -1,0 +1,261 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Find vehicle";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-blue-badge-manage-replacement-vrm-lookup-52142";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Find vehicle</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Find vehicle</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+
+        @{
+            dynamic vrmContent = new ContentModel();
+            vrmContent.ContinueButtonText = "Confirm and continue";
+            vrmContent.BackButtonText = "Back";
+        
+            vrmContent.SelectVehicleHeading = "Select vehicle";
+            vrmContent.VrmHelpMessageText = "<p>Be careful not to mix up the letters '<strong>I</strong>' and '<strong>O</strong>' with the numbers '<strong>1</strong>' and '<strong>0</strong>'.</p><p>Choose the correct country of registration. You risk getting a penalty if you pick the wrong one.</p>";
+            vrmContent.VrmTitle = "Number plate (Vehicle Registration Mark)";
+            vrmContent.VrmPlaceHolder = "eg AB01ABC";
+            vrmContent.CountryofRegistrationTitle = "Country of registration";
+            vrmContent.CountryOptionUk = "United Kingdom";
+            vrmContent.CountryOptionOther = "Non-UK";
+            vrmContent.FindVehicleButtonText = "Find vehicle";
+        
+            vrmContent.ConfirmEnteredVehicleButtonText = "Confirm";
+            vrmContent.LezStandardNonCompliantTitle = "<p><strong>This vehicle does not meet the LEZ standards</strong></p>";
+            vrmContent.LezStandardNonCompliantText = "<p>According to our records, the vehicle does not meet the ULEZ or LEZ standards at this time. If you believe your vehicle does meet the required standards, you can <a href='/modes/driving/compliance-registration/before-you-start'>register it with us</a>.</p>";
+            vrmContent.LezCompliantTitle = "This vehicle meets the LEZ standards";
+            vrmContent.LezCompliantText = "<p>This vehicle meets the ULEZ and LEZ standards. You do not need to register this vehicle.</p>";
+            vrmContent.VehicleNotFoundTitle = "<strong>We do not hold details for this vehicle</strong>";
+            vrmContent.VehicleNotFoundText = "<p><strong>UK-registered:</strong> If your vehicle's make and model details have not been returned, make sure you entered the number plate (Vehicle Registration Mark) correctly before continuing.</p><p><strong>Registered outside the UK:</strong> We are unable to display the make, model and colour information. Confirm this is the correct vehicle to continue.</p>";
+        
+            vrmContent.ConfirmEnteredVrmDetailsText = "Yes, this is the correct vehicle";
+            vrmContent.VehicleAlreadyExistsOnThisApplicationErrorText = "<p>This vehicle has already been added to the registration application. Select a different vehicle.</p>";
+            vrmContent.VehicleVrmCompliantErrorText = "<p>You do not have to register this vehicle as it will not be charged for ULEZ - go back or choose a different vehicle</p>";
+            vrmContent.GeneralMessageHeading = "<h2>What if my vehicle details are incorrect?</h2>";
+            vrmContent.GeneralMessageBody = "<p>If the number plate is correct but the description shown is wrong, you can still continue.</p><p>We get vehicle information from the DVLA so you'll need to let the DVLA know if your details are wrong or need to be updated.</p>";
+            vrmContent.ContinueButtonUrl = "/modes/driving/cc-blue-badge-manage-replacement-vehicle-date-32840";
+            vrmContent.CCExemptMessage = "<p>This is based on the vehicle details entered and information held today by the DVLA and TfL. It may change at any time.</p>";
+            vrmContent.ExemptFromCcChargesHeading = "This vehicle is exempt from the Congestion Charge";
+            vrmContent.ExemptFromCcChargesMessage = "<p>This is based on the vehicle details entered and information held today by the DVLA and TfL. It may change without notice.</p>";
+        
+            Html.RenderAction("VrmLookup", "BlueBadgeReplacement", new
+            {
+                area = "Ruc",
+                content = vrmContent,
+                discountStyle = ZoneChargeDiscountStyle.BlueBadge,
+                discountAction = DiscountAction.Manage,
+                lookupType = VehicleLookupType.AddDiscountBlueBadge
+            });
+
+        }
+    
+
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+      </div>
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

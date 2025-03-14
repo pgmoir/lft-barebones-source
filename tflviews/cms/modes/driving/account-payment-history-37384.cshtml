@@ -1,0 +1,156 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Payment history";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/account-payment-history-37384";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Payment history</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Payment history</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      <p>Details of all non-Auto Pay payments made through your account can be viewed here. You can track your payments, access a receipt copy, request a refund and more.</p>
+
+<p>Use the filter options to search for a single transaction, or filter the list for a particular day or dates.</p>
+
+<p>You can also download the unfiltered or filtered list as a .csv file and open it in the program of your choice.</p>
+
+<h2>Auto Pay</h2>
+
+<p>If you have Auto Pay set up on your account you can see a summary of your Auto Pay activity by following the 'Manage Auto Pay' link below. If you have not set up Auto Pay and want to find out more, go back to your account sign in page for details.</p>
+      
+           
+      
+
+
+	    
+        <!-- 1. payment-history -->
+        @{
+            dynamic content = new ContentModel();
+
+            content.ManageAutoPayUrl = "/modes/driving/cc-autopay-manage-manage-29152";
+            content.ManageAutoPayText = "Manage Auto Pay";
+            content.ListHeading = "Past payments";
+            content.SearchTypeText = "Search for";
+            content.SearchLabel = "Vehicle Registration Mark or receipt no.";
+
+            Html.RenderAction(
+               "ManagePaymentLinks",
+               "FinancialHistory",
+               new
+               {
+                   area = "Ruc",
+                   content = content
+               });
+            
+            Html.RenderAction(
+                CommonDictionary.ListModule.ListActionName,
+                "FinancialHistory",
+                new
+                    {
+                        area = "Ruc",
+                        autopay = false,
+                        transactionDetailUrl = "/modes/driving/account-transaction-detail-37385"
+                    });
+        }
+        @FormHelpers.DottedSeparator()
+        @ModulesHelpers.BackLink()
+        
+        @this.ScriptBlock(
+            @<script>
+                 queue.push(
+                    "@Html.ScriptPath("specific/list-filters-text.min.js")", null,
+                    "@Html.ScriptPath("specific/results-paginator.min.js")", null,
+                    "@Html.ScriptPath("specific/pages/statements.min.js")", function() {
+                        tfl.rucstatements.init();
+                    }
+                 );
+            </script>
+        )
+		
+	  
+
+  
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

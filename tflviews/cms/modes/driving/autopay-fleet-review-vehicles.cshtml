@@ -1,0 +1,211 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Review Fleet Auto Pay";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/autopay-fleet-review-vehicles";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                 <li><a href="/modes/driving/auto-pay">Auto Pay</a></li>
+                
+            
+            
+                
+                <li><span class="last-breadcrumb">Review Fleet Auto Pay</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Review Fleet Auto Pay</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/account-account-landing-29377"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+      <div class="article-teaser">
+        <p>You need at least 6 vehicles on your Fleet Auto Pay service. You can select a vehicle already on your account or add a new one.</p>
+        
+      </div>
+    
+    
+      <p>If you're adding a vehicle to a 100% discount, this display may not update for 24 hours. It may still show as 'Should be paid' even though the discount is active.</p>
+      
+           
+      
+
+       
+        @{
+            dynamic content = new ContentModel();
+            
+            content.NonchargeableLabel = "No charge due";
+            content.NonChargeableMessage = "You don't have to pay any charges";
+            content.PayableHighLabel = "Should be paid";
+            content.PayableHighMessage = "This vehicle does not meet the ULEZ emissions standards. You need to pay the ULEZ charge if you drive within the zone. ";
+            content.PayableLowLabel = "Should be paid";
+            content.PayableLowMessage = "This vehicle does not meet the ULEZ emissions standards. You need to pay the ULEZ charge if you drive within the zone. ";
+            content.ExemptLabel = "Exempt";            
+            content.ExemptMessage = "Your vehicle is exempt";
+            content.CompliantLabel = "Meets the standard";
+            content.CompliantMessage = "This vehicle meets the emissions standards. You don't have to pay the ULEZ charge for it. ";
+            content.PayableLabel = "Should be paid";
+            content.PayableMessage = "You need to pay the charges";
+            content.FullDiscountLabel = "100% discount";
+            content.FullDiscountMessage = "This vehicle is currently registered for a 100% discount from this charge.";
+            
+            content.CC100PercentDiscountMessage = "This vehicle is currently registered for a 100% discount from the Congestion Charge. You can check when this discount expires in the 'Manage discounts' section of your account.";
+            content.CCExemptMessage = "<p>This vehicle is currently registered for a 100% discount from the Congestion Charge. You can check when this discount expires in the 'Manage discounts' section of your account.</p>";
+            content.CCPayableMessage = "You need to pay the Congestion Charge for this vehicle if you are drive within the zone Monday to Friday 07:00-18:00 excluding bank holidays and the period between Christmas Day and New Year's Day.";
+            content.Ulez100PercentDiscount = "This vehicle is currently registered for a 100% discount from the ULEZ.";
+            content.UlezExemptMessage = "<p>Based on the vehicle details entered and information held by the DVLA and TfL today, this vehicle is exempt from the ULEZ charge.</p><p><strong>This may change - always check to see if you need to pay to drive within the zone.</strong></p>";
+            content.UlezNoChargesMessage = "<p>Based on the vehicle details entered and information held by the DVLA and TfL today, you don't have to pay the ULEZ charge for this vehicle.</p><p><strong>This may change - always check to see if you need to pay to drive within the zone.</strong></p>";
+            content.HighChargesPayableMessage = "<p>This vehicle does not meet the ULEZ emissions standards. You need to pay the ULEZ charge if you drive within the zone. The zone operates at all times except Christmas Day - charging days run from midnight to midnight.</p><p>If you believe this is incorrect, and you can give us evidence that your vehicle does meet the ULEZ emissions standards, you will need to <a href='/modes/driving/compliance-registration/before-you-start'>register it with us</a>.</p>";
+            content.LowChargesPayableMessage = "<p>This vehicle does not meet the ULEZ emissions standards. You need to pay the ULEZ charge if you drive within the zone. The zone operates at all times except Christmas Day - charging days run from midnight to midnight.</p><p>If you believe this is incorrect, and you can give us evidence that your vehicle does meet the ULEZ emissions standards, you will need to <a href='/modes/driving/compliance-registration/before-you-start'>register it with us</a>.</p>";
+            content.UlezHighLabel = "Should be paid";
+            content.UlezLowLabel = "Should be paid";
+            content.CongestionChargeLabelForDetailSection = "Congestion Charges:";
+            content.UlezHighLabelForDetailSection = "ULEZ charges:";
+            content.UlezLowLabelForDetailSection = "ULEZ charges:";
+            content.UlezCompliantLabelForDetailSection = "ULEZ charges:";
+            content.NewVehicle = "New vehicle";
+            content.AccountVehicles = "Account vehicles";
+            content.ShowMoreLabel = "Charge details";
+            content.ShowLessLabel = "Charge details";
+            content.CCShortLabel = "CC";
+            content.ULEZShortLabel = "ULEZ";
+            content.AcceptTermsMessage = "<p>I agree to the <a href='/corporate/terms-and-conditions/pay-to-drive-in-london' target='_blank'>Fleet Auto Pay terms and conditions</a></p>";
+            content.AcceptTermsRequireTrue = "Accept the terms and conditions to continue";
+            content.BasketLimit = 5;
+            content.AccountVehiclesLink = "/modes/driving/autopay-fleet-select-vehicles";
+            content.NewVehicleLink = "/modes/driving/autopay-fleet-find-vehicle";
+            content.ApplyAutoPaySummaryPage = "";
+             content.AcceptTermsRequireTrue = "Accept the terms and conditions to continue";
+            content.AddTagMessage = "A tag will help you identify your vehicle more easily.";
+            content.EditTagMessage = "Change your vehicle tag or remove it.";
+            content.SaveButtonText = "Done";
+            content.CancelButtonText = "Cancel";
+            content.AddTagTitle = "Add a tag";
+            content.EditTagTitle = "Edit tag";
+            content.AddTagText = "Add a tag";
+            content.EditTagText = "Edit tag";
+            content.BasketLimitExceededWarningMessage = "You can't add any more vehicles.";
+            content.CompliantLabel = "Meets the standard";
+            content.UlezCompliantMessage = "This vehicle meets the emissions standards. You don't have to pay the ULEZ charge for it. ";
+            content.UlezExemptLabel = "Exempt";
+            
+             content.SelectedVehiclesLabel = "Selected: {0} / {1}";
+             content.MinimumSelectionError1 = "Add {0} more vehicle";
+             content.MinimumSelectionError2 = "Add {0} more vehicles";
+             content.NewVehicleLink = "/modes/driving/autopay-fleet-find-vehicle";
+             content.AccountVehiclesLink = "/modes/driving/autopay-fleet-select-vehicles";
+            
+            content.ContinueButtonText = "Continue";
+            content.BackButtonText = "Back";
+            
+            Html.RenderAction(
+                "VehiclesSummary",
+                "AutoPayApplyFleet",
+                new
+                { 
+                    content = content
+                });
+                
+            Html.RenderAction(
+                RucDictionary.AutoPayManage.AddVehiclesActionName,
+                "AutoPayFleetManage",
+                new
+                {
+                    content = content,
+                    backUrl = "",
+                    successUrl = "/modes/driving/fleet-autopay-manage-add-permanent-success-29001",
+                    failureUrl = "/modes/driving/fleet-autopay-manage-add-permanent-failure-28975"
+                });
+        }
+
+      
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "You need at least 6 vehicles on your Fleet Auto Pay service. You can select a vehicle already on your account or add a new one.";}
+        
+            
+        
+
+
+ 

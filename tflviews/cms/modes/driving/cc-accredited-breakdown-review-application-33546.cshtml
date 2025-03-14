@@ -1,0 +1,158 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Review application";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-accredited-breakdown-review-application-33546";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Review application</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Review application</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+
+        
+        <!-- 1. accredited-breakdown -->
+        @{
+        
+            dynamic content = new ContentModel();
+        
+            content.BackButtonText = "Back";
+            content.ContinueButtonText = "Continue";
+        
+            content.VehiclesHeading = "Vehicle(s)";
+        
+            content.TermsAndConditionsHeading = "Terms and conditions";
+            content.TermsAndConditionsText = "<p>I confirm that I have read, understood and accept the <a href='/corporate/terms-and-conditions/pay-to-drive-in-london' target='_blank'>accredited breakdown discount terms and conditions</a></p>";
+        
+        
+            content.TermsAndConditionsAcceptedRequireTrue = "Accept the terms and conditions to continue";
+        
+            content.EvidenceHeading = "Uploaded documents";
+            content.EvidenceByPostText = "You have not uploaded any documents.";
+        
+            content.AdditionalInfoTitle = "Payment summary";
+            content.AdditionalInfoText = "<p>Once your discount is approved, you will need to pay £10 for each vehicle you want to add. This charge must be paid at the time the vehicle is added.</p><p>Your discount is valid for 12 months. When you renew it, you will need to pay the £10 charge for each vehicle active on the discount at that time.</p>";
+        
+            content.PaymentTotalText = "Total";
+        
+            content.PasHeading = "PAS 43 certification";
+            content.PasExpiryText = "Expiry date";
+        
+            content.ActiveDiscountText = "Active on: ";
+            content.ReviewEditButtonText = "Edit";
+        
+            Html.RenderAction(
+                RucDictionary.DiscountApply.ReviewApplicationActionName,
+                "DiscountApply",
+                new
+                {
+                    area = "Ruc",
+                    discountStyle = ZoneChargeDiscountStyle.AccreditedBreakdown,
+                    successUrl = "/modes/driving/cc-accredited-breakdown-success-33548",
+                    failureUrl = "/modes/driving/cc-accredited-breakdown-failure-33549",
+                    uploadEvidenceUrl = "/modes/driving/cc-accredited-breakdown-upload-evidence-33545",
+                    enterDetailsUrl = "/modes/driving/cc-accredited-breakdown-enter-details-33544",
+                    submissionUrl = "/modes/driving/cc-accredited-breakdown-submit-33547",
+                    journeyStartUrl = "/modes/driving/cc-select-discount-29641",
+                    content = content
+                }
+            );
+        }
+        
+        
+      
+
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

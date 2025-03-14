@@ -1,0 +1,26 @@
+﻿
+
+<p>Enter a street name, postcode or landmark in the box above to view its location in relation to the zone. To confirm if an address is inside or outside the zone, use the postcode checker below.</p> 
+
+<h2>Postcode search</h2> 
+ <div class="zone-location-seeker"> 
+ <p>Find out if a specific address is within the zone (results will not show on the map).</p> 
+ </div> 
+
+
+<div class="map-side-form"> 
+ @{ 
+ dynamic content = new ContentModel(); 
+
+Html.RenderAction( 
+RucDictionary.ZoneChecker.DefaultActionName, 
+ "ZoneChecker", 
+ new 
+ { 
+ area = "Ruc", 
+ zoneChargeType = ZoneChargeType.CongestionCharge, 
+ content = content, 
+ findAnotherUrl = UriHelper.BuildAbsoluteUrl(Request.Path) 
+ }); 
+ } 
+</div>

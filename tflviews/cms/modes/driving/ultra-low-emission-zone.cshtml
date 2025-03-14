@@ -1,0 +1,582 @@
+﻿
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@section adverts {
+    <div class="top-banner-advert" aria-hidden="true">
+        <div class="large" data-advert="/76889402/driving/ulez" data-advert-sizes="970, 90|970, 250"></div>
+        <div class="medium" data-advert="/76889402/driving/ulez" data-advert-sizes="728, 90"></div>
+        <div class="small" data-advert="/76889402/driving/ulez" data-advert-sizes="300, 50|320, 50"></div>
+    </div>
+}
+
+
+ 
+  
+
+
+<!-- rhroot -->
+@{ViewBag.Title = "Ultra Low Emission Zone";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/ultra-low-emission-zone";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+
+  
+
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                
+                <li><span class="last-breadcrumb">Ultra Low Emission Zone</span></li>
+            
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+
+  
+  <div class="r">
+    <div class="headline-container section-title section-landing-container ">
+      <div class="section-title-wrap">
+        <h1 class="hero-headline">Ultra Low Emission Zone</h1>
+        
+      </div>
+    </div>
+  </div>
+
+
+  
+  
+    
+  
+
+
+    
+    <div class="r">
+        <div class="section-overview clearfix ">
+            <div class="small-medium" data-set="section-intro"></div>
+            <div class="main">
+                <div class="large" data-set="section-intro">
+                    
+                </div>
+                <p>To help improve air quality, an Ultra Low Emission Zone (ULEZ) <strong>operates 24 hours a day, 7 days a week, every day of the year</strong>,<strong> </strong>except Christmas Day, within the same area of central London as the Congestion Charge. Most vehicles, including cars and vans, need to meet the ULEZ emissions standards or their drivers must pay a daily charge to drive within the zone.</p>
+
+<ul>
+	<li>&pound;12.50 for most vehicle types, including cars, motorcycles and vans (up to and including 3.5 tonnes)</li>
+	<li>&pound;100 for heavier vehicles, including lorries (over 3.5 tonnes) and buses/coaches (over 5 tonnes)</li>
+</ul>
+            </div>
+            
+            <div class="aside">
+                
+                
+
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/account-account-landing-29377"
+                        }
+                    );
+                }
+            
+      
+
+ 
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+                
+            </div>
+            
+        </div>
+    </div>
+    
+   
+    <div class="r">
+        <div class="main clearfix" role="main">
+            
+        
+        
+         
+        
+        
+        
+                
+                <div class="clearfix">
+                    
+<div class="module-grid clearfix">
+<div>
+
+<div class="call-to-action-button">
+       <a href="/modes/driving/pay-to-drive-in-london" class="secondary-button no-hover"   title="If you already have an account, you can sign in to pay the charge">Pay to drive in London</a>
+
+    </div>
+</div> 
+ <div>
+
+<div class="call-to-action-button">
+       <a href="/modes/driving/pay-a-pcn" class="secondary-button no-hover" >Pay a penalty</a>
+
+    </div>
+</div> 
+ <div class="news-teaser">
+
+    <a href="/modes/driving/check-your-vehicle-35896?intcmp=35896" >
+        
+        
+        <div class="text-link">
+             <h2>Check your vehicle</h2>
+            <p>Does your vehicle meet the ULEZ standards or do you need to pay?</p>
+        </div>
+    </a>
+</div>
+ 
+ <div class="news-teaser">
+
+    <a href="/modes/driving/auto-pay?intcmp=2154" >
+        
+        
+        <div class="text-link">
+             <h2>Auto Pay</h2>
+            <p>Set up Auto Pay and your ULEZ charges will be paid automatically</p>
+        </div>
+    </a>
+</div>
+ 
+ <div class="news-teaser">
+
+    <a href="/modes/driving/ultra-low-emission-zone/ulez-where-and-when?intcmp=52227" >
+        <img src="/ruc-cdn/static/cms/images/promos/ulez-map-teaser_rdax_400x200.jpg" alt="ulez map" />
+        
+        <div class="text-link">
+             <h2>Where and when</h2>
+            <p>Use our postcode checker to see if you'll be driving within the zone</p>
+        </div>
+    </a>
+</div>
+ 
+ <div class="news-teaser">
+
+    <a href="/modes/driving/ultra-low-emission-zone/why-we-need-ulez?intcmp=52224" >
+        <img src="/ruc-cdn/static/cms/images/promos/ulez-children-medium_rdax_400x200.jpg" alt="children running - why we need ultra low emission zone (ulez)" />
+        
+        <div class="text-link">
+             <h2>Why we need the ULEZ</h2>
+            <p>Every child in London is breathing in toxic air</p>
+        </div>
+    </a>
+</div>
+ 
+ 
+</div>
+ <div>
+
+<h2>Your vehicle and ULEZ</h2>
+</div>
+ 
+                </div>
+                <hr>
+                
+                
+                <div class="module-grid clearfix">
+                    
+                    
+                    
+                    <div class="news-teaser">
+
+    <a href="/modes/driving/ultra-low-emission-zone/cars?intcmp=52215" >
+        <img src="/ruc-cdn/static/cms/images/promos/ulez-car-teaser_rdax_400x200.jpg" alt="outline of car for ultra low emission zone (ulez)" />
+        
+        <div class="text-link">
+             <h2>Cars</h2>
+            <p> </p>
+        </div>
+    </a>
+</div>
+ 
+ <div class="news-teaser">
+
+    <a href="/modes/driving/ultra-low-emission-zone/vans-minibuses-and-more?intcmp=52212" >
+        <img src="/ruc-cdn/static/cms/images/promos/ulez-van-teaser_rdax_400x200.jpg" alt="outline of van for ultra low emission zone (ulez)" />
+        
+        <div class="text-link">
+             <h2>Vans, minibuses and more</h2>
+            <p> </p>
+        </div>
+    </a>
+</div>
+ 
+ <div class="news-teaser">
+
+    <a href="/modes/driving/ultra-low-emission-zone/motorcycles-mopeds-and-more?intcmp=52209" >
+        <img src="/ruc-cdn/static/cms/images/promos/ulez-motorbike-teaser_rdax_400x200.jpg" alt="outline of motorcyle for ultra low emission zone (ulez)" />
+        
+        <div class="text-link">
+             <h2>Motorcycles, mopeds and more</h2>
+            <p> </p>
+        </div>
+    </a>
+</div>
+ 
+ <div class="news-teaser">
+
+    <a href="/modes/driving/ultra-low-emission-zone/larger-vehicles?intcmp=52206" >
+        <img src="/ruc-cdn/static/cms/images/promos/ulez-lorry-teaser_rdax_400x200.jpg" alt="outline of lorry for ultra low emission zone (ulez)" />
+        
+        <div class="text-link">
+             <h2>Lorries and larger vehicles</h2>
+            <p> </p>
+        </div>
+    </a>
+</div>
+ 
+ <div class="news-teaser">
+
+    <a href="/modes/driving/ultra-low-emission-zone/ways-to-meet-the-standard?intcmp=52221" >
+        
+        
+        <div class="text-link">
+             <h2>ULEZ standards</h2>
+            <p>Understand the emissions standard your vehicle must reach</p>
+        </div>
+    </a>
+</div>
+ 
+ <div class="news-teaser">
+
+    <a href="/modes/driving/compliance-registration/before-you-start?intcmp=51789" >
+        
+        
+        <div class="text-link">
+             <h2>Register your vehicle</h2>
+            <p>Tell us if you think your vehicle does meet the ULEZ standards</p>
+        </div>
+    </a>
+</div>
+ 
+ <div>
+
+<div class="news-teaser">
+
+    <a href="/modes/driving/ultra-low-emission-zone/discounts-and-exemptions?intcmp=52218" >
+        
+        
+        <div class="text-link">
+             <h2>Discounts and exemptions</h2>
+            <p>Some groups and vehicles qualify for temporary discounts or exemptions from the ULEZ</p>
+        </div>
+    </a>
+</div>
+ 
+ <div class="news-teaser">
+
+    <a href="/modes/driving/ultra-low-emission-zone/small-businessess-prepare-for-ulez?intcmp=52541" >
+        
+        
+        <div class="text-link">
+             <h2>Small businesses and ULEZ</h2>
+            <p>See how some small businesses prepared for the ULEZ</p>
+        </div>
+    </a>
+</div>
+ 
+ <div class="news-teaser">
+
+    <a href="https://tfl.gov.uk/corporate/privacy-and-cookies/road-user-charging?intcmp=52317#mailout" >
+        
+        
+        <div class="text-link">
+             <h2>ULEZ data</h2>
+            <p>We're mailing people about how ULEZ affects them. Find out how we're using data</p>
+        </div>
+    </a>
+</div>
+ 
+ 
+</div>
+ <div>
+
+<div class="news-teaser driving">
+
+    <a href="/modes/driving/congestion-charge/penalties-and-enforcement?intcmp=2067" >
+        
+        
+        <div class="text-link">
+             <h2>Penalties and enforcement</h2>
+            <p>If you receive a PCN you can either pay it or challenge it</p>
+        </div>
+    </a>
+</div>
+ 
+ <div class="news-teaser">
+
+    <a href="/modes/driving/low-emission-zone/changes-to-the-lez?intcmp=52426" >
+        
+        
+        <div class="text-link">
+             <h2>Changing LEZ standards</h2>
+            <p>In 2020 LEZ standards will be raised to equal ULEZ standards</p>
+        </div>
+    </a>
+</div>
+ 
+ <div class="vertical-button-container">
+    <ul>
+        
+        
+        
+        <li><a href="/modes/driving/ultra-low-emission-zone/contact-ulez"  class="plain-button">Contact us</a></li>
+        
+        
+        <li><a href="/modes/driving/amend-or-refund-a-driving-charge"  class="plain-button">Amend/refund a charge</a></li>
+        
+        
+        <li><a href="/info-for/taxis-and-private-hire/emissions-standards-for-taxis"  class="plain-button">Emissions standards for taxis</a></li>
+        
+        
+        <li><a href="/info-for/taxis-and-private-hire/emissions-standards-for-phvs"  class="plain-button">Emissions standards for private hire vehicles</a></li>
+        
+        
+        <li><a href="/modes/driving/unofficial-selling-websites"  class="plain-button">Avoid payment fraud</a></li>
+        
+    </ul>
+</div>
+
+</div>
+ 
+                </div>
+        
+        
+        
+          
+        
+    </div>
+    
+      
+      <div class="aside" role="complementary">
+    
+        <div data-set="sidenav-container" class="large">
+          
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+ 
+                <a href="/modes/driving/ultra-low-emission-zone" class="heading">
+                    <h3 id="sub-menu-heading" class="h2">Ultra Low Emission Zone<span class="visually-hidden"> navigation</span></h3>
+                </a>
+                <ul>
+                    
+                                <li class="parent" aria-label="page with sub pages"><div class="link-wrapper"><a href="/modes/driving/ultra-low-emission-zone/ulez-where-and-when">ULEZ: Where and when</a></div></li>
+                            
+ 
+                                <li class="parent" aria-label="page with sub pages"><div class="link-wrapper"><a href="/modes/driving/ultra-low-emission-zone/ulez-payments">Paying the ULEZ charge</a></div></li>
+                            
+ 
+                                <li aria-label="page with no sub pages"><div class="link-wrapper"><a href="/modes/driving/ultra-low-emission-zone/why-we-need-ulez">Why we need the ULEZ</a></div></li>
+                            
+ 
+                                <li class="parent" aria-label="page with sub pages"><div class="link-wrapper"><a href="/modes/driving/ultra-low-emission-zone/ways-to-meet-the-standard">ULEZ standards</a></div></li>
+                            
+ 
+                                <li aria-label="page with no sub pages"><div class="link-wrapper"><a href="/modes/driving/ultra-low-emission-zone/discounts-and-exemptions">Discounts and exemptions</a></div></li>
+                            
+ 
+                                <li aria-label="page with no sub pages"><div class="link-wrapper"><a href="/modes/driving/ultra-low-emission-zone/cars">Cars</a></div></li>
+                            
+ 
+                                <li aria-label="page with no sub pages"><div class="link-wrapper"><a href="/modes/driving/ultra-low-emission-zone/vans-minibuses-and-more">Vans, minibuses and more</a></div></li>
+                            
+ 
+                                <li aria-label="page with no sub pages"><div class="link-wrapper"><a href="/modes/driving/ultra-low-emission-zone/motorcycles-mopeds-and-more">Motorcycles, mopeds and more</a></div></li>
+                            
+ 
+                                <li aria-label="page with no sub pages"><div class="link-wrapper"><a href="/modes/driving/ultra-low-emission-zone/larger-vehicles">Lorries, coaches and larger vehicles</a></div></li>
+                            
+ 
+                                <li class="parent" aria-label="page with sub pages"><div class="link-wrapper"><a href="/modes/driving/ultra-low-emission-zone/penalty-charges-for-ulez">Penalty charges for ULEZ</a></div></li>
+                            
+ 
+                                <li class="parent" aria-label="page with sub pages"><div class="link-wrapper"><a href="/modes/driving/ultra-low-emission-zone/scrappage-scheme">Scrappage scheme for vans and minibuses</a></div></li>
+                            
+ 
+                                <li class="parent" aria-label="page with sub pages"><div class="link-wrapper"><a href="/modes/driving/ultra-low-emission-zone/car-and-motorcycle-scrappage-scheme">ULEZ Car and motorcycle scrappage scheme</a></div></li>
+                            
+ 
+                                <li aria-label="page with no sub pages"><div class="link-wrapper"><a href="/modes/driving/ultra-low-emission-zone/organisations-supporting-ulez-scrappage-schemes">Organisations supporting ULEZ scrappage schemes</a></div></li>
+                            
+ 
+                                <li class="parent" aria-label="page with sub pages"><div class="link-wrapper"><a href="/modes/driving/ultra-low-emission-zone/contact-ulez">Contact ULEZ</a></div></li>
+                            
+ 
+                                <li class="parent" aria-label="page with sub pages"><div class="link-wrapper"></div></li>
+                            
+ 
+                </ul>
+            
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+        </div>
+        <div class="module-grid clearfix">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="advert-tile unsponsored-style google-ads" aria-hidden="true">
+  <div class="advert-link">
+    <div class="advert-content">
+        <div class="medium-large" data-advert="/76889402/driving/ulez" data-advert-sizes="300, 250"></div>
+        <div class="small" data-advert="/76889402/driving/ulez" data-advert-sizes="300, 250"></div>
+    </div>
+  </div>
+</div>
+@{
+    ViewBag.AmazonSlot = "'amznslots'";
+    ViewBag.AmazonAds = "'3199'"; // to add another value, this needs to be ViewBag.AmazonAds = "'3199','xx'";
+}
+      
+
+ 
+          
+<div class="fact-box-wrapper">
+    <span class="blue-span">Improving air quality</span>
+    <div class="fact-box-content">
+        <p>What are we doing to help make London's air cleaner? Find out about our air quality schemes</p>
+        <div class="vertical-button-container">
+        
+        <a href="/corporate/about-tfl/air-quality"  class="plain-button">Air quality</a> 
+        </div>
+    </div>
+</div><div class="follow-social email">
+  
+  <div class="social-image">
+    
+  </div>
+  <div class="social-text">
+    <h3>Email updates</h3>
+    <p>Customer updates and advance warning of weekend closures and planned works</p>
+  </div>
+  <div class="social-button">
+    <a class="secondary-button" href="/travel-information/social-media-and-email-updates/email-updates">Register</a>
+  </div> 
+</div>
+ <div class="related-links">
+
+    <h3>Also on this site</h3>
+
+<div class="vertical-button-container">
+
+<a href="/modes/driving/congestion-charge" class="plain-button">Congestion Charge</a>
+<a href="/modes/driving/low-emission-zone" class="plain-button">Low Emission Zone</a>
+<a href="/corporate/publications-and-reports/ultra-low-emission-zone" class="plain-button">ULEZ Publications and reports</a>
+    </div>
+</div>
+ 
+        </div>
+        <div data-set="sidenav-container" class="small-medium"></div>
+      </div>
+  </div>
+ 
+     @section scripts {
+<div class="bottom-advert ">
+    <div class="close-ad-button visually-hidden"><span class="close-icon-circle"></span></div>
+    <div data-advert="/76889402/driving/" data-advert-sizes="320, 50"></div>
+</div>
+}
+
+        
+        
+        
+            @{ViewBag.Description = "Within the Ultra Low Emission Zone (ULEZ) in central London vehicles must meet exhaust emission standards or their drivers need to pay to drive within the zone";}
+        
+            
+        
+
+
+ 

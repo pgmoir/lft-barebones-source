@@ -1,0 +1,132 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "My Fleet vehicles";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/fleet-autopay-manage-select-add-vehicle-28962";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                 <li><a href="/modes/driving/auto-pay">Auto Pay</a></li>
+                
+            
+            
+            
+                <li><span class="last-breadcrumb">My Fleet vehicles</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>My Fleet vehicles</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      <h2>Add vehicle</h2>
+      
+           
+      
+
+            @{
+                dynamic content = new ContentModel();
+
+                content.LegandText = "You can add a vehicle to your Fleet Auto Pay permanently or just for a single day (ad hoc).";
+                content.AddPermanentLabel = "Permanent addition";
+                content.AddPermanentText = "The vehicle will be added to your Fleet Auto Pay indefinitely as long as the service is active.";
+                content.AddAdhocLabel = "Ad hoc addition";
+                content.AddAdhocText = "<p>You can pay the daily Congestion Charge for a vehicle that is not on your Fleet Auto Pay service. You do not have to pay the annual registration charge for these vehicles, and the charge will be added to your next monthly statement.</p><br /><p>You are allowed a number of ad hoc charges per month. This is based on the number of vehicles you had on your Fleet Auto Pay service when your last statement was issued.</p><br />";
+                content.AddAdhocAllowanceAvailable = "Allowance available: ";
+                content.AddAdhocAllowanceMonthEnds = "Current allowance ends: ";
+                content.AddAdhocDailyChargeText = "";
+                content.BackButtonText = "Back";
+                content.ContinueButtonText = "Continue";
+    
+                content.VehicleTypeRequired = "Select permanent or ad hoc addition to continue";
+                
+                Html.RenderAction(
+                    "SelectFleetAddVehicle",
+                    "AutoPayManage",
+                    new
+                    {
+                        area = "Ruc",
+                        fleetVehicleUrl = "/modes/driving/fleet-autopay-manage-vehicles-28948",
+                        addPermanentVehicleUrl = "/modes/driving/fleet-autopay-manage-add-permanent-vehicle-28997",
+                        addAdHocVehicleUrl = "/modes/driving/fleet-autopay-adhoc-add-adhoc-vehicle-34815",
+                        content = content
+                    }
+                );
+            }
+      
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

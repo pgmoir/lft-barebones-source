@@ -1,0 +1,142 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "PAS 43 certificate details";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-accredited-breakdown-enter-details-33544";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">PAS 43 certificate details</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>PAS 43 certificate details</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+
+        
+		<!-- 1. accredited-breakdown -->
+		@using TfL.Ruc.Services.ViewModels.Ruc.DiscountApply
+		@{
+            dynamic content = new ContentModel();
+
+            //content.AccreditedBreakdownTitle = "PAS Certificate Details";
+            content.AccreditedBreakdownText = "To apply for this discount you need a valid PAS 43 certificate. This is an extension to your BS EN ISO 9001:2008 accreditation.";
+
+            content.ExpiryDate = "Expiry date*";
+
+            content.BackButtonText = "Back";
+            content.ContinueButtonText = "Continue";
+
+            content.ExpiryDateRequired = "Enter the expiry date to continue";
+            content.SelectedYearValidateDropDownDate = "Enter a valid future date to continue";
+            
+            Html.RenderAction(
+                RucDictionary.DiscountApply.EnterAccreditedBreakdownDetailsActionName,
+                "DiscountApply",
+                new
+                {
+                    area = "Ruc",
+                    backUrl = "/modes/driving/cc-select-discount-29641",
+                    continueUrl = "/modes/driving/cc-accredited-breakdown-upload-evidence-33545",
+                    reviewUrl = "/modes/driving/cc-accredited-breakdown-review-application-33546",
+                    journeyStartUrl = "/modes/driving/cc-select-discount-29641",
+                    discountStyle = ZoneChargeDiscountStyle.AccreditedBreakdown,
+                    content = content
+                }
+            );
+        }
+		
+      
+
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

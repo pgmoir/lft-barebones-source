@@ -1,0 +1,159 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Create an account";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/account-create-account-29278";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Create an account</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Create an account</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+        @{            
+            dynamic content = new ContentModel();
+            content.AccountTypeSectionHeading = "Account type";
+            content.AccountTypeText = "<p>Once you have opened a personal account or business account, you will be able to add up to 5 people as authorised users to help you manage your account. Each user will be given unique sign in credentials.</p>";
+            content.PersonalAccountSelectLabel = "Personal account";
+            content.BusinessAccountSelectLabel = "Business account";
+            content.CompanyNameLabel = "Company name";
+            content.AccountTypeTooltipTitle = "What's the difference between a personal and business account?";
+            content.AccountTypeTooltipText = "<p>There is little difference between these account types.</p><p>With either account you can nominate up to 5 account users to help manage it. Each user will get their own sign in credentials.</p><p><strong>Personal account users</strong> can set up <a href='/modes/driving/auto-pay'>Auto Pay</a>, an automated payment service for up to 5 vehicles. Suitable for:</p><ul>	<li>Resident's discount</li>	<li>Blue Badge holders</li>	<li>9+ seater discount</li>	<li>Cleaner vehicle discount</li>	<li>Motor tricycles</li>	<li>Roadside recovery vehicles</li></ul><p><strong>Business account users</strong> can set up Auto Pay&nbsp;or <a href='/modes/driving/fleet-auto-pay' target='_blank'>Fleet Auto Pay</a>, an automated payment service for companies with a fleet of 6 or more vehicles. Also suitable for accredited breakdown vehicle discount.</p>";
+            
+            content.EmailAddressSectionHeading = "Email address";   
+            content.CorrespondenceReasonText = "<p>All account-related correspondence will be sent to the email address you supply here.</p><p>If you are setting up an account on behalf of a business, you may prefer to enter your individual work email address rather than a group one. This will make it easier to send and receive important emails.</p>";         
+            content.EnterEmailAddressLabel = "Email address";
+            content.ConfirmEmailAddressLabel = "Confirm email address";
+            content.PinSectionHeading = "PIN";
+            content.PinDescriptionText = "<p>You need to create a 6-digit number to set up secure online access to your London Road User Charging account.&nbsp;This number will&nbsp;also help identify&nbsp;you if you&nbsp;contact us by phone.</p>";
+            content.PinLabel = "Create a PIN (6 digits)";         
+            content.PinRequired = "Enter a PIN to continue";
+            content.PinRegularExpression = "<p>Your PIN must be exactly 6 digits</p>";
+            content.NameSectionHeading = "<span aria-describedby='ContactDetails_Title_Title'>Name (this person will be the account holder)</span>";
+            content.FirstNameLabel = "First name";
+            content.MiddleNameLabel = "Middle name";
+            content.SurnameLabel = "Surname";
+            content.AddressSectionHeading = "Address*";
+            content.TelephoneSectionHeading = "Telephone number *";
+            content.TelephoneNumberInstructionText = "<p>Add at least 1 contact telephone number</p>";
+            content.MobileTelNumberLabel = "Mobile telephone number";
+            content.DaytimeTelNumberLabel = "Daytime telephone number";
+            content.OtherTelNumberLabel = "Other telephone number";
+            content.ContinueButtonText = "Continue";
+            content.BackButtonText = "Back";
+            content.TypeRequired = "Select the type of account you want to open";
+            content.CompanyNameRequired = "Enter a company name";
+            content.EmailAddressRequired = "Enter an email address";
+            content.EmailAddressEmailAddress = "Enter a valid email address";
+            content.ConfirmEmailAddressEmailAddress = "Enter a valid email address";
+            content.EmailAddressEmailAddressRequired = "Enter a valid email address";
+            content.ConfirmEmailAddressRequired = "Confirm email address";
+            content.ConfirmEmailAddressEmailAddressRequired = "Enter a valid email address";
+            content.ConfirmEmailAddressCompare = "Email addresses must match";
+            content.FirstNameRequired = "Enter first name";
+            content.FirstNameAlphaOnly = "You must provide a valid name";
+            content.SurnameRequired = "Enter last name (family name)";
+            content.SurnameAlphaOnly = "Your name can only contain letters";
+            content.MiddleNameAlphaOnly = "Your name can only contain letters";
+            content.MobileTelNumberRequireFromGroup = "Add at least 1 contact telephone number";
+            content.MobileTelNumberStringLength = "Too many digits, try again";
+            content.DaytimeTelNumberRequireFromGroup = "Add at least 1 contact telephone number";
+            content.DaytimeTelNumberStringLength = "Too many digits, try again";
+            content.OtherTelNumberRequireFromGroup = "Add at least 1 contact telephone number";
+            content.OtherTelNumberStringLength = "Too many digits, try again";
+            content.PostCodeRegularExpression = "Invalid postcode";
+            content.AddressLineTownText = "Town";
+            content.AddressLinePostcodeText = "Postcode";
+            content.AddressLineCountryText = "Country";
+            content.AddressLookupErrorMessage = "Sorry, there was a problem looking up your address. Please search again with another postcode or choose to enter it manually.";
+
+            Html.RenderAction("CreateAccount", "CreateAccount", new 
+                { 
+                    Area = "Ruc",
+                    backUrl = "#",
+                    accountLandingUrl = "#",
+                    paymentUrl = "/modes/driving/account-payment-29283",
+                    preferencesUrl = "/modes/driving/account-preferences-29292",
+                    content = content
+                });
+        }
+      
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "Once you have opened a personal account or business account, you will be able to add up to 5 people as authorised users to help you manage your account.";}
+        
+            
+        
+
+
+ 

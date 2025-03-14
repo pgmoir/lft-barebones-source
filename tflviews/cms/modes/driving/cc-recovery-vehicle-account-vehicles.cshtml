@@ -1,0 +1,148 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Choose a vehicle";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-recovery-vehicle-account-vehicles";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Choose a vehicle</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Choose a vehicle</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+        @{
+            dynamic content = new ContentModel();
+
+            content.AccountVehiclesIntroText = "<p>Each vehicle costs &pound;10 a year to add to this account. The vehicle must be registered with the DVLA with a taxation class of 'recovery vehicle'. You can use vehicles already on your account or add new ones.</p>";
+            content.VehicleNotInMyListText = "New vehicle";
+            content.ContinueButtonText = "Continue";
+            content.BackButtonText = "Back";
+            content.SortLabel = "Sort";
+            content.SearchLabel = "Search";
+            content.ApplyFilterLabel = "Apply filter";
+            content.ResetFilterLabel = "Reset";
+            content.DetailNotFoundMessage = "<p><strong>We do not hold details for this vehicle.</strong></p><p><strong>UK Registered:</strong> If your vehicle's make and model details have not been returned, make sure you entered the Vehicle Registration Mark correctly before continuing.</p><p><strong>Registered outside the United Kingdom:</strong> We are unable to display the make, model and colour information. Confirm this is the correct vehicle to continue.</p>";
+            content.ExemptAllMessage = "<p>Based on the vehicle details entered and information held by the DVLA and TfL today, this vehicle is exempt from the Congestion Charge, ULEZ charges and LEZ charges.</p><p><strong>This may change at any time - always check to see if you need to pay to drive within the zones.</strong></p><p>If you still want to register for a recovery vehicle discount you can continue.</p>";
+            content.VehicleAlreadyExistsOnThisApplicationErrorText = "<p>This vehicle has already been added to your Apply for recovery vehicle discount list.</p>";
+
+            var resetVehicle = false;
+            if(Request.QueryString.AllKeys.Contains("resetVehicle")){
+                resetVehicle = Convert.ToBoolean(Request.QueryString["resetVehicle"]);
+            }
+
+            // Back Url parameters
+            if(Request.QueryString.AllKeys.Contains("sourceRoutingKey")){
+                content.SourceRoutingKey = Request.QueryString["sourceRoutingKey"];
+            }        
+            content.RecoveryVehicleReviewPageLink = "/modes/driving/cc-recovery-vehicle-review";
+            content.DiscountsAndExemptionsLink = "/modes/driving/congestion-charge/discounts-and-exemptions";
+            content.ManageRecoveryVehicleLink = "/modes/driving/cc-recovery-vehicle-manage-34022";
+            content.ApplyCcDiscountLink = "/modes/driving/cc-select-discount-29641";
+            content.VehicleAlreadyOnRecoveryDiscountMessage = "This vehicle is already on your Recovery Vehicle discount service and can't be added again. If it is not on your service please call 0343 222 2222 (TfL call charges).";
+
+            Html.RenderAction("AccountVehicles", 
+                "RecoveryVehicle", 
+                new {
+                    area = "Ruc",
+                    content = content,
+                    nextUrl = "/modes/driving/cc-recovery-vehicle-upload-evidence?sourceRoutingKey=account-vehicles",
+                    vrmLookupUrl = "/modes/driving/cc-recovery-vehicle-vrm-lookup?sourceRoutingKey=account-vehicles",
+                    reviewUrl = "/modes/driving/cc-recovery-vehicle-review?sourceRoutingKey=account-vehicles",
+                    resetVehicle  = resetVehicle
+                });
+        }
+    
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

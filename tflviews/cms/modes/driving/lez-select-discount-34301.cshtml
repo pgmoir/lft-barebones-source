@@ -1,0 +1,138 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "LEZ - Discount - Select discount";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/lez-select-discount-34301";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+                
+                <li><span class="last-breadcrumb">LEZ - Discount - Select discount</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>LEZ - Discount - Select discount</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+
+        
+        <!-- lez-discount -->
+        @using TfL.Ruc.Services.ViewModels.Ruc.Autopay
+        @{
+            dynamic content = new ContentModel();
+
+            content.LEZShowmanDiscountHeaderTitle = "LEZ Showman";
+            content.LEZShowmanDiscountHeaderText = "You can apply for LEZ Showman.";            
+            content.LEZShowmanDescription1Text = "To register, apply in writing and enclose ipsum dolor sit amet, consectetur adipiscing elit. Donec sed fringilla enim. Sed nec ante orci, id ultrices.";
+            content.LEZShowmanProminantInlineTitle = "What evidence do I need to supply for this application?";
+            content.LEZShowmanProminantInlineText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed fringilla enim. Sed nec ante orci, id ultrices ipsum. Donec justo augue,";            
+            content.ApplyOnlineButtonText = "Apply online";
+            content.RegisterAutoPayTitle = "Register your vehicles for Auto Pay";
+            content.RegisterAutoPayText = "Auto Pay is the quickest and simplest way to pay the Congestion Charge.";
+            content.AutoPayTitle = "Auto Pay";
+            content.AutoPayCopy = "Find out how to save £1 a day and avoid receiving Penalty Charge Notices.";
+
+
+            Html.RenderAction(
+                "SelectDiscount",
+                "DiscountApply",
+                new
+                {
+                    area = "Ruc",
+                    applyLezShowmanDiscountUrl = "/modes/driving/lez-lez-showman-apply-34304?backUrl=/modes/driving/lez-select-discount-34301",
+                    autoPayApplyLinkUrl = "/modes/driving/autopay-apply",
+                    zone = TfL.Ruc.Domain.Entities.Ruc.ZoneChargeZone.LowEmission,
+                    content = content
+                }
+            );
+        }
+        
+      
+
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/low-emission-zone" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

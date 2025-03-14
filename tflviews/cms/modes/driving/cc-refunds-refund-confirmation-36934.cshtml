@@ -1,0 +1,189 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Refund a Congestion Charge";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-refunds-refund-confirmation-36934";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Refund a Congestion Charge</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Refund a Congestion Charge</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/account-account-landing-29377"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+    
+      <h2>Confirmation</h2>
+      
+           
+      
+
+ 
+
+
+		
+		<!-- 7. cc-refund-confirmation -->
+		@using TfL.Ruc.Services.ViewModels.Ruc.ZoneCharge.RefundZoneCharge
+		@{
+
+            dynamic content = new ContentModel();
+
+            content.ConfirmationHeading = "Thank you. Your refund request has been submitted.";
+            content.ConfirmationText = "<p>We will send you a confirmation if your refund has been approved.</p><p>We aim to respond to you within the next 10 working days.</p>";
+            content.ReferenceNumberText = "Request reference number: ";
+            content.NextStepTitle = "What happens next?";
+            content.NextStepText = "<p>We are considering your request. We will let you know the outcome via your preferred communication channel.</p><p>If you need to&nbsp;reach us&nbsp;before&nbsp;then, see&nbsp;<a target='_blank' href='/modes/driving/congestion-charge/contact-congestion-charge'>our contact details</a>.</p>";
+            //content.StepOneText = "Find the charge";
+            //content.StepTwoText = "Enter the personal details";
+            //content.StepThreeText = "Select refund dates";
+            //content.StepFourText = "Confirmation";
+
+            Html.RenderAction(
+                "RefundConfirmation", 
+                "RefundZoneCharge", 
+                new
+                {
+                    area = "Ruc", 
+                    content = content,
+                    zoneType = ZoneChargeZone.CongestionCharge
+                }
+            );
+        }
+		
+	  
+
+  
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+        @ModulesHelpers.PrintButton()
+      
+ 
+      </div>
+    
+    <div></div>
+    
+      <div>
+                    
+        <div class="vertical-button-container">
+    <ul>
+        
+        
+        
+        <li><a href="/modes/driving/account-vehicles"  class="plain-button">Pay to drive in London</a></li>
+        
+        
+        <li><a href="/modes/driving/congestion-charge/congestion-charge-zone"  class="plain-button">Congestion Charge/ULEZ zone</a></li>
+        
+        
+        <li><a href="/modes/driving/check-your-vehicle-35896"  class="plain-button">Check your vehicle</a></li>
+        
+        
+        <li><a href="/modes/driving/amend-or-refund-a-driving-charge"  class="plain-button">Amend/refund a charge</a></li>
+        
+        
+        <li><a href="/modes/driving/congestion-charge/contact-congestion-charge"  class="plain-button">Contact us</a></li>
+        
+        
+        <li><a href="/modes/driving/ultra-low-emission-zone/scrappage-scheme"  class="plain-button">Scrappage scheme</a></li>
+        
+    </ul>
+</div>
+
+      </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

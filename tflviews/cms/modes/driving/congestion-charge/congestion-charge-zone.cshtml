@@ -1,0 +1,423 @@
+﻿
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@section adverts {
+    <div class="top-banner-advert" aria-hidden="true">
+        <div class="large" data-advert="/76889402/driving/cc" data-advert-sizes="970, 90|970, 250"></div>
+        <div class="medium" data-advert="/76889402/driving/cc" data-advert-sizes="728, 90"></div>
+        <div class="small" data-advert="/76889402/driving/cc" data-advert-sizes="300, 50|320, 50"></div>
+    </div>
+}
+
+
+ 
+  
+
+
+
+@{ViewBag.Title = "Congestion Charge/ULEZ zone";}
+@{ViewBag.Keywords = "Businesses,Drivers,Public,Driving,TfL";}
+@{ViewBag.Url = "/modes/driving/congestion-charge/congestion-charge-zone";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                 <li><a href="/modes/driving/congestion-charge">Congestion Charge</a></li>
+                
+            
+            
+                <li><span class="last-breadcrumb">Congestion Charge/ULEZ zone</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Congestion Charge/ULEZ zone</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/account-account-landing-29377"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+      <div class="article-teaser">
+        <p>You need to pay an &pound;11.50 daily charge if you drive within the Congestion Charge zone 07:00-18:00, Monday to Friday. If your vehicle does not meet the Ultra Low Emission Zone (ULEZ) standards, you must also pay the ULEZ charge.</p>
+        
+      </div>
+    
+    
+      <p>The ULEZ operates from midnight to midnight, 7 days a week, every day of the year, except Christmas Day (25 Dec). The zone covers the same area as the Congestion Charge.</p>
+      
+           
+      
+<div class="module-grid clearfix">
+<div>
+
+<div class="call-to-action-button">
+       <a href="/modes/driving/pay-to-drive-in-london" class="secondary-button no-hover" >Pay to drive in London</a>
+
+    </div>
+</div> 
+ 
+</div>
+ 
+        
+
+   <h2>Postcode and map search</h2>
+            <div class="responsive-form zone-checker-in-page">
+                 
+                 <p>Enter a postcode to see if it's inside one or more of the charging zones. Results will not be displayed on the map.</p>
+    
+                @{
+                    dynamic content = new ContentModel();
+                     content.PayCongestionChargeLinkText = "Pay to drive in London";
+                    content.ResidentDiscountUrl = "/modes/driving/cc-resident-discount-apply-anon-32525";
+                    content.ResidentDiscountLinkText = "Apply for residents' discount";
+                    content.PayCongestionChargeUrl = "/modes/driving/account-vehicles";
+                    content.PayCongestionChargeAnonymousUrl = "/modes/driving/pay-to-drive-in-london";
+                    content.AddressLinePostcodeText = "Check a postcode";
+
+                    Html.RenderAction(RucDictionary.ZoneChecker.DefaultActionName, "ZoneChecker", new
+                        {
+                            area = "Ruc",
+                            zoneChargeType = ZoneChargeType.CongestionCharge,
+                            content = content,
+                            findAnotherUrl = "/maps/congestion-charge"
+                        });
+                }
+            </div>
+
+            <h2>Where it operates</h2>
+
+<p>Enter a street name, postcode or landmark in the search box to see its location in relation to the charging zones. View zones to show/hide their areas. To see if an address is inside or outside the zones, use the postcode search instead.</p>
+            <div class="search-filter">
+                <div class="heading clearfix zone-map">
+                    <div class="search-icon-black"></div>
+                    <h3>Map search</h3>
+                </div>
+                @{
+                
+                    Html.RenderAction("SearchFilter", "Modules", new
+                    {
+                        actionUrl = Library.DisambiguationSettings.DisambiguationUrl,
+                        ajaxEnabled = true,
+                        currentLocationSubmitUrl = "/maps/congestion-charge",
+                        additionalFields = new List<string> { "InputGeolocation" },
+                        buttonText = "Go",
+                        dataSets = new[] { 
+ new[]{ Library.DisambiguationDataSets.PlacesExtra, "/maps/congestion-charge?Input={{input}}&InputGeolocation={{lon}},{{lat}}" }, 
+ },
+                        modes = string.Format(
+                        "{0},{1},{2},{3},{4},{5},{6},{7}",
+                        Library.MeansOfTransport.Tube,
+                        Library.MeansOfTransport.DLR,
+                        Library.MeansOfTransport.Overground,
+                        Library.MeansOfTransport.Bus,
+                        Library.MeansOfTransport.River,
+                        Library.MeansOfTransport.RiverTours,
+                        Library.MeansOfTransport.Tram,
+                        Library.MeansOfTransport.CableCar
+                        ),
+                        placeHolderText = "Location, postcode or landmark",
+                        noResultsFoundMessage = "Couldn't find any results to match your search. Please try again."
+                    });
+                }
+            </div>
+
+            
+             <p class="visually-hidden" aria-label="Map is not present - please go to postcode">
+               Map is not present - please go to postcode
+            </p>
+            <div id="view-map-button-container"></div>
+            @{ 
+                Html.RenderAction("EmbeddedMap", "Maps", new
+                {
+                    layers = "congestion-charging-zone,low-emissions-zone",
+                    layersVisibleAtLoad = "congestion-charging-zone",
+                    centreLat = "",
+                    centreLng = "",
+                    zoom = "12",
+                    showSatelliteMap = "0",
+                    showUserLocation = "0",
+                    kmlUrl = "",
+                    zoomThresholds = new EmbeddedMapViewModel.EmbeddedMapZoomThresholds() { },
+                    resultSelectedZoom = "14",
+                    showStreetView = false
+                });
+            }
+            
+
+            <div>
+                
+                <h2>Charging times</h2>
+
+<ul>
+	<li><strong>Congestion Charge:</strong> No charge 18:00-07:00 on weekdays or on weekends, public holidays or any days between Christmas Day (25 Dec) and New Year's Day (1 Jan)</li>
+	<li><strong>ULEZ:</strong> Operates midnight to midnight, every day of the year, except Christmas Day (25 Dec)</li>
+	<li><strong>LEZ:</strong> Operates midnight to midnight, every day of the year</li>
+	<li><strong>Direct Vision Standard (DVS) and HGV Safety Permit:</strong> Operates at all times for lorries over 12 tonnes gross vehicle weight</li>
+</ul>
+
+<p>Find out&nbsp;more about paying the <a href="/modes/driving/congestion-charge/paying-the-congestion-charge">Congestion Charge</a>, <a href="/modes/driving/ultra-low-emission-zone/ulez-payments">ULEZ</a> and <a href="/modes/driving/low-emission-zone/make-a-payment">LEZ</a>,&nbsp;and learn more about <a href="https://turing.online.tfl.gov.uk/info-for/deliveries-in-london/delivering-safely/direct-vision-in-heavy-goods-vehicles?intcmp=52876">DVS</a>.</p>
+            </div>
+            
+            @{
+             
+             var congestionChargePdf = "/ruc-cdn/static/cms/documents/congestion-charge-ulez-map.pdf";
+            congestionChargePdf = string.IsNullOrEmpty(congestionChargePdf) ? "#" : congestionChargePdf;
+                
+            var congestionChargeGif = "/ruc-cdn/static/cms/images/congestion-charge-ulez-map.jpg";
+            congestionChargeGif = string.IsNullOrEmpty(congestionChargeGif) ? "#" : congestionChargeGif;
+            }
+            <!-- Download maps -->
+            <div class="download-accordion">
+                <div class="expandable-box congestion-map-accordion">
+    	        <div class="content">
+    		        <div class="always-visible">
+    			        <button id="download-accordion-button" class="controls accordion-button"></button>
+    			        <div class="accordion-heading"><h2>Download maps</h2></div>
+    		        </div>
+    		        <div class="start-hidden" aria-labelledby="download-accordion-button">                             
+                        <div class="map-downloads">
+    	                    <a title="Download the Congestion Charge Zone map in PDF format" class="btn-download-map"
+                                href="@congestionChargePdf">
+    		                    <span>Congestion Charge Zone map</span>
+    		                    <span class="download-pdf">PDF 612.71</span>
+    	                    </a>
+    
+    	                    <a title="Download the Congestion Charge Zone map in GIF format" class="btn-download-map"
+                                href="@congestionChargeGif">
+    		                    <span>Congestion Charge Zone map</span>
+    		                    <span class="download-image">GIF 325.12</span>
+    	                    </a>
+                        </div>                    
+    		        </div>
+	            </div>
+            </div>
+            </div>
+            <!-- Download maps -->
+                
+          
+            
+            @this.ScriptBlock(
+                @<script>
+                      queue.push("@Html.ScriptPath("modules/M020-on-this-page.min.js")", null);
+                </script>
+            )
+
+
+	  
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+                <a href="/modes/driving/congestion-charge" class="heading">
+                    <h3 id="sub-menu-heading" class="h2">Congestion Charge<span class="visually-hidden"> navigation</span></h3>
+                </a>
+                <ul>
+                    
+                                <li class="selected parent" aria-label="selected page with sub pages"><div class="link-wrapper"><a href="/modes/driving/congestion-charge/congestion-charge-zone">Congestion Charge zone</a></div>
+                                <ul>
+                                    
+                                <li aria-label="page with no sub pages"><div class="link-wrapper"><a href="/modes/driving/congestion-charge/congestion-charge-zone/road-signs">Road signs</a></div></li>
+                            
+ 
+                                </ul>
+                            </li>
+ 
+                                <li class="parent" aria-label="page with sub pages"><div class="link-wrapper"><a href="/modes/driving/congestion-charge/paying-the-congestion-charge">Congestion Charge payments</a></div></li>
+                            
+ 
+                                <li aria-label="page with no sub pages"><div class="link-wrapper"><a href="/modes/driving/congestion-charge/discounts-and-exemptions">Discounts and exemptions</a></div></li>
+                            
+ 
+                                <li aria-label="page with no sub pages"><div class="link-wrapper"><a href="/modes/driving/congestion-charge/dart-charge">Dart Charge</a></div></li>
+                            
+ 
+                                <li class="parent" aria-label="page with sub pages"><div class="link-wrapper"><a href="/modes/driving/congestion-charge/penalties-and-enforcement">Penalties and enforcement</a></div></li>
+                            
+ 
+                                <li class="parent" aria-label="page with sub pages"><div class="link-wrapper"><a href="/modes/driving/congestion-charge/contact-congestion-charge">Contact Congestion Charge</a></div></li>
+                            
+ 
+                                <li class="parent" aria-label="page with sub pages"><div class="link-wrapper"></div></li>
+                            
+ 
+                </ul>
+            
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+      </div>
+    
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="advert-tile unsponsored-style google-ads" aria-hidden="true">
+  <div class="advert-link">
+    <div class="advert-content">
+        <div class="medium-large" data-advert="/76889402/driving/cc" data-advert-sizes="300, 250"></div>
+        <div class="small" data-advert="/76889402/driving/cc" data-advert-sizes="300, 250"></div>
+    </div>
+  </div>
+</div>
+@{
+    ViewBag.AmazonSlot = "'amznslots'";
+    ViewBag.AmazonAds = "'3199'"; // to add another value, this needs to be ViewBag.AmazonAds = "'3199','xx'";
+}
+      
+
+ </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+     @section scripts {
+<div class="bottom-advert ">
+    <div class="close-ad-button visually-hidden"><span class="close-icon-circle"></span></div>
+    <div data-advert="/76889402/driving/" data-advert-sizes="320, 50"></div>
+</div>
+}
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "Information about the Congestion Charge and Ultra Low Emission Zone area";}
+        
+            
+        
+
+
+ 

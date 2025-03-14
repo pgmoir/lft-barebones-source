@@ -1,0 +1,301 @@
+﻿
+    
+  
+
+
+<!-- rhroot -->
+@{ViewBag.Title = "Open data users";}
+@{ViewBag.Keywords = "Online developers,TfL";}
+@{ViewBag.Url = "/info-for/open-data-users/index";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+
+  
+
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+            
+                <li><span class="last-breadcrumb">Open data users</span></li>
+            
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+
+  
+  <div class="r">
+    <div class="headline-container section-title section-landing-container ">
+      <div class="section-title-wrap">
+        <h1 class="hero-headline">Open data users</h1>
+        
+      </div>
+    </div>
+  </div>
+
+
+  
+  
+    
+  
+
+
+    
+    <div class="r">
+        <div class="section-overview clearfix ">
+            <div class="small-medium" data-set="section-intro"></div>
+            <div class="main">
+                <div class="large" data-set="section-intro">
+                    
+                </div>
+                All public TfL data (or 'open data') is freely released here for developers to use in their own software and services. We encourage software developers to use these feeds to present customer travel information in innovative ways - providing they adhere to the <a href="/corporate/terms-and-conditions/transport-data-service">transport data terms and conditions</a>.
+            </div>
+            
+            <div class="aside">
+                
+                <div class="login-widget option-one moving-source-order">
+
+    <h3>Sign in or register for data feeds</h3>
+    <a href="https://api-portal.tfl.gov.uk/" class="primary-button">Sign in</a>
+    <a href="https://api.tfl.gov.uk">See detailed developer documentation</a>
+</div>
+ 
+                
+            </div>
+            
+        </div>
+    </div>
+    
+   
+    <div class="r">
+        <div class="main clearfix" role="main">
+            
+        
+        
+         
+        
+        
+        
+                
+                
+                <div class="module-grid clearfix">
+                    
+                    
+                    
+                    <div class="news-teaser">
+
+    <a href="/info-for/open-data-users/unified-api?intcmp=29422" >
+        <img src="/cdn/static/cms/images/promos/countdown-digital-sign-700p_rdax_400x200.gif" alt="Live arrivals sign" />
+        
+        <div class="text-link">
+             <h2>Unified API</h2>
+            <p>Discover the benefits of using our unified API</p>
+        </div>
+    </a>
+</div>
+ 
+ <div class="news-teaser">
+
+    <a href="https://blog.tfl.gov.uk/category/developers/?intcmp=29436" >
+        <img src="/cdn/static/cms/images/promos/blog_rdax_400x200.png" alt="Screenshot of the WebCAT tool" />
+        
+        <div class="text-link">
+             <h2>TfL Digital Blog</h2>
+            <p>Get all the latest news on our open data and join the conversation with our experts</p>
+        </div>
+    </a>
+</div>
+ 
+ <div>
+
+<div class="news-teaser">
+
+    <a href="/info-for/open-data-users/our-open-data?intcmp=3671" >
+        
+        
+        <div class="text-link">
+             <h2>Our open data</h2>
+            <p>A full list of all our available open data</p>
+        </div>
+    </a>
+</div>
+ 
+ <div class="news-teaser">
+
+    <a href="http://blog.tfl.gov.uk/category/information/journey-planner/?intcmp=37244" >
+        
+        
+        <div class="text-link">
+             <h2>Journey Planner data updates</h2>
+            <p>A weekly summary of our latest data updates - including bus service and stop changes</p>
+        </div>
+    </a>
+</div>
+ 
+ 
+</div>
+ 
+                </div>
+        
+        
+        
+          
+        
+    </div>
+    
+      
+      <div class="aside" role="complementary">
+    
+        <div data-set="sidenav-container" class="large">
+          
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                <a href="/info-for/open-data-users/index" class="heading">
+                    <h2 id="sub-menu-heading">Open data users<span class="visually-hidden"> navigation</span></h2>
+                </a>
+                <ul>
+                    
+                                <li><div class="link-wrapper"><a href="/info-for/open-data-users/open-data-policy">Open data policy</a></div></li>
+                            
+ 
+                                <li><div class="link-wrapper"><a href="/info-for/open-data-users/unified-api">Unified API</a></div></li>
+                            
+ 
+                                <li><div class="link-wrapper"><a href="/info-for/open-data-users/our-open-data">Our open data</a></div></li>
+                            
+ 
+                                <li><div class="link-wrapper"><a href="/info-for/open-data-users/design-and-branding">Design & branding</a></div></li>
+                            
+ 
+                </ul>
+            
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+        </div>
+        <div class="module-grid clearfix">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="advert-tile unsponsored-style google-ads" aria-hidden="true">
+  <div class="advert-link">
+    <div class="advert-content">
+        <div class="medium-large" data-advert="/76889402/non-targeted" data-advert-sizes="300, 250"></div>
+        <div class="small" data-advert="/76889402/non-targeted" data-advert-sizes="300, 250"></div>
+    </div>
+  </div>
+</div>
+@{
+    ViewBag.AmazonSlot = "'amznslots'";
+    ViewBag.AmazonAds = "'3199'"; // to add another value, this needs to be ViewBag.AmazonAds = "'3199','xx'";
+}
+      
+
+ 
+          
+        </div>
+        <div data-set="sidenav-container" class="small-medium"></div>
+      </div>
+  </div>
+ 
+        
+        
+        
+            @{ViewBag.Description = "Information for software and app developers to use TfL's open data";}
+        
+            
+        
+
+
+ 

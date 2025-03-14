@@ -1,0 +1,196 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Accredited breakdown discount";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-accredited-manage-success-34139";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Accredited breakdown discount</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Accredited breakdown discount</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      <h2></h2>
+      
+           
+      
+
+
+		
+		<!-- 7. success -->
+		@using TfL.Ruc.Services.ViewModels.Ruc.DiscountManage
+        @{
+            dynamic content = new ContentModel();
+            
+            content.AccreditedBreakdownManageText = "<h2>What happens next?</h2><p>You won't have to pay the Congestion Charge for vehicles added to the discount.</p><p>Vehicles will stay on the discount until it expires, unless you remove them.</p><p>When you renew the discount you must pay the £10 for every vehicle active on it at that time.</p><p>To see all vehicles on the discount go to '<a href='/modes/driving/cc-discount-manage-discounts-32822'>Manage my accredited breakdown discount</a>'.</p>";
+            content.AccreditedBreakdownManageTitle = "Manage accredited breakdown";
+            content.CompletedConfirmationHeading = "{0} vehicle(s) added to your discount";
+            content.PaymentReferenceText = "Your payment receipt number is {0}. ";
+            content.CompletedConfirmationText = "Your vehicles will be on your discount until it expires on {0}";
+            content.ReferenceNumber = "Reference no:";
+            content.MoreInformationHeading = "Next steps";
+            content.MoreInformation = "<p>You won't have to pay the Congestion Charge for vehicles added to the discount. Vehicles will stay on the discount until it expires, unless you remove them.</p><p>When you renew the discount you must pay the £10 for every vehicle active on it at that time.</p><p>To see all vehicles on your discount go to <a href='/modes/driving/cc-discount-manage-discounts-32822'>Manage my accredited breakdown discount</a>.</p>";
+
+            content.PayLezTitle = "Pay the LEZ charge";
+            content.PayLezText = "Pay the low emission zone charge";
+
+            content.AutoPayApplyTitle = "Pay Ulez Automatically";
+            content.AutoPayApplyText = @"Set up Fleet Auto Pay and you will pay automatically for any CC and ULEZ charges for driving in London.";
+            content.AutoPayApplyButtonText = "Set up Fleet Auto Pay";
+            content.AutoPayManageTitle = "Add vehicles to Fleet Auto Pay?";
+            content.AutoPayManageText = "You'll pay automatically for any CC or ULEZ charges for driving in central London.";
+            content.AutoPayManageButtonText = "Manage Fleet Auto Pay";
+            
+            content.ManageDiscountButtonText = "Manage my discount";
+            content.ManageDiscountUrl = "/modes/driving/cc-discount-manage-discounts-32822";
+
+            content.PayCcTitle = "Travelling in the next few days ";
+            content.PayCcText = @"If you plan to drive into central London while we are reviewing your application, you will need to pay any charges for your vehicle as normal.";
+            content.PayCcButtonText = "Pay to drive in London";
+
+            content.FinishButtonText = "Finish";
+            content.FinishButtonUrl = "/modes/driving/account-account-landing-29377";
+            
+            Html.RenderAction("SubmissionSuccess", "DiscountManage", new
+                {
+                    area = "Ruc",
+                    discountStyle = ZoneChargeDiscountStyle.AccreditedBreakdown,
+                    discountAction = DiscountAction.Manage,
+                    content = content,
+                    manageAccountUrl = "/modes/driving/account-account-landing-29377",                   
+                    journeyStartUrl = "/modes/driving/cc-discount-manage-discounts-32822",
+                    ManageDiscountUrl = "/modes/driving/cc-accredited-breakdown-manage-34762"
+                }
+            );
+        }
+        
+		
+	  
+
+
+
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+        @ModulesHelpers.PrintButton()
+      
+ 
+      </div>
+    
+    <div></div>
+    
+      <div>
+                    
+        <div class="vertical-button-container">
+    <ul>
+        
+        
+        
+        <li><a href="/modes/driving/account-vehicles"  class="plain-button">Pay to drive in London</a></li>
+        
+        
+        <li><a href="/modes/driving/congestion-charge/congestion-charge-zone"  class="plain-button">Congestion Charge/ULEZ zone</a></li>
+        
+        
+        <li><a href="/modes/driving/check-your-vehicle-35896"  class="plain-button">Check your vehicle</a></li>
+        
+        
+        <li><a href="/modes/driving/amend-or-refund-a-driving-charge"  class="plain-button">Amend/refund a charge</a></li>
+        
+        
+        <li><a href="/modes/driving/congestion-charge/contact-congestion-charge"  class="plain-button">Contact us</a></li>
+        
+        
+        <li><a href="/modes/driving/ultra-low-emission-zone/scrappage-scheme"  class="plain-button">Scrappage scheme</a></li>
+        
+    </ul>
+</div>
+
+      </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

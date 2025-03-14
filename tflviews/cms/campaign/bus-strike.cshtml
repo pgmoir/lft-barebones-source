@@ -1,0 +1,207 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Bus strike";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/campaign/bus-strike";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+
+@{
+    Response.Status = "301 Moved permanently";
+    Response.AddHeader("Location", "/modes/buses/index");   
+}
+
+ 
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/campaign/index">Campaigns</a></li>
+                
+            
+            
+                <li><span class="last-breadcrumb">Bus strike</span></li>
+            
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Bus strike</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+      <div class="article-teaser">
+        A 24-hour bus strike is planned on Friday 13 February. If the strike goes ahead it will affect bus services across London from about 04:00 Friday morning. It will also affect night bus services operating on Friday night into Saturday morning. Bus services during the day on Saturday 14 February should operate as normal.
+        
+      </div>
+    
+    <div class="on-this-page">
+      <p>We will update this page with more information as soon as we have it. </p>
+<ul>
+    <li>Bus services across London are likely to be affected</li>
+    <li>If you have a Bus &amp; Tram Pass you will be able to use it on the Tube, DLR and London Overground. See Tickets</li>
+    <li>All other services will operate as normal</li>
+    <li>A further 24-hour strike is planned for Monday 16 February</li>
+    <li>Bus services on Saturday and Sunday are not affected and will run as normal</li>
+</ul>
+      
+           
+      
+      
+        
+          
+            @this.ScriptBlock(
+              @<script>
+                queue.push("@Html.ScriptPath("modules/M020-on-this-page.min.js")", null);
+              </script>
+            )
+          
+        
+      
+    </div>
+  </div>
+  <div class="aside" role="complementary">
+
+   
+    
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+
+ @{ 
+    Html.RenderPartialIfExists("Favourites/Widgets/_BusArrivals");
+    }
+<div id="view-map-button-container"></div>
+<div class="search-filter hidden">
+    <h3>Find a bus stop or route</h3>
+    <p>For live bus arrivals, status and timetables. </br>Look for the star to favourite</p>
+    @{
+        Html.RenderAction("SearchFilter", "Modules", new
+        {
+            actionUrl = Library.DisambiguationSettings.DisambiguationUrl,
+            includeGeolocation = true,
+            currentLocationSubmitUrl = "/maps/bus",
+            additionalFields = new List<string> { "InputGeolocation" },
+            buttonText = "Go",
+            buttonClass = "secondary-button",
+            dataSets = new string[][] 
+            { 
+                new[]{ Library.DisambiguationDataSets.StopPoints, "/maps/bus?Input={{input}}&InputGeolocation={{lat}},{{lon}}&searchBoxType=" + @Library.SearchBoxType.BusOnly },
+                new[]{ Library.DisambiguationDataSets.Routes, "/{{mode}}/route/{{lineIds}}/"}
+            },
+            modes = Library.MeansOfTransport.Bus,
+            placeHolderText = "Bus route or stop name",
+            displaySelectedModesOnly = true,
+            searchLabel = "Search for stations, stops and piers (e.g. Bank)"
+        });
+    }    
+</div>      
+            
+ 
+      </div>
+    
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="advert-tile unsponsored-style google-ads" aria-hidden="true">
+  <div class="advert-link">
+    <div class="advert-content">
+        <div class="medium-large" data-advert="/76889402/non-targeted" data-advert-sizes="300, 250"></div>
+        <div class="small" data-advert="/76889402/non-targeted" data-advert-sizes="300, 250"></div>
+    </div>
+  </div>
+</div>
+@{
+    ViewBag.AmazonSlot = "'amznslots'";
+    ViewBag.AmazonAds = "'3199'"; // to add another value, this needs to be ViewBag.AmazonAds = "'3199','xx'";
+}
+      
+
+ </div>
+    
+      <div class="module-grid clearfix">
+                    
+        <div class="follow-social twitter">
+  
+  <div class="social-image">
+    <span class="mode-icon bus">&nbsp;</span>
+  </div>
+  <div class="social-text">
+    <h3>London Buses</h3>
+    <p>News about the bus network</p>
+  </div>
+  <div class="social-button">
+    <a class="secondary-button" href="http://www.twitter.com/TfLBusAlerts">Follow &#64;TfLBusAlerts</a>
+  </div> 
+</div>
+ <div class="follow-social email">
+  
+  <div class="social-image">
+    
+  </div>
+  <div class="social-text">
+    <h3>Email updates</h3>
+    <p>Hop aboard the TfL email service for updates, personalised offers and promotions</p>
+  </div>
+  <div class="social-button">
+    <a class="secondary-button" href="/travel-information/social-media-and-email-updates/email-updates">Register</a>
+  </div> 
+</div>
+ 
+      </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+ 
+ 
+        
+        
+        
+            @{ViewBag.Description = "Information about proposed bus strike for Tuesday 13 January 2015";}
+        
+            
+        
+
+
+ 

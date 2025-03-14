@@ -1,0 +1,119 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Where are you driving?";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/pay-to-drive-in-london/zone-check";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                 <li><a href="/modes/driving/pay-to-drive-in-london">Pay to drive in London</a></li>
+                
+            
+            
+            
+                <li><span class="last-breadcrumb">Where are you driving?</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Where are you driving?</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/account-account-landing-29377"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+                                                    <style>                                .disambiguation-in-page {                     margin-top: 7px!important;                    border: none!important;                }            </style>            @using (Html.TflBeginForm())            {            	dynamic content = new ContentModel();            	content.ContinueButtonTitle = "Continue";                content.BackButtonTitle = "Back";                content.TravellinginCentralLondonText = "Which zones are you driving in? *";                content.TravellingFlagYes = "Congestion Charge/ULEZ and LEZ";                content.TravellingFlagNo = "LEZ only";                content.DetailTooltipHeader = "The Congestion Charge zone and ULEZ are both within the LEZ";                content.DetailTooltipText = "<p>The central London area is shown in red on this map. If you're not sure if your journey takes you through the central London area, enter a street name, postcode or landmark into the checker.</p><p>If you drive within the central London area you need to pay the LEZ and the ULEZ charges. If you travel Monday-Friday, 07:00-18:00 you also need to pay the Congestion Charge.</p><p>If you drive within the Greater London area, within the M25 but not within the central London area, you will only need to pay the LEZ charge.</p>";                content.IsTravellingInCentralLondonRequired = "Select an answer to continue";                        Html.RenderAction(                	"ZoneCheck",                        "PayZoneCharge",                        new                        {                        	continueUrl = "/modes/driving/pay-to-drive-in-london/select-charges",                        	content = content                        });            }                        <h2><p>Postcode and map search</p></h2>            <div class="accordion disconnected-accordion" style="border:1px solid #ccc;margin-bottom:0;border-bottom:none">            <div class="expandable-box" style="margin-bottom:0px">                <div class="content">                    <div class="always-visible accordion-heading" aria-expanded="false" style="border:none;background:none">                        <a href="javascript:void(0);" class="controls" aria-expanded="false">&nbsp;</a>                        <div>Zone map</div>                    </div>                    <div class="start-hidden disconnected-content with-margin" style="padding:10px 10px">                        <!-- Search box -->                        <p>The central London area is shown in the smaller red area on this map. If you're not sure if your journey takes you through the central London area, enter a street name, postcode or landmark into the checker. The larger LEZ area is in green.</p>
+
+<p>If you drive within the central London area you need to pay the LEZ and the ULEZ charges. If you travel Monday-Friday, 07:00-18:00 you also need to pay the Congestion Charge.</p>
+
+<p>If you drive within the Greater London area, within the M25 but not within the central London area, you will only need to pay the LEZ charge.</p>        	                         <div class="search-filter" style="padding:0;background:none;border-bottom:none;">                                                        <div class="heading clearfix">                                <div><strong>Map search</strong></div>                            </div>                           	@{                        		Html.RenderAction("SearchFilter", "Modules", new                                	{                                		actionUrl = Library.DisambiguationSettings.DisambiguationUrl,                                		ajaxEnabled = true,                                        	currentLocationSubmitUrl = "/maps/congestion-charge",                                        	additionalFields = new List<string>                                            	{ "InputGeolocation" },                                            	buttonText = "Go",                                            	dataSets = new[] {                                            	new[]{                                                 	Library.DisambiguationDataSets.PlacesExtra,                                                 	"/maps/congestion-charge?Input={{input}}&InputGeolocation={{lon}},{{lat}}" },                                            	},                                            	modes = string.Format(                                            	"{0},{1},{2},{3},{4},{5},{6},{7}",                                            	Library.MeansOfTransport.Tube,                                            	Library.MeansOfTransport.DLR,                                            	Library.MeansOfTransport.Overground,                                            	Library.MeansOfTransport.Bus,                                            	Library.MeansOfTransport.River,                                            	Library.MeansOfTransport.RiverTours,                                            	Library.MeansOfTransport.Tram,                                            	Library.MeansOfTransport.CableCar                                            	),                                            	placeHolderText = "Location, postcode or landmark"                                        });                        }                        </div>                        <div>                            <br/>                            @{                            Html.RenderAction("EmbeddedMap", "Maps", new                            {                            layers = "gla-boundary,congestion-charging-zone,low-emissions-zone",                            layersVisibleAtLoad = "congestion-charging-zone,low-emissions-zone",                            centreLat = "",                            centreLng = "",                            zoom = "10",                            showSatelliteMap = "0",                            showUserLocation = "0",                            kmlUrl = "",                            zoomThresholds = new EmbeddedMapViewModel.EmbeddedMapZoomThresholds() { },                            resultSelectedZoom = "14"                            });                            }                        </div>                    </div>                </div>            </div>        </div>                                 <div class="accordion disconnected-accordion" style="border:1px solid #ccc;">            <div class="expandable-box" style="margin-bottom:0px">                <div class="content">                    <div class="always-visible accordion-heading" aria-expanded="false" style="border:none">                        <a href="javascript:void(0);" class="controls" aria-expanded="false">&nbsp;</a>                        <div>Check a postcode</div>                    </div>                    <div class="start-hidden disconnected-content with-margin" style="padding:10px 10px">                        <h3>Find your zone</h3>                        <div class="responsive-form zone-checker-in-page">                            <p>Our postcode checker can tell you which zone(s) an address is in. (These results will not show on the map above).</p>                           @{                    	        dynamic statcontent = new ContentModel();                                        	Html.RenderAction(RucDictionary.ZoneChecker.DefaultActionName, "ZoneChecker", new                            	{                            		zoneChargeType = ZoneChargeType.CongestionCharge,                            		content = statcontent,                            		findAnotherUrl = "/maps/congestion-charge",                            		insideCcInsideResUrl = "/modes/driving/congestion-charge/zone-checker/inside-zone",                            		insideCcOutsideResUrl = "/modes/driving/congestion-charge/zone-checker/outside-zone",                            		outsideCcInsideResUrl = "/modes/driving/congestion-charge/zone-checker/outside-zone-inside-residents",                                    outsideCcOutsideResUrl = "/modes/driving/congestion-charge/zone-checker/outside-zone"                            	});                        }                        </div>                                                                </div>                </div>            </div>        </div>        <p><p>* required field</p></p>                        @{                dynamic buttonContent = new ContentModel();                buttonContent.BackButtonText = "Back";                            Html.RenderAction(                "ZoneCheckActionButtons",                "PayZoneCharge",                new                {                    content = buttonContent,                            continueButtonText = "Continue",                    backButtonUrl = "/modes/driving/pay-the-charge-select-vehicle-26283"                });            }          
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "Pay to drive in london zone checker";}
+        
+            
+        
+
+
+ 

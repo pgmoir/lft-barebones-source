@@ -1,0 +1,172 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Transaction history";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/fleet-autopay-manage-view-statements-29042";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                 <li><a href="/modes/driving/auto-pay">Auto Pay</a></li>
+                
+            
+            
+            
+                <li><span class="last-breadcrumb">Transaction history</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Transaction history</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+      <div class="article-teaser">
+        <p>View details of all transactions over the last 24 months on your Fleet Auto Pay service.</p>
+        
+      </div>
+    
+    
+      
+      
+           
+      <div>
+
+<p>Download these transactions as a .csv file and open them in the program of your choice. Or download a custom file by selecting your search and filter options first.</p>
+</div>
+ 
+
+ 
+
+
+		
+		<!-- 4. fleet-view-statement -->
+		@{
+            dynamic content = new ContentModel();
+            content.ListHeading = "My Auto Pay transactions";
+            content.SearchTypeText = "Search for: ";
+            content.SearchLabel = "Enter number plate or tag";
+            content.DownloadFilteredListButtonText = "Download .csv";
+            content.FilterHeadingText = "Filter by date range";
+            content.FromDateText = "From date ";
+            content.ToDateText = "To date ";
+            content.SortHeadingText = "Sort by:";
+            content.TypeText = "Type";
+            content.OrderText = "Order";
+            content.AmountSuffix = "(credit)";
+            content.FilterButtonText = "Apply filters";
+            content.TransactionTypeLabel = "Transaction type: ";
+            content.VRMLabel = "Number plate (Vehicle Registration Mark): ";
+            content.PaymentDateLabel = "Date: ";
+            content.TagLabel = "Tag:";
+            content.DateAddedForLabel = "Journey date: ";
+            content.ReferenceLabel = "Reference: ";
+            content.StatementIdLabel = "Statement: ";
+            content.DateRangeLabel = "Date range";
+            //content.ListHeading = "Statements";
+            content.ReceiptIdLabel = "Receipt number: ";
+            content.AmountLabel = "Amount: ";
+
+            Html.RenderAction(
+                CommonDictionary.ListModule.ListActionName,
+                "FinancialHistory",
+                new
+                {
+                    area = "Ruc",
+                    content = content,
+                    autopayOnly = true,
+                    transactionDetailUrl = "/modes/driving/fleet-autopay-manage-transaction-detail-29512",
+                    evidentialRecordUrl = "/modes/driving/fleet-autopay-manage-evidential-record-36783"
+                }
+            );            
+        }
+        
+        @ModulesHelpers.BackLink()
+        
+        @this.ScriptBlock(
+            @<script>
+                queue.push(
+                    "@Html.ScriptPath("specific/list-filters-text.min.js")", null,
+                    "@Html.ScriptPath("specific/results-paginator.min.js")", null,
+                    "@Html.ScriptPath("specific/pages/statements.min.js")", function() {
+                        tfl.rucstatements.init();
+                    }
+                 );
+            </script>
+        )
+		
+	  
+
+  
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "View details of all transactions over the last 24 months on your Fleet Auto Pay service.";}
+        
+            
+        
+
+
+ 

@@ -1,0 +1,140 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Review vehicles";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/selected-partner-review-vehicles-52181";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+                
+                <li><span class="last-breadcrumb">Review vehicles</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Review vehicles</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+        @{
+            dynamic content = new ContentModel();
+            
+            /*Charges detail section*/   
+            content.ShowMoreLabel = "Charge details";
+            content.ShowLessLabel = "Charge details";
+            content.CCShortLabel = "CC";
+            content.ULEZShortLabel = "ULEZ";
+
+            /*Action buttons*/
+            content.AddNewVehicleButtonText = "Add new vehicle";
+            content.AddNewVehicleLink = "/modes/driving/cc-selected-partner-add-vehicle-36325";
+
+            /*Page content*/
+            content.SelectedVehicleCountText = "Selected: {0} / {1}";
+            content.VehicleSelectionLimitReachedMessage = "You can't select any more vehicles in this session.";
+            content.NoVehiclesSelectedText = "Add at least 1 vehicle to continue";
+                        
+            /*Tag modal*/
+            content.AddTagMessage = "A tag will help you identify your vehicle more easily.";
+            content.EditTagMessage = "Change your vehicle tag or remove it.";
+            content.SaveTagButtonText = "Done";
+            content.CancelTagButtonText = "Cancel";
+            content.AddTagTitle = "Add a tag";
+            content.EditTagTitle = "Edit tag";
+
+            /*Buttons*/
+            content.ContinueButtonText = "Continue";
+            content.BackButtonText = "Back";
+
+            Html.RenderAction(
+                "VehiclesSummary",
+                "SelectedPartnerManage",
+                new
+                {
+                    content = content,
+                    backUrl = "/modes/driving/cc-selected-partner-vehicles-36334",
+                    successUrl = "/modes/driving/cc-selected-partner-success-36332",
+                    failureUrl = "/modes/driving/cc-selected-partner-failure-36328"
+                });
+            
+        }
+    
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

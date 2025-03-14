@@ -1,0 +1,127 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Penalty Charge Notices (PCNs)";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/view-issued-pcns";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Penalty Charge Notices (PCNs)</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Penalty Charge Notices (PCNs)</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      <h2>Issued PCNs</h2>
+      
+           
+      
+
+        @{ViewBag.Title = "Pay a PCN";}
+
+        @{
+          dynamic content = new ContentModel();
+          
+            content.SelectAPcnError = "Select at least one PCN to pay for";
+            content.VrmHeadingCaption = "The following vehicle has a PCN associated with it: ";
+            content.PcnDetailsHeading = "Details of this PCN";
+            content.PcnDetailsLink = "View full PCN details";
+            content.PcnDetailsUpdateLink = "View full PCN details and update representation";
+            content.OtherPcnsHeading = "Other PCNs have been issued for this vehicle, for the same registered keeper or person liable ";
+            content.SelectMultiplePcns = "Select other PCNs you want to pay for in a single transaction.";
+            content.SelectMultipleCheckboxText = "Select all {0}s";
+            content.BasketHeading = "BASKET: You have selected {0} item(s). (You can add 40 items maximum to your basket.) ";
+            content.PayButtonText = "Pay";
+            content.CancelButtonText = "Remove all";
+            content.CancelAllPcns = "Remove all PCNs from basket";
+            content.CancelAllPcnsWarning = "Selecting 'Remove all' will delete all PCNs from basket";
+            content.BasketCapacityExceededError = "You cannot pay for more than {0} items in a single transaction";
+            
+          Html.RenderAction(
+            "IssuedPcns", 
+            "PenaltyChargeNotice", 
+            new
+            {
+              area = "Ruc",
+              payPcnUrl = "/modes/driving/pay-a-pcn",
+              viewPcnUrl = "/modes/driving/view-a-pcn",
+              challengePcnUrl = "/modes/driving/challenge-a-pcn",
+              pcnDetailsUrl = "/modes/driving/view-pcn-details",
+              paymentSummaryUrl = "",
+              content = content
+            }
+          );
+        }
+      
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

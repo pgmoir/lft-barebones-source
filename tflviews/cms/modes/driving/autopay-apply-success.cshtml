@@ -1,0 +1,148 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Auto Pay is set up";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/autopay-apply-success";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                 <li><a href="/modes/driving/auto-pay">Auto Pay</a></li>
+                
+            
+            
+                <li><span class="last-breadcrumb">Auto Pay is set up</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Auto Pay is set up</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/account-account-landing-29377"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+        @{
+            dynamic content = new ContentModel();
+
+            content.ConfirmationForMultiVehiclesHeading = "Added to Auto Pay: {0} vehicles";
+            content.ConfirmationForSingleVehicleHeading = "Added to Auto Pay: 1 vehicle";
+            content.ConfirmationText = "You will now be charged automatically every month for each registered vehicle that travels within the Congestion Charge zone. You will also be charged if you travel within the ULEZ and your vehicle does not meet the emissions standards.";
+
+            content.FailedVrmsHeading = "The following vehicle(s) could not be added to your Auto Pay service: ";
+            content.MonthlyStatementsHeading = "Monthly statements";
+            content.MonthlyStatementsMessage = "Your first statement will be issued on {0}. You will have the option to change your statement date after your first payment.";
+            content.MoreInformationHeading = "Sign up for free alerts";
+            content.MoreInformation = @"If you sign up for free mobile phone alerts, we can text you if there are any problems with your Auto Pay payments. Choose mobile phone alerts in your account settings.";
+            content.MoreInformationCallToActionButtonText = "Account settings";
+            content.MoreInformationCallToActionUrl = "/modes/driving/account-account-settings-29386";
+            content.StoredCardUpdatedHeading = "New card added";
+            content.AccountCreatedHeading = "Your account number: {0}";
+            content.AccountCreatedMessage = "You need this number to sign into your account.";
+
+            Html.RenderAction("SuccessCc", "AutoPayApply", new
+                {
+                    area = "Ruc",
+                    content = content,
+                    journeyStartUrl = "/modes/driving/autopay-apply",
+                    shareAccountUrl = "#",
+                    setupSmsUrl = "#",
+                    failureUrl = "/modes/driving/autopay-apply-failure"
+                }
+            );
+        }
+        
+         <div class="call-to-action-button button-set">
+            <a href="/modes/driving/account-account-landing-29377" class="primary-button" title="Finish">Finish</a>
+        </div>
+      
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

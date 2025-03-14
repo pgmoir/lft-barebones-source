@@ -1,0 +1,191 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Recovery vehicle discount";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-recovery-vehicle-before-you-begin";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Recovery vehicle discount</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Recovery vehicle discount</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/account-account-landing-29377"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+    
+      <h2>Before you start</h2>
+
+<p>Before we can process your application for the recovery vehicle discount you need to set up a London Road User Charging account.</p>
+
+<h3>Setting up a London Road User Charging account</h3>
+
+<p>To create an account, click on 'Continue' and complete all required fields. You can also set up optional services, such as mobile phone text alerts, to help you manage your discount. (Sign in now if you already have an account.)</p>
+
+<h4>Benefits of a London Road User Charging account</h4>
+
+<p>Having an account with us means you can:</p>
+
+<ul>
+	<li>Manage and easily renew your discount online</li>
+	<li>Set up Auto Pay for up to 5 vehicles so you can pay the Congestion Charge at a lower rate</li>
+	<li>View your payment history</li>
+	<li>Make faster payments by storing your contact, vehicle and payment details</li>
+	<li>Allow up to 5 people access to your London Road User Charging account</li>
+</ul>
+
+<h3>Applying for your recovery vehicle discount</h3>
+
+<p>Once your London Road User Charging account has been created and you sign in, you will be directed automatically to complete your discount application.</p>
+      
+           
+      
+
+        @{
+            dynamic content = new ContentModel();
+            content.ContinueButtonText = "Start";
+            
+            // Back Url parameters
+            bool hasSourceRoutingKey = Request.QueryString.AllKeys.Contains("sourceRoutingKey");
+            string sourceRoutingKey = string.Empty;
+            if (hasSourceRoutingKey)
+            {
+                content.SourceRoutingKey = sourceRoutingKey = Request.QueryString["sourceRoutingKey"];
+            }
+
+            Html.RenderAction("BeforeYouStart", "RecoveryVehicle", new
+            {
+                area = "Ruc",
+                content = content,
+                continueUrl = "/modes/driving/cc-recovery-vehicle-check-authentication-and-redirect?sourceRoutingKey=" + sourceRoutingKey,
+                vrmLookupUrl = "/modes/driving/cc-recovery-vehicle-vrm-lookup?sourceRoutingKey=" + sourceRoutingKey,
+                accountVehicleUrl = "/modes/driving/cc-recovery-vehicle-account-vehicles?sourceRoutingKey=" + sourceRoutingKey
+            });
+        }
+    
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+      <div>
+                    
+        <div class="vertical-button-container">
+    <ul>
+        
+        
+        
+        <li><a href="/modes/driving/congestion-charge/paying-the-congestion-charge"  class="plain-button">Congestion Charge payments</a></li>
+        
+        
+        <li><a href="/modes/driving/congestion-charge/congestion-charge-zone"  class="plain-button">Congestion Charge zone</a></li>
+        
+        
+        <li><a href="/modes/driving/auto-pay"  class="plain-button">Auto Pay</a></li>
+        
+        
+        <li><a href="/modes/driving/congestion-charge/discounts-and-exemptions"  class="plain-button">Discounts and exemptions</a></li>
+        
+        
+        <li><a href="/modes/driving/congestion-charge/contact-congestion-charge"  class="plain-button">Contact Congestion Charge</a></li>
+        
+    </ul>
+</div>
+
+      </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "Before we can process your application for the recovery vehicle discount you need to set up a London Road User Charging account.";}
+        
+            
+        
+
+
+ 

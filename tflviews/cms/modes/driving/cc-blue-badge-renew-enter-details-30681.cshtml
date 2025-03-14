@@ -1,0 +1,150 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Blue Badge details";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-blue-badge-renew-enter-details-30681";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Blue Badge details</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Blue Badge details</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+      <div class="article-teaser">
+        <p>To be eligible for this discount your disabled badge must have been issued in the United Kingdom or the European Economic Area (EEA). Tell us below where your badge was issued.</p>
+        
+      </div>
+    
+    
+      
+      
+           
+      
+
+
+		
+		<!-- 2. blue-badge -->
+		@{
+            dynamic content = new ContentModel();
+
+            content.BlueBadgeTitle = "Blue Badge Details";
+            //content.BlueBadgeText = "Please provide details of the Blue Badge you would like this discount to be applied to.";
+            content.ConfirmEUBadgeText = "Tick this box if your disabled badge was issued within the EEA but outside of the United Kingdom";
+            content.BlueBadgeNumberLabel = "Blue Badge number";
+            content.IssuingAuthorityLabel = "Issuing authority/Country of issue";
+            content.ExpiryDate = "Expiry date*";
+            content.BlueBadgeNumberHelpTitle = "Where can I find my Blue Badge details? ";
+            content.BlueBadgeNumberHelpText = "<p style='text-align: center;'><img src='/ruc-cdn/static/cms/images/sample-blue-badge-front1.jpg' alt='Blue Badge sample image front' /><img src='/ruc-cdn/static/cms/images/sample-blue-badge-back1.jpg' alt='Blue Badge sample image back' /></p><p>For Blue Badges issued in the United Kingdom, look on the front (the side without the photograph) for all the details you need.</p><p>The issuing authority is the borough or council where you live - find this in the 'issued by' box. We may contact the issuing authority to confirm that the badge details are valid.</p><p>You do not need to complete this section if your badge was issued outside the United Kingdom. </p>";
+            content.BackButtonText = "Back";
+            content.ContinueButtonText = "Continue";
+            content.EuIssuedRequired = "Select where your Blue Badge was issued";
+            content.ExpiryDateRequired = "Enter expiry date to continue";
+            content.SelectedYearValidateDropDownDate = "Enter a valid future date to continue ";
+            content.UKIssuedLabel = "Issued in the United Kingdom";
+            content.NonUKIssuedLabel = "Issued within the EEA but outside of the United Kingdom";
+                        
+            Html.RenderAction(
+                "EnterBlueBadgeDetails",
+                "DiscountRenew",
+                new
+                {
+                    area = "Ruc",
+                    selectDiscountUrl = "/modes/driving/cc-blue-badge-renew-before-you-begin-34008",
+                    selectVehicleUrl = "/modes/driving/cc-blue-badge-renew-upload-evidence-34013",
+                    reviewUrl = "/modes/driving/cc-blue-badge-renew-review-application-34010",
+                    journeyStartUrl = "/modes/driving/cc-discount-manage-discounts-32822",
+                    discountStyle = ZoneChargeDiscountStyle.BlueBadge,
+                    content = content
+                }
+            );
+        }
+		
+	  
+
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "To be eligible for this discount your disabled badge must have been issued in the United Kingdom or the European Economic Area (EEA). Tell us below where your badge was issued.";}
+        
+            
+        
+
+
+ 

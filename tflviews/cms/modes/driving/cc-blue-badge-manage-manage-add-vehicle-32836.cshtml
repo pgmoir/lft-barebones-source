@@ -1,0 +1,115 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "CC Discount - Blue Badge - Manage - Manage-add-vehicle";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-blue-badge-manage-manage-add-vehicle-32836";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+                
+                <li><span class="last-breadcrumb">CC Discount - Blue Badge - Manage - Manage-add-vehicle</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>CC Discount - Blue Badge - Manage - Manage-add-vehicle</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+
+        
+        <!-- 2. cc-blue-badge-manage-manage-add-vehicle -->
+        @using TfL.Ruc.Services.ViewModels.Ruc.DiscountCommon
+        @{            
+            
+            Html.RenderAction(
+                "Manage",
+                "DiscountManage",
+                new
+                {
+                    area = "Ruc",
+                    nextUrl = "/modes/driving/cc-blue-badge-manage-select-vehicle-32842",                    
+                    discountStyle = ZoneChargeDiscountStyle.BlueBadge
+                }
+            );
+        }
+        
+      
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

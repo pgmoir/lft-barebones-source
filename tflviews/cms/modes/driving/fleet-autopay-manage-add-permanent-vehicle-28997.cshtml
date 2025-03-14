@@ -1,0 +1,170 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Add vehicles to Fleet Auto Pay";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/fleet-autopay-manage-add-permanent-vehicle-28997";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                 <li><a href="/modes/driving/auto-pay">Auto Pay</a></li>
+                
+            
+            
+            
+                <li><span class="last-breadcrumb">Add vehicles to Fleet Auto Pay</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Add vehicles to Fleet Auto Pay</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      <h2>Permanent vehicle addition</h2>
+
+<p>The vehicle will be added to your Fleet Auto Pay indefinitely as long as the service is active.</p>
+
+<p>Once a vehicle has been added, any Congestion Charges will be taken from your bank account by monthly direct debit.</p>
+
+<p>The annual &pound;10 charge for each vehicle added to your Fleet Auto Pay service will appear on your next monthly statement.</p>
+      
+           
+      
+
+        @{
+            dynamic content = new ContentModel();
+            
+            content.AddVehicleButtonText = "Add another vehicle";
+            content.ConfirmVehicleButtonText = "Confirm";
+            content.BackButtonText = "Back";
+            content.ContinueButtonText = "Continue";
+            content.CannotAddMoreVehiclesWarningText = "You can't add any more vehicles.";
+            content.MustFindVehicleErrorText = "You must find a vehicle before confirming adding it to your list";
+            content.MustHaveAtLeastOneVehicleErrorText = "You must add the minimum required vehicles before continuing.";
+            // JSON content.FindVehicleButtonText = "Find vehicle";
+            content.ConfirmEnteredVehicleButtonText = "Confirm";
+            // JSON content.VrmTitle = "Enter a number plate";
+            // JSON content.VrmPlaceHolder = "eg AB01ABC";
+            // JSON content.VrmHelpMessageText = "Be careful not to mix up the letters 'I' and 'O' with the numbers '1' and '0'. Choose the correct country of registration. You risk getting a penalty if you pick the wrong one.";
+            // JSON content.CountryofRegistrationTitle = "Country of registration";
+            content.CcDiscountedTitle = "No charge to pay for";
+            content.CcDiscountedText = "<p>Based on the vehicle details entered and information held by the DVLA and TfL today, your vehicle qualifies for a100% discount&nbsp;and you don't have to pay the Congestion Charge.</p><p>If you believe that this is incorrect and you still want to pay the Congestion Charge, then you can continue.</p><p>This can change at any time - always check to see if you need to pay to drive within&nbsp;the zone.</p>";
+            content.CcExemptTitle = "No charge to pay for ";
+            content.CcExemptText = "<p>Based on the vehicle details entered and information held by the DVLA and TfL today, this vehicle is exempt from the Congestion Charge. If you believe this information is incorrect and you still want to pay the Congestion Charge, add this vehicle or apply for a discount, then you can continue.</p><p><strong>This may change without notice - always check to see if you need to pay to travel within the zone.</strong></p>";
+            content.ThisisNotMyVehicleTitle = "What if my vehicle details are incorrect?";
+            content.ThisisNotMyVehicleText = "<p>If the number plate is correct but the description shown is wrong, you can still pay for this vehicle.</p><p>Vehicle information is provided to TfL by the DVLA/DVA, so you'll need to let the DVLA/DVA know if your details are wrong or need to be updated.</p>";
+            // JSON content.VehicleNotFoundTitle = "<p><strong>We do not hold details for this vehicle</strong><p>";
+            // JSON content.ConfirmEnteredVrmDetailsText = "Yes, this is the correct vehicle ";
+            // JSON content.VehicleNotFoundText = "<p><strong>UK-registered:</strong> If your vehicle’s make and model details have not been returned, please make sure you entered the number plate correctly before continuing.</p><p><strong>Registered outside the United Kingdom:</strong> We are unable to display the make, model and colour information. Confirm your details before continuing.</p>";
+            content.VehicleAlreadyAddedErrorText = "You have already added this vehicle";
+            content.VehicleOnAutoPayExceptionErrorText = "This vehicle can't be added to your Auto Pay service";
+            content.VehicleOnAutoPayErrorText = "<p><strong>This vehicle can't be added to your Auto Pay.</strong> It has already been registered for Auto Pay by someone else on another account.</p><p>To add this vehicle you need to prove that you have authority to do so. Call us on 020 7649 9860 (<a href='https://tfl.gov.uk/corporate/terms-and-conditions/tfl-call-charges'>TfL call charges</a>) for more information.<a href='/corporate/terms-and-conditions/tfl-call-charges' target='_blank'>/corporate/terms-and-conditions/tfl-call-charges</a></p><p>If this isn't the vehicle you meant to add, click 'Edit' to select another vehicle.</p>";
+            content.ActiveDiscountText = "Active on:  ";
+            content.SelectedVehiclesCountText = "Total number of vehicles you are adding to Fleet Auto Pay:  ";
+            content.MinimumVehicleText = "<p>You must add at least<strong> {0} </strong>vehicles.</p>";
+            content.CanAddStartText = "<br/><br/>You can add  ";
+            content.CanAddEndText = " more vehicles.";
+            // JSON content.CountryOptionUk = "United Kingdom";
+            // JSON content.CountryOptionOther = "Other";
+            content.FriendlyNameLabel = "Tag";
+            content.CancelButtonText = "Cancel";
+            content.FriendlyNameStringLength = "The vehicle tag can't be more than 40 characters";
+            // JSON content.VrmAcceptedRequireTrue = "Confirm this is the correct vehicle to continue";
+            // JSON content.VehicleRegistrationMarkRequired = "Enter a number plate";
+            content.CcAndToxicityChargeableText = "Your vehicle does not meet the required emissions standard, when paying the Congestion Charge the total amount payable will include an additional T- Charge value. More information on the T-Charge can be found at <a href='/modes/driving/emissions-surcharge' target='_blank'>tfl.gov.uk/driving/t-charge</a>";
+            content.CcExemptAndToxicityChargeableText = "Your vehicle does not meet the required emissions standard, although you are currently exempt from the Congestion Charge you will need a T-Charge value to drive your vehicle in the Congestion Charging zone. More information on the T-Charge can be found at <a href='/modes/driving/emissions-surcharge' target='_blank'>tfl.gov.uk/driving/t-charge</a>";
+            content.ToxicityChargeHeaderText = "T-Charge payable";
+
+            
+            Html.RenderAction(
+                RucDictionary.AutoPayManage.AddVehiclesActionName,
+                "AutoPayManage",
+                new
+                {
+                    area = "Ruc",
+                    backUrl = "/modes/driving/fleet-autopay-manage-select-add-vehicle-28962",
+                    successUrl = "/modes/driving/fleet-autopay-manage-add-permanent-success-29001",
+                    failureUrl = "/modes/driving/fleet-autopay-manage-add-permanent-failure-28975",
+                    content = content,
+                    feePerVehicle = 10m,
+                    style = ZoneChargeAutoPayStyle.Fleet,
+                    lookupType = TfL.Ruc.Domain.Entities.Ruc.VehicleLookupType.AutoPayFleet
+                }
+            );
+        }
+      
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

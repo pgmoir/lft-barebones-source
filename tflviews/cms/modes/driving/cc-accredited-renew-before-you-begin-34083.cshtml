@@ -1,0 +1,159 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Renew accredited breakdown discount";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-accredited-renew-before-you-begin-34083";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Renew accredited breakdown discount</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Renew accredited breakdown discount</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      <h2>Before you start</h2>
+      
+           
+      
+
+ 
+        
+        <!-- 1. accredited-breakdown -->
+        <p>Your accredited breakdown discount is due to expire.</p>
+<p>If your company holds a valid PAS 43 certificate you can renew the discount for another year.</p>
+        @{
+            dynamic content = new ContentModel();
+            content.ContinueButtonText = "Continue";
+            content.BackButtonText = "Back";
+            content.Title = "Before you begin";
+            content.CostInfoTitle = "<h4>Cost: £10</h4>";
+            content.CostInfoText = "<p>You will need to pay £10 for every vehicle currently active on the discount.</p>";
+            content.WhatEvidenceHelpTitle = "What evidence do I need? ";
+            content.WhatEvidenceHelpText = "<p>What evidence do I need to supply for this renewal application?</p><p>You need to provide a copy of:</p><ul>	<li>The company’s BS EN ISO 9001:2008 certification document</li>	<li>Evidence of compliance with PAS 43 standards (the BS EN ISO 9001:2008 should state this)</li></ul>";
+            
+            Html.RenderAction("DiscountBeforeYouBegin", "DiscountRenew", new
+                {
+                    area = "Ruc",
+                    nextUrl = "/modes/driving/cc-accredited-renew-enter-details-34104",
+                    backUrl = "/modes/driving/cc-accredited-breakdown-manage-34762",
+                    content = content,
+                    discountStyle = ZoneChargeDiscountStyle.AccreditedBreakdown
+                }
+            );
+        }
+        
+	  
+
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+      <div>
+                    
+        <div class="vertical-button-container">
+    <ul>
+        
+        
+        
+        <li><a href="/modes/driving/congestion-charge/paying-the-congestion-charge"  class="plain-button">Congestion Charge payments</a></li>
+        
+        
+        <li><a href="/modes/driving/congestion-charge/congestion-charge-zone"  class="plain-button">Congestion Charge zone</a></li>
+        
+        
+        <li><a href="/modes/driving/auto-pay"  class="plain-button">Auto Pay</a></li>
+        
+        
+        <li><a href="/modes/driving/congestion-charge/discounts-and-exemptions"  class="plain-button">Discounts and exemptions</a></li>
+        
+        
+        <li><a href="/modes/driving/congestion-charge/contact-congestion-charge"  class="plain-button">Contact Congestion Charge</a></li>
+        
+    </ul>
+</div>
+
+      </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

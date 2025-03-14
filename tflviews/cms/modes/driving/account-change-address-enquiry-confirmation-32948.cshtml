@@ -1,0 +1,141 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Change in progress";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/account-change-address-enquiry-confirmation-32948";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Change in progress</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Change in progress</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+
+          
+   
+<!-- 8. account-change-address-enquiry-confirmation -->
+        @{
+            dynamic content = new ContentModel();
+            content.ConfirmationLabel = "<h2>Your address change request has been submitted</h2><p>We aim to respond to you within the next 10 working days.</p><p>Reference number: {0}</p>";
+            content.WhatHappensNextHeading = "What happens next";
+            content.WhatHappensNextText = "<p>Once we have made the changes we will let you know by your preferred communication channel.</p>";
+            
+            Html.RenderAction(
+                "AddressChangeConfirmation",
+                "AccountSettings",
+                new
+                {
+                    Area = "Ruc",
+                    content = content,
+                    accountSettingsUrl = "/modes/driving/account-account-settings-29386"
+                });
+        }
+        
+        <h4>What happens next</h4>
+        <p>Once we have made the changes we will let you know by your preferred communication channel.</p>
+
+        @ModulesHelpers.BoxedLink(
+            "/modes/driving/account-account-settings-29386",
+            "view-payment-details",
+            "Go back to Account settings",
+            soloButton: true
+        )
+
+        
+      
+
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+        @ModulesHelpers.PrintButton()
+      
+ 
+      </div>
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

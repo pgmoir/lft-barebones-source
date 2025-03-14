@@ -1,0 +1,124 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Confirmation";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/autopay-dispute-success";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+                <li><span class="last-breadcrumb">Confirmation</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Confirmation</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+ 
+
+
+		
+		<!-- 7. dispute-success -->
+		@{
+            dynamic content = new ContentModel();
+            
+            content.ReferenceNumberText = "Reference number: ";
+            content.ConfirmationHeading = "Your Auto Pay charge query has been submitted.";
+            content.ConfirmationText = "<p>Once we have reviewed your charge query details we'll respond by email.</p><p>We aim to get back to you within the next 10 working days.</p>";
+            content.EmailAddressText = "Our response will be sent to: {0}";
+            content.GotoAutoPayButtonTitle = "Manage Auto Pay";
+            content.GotoAutoPayFleetButtonTitle = "Go to Manage Fleet Auto Pay";
+
+            Html.RenderAction("Success", "AutopayDispute", new
+                {
+                    area = "Ruc",
+                    journeyStartUrl = "/modes/driving/autopay-dispute-start",
+                    autopayUrl = "/modes/driving/cc-autopay-manage-manage-29152",
+                    content = content
+                }
+            );
+        }
+		
+	  
+
+  
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

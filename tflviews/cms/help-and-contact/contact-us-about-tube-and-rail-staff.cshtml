@@ -1,0 +1,207 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Contact us - Tube, Rail, Overground, DLR, Trams staff";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/help-and-contact/contact-us-about-tube-and-rail-staff";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/help-and-contact/index">Help & contacts</a></li>
+                
+            
+            
+                <li><span class="last-breadcrumb">Contact us - Tube, Rail, Overground, DLR, Trams staff</span></li>
+            
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Contact us - Tube, Rail, Overground, DLR, Trams staff</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    <div class="on-this-page">
+      
+      
+           
+      
+                @using TfL.Web.ViewModels.FormBuilder
+                <div class="responsive-form responsive-table-wrapper with-icon">
+                @using (Html.BeginForm())
+                {
+                    
+
+                var pageTitle = "";
+                var introText = "<p>Get in touch using the form below. In most cases we aim to reply within 10 working days.</p>";
+                var emailConfirmationSubject = "";
+                var successText = "<p>Thank you for taking the time to complete and submit one of our online forms. We will get back to you as soon as possible.</p>";
+                var failureText = "<p>There was an error. Please try again.</p>";
+                var dataProtectionText = "Transport for London (TfL), its subsidiaries and service providers will use the personal information you provide on this form to process your feedback and provide you with a response, or the information or services you have requested. On some occasions, we may need to share your information with associated organisations or their agents for these purposes. Your personal information will be properly safeguarded and processed in accordance with the requirements of privacy and data protection legislation. To find out more about how TfL handles personal data, see our <a href='/corporate/privacy-and-cookies/index'>Privacy and cookies</a> pages.";
+                var locationHelperText = "<p>Please let us know the pier location or journey made.</p>";
+                var bodyText = "<p>We take feedback about our staff very seriously, so please provide as much detail as possible so we can investigate your issue. For privacy and staff confidentiality reasons we can't always give detailed feedback on the actions we take about individual employees.</p>";
+            
+
+			    dynamic personalDetailsModel = new ContentModel();
+                personalDetailsModel.PhoneNumberToolTip = "It may be quicker to resolve your enquiry by calling you back.";
+                personalDetailsModel.EmailAddressToolTip = "";
+                personalDetailsModel.TitleRequireIfTrue = "Select your title.";
+                personalDetailsModel.FirstNameRequireIfTrue = "Enter your first name.";
+                personalDetailsModel.LastNameRequireIfTrue = "Enter your surname.";
+                personalDetailsModel.EmailAddressRequireIfTrue = "Enter your email address.";
+                personalDetailsModel.ConfirmEmailAddressRequireIfTrue = "Enter your email address.";
+                personalDetailsModel.PhoneNumberRequireIfTrue = "Enter your phone number.";
+                personalDetailsModel.PhoneNumberRegularExpression = "The phone number must be numeric.";
+            
+
+
+                dynamic commentsTypeContent = new ContentModel();
+                commentsTypeContent.CommentTypeToolTip = "To help us process your feedback, let us know what kind of comment you're leaving.";
+                commentsTypeContent.CommentTypeRequired = "Select comments type.";
+            
+
+                dynamic formCommentsContent = new ContentModel();
+                formCommentsContent.CommentsToolTip = "Please provide us with as much detail as you can. This will help us handle your enquiry more quickly.";
+                formCommentsContent.CommentsPrivateTaxiHireToolTip = "Tell us about the service or incident you want to comment on. Where relevant, it would be helpful if you can include any of the following:<ul>    <li>Badge number of driver</li>    <li>Registration number of taxi or minicab</li>    <li>Plate number of private hire vehicle</li>    <li>Contact details of police or witnesses</li>    <li>Details of operator through which your minicab was booked</li></ul>";
+                formCommentsContent.CommentsRequired = "Enter your comments.";
+            
+
+                dynamic travelContactContent = new ContentModel();
+                travelContactContent.EnquiryAboutRequireIfTrue = "Select a reason for your enquiry.";
+                travelContactContent.TravelModeRequireIfTrue = "Select at least one travel mode.";
+                travelContactContent.StaffDescriptionToolTip = "Please provide a description of the staff member(s).";
+                travelContactContent.OysterNumberToolTip = "Please give us the 12 digit number on the back of your Oyster card.";
+                
+                travelContactContent.DateOfTravelRequireIfTrue = "Enter a valid date (eg. 15/03/1984).";
+                travelContactContent.TimeOfTravelRequireIfTrue = "Select the time you travelled.";
+                travelContactContent.LocationRequireIfTrue = "Enter your location.";
+                travelContactContent.RouteNumberRequireIfTrue = "Enter your route.";
+                travelContactContent.OysterNumberRegularExpression = "The Oyster Number field is not a valid Oyster Number.";
+                travelContactContent.StaffDescriptionRequireIfTrue = "Describe member of staff.";
+                travelContactContent.StaffTypeRequireIfTrue = "Select a type of staff member.";
+            
+            
+                Html.RenderAction("Index", "FormBuilder", new
+                {
+                    formSetup = new FormSetupViewModel
+                    {
+                        FormName = "Form Builder - Contact us about Tube and Rail staff script",
+                        FormType = "TubeAndRailStaff",
+                        FormSections = new List<string>() { "CommentsType", "PersonalDetails", "TravelContact", "FormComments", "FormAttachments" },
+                        EmailConfirmationToUser = true,
+                        EmailConfirmationSubject = @emailConfirmationSubject,
+                        FormRecipient = "",
+                        IntroductionMessages = new Dictionary<string, string>() { { "intro", @introText } },
+                        BodyText = @bodyText
+                    },
+                    commentsTypeViewModel = new CommentsTypeViewModel { Content = commentsTypeContent },
+                    personalDetailsViewModel = new PersonalDetailsFormViewModel { Heading = "Your contact details", Content = personalDetailsModel, FirstNameRequired = true, SurnameRequired = true, EmailAddressRequired = true, TitleVisible = true, ConfirmEmailAddressRequired = true, PhoneNumberVisible = true },
+                    feedbackViewModel = new FeedbackViewModel {GiveFeedbackVisible = false, GiveFeedbackRequired = false, BestTimeToContactVisible = false, BestTimeToContactRequired = false},
+                    travelContactFormViewModel = new TravelContactFormViewModel { Content = travelContactContent, LocationHelperText = "", ModeOfTravelVisible = true, 
+                        ModeOfTravelRequired = true, DateOfTravelRequired = true, DateOfTravelVisible = true, IsForTube = true, TimeOfTravelRequired = true,
+                        TimeOfTravelVisible = true, LineRequired = true, LineVisible = true ,StationRequired = true, StaffDescriptionRequired = true, 
+                        StaffTypeVisible = true, StaffTypeRequired = true, TravellingFromVisible = true, TravellingToVisible = true, JourneyDetailsHeadingVisible = true },
+                    formCommentsViewModel = new FormCommentsViewModel { Content = formCommentsContent },                 
+                    formAttachmentsViewModel = new FormAttachmentsViewModel { FormName = "TubeAndRailStaff", FileCountLimit = 3 },                    
+                    submission = new FormSubmissionViewModel { DataProtection = @dataProtectionText, SuccessfulSubmissionMessage = @successText, FailedSubmissionMessage = @failureText },
+                });
+                            
+                }
+                
+                
+                
+                </div>
+            
+      
+        
+          
+            @this.ScriptBlock(
+              @<script>
+                queue.push("@Html.ScriptPath("modules/M020-on-this-page.min.js")", null);
+              </script>
+            )
+          
+        
+      
+    </div>
+  </div>
+  <div class="aside" role="complementary">
+
+   
+    
+    
+    
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="advert-tile unsponsored-style google-ads" aria-hidden="true">
+  <div class="advert-link">
+    <div class="advert-content">
+        <div class="medium-large" data-advert="/76889402/help_contact" data-advert-sizes="300, 250"></div>
+        <div class="small" data-advert="/76889402/help_contact" data-advert-sizes="300, 250"></div>
+    </div>
+  </div>
+</div>
+@{
+    ViewBag.AmazonSlot = "'amznslots'";
+    ViewBag.AmazonAds = "'3199'"; // to add another value, this needs to be ViewBag.AmazonAds = "'3199','xx'";
+}
+      
+
+ </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+ 
+ 
+        
+        
+        
+            @{ViewBag.Description = "Contact us about Tube, TfL Rail, Overground DLR and Trams staff";}
+        
+            
+        
+
+
+ 

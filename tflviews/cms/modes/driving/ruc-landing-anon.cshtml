@@ -1,0 +1,223 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "RUC LANDING PAGE (TEMPORARY) - ANONYMOUS SERVICES";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/ruc-landing-anon";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+                
+                <li><span class="last-breadcrumb">RUC LANDING PAGE (TEMPORARY) - ANONYMOUS SERVICES</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>RUC LANDING PAGE (TEMPORARY) - ANONYMOUS SERVICES</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/account-account-landing-29377"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      <div>
+
+<h2>CC Discounts</h2>
+</div>
+ <div>
+
+<div class="call-to-action-button">
+       <a href="/modes/driving/cc-accredited-breakdown-apply-anon-33541" class="secondary-button no-hover" >Accredited Breakdown</a>
+
+    </div>
+</div> 
+ <div>
+
+<div class="call-to-action-button">
+       <a href="/modes/driving/cc-blue-badge-apply-anon-30091" class="secondary-button no-hover" >Blue Badge</a>
+
+    </div>
+</div> 
+ <div>
+
+<div class="call-to-action-button">
+       <a href="/modes/driving/cc-blue-badge-apply-anon-proxy-30908" class="secondary-button no-hover" >Blue Badge By Proxy</a>
+
+    </div>
+</div> 
+ <div>
+
+<div class="call-to-action-button">
+       <a href="/modes/driving/cc-motor-tricycle-apply-anon-33250" class="secondary-button no-hover" >Motor Tricycle</a>
+
+    </div>
+</div> 
+ <div>
+
+<div class="call-to-action-button">
+       <a href="/modes/driving/cc-nine-plus-seater-apply-anon-33529" class="secondary-button no-hover" >9+ Seater Discount</a>
+
+    </div>
+</div> 
+ <div>
+
+<div class="call-to-action-button">
+       <a href="/modes/driving/cc-provisional-resident-apply-anon-33360" class="secondary-button no-hover" >Provisional Resident Discount</a>
+
+    </div>
+</div> 
+ <div>
+
+<div class="call-to-action-button">
+       <a href="/modes/driving/cc-resident-discount-apply-anon-32525" class="secondary-button no-hover" >Resident Discount</a>
+
+    </div>
+</div> 
+ <div>
+
+<div class="call-to-action-button">
+       <a href="/modes/driving/cc-recovery-vehicle-apply-anon-33468" class="secondary-button no-hover" >Recovery vehicle discount</a>
+
+    </div>
+</div> 
+ <div>
+
+<div class="call-to-action-button">
+       <a href="/modes/driving/cc-cvd-apply-anon-33434" class="secondary-button no-hover" >Cleaner Vehicle Discount (CVD)</a>
+
+    </div>
+</div> 
+ <div>
+
+<div class="call-to-action-button">
+       <a href="/modes/driving/cc-autopay-apply-apply-anon-personal-30865" class="secondary-button no-hover" >AutoPay with Personal account</a>
+
+    </div>
+</div> 
+ <div>
+
+<div class="call-to-action-button">
+       <a href="/modes/driving/cc-autopay-apply-apply-anon-business-30860" class="secondary-button no-hover" >AutoPay with Business account</a>
+
+    </div>
+</div> 
+ <div>
+
+<div class="call-to-action-button">
+       <a href="/modes/driving/fleet-autopay-apply-apply-anon-30199" class="secondary-button no-hover" >Fleet Auto Pay (Business Only)</a>
+
+    </div>
+</div> 
+ <div>
+
+<div class="call-to-action-button">
+       <a href="/modes/driving/find-a-charge" class="secondary-button no-hover" >Amend or refund a charge</a>
+
+    </div>
+</div> 
+ <div>
+
+<h2>LEZ </h2>
+</div>
+ <div>
+
+<div class="call-to-action-button">
+       <a href="/modes/driving/lez-lez-showman-apply-anon-34303" class="secondary-button no-hover" >Showman Discount</a>
+
+    </div>
+</div> 
+ <div>
+
+<div class="call-to-action-button">
+       <a href="/modes/driving/lez-registration-start-anon-37317" class="secondary-button no-hover" >LEZ Registration</a>
+
+    </div>
+</div> 
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

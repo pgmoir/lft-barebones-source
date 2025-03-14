@@ -1,0 +1,191 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Success";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-cvd-renew-success-33939";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Success</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Success</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+ 
+        
+        <!-- 10. uled -->
+        @{
+            dynamic content = new ContentModel();
+
+            content.ConfirmationHeadingSuccess = "We're now processing your CVD renewal application";
+            content.CompletedConfirmationHeading = "CVD renewal complete";
+            content.CompletedConfirmationText = "<p>COMPLETEDCONFIRMATIONTEXT (CVD)</p>";
+            content.ReferenceNumber = "Your CVD renewal reference number is: ";
+            content.ConfirmationText = "<p>We will send a confirmation if your renewal has been approved.</p><p>We aim to respond to you within the next 10 working days.</p>";
+            content.PaymentReferenceText = "Renewal payment receipt number: {0}";
+            content.EmailAddressSentToPrefixText = "Confirmation email sent to: {0}";
+            content.SMSConfirmationText = "A receipt has been sent to mobile number: {0}";
+            content.ExpiryDateText = "New discount expiry date: {0}";
+            content.FinishButtonText = "Finish";
+            
+            content.StoredCardHeading = "";
+            content.SelectPaymentCardAssistiveText = "";
+            content.UseAnotherCardButtonText = "";
+            content.StoredCardExpiredHeading = "";
+
+            Html.RenderAction("SubmissionSuccess", "DiscountRenew", new
+                {
+                    area = "Ruc",
+                    discountStyle = ZoneChargeDiscountStyle.UltraLowEmission,
+                    discountAction = DiscountAction.Renew,
+                    content = content,
+                    manageAccountUrl = "/modes/driving/account-account-landing-29377",
+                    journeyStartUrl = "/modes/driving/cc-discount-manage-discounts-32822"
+                }
+            );
+        }
+
+        <h3>What happens next?</h3>
+<p>Your application to renew this discount has been successful. Your discount has been renewed for another year.</p>
+We will contact you before the expiry date to invite you to renew again.
+<br />
+        
+        @ModulesHelpers.BoxedLink(
+            "/modes/driving/account-account-landing-29377",
+            "to-my-account",
+            text: "Go to My account",
+
+            soloButton: true
+        )
+        
+	  
+
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+        @ModulesHelpers.PrintButton()
+      
+ 
+      </div>
+    
+    <div></div>
+    
+      <div>
+                    
+        <div class="vertical-button-container">
+    <ul>
+        
+        
+        
+        <li><a href="/modes/driving/account-vehicles"  class="plain-button">Pay to drive in London</a></li>
+        
+        
+        <li><a href="/modes/driving/congestion-charge/congestion-charge-zone"  class="plain-button">Congestion Charge/ULEZ zone</a></li>
+        
+        
+        <li><a href="/modes/driving/check-your-vehicle-35896"  class="plain-button">Check your vehicle</a></li>
+        
+        
+        <li><a href="/modes/driving/amend-or-refund-a-driving-charge"  class="plain-button">Amend/refund a charge</a></li>
+        
+        
+        <li><a href="/modes/driving/congestion-charge/contact-congestion-charge"  class="plain-button">Contact us</a></li>
+        
+        
+        <li><a href="/modes/driving/ultra-low-emission-zone/scrappage-scheme"  class="plain-button">Scrappage scheme</a></li>
+        
+    </ul>
+</div>
+
+      </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

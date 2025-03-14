@@ -1,0 +1,165 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Add vehicle";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-cvd-select-vehicle-33436";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Add vehicle</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Add vehicle</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+
+        
+        <!-- 10. uled -->
+        @{
+            dynamic content = new ContentModel();
+            content.SelectVehicleTitle = "Vehicle details";
+            content.SelectVehicleText = "Tell us which vehicle(s) you want to add to this discount.";
+            content.VehicleTypeHelperTitle = "What types of vehicle can I add to this discount?";
+            content.VehicleTypeHelperText = "<ul>	<li>Vehicles with a fuel type ‘electric’ that are registered with the DVLA (or if outside the United Kingdom, the foreign vehicle licensing agency equivalent)</li></ul><p>OR</p><ul>	<li>Cars or vans (light goods vehicles not exceeding 3,500kg gross vehicle weight) that emit less than or equal to 75g/km of CO2 and meet the Euro 5 standard</li></ul><p>OR</p><ul>	<li>Plug-in hybrid electric vehicles (PHEVs) if they meet additional criteria and are listed on our approved list of eligible vehicles</li></ul><p>The Euro 5 emission standard came into force on 1 January 2011 for cars and 1 January 2012 for vans.</p>";
+            content.BackButtonText = "Back";
+            content.ContinueButtonText = "Continue";
+            content.VehicleNotFoundErrorText = "'Find vehicle' to continue";
+            content.CannotAddMoreVehiclesErrorText = "<p>You can only register 1 vehicle for this discount. If you want to change the vehicle details you entered, use the 'Back' button.</p>";
+            // JSON content.FindVehicleButtonText = "Find vehicle";
+            content.ConfirmEnteredVehicleButtonText = "Confirm";
+            // JSON content.VrmHelpMessageText = "Be careful not to mix up the letters 'I' and 'O' with the numbers '1' and '0'";
+            // JSON content.VrmTitle = "Vehicle Registration Mark";
+            // JSON content.VrmPlaceHolder = "eg AB01ABC";
+            // JSON content.CountryofRegistrationTitle = "Country of registration";
+            content.CcDiscountedTitle = "No charge is due for ";
+            content.CcDiscountedText = "<p>Based on the vehicle details entered and information held by the DVLA and TfL today, your vehicle is registered for a 100% discount from the Congestion Charge. If you believe this is incorrect and you still want to pay the Congestion Charge, add this vehicle or apply for a discount, then you can continue.</p><p><strong>This may change - always check to see if you need to pay to drive within the zone.</strong></p>";
+            content.CcExemptTitle = "No charge is due for ";
+            content.CcExemptText = "<p>Based on the vehicle details entered and information held by the DVLA and TfL today, this vehicle is exempt from the Congestion Charge. If you believe this is incorrect and you still want to pay the Congestion Charge, add this vehicle or apply for a discount, then you can continue.</p><p><strong>This may change - always check to see if you need to pay to drive within the zone.</strong></p>";
+            content.ThisisNotMyVehicleTitle = "What if my vehicle details are incorrect?";
+            content.ThisisNotMyVehicleText = "<p>If the number plate (Vehicle Registration Mark) is correct but the description shown is wrong, you can still continue to register this vehicle.</p><p>Vehicle information is provided to TfL by the DVLA, so you'll need to let the DVLA know if your details are wrong or need to be updated.</p>";
+            // JSON content.VehicleNotFoundTitle = "<p><strong>We do not hold any details for this vehicle</strong></p>";
+            // JSON content.ConfirmEnteredVrmDetailsText = "Yes, this is the correct vehicle";
+            // JSON content.VehicleNotFoundText = "<p><strong>UK-registered:</strong> If your vehicle’s make and model details have not been returned, make sure you entered the Vehicle Registration Mark correctly before continuing.</p><p><strong>Registered outside the United Kingdom:</strong> We are unable to display the make, model and colour information. Confirm your details before continuing.</p>";
+            content.QmlLimitReachedTitle = "<p>You already have 10 vehicles on your Quick Management list</p>";
+            content.QmlLimitReachedText = "<p>You can continue with the discount application and add this vehicle to your Quick Management list later.</p><p>Once you have submitted the application, you will need to remove a vehicle before adding another.</p>";
+            content.ConfirmSaveVehicleToQmlText = "Save this vehicle to my account Quick Management list";
+            content.QmlUseDifferentVehicleText = "Use a different vehicle";
+            content.ResidentDiscountAppliedText = "Active on residents' discount";
+            content.VehicleAlreadyAddedErrorText = "No need to check the box above. This vehicle is already on your account to help you pay the charge.";
+            content.ActiveDiscountText = "Active on:  ";
+            content.CheckQmlVehicleButtonText = "Check";
+            // JSON content.VrmAcceptedRequireTrue = "Confirm that this is the correct vehicle to continue";
+            // JSON content.VehicleRegistrationMarkRequired = "Enter a Vehicle Registration Mark to continue";
+            // JSON content.CountryOptionUk = "United Kingdom";
+            // JSON content.CountryOptionOther = "Other";
+            content.ConfirmVehicleErrorText = "'Find vehicle' to continue";
+            content.NumberOfSeatsRequired = "Enter number of seats (including the driver's seat) to continue";
+            content.NumberOfSeatsRange = "Vehicle must have 9 or more seats to qualify";
+        
+            Html.RenderAction("SelectVehicle", "DiscountApply", new
+                {
+                    area = "Ruc",
+                    discountStyle = ZoneChargeDiscountStyle.UltraLowEmission,
+                    discountAction = DiscountAction.Apply,                    
+                    reviewUrl = "/modes/driving/cc-cvd-review",
+                    uploadEvidenceUrl = "/modes/driving/cc-cvd-upload-evidence",
+                    content = content,
+                    zone = ZoneChargeZone.CongestionCharge,
+                    lookupType = VehicleLookupType.DiscountUltraLowEmission,
+                    journeyStartUrl = "/modes/driving/cc-select-discount-29641"
+                }
+            );
+        }
+        
+	  
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

@@ -1,0 +1,239 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Check your travel";}
+@{ViewBag.Keywords = "TfL,check your travel TfL travel tools";}
+@{ViewBag.Url = "/status-updates/travel-tools";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/status-updates/index">Status updates</a></li>
+                
+            
+            
+                <li><span class="last-breadcrumb">Check your travel</span></li>
+            
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+    <div class="headline-container landing-page section-landing-container">
+        <h1>Travel tools</h1>
+        
+    </div>
+</div>
+<div class="main-and-aside r">
+    <div class="main" role="main">
+        <div class="small-medium" data-set="widget"></div>
+        <div class="primary-teaser landing-page-teaser">
+            <div class="news-teaser ">
+  
+  <a href="/travel-information/stations-stops-and-piers/index?intcmp=55"  data-img="/cdn/static/cms/images/promos/traveltools-promo.jpg" data-img-breakpoint="medium" data-img-alt="Travel tools">
+    <img src="/cdn/static/cms/images/promos/traveltools-promo_rdax_600x300.jpg" alt="Travel tools" />
+    <div class="text-link sit-top">
+      <h2>Live arrivals and departures</h2>
+      <p>Get times for bus, Tube, London Overground, TfL Rail, DLR, trams and river</p>
+    </div>
+  </a>
+</div>
+
+ 
+        </div>
+        
+        <div class="clearfix">
+            
+        </div>
+        <div class="module-grid clearfix">
+            <div class="news-teaser">
+
+    <a href="/status-updates/planned-track-closures?intcmp=54286" >
+        <img src="/cdn/static/cms/images/promos/planned-closures-700x350_rdax_400x200.jpg" alt="Planned closures icon" />
+        
+        <div class="text-link">
+             <h2>Planned closures</h2>
+            <p>See planned track closures and significant changes for the coming months</p>
+        </div>
+    </a>
+</div>
+ 
+ <div class="news-teaser">
+
+    <a href="/status-updates/index?intcmp=48" >
+        <img src="/cdn/static/cms/images/promos/staus-updates-icon-700x350_rdax_400x200.jpg" alt="Status updates icon" />
+        
+        <div class="text-link">
+             <h2>Status updates</h2>
+            <p>Check the status of our network and the roads now and in the future</p>
+        </div>
+    </a>
+</div>
+ 
+ <div class="news-teaser">
+
+    <a href="https://m.me/tfltravelbot?intcmp=50037" >
+        <img src="/cdn/static/cms/images/promos/fb-travelbot_rdax_400x200.jpg" alt="The Facebook TravelBot icon" />
+        
+        <div class="text-link">
+             <h2>Facebook TravelBot</h2>
+            <p>Ask us about your bus, Tube and rail status on Facebook Messenger</p>
+        </div>
+    </a>
+</div>
+ 
+ <div class="news-teaser">
+
+    <a href="/travel-information/social-media-and-email-updates/email-updates?intcmp=4506" >
+        <img src="/cdn/static/cms/images/promos/email-alerts_rdax_400x200.jpg" alt="Icon showing an envelope" />
+        
+        <div class="text-link">
+             <h2>Email updates</h2>
+            <p>Sign up for customer service email updates</p>
+        </div>
+    </a>
+</div>
+ 
+ <div class="news-teaser">
+
+    <a href="/status-updates/major-works-and-events?intcmp=25505" >
+        <img src="/cdn/static/cms/images/promos/major-work-events_rdax_400x200.jpg" alt="Icon showing a flip calendar" />
+        
+        <div class="text-link">
+             <h2>Major works & events</h2>
+            <p>Upcoming works and events across London which may affect your journey</p>
+        </div>
+    </a>
+</div>
+ 
+ <div class="news-teaser">
+
+    <a href="/status-updates/busiest-times-to-travel?intcmp=49504" >
+        <img src="/cdn/static/cms/images/promos/busiest-times_rdax_400x200.jpg" alt="Icon showing a clock" />
+        
+        <div class="text-link">
+             <h2>Busiest times</h2>
+            <p>Find the busiest times at your Tube station for a more comfortable journey</p>
+        </div>
+    </a>
+</div>
+ 
+ 
+        </div>
+    </div>
+    <div class="aside" role="complementary">
+        <div class="large" data-set="widget">
+            <div class="moving-source-order">
+            
+
+                <div class="widget-wrapper">
+                    <div class="expandable-box">
+                        <div class="content">
+                            <div class="always-visible widget-heading">
+                                <div class="controls">&nbsp;</div>
+                                <div class="widget-title">
+                                    <h2>Plan a journey</h2>
+                                </div>
+                            </div>
+                            <div class="start-hidden widget-content journey-planner-widget clearfix">
+                                @{Html.RenderAction("Index", "JourneyPlanner", new
+                                    { jptype = "publictransport" } 
+                                );}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+ 
+            </div>
+        </div>
+        <div class="module-grid">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="advert-tile unsponsored-style google-ads" aria-hidden="true">
+  <div class="advert-link">
+    <div class="advert-content">
+        <div class="medium-large" data-advert="/76889402/non-targeted" data-advert-sizes="300, 250"></div>
+        <div class="small" data-advert="/76889402/non-targeted" data-advert-sizes="300, 250"></div>
+    </div>
+  </div>
+</div>
+@{
+    ViewBag.AmazonSlot = "'amznslots'";
+    ViewBag.AmazonAds = "'3199'"; // to add another value, this needs to be ViewBag.AmazonAds = "'3199','xx'";
+}
+      
+
+ 
+            <div class="related-links">
+
+    <h3>Also on this site</h3>
+
+<div class="vertical-button-container">
+
+<a href="/status-updates/major-works-and-events/travel-advice-for-road-users" class="plain-button">Travel advice for road users</a>
+<a href="/modes/cycling/santander-cycles/find-a-docking-station" class="plain-button">Cycle Hire docking stations</a>
+<a href="/campaign/station-wifi" class="plain-button">Station Wi-Fi</a>
+<a href="/travel-information/stations-stops-and-piers/index" class="plain-button">Station pages</a>
+<a href="/fares/find-fares" class="plain-button">Fare finder</a>
+    </div>
+</div>
+ 
+<div class="fact-box-wrapper">
+    <span class="blue-span">Our open data</span>
+    <div class="fact-box-content">
+        <p>Our data powers over 600 travel apps in the UK. We've committed to making our open data freely available to developers to deliver new apps and services for you.</p>
+        
+        
+        
+    </div>
+</div>
+        </div>
+    </div>
+    <div class="small-medium" data-set="content">&nbsp;</div>
+</div>
+ 
+        
+        
+        
+            @{ViewBag.Description = "Use TfL travel tools to check for planned works, events and expected disruptions that may affect travel in London";}
+        
+            
+        
+
+
+ 

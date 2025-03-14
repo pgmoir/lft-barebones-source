@@ -1,0 +1,242 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Apply for Congestion Charge discount";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-select-discount-29641";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Apply for Congestion Charge discount</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Apply for Congestion Charge discount</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+      <div class="article-teaser">
+        <p>You'll need to supply certain documents to show you're entitled to the discount you're applying for.</p>
+        
+      </div>
+    
+    <div class="on-this-page">
+      <p>Until we confirm your application is successful, you must <a href="/modes/driving/pay-to-drive-in-london">pay the Congestion Charge</a> in full to drive within the charging zone. (Find out below if you are eligible for an exemption.)</p>
+
+<p>These discounts do not apply to the Ultra Low Emission Zone (ULEZ).</p>
+      
+           
+      
+
+
+          
+        @using TfL.Ruc.Services.ViewModels.Ruc.Autopay
+        @{
+            dynamic content = new ContentModel();
+            content.AccreditedBreakdownDiscountHeaderTitle = "Accredited breakdown discount";
+            content.AccreditedBreakdownDiscountHeaderText = "This 100% discount applies to breakdown vehicles operated by organisations in the European Economic Area that are accredited to and comply with BS EN ISO 9001:2008.";
+            content.AccreditedBreakdownDiscountAltHeaderText = "&pound;10 per vehicle";
+            //content.AccreditedBreakdownDescription1Text = "<p>To register, apply in writing and enclose ipsum dolor sit amet, consectetur adipiscing elit. Donec sed fringilla enim. Sed nec ante orci, id ultrices.</p>";
+            content.AccreditedBreakdownProminantInlineTitle = "What evidence do I need?";
+            content.AccreditedBreakdownProminantInlineText = "<p>You need to provide:</p><ul>	<li>A copy of the company’s BS EN ISO 9001:2008 certification document</li>	<li>Evidence of compliance with PAS 43 standards (the BS EN ISO 9001:2008 should state this)</li>	<li>Company headed paper showing a company registration number, or a photocopy of a Certificate of Incorporation</li></ul>";
+            content.AccreditedBreakdownDescription2Title = "Cost";
+            content.AccreditedBreakdownDescription2Text = "<p>Annual £10 registration charge for each vehicle.</p>";
+
+            content.BlueBadgeDiscountHeaderTitle = "Blue Badge discount";
+            content.BlueBadgeDiscountHeaderText = "You can apply for a 100% discount if you hold a Blue Badge valid in the European Economic Area. ";
+            content.BlueBadgeDiscountAltHeaderText = "&pound;10 registration charge";
+            content.BlueBadgeDescription1Text = "<p>You can register up to 2 vehicles that you would normally use to travel within the Congestion Charge zone. This could be your own vehicle, or one you travel in.</p>";
+            content.BlueBadgeProminantInlineTitle = "What evidence do I need?";
+            content.BlueBadgeProminantInlineText = "<p>You need to provide a copy of:</p><ul>	<li>Both sides of your Blue Badge</li></ul><p>Plus a copy of 1 of the following proofs of identity:</p><ul>	<li>DSS benefit entitlement letter (no more than 7 months old)</li>	<li>Current passport</li>	<li>Current driver’s licence</li>	<li>Pension book/entitlement letter (no more than 7 months old)</li>	<li>Birth certificate (same first and last names as the Blue Badge. Not a Certificate of Registration of Birth)</li>	<li>Marriage certificate (same first and last names as the Blue Badge)</li>	<li>Current bank or credit card statement (no more than 3 months old)</li>	<li>Deed Poll Certificate (same first and last names as the Blue Badge)</li></ul>";
+            content.BlueBadgeDescription2Title = "Cost";
+            content.BlueBadgeDescription2Text = "There is a £10 registration charge for the Blue Badge discount. You will need to renew the discount in line with your Blue Badge expiry date. There is no charge for this, as long as you reapply within 90 days after the expiry date.";  
+
+            content.BlueBadgeApplyForFreeText = "<p>There is a £10 registration charge for the Blue Badge discount. You will need to renew the discount in line with your Blue Badge expiry date. There is no charge for this, as long as you reapply within 90 days after the expiry date.</p>";
+
+            content.ResidentsDiscountHeaderTitle = "Residents' 90% discount";
+            content.ResidentsDiscountHeaderText = "If you live within the Congestion Charge zone, or in a designated area next to it, you may qualify for a 90% discount.";
+            content.ResidentsDiscountAltHeaderText = "&pound;10 registration charge";
+            content.ResidentsDiscountDescription1Text = "<p>You can apply if you live in the Congestion Charge zone AND:</p><ul>	<li>Your name is shown on either the Parliamentary or local government electoral register</li>	<li>Your main or permanent home is in the Congestion Charge zone</li>	<li>The property is used for residential purposes</li>	<li>You are at least 17 years old</li></ul><p>If you are adding a vehicle, it must be registered with the DVLA in your name and at the address you are using to apply for the discount</p><p>OR</p><p>you can register a company or lease vehicle if it is for your sole use only</p><p>OR</p><p>if you don’t own a vehicle, you can register if you occasionally use a hire or recognised car club vehicle.</p><p>Residents can use&nbsp;Auto Pay to pay the charge just for days travelled within the zone, rather than paying for a weekly, monthly or annual charge in advance. Find out more about <a href='/modes/driving/auto-pay' target='_blank'>setting up Auto Pay</a>.</p>";
+            content.ResidentsDiscountProminantInlineTitle = "What evidence do I need?";
+            content.ResidentsDiscountProminantInlineText = "<p>You need to provide evidence of BOTH the address and discount vehicle.</p><p><strong>Address documents</strong></p><p>To show that you live in the Congestion Charge zone you need to provide an image or copy of 2 of the following:</p><ul>	<li>A current resident’s on-street parking permit or a parking permit approval letter - must show the number plate (Vehicle Registration Mark)</li>	<li>A residential council tax bill (valid for the current year)</li>	<li>Your income support entitlement letter (no more than 7 months old)</li>	<li>A bank or credit card statement (no more than 3 months old)</li>	<li>A formal tenancy agreement or housing association rent document (dated within the last 12 months)</li>	<li>A current utility bill, for example a gas, water or electricity bill (no more than 3<strong> </strong>months old, mobile phone bills are not accepted)</li>	<li>Your driving licence (must contain the address you are using to register for the residents' discount)</li></ul><p><strong>Vehicle documents</strong></p><p>You will also need to provide an image or copy of 1<strong> </strong>document from the list below:</p><p>Your own private vehicle:</p><ul>	<li>Your V5C vehicle registration certificate (logbook). (The vehicle must also be registered with the DVLA in your name and at the address you are using to apply for the residents’ discount)</li></ul><p>Company car:</p><p>A company car authorisation letter - this must be on company headed paper, state your full name, the number plate (Vehicle Registration Mark) and confirm that the vehicle is for your use only. (The vehicle must be registered in the company name with the DVLA)</p><p>Lease vehicle:</p><ul>	<li>Vehicle lease document - this is the document that you signed to lease the vehicle. (The vehicle must be registered in the lease company name with the DVLA)</li></ul><p>A company car provided by a lease company:</p><ul>	<li>Your company’s vehicle lease document (this is the document that you signed to lease the vehicle)</li></ul><p>AND</p><ul>	<li>A company car authorisation letter - this must be on company headed paper, state your full name, the number plate (Vehicle Registration Mark) and confirm that the vehicle is for your use only. (The vehicle must be registered in the company or lease name with the DVLA)</li></ul><p>All documents must be clear enough to read easily. If we can't read them we may ask you for more proof. This will delay the registration process.</p>";
+            content.ResidentsDiscountDescription2Title = "Cost";
+            content.ResidentsDiscountDescription2Text  = "£10 registration charge.";
+
+            content.ResidentsProvisionalDiscountDescriptionTitle = "Just moved into the residents' discount zone?";
+            content.ResidentsProvisionalDiscountDescriptionText = "<p>If you've just moved into the Congestion Charge zone and don’t have the documents you need, you can still apply for the discount and provide your documents later. Remember to tell us by selecting this option on your application.</p><p>You will need to pay the full charge until your discount has been approved. However, subject to the <a href='/corporate/terms-and-conditions/pay-to-drive-in-london' target='_blank'>residents' discount terms and conditions</a>, you may be entitled to a 90% refund of the charges you’ve paid while you have been waiting.</p>";
+            
+            content.ULEDDiscountHeaderTitle = "Cleaner vehicle discount (CVD)";
+            content.ULEDDiscountHeaderText = "<p>Cars or vans (3.5 tonnes or under gross vehicle weight) may qualify for a 100% discount if they:</p><ul>	<li>Emit 75g/km or less of CO2</li>	<li>Meet the Euro 5 standard for air quality</li></ul><p>OR</p><p>if they are registered with the DVLA as fuel type 'electric'.</p>";
+            content.ULEDDiscountAltHeaderText = "&pound;10 registration charge";
+            content.ULEDDescription1Text = "<p>You can check the CO2 emissions of your car on the V5C vehicle registration certificate (log book). Vehicles that meet the Euro 5 standard include:</p><ul>	<li>Cars registered as new with the DVLA on or after 1 January 2011 (Some cars registered before this date will also qualify)</li>	<li>Vans registered as new on or after 1 January 2012</li>	<li>Vehicles with a fuel type 'electric' - you can check this on the V5C registration certificate (logbook)</li>	<li>Plug-in hybrid electric vehicles on the Government's list of PHEVs eligible for a grant from the Office for Low Emission Vehicles</li></ul>";
+            content.ULEDProminantInlineTitle = "What evidence do I need?";
+            content.ULEDProminantInlineText = "<p>You need to upload an image or send a photocopy of the V5C vehicle registration certificate (logbook). If the vehicle is registered outside the United Kingdom, you need to send a copy of the registration document issued by your vehicle licensing agency.</p><p>It must clearly show that the vehicle:</p><ul>	<li>Emits 75g/km or less of CO2</li>	<li>Meets the Euro 5 emission standard</li></ul><p>OR</p><p>that the vehicle is registered as fuel type ‘electric’.</p><p><strong>Petrol hybrid vehicles only</strong></p><p>You must also submit a photocopy of the conformity certificate provided by the vehicle dealership.</p>";
+            content.ULEDDescription2Title = "Cost";
+            content.ULEDDescription2Text = "Annual &pound;10 registration charge for each vehicle.";
+
+            content.NinePlusSeaterDiscountHeaderTitle = "9+ seater discount";
+            content.NinePlusSeaterDiscountHeaderText = "<p>Vehicles with 9 or more seats may qualify for a 100% discount.</p><p>You will need an image of:</p><ul>	<li>V5C (logbook) or foreign equivalent</li></ul><p>To prove that the vehicle has 9 or more seats, upload an image of ONE:</p><ul>	<li>Vehicle's MOT certificate</li>	<li>Vehicle's CIF or COIF (Certificate of Initial Fitness Certificate)</li>	<li>Your insurance document</li>	<li>Another proof that shows the number of seats</li></ul>";
+            content.NinePlusSeaterDiscountAltHeaderText = "&pound;10 registration charge";
+            content.NinePlusSeaterDescription1Text = "<p>If your vehicle is not licensed with the DVLA as a bus (tax classes 'buses' and 'reduced pollution buses') you need to register with us to get this discount. You also need to register with us if your vehicle is registered in the European Economic Area.</p>";
+            content.NinePlusSeaterProminantInlineTitle = "What evidence do I need?";
+            content.NinePlusSeaterProminantInlineText = "<p>You need to upload an image or send us a photocopy of the V5C vehicle registration certificate (logbook). If the vehicle is registered outside the UK, please send a copy of the registration document issued by your vehicle licensing agency.</p><p>You ALSO need to provide proof that the vehicle has 9 or more seats. This can be a copy of 1 of the following documents:</p><ul>	<li>The vehicle’s MOT certificate</li>	<li>The vehicle’s CIF or COIF (Certificate of Initial Fitness)</li>	<li>Your insurance document</li>	<li>Another proof that shows the number of seats</li></ul><p>You can upload images of these documents as part of your online application, or you can send copies by post or email later on.</p>";
+            content.NinePlusSeaterDescription2Title = "Cost";
+            content.NinePlusSeaterDescription2Text = "Annual £10 registration charge for each vehicle.";
+
+            content.MotorTricycleDiscountHeaderTitle = "Motor tricycle discount";
+            content.MotorTricycleDiscountHeaderText = "<p>Motor tricycles that are 1 metre or less wide, and 2 metres or less long, may qualify for a 100% discount.</p>";
+            
+            content.MotorTricycleDiscountAltHeaderText = "&pound;10 registration charge";
+            //content.MotorTricycleDescription1Text = "";
+            content.MotorTricycleProminantInlineTitle = "What evidence do I need?";
+            content.MotorTricycleProminantInlineText = "<p>You need to provide the following:</p><ul>	<li>A clear image or photocopy of the V5C vehicle registration certificate (logbook)</li>	<li>4 photographs of your motor tricycle (front, back and both sides). 1 of these must show the number plate (Vehicle Registration Mark)</li></ul>";
+            content.MotorTricycleDescription2Title = "Cost";
+            content.MotorTricycleDescription2Text = "Annual £10 registration charge for each vehicle. ";
+
+            content.RecoveryVehicleDiscountHeaderTitle = "Recovery vehicle discount";
+            content.RecoveryVehicleDiscountHeaderText = "Vehicles must be registered with the DVLA with a tax class of 'recovery vehicle' to qualify for a 100% discount.";
+            content.RecoveryVehicleDiscountAltHeaderText = "&pound;10 registration charge";
+            //content.RecoveryVehicleDescription1Text = "";
+
+            content.RecoveryVehicleProminantInlineTitle = "What evidence do I need?";
+            content.RecoveryVehicleProminantInlineText = "<p>If your recovery vehicle is registered with the DVLA as tax class 47 and our records show this, you can set up your discount online without submitting any further evidence.</p><p>If our records do not show that your vehicle is registered with the DVLA as a recovery vehicle, we will ask you for an image of the V5C vehicle registration certificate (logbook) to show that it qualifies for the discount.</p>";
+            content.RecoveryVehicleDescription2Title = "Cost";
+            content.RecoveryVehicleDescription2Text = "£10 registration charge for each vehicle.";
+
+            content.ApplyOnlineButtonText = "Apply online";
+            //content.ApplyOnlineProvisionalButtonText = "Apply Online for provisional";
+            content.RegisterAutoPayTitle = "Register your vehicles for Auto Pay";
+            content.RegisterAutoPayText = "Auto Pay is the quickest and simplest way to pay the Congestion Charge.";
+
+            content.AutoPayTitle = "Auto Pay";
+            content.AutoPayCopy = "Find out how to save £1 a day and avoid receiving Penalty Charge Notices.";
+            content.ToxicityChargeTooltipTitle = ""; // removed so that this is not shown
+            content.ToxicityChargeTooltipText = ""; // removed so that this is not shown
+            
+            Html.RenderAction(
+                "SelectDiscount",
+                "DiscountApply",
+                new
+                {
+                    area = "Ruc",
+                    applyAccreditedBreakdownDiscountUrl = "/modes/driving/cc-accredited-breakdown-apply-33542",
+                    applyBlueBadgeDiscountUrl = "/modes/driving/cc-blue-badge-apply-30028",
+                    applyResidentsDiscountUrl = "/modes/driving/cc-resident-discount-apply-29645",
+                    applyResidentsProvisionalDiscountUrl = "/modes/driving/cc-provisional-resident-apply-33361",
+                    applyUledDiscountUrl = "/modes/driving/cc-cvd-before-you-begin?sourceRoutingKey=apply-cc-discount",
+                    applyNinePlusSeaterDiscountUrl = "/modes/driving/cc-nine-plus-seater-before-you-begin?sourceRoutingKey=apply-cc-discount",
+                    applyMotorTricycleDiscountUrl = "/modes/driving/cc-motor-tricycle-apply-33251?backUrl=/modes/driving/cc-select-discount-29641",
+                    applyRecoveryVehicleDiscountUrl = "/modes/driving/cc-recovery-vehicle-before-you-begin?sourceRoutingKey=apply-cc-discount",
+                    autoPayApplyLinkUrl = "/modes/driving/autopay-apply",
+                    zone = TfL.Ruc.Domain.Entities.Ruc.ZoneChargeZone.CongestionCharge,
+
+                    content = content
+                }
+            );
+        }
+        
+      
+
+ <div>
+
+<h2><strong><a name="exemptions"></a>Exemptions</strong></h2>
+<p>You don't have to pay the Congestion Charge or register with us if the vehicle is recorded at the DVLA in one of these categories:</p>
+<ul>
+    <li>    Two-wheeled      motorbikes (and sidecars) or mopeds</li>
+    <li>Emergency service vehicles that have a tax class of 'ambulance' or 'fire engine' on the date of travel</li>
+    <li>NHS vehicles that are exempt from road tax</li>
+    <li>Vehicles used by disabled people that are exempt from road tax and have a 'disabled' tax class</li>
+    <li>Vehicles for more than one disabled person (for example  Dial-a-Ride) that are exempt from road tax and have a 'disabled' tax class</li>
+</ul>
+<p>Buses and certain other vehicles registered in European Economic Area member states  must also be registered with us to qualify for an exemption.</p>
+<p>Your vehicle's V5C vehicle registration certificate (logbook) will say if it falls in this category. If you do not have a V5C, please <a href="/modes/driving/congestion-charge/contact-congestion-charge">contact us</a>.</p>
+</div>
+ 
+
+@FormHelpers.DottedSeparator()
+@ModulesHelpers.BackLink()
+      
+        
+          
+            @this.ScriptBlock(
+              @<script>
+                queue.push("@Html.ScriptPath("modules/M020-on-this-page.min.js")", null);
+              </script>
+            )
+          
+        
+      
+    </div>
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "You'll need to supply certain documents to show you're entitled to the discount you're applying for.";}
+        
+            
+        
+
+
+ 

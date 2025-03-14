@@ -1,0 +1,150 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Confirm address";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-provisional-resident-check-zone-33363";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Confirm address</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Confirm address</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+
+  
+        <!-- provisional-check-zone-provisional -->  
+        @{
+            dynamic content = new ContentModel();
+
+            content.ConfirmAddressTitle = "Confirm address";
+            content.ConfirmAddressText = "This is the address associated with your account:";
+
+            content.UpdateCurrentAddressTitle = "What if this isn't my current address?";
+            content.UpdateCurrentAddressText = "<p>If this is not your current address, you need to update it before applying for this discount.</p>";
+            content.UpdateCurrentAddressButtonText = "Update address";
+
+            content.BackButtonText = "Back";
+            content.ContinueButtonText = "Continue";
+            
+            var insideUrl = "/modes/driving/inside-resident-discount";
+            var outsideUrl = "/modes/driving/outside-resident-discount";
+
+            Html.RenderAction(
+                RucDictionary.DiscountApply.CheckResidentDiscountActionName,
+                "DiscountApply",
+                new
+                {
+                    area = "Ruc",
+                    selectDiscountUrl = "/modes/driving/cc-select-discount-29641",
+                    updateAddressUrl = "/modes/driving/cc-provisional-resident-update-address-33365",
+                    selectVehicleUrl = "/modes/driving/cc-provisional-resident-select-vehicle-33362",
+                    reviewUrl = "/modes/driving/cc-provisional-resident-review-application-33364",
+                    insideCcInsideResUrl = insideUrl,
+                    insideCcOutsideResUrl = outsideUrl,
+                    outsideCcInsideResUrl = insideUrl,
+                    outsideCcOutsideResUrl = outsideUrl,
+                    content = content,
+                    discountStyle = ZoneChargeDiscountStyle.ResidentsDiscount,
+                    discountAction = DiscountAction.Apply,
+                    isProvisionalResident = true,
+                    backUrl = "/modes/driving/cc-select-discount-29641"
+                }
+            );
+        }
+        
+      
+      
+
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

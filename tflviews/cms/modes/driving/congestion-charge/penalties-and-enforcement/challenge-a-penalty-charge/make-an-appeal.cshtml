@@ -1,0 +1,285 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Make an appeal";}
+@{ViewBag.Keywords = "Businesses,Drivers,Public,Driving,TfL";}
+@{ViewBag.Url = "/modes/driving/congestion-charge/penalties-and-enforcement/challenge-a-penalty-charge/make-an-appeal";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                 <li><a href="/modes/driving/congestion-charge">Congestion Charge</a></li>
+                
+            
+                 <li><a href="/modes/driving/congestion-charge/penalties-and-enforcement">Penalties and enforcement</a></li>
+                
+            
+                 <li><a href="/modes/driving/congestion-charge/penalties-and-enforcement/challenge-a-penalty-charge">Challenge a penalty charge</a></li>
+                
+            
+                
+                <li><span class="last-breadcrumb">Make an appeal</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Make an appeal</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/account-account-landing-29377"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+      <div class="article-teaser">
+        <p>You can only appeal to London Tribunals, an independent adjudication service, if you have made a representation in time which has been rejected by us. You will have been sent a Notice of Appeal form with the Notice of Rejection.</p>
+        
+      </div>
+    
+    
+      <p>London Tribunals is an independent body which acts as an adjudication service. In the normal course of events both you and we will have to comply with any decision made by London Tribunals.</p>
+<p>If you disagree with our decision to reject your representation, you have the right to appeal to London Tribunals.</p>
+<ul>
+    <li>To appeal you need to complete the form sent with the Notice of Rejection </li>
+    <li>Do not send this to us but to the address shown on the appeal form </li>
+    <li>You may opt for either a personal or postal hearing</li>
+</ul>
+<p><strong>Remember you only have 28 days from the date of service of the Notice of Rejection to appeal to London Tribunals.</strong> </p>
+<ul>
+    <li>You need to provide all your evidence to the adjudicator and not us </li>
+    <li>When we are notified of your appeal by London Tribunals, the PCN will be frozen at the relevant amount that is outstanding at that time </li>
+    <li>We will provide an evidence pack to London Tribunals and will provide you with a copy of this evidence </li>
+    <li>The adjudicator will then make a decision looking at the evidence in your appeal and our evidence pack. When considering a case, adjudicators cannot consider mitigating circumstances or apply their discretion </li>
+    <li>A copy of the adjudicator's decision will be sent to both you and us</li>
+</ul>
+<h2>Appeal allowed</h2>
+<p>If your appeal is successful you will receive a decision from London Tribunals outlining that your appeal has been 'allowed'. This means that either we have reconsidered the evidence and now decided not to contest the appeal or that the adjudicator has considered the facts and found in your favour. This will mean that you may no longer be liable for the PCN, and if you paid the PCN the money paid will be refunded.</p>
+<h2>Appeal refused</h2>
+<p>If your appeal is unsuccessful you will receive a decision from London Tribunals outlining that your appeal has been 'refused'. This means that following consideration by the adjudicator, the tribunal has found in our favour. In the decision you receive from London Tribunals, the adjudicator will outline the reasons why the appeal has been refused and give direction as to the amount that should be paid to us and how quickly this must be paid.</p>
+<p>More information about the appeals process can be found at the <a href="http://www.londontribunals.gov.uk">London Tribunals website</a>.</p>
+      
+           
+      
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+                <a href="/modes/driving/congestion-charge" class="heading">
+                    <h3 id="sub-menu-heading" class="h2">Congestion Charge<span class="visually-hidden"> navigation</span></h3>
+                </a>
+                <ul>
+                    
+                                <li class="parent" aria-label="page with sub pages"><div class="link-wrapper"><a href="/modes/driving/congestion-charge/congestion-charge-zone">Congestion Charge zone</a></div></li>
+                            
+ 
+                                <li class="parent" aria-label="page with sub pages"><div class="link-wrapper"><a href="/modes/driving/congestion-charge/paying-the-congestion-charge">Congestion Charge payments</a></div></li>
+                            
+ 
+                                <li aria-label="page with no sub pages"><div class="link-wrapper"><a href="/modes/driving/congestion-charge/discounts-and-exemptions">Discounts and exemptions</a></div></li>
+                            
+ 
+                                <li aria-label="page with no sub pages"><div class="link-wrapper"><a href="/modes/driving/congestion-charge/dart-charge">Dart Charge</a></div></li>
+                            
+ 
+                                <li class="selected parent" aria-label="selected page with sub pages"><div class="link-wrapper"><a href="/modes/driving/congestion-charge/penalties-and-enforcement">Penalties and enforcement</a></div>
+                                <ul>
+                                    
+                                        <li class="selected parent" aria-label="selected page with sub pages"><div class="link-wrapper"><a href="/modes/driving/congestion-charge/penalties-and-enforcement/challenge-a-penalty-charge">Challenge a penalty charge</a></div>
+                                        <ul>
+                                            
+                                        <li aria-label="page with no sub pages"><div class="link-wrapper"><a href="/modes/driving/congestion-charge/penalties-and-enforcement/challenge-a-penalty-charge/make-a-representation">Make a representation</a></div></li>
+                                    
+ 
+                                                <li class="selected" aria-label="selected page with no sub pages"><div class="link-wrapper"><a href="/modes/driving/congestion-charge/penalties-and-enforcement/challenge-a-penalty-charge/make-an-appeal">Make an appeal</a></div>
+                                            
+ 
+                                        <li aria-label="page with no sub pages"><div class="link-wrapper"><a href="/modes/driving/congestion-charge/penalties-and-enforcement/challenge-a-penalty-charge/make-a-statutory-declaration">Make a Statutory Declaration</a></div></li>
+                                    
+ 
+                                        </ul>
+                                    </li>
+ 
+                                <li aria-label="page with no sub pages"><div class="link-wrapper"><a href="/modes/driving/congestion-charge/penalties-and-enforcement/enforcement-process">Enforcement process</a></div></li>
+                            
+ 
+                                <li aria-label="page with no sub pages"><div class="link-wrapper"><a href="/modes/driving/congestion-charge/penalties-and-enforcement/enforcement-agents-and-bailiffs">Enforcement agents and bailiffs</a></div></li>
+                            
+ 
+                                <li aria-label="page with no sub pages"><div class="link-wrapper"><a href="/modes/driving/congestion-charge/penalties-and-enforcement/newly-purchased-vehicles">Newly purchased vehicles</a></div></li>
+                            
+ 
+                                </ul>
+                            </li>
+ 
+                                <li class="parent" aria-label="page with sub pages"><div class="link-wrapper"><a href="/modes/driving/congestion-charge/contact-congestion-charge">Contact Congestion Charge</a></div></li>
+                            
+ 
+                                <li class="parent" aria-label="page with sub pages"><div class="link-wrapper"></div></li>
+                            
+ 
+                </ul>
+            
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+      </div>
+    
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="advert-tile unsponsored-style google-ads" aria-hidden="true">
+  <div class="advert-link">
+    <div class="advert-content">
+        <div class="medium-large" data-advert="/76889402/driving/ulez" data-advert-sizes="300, 250"></div>
+        <div class="small" data-advert="/76889402/driving/ulez" data-advert-sizes="300, 250"></div>
+    </div>
+  </div>
+</div>
+@{
+    ViewBag.AmazonSlot = "'amznslots'";
+    ViewBag.AmazonAds = "'3199'"; // to add another value, this needs to be ViewBag.AmazonAds = "'3199','xx'";
+}
+      
+
+ </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "How to appeal to London Tribunals if your representation has been rejected";}
+        
+            
+        
+
+
+ 

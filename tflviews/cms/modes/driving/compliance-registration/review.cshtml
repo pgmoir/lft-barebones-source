@@ -1,0 +1,131 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Review application";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/compliance-registration/review";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+                 <li><a href="/modes/driving/compliance-registration/before-you-start">Register a vehicle for LEZ and ULEZ</a></li>
+                
+            
+                
+                <li><span class="last-breadcrumb">Review application</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Review application</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+        @{
+            dynamic content = new ContentModel();
+            content.ReviewIntro = "<h2>Check your vehicles and proof</h2><p>You can add up to 10 vehicles to each application (uploading a maximum of 50 files altogether). We can only accept vehicles of the same type in a single application - for example, if you have registered a car for ULEZ, you can only register cars as part of this registration.</p><p>If you want to register other types of vehicle you will need to submit a separate application.</p>";
+            content.OnceSentText = "<p>We aim to process your registration within 10 working days. We will email you with the outcome.</p><p>In the meantime, if you drive in the ULEZ or the LEZ you need to pay any charges your vehicle is liable for.</p>";
+            content.TermsConditionsText = "<p>I accept the <a href='/corporate/terms-and-conditions/pay-to-drive-in-london' target='_blank'>terms and conditions</a></p>";
+            content.AddAnotherButtonText = "Add a vehicle";
+            
+            content.ContinueButtonText = "Submit application";
+            content.BackButtonText = "Back";
+
+            content.ConfirmHeading = "Are you sure?";
+            content.ConfirmRemoveButtonText = "Remove";
+            content.DiscardRemoveButtonText = "Keep";
+            content.RemoveConfirmMessage = "Your vehicle won't be part of this application.";
+            content.VehicleCountText = "Vehicle {0} / {1}";
+            content.TermsAndConditionsValidationMessage = "Accept the terms and conditions to continue";
+            
+            Html.RenderAction("Review", "ComplianceRegistration", new
+            {
+                area = "Ruc",
+                content = content,
+                backUrl = "/modes/driving/compliance-registration/upload",
+                successUrl = "/modes/driving/compliance-registration/success",
+                failureUrl = "/modes/driving/compliance-registration/failure",
+                addAnotherUrl = "/modes/driving/compliance-registration/add-another"
+            });
+            
+        }
+    
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "Review your compliance registration application";}
+        
+            
+        
+
+
+ 

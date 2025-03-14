@@ -1,0 +1,178 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Choose vehicles";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/autopay-apply-choose-vehicles";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                 <li><a href="/modes/driving/auto-pay">Auto Pay</a></li>
+                
+            
+                
+                <li><span class="last-breadcrumb">Choose vehicles</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Choose vehicles</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/account-account-landing-29377"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+      <div class="article-teaser">
+        <p>You can add up to 5 vehicles to your Auto Pay service.</p>
+        
+      </div>
+    
+    
+      <p>Each vehicle costs &pound;10 a year to register with Auto Pay. This will be added to your monthly statement.</p>
+<p>You can select a vehicle that is already on your account or add a new one.</p>
+      
+           
+      
+
+        @{
+            var chargesMessage = System.Net.WebUtility.HtmlDecode("&pound;{0} annual charge");
+            var detailsNotFound = string.Format("Incomplete information. To pay for this vehicle, <a href='{0}'>enter the details manually.</a>","/modes/driving/autopay-apply-find-vehicle");
+            dynamic content = new ContentModel();
+            content.VehicleNotInMyListText = "Add a new vehicle";
+            content.VehicleNotInMyListTextAction = "/modes/driving/autopay-apply-find-vehicle";
+            content.SortLabel = "Sort";
+            content.SearchLabel = "Search";
+            content.DetailNotFoundMessage = detailsNotFound;
+            content.ApplyFilterLabel = "Apply filter";
+            content.ResetFilterLabel = "Reset";
+            content.TemplateName = "ApplyAutoPayList";
+            content.SelectedVehicleLabel = "Selected vehicles: {0} / {1}";
+            content.SelectedVehicleFormatString = "Selected vehicles: {0} / {1}";
+            content.ChargePerSelectionMessage = chargesMessage;
+            content.ValuePerCharge = "10";
+            content.BasketLimitMessage = "You can't have more than 5 vehicles on an Auto Pay service.";
+            content.ContinueButtonAction = "/modes/driving/autopay-apply-summary";
+            content.ApplyAutoPaySummaryPage = "/modes/driving/autopay-apply-summary";
+            content.NoSelectionErrorMessage = "Select or add a vehicle to continue";
+            content.VrmSearchPlaceHolder = "eg AB01ABC";
+        
+            content.VehicleIsOnExceptionalListMessage = "<p>You can't add this vehicle - please call us on 0343 222 2222 (<a href='/corporate/terms-and-conditions/tfl-call-charges'>TfL call charges</a>)&nbsp;</p>"; 
+            content.ExemptAllMessage = "<p>Based on the vehicle details entered and information held by the DVLA and TfL today, this vehicle is exempt from London Road User Charging.</p><p><strong>This may change - always check if you need to pay to drive within the charging zones.</strong></p>"; 
+            content.AutoPayExistsWarning = "<p>This vehicle is already on an Auto Pay service and can't be added again. If it is not on your service please call 0343 222 2222 (<a href='corporate/terms-and-conditions/tfl-call-charges'>TfL call charges</a>).&nbsp;</p>"; 
+
+            Html.RenderAction("ApplyForAutoPay", "VehicleList", new
+            {    
+                content = content
+            }); 
+        }
+        
+        @this.ScriptBlock(
+            @<script>
+                (function () {
+                    if (performance.navigation.type == 2) {
+                        location.reload(true);
+                    }
+                })();
+            </script>
+        )
+        
+        <br/>
+        <div class="account-vehicle-button-set button-set">
+            <a class="primary-button" id="continue-button" href="/modes/driving/autopay-apply-summary">Continue</a>            
+            <a id="back-button" href="#" class="tertiary-link go-back"><span class="button-text">Back</span></a>
+        </div>
+                
+        @this.ScriptBlock(
+            @<script>
+                 queue.push(
+                     function () {
+                         tfl.forms.attachUnload("You have not completed your form. If you leave your data will be lost.");
+                     });
+            </script>
+        )
+      
+      
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "You can add up to 5 vehicles to your Auto Pay service.";}
+        
+            
+        
+
+
+ 

@@ -1,0 +1,168 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Freedom of Information";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/corporate/transparency/freedom-of-information";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/corporate/transparency/index">Transparency</a></li>
+                
+            
+            
+                <li><span class="last-breadcrumb">Freedom of Information</span></li>
+            
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+    <div class="headline-container landing-page section-landing-container">
+        <h1>Freedom of Information</h1>
+        
+    </div>
+</div>
+<div class="main-and-aside r">
+    <div class="main" role="main">
+        <div class="small-medium" data-set="widget"></div>
+        <div class="primary-teaser landing-page-teaser">
+            
+            <div>
+ @{
+
+
+                    dynamic content = new ContentModel();
+                    content.SearchResolvedRequestsText  ="Responses to requests received after 1 January 2017 will be published on this page";
+                    content.SearchQueryHintText  ="Search by keywords or request ID";
+                    content.EmailToFOIForQuestions = "If you have a question regarding your ongoing request, please email <a href=\"mailto:foi@tfl.gov.uk\">foi@tfl.gov.uk</a>";
+                    
+                    Html.RenderAction("SimpleSearch", "Foi", new { content });
+
+                    dynamic resultsContent = new ContentModel();
+                    resultsContent.ResolvedRequestsHeading = "Latest resolved requests";
+                    resultsContent.EmailToFOIForQuestions = "If you have a question regarding your ongoing request, please email <a href=\"mailto:foi@tfl.gov.uk\">foi@tfl.gov.uk</a>";
+                    
+                    Html.RenderAction("ResolvedRequests", "Foi", new { resultsContent, descriptionVisible = false, requestDetailsUrl = "/corporate/transparency/freedom-of-information/foi-request-detail" });
+}
+
+                <br />
+
+            </div>
+        
+        </div>
+        
+        <div class="clearfix">
+            
+        </div>
+        <div class="module-grid clearfix">
+            <div class="news-teaser">
+
+    <a href="/corporate/transparency/freedom-of-information/foi-performance?intcmp=8657" >
+        
+        
+        <div class="text-link">
+             <h2>Performance of FOI requests</h2>
+            <p>We receive around 3,000 requests every year and publish performance figures annually.</p>
+        </div>
+    </a>
+</div>
+ 
+ <div class="news-teaser">
+
+    <a href="/corporate/transparency/freedom-of-information/appealing-about-an-foi-response?intcmp=1043" >
+        
+        
+        <div class="text-link">
+             <h2>Appealing about a response</h2>
+            <p>If you are unhappy about our handling of a request you can ask for an internal review</p>
+        </div>
+    </a>
+</div>
+ 
+ <div class="news-teaser">
+
+    <a href="/corporate/transparency/freedom-of-information/foi-exemptions-and-charges?intcmp=1039" >
+        
+        
+        <div class="text-link">
+             <h2>Exemptions & charges</h2>
+            <p>Although we answer most FOI requests in full, some information is protected by law</p>
+        </div>
+    </a>
+</div>
+ 
+ 
+        </div>
+    </div>
+    <div class="aside" role="complementary">
+        <div class="large" data-set="widget">
+            <div class="moving-source-order">
+            
+            </div>
+        </div>
+        <div class="module-grid">
+            
+            
+		<div>
+			<div class="news-teaser"><div>
+                                <div class="text-only">
+                                    <h2>Make a request online</h2>
+<br />
+<p><strong>Before you start:</strong> the information you're looking for might be available in existing requests or in <a href="/corporate/publications-and-reports/index">Publications and Reports</a></p>
+<br />
+<p>If you do make a request, we'll email you the response within 20 working days.</p>
+<br />
+<p>We'll publish the response online without disclosing any personal information.</p>
+                                </div></div>
+                                <div class="call-to-action-button"><a href="/corporate/transparency/freedom-of-information/foi-make-request" class="secondary-button">Make a request</a></div>
+            </div>
+        </div>
+                        <div class="news-teaser">
+                            <div class="text-link">
+                                <h2>Make a request by post</h2>
+
+<p>FOI Case Management Team<br />
+Information Governance<br />
+Transport for London<br />
+4th Floor<br />
+5 Endeavour Square<br />
+London E20 1JN</p>
+                            </div>
+          		        </div>
+
+        </div>
+    </div>
+    <div class="small-medium" data-set="content">&nbsp;</div>
+</div>
+ 
+        
+        
+        
+            @{ViewBag.Description = "Freedom of Information";}
+        
+            
+        
+
+
+ 

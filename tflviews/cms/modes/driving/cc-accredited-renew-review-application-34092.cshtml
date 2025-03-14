@@ -1,0 +1,155 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Review details";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-accredited-renew-review-application-34092";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Review details</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Review details</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+ 
+        
+        <!-- 1. accredited-breakdown -->
+        @{
+            dynamic content = new ContentModel();
+
+            content.BackButtonText = "Back";
+            content.ContinueButtonText = "Continue";
+            content.PasHeading = "PAS 43 certification";
+            content.PasExpiryText = "Expiry date";
+            content.VehiclesHeading = "Vehicle(s)";
+            content.NoVehiclesHeading = "Vehicle";
+            content.NoVehicleText = "You have no vehicles on your discount.";
+            content.EvidenceHeading = "Uploaded documents";
+            content.EvidenceByPostText = "You have not uploaded any documents.";
+            //content.SkippedVehicleText = "<p>You have not yet added a vehicle.</p>";
+            content.ActiveDiscountText = "Active on: ";
+            content.VehicleSummaryText = "Number of vehicles on the discount: {0}";
+            content.PaymentHeading = "Payment summary";
+            content.DiscountReviewText = "Your discount will be renewed for";
+            content.ManageDiscountLink = "/modes/driving/cc-accredited-breakdown-manage-34762";
+            content.ManageDiscountLinkText = "Manage your discount";
+            content.ManageDiscountFollowLinkText = "to add or remove vehicles before you renew.";
+            content.PayementText = "<p>You will need to pay £10 for every vehicle currently active on the discount.</p>";
+            content.PaymentTotalText = "Total";
+            //content.TermsAndConditionsAcceptedRequireTrue = "You must accept the terms and conditions.";
+            content.CheckVehicleDetailsCorrect = "<p><span style='font-style: normal; font-variant: normal; font-weight: normal; font-size: 14px; line-height: 20px; font-family: arial, sans-serif; color: #333333; text-transform: none; text-indent: 0px; letter-spacing: normal; word-spacing: 0px; float: none; white-space: normal; widows: 1; -webkit-text-stroke-width: 0px; display: inline !important; background-color: #ffffff;'>Check the vehicle(s) below is correct, if you want to change it you will need to go back to <a href='/modes/driving/cc-discount-manage-discounts-32822'>My discounts</a>.</span></p>";
+            content.ReviewEditButtonText = "Edit";
+            content.EditPas43DetailsLinkUrl = "/modes/driving/cc-accredited-renew-enter-details-34104";
+
+            Html.RenderAction("ReviewApplication", "DiscountRenew", new
+                {
+                    area = "Ruc",
+                    discountStyle = ZoneChargeDiscountStyle.AccreditedBreakdown,
+                    discountAction = DiscountAction.Renew,
+                    content = content,
+                    backUrl = "/modes/driving/cc-accredited-renew-upload-evidence-34101",
+                    successUrl = "/modes/driving/cc-accredited-renew-success-34098",
+                    failureUrl = "/modes/driving/cc-accredited-renew-failure-34085",
+                    uploadEvidenceUrl = "/modes/driving/cc-accredited-renew-upload-evidence-34101",
+                    selectVehicleUrl = "/modes/driving/cc-accredited-renew-enter-details-34104",
+                    paymentUrl = "/modes/driving/cc-accredited-renew-payment-34087",
+                    submissionUrl = "/modes/driving/cc-accredited-renew-submit-34095",
+                    journeyStartUrl = "/modes/driving/cc-discount-manage-discounts-32822"
+                }
+            );
+        }
+        
+	  
+
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

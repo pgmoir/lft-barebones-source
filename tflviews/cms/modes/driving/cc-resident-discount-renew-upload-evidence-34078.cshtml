@@ -1,0 +1,138 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Upload proof";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-resident-discount-renew-upload-evidence-34078";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Upload proof</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Upload proof</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+
+		
+		<!-- 8. resident-discount -->
+		@using TfL.Ruc.Services.ViewModels.Ruc.DiscountCommon
+		@{
+            dynamic content = new ContentModel();
+            content.UploadEvidenceTitle = "Upload scanned or photo images of the following documents so we can process your application:";
+            content.UploadEvidenceText = "<p>To renew your discount you need to provide evidence of both the address and discount vehicle.</p><p>Upload images of these documents:</p><p><strong>Address documents</strong></p><p>To show that you live in the Congestion Charge zone you need to provide an image or copy of 1 of the following:</p><ul>	<li>A current resident’s on-street parking permit or a parking permit approval letter (must show the number plate (Vehicle Registration Mark))</li>	<li>A residential council tax bill (valid for the current year)</li>	<li>Your income support entitlement letter (no more than 7 months old)</li>	<li>A bank or credit card statement (no more than 3 months old)</li>	<li>A formal tenancy agreement or housing association rent document (dated within the last 12 months)</li>	<li>A current utility bill, for example a gas, water or electricity bill (no more than 3 months old, mobile phone bills are not accepted)</li>	<li>Your driving licence (must contain the address you are using to register for the residents' discount)</li></ul><p><strong>Vehicle documents</strong></p><p>You will also need to provide an image or copy of 1 document from the list below:</p><p>Your own private vehicle:</p><ul>	<li>Your V5C vehicle registration certificate (logbook). (The vehicle must also be registered with the DVLA in your name and at the address you are using to apply for the residents’ discount)</li></ul><p>Company car:</p><ul>	<li>A company car authorisation letter - this must be on company headed paper, state your full name, the number plate (Vehicle Registration Mark) and confirm that the vehicle is for your use only. (The vehicle must be registered in the company name with the DVLA)</li></ul><p>Lease vehicle:</p><ul>	<li>Vehicle lease document - this is the document that you signed to lease the vehicle. (The vehicle must be registered in the lease company name with the DVLA)</li></ul><p>A company car provided by a lease company:</p><ul>	<li>Your company’s vehicle lease document (this is the document that you signed to lease the vehicle)</li></ul><p>AND</p><ul>	<li>A company car authorisation letter - this must be on company headed paper, state your full name, the number plate (Vehicle Registration Mark) and confirm that the vehicle is for your use only. (The vehicle must be registered in the company or lease name with the DVLA)</li></ul><p>All documents must be clear enough to read easily. If we can't read them we may ask you for more proof. This will delay the registration process.</p>";
+            content.SkipEvidence = "Just moved into area";
+            content.UploadEvidenceHelperTitle = "How do I upload the documents?";
+            content.UploadEvidenceHelperText = "<p>You can scan paper documents to your computer, or take photographs of them with your camera, smartphone or tablet. You’ll need to save each file as a .jpg, .jpeg, .tif, .tiff or .pdf.</p><p>Once you have saved your document(s) on your computer/mobile device, drag them into the box below or click 'Or browse to your files' and select the file you want to upload. Remember to double check you have selected the correct file.</p><p>Repeat for every document you want to attach. If you make a mistake, you can add or remove files before submitting your application.</p>";
+            content.UploadEvidenceDescription = "<p>If you're unable to scan or photograph these documents clearly, you can send them to us at the address you'll see at the end of this process.</p>";
+            content.FileNotUploadedError = "Upload a file to continue";
+            content.BackButtonText = "Back";
+            content.ContinueButtonText = "Continue";
+
+            Html.RenderAction("UploadEvidence", "DiscountRenew", new
+                {
+                    area = "Ruc",
+                    backUrl = "/modes/driving/cc-resident-discount-renew-check-vehicle-34057",
+                    continueUrl = "/modes/driving/cc-resident-discount-renew-review-application-34068",
+                    reviewUrl = "/modes/driving/cc-resident-discount-renew-review-application-34068",
+                    discountStyle = ZoneChargeDiscountStyle.ResidentsDiscount,
+                    discountAction = DiscountAction.Renew,
+                    vehicleSelectedDescriptionUrl = "",                                        
+                    journeyStartUrl = "/modes/driving/cc-discount-manage-discounts-32822",
+                    content = content
+                }
+            );
+        }
+		
+	  
+
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

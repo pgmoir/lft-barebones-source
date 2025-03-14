@@ -1,0 +1,185 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "LEZ registration";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/lez-registration-success-37319";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">LEZ registration</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>LEZ registration</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      <h2>Confirmation </h2>
+      
+           
+      
+
+
+          
+        
+		<!-- 5. success -->
+		@{
+            dynamic content = new ContentModel();
+            content.ReferenceNumberText = "Application reference number: ";
+            content.ConfirmationHeading = "<h2>Your LEZ registration is being processed</h2><p>We will let you know if your registration application has been approved once we have processed your documents. Until then you must pay the charge for journeys within the LEZ.</p><p>We aim to respond to you in the next 10 working days.</p>";
+            content.ConfirmationText = "";
+            content.EmailAddressText = "Confirmation email sent to: {0}";
+
+            Html.RenderAction("Success", "LezRegistration", new
+                {
+                    area = "Ruc",
+                    journeyStartUrl = "/modes/driving/lez-registration-start-37318",
+                    content = content
+                }
+            );
+            
+            @*@ModulesHelpers.BoxedLink("/modes/driving/account-account-landing-29377", "to-my-account", text: "Go to my account", soloButton: true)*@
+        }
+		
+		
+	  
+
+  <div>
+
+<h3>Posting your documents</h3>
+
+<p>If you submit your documents and/or registration form by post, make sure you quote the above reference number on each piece of correspondence. This will speed up the application process.</p>
+
+<p>Post your documents to:</p>
+
+<p>Low Emission Zone<br />
+PO Box 343<br />
+Darlington<br />
+DL1 9QD</p>
+
+<p>If you prefer to email images or copies of your documents, send them to:</p>
+
+<p><a href="mailto:LEZLondon&#64;TfL.gov.uk">LEZLondon&#64;TfL.gov.uk</a></p>
+
+<p>You need to submit your documents in the next 10 working days or your application will be cancelled. If your application is cancelled you will need to reapply.</p>
+
+<h3>Next steps</h3>
+
+<p>We will consider your application once we have received all the documents to support it. We will let you know the outcome of your application by your preferred communication channel.</p>
+
+<p>Until your vehicle has been successfully registered you need to pay the appropriate LEZ charge if you drive in the zone. You can do this by logging in to your account and paying online or contacting us on 0343 222 1111 (<a href="/corporate/terms-and-conditions/tfl-call-charges">TfL call charges</a>).</p>
+</div>
+ <div class="vertical-button-container">
+    <ul>
+        
+        
+        
+        <li><a href="/modes/driving/account-account-landing-29377"  class="plain-button">Go to my account</a></li>
+        
+    </ul>
+</div>
+
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/low-emission-zone" });
+        }
+        
+      
+
+ 
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        <div class="vertical-button-container">
+    <ul>
+        
+        
+        
+        <li><a href="/modes/driving/pay-to-drive-in-london"  class="plain-button">Pay to drive in London</a></li>
+        
+        
+        <li><a href="/modes/driving/amend-or-refund-a-charge"  class="plain-button">Amend or refund a charge</a></li>
+        
+        
+        <li><a href="/modes/driving/compliance-registration/before-you-start"  class="plain-button">Register your vehicle with us</a></li>
+        
+        
+        <li><a href="/modes/driving/low-emission-zone/contact-lez"  class="plain-button">Contact LEZ</a></li>
+        
+    </ul>
+</div>
+
+      </div>
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

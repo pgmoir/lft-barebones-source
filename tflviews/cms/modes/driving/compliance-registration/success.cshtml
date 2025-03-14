@@ -1,0 +1,138 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Application in progress";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/compliance-registration/success";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+                 <li><a href="/modes/driving/compliance-registration/before-you-start">Register a vehicle for LEZ and ULEZ</a></li>
+                
+            
+            
+                <li><span class="last-breadcrumb">Application in progress</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Application in progress</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+        @{
+            dynamic content = new ContentModel();
+            content.SuccessTextHeading = "<p>Your registration has been submitted.</p>";
+            content.SuccessTextContent = "<p>It can take up to 10 working days to process. We will contact you with the outcome.</p>";
+            content.TravellingSoonHeading = "<h2>Travelling in the next few days?</h2>";
+            content.TravellingSoonText = "<p>You need to pay any ULEZ and/or LEZ charges your vehicle is liable for until your registration has been approved.</p>";
+            content.PayToDriveButtonText = "Pay to drive in London";
+            content.AccountNumberTitle = "Your account number is:";
+            content.LoginAndManageServicesText = "<p>Take a note of your account number. You will need it to sign in to your account.</p>";
+            content.ContinueButtonText = "Go to account";
+
+
+            Html.RenderAction("Success", "ComplianceRegistration", new
+            {
+                area = "Ruc",
+                content = content,
+                payToDriveUrl = "/modes/driving/pay-to-drive-in-london",
+                accountUrl = "/modes/driving/account-personal-account-29357"
+            });
+            
+        }
+    
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+      <div>
+                    
+        <div class="vertical-button-container">
+    <ul>
+        
+        
+        
+        <li><a href="/modes/driving/pay-to-drive-in-london"  class="plain-button">Pay to drive in London</a></li>
+        
+    </ul>
+</div>
+
+      </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "Compliance registration success";}
+        
+            
+        
+
+
+ 

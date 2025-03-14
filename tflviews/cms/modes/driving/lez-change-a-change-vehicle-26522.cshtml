@@ -1,0 +1,226 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Amend a LEZ charge";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/lez-change-a-change-vehicle-26522";}
+@{ViewBag.Language = "en";}
+        
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Amend a LEZ charge</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Amend a LEZ charge</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/account-account-landing-29377"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+    
+      <h2>Change vehicle</h2>
+      
+           
+      
+
+
+		
+		<!-- 3.1 lez-change-a-charge-vehicle  -->
+		@using TfL.Ruc.Services.ViewModels.Ruc.Common
+        @using TfL.Ruc.Services.ViewModels.Ruc.ZoneCharge.PayZoneCharge
+        @{
+            dynamic content = new ContentModel();
+
+            //content.DailyCongestionChargesBasketText = "Daily congestion charge(1 day)";
+            //content.WeeklyCongestionChargesBasketText = "Weekly congestion charge ({0} days)";
+            //content.MonthlyCongestionChargesBasketText = "Monthly congestion charge ({0} days)";
+            //content.AnnualCongestionChargesBasketText = "Annual congestion charge ({0} days)";
+            //content.RangeCongestionChargesBasketText = "congestion charge ({0} days)";
+            content.LezStandardChargeBasketText = "Daily LEZ charge Low";
+            content.LezHigherChargeBasketText = "Daily LEZ charge High";
+            content.OverlappingChargesErrorText = "<p>You cannot transfer the charge to this vehicle - it has already been paid for some or all of the dates you have selected. Please choose another vehicle or consider <a href='/modes/driving/lez-refunds-find-a-charge-to-refund-36916' target='_blank'>applying for a refund</a>.</p>";
+            content.VrmLabel = "Vehicle Registration Mark";
+            content.NotMyVehicleMessage = "<p>If the Vehicle Registration Mark is correct but the vehicle description shown is wrong, you can still transfer the charge.</p><p>Vehicle information is provided to TfL by the DVLA or DVA, so you'll need to let the DVLA or DVA know if your vehicle details are wrong or need to be updated.</p>";
+            content.NoChargePayableMessageHeader = "";
+            //content.NoChargePayableMessageFooter = "";
+            //content.PleaseSelectAVehicleErrorMessage = "Please Find a vehicle and then confirm the found vehicle before continuing";
+            //content.NoChargeApplicableMessage = "Based on the vehicle registration mark details yo have entered you are not required to pay this charge";
+            content.NoChargePayableMessage = "This vehicle either meets the required emission standards, is exempt from the scheme or is subject to a 100% discount.";
+            content.ConfirmDateButtonText = "Confirm date";
+            //content.FromTodayText = "From the beginning";
+            //content.FromAnoterDayText = "From another date";
+            content.PreviousChargeDetails = "Current charge details";
+            content.ConfirmVehicleButtonText = "Confirm vehicle";
+            content.AmendChargeDetailsLabel = "New charge details";
+            content.ConfirmationText = "<p>Before paying the Low Emission Zone charge, you may want to view our <a href='/corporate/privacy-and-cookies/road-user-charging' target='_blank'>privacy notice</a>.</p>";
+            //content.ContinueToPaymentButtonText = "Continue";
+            content.ContinueButtonText = "Continue";
+            content.BackButtonText = "Back";
+            //content.BasketHeading = "Payment summary";
+            //content.BasketText = "Amending charge admin fee";
+            content.PageInstructionText = "Enter the new vehicle details.";
+            content.OverlappingChargeExistErrorText = "<p>You cannot transfer the charge to this vehicle - it has already been paid for some or all of the dates you have selected. Please choose another vehicle or consider <a href='/modes/driving/lez-refunds-find-a-charge-to-refund-36916' target='_blank'>applying for a refund</a>.</p>";
+            content.LezComplianceLevelDoesNotMatchErrorText = "<p><strong>You can't amend this charge.</strong> A LEZ charge can only be changed if both vehicles are subject to the same LEZ charge rate (High or Low).</p><p>You will need to select a vehicle that is subject to the same charge as your original vehicle, or <a href='/modes/driving/lez-refunds-find-a-charge-to-refund-36916' target='_blank'>apply for a refund</a>.</p>";
+            content.AmendmentNotPossibleErrorText = "<p>A Low Emission Zone (LEZ) charge can only be changed if both vehicles are subject to the same LEZ charge rate (Charge High or Charge Low).</p><p>You will need to select a vehicle that is subject to the same charge as your original vehicle, or <a href='/modes/driving/lez-refunds-find-a-charge-to-refund-36916' target='_blank'>apply for a refund</a>.</p>";
+            content.AmendmentNotPossibleErrorTitle = "You cannot amend this charge.";
+
+            // JSON content.FindVehicleButtonText = "Find vehicle";
+            content.ConfirmEnteredVehicleButtonText = "Confirm";
+            content.VrmHelpMessageText = "<p>Be careful not to mix up the letters '<strong>I</strong>' and '<strong>O</strong>' with the numbers '<strong>1</strong>' and '<strong>0</strong>'.</p><p>Choose the correct country of registration. You risk getting a penalty if you pick the wrong one.</p>";
+            // JSON content.VrmTitle = "Vehicle Registration Mark";
+            // JSON content.VrmPlaceHolder = "eg AB01ABC";
+            // JSON content.CountryofRegistrationTitle = "Country of registration";
+            //content.CcDiscountedTitle = "No charge payable for ";
+            //content.CcDiscountedText = "<p>Based on the vehicle registration (VRM) details that you have entered and the classification information held by Transport for London (TfL) on this day, your vehicle is deemed 100% discounted and you are not required to pay the congestion charge.</p><p>If you believe that this information is incorrect and you still want to pay the Congestion Charge, then you can continue.</p><p><strong>Please be aware that classification may change without notification, so you should always check to see if payment is required for journeys into the zone.</strong></p>";
+            //content.CcExemptTitle = "No charge payable for ";
+            //content.CcExemptText = "<p>Based on the vehicle registration (VRM) details that you have entered and the classification information held by Transport for London (TfL) on this day, your vehicle is deemed exempt and you are not required to pay the congestion charge.</p><p>If you believe that this information is incorrect and you still want to pay the Congestion Charge, then you can continue.</p><p><strong>Please be aware that classification may change without notification, so you should always check to see if payment is required for journeys into the zone.</strong></p>";
+            content.ThisisNotMyVehicleTitle = "What if my vehicle details are incorrect?";
+            content.ThisisNotMyVehicleText = "<p>If the Vehicle Registration Mark is correct but the vehicle description shown is wrong, you can still continue to pay for this vehicle.</p><p>Vehicle information is provided to TfL by the DVLA or DVA, so you'll need to let the DVLA or DVA know if your vehicle details are wrong or need to be updated.</p>";
+            // JSON content.VehicleNotFoundTitle = "<p><strong>We do not hold any details for your vehicle.</strong></p>";
+            // JSON content.ConfirmEnteredVrmDetailsText = "Yes, this is the correct vehicle";
+            // JSON content.VehicleNotFoundText = "<p><strong>UK-registered:</strong> If your vehicle’s make and model details have not been returned, please make sure you entered the Vehicle Registration Mark correctly before continuing.</p><p><strong>Registered outside the UK:</strong> We are unable to display the make, model and colour information. Confirm your details before continuing.</p>";
+            content.LezCompliantTitle = "";
+            content.LezCompliantText = "<p>This vehicle either meets the required emission standards, is exempt from the scheme or is subject to a 100% discount.</p>";
+            content.LezUnknownNonCompliantTitle = "The &pound;200 daily LEZ charge is due for this vehicle";
+            content.LezUnknownNonCompliantText = "<p>According to our records your vehicle is subject to the £200 daily LEZ charge. This could be because your vehicle's details are registered with us and it doesn't meet the required Low Emission Zone standards.</p><p>If we don't recognise your vehicle details then the £200 daily LEZ charge automatically applies. (For example, if your vehicle is registered outside the United Kingdom.) If you believe your vehicle does meet the required standards, you will need to <a href='/modes/driving/lez-registration-upload-37320' target='_blank'>register it with us</a>.</p><p>Until your vehicle is successfully registered you will need to pay the £200 daily LEZ charge every time you drive it within the zone.</p>";
+            content.ConfirmSaveVehicleToQmlText = "Save this vehicle to your account to speed up making payments.";
+            content.QmlUseDifferentVehicleText = "Use a different vehicle";
+            content.VehicleAlreadyAddedErrorText = "No need to check the box as this vehicle is already on your account.";
+            //content.ResidentDiscountAppliedText = "Residents discount applied";
+
+            content.SendEmailReceiptHeading = "Send receipt by email";
+            content.SendSMSReceiptHeading = "Send receipt to mobile";
+            content.EmailReceiptLabel = "Email address";
+            content.MobileReceiptLabel = "Mobile number";
+
+            content.DetailsExistInAccountDetailsMessage = "We'll send receipts by your preferred channel.";
+
+            content.CompliantVehicleErrorText = "You can't pay for this vehicle - it meets the standard";
+            content.ConfirmVehicleErrorText = "'Find vehicle' to continue";
+            content.ActiveDiscountText = "Active on: ";
+            // JSON content.CountryOptionUk = "United Kingdom";
+            // JSON content.CountryOptionOther = "Non-UK";
+            content.NewDetailsHeading = "New charge details";
+            content.PageInstructionText = "Enter the new vehicle details.";
+            content.ConfirmPrivacyNoticeRequired = "<p>Before paying the Congestion Charge, you may want to view our <a href='/corporate/privacy-and-cookies/road-user-charging' target='_blank'>privacy notice</a>.</p>";
+            content.NewStartDateRequired = "Select a new start date";
+            content.CheckQmlVehicleButtonText = "Check";
+
+            content.EmailAddressRequired = "Enter an email address to continue";
+            content.EmailAddressEmailAddress = "Enter a valid email address to continue";
+            content.MobileNumberRequired = "Enter a mobile number to continue";
+            content.MobileNumberStringLength = "Too many digits, try again";
+            content.CongestionChargeStartDateUnchanged ="You have selected the same vehicle. Edit to change to a different vehicle.";
+            // JSON content.VRMAcceptedRequireTrue = "Confirm that this is the correct vehicle to continue";
+            // JSON content.VehicleRegistrationMarkRequired = "Enter a Vehicle Registration Mark to continue";
+
+            Html.RenderAction(
+                "CheckCharge",
+                "ChangeZoneCharge",
+                new
+                {
+                    area = "Ruc",
+                    backUrl = "/modes/driving/lez-change-a-charge-change-a-charge-26512",
+                    content = content,
+                    reviewUrl = "/modes/driving/lez-change-a-charge-review-37235",
+                    refundLezUrl = "/modes/driving/lez-refunds-find-a-charge-to-refund-36916",
+                    zoneType = TfL.Ruc.Domain.Entities.Ruc.ZoneChargeZone.LowEmission,
+                    lookupType = VehicleLookupType.ChangeLez,
+                    changeType = ChangeChargeType.Vehicle
+                });
+        }
+		
+	  
+
+  
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/low-emission-zone" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

@@ -1,0 +1,223 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Contact us about the TfL Oyster app";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/help-and-contact/contact-us-about-the-tfl-oyster-app";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/help-and-contact/index">Help & contacts</a></li>
+                
+            
+            
+                <li><span class="last-breadcrumb">Contact us about the TfL Oyster app</span></li>
+            
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Contact us about the TfL Oyster app</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+                @using TfL.Web.ViewModels.FormBuilder
+                <div class="responsive-form responsive-table-wrapper with-icon">
+                @using (Html.BeginForm())
+                {
+                    
+
+                var pageTitle = "";
+                var introText = "<p>Get in touch about the TfL Oyster app using the form below. We aim to reply within 10 working days.</p><p>Note: If your enquiry or feedback is relating to one of our services or ticketing schemes, please use the relevant form on our <a href='/help-and-contact/index'>Help and Contact page.</a></p>";
+                var emailConfirmationSubject = "Email Received - Mobile ticketing application";
+                var successText = "<p>Thank you for taking the time to complete and submit one of our online forms. We will get back to you as soon as possible.</p>";
+                var failureText = "<p>There was an error. Please try again.</p>";
+                var dataProtectionText = "Transport for London (TfL), its subsidiaries and service providers will use your personal information for the purposes of processing your feedback, providing you with a response, or the information or services you have requested, and the provision of travel related information. Your personal information will be properly safeguarded and processed in accordance with the requirements of privacy and data protection legislation. To find out more about how TfL handles personal data, see our <a href='/corporate/privacy-and-cookies/index'>Privacy and cookies</a> pages.";
+                var locationHelperText = "<p>Please let us know the pier location or journey made.</p>";
+                var bodyText = "";
+            
+
+			    dynamic personalDetailsModel = new ContentModel();
+                personalDetailsModel.PhoneNumberToolTip = "It may be quicker to resolve your enquiry by calling you back.";
+                personalDetailsModel.EmailAddressToolTip = "If you already have an Oyster account, please use the associated email address.";
+                personalDetailsModel.TitleRequireIfTrue = "Select your title.";
+                personalDetailsModel.FirstNameRequireIfTrue = "Enter your first name.";
+                personalDetailsModel.LastNameRequireIfTrue = "Enter your surname.";
+                personalDetailsModel.EmailAddressRequireIfTrue = "Enter your email address.";
+                personalDetailsModel.ConfirmEmailAddressRequireIfTrue = "Enter your email address.";
+                personalDetailsModel.PhoneNumberRequireIfTrue = "Enter your phone number.";
+                personalDetailsModel.PhoneNumberRegularExpression = "The phone number must be numeric.";
+            
+
+
+                dynamic travelContactContent = new ContentModel();
+                travelContactContent.EnquiryAboutRequireIfTrue = "Select a reason for your enquiry.";
+                travelContactContent.TravelModeRequireIfTrue = "Select at least one travel mode.";
+                travelContactContent.StaffDescriptionToolTip = "Please provide a description of the staff member(s).";
+                travelContactContent.OysterNumberToolTip = " ";
+                
+                travelContactContent.DateOfTravelRequireIfTrue = "Enter a valid date (eg. 15/03/1984).";
+                travelContactContent.TimeOfTravelRequireIfTrue = "Select the time you travelled.";
+                travelContactContent.LocationRequireIfTrue = "Enter your location.";
+                travelContactContent.RouteNumberRequireIfTrue = "Enter your route.";
+                travelContactContent.OysterNumberRegularExpression = "The Oyster Number field is not a valid Oyster Number.";
+                travelContactContent.StaffDescriptionRequireIfTrue = "Describe member of staff.";
+                travelContactContent.StaffTypeRequireIfTrue = "Select a type of staff member.";
+            
+            
+
+                dynamic formCommentsContent = new ContentModel();
+                formCommentsContent.CommentsToolTip = "Give as much detail as you can. This will help us handle your enquiry quicker. Include any error messages, date and time of issue, phone details and the steps you took.";
+                formCommentsContent.CommentsPrivateTaxiHireToolTip = "Tell us about the service or incident you want to comment on. Where relevant, it would be helpful if you can include any of the following:<ul>    <li>Badge number of driver</li>    <li>Registration number of taxi or minicab</li>    <li>Plate number of private hire vehicle</li>    <li>Contact details of police or witnesses</li>    <li>Details of operator through which your minicab was booked</li></ul>";
+                formCommentsContent.CommentsRequired = "Enter your comments.";
+            
+
+                dynamic mobileTicketingContent = new ContentModel();
+                mobileTicketingContent.OperatingSystemVersionRequireIfTrue = "Enter operating system version.";
+                mobileTicketingContent.OperatingSystemRequireIfTrue = "Operating system must be included";
+                mobileTicketingContent.OysterAppVersionRequireIfTrue = "Enter app version.";
+                mobileTicketingContent.OperatingSystemVersionToolTip = "eg iOS 11 or Android 8.0.1. If you're unsure, you'll usually find this in Settings on your phone.";
+                mobileTicketingContent.OysterAppVersionToolTip = "You'll find this at the bottom of the menu in the Oyster app.";
+            
+                
+                Html.RenderAction("Index", "FormBuilder", new
+                {
+                    formSetup = new FormSetupViewModel
+                    {
+                        FormName = "Mobile Ticketing form",
+                        FormType = "MobileTicketing",
+                        FormSections = new List<string>() { "PersonalDetails", "MobileTicketing", "TravelContact", "FormComments", "FormAttachments" },
+                        EmailConfirmationToUser = true,
+                        EmailConfirmationSubject = @emailConfirmationSubject,
+                        FormRecipient = "",
+                        IntroductionMessages = new Dictionary<string, string>() { { "intro", @introText } },
+                        BodyText = @bodyText
+                    },
+                     travelContactFormViewModel = new TravelContactFormViewModel
+                        {
+                            Content = travelContactContent,
+                            LocationHelperText = "",
+                            ModeOfTravelVisible = false,
+                            ModeOfTravelRequired = false,
+                            DateOfTravelRequired = false,
+                            DateOfTravelVisible = false,
+                            IsForTube = false,
+                            TimeOfTravelRequired = false,
+                            TimeOfTravelVisible = false,
+                            LineRequired = false,
+                            LineVisible = false,
+                            StationRequired = false,
+                            StaffDescriptionRequired = false,
+                            StaffTypeVisible = false,
+                            StaffTypeRequired = false,
+                            TravellingFromVisible = false,
+                            TravellingToVisible = false,
+                            JourneyDetailsHeadingVisible = false,
+                            OysterNumberVisible = true
+                        },
+                    personalDetailsViewModel = new PersonalDetailsFormViewModel { Heading = "Your contact details", Content = personalDetailsModel, PhoneNumberVisible = true, FirstNameRequired = true, SurnameRequired = true, EmailAddressRequired = true, ConfirmEmailAddressRequired = true },
+                    submission = new FormSubmissionViewModel { DataProtection = @dataProtectionText, SuccessfulSubmissionMessage = @successText, FailedSubmissionMessage = @failureText },
+                    formCommentsViewModel = new FormCommentsViewModel{ Content = formCommentsContent},
+                    formAttachmentsViewModel = new FormAttachmentsViewModel { FormName = "MobileTicketing", FileCountLimit = 3 },                    
+                    mobileTicketingFormViewModel =  new MobileTicketingFormViewModel { Content = mobileTicketingContent, OperatingSystemRequired = true, OperatingSystemVersionRequired = true, OysterAppVersionRequired = true }
+
+                });
+                            
+                }
+                
+                
+                
+                </div>
+            
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+   
+    
+    
+    
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="advert-tile unsponsored-style google-ads" aria-hidden="true">
+  <div class="advert-link">
+    <div class="advert-content">
+        <div class="medium-large" data-advert="/76889402/help_contact" data-advert-sizes="300, 250"></div>
+        <div class="small" data-advert="/76889402/help_contact" data-advert-sizes="300, 250"></div>
+    </div>
+  </div>
+</div>
+@{
+    ViewBag.AmazonSlot = "'amznslots'";
+    ViewBag.AmazonAds = "'3199'"; // to add another value, this needs to be ViewBag.AmazonAds = "'3199','xx'";
+}
+      
+
+ </div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+ 
+ 
+        
+        
+        
+            @{ViewBag.Description = "Contact us about the TfL Oyster app";}
+        
+            
+        
+
+
+ 

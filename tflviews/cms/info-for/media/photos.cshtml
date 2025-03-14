@@ -1,0 +1,137 @@
+﻿
+
+
+@{ViewBag.Title = "Photos";}
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                <li>
+                    <a href="/info-for/media/index">Media</a>
+                </li>
+                
+                <li>
+                    <span class="last-breadcrumb">Photos</span>
+                </li>
+            
+ 
+            
+ 
+        </ul>
+    </div>
+</div>
+     
+ 
+<div class="r">
+    <div class="headline-container plain">
+        <h1>Photos</h1>
+    </div>
+</div>
+
+<div class="main-and-aside r">
+    <div class="main" role="main">
+
+    <div class="article-teaser">
+        We have two main collections of TfL-related images that may help you.        
+        
+            
+        
+    </div>
+
+<div class="on-this-page">
+<h2>Press images</h2>
+
+<p>Images in the TfL press image gallery are intended for use by the news media only.</p>
+
+<p>These include images of various modes of transport, TfL services and members of the senior management team, all available in .jpeg format.</p>
+
+<p>Images can be downloaded from the Flickr site: <a href="http://www.flickr.com/tflpress">http://www.flickr.com/tflpress</a></p>
+
+<p>Before downloading any of the images, please ensure you have read and will comply with <a href="http://www.flickr.com/people/tflpress/">TfL's copyright terms &amp; conditions</a>.</p>
+
+<p>If you have any questions about the content on the site or the appropriate use of the images available, please contact the Press Office on&nbsp;0343 222 4141 (<a href="https://tfl.gov.uk/corporate/terms-and-conditions/tfl-call-charges">TfL call charges</a>) or email us at <a href="mailto:pressoffice&#64;tfl.gov.uk%20?Subject=TfL%20Media%20Gallery">pressoffice&#64;tfl.gov.uk</a>.</p>
+
+<h2>TfL photo library</h2>
+
+<p>Our <a href="https://tflimages.london/">separate photo library</a> is only available to authorised users - companies and individuals working for or on behalf of TfL.</p>
+
+     
+
+        
+        
+        
+        @this.ScriptBlock(
+        @<script>
+        queue.push("@Html.ScriptPath("modules/M020-on-this-page.js")", null);
+        </script>
+        )
+        
+        
+        
+        </div>
+    </div>
+    <div class="aside" role="complementary">
+        
+        <div data-set="sidenav-container" class="large">
+
+            
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+                <a href="/info-for/media/index" class="heading">
+                    <h2 id="sub-menu-heading">Media<span class="visually-hidden"> navigation</span></h2>
+                </a>
+                <ul>
+                    
+                                <li class="parent"><div class="link-wrapper"><a href="/info-for/media/press-releases">Press releases</a></div></li>
+                            
+ 
+                                <li class="selected"><div class="link-wrapper"><a href="/info-for/media/photos">Photos</a></div>
+                            </li>
+ 
+                                <li><div class="link-wrapper"><a href="/info-for/media/contact-the-press-office">Contact the Press Office</a></div></li>
+                            
+ 
+                                <li class="parent"><div class="link-wrapper"><a href="/info-for/media/filming-and-photography">Filming & photography</a></div></li>
+                            
+ 
+                </ul>
+            
+ 
+ 
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+        </div>
+
+
+<div></div>
+
+        <div data-set="sidenav-container" class="small-medium"></div>
+    </div>
+</div>
+ 
+        
+        
+            @{ViewBag.Description = "We have separate galleries of TfL images available for use by the press and by companies and organisations connected to TfL.";}
+        
+        
+
+
+ 

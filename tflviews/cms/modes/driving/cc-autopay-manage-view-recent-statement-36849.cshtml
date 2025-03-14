@@ -1,0 +1,166 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Auto Pay transactions";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-autopay-manage-view-recent-statement-36849";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                 <li><a href="/modes/driving/auto-pay">Auto Pay</a></li>
+                
+            
+            
+            
+                <li><span class="last-breadcrumb">Auto Pay transactions</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Auto Pay transactions</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+      <div class="article-teaser">
+        <p>View all your Auto Pay transactions since your last statement was issued.</p>
+        
+      </div>
+    
+    
+      
+      
+           
+      <div>
+
+<p>See older Auto Pay transactions on the <a href="/modes/driving/cc-autopay-manage-view-statements-29248">Transaction history page</a>.</p>
+</div>
+ 
+
+ 
+
+
+		
+		<!-- 1. cc/autopay/manage/view-recent-statement -->
+		 @{
+            dynamic content = new ContentModel();
+            content.ListHeading = "Activity since last statement";
+            content.AmountSuffix = "(credit)";
+            content.TransactionTypeLabel = "Transaction type: ";
+            content.VRMLabel = "Number plate (Vehicle Registration Mark): ";
+            content.PaymentDateLabel = "Date: ";
+            content.TagLabel = "Tag:";
+            content.DateAddedForLabel = "Journey date: ";
+            content.ReferenceLabel = "Reference: ";
+            content.StatementIdLabel = "Statement: ";
+            content.DateRangeLabel = "Date range";
+            //content.ListHeading = "Statements";
+            content.ReceiptIdLabel = "Receipt number: ";
+            content.AmountLabel = "Amount: ";
+
+            Html.RenderAction(
+                CommonDictionary.ListModule.ListActionName,
+                "FinancialHistory",
+                new
+                    {
+                        area = "Ruc",
+                        content = content,
+                        autopayOnly = true,
+                        transactionDetailUrl = "/modes/driving/cc-autopay-manage-transaction-detail-30898",
+                        evidentialRecordUrl = "/modes/driving/cc-autopay-manage-evidential-record-36782",
+                        recentOnly = true
+                    }
+            );
+        }
+        
+        @ModulesHelpers.BackLink()
+        
+        @this.ScriptBlock(
+            @<script>
+                 queue.push(
+                     "@Html.ScriptPath("specific/results-paginator.src.js")", function () {
+                         $('#transaction-list').paginator({
+                             endPoints: {
+                                 page: '/Ruc/FinancialHistory/ListAjax'
+                             }
+                         });
+                     }
+                 );
+            
+            </script>
+        )
+		
+	  
+
+  
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "View all your Auto Pay transactions since your last statement was issued.";}
+        
+            
+        
+
+
+ 

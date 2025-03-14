@@ -1,0 +1,145 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Update your details";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/account-missing-details-41648";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Update your details</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Update your details</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      <p>Before you can access your account online for the first time, please provide us with some additional information.</p>
+      
+           
+      
+
+
+		
+		<!-- 1. missing-details -->
+		@{
+            dynamic content = new ContentModel();
+            
+            content.NameSectionHeading = "<h2>Name</h2>";
+            content.NameInstructionText = "<p>Please provide your full name.</p>";
+            content.FirstNameLabel = "First name";
+            content.SurnameLabel = "Surname";
+
+            content.AddressSectionHeading = "<h2>Address</h2>";
+            content.AddressInstructionHeading = "<p>Please provide your full address.</p>";
+
+            content.TelephoneSectionHeading = "<h2>Telephone number*</h2>";
+            content.TelephoneInstructionText = "<p>Please provide at least <strong>1</strong> contact telephone number.</p>";
+            content.MobileNumberLabel = "Mobile number";
+            content.DaytimeNumberLabel = "Daytime number";
+            content.OtherNumberLabel = "Other number";
+            
+            content.EmailSectionHeading = "<h2>Email address</h2>";
+            content.EmailInstructionText = "<p>All account-related correspondence will be sent to the email address you supply here.</p>";
+            content.EnterEmailAddressLabel = "Email address";
+            content.ConfirmEmailAddressLabel = "Confirm email address";
+
+            content.FirstNameRequired = "Enter first name";
+            content.SurnameRequired = "Enter last name (family name)";
+            content.MobileTelNumberRequireFromGroup = "Provide at least <strong>1</strong> contact telephone number.";
+            content.MobileTelNumberStringLength = "Telephone number can be no longer than 31 characters.";
+            content.DaytimeTelNumberRequireFromGroup = "Provide at least <strong>1</strong> contact telephone number.";
+            content.DaytimeTelNumberStringLength = "Telephone number can be no longer than 31 characters.";
+            content.OtherTelNumberRequireFromGroup = "Provide at least <strong>1</strong> contact telephone number.";
+            content.OtherTelNumberStringLength = "Telephone number can be no longer than 31 characters.";
+            
+            content.EmailAddressRequired = "Enter an email address";
+            content.EmailAddressEmailAddressRequired = "You must enter a valid email address.";
+            content.ConfirmEmailAddressRequired = "Confirm email address";
+            content.ConfirmEmailAddressEmailAddressRequired = "You must enter a valid email address.";
+            content.ConfirmEmailAddressCompare = "Email addresses must match.";
+            
+            content.ConfirmButtonText = "Confirm";
+
+            Html.RenderAction(
+                "MissingDetails",
+                "AccountSettings",
+                new
+                {
+                    Area = "Ruc",
+                    content = content,
+                    confirmationUrl = "/modes/driving/account-missing-details-confirmation-41649"
+                });
+        }
+		
+	  
+
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

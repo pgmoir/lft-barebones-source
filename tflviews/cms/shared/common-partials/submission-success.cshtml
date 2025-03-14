@@ -1,0 +1,5 @@
+﻿@model TfL.Web.ViewModels.FormBuilder.SubmissionResultViewModel
+<h1>@Html.Label(Model.PageTitleSuccess)</h1>
+<div class="@Model.CssClass form-builder-submission">
+    @Html.Raw(Model.SuccessfulSubmissionMessage)
+</div>

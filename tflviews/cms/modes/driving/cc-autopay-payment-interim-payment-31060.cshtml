@@ -1,0 +1,146 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Make a payment";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-autopay-payment-interim-payment-31060";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Make a payment</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Make a payment</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      <h2>Select payment card</h2>
+<p>The following payment card is saved to your account: </p>
+      
+           
+      
+
+ 
+
+
+		
+		<!-- 6. CC-interim-payment -->
+		@this.ScriptBlock(
+              @<script>
+                   queue.push("@Html.ScriptPath("modules/M020-on-this-page.min.js")", null);
+              </script>
+        )
+        @{
+
+            dynamic content = new ContentModel();
+
+            content.StoredCardHeading = "Use saved card";
+            content.SelectPaymentCardAssistiveText = "Use card ending: ";
+            content.UseAnotherCardButtonText = "Use a different card";
+
+            Html.RenderAction(
+                "SelectStoredCard",
+                "Payment",
+                new
+                {
+                    area = "Ruc",
+                    //backUrl = "/modes/driving/cc-autopay-payment-make-interim-payment-31061",
+                    returnUrl = "/modes/driving/cc-autopay-payment-commit-interim-payment-31056",
+                    paymentRefSessionKey = SessionKeys.AutoPayManage.PaymentId,
+                    paymentAmountSessionKey = SessionKeys.AutoPayManage.PaymentAmount,
+                    paymentDescription = "Auto Pay balance",
+                    content = content
+                });
+        }
+
+        <a class="tertiary-link go-back" href="/modes/driving/cc-autopay-payment-make-interim-payment-31061" id="go-back">
+            <span class="button-text">Back</span>
+        </a>
+		
+	  
+
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

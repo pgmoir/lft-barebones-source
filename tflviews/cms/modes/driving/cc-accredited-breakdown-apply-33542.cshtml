@@ -1,0 +1,118 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "CC Discount - Accredited - Apply";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-accredited-breakdown-apply-33542";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+                
+                <li><span class="last-breadcrumb">CC Discount - Accredited - Apply</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>CC Discount - Accredited - Apply</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+ 
+        
+        <!-- 1. accredited-breakdown -->
+        @{
+            dynamic content = new ContentModel();
+        
+            Html.RenderAction(
+                "Start",
+                "DiscountApply",
+                new
+                {
+                    area = "Ruc",
+                    journeyStartUrl = "/modes/driving/cc-accredited-breakdown-enter-details-33544",
+                    backUrl = "/modes/driving/cc-select-discount-29641",
+        			content = content,
+                    discountStyle = ZoneChargeDiscountStyle.AccreditedBreakdown
+                }
+            );
+        }
+        
+      
+
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

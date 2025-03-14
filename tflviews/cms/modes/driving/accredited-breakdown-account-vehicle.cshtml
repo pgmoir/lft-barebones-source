@@ -1,0 +1,140 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Add vehicles";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/accredited-breakdown-account-vehicle";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Add vehicles</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Add vehicles</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+
+		
+        <!-- 10. Account vehicle -->
+        @{
+            dynamic content = new ContentModel();
+            
+            content.ContinueButtonText = "Continue";
+            content.BackButtonText = "Back";
+            content.SortLabel = "Sort by";
+            content.SearchLabel = "Search ";
+            content.ApplyFilterLabel = "Apply filter";
+            content.ResetFilterLabel = "Reset";
+            content.DetailNotFoundMessage = "<p>We don't hold details for this vehicle.</p>";
+            content.ExemptAllMessage = "<p>Based on the vehicle details entered and information held by the DVLA and TfL today, this vehicle is exempt from all charges.</p><p><strong>This may change - always check to see if you need to pay to drive within the zones.</strong></p>";
+            content.VehicleAlreadyExistsOnThisApplicationErrorText = "<p>You've already added this vehicle to the application</p>";
+            content.SelectedVehicleLabel = "Selected vehicles: {0} / {1}";
+            content.ChargePerSelectionMessage = "{0} charge";
+            content.BasketLimitMessage = "<p>You have reached the maximum number of vehicles that can be added to the accredited breakdown discount at one time.</p>";
+            content.NoSelectionErrorMessage = "Please select a vehicle to continue.";
+            content.VehicleNotInMyListText = "Add a vehicle not on my account";
+            
+            Html.RenderAction("AccountVehicles", "AccreditedBreakdown", new
+            {
+                area = "Ruc",
+                content = content,
+                backUrl = "/modes/driving/cc-accredited-breakdown-manage-34762", 
+                nextUrl = "/modes/driving/cc-accredited-manage-review-application-34133",
+                vrmLookupUrl = "/modes/driving/cc-accredited-manage-vrm-lookup?sourceUrl=/modes/driving/accredited-breakdown-account-vehicle",
+            }); 
+        }
+		
+	  
+
+
+
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "account vehicle";}
+        
+            
+        
+
+
+ 

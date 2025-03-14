@@ -1,0 +1,92 @@
+﻿
+
+
+@{ViewBag.Title = "Update on Woolwich Ferry service ";}
+        
+        
+
+<div class="r">
+    <div class="headline-container plain">
+        <h1>Update on Woolwich Ferry service </h1>
+        <div class="content-page-press-release">
+        03 August 2011
+        </div>
+    </div>
+</div>
+<div class="main-and-aside r">
+    <div class="main" role="main">
+
+    <div class="article-teaser">
+        Following an incident on the Woolwich Ferry today, the service will remain suspended for the remainder of the day.
+        
+    </div>
+
+
+
+ <div class="on-this-page">
+<p>From tomorrow, Thursday 4 August, it will operate a reduced one boat service between the hours of 06:10 and 22:00 until further notice.</p>
+<p>London River Services would like to apologise for any inconvenience this may cause and would like to thank you for your patience during this time.</p>
+
+<p>
+<hr>
+<strong>Notes to Editors</strong> </p>
+<li>Drivers wishing to cross the Thames this evening should use an alternative route such as the Blackwall Tunnel, Rotherhithe Tunnel or Tower Bridge </li>
+<li>Live travel news is available at <a href="http://www.tfl.gov.uk/livetravelnews">tfl.gov.uk/livetravelnews</a> <br>
+<ul></ul></li>
+
+     
+
+        
+        
+        
+        @this.ScriptBlock(
+        @<script>
+        //queue.push("@Html.ScriptPath("modules/M020-on-this-page.min.js")", null);
+        </script>
+        )
+        
+        
+        
+        </div>
+    </div>
+    <div class="aside" role="complementary">
+
+       
+        <div data-set="sidenav-container" class="large">
+
+            
+<div id="right-hand-nav" class="expandable-list moving-source-order" role="navigation" aria-labelledby="sub-menu-heading">
+        
+ 
+</div>
+
+@this.ScriptBlock(
+    @<script>
+         queue.push("@Html.ScriptPath("modules/M032-expandable-list.min.js")", function () {
+             window.tfl.expandableList.init('#right-hand-nav', false);
+         });
+    </script>
+)
+
+ 
+        </div>
+
+
+
+            
+        <div data-set="sidenav-container" class="small-medium"></div>
+    </div>
+</div>
+
+<!-- Crumbs: PGtype:  -->
+
+ 
+ 
+        
+        
+            @{ViewBag.Description = "From tomorrow, Thursday 4 August, it will operate a reduced one boat service between the hours of 06:10 and 22:00 until further notice.London River Services would like to apologise for any inconvenience this may cause and would like to thank you for your";}
+        
+        
+
+
+ 

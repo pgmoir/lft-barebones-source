@@ -1,0 +1,145 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Request submitted";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/refund-confirmation";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                 <li><a href="/modes/driving/amend-or-refund-a-driving-charge">Amend or refund a driving charge</a></li>
+                
+            
+            
+                <li><span class="last-breadcrumb">Request submitted</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Request submitted</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+<div class="login-aside">
+                @{
+                    Html.RenderAction(
+                        "UserLoginBox", 
+                        "Account", 
+                        new { 
+                            Area = "Ruc", 
+                            returnUrl = "/modes/driving/account-account-landing-29377"
+                        }
+                    );
+                }
+            </div>
+      
+
+ 
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+            @{
+
+            dynamic content = new ContentModel();
+
+            content.ConfirmationText = "<p>It can take up to 10 working days to process your refund request. We will contact you when this has been done.</p>";
+            content.AmendOrRefundButtonTextLink = "Find another charge";
+            content.AmendOrRefundButtonUrl = "/modes/driving/amend-or-refund-a-driving-charge";
+            content.AutoPayForCCAndUlezHeading = "Auto Pay for CC and ULEZ";
+            content.AutoPayForCCAndUlezText = "<p>Set up Auto Pay to be billed automatically for the Congestion Charge and, if your vehicle does not meet the emissions standards, the ULEZ charge when you drive within central London.</p>";
+            content.SetupAutoPayButtonText = "Set up Auto Pay";
+            content.SetupAutoPayButtonUrl = "/modes/driving/autopay-apply";
+            content.MoreAboutAmendsAndRefundHeading = "Amend or refund another charge";
+            content.MoreAboutAmendsAndRefundText = "<p>Refund or amend another charge with the same receipt number, or find charges on a different receipt.</p>";
+            content.ReferenceNumberText = "Reference number: {0}";
+            content.FinishButtonText = "Finish";
+            content.FinishButtonLoggedInUrl = "/modes/driving/account-account-landing-29377";
+            content.FinishButtonLoggedOutUrl = "/modes/driving/index";
+            content.PrintThisPageButtonText = "Print this page";
+
+            Html.RenderAction(
+                "RefundConfirmation", 
+                "RefundZoneCharge", 
+                new
+                {
+                    area = "Ruc", 
+                    content = content,
+                    zoneType = ZoneChargeZone.CongestionCharge
+                }
+            );
+        }
+        
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

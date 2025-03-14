@@ -1,0 +1,191 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Make an enquiry";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/lez-contact-us-make-an-enquiry-wizard-37749";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Make an enquiry</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Make an enquiry</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+
+        
+        <!-- lez-make-an-enquiry-wizard -->
+        @{
+            dynamic content = new ContentModel();
+            
+            content.MakeEnquiryHeading = " ";
+            content.MakeEnquirySubText = " ";
+            content.MakeEnquiryFAQText = "<p>You maybe able to find your answer quickly using our FAQs sections?</p>";
+            content.EnquiryDetailsSectionLabel = "Enquiry details";
+            content.EnquiryCategoryLabel = "Type of enquiry?";
+            content.EnquiryCategoryPlaceholder = "Please select";
+            content.SubCategoryLabel = "Sub-type?";
+            content.SubCategoryPlaceholder = "Select";
+            content.MessageLabel = "Your message";
+            content.AttachmentLabel = "Supporting documentation";
+            content.AttachmentSubText = "You may want to upload additional documentation to help us respond to your enquiry.";
+            content.AdditionalInformationLabel = "Additional information (if applicable)";
+            content.AdditionalInformationSubText = "Enter a reference number from a related enquiry if you have one.";
+            content.PreviousReferenceNumberLabel = "Previous reference number";
+            content.VrmLabel = "Number plate";
+            content.VrmPlaceholder = "eg AB01ABC";
+            content.AccountNumberLabel = "Account number";
+            content.ReceiptNumberLabel = "Receipt number";
+            content.ReceiptNumberPlaceholder = "eg 123456";
+            content.PcnLabel = "Penalty Charge Notice (PCN) number";
+            content.PersonalDetailsSectionLabel = "Your details";
+            content.FirstNameLabel = "First name";
+            content.MiddleNameLabel = "Middle name";
+            content.SurnameLabel = "Last name";
+            content.PersonalContactDetailsSectionLabel = "Contact details";
+            content.EmailAddressLabel = "Email address";
+            content.ConfirmEmailAddressLabel = "Confirm email address";
+            content.ReviewEnquiryDetailsSectionLabel = "Enquiry details";
+            content.ReviewEnquiryTypeLabel = "Enquiry type";
+            content.ReviewEnquiryMessageLabel = "Your message";
+            content.ReviewEnquirySupportingEvidencesLabel = "Supporting documentation";
+            content.ReviewPersonalDetailsSectionLabel = "Personal details";
+            content.ReviewPersonalDetailsLabel = "Personal details";
+            content.PrivacyNotice = "<p>Read the <a href='/corporate/privacy-and-cookies/road-user-charging' target='_blank'>London Road User Charging privacy notice</a>.</p>";
+            content.ContinueButtonText = "Continue";
+            content.LastContinueButtonText = "Submit";
+            content.BackButtonText = "Back";
+
+            content.CategoryRequired = "Select a category";
+            content.SubCategoryRequired = "Select a sub-category";
+            content.MessageRequired = "Provide us with some details";
+            content.FirstNameRequired = "Enter a first name";
+            content.FirstNameAlphaOnly = "Don't use numerals in this field";
+            content.MiddleNameAlphaOnly = "Don't use numerals in this field";
+            content.SurnameRequired = "Enter a last name";
+            content.SurnameAlphaOnly = "Don't use numerals in this field";
+            content.EmailAddressRequired = "Enter an email address";
+            content.EmailAddressEmailAddress = "Enter a valid email address to continue";
+            content.ConfirmEmailAddressEmailAddress = "Enter a valid email address to continue";
+            content.ConfirmEmailAddressRequired = "Confirm your email address";
+            content.ConfirmEmailAddressCompare = "Email addresses do not match";
+            content.ConfirmDetailsRequireTrue = "Confirm that you have read and understood the privacy notice";
+            content.MessageStringLength ="Please shorten the message";
+
+            content.AdditionalInfoText = "Additional information";
+            content.PreviousReferenceNumberText = "Previous reference number";
+            content.NoAdditionalInfoAddedText = "No additional information added.";
+            content.VRMText = "<abbr title=\"Number plate\">Number plate (VRM)</abbr>";
+            content.AccountNumberText = "Account number";
+            content.ReceiptNumberText = "Receipt number";
+            content.PcnNumberText = "<abbr title=\"Penalty Charge Notice\">PCN</abbr> number";
+
+
+            Html.RenderAction(
+            "MakeEnquiry",
+            "Enquiry",
+                new
+                {
+                    area = "Ruc",
+                    enquiryComplaintEntryPageUrl = "/modes/driving/low-emission-zone/contact-lez",
+                    successUrl = "/modes/driving/lez-contact-us-make-enquiry-confirmation-37750",
+                    failureUrl = "/modes/driving/lez-contact-us-make-enquiry-failure-37751",
+                    content = content,
+                    businessArea = BusinessArea.LowEmissionZone
+                }
+            );
+        }
+        
+      
+  
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+      </div>
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "Tell us about your enquiry. Please be as descriptive as possible and select the categories that best fit your question(s).";}
+        
+            
+        
+
+
+ 

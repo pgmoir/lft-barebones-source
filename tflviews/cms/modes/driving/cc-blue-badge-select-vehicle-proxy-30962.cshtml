@@ -1,0 +1,184 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Add vehicle";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-blue-badge-select-vehicle-proxy-30962";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Add vehicle</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Add vehicle</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+
+        
+        <!-- 2. blue-badge-proxy -->
+        @{
+            dynamic content = new ContentModel();
+            content.SelectVehicleTitle = "Vehicle details";
+            content.SelectVehicleText = "Tell us which vehicle(s) you want to add to this discount.";
+            content.VehicleTypeHelperTitle = "What types of vehicle(s) can I add to this discount?";
+            content.VehicleTypeHelperText = "<p>Only 2 vehicles can qualify for the Blue Badge discount on a single travel day. These will be the last 2 vehicles nominated for the discount on that day (before midnight).</p><p>You need to pay the full Congestion Charge for any vehicles nominated before these final 2.</p><p>The nominated vehicles do not have to be owned by the Blue Badge holder. However, the Blue Badge holder must be travelling in the vehicle when it is driven within the Congestion Charge zone.</p><p>If a nominated vehicle is driven into the Congestion Charge zone for any reason other than to transport the Blue Badge holder, the standard daily Congestion Charge must be paid.</p><p>The Blue Badge discount only applies to the Congestion Charge. You will need to pay the Ultra Low Emission Zone (ULEZ) charge to drive your vehicle in the zone if it doesn't meet the ULEZ emissions standards.</p>";
+            content.SkipVehicleSelection = "Add vehicle after application has been approved";
+            content.BackButtonText = "Back";
+            content.ContinueButtonText = "Continue";
+            content.VehicleNotFoundErrorText = "'Find vehicle' to continue";
+            content.SelectedVehiclesCountText = "Vehicle(s) added to the Blue Badge discount: {0} / 2";
+            content.ConfirmVehicleButtonText = "Confirm";
+            content.CannotAddMoreVehiclesWarningText = "<p>You can only add 2 vehicles to your Blue Badge discount.</p><p>If you want to add a new vehicle to your discount application, you must remove a vehicle first.</p>";
+            content.MustHaveAtLeastOneVehicleErrorText = "Add a vehicle to continue, or check the box above to add vehicle details later";
+            content.ActiveDiscountText = "Active on:  ";
+            content.CannotAddMoreVehiclesErrorText = "<p>You can only register 1 vehicle for this discount. If you want to change the vehicle details you entered, use the 'Back' button.</p>";
+            // JSON content.FindVehicleButtonText = "Find vehicle";
+            content.ConfirmEnteredVehicleButtonText = "Confirm";
+            // JSON content.VrmTitle = "Vehicle Registration Mark";
+            // JSON content.VrmPlaceHolder = "eg AB01ABC";
+            // JSON content.VrmHelpMessageText = "Be careful not to mix up the letters 'I' and 'O' with the numbers '1' and '0'";
+            // JSON content.CountryofRegistrationTitle = "Country of registration";
+            //content.CcDiscountedTitle = "No charge is due for ";
+            //content.CcDiscountedText = "<p>Based on the vehicle details entered and information held by the DVLA and TfL today, your vehicle is registered for a 100% discount from the Congestion Charge. If you believe this is incorrect and you still want to pay the Congestion Charge, add this vehicle or apply for a discount, then you can continue.</p><p><strong>This may change - always check to see if you need to pay to drive within the zone.</strong></p>";
+            content.CcExemptTitle = "No charge is due for ";
+            content.CcExemptText = "<p>Based on the vehicle details entered and information held by the DVLA and TfL today, this vehicle is exempt from the Congestion Charge. If you believe this is incorrect and you still want to pay the Congestion Charge, add this vehicle or apply for a discount, then you can continue.</p><p><strong>This may change - always check to see if you need to pay to drive within the zone.</strong></p>";
+            content.ThisisNotMyVehicleTitle = "What if my vehicle details are incorrect?";
+            content.ThisisNotMyVehicleText = "<p>If the number plate (Vehicle Registration Mark) is correct but the description shown is wrong, you can still continue to register this vehicle.</p><p>Vehicle information is provided to TfL by the DVLA, so you'll need to let the DVLA know if your details are wrong or need to be updated.</p>";
+            // JSON content.VehicleNotFoundTitle = "<p><strong>We do not hold any details for this vehicle</strong></p>";
+            // JSON content.ConfirmEnteredVrmDetailsText = "Yes, this is the correct vehicle";
+            // JSON content.VehicleNotFoundText = "<p><strong>UK-registered:</strong> If your vehicle’s make and model details have not been returned, make sure you entered the Vehicle Registration Mark correctly before continuing.</p><p><strong>Registered outside the United Kingdom:</strong> We are unable to display the make, model and colour information. Confirm your details before continuing.</p>";
+            content.QmlLimitReachedTitle = "<p>You already have 10 vehicles on your Quick Management list</p>";
+            content.QmlLimitReachedText = "<p>You can continue with the discount application and add this vehicle to your Quick Management list later.</p><p>Once you have submitted the application, you will need to remove a vehicle before adding another.</p>";
+            content.ConfirmSaveVehicleToQmlText = "Save this vehicle to my account Quick Management list";
+            content.QmlUseDifferentVehicleText = "Use a different vehicle";
+            content.ResidentDiscountAppliedText = "Active on residents' discount";
+            content.VehicleAlreadyAddedErrorText = "No need to check the box above. This vehicle is already on your account to help you pay the charge.";
+            content.ActiveDiscountText = "Active on:  ";
+            // JSON content.VrmAcceptedRequireTrue = "Confirm that this is the correct vehicle to continue";
+            // JSON content.VehicleRegistrationMarkRequired = "Enter a Vehicle Registration Mark to continue";
+            content.CheckQmlVehicleButtonText = "Check";
+            // JSON content.CountryOptionUk = "United Kingdom";
+            // JSON content.CountryOptionOther = "Other";
+            content.ConfirmVehicleErrorText = "'Find vehicle' to continue";
+            content.CanAddStartText = "<br/><br/>You can add ";
+            content.CanAddEndText = " more vehicle(s).";
+            content.CancelButtonText = "Cancel";
+            content.SkipVehicleButtonText = "Skip this step and add vehicles later";
+            content.AddVehicleButtonText = "Add another vehicle";
+            content.AccountVehiclesLink = "/modes/driving/cc-blue-badge-account-vehicles?proxy=true";
+            content.NewVehcile = "New vehicle";
+            content.AccountVehicles = "Account vehicles";
+            content.NewVehicleLink = "/modes/driving/cc-blue-badge-vrm-lookup?addnew=true&proxy=true";
+            content.VrmInformationForUlezHigh = "You need to pay ULEZ charges for this vehicle";
+            content.VrmInformationForUlezLow = "You need to pay ULEZ charges for this vehicle";
+            content.RemoveConfirmMessage = "Are you sure you want to remove this vehicle?";
+            content.DiscardRemoveButtonText = "Keep";
+            content.ConfirmRemoveButtonText = "Remove";
+
+            Html.RenderAction("SelectVehicle", "DiscountApply", new
+                {
+                    area = "Ruc",
+                    discountStyle = ZoneChargeDiscountStyle.BlueBadge,
+                    discountAction = DiscountAction.Apply,
+                    backUrl = "/modes/driving/cc-blue-badge-enter-details-proxy-30926",
+                    uploadEvidenceUrl = "/modes/driving/cc-blue-badge-upload-evidence-proxy-30987",
+                    reviewUrl = "/modes/driving/cc-blue-badge-review-application-proxy-30945",
+                    content = content,
+                    zone = ZoneChargeZone.CongestionCharge,
+                    lookupType = VehicleLookupType.DiscountBlueBadge,
+                    journeyStartUrl = "/modes/driving/cc-select-discount-29641"
+                }
+            );
+        }
+        
+	  
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

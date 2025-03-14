@@ -1,0 +1,211 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Manage recovery vehicle discount";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/cc-recovery-vehicle-manage-34022";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+            
+            
+            
+            
+            
+                <li><span class="last-breadcrumb">Manage recovery vehicle discount</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Manage recovery vehicle discount</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+    
+      
+      
+           
+      
+
+
+	    
+		<!-- 7. recovery-vehicle -->
+		 @{
+            dynamic content = new ContentModel();
+
+            content.SingleActiveCountText = "Discount status: Active on <strong>1</strong> vehicle";
+            content.ActiveCountTextFormat = "Discount status: Active on <strong>{0}</strong> vehicles";
+  
+
+            Html.RenderAction(
+                "DiscountActiveVehicleCount",
+                "DiscountManage",
+                new
+                {
+                    area = "Ruc",
+                    discountStyle = ZoneChargeDiscountStyle.RecoveryVehicle,
+                    content = content
+                }
+            );
+        }
+
+        @{
+            dynamic listContent = new ContentModel();
+
+            listContent.ListHeading = "Recovery vehicle discount vehicle(s)";
+            listContent.ConfirmRemoveItemText = "Are you sure you want to remove this vehicle from the discount?";
+            listContent.ItemRemoveSuccessTextFormat = "You have removed {0} from the recovery vehicle discount.";
+            listContent.ItemRemoveErrorTextFormat = "An error occurred. Please try removing {0} from the recovery vehicle discount again.";
+            //listContent.SearchLabel = "Search for VRM";
+            listContent.RenewDiscountLinkText = "Renew discount";            
+            listContent.DownloadFilteredListButtonText = "Download this list";
+            //listContent.FilterButtonText = "Confirm and apply filters";
+            
+            listContent.VrmOption = "Vehicle Registration Mark";
+            listContent.DateOption = "Expiry date";
+            //listContent.AscendingOption = "Ascending";
+            //listContent.DescendingOption = "Descending";
+
+            Html.RenderAction(
+                CommonDictionary.ListModule.ListActionName,
+                "VehicleList",
+                new
+                {
+                    area = "Ruc",
+                    discountStyle = ZoneChargeDiscountStyle.RecoveryVehicle,
+                    listContent = listContent,
+                    itemSelectUrl = "/modes/driving/cc-recovery-vehicle-renew-renew-34018?VRM={0}&ServiceId={1}"
+                }
+            );
+        }
+
+        @ModulesHelpers.LinkWithIcon(
+            "Apply for another vehicle",
+            "add-vehicle",
+            "/modes/driving/cc-recovery-vehicle-before-you-begin?sourceRoutingKey=manage-recovery-vehicle",
+            responsive: true
+        )
+
+
+        @ModulesHelpers.BoxedLink(
+            href: "/modes/driving/cc-discount-view-vehicle-history-32867?Search.ServiceType=RecoveryVehicle", 
+            id: "vehicle-history", 
+            text: "Recovery discount vehicle history", 
+            soloButton: true
+        )
+
+        @FormHelpers.DottedSeparator()
+        @ModulesHelpers.BackLink(href: "/modes/driving/cc-discount-manage-discounts-32822")
+     
+
+        @this.ScriptBlock(
+          @<script>
+               queue.push(
+                    "@Html.ScriptPath("specific/list-filters-text.min.js")", null,
+                    "@Html.ScriptPath("modules/M020-on-this-page.min.js")", null,
+                    "@Html.ScriptPath("specific/results-paginator.min.js")", function() {
+                       $('#vehicle-list').paginator({
+                           showItemCount: true
+                       });
+                   });
+          </script>
+        )
+
+		
+	  
+
+  
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+    
+    
+    
+   
+    
+    
+    
+      <div data-set="sidenav-container" class="large">
+        
+        <div class="vertical-button-container">
+
+
+
+<a href="/modes/driving/congestion-charge/paying-the-congestion-charge"  class="plain-button">Congestion Charge payments</a>
+
+
+<a href="/modes/driving/congestion-charge/congestion-charge-zone"  class="plain-button">Congestion Charge zone</a>
+
+
+<a href="/modes/driving/cc-change-a-charge-find-a-charge-26478"  class="plain-button">Amend a Congestion Charge</a>
+
+
+<a href="/modes/driving/cc-refunds-find-a-charge-to-refund-36931"  class="plain-button">Refund a Congestion Charge</a>
+
+
+<a href="/modes/driving/congestion-charge/contact-congestion-charge"  class="plain-button">Contact Congestion Charge</a>
+
+</div>
+
+      </div>
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+ 
+ 
+        
+        
+        
+            @{ViewBag.Description = "";}
+        
+            
+        
+
+
+ 

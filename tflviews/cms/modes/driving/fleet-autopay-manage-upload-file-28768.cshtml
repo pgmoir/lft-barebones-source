@@ -1,0 +1,175 @@
+﻿
+    
+  
+
+
+
+@{ViewBag.Title = "Upload a new vehicle list";}
+@{ViewBag.Keywords = "TfL";}
+@{ViewBag.Url = "/modes/driving/fleet-autopay-manage-upload-file-28768";}
+@{ViewBag.Language = "en";}
+        <!-- empty placeholder -->
+ 
+        
+        
+<div class="r">
+    <div class="breadcrumb-container" role="navigation">
+        <span id="breadcrumb-label" class="visually-hidden">You are here:</span>
+        <ol class="breadcrumbs clearfix" aria-labelledby="breadcrumb-label">
+            <li class="home">
+                <a href="/">
+                    <span class="hide-text">Home</span>
+                </a>
+            </li>
+            
+                 <li><a href="/modes/driving/index">Driving</a></li>
+                
+            
+                 <li><a href="/modes/driving/auto-pay">Auto Pay</a></li>
+                
+            
+            
+            
+                <li><span class="last-breadcrumb">Upload a new vehicle list</span></li>
+            
+        
+ 
+        
+ 
+        
+ 
+        
+ 
+        </ol>
+    </div>
+</div>
+     
+ 
+<div class="r">
+  <div class="headline-container plain">
+    <h1>Upload a new vehicle list</h1>
+
+  </div>
+</div>
+<div class="main-and-aside r">
+  
+  <div class="main content-container" role="main">
+    
+      <div class="article-teaser">
+        <p>Make multiple changes to your Fleet Auto Pay vehicle list by uploading a .csv, .xls or .xlsx file.</p>
+        
+      </div>
+    
+    
+      <h2>Upload file</h2>
+      
+           
+      <div>
+
+<p><strong>Uploading a new list will overwrite your existing list.</strong> Your new list must include all your vehicles, not just vehicles that you want to add. A &pound;10 charge for each new vehicle will be added to your next monthly statement.</p>
+
+<p>Any vehicles not on your new list will not be added to your Auto Pay service. You need to pay the charge another way if they are driven within the zone.</p>
+
+<h2>ULEZ information</h2>
+
+<p>Cars, motorcycles, motorised tricycles, vans, minibuses, buses, coaches and HGVs, motorised caravans and horseboxes, breakdown and recovery vehicles, private ambulances, motor hearses, dual purpose vehicles and other specialist vehicle types that do not meet the minimum Euro emission standards are liable for the ULEZ charge.</p>
+
+<p>The minimum emissions standards for ULEZ are Euro 3 for motorcycles, Euro 4/IV for petrol vehicles and Euro 6/VI for diesel vehicles.</p>
+
+<p>If your vehicle does not meet the emissions standards for ULEZ the charge will be added to your monthly statement, in addition to the Congestion Charge.</p>
+
+<h2>Download template or list</h2>
+
+<p><strong>First time:</strong> Download a blank template if you are adding vehicles for the first time.</p>
+
+<p><strong>Already have vehicles:</strong> Download and modify your current list of Fleet Auto Pay vehicles.<strong> Remove all duplicates, or your upload may fail.</strong></p>
+</div>
+ 
+
+        @{
+            dynamic content = new ContentModel();
+            content.UploadGuidelinesTitle = "How do I upload a file?";
+            content.UploadGuidelinesText = "<p>Your uploaded vehicle list must be a .csv, .xls or .xlsx file. It must also be laid out in the same format as the blank template.</p><p>You can use the template provided, but if you already have a list of vehicles on Fleet Auto Pay it may be easier to download and edit this list.</p><p>This upload will replace ALL your Fleet Auto Pay vehicles. Any vehicles not included in the file will be <strong>deleted</strong> from your Fleet Auto Pay service.</p><p>Make sure that each upload file you submit:</p><ul>    <li>Contains all the vehicles you wish to keep</li>    <li>Contains all the new vehicles you wish to add</li>    <li><strong>Does not </strong>contain vehicles you wish to remove</li>    <li><strong>Does not</strong> contain any duplicate entries</li></ul><p>Once you have created your vehicle list, <strong>save the file to your device</strong>. You can then drag it into the box above or click ‘Browse your files’ to find it on your computer.</p><p>When you've found the file and click ‘Open’, you should see it in the upload section and be able to click ‘Continue’.</p>";
+            content.DownloadTemplateLabel = "Download blank template";
+            content.DownloadVehicleListButtonText = "Download your vehicle list";
+            content.BackButtonText = "Back";
+            content.ContinueButtonText = "Continue";
+            content.FileNotUploadedErrorText = "Upload a file to continue";
+            content.UsePrimaryEmailAddressHeading = "Use account email address only";
+            content.UseAnotherEmailAddressHeading = "Add an additional email address";
+            content.EnterEmailAddressText = "Email address";
+            content.MinimumVehicleLimitNotReachedErrorText = "You must have at least 6 vehicles in your file to continue, with NO duplicate entries. Please check your file and try again. ";
+            content.BulkUploadProcessNotStartedErrorText = "File could not be uploaded. Please check your file and try again. All files must be in the correct format and have at least 6 vehicles, with NO duplicate entries.";
+            content.DownloadTemplateButtonText = "Download a blank template";
+            content.WhyWeNeedEmailText = "<p>An email will be sent automatically to the account holder once the upload process has finished. If you want us to send an additional email to another account user, enter the email address details below.</p>";
+            content.fileUploadLabel = "Upload file";
+            content.UserCustomEmailAddressRequired = "Enter an additional email address or select 'Use account email address only' ";
+            content.UserCustomEmailAddressEmailAddress = "Enter a valid email address";
+            content.EmailSelectionRequired = "Do you want to use your account email only or add an addtional email address?";
+            content.PrimaryEmailAddressMissingErrorMessage = "You need to provide an email address before you can upload your vehicle list. <a href='/modes/driving/account-account-settings-29386'>Go to My account settings</a>.";
+            content.UploadChargesInformationText = "You will be charged automatically for any Congestion Charge and ULEZ charges due for any vehicles you add to this list.";
+            content.EmailConfirmationMessageHeading = "Email confirmation";
+            content.EmailConfirmationMessage = "An email will be sent automatically to {0} once the upload is finished. To send an additional email to another user, enter their email address.";
+            content.CustomEmailAddressLabel = "Send additonal confirmation to:";
+            content.BeforeUploadTextMessage = "Total number of vehicles on Fleet Auto Pay before upload: {0}";
+            content.AfterUploadTextMessage = "Total number of vehicles on Fleet Auto Pay after upload: {0}";
+            content.ReplaceOldListPopupHeading = "Replace your vehicles";
+            content.ReplaceOldListPopupMessage = "All vehicles on your Auto Pay service will be replaced with vehicles in this file.";
+            content.DiscardRemoveButtonText = "Cancel";
+            content.ConfirmRemoveButtonText = "Continue";
+            content.CancelButtonText = "Cancel upload";
+            content.ProcessFileUrl = "/modes/driving/fleet-autopay-manage-process-file-28780";
+            content.CustomEmailFieldRestrictedMessage = "To add or change this additional email address you need to remove your file first, then upload it again.";
+            
+            Html.RenderAction("UploadFile", "FileUpload", new
+                {
+                    area = "Ruc",
+                    manageUrl = "/modes/driving/account-account-landing-29377",
+                    vehiclesUrl = "#",
+                    fileSummaryUrl = "/modes/driving/fleet-autopay-manage-file-summary-28775",
+                    templateUrl = "/ruc-cdn/static/cms/documents/bulk-upload-template.csv",
+                    fileUploadOperation = TfL.Ruc.Common.ConfigSection.FileUploadOperation.AutoPayFleet,
+                    content = content
+                }
+            );
+        }
+      
+ 
+      
+        
+          
+        
+      
+    
+  </div>
+  <div class="aside" role="complementary">
+
+    
+
+        @{
+            dynamic userInfoBoxContent = new ContentModel();
+            Html.RenderAction("UserInfoBox", "Account", new { Area = "Ruc", content = userInfoBoxContent, logOutUrl = "/modes/driving/congestion-charge" });
+        }
+        
+      
+
+ 
+    
+    
+    <div></div>
+    
+    <div data-set="sidenav-container" class="small-medium"></div>
+  </div>
+</div>
+
+ 
+        
+        
+        
+            @{ViewBag.Description = "Make multiple changes to your Fleet Auto Pay vehicle list by uploading a .csv, .xls or .xlsx file.";}
+        
+            
+        
+
+
+ 
