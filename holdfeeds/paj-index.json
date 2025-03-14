@@ -1,0 +1,31 @@
+{
+  "pageTitle": "Plan a journey",
+  "keywords": "TfL,stations stops piers",
+  "description": "Tube stations, Overground stations, Bus and Tram stops and piers in London",
+  "template": "page-hero",
+  "breadcrumbs": null,
+  "title": {
+    "hero": true,
+    "title": "Plan a journey",
+    "background": "https://tfl.gov.uk/cdn/static/cms/images/promos/offpeak-spring-jp.jpg",
+    "card": {
+      "link": {},
+      "image": {}
+    },
+    "primarys": [
+      { "template": "planajourney", "advanced": true }
+    ],
+    "cards": [],
+    "rhnav": [
+      { "style": "card-dark", "title": "Go and discover London this spring", "texts": [ "Start exploring" ], 
+      "link": { "url": "https://londonblog.tfl.gov.uk/category/sightseeing/?intcmp=hero-Plan%20a%20journey-Go%20and%20discover%20London%20this%20spring", "icon": "external" } }
+    ]
+  },
+  "body": {
+   "primarys": null,
+   "cards": null
+  },
+  "rhnav": {
+   "cards": null
+  }
+ }

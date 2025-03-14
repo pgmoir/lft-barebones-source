@@ -1,0 +1,227 @@
+{
+  "pageTitle": "Santander Cycles - Cycling - Modes",
+  "template": "page-cards",
+  "breadcrumbs": [
+    {
+     "style": "home",
+     "title": "Home",
+     "url": "/"
+    },
+    {
+     "title": "Cycling",
+     "url": "/modes/cycling/index"
+    },
+    {
+     "title": "Santander Cycles"
+    }
+   ],
+  "title": {
+    "complex": true,
+    "title": "Santander Cycles",
+    "background": "https://tfl.gov.uk/cdn/static/cms/images/promos/santander-cycles-section.jpg",
+    "card": {
+      "template": "",
+      "style": "",
+      "title": "Hire bikes in London with Santander Cycles",
+      "texts": [
+        "You can hire a bike from as little as £2. Simply go to any docking station with your bank card and touch the screen to get started.",
+        "There's no need to book - hire a bike, ride it where you like, then return it to any docking station."
+      ],
+      "link": {
+        "title": "My account",
+        "text": "Not signed up? <a href=\"/sign-up\">Become a member</a>",
+        "url": "/sign-in",
+        "button": "Sign In"
+      }
+    }
+  },
+  "body": {
+    "primarys": [],
+    "cards": [
+      {
+        "template": "",
+        "title": "Get the Santander Cycles app",
+        "texts": [
+          "The fastest way to find and hire a bike"
+        ],
+        "link": "/modes/cycling/santander-cycles/community",
+        "image": {
+          "url": "https://tfl.gov.uk/cdn/static/cms/images/promos/santander-smartphone-teaser_rdax_400x200.jpg",
+          "alt": "Santander App on a smartphone"
+        }
+      },
+      {
+        "template": "",
+        "title": "Membership key",
+        "texts": [
+          "Skip the queue and save money with a key"
+        ],
+        "link": "/modes/cycling/santander-cycles/register-for-your-own-key",
+        "image": {
+          "url": "https://tfl.gov.uk/cdn/static/cms/images/promos/membership-key_rdax_400x200.jpg",
+          "alt": "Santander Cycles membership key"
+        }
+      },
+      {
+        "template": "",
+        "title": "Turn up and ride",
+        "texts": [
+          "Head to any terminal and just cycle away"
+        ],
+        "link": "/modes/cycling/santander-cycles/how-it-works",
+        "image": {
+          "url": "https://tfl.gov.uk/cdn/static/cms/images/promos/hire-a-cycle_rdax_400x200.jpg",
+          "alt": "Santander Cycles docking station"
+        }
+      },
+      {
+        "template": "",
+        "title": "We've got London covered",
+        "texts": [
+          "Find a docking station near you"
+        ],
+        "link": "/modes/cycling/santander-cycles/find-a-docking-station",
+        "image": {
+          "url": "https://tfl.gov.uk/cdn/static/cms/images/promos/santander-cycles-map_rdax_400x200.jpg",
+          "alt": "Santander Cycles docking station map"
+        }
+      },
+      {
+        "template": "",
+        "title": "Emirates Air Line, river and Santander Cycles ticke",
+        "texts": [
+          "Save up to 20% with an Explore London combined ticket"
+        ],
+        "link": "/modes/river/explore-london-tickets",
+        "image": {
+          "url": "https://tfl.gov.uk/cdn/static/cms/images/promos/3way-ticket-teaser_rdax_400x200.jpg",
+          "alt": "Emirates Air Line cable car, Santander Cycles and River tickets"
+        }
+      },
+      {
+        "template": "",
+        "title": "What you pay",
+        "texts": [
+          "Hire a bike from just £2"
+        ],
+        "link": "/modes/cycling/santander-cycles/what-you-pay",
+        "image": {
+          "url": "https://tfl.gov.uk/cdn/static/cms/images/promos/santander-cycles-hyde-park_rdax_400x200.jpg",
+          "alt": "Santander Cycles hyde park"
+        }
+      }
+    ]
+  },
+  "rhnav": {
+    "cards": [
+      {
+        "template": "listgroup",
+        "style": "foldernav",
+        "title": "Santander Cycles",
+        "links": [
+          {
+            "title": "How it works",
+            "url": "/modes/cycling/santander-cycles/how-it-works"
+          },
+          {
+            "title": "What you pay",
+            "url": "/modes/cycling/santander-cycles/what-you-pay"
+          },
+          {
+            "title": "Find a docking station",
+            "url": "/modes/cycling/santander-cycles/find-a-docking-station"
+          },
+          {
+            "title": "Santander Cycles membership",
+            "url": "/modes/cycling/santander-cycles/register-for-your-own-key"
+          },
+          {
+            "title": "Leisure routes",
+            "url": "/modes/cycling/santander-cycles/leisure-routes"
+          },
+          {
+            "title": "Lost, stolen or faulty",
+            "url": "/modes/cycling/santander-cycles/lost-stolen-or-faulty"
+          },
+          {
+            "title": "Santander Cycles app",
+            "url": "/modes/cycling/santander-cycles/community"
+          },
+          {
+            "title": "Suggestions and complaints",
+            "url": "/modes/cycling/santander-cycles/suggestions-and-complaints"
+          },
+          {
+            "title": "Santander Cycles business accounts",
+            "url": "/modes/cycling/santander-cycles/business-accounts"
+          },
+          {
+            "title": "Blaze Laserlights",
+            "url": "/modes/cycling/santander-cycles/blaze-laserlights"
+          }
+        ]
+      },
+      {
+        "template": "listgroup",
+        "style": "foldernav",
+        "title": "Cycling",
+        "links": [
+          {
+            "title": "Get started with cycling",
+            "url": "/modes/cycling/new-to-cycling"
+          },
+          {
+            "title": "Santander Cycles",
+            "url": "/modes/cycling/santander-cycles"
+          },
+          {
+            "title": "Cycling in London",
+            "url": "/modes/cycling/cycling-in-london"
+          },
+          {
+            "title": "Routes and maps",
+            "url": "/modes/cycling/routes-and-maps"
+          }
+        ]
+      },
+      {
+        "template": "contactus"
+      },
+      {
+        "template": "emailupdates"
+      },
+      {
+        "template": "listgroup",
+        "title": "Related websites",
+        "links": [
+          {
+            "title": "Get started with cycling",
+            "url": "http://www.londontravelwatch.org.uk/home/",
+            "icon": "icon-external"
+          }
+        ]
+      },
+      {
+        "template": "listgroup",
+        "title": "Social Media",
+        "links": [
+          {
+            "title": "Follow TfL news on Twitter",
+            "url": "https://twitter.com/tfl",
+            "icon": "icon-sm-twitter"
+          },
+          {
+            "title": "Like TfL on Facebook",
+            "url": "https://www.facebook.com/transportforlondon",
+            "icon": "icon-sm-facebook"
+          },
+          {
+            "title": "Follow TfL on Instagram",
+            "url": "http://instagram.com/transportforlondon",
+            "icon": "icon-sm-instagram"
+          }
+        ]
+      }
+    ]
+  }
+}
